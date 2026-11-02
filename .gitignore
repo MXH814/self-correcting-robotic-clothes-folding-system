@@ -1,0 +1,38 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python / Node
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+dist/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+~$*
+.~lock.*
+*.tmp
+*.log
+
+# Generated or private artifacts
+/archive/
+/tmp/
+/data/
+/datasets/
+/checkpoints/
+/runs/
+/outputs/
+/private/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
