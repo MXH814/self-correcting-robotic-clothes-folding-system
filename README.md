@@ -25,6 +25,7 @@
 | [界面原型](prototypes/ui/index.html) | 用浏览器打开即可查看五个界面 |
 | [协作约定](CONTRIBUTING.md) | 分工、分支和证据记录要求 |
 | [第一阶段详细计划](docs/first-stage-plan.md) | 近期论文、候选问题、三人任务、Design 交付、依赖与完成标准 |
+| [马祥珲第一阶段成果](docs/research/ma-task-workbook.md) | 四篇精读、比较、问题卡、实验协议、AI详细设计及课程材料；待本人/团队评审，实验未执行 |
 | [Assignment 2 要求与验收](docs/assignment-2-checklist.md) | 九项交付、三人分工、展示/反馈、词数与打包检查 |
 | [Assignment 2 官方说明](docs/course/assignment-2/System%20Analysis%20%26%20Design%20Assignment_2.pdf) | 原要求 PDF；本地作业目录同时保留 |
 | [项目路线图](docs/roadmap.md) | 第一阶段与 SRS G1—G4 的关系及后续验收 |
