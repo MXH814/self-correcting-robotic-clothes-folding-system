@@ -1,0 +1,30 @@
+[
+  {
+    "id": "L05",
+    "version": "2602.22474v2",
+    "url": "https://arxiv.org/html/2602.22474v2",
+    "retrieved": "2026-11-06",
+    "sha256_html": "334a790b1c693251affd51a9df751b51b36ecdc372d3242999ddbd1c6c9b6549"
+  },
+  {
+    "id": "L07",
+    "version": "2605.01195v2",
+    "url": "https://arxiv.org/html/2605.01195v2",
+    "retrieved": "2026-11-06",
+    "sha256_html": "1da19efe422573e098dac384be5f02e08ac719b5fc32960b05482027a600b8ea"
+  },
+  {
+    "id": "L08",
+    "version": "2607.27782v2",
+    "url": "https://arxiv.org/html/2607.27782v2",
+    "retrieved": "2026-11-06",
+    "sha256_html": "f01003d8f09a9d0227b01fdc5dd20a395c562f59029f06763f82b6190043108b"
+  },
+  {
+    "id": "L01",
+    "version": "2505.11032v3",
+    "url": "https://arxiv.org/html/2505.11032v3",
+    "retrieved": "2026-11-06",
+    "sha256_html": "f8a256d25e9a4464aca7ca0bcb721d5ef8432fe9eccb0d05e6c2389df06dbae5"
+  }
+]
