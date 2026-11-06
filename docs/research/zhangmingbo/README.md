@@ -23,6 +23,7 @@
 
 ## 仿真复现材料
 
+- **接下来执行：[交接与后续待办](handoff-tasks.md)**，先提供现有脚本、配置、一个真实样本、IO说明与运行入口。
 - [环境可行性报告](environment-feasibility.md)
 - [论文复现进度记录](reproduction-status.md)
 
