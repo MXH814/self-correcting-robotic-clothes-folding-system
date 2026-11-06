@@ -1,6 +1,8 @@
 # 马祥珲第一阶段成果与完成状态
 
-更新：2026-11-06。AI 辅助撰写的正式分析/设计稿，待本人及团队审阅。完成的是可审阅文档，不代表实验、个人掌握或联合批准已完成。
+更新：2026-11-06。研究/设计文档与可运行离线诊断软件已完成；组长授权推进实现决定，队友审核提意见。真实仿真、研究实验、个人掌握及独立复核尚未完成。
+
+最新入口：[运行说明](execution-guide.md) · [执行决定](ma-owner-decisions.md) · [详细剩余清单](ma-remaining-checklist.md)。
 
 ## 成果导航
 
@@ -14,8 +16,8 @@
 | 研究提案与问题卡 | [H1/H2/H3](hypothesis-cards.md) | 假设、反证与方案已写，没有实验支持结论 |
 | 诊断实验设计 | [协议](diagnostic-protocol.md) | 分组、配对、指标、统计与资源方案已写 |
 | AI 恢复详细设计 | [恢复模块](../design/recovery-design.md) | 逻辑组件、类关联、时序、异常、SRS映射已写 |
-| 算法与控制接口 | [契约](../design/interfaces.md) | draft，真实profile与队友确认待完成 |
-| 设计决策 | [ADR-001](../design/decisions/ADR-MA-001-control-and-scoring.md)、[ADR-002](../design/decisions/ADR-MA-002-history-and-continuation.md)、[ADR-003](../design/decisions/ADR-MA-003-reproducible-data.md) | Proposed，未冒充团队批准 |
+| 算法与控制接口 | [契约](../design/interfaces.md) | 逻辑基线已采纳；离线preflight子集已实现，真实profile未接入 |
+| 设计决策 | [ADR-001](../design/decisions/ADR-MA-001-control-and-scoring.md)、[ADR-002](../design/decisions/ADR-MA-002-history-and-continuation.md)、[ADR-003](../design/decisions/ADR-MA-003-reproducible-data.md) | 组长授权下采纳为实现基线，队友可审核修订；不是实测通过 |
 | 算法风险与验证 | [PoC清单](../design/ma-risks-and-validation.md) | 已写，实测未执行 |
 | 课程文献注释 | [英文注释](annotated-references.md) | 四篇200–300词候选稿 |
 | 课程集成材料 | [Summary/反思/贡献/讲稿](../design/ma-assignment2-material.md) | 可供整合，最终事实与人工归属待确认 |
@@ -25,6 +27,9 @@
 
 - [x] 文献分析稿、最近邻比较、问题卡和诊断协议已形成。
 - [x] AI设计、接口、ADR、风险和报告候选材料已形成。
+- [x] 离线诊断、分组防泄漏、基线/统计、门禁子集、评分诊断和资源估算已实现，自动化测试与人工fixture检查已执行。
+- [x] 可选CPU MLP消融及近似容量对照实现并完成人工fixture训练/评估小试。
+- [x] 可独立决定的研究/软件基线已确定，不等待联合签核。
 - [ ] 马祥珲本人完成原文审阅、技术决定确认和个人阅读反馈。
 - [ ] 与张茗博确认环境/动作通道/profile、前缀、停止时效与部署。
 - [ ] 与胡知鱼确认标签、数据字段、参考注释和界面原因码。
@@ -36,4 +41,6 @@
 
 已只读核对 `origin/hzy@067cf91` 的数据/需求/追踪/报告草稿，不覆盖、不自动合并。其请求 Ma 提供的恢复交互、算法风险、反思和参考注释，现由本成果包提供。
 
-张茗博确认动作与时钟profile、串行接纳/停止和部署；胡知鱼可整合注释/报告片段并映射UI原因码。没有向队友发送消息或代表其批准。CR-MA-01和hzy CR-01/02保持待审；SRS阈值未修改。没有租GPU、产生性能结果或预填个人工时。
+亦只读核对张茗博新分支`bc5e48c`的环境/复现报告：已有历史示范与训练小试；当前电脑无其E:\Robotics路径，独立复跑仍需环境交接。详见[剩余清单](ma-remaining-checklist.md)。
+
+张茗博提供动作与时钟profile、串行接纳/停止和部署事实；胡知鱼可整合注释/报告并审核数据/UI映射。CR-MA-01已由组长授权下采纳为内部接口细化，hzy CR-01/02仍未批准；SRS阈值未修改。没有向队友发送消息、租GPU、产生真实机器人性能结果或预填个人工时。

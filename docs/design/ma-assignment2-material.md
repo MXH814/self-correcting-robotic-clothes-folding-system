@@ -15,7 +15,7 @@ The design preserves separate meanings for runtime completion, offline quality, 
 
 DexGarmentLab remains a candidate platform rather than a verified dependency. Its observation provenance, robot action mapping, asset availability, physical behavior, and state restoration need environment checks. The data design separates online sensor evidence from hidden simulation information used for offline labels and quality assessment. Related branches and garments must remain grouped during data splitting, and sealed evaluation data cannot influence matching libraries or calibration.
 
-Three proposed decision records explain control separation, diagnostic-first algorithm selection, and reproducible data handling. Open issues are assigned verification methods and fallback choices for Part III. In particular, a simple recovery implementation may support the system while research models are evaluated independently. The companion workstream provides interaction, recording, and traceability drafts for integration. At this point, the deliverables constitute a reviewable design and research protocol: no new model performance, user study, joint approval, or physical simulation acceptance is claimed. The final report must incorporate actual presentation feedback and completed integration evidence before submission.
+Three decision records establish the current implementation baseline for control separation, diagnostic-first algorithm selection, and reproducible data handling under the team leader's authorization. Offline diagnostic software now supports grouped data validation, simple candidate ranking, paired analysis, and preflight checks. Automated tests and synthetic fixtures verify software behavior, not the research hypotheses or physical execution. Open issues have verification methods and fallback choices for Part III. The companion workstream supplies interaction, recording, and traceability drafts for integration. No new robot performance, user study, independent review, or physical simulation acceptance is claimed. The final report must incorporate actual presentation feedback and integration evidence before submission.
 <!-- summary:end -->
 
 ## A2-02 / A2-03 — 本人负责的具体设计
@@ -24,7 +24,7 @@ Three proposed decision records explain control separation, diagnostic-first alg
 
 ## A2-04 — 需求建议
 
-现行 FR/NFR/AI/DR 阈值不变。CR-MA-01 将评分语义、校准与接续版本显式化，状态 Proposed，需三人判定是实现细化还是正式需求变化。胡知鱼 CR-01/CR-02 仍待审；没有批准证据，不标 accepted。
+现行 FR/NFR/AI/DR 阈值不变。CR-MA-01 已依据组长授权采纳为内部接口细化，显式记录评分语义、校准与接续版本；未改变产品验收。胡知鱼 CR-01/CR-02 仍待审，本稿不批准其变更。
 
 ## A2-06 — 算法开放问题
 
@@ -36,7 +36,9 @@ Codex assisted this workstream by locating versioned primary sources, extracting
 
 Critical corrections were necessary. Reading only abstracts would have overstated novelty: RedFlow already reports clothes folding, and TAIL-Safe distinguishes empirical assurance from formal invariance. Progress and robot pose do not establish identical contact states. Numerical scores from different methods also cannot be substituted into the SRS probability threshold. The draft therefore separates reported findings, our interpretations, proposed design decisions, and experiments that remain unperformed.
 
-The workflow uses the existing assistant and local tools; no GPU rental, model training, participant study, or robot API job was launched. Individual human effort, attributable subscription cost, and token usage for this stage have not been supplied and are not inferred from the earlier assignment. The owner should add the available work record and any justified estimates before the final report is attributed. Team review, source PDF reconciliation where needed, and physical interface testing remain outstanding.
+The workflow uses the existing assistant and local tools; no GPU rental, training on real robot data, participant study, or robot API job was launched. Individual human effort, attributable subscription cost, and token usage for this stage have not been supplied and are not inferred from the earlier assignment. The owner should add the available work record and any justified estimates before the final report is attributed. Team review, source PDF reconciliation where needed, and physical interface testing remain outstanding.
+
+In a subsequent implementation pass, Codex also produced standard-library diagnostic code, optional PyTorch MLP ablations, unit tests, synthetic fixtures, a resource estimator, and execution instructions. The tests exercise software boundaries including data leakage, unknown outcomes, stale observations, and score semantics. A short CPU training run on manufactured fixtures verifies the neural path, with an approximate parameter-matched current-only control. These checks do not establish closed-loop recovery performance or reproduce the closest papers.
 
 ## A2-08 — 参考文献
 
@@ -46,7 +48,7 @@ The workflow uses the existing assistant and local tools; no GPU rental, model t
 
 本分工已形成的文档成果：四篇原文分析、最近邻比较、H1/H2 问题卡、诊断协议、AI 组件/接口、三项 ADR、风险/PoC、参考注释和此报告片段。关联 Git 提交记录可证明产物版本，不等于证明个人阅读掌握、独立实现或人工评审完成。
 
-马祥珲本人仍需确认技术取舍、审阅文章/注释、参加接口评审和展示。张茗博/胡知鱼的工作不得据本稿归为本人完成；团队贡献表记录实际参与及审核，不预填工时或比例。
+组长授权下当前技术基线已确定；本人仍需掌握文章/注释、审核真实接口和参加展示。后续新增离线诊断软件与测试见[运行说明](../research/execution-guide.md)。张茗博/胡知鱼工作不得据本稿归为本人完成；贡献表记录实际参与及审核，不预填工时或比例。
 
 ## 展示讲稿提纲（个人部分）
 

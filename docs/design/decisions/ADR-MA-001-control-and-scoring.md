@@ -1,6 +1,6 @@
 # ADR-MA-001 · 执行授权与模型评分分离
 
-状态：Proposed，2026-11-06；作者工作流：马祥珲，AI 辅助。产品控制边界沿用 SRS；本文实现方案待组内评审。
+状态：Accepted as implementation baseline，2026-11-06；依据组长授权由本工作流采纳，队友可审核修订，并非三人签核或实测通过。产品控制边界沿用 SRS；见[执行决定](../../research/ma-owner-decisions.md)。
 
 ## 问题与约束
 

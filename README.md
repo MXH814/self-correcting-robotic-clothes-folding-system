@@ -11,7 +11,7 @@
 
 当前执行计划为 **[第一阶段：研究问题验证与系统设计](docs/first-stage-plan.md)**。
 本阶段同时推进 2025—2026 年相关工作、research gap 诊断、仿真最小验证和课程 Design，按任务依赖与证据验收推进。
-计划已依据 Assignment 2 正式 PDF 与 Canvas 页面更新；研究和设计成果仍待完成。
+计划已依据 Assignment 2 正式 PDF 与 Canvas 页面更新；已形成马祥珲的研究/AI设计成果及可运行离线诊断工具，真实仿真与研究实验、全组设计整合仍待完成。
 
 **Assignment 2 截止：2026-11-20 19:00（上海时间）。** 全员参加 6 分钟课堂展示，Slides 须在本组展示前上传 Canvas，具体场次待 Canvas 通知。详见 **[九项正式交付与验收清单](docs/assignment-2-checklist.md)**；最终设计须纳入展示反馈。
 
@@ -26,6 +26,8 @@
 | [协作约定](CONTRIBUTING.md) | 分工、分支和证据记录要求 |
 | [第一阶段详细计划](docs/first-stage-plan.md) | 近期论文、候选问题、三人任务、Design 交付、依赖与完成标准 |
 | [马祥珲第一阶段成果](docs/research/ma-task-workbook.md) | 四篇精读、比较、问题卡、实验协议、AI详细设计及课程材料；待本人/团队评审，实验未执行 |
+| [研究工具运行说明](docs/research/execution-guide.md) | 数据校验/分组、B0–B4离线基线、统计、评分诊断、门禁子集和资源估算；无仿真依赖 |
+| [马祥珲最终剩余清单](docs/research/ma-remaining-checklist.md) | 已完成项、真实环境/数据阻塞、队友最小交付与个人/课程事项 |
 | [Assignment 2 要求与验收](docs/assignment-2-checklist.md) | 九项交付、三人分工、展示/反馈、词数与打包检查 |
 | [Assignment 2 官方说明](docs/course/assignment-2/System%20Analysis%20%26%20Design%20Assignment_2.pdf) | 原要求 PDF；本地作业目录同时保留 |
 | [项目路线图](docs/roadmap.md) | 第一阶段与 SRS G1—G4 的关系及后续验收 |

@@ -1,6 +1,6 @@
 # ADR-MA-002 · 历史与整任务延续评分先诊断、后选型
 
-状态：Proposed，2026-11-06；研究方向待证，模块化选型建议待团队评审。
+状态：Accepted as implementation baseline，2026-11-06；依据组长授权采纳诊断优先与可替换接口，队友可审核修订。研究假设仍待证，不代表训练选型或性能已通过；见[执行决定](../../research/ma-owner-decisions.md)。
 
 ## 问题
 

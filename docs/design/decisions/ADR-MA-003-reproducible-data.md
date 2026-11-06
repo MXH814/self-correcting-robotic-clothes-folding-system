@@ -1,6 +1,6 @@
 # ADR-MA-003 · 在线信息隔离与根轨迹级数据治理
 
-状态：Proposed，2026-11-06；AI05/AI07 和划分隔离是 SRS 既有要求，以下给出实现建议。
+状态：Accepted as implementation baseline，2026-11-06；依据组长授权采纳来源隔离与分组策略，队友可审核修订，真实数据尚待接入。AI05/AI07是既有要求；见[执行决定](../../research/ma-owner-decisions.md)。
 
 ## 背景与备选
 
