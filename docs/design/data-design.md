@@ -1,6 +1,6 @@
 # 叠衣系统数据记录与评价规范
 
-固定基线为远端英文 SRS 提交 `4191e8f`。本规范供采集、标注和独立复核使用，重点回答三件事：系统是否识别了偏差，一次纠正是否恢复了当前阶段，整件衣物最终是否在无人协助下叠好。三项分别用片段、动作和试次计数。配套[案例索引与分歧审核模板](案例索引与分歧审核模板.xlsx)留给真实采集；本文末尾的演算全部为虚构教学示例。阈值沿用 SRS 的拟定值，正式测试前按 G1–G3 校准、评审并冻结。[英文 SRS，第 21–25、34–38 页及附录 A](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/submissions/assignment-1/Group3_Assignment1_SRS/Group3_Self%20Correcting%20Robotic%20Clothes%20Folding%20System_SRS_EN.pdf) · [第一阶段计划 P03/P06、H2](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/docs/first-stage-plan.md)
+固定基线为远端英文 SRS 提交 `4191e8f`。本规范供采集、标注和独立复核使用，重点回答三件事：系统是否识别了偏差，一次纠正是否恢复了当前阶段，整件衣物最终是否在无人协助下叠好。三项分别用片段、动作和试次计数。配套[案例索引与分歧审核模板](templates/case-review.xlsx)留给真实采集；本文末尾的演算全部为虚构教学示例。阈值沿用 SRS 的拟定值，正式测试前按 G1–G3 校准、评审并冻结。[英文 SRS，第 21–25、34–38 页及附录 A](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/submissions/assignment-1/Group3_Assignment1_SRS/Group3_Self%20Correcting%20Robotic%20Clothes%20Folding%20System_SRS_EN.pdf) · [第一阶段计划 P03/P06、H2](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/docs/first-stage-plan.md)
 
 ## 1　先登记试次，再收集证据
 

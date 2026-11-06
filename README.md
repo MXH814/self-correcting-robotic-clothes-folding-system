@@ -7,11 +7,13 @@
 ## 当前进度
 
 已完成选题、软件需求规格说明（SRS）、九张可编辑系统模型和五屏界面原型。
+已补充可操作的五屏测试桩原型、需求变更与追踪、记录与评价规范、用户走查材料及英文 Design 工作稿。
+真实用户走查、团队设计复核和系统测试待完成，逐项证据及缺项见 [Design 交付状态](docs/design/delivery-status.md)。
 仿真集成、机器人控制、模型训练与正式实验尚待实施。界面原型不连接机器人或云服务。
 
 当前执行计划为 **[第一阶段：研究问题验证与系统设计](docs/first-stage-plan.md)**。
 本阶段同时推进 2025—2026 年相关工作、research gap 诊断、仿真最小验证和课程 Design，按任务依赖与证据验收推进。
-计划已依据 Assignment 2 正式 PDF 与 Canvas 页面更新；研究和设计成果仍待完成。
+计划已依据 Assignment 2 正式 PDF 与 Canvas 页面更新；Design 已有部分工作稿，研究与最终设计验收继续推进。
 
 **Assignment 2 截止：2026-11-20 19:00（上海时间）。** 全员参加 6 分钟课堂展示，Slides 须在本组展示前上传 Canvas，具体场次待 Canvas 通知。详见 **[九项正式交付与验收清单](docs/assignment-2-checklist.md)**；最终设计须纳入展示反馈。
 
@@ -23,6 +25,12 @@
 | [英文 Word 源文件](docs/requirements/SRS_EN.docx) | 继续编辑需求文档的有效源文件 |
 | [选题说明](docs/idea/Idea_Submission_EN.pdf) | Idea Submission，记录选题背景；范围以最新 SRS 为准 |
 | [界面原型](prototypes/ui/index.html) | 用浏览器打开即可查看五个界面 |
+| [Design 英文工作稿](docs/design/system-design.md) | 九项报告章节及待团队确认的内容 |
+| [交互设计与复验](docs/design/interaction-design.md) | 五屏流程、测试桩操作与异常路径 |
+| [需求变更](docs/design/requirements-changes.md) / [追踪表](docs/design/traceability.md) | 英文 SRS 基线、待审建议及 30 项需求与 18 项测试 |
+| [记录与评价规范](docs/design/data-design.md) | 标签、分母、数据划分与空白案例模板 |
+| [用户走查](docs/design/user-walkthrough.md) | 主持流程、参与者任务与匿名记录，实际走查待补 |
+| [Design 交付状态](docs/design/delivery-status.md) | 九项证据、缺项、复核人与交接 |
 | [协作约定](CONTRIBUTING.md) | 分工、分支和证据记录要求 |
 | [第一阶段详细计划](docs/first-stage-plan.md) | 近期论文、候选问题、三人任务、Design 交付、依赖与完成标准 |
 | [Assignment 2 要求与验收](docs/assignment-2-checklist.md) | 九项交付、三人分工、展示/反馈、词数与打包检查 |

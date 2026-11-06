@@ -1,8 +1,8 @@
 # 从需求到验收 · 30 项需求与 18 项测试
 
-基线为提交 `4191e8f` 的英文 SRS。下表“测试”按附录 A 最右栏原列关系正反向整理；正文中另有用例、详细规则和跨项验证，按所列章节合并阅读。当前正式系统测试 **0/18 已验收，18/18 待验证**。其中已有五屏测试桩复验的路径可作为界面设计证据。版本差异、既有决定和本轮建议见[基线核对与需求变更](基线核对与需求变更.md)。[固定版本 SRS](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/submissions/assignment-1/Group3_Assignment1_SRS/Group3_Self%20Correcting%20Robotic%20Clothes%20Folding%20System_SRS_EN.pdf)
+基线为提交 `4191e8f` 的英文 SRS。下表“测试”按附录 A 最右栏原列关系正反向整理；正文中另有用例、详细规则和跨项验证，按所列章节合并阅读。当前正式系统测试 **0/18 已验收，18/18 待验证**。其中已有五屏测试桩复验的路径可作为界面设计证据。版本差异、既有决定和本轮建议见[基线核对与需求变更](requirements-changes.md)。[固定版本 SRS](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/submissions/assignment-1/Group3_Assignment1_SRS/Group3_Self%20Correcting%20Robotic%20Clothes%20Folding%20System_SRS_EN.pdf)
 
-**证据入口。** M01 系统边界、M02 运行用例、M03 开发用例、M04 折叠恢复、M05 人工交接、M06 模型批准、M07 任务状态、M08 停止确认、M09 校验来源，均为已存在的需求模型。S01–S05 对应准备、监控、协助、结果和维护五屏。表中“任务管理器”“适配器”等写明设计职责；接口与持久化的实现证据待补。[九张模型源](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/submissions/assignment-1/Group3_Assignment1_SRS/Models/Group3_Models.drawio) · [本地五屏入口](../02_五屏交互原型/index.html) · [界面复验记录](../02_五屏交互原型/交互说明与复验.md) · 三篇论文阅读依据（第1项单独保存在本地，本分支收录第2–6项）
+**证据入口。** M01 系统边界、M02 运行用例、M03 开发用例、M04 折叠恢复、M05 人工交接、M06 模型批准、M07 任务状态、M08 停止确认、M09 校验来源，均为已存在的需求模型。S01–S05 对应准备、监控、协助、结果和维护五屏。表中“任务管理器”“适配器”等写明设计职责；接口与持久化的实现证据待补。[九张模型源](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/submissions/assignment-1/Group3_Assignment1_SRS/Models/Group3_Models.drawio) · [本地五屏入口](../../prototypes/ui/index.html) · [界面复验记录](interaction-design.md) · 三篇论文阅读依据（第1项单独保存在本地，本仓库收录交互、需求、评价和走查设计材料）
 
 ## 功能需求 · SRS 第 12–13 页
 

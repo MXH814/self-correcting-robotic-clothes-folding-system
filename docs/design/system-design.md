@@ -1,7 +1,7 @@
 # Self-Correcting Robotic Clothes Folding System
 ## Assignment 2 · Design working draft
 
-**Review date:** 5 November 2026. **Scope:** material available in Hu Zhiyu’s local work area. Bracketed review notes identify decisions, authorship or evidence that still need confirmation. The companion [review and handoff register](九项检查与个人交接.md) identifies the owner and closure condition for each section.
+**Review date:** 5 November 2026. **Scope:** material available in Hu Zhiyu’s local work area. Bracketed review notes identify decisions, authorship or evidence that still need confirmation. The companion [review and handoff register](delivery-status.md) identifies the owner and closure condition for each section.
 
 ## A2-01 · Design Summary
 
@@ -56,7 +56,7 @@ sequenceDiagram
 
 **Result and replay draft.** When the task manager commits a terminal outcome, it records the task, version references and terminal counter snapshot. Later stop diagnostics and quality review append evidence linked to that task. The results view reads ordered events for the selected task. Selecting an earlier event changes the displayed historical state. It does not grant control authority. A completed run with human assistance can receive an offline quality pass while its autonomous success flag remains false.
 
-The recording design distinguishes one trial, several detection clips and the candidate actions attached to a decision. Each accepted corrective dispatch consumes an attempt even if interrupted. This lets reviewers reconstruct why a candidate was accepted and what happened to the complete trial. [Recording specification](../04_数据记录与评价规范/数据记录与评价规范.md)
+The recording design distinguishes one trial, several detection clips and the candidate actions attached to a decision. Each accepted corrective dispatch consumes an attempt even if interrupted. This lets reviewers reconstruct why a candidate was accepted and what happened to the complete trial. [Recording specification](data-design.md)
 
 [Zhang: integrate the domain and structural models, component responsibilities, cardinalities and remaining sequences, including start, pause, termination and model activation. Ma: supply the recovery decision sequence and rejection paths. Verify the above draft against the implementation contract.]
 
@@ -64,7 +64,7 @@ The recording design distinguishes one trial, several detection clips and the ca
 
 The effective specification contains 16 functional, seven nonfunctional and seven AI requirements. A comparison against the editable English source and final submission confirmed the 44 direct requirement–test links in Appendix A. The October feedback is attributed to Teaching Assistant Wang Zhongkai in the final repository version. Its scope decision and earlier requirements revisions are recorded in Part I.
 
-Two design proposals are deferred for review. CR-01 would retain the validation origin and failed check in request or task history. CR-02 would add distinct timestamps for offline intervention judgement, system alarm and stop acceptance, with their clock domains. The existing requirements remain the acceptance baseline pending a recorded decision. The review identifies no newly approved product change. [Baseline and changes](../03_需求变更与追踪/基线核对与需求变更.md) · [Requirements and tests](../03_需求变更与追踪/需求与验证追踪.md)
+Two design proposals are deferred for review. CR-01 would retain the validation origin and failed check in request or task history. CR-02 would add distinct timestamps for offline intervention judgement, system alarm and stop acceptance, with their clock domains. The existing requirements remain the acceptance baseline pending a recorded decision. The review identifies no newly approved product change. [Baseline and changes](requirements-changes.md) · [Requirements and tests](traceability.md)
 
 [Team: review affected message and data contracts. Record actual presentation feedback and its disposition when available.]
 
@@ -78,7 +78,7 @@ Two design proposals are deferred for review. CR-01 would retain the validation 
 | S04 Results | What ended, and was the fold successful? | Present runtime outcome, help, manual intervention and offline quality separately. Replay reads prior events. |
 | S05 Maintain | Can this candidate or configuration affect the next task? | Lock maintenance changes during an active task, a pending start or an unresolved stop. A new task captures the approved version. |
 
-The local prototype was exercised in Chrome through its ordinary file entry point. The checks covered recovery interrupted by a pause, a rejected human return followed by a second takeover, different responses to interface and adapter loss, and a stop timeout after termination. A facilitator script and anonymous forms are ready. User comments, observed misunderstandings and resulting changes await actual sessions. [Runnable prototype](../02_五屏交互原型/index.html) · [Interaction checks](../02_五屏交互原型/交互说明与复验.md) · [Walkthrough materials](../05_用户走查材料/主持流程与匿名反馈修改记录.md)
+The local prototype was exercised in Chrome through its ordinary file entry point. The checks covered recovery interrupted by a pause, a rejected human return followed by a second takeover, different responses to interface and adapter loss, and a stop timeout after termination. A facilitator script and anonymous forms are ready. User comments, observed misunderstandings and resulting changes await actual sessions. [Runnable prototype](../../prototypes/ui/index.html) · [Interaction checks](interaction-design.md) · [Walkthrough materials](user-walkthrough.md)
 
 ## A2-06 · Open issues and risks
 
@@ -96,7 +96,7 @@ Codex assisted with source extraction, drafting, implementation and repeatable c
 
 Browser automation also required scrutiny. Its first run retained references to checkboxes after the interface had redrawn them. The test then reported that Start was unavailable. The script was changed to locate each current checkbox before clicking it, and the full sequence was rerun. The failure concerned the test procedure; the rerun established the prototype behaviour for that path. Neither automated clicks nor generated recording forms can establish how a first-time participant understood the interface.
 
-[Hu: verify this account against the work record and add any personal assessment, edits, time and attributable cost that can be substantiated. Ma and Zhang: supply your own accounts. The work record contains no reliable breakdown of individual hours, tokens or charges.] [Evidence and provenance](九项检查与个人交接.md)
+[Hu: verify this account against the work record and add any personal assessment, edits, time and attributable cost that can be substantiated. Ma and Zhang: supply your own accounts. The work record contains no reliable breakdown of individual hours, tokens or charges.] [Evidence and provenance](delivery-status.md)
 
 ## A2-08 · Annotated references
 
