@@ -30,6 +30,13 @@ def finite(value):
     return type(value) in (int, float) and math.isfinite(value)
 
 
+def forward_stage_score(failure_distance, recovery_distance):
+    """Planning proxy inspired by AgentChord, not physical quality or probability."""
+    require(finite(failure_distance) and finite(recovery_distance)
+            and failure_distance >= 0 and recovery_distance >= 0, "invalid graph distance")
+    return -recovery_distance if recovery_distance <= failure_distance else None
+
+
 def validate(rows):
     """Strict complete-pool schema. Unexecuted/unknown outcomes stay null."""
     require(bool(rows), "empty dataset")
@@ -57,6 +64,8 @@ def validate(rows):
                     and r.get("help_requested") is False and r.get("assisted") is False,
                     "success requires completion + quality + no help/assistance")
         require(finite(r.get("local_score")), "finite local_score required")
+        if "stage_cost_score" in r:
+            require(finite(r["stage_cost_score"]), "finite stage_cost_score required")
         f = r.get("features", {})
         require(set(f) == {"current", "stage_budget", "visual_history", "action_history"},
                 "unexpected feature blocks (hidden/future inputs forbidden)")
@@ -83,6 +92,8 @@ def validate(rows):
     require(len({r["purpose"] for r in rows}) == 1, "cannot mix synthetic and research")
     require(len({r["controller_version"] for r in rows}) == 1, "mixed continuation controllers")
     require(len({r["feature_version"] for r in rows}) == 1, "mixed feature definitions")
+    require(all("stage_cost_score" in r for r in rows) or all("stage_cost_score" not in r for r in rows),
+            "stage cost scores must cover entire dataset or be absent")
     return rows
 
 
@@ -217,6 +228,8 @@ def evaluate(rows, seed=17, external_predictions=None):
         rng = random.Random(str(seed) + ":" + root)
         choices = {"fixed": eligible[0], "random": rng.choice(eligible),
                    "local": max(eligible, key=lambda r: (r["local_score"], -eligible.index(r)))}
+        if "stage_cost_score" in eligible[0]:
+            choices["stage_cost"] = max(eligible, key=lambda r: r["stage_cost_score"])
         scores = {}
         for method, model in models.items():
             scores[method] = {r["candidate_id"]: (external[(root, r["candidate_id"], method)]
@@ -229,7 +242,10 @@ def evaluate(rows, seed=17, external_predictions=None):
                                "score": scores.get(method, {}).get(choice["candidate_id"]),
                                "score_semantics": "rank_only"})
     summary = {}
-    for method in list(FEATURES) + ["fixed", "random", "local"]:
+    methods = list(FEATURES) + ["fixed", "random", "local"]
+    if "stage_cost_score" in rows[0]:
+        methods.append("stage_cost")
+    for method in methods:
         selected = [s for s in selections if s["method"] == method]
         complete = [s for s in selected if s["complete_pool"]]
         n, wins = len(complete), sum(s["success"] is True for s in complete)
@@ -244,7 +260,7 @@ def evaluate(rows, seed=17, external_predictions=None):
                                                           / len(conditional)) if conditional else None}
     reference = {s["root_id"]: s for s in selections if s["method"] == "B1" and s["complete_pool"]}
     comparisons = {}
-    for method in ("B0", "B2", "B3", "B4", "local"):
+    for method in [m for m in methods if m not in ("B1", "fixed", "random")]:
         pairs = [(s["garment_id"], int(s["success"]) - int(reference[s["root_id"]]["success"]))
                  for s in selections if s["method"] == method and s["complete_pool"]
                  and s["root_id"] in reference]

@@ -6,13 +6,15 @@
 
 - [x] 四篇精读分析、版本/证据索引、最近邻比较、原文来源登记。
 - [x] H1/H2问题卡、反例、最小方法、基线/消融与数据/评价协议。
-- [x] AI恢复职责、类关联/时序、接口、三个ADR、风险/PoC与SRS映射。
+- [x] AI恢复职责、类关联/时序、接口、四个ADR、风险/PoC与SRS映射。
 - [x] 组长授权下确定研究顺序、接口细化、数据隔离和实现基线，队友可审核。
 - [x] 可运行的JSONL校验/分组划分、B0–B4廉价离线基线、固定/随机/局部对照、候选覆盖、H1配对与H2交叉统计。
 - [x] 可选PyTorch CPU MLP输入消融与B4近似参数匹配实现，输出可导入同一配对分析；人工fixture训练仅作软件小试。
 - [x] 纯函数恢复preflight门禁、独立验证集评分诊断、成本/存储估算器。
 - [x] 软件测试与人工fixture端到端检查；合成输出不作科研结果。
 - [x] 四篇200–300词英文注释、约500词Summary及反思/贡献/展示候选材料，README导航与运行说明。
+- [x] 张茗博分支全文审查与三个PDF关键结果复核；文档合并通过，平台采用ADR与接入设计已完成。
+- [x] 只读NPZ头部/指纹审计及可选stage-cost代理对照已实现；没有将官方判定当SRS质量，也没有加载未知pickle。
 
 这些是可用文档与离线软件成果，不是训练完成或物理验证。
 
@@ -31,7 +33,7 @@
 
 R01–R07主要缺实物、数据或可访问环境，不是需要三人开会才能决定。只读检查发现本机有RTX 4060 Laptop 8GB、驱动566.07和PyTorch；当前Python未发现isaacsim/isaacgym/mujoco模块，仓库无USD/URDF资产。此检查不证明其他Python环境不存在安装，也不证明8GB能运行目标场景。尚无A800远程运行入口；未自行下载大型仿真依赖或租机。
 
-同步时发现张的新分支`docs/zhangmingbo-research-simulation@bc5e48c`，已只读核对其[环境报告](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/bc5e48c/docs/research/zhangmingbo/environment-feasibility.md)与[复现记录](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/bc5e48c/docs/research/zhangmingbo/reproduction-status.md)。他已报告官方Fold_Tops示范完成、官方数据预处理与训练小试，不等于HALO完整评测/恢复验收；并非全组没有环境。报告中的`E:\Robotics\run_local.ps1`、源码目录与图形运行日志在**当前电脑不存在**，已用Test-Path检查，不能直接执行其命令或把该历史报告当本人复现。下一步是交接现有环境及数据，而非要求重复从零搭建。新分支尚无PR，本次未合并或改写其文件。
+张的分支`bc5e48c`已通过[文档审查](../reviews/zhang-bc5e48c-review.md)并合并main，[环境报告](zhangmingbo/environment-feasibility.md)与[复现记录](zhangmingbo/reproduction-status.md)现可直接查看。官方Fold_Tops示范、数据预处理和训练小试已被报告；不等于HALO完整评测/恢复验收。Isaac Sim 4.5 / DexGarmentLab已选作开发环境。报告中的`E:\Robotics\run_local.ps1`、源码目录与图形日志在当前电脑不存在，已用Test-Path检查，不能把历史报告当本人复现。下一步是交接现有环境与一个真实样本，按[接入设计](dex-integration-plan.md)继续，不要求重复从零搭建或先完整复现所有任务。
 
 ## 三、确需多人输入/共同实际参与的事项
 

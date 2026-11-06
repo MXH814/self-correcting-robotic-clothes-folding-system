@@ -11,7 +11,9 @@
 | UPS 精读 | [L05](papers/L05-ups-reading-note.md) | 版本、证据索引、方法/实验边界及设计影响已整理 |
 | TAIL-Safe 精读 | [L07](papers/L07-tail-safe-reading-note.md) | 已整理，并提出数字/数学范围待核问题 |
 | RedFlow 精读 | [L08](papers/L08-redflow-reading-note.md) | 明确已有叠衣结果、离线匹配与目标边界 |
-| DexGarmentLab 共同阅读 | [L01](papers/L01-dexgarmentlab-reading-note.md) | 已整理，平台尚未安装验收 |
+| DexGarmentLab 共同阅读 | [L01](papers/L01-dexgarmentlab-reading-note.md) | 已整理；平台选定，作者环境报告已合并，本工作流独立复跑未完成 |
+| 张茗博分支审查与平台采用 | [审查结论](../reviews/zhang-bc5e48c-review.md)、[ADR-MA-004](../design/decisions/ADR-MA-004-simulation-platform.md) | 文档审查通过并合并；环境已选定，独立复跑仍未完成 |
+| 现有轨迹安全审计与接入 | [接入设计](dex-integration-plan.md) | NPZ头部审计、可选阶段代价对照已实现；真实采集/导出器待样本 |
 | 最近邻比较 | [比较矩阵](related-work-matrix.md) | 已撰写，强基线复现待执行 |
 | 研究提案与问题卡 | [H1/H2/H3](hypothesis-cards.md) | 假设、反证与方案已写，没有实验支持结论 |
 | 诊断实验设计 | [协议](diagnostic-protocol.md) | 分组、配对、指标、统计与资源方案已写 |
@@ -41,6 +43,6 @@
 
 已只读核对 `origin/hzy@067cf91` 的数据/需求/追踪/报告草稿，不覆盖、不自动合并。其请求 Ma 提供的恢复交互、算法风险、反思和参考注释，现由本成果包提供。
 
-亦只读核对张茗博新分支`bc5e48c`的环境/复现报告：已有历史示范与训练小试；当前电脑无其E:\Robotics路径，独立复跑仍需环境交接。详见[剩余清单](ma-remaining-checklist.md)。
+张茗博分支`bc5e48c`已完成原文/文档审查并保留原提交合并main：已有历史示范与训练小试；当前电脑无其E:\Robotics路径，独立复跑仍需环境交接。平台已选定，详见[审查结论](../reviews/zhang-bc5e48c-review.md)和[剩余清单](ma-remaining-checklist.md)。
 
 张茗博提供动作与时钟profile、串行接纳/停止和部署事实；胡知鱼可整合注释/报告并审核数据/UI映射。CR-MA-01已由组长授权下采纳为内部接口细化，hzy CR-01/02仍未批准；SRS阈值未修改。没有向队友发送消息、租GPU、产生真实机器人性能结果或预填个人工时。

@@ -101,3 +101,11 @@ python -m research_tools.diagnostics evaluate --input runs/ma-smoke/synthetic.js
 ## 8. 已验证与待接入
 
 标准库测试覆盖数据泄漏、未来信息、无执行假标签、缺测分母、分组关联、训练归一化隔离、统计、门禁负例及费用单位；通过只证明这些离线行为。真实相机编码、仿真采集、物理动作、闭环训练和停止仍须接入。详见[最终剩余清单](ma-remaining-checklist.md)。
+
+## 9. 合并环境报告后的工具补充
+
+平台采用与数据映射见[接入设计](dex-integration-plan.md)。`python -m research_tools.dex_dataset --input <file.npz> --output <new-report.json>`仅审计头部/指纹，不加载pickle、不检查完整数组CRC或轨迹质量。
+
+JSONL可选提供`stage_cost_score`（全体行均提供或均不提供），由执行前任务图的负剩余代价导出；evaluate自动增加stage_cost选择及与B1的配对。它是启发式代理，不是概率，不替代完整AgentChord复现。不得用候选实际未来用时/最终结果计算此列；候选不能计算代价时保持整个实验不启用该对照，不乱填0分。
+
+真实H1诊断要额外覆盖SADP原生3帧历史对照；当前工具的B0只是单帧下界，B2/B3胜它不足以证明创新。

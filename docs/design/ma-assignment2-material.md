@@ -13,9 +13,9 @@ The recovery worker proposes actions but cannot authorize motion. An observation
 
 The design preserves separate meanings for runtime completion, offline quality, assistance, and autonomous success. A continuation score is conditioned on the goal, remaining budget, and pinned continuation controller; it is not interchangeable with an uncalibrated similarity or safety value. Calibration evidence must accompany any model used for the probability acceptance threshold. Proposed dispatch records bind the accepted attempt, budget reservation, and unique command identifier. Unknown execution status or a logging failure blocks further motion until the controller has resolved the device state.
 
-DexGarmentLab remains a candidate platform rather than a verified dependency. Its observation provenance, robot action mapping, asset availability, physical behavior, and state restoration need environment checks. The data design separates online sensor evidence from hidden simulation information used for offline labels and quality assessment. Related branches and garments must remain grouped during data splitting, and sealed evaluation data cannot influence matching libraries or calibration.
+Isaac Sim 4.5 with DexGarmentLab is selected for development, supported by a teammate's demonstration and training pipeline reports. Independent reproduction, observation provenance, action mapping, stop feedback, and state restoration remain unverified. The data design separates online sensor evidence from hidden simulation information used for offline labels and quality assessment. Related branches and garments must remain grouped during data splitting, and sealed evaluation data cannot influence matching libraries or calibration.
 
-Three decision records establish the current implementation baseline for control separation, diagnostic-first algorithm selection, and reproducible data handling under the team leader's authorization. Offline diagnostic software now supports grouped data validation, simple candidate ranking, paired analysis, and preflight checks. Automated tests and synthetic fixtures verify software behavior, not the research hypotheses or physical execution. Open issues have verification methods and fallback choices for Part III. The companion workstream supplies interaction, recording, and traceability drafts for integration. No new robot performance, user study, independent review, or physical simulation acceptance is claimed. The final report must incorporate actual presentation feedback and integration evidence before submission.
+Four decision records establish the current implementation baseline for control separation, diagnostic-first algorithm selection, reproducible data handling, and platform adoption under the team leader's authorization. Offline diagnostic software now supports grouped data validation, simple candidate ranking, paired analysis, and preflight checks. Automated tests and synthetic fixtures verify software behavior, not the research hypotheses or physical execution. Open issues have verification methods and fallback choices for Part III. The companion workstreams supply environment, interaction, recording, and traceability drafts for integration. No new robot performance, user study, independent simulation reproduction, or physical acceptance is claimed. The final report must incorporate actual presentation feedback and integration evidence before submission.
 <!-- summary:end -->
 
 ## A2-02 / A2-03 — 本人负责的具体设计
@@ -46,7 +46,7 @@ In a subsequent implementation pass, Codex also produced standard-library diagno
 
 ## A2-09 — 可核验贡献与署名边界
 
-本分工已形成的文档成果：四篇原文分析、最近邻比较、H1/H2 问题卡、诊断协议、AI 组件/接口、三项 ADR、风险/PoC、参考注释和此报告片段。关联 Git 提交记录可证明产物版本，不等于证明个人阅读掌握、独立实现或人工评审完成。
+本分工已形成的文档成果：四篇原文分析、最近邻比较、H1/H2 问题卡、诊断协议、AI 组件/接口、四项 ADR、风险/PoC、参考注释和此报告片段；新增张茗博分支技术审查、平台接入与数据审计。关联 Git 提交记录可证明产物版本，不等于证明个人阅读掌握、独立实现或人工评审完成。
 
 组长授权下当前技术基线已确定；本人仍需掌握文章/注释、审核真实接口和参加展示。后续新增离线诊断软件与测试见[运行说明](../research/execution-guide.md)。张茗博/胡知鱼工作不得据本稿归为本人完成；贡献表记录实际参与及审核，不预填工时或比例。
 

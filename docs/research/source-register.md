@@ -24,6 +24,7 @@ HTML响应指纹见 [source-registry.json](source-registry.json)。它记录当�
 - SRS基线：`4191e8f` 的 `docs/requirements/SRS_EN.docx` 和最终英文PDF，重点 §5.6.3–5.6.5、§7、附录A。本成果包未改这些文件。
 - 课程：[Assignment 2清单](../assignment-2-checklist.md)及其原PDF；文献注释每篇200–300词，Summary约500词。
 - 队友材料：`origin/hzy@067cf91`，只读检查需求变更、数据、总体报告和追踪；未代表队友接受接口，也未合并其分支。
+- 新增队友材料：张茗博`bc5e48c`六份文档已审查并合并，三篇PDF关键数据复核来源/hash见[审查记录](../reviews/zhang-bc5e48c-review.md)。该会议PDF证据与原L01 arXiv v3 HTML指纹分别保存，不冒充同一文件；本地运行日志仍未交接。
 
 ## 复核边界
 

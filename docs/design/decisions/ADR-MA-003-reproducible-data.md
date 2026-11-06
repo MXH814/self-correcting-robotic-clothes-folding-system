@@ -12,7 +12,7 @@
 
 采用 C。OnlineObservation 仅声明传感器来源，OfflineEvidence 独立路径/读取权限。大文件存受控存储，Git 保存清单、hash、配置和汇总。先分组再计算检索库、归一化、校准与超参，不跨 sealed test；相关帧/分支不作为独立统计单位。
 
-平台优先验证 DexGarmentLab，不为采用平台改变在线来源约束；不可用则通过 adapter 保留切换能力。未经验证的布料快照不称精确同状态对照。hzy 数据规范字段保持只读参考，CR-01/02 仍待审。
+平台已按[ADR-MA-004](ADR-MA-004-simulation-platform.md)选用Isaac Sim 4.5 / DexGarmentLab；已有作者运行报告但独立复跑未完成，不为采用平台改变在线来源约束。未经验证的布料快照不称精确同状态对照。hzy 数据规范字段保持只读参考，CR-01/02 仍待审。
 
 ## 后果与验证
 
