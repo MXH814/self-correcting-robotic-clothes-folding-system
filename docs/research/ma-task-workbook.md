@@ -4,6 +4,8 @@
 
 最新入口：[运行说明](execution-guide.md) · [执行决定](ma-owner-decisions.md) · [详细剩余清单](ma-remaining-checklist.md)。
 
+2026-11-08展示优先更新：第三组参加11月9日13:30–15:05场次，Slides在13:30之前上传。本人先交恢复核心交互图、关键设计取舍与备选、AI需求细化及风险/PoC，并终审技术事实；三人素材、约110秒个人正文和完整6分钟验收见[展示计划](../design/presentation-plan.md)。科研输入待办继续，不能阻塞课程展示。
+
 本轮进展：[PR #2复审](../reviews/pr2-handoff-review.md) · [数据接入与可直接执行的导出命令](ma-data-intake-progress.md)。
 
 ## 成果导航

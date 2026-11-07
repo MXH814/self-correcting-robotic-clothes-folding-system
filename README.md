@@ -13,7 +13,9 @@
 本阶段同时推进 2025—2026 年相关工作、research gap 诊断、仿真最小验证和课程 Design，按任务依赖与证据验收推进。
 计划已依据 Assignment 2 正式 PDF 与 Canvas 页面更新；已形成马祥珲的研究/AI设计成果及可运行离线诊断工具，真实仿真与研究实验、全组设计整合仍待完成。
 
-**Assignment 2 截止：2026-11-20 19:00（上海时间）。** 全员参加 6 分钟课堂展示，Slides 须在本组展示前上传 Canvas，具体场次待 Canvas 通知。详见 **[九项正式交付与验收清单](docs/assignment-2-checklist.md)**；最终设计须纳入展示反馈。
+**第三组展示：2026-11-09 13:30–15:05场次（上海时间），每组6分钟，全员出席；Slides须在11月9日13:30之前上传Canvas。** 本组具体出场时刻未公布。当前优先整合三架构、关键决策及理由、重要交互、需求变化与开放问题，见 **[展示计划、三人分工与验收](docs/design/presentation-plan.md)**。
+
+**Assignment 2最终截止仍为2026-11-20 19:00。** 展示后纳入实际课堂反馈，完成 **[九项正式交付与验收清单](docs/assignment-2-checklist.md)**；完整训练和研究诊断不是本次展示的前置条件。
 
 ## 文件导航
 
@@ -33,6 +35,9 @@
 | [仿真接入与审查结论](docs/research/dex-integration-plan.md) | 平台已选定，NPZ安全审计、在线来源隔离、评价差异与后续交接；独立复跑未完成 |
 | [马祥珲最终剩余清单](docs/research/ma-remaining-checklist.md) | 已完成项、真实环境/数据阻塞、队友最小交付与个人/课程事项 |
 | [Assignment 2 要求与验收](docs/assignment-2-checklist.md) | 九项交付、三人分工、展示/反馈、词数与打包检查 |
+| [第三组课堂展示执行计划](docs/design/presentation-plan.md) | 已确认场次、课前上传、三人素材与讲解分配、六页建议结构及验收 |
+| [展示上传与反馈记录](docs/design/presentation-feedback.md) | 实际排练、Canvas回执、全员展示及反馈修订的待办/证据登记 |
+| [老师新展示公告](docs/course/assignment-2/presentation-announcement.md) | 原始截图与排期、6分钟和展示内容要求的准确摘录 |
 | [Assignment 2 官方说明](docs/course/assignment-2/System%20Analysis%20%26%20Design%20Assignment_2.pdf) | 原要求 PDF；本地作业目录同时保留 |
 | [项目路线图](docs/roadmap.md) | 第一阶段与 SRS G1—G4 的关系及后续验收 |
 
