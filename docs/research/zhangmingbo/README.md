@@ -34,3 +34,7 @@
 - [仿真交接指南与未完成事项](handoff-guide.md)
 - [真实样本 I/O 说明](io-profile.md)
 - [官方数据集来源与下载](datasets.md)
+- [固定衣物正常基线及data_3证据包记录](d01-baseline-20261106.md)
+- [data_2纯数值导出与待交付记录](data2-numeric-export-20261107.md)
+- [三篇论文中文组会汇报稿](paper-presentation-zh.md)
+- [PR 3至5审查结论与验收边界](../../reviews/pr3-5-document-review.md)
