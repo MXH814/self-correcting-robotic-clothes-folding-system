@@ -11,10 +11,17 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 if ($Headless -and $KeepOpen) { throw 'KeepOpen requires a graphical session.' }
+# Resolve against the caller's PowerShell location, before changing directories.
+# Unlike Resolve-Path, this also supports an output directory not created yet.
+$RoboticsRoot = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($RoboticsRoot)
 if (-not $IsaacRoot) { $IsaacRoot = Join-Path $RoboticsRoot 'isaacsim-4.5.0' }
 if (-not $ProjectRoot) { $ProjectRoot = Join-Path $RoboticsRoot 'DexGarmentLab' }
 if (-not $DependencyRoot) { $DependencyRoot = Join-Path $RoboticsRoot 'python-deps' }
 if (-not $OutputRoot) { $OutputRoot = Join-Path $RoboticsRoot 'handoff-results' }
+$IsaacRoot = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($IsaacRoot)
+$ProjectRoot = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($ProjectRoot)
+$DependencyRoot = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($DependencyRoot)
+$OutputRoot = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($OutputRoot)
 $isaacPython = Join-Path $IsaacRoot 'python.bat'
 foreach ($required in @($isaacPython, (Join-Path $ProjectRoot 'Env_StandAlone\Fold_Tops_Env.py'), $DependencyRoot)) {
     if (-not (Test-Path -LiteralPath $required)) { throw "Required path is missing: $required" }
@@ -29,7 +36,7 @@ try {
     $env:PYTHONPATH = "$DependencyRoot;$ProjectRoot;$($old['PYTHONPATH'])"
     $env:HF_HOME = Join-Path $RoboticsRoot 'cache\huggingface'
     $env:PIP_CACHE_DIR = Join-Path $RoboticsRoot 'cache\pip'
-    $env:ROBOTICS_PROJECT_ROOT = (Resolve-Path -LiteralPath $ProjectRoot).Path
+    $env:ROBOTICS_PROJECT_ROOT = $ProjectRoot
     $env:ROBOTICS_OUTPUT_ROOT = $OutputRoot
     $env:ROBOTICS_HEADLESS = if ($Headless) { '1' } else { '0' }
     $env:ROBOTICS_KEEP_OPEN = if ($KeepOpen) { '1' } else { '0' }
