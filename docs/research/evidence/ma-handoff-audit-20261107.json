@@ -1,0 +1,31 @@
+{
+  "schema_version": "handoff-audit/1",
+  "verified_repo_artifacts": [
+    "demo-assets-list",
+    "gui-demo-final-image-2"
+  ],
+  "input_sha256": {
+    "artifact_manifest": "0b3193408f9ff1a4aaeb722961a95291625938e2bec321b46ef88f6bf4f29e78",
+    "observation_example": "aa147f90585c4233b903281a5367f1bc4b28ef5e68acf80507055aaf9f455985"
+  },
+  "evidence_scope": "Repository bytes and sample schema; lineage and image timing are submission declarations, not independent NPZ extraction.",
+  "submitted_observation": {
+    "stage": "stage_1",
+    "index": 0,
+    "joint_values": 60,
+    "all_finite": true,
+    "raw_min": -3.3006420135498047,
+    "raw_max": 2.500012159347534
+  },
+  "raw_npz_independently_verified": false,
+  "image_is_same_observation_frame": false,
+  "online_authorized": false,
+  "h1_h2_evidence": false,
+  "remaining": [
+    "accessible original trajectory and run environment",
+    "joint name/index/type/unit mapping",
+    "matched camera frame and provenance",
+    "real timestamps and executed action acknowledgments",
+    "failure branches and independently reviewed outcomes"
+  ]
+}

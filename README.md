@@ -29,6 +29,7 @@
 | [研究工具运行说明](docs/research/execution-guide.md) | 数据校验/分组、B0–B4离线基线、统计、评分诊断、门禁子集和资源估算；无仿真依赖 |
 | [张茗博环境与文献成果](docs/research/zhangmingbo/README.md) | 已审查合并的三篇笔记、Isaac Sim 4.5 / DexGarmentLab可行性和历史复现记录 |
 | [张茗博交接与后续待办](docs/research/zhangmingbo/handoff-tasks.md) | 最小交接包H01–H05、后续仿真/控制任务、课程Design职责、提交位置与验收标准 |
+| [马祥珲数据接入进展](docs/research/ma-data-intake-progress.md) | PR #2已复审合并；真实样例审核、完整轨迹纯数值导出、历史窗口与剩余输入 |
 | [仿真接入与审查结论](docs/research/dex-integration-plan.md) | 平台已选定，NPZ安全审计、在线来源隔离、评价差异与后续交接；独立复跑未完成 |
 | [马祥珲最终剩余清单](docs/research/ma-remaining-checklist.md) | 已完成项、真实环境/数据阻塞、队友最小交付与个人/课程事项 |
 | [Assignment 2 要求与验收](docs/assignment-2-checklist.md) | 九项交付、三人分工、展示/反馈、词数与打包检查 |

@@ -40,6 +40,8 @@ The workflow uses the existing assistant and local tools; no GPU rental, trainin
 
 In a subsequent implementation pass, Codex also produced standard-library diagnostic code, optional PyTorch MLP ablations, unit tests, synthetic fixtures, a resource estimator, and execution instructions. The tests exercise software boundaries including data leakage, unknown outcomes, stale observations, and score semantics. A short CPU training run on manufactured fixtures verifies the neural path, with an approximate parameter-matched current-only control. These checks do not establish closed-loop recovery performance or reproduce the closest papers.
 
+On 7 November, the handoff PR was re-reviewed after a reproducible path bug was fixed. Its launcher regression passed, and the PR was merged. A repository audit checked the submitted numeric sample and artifact fingerprints. New tooling exports independently trusted legacy trajectories to numeric observations and constructs stage-local history without inventing timestamps, dispatched actions, or success labels. Forty Python tests pass; the original full trajectory and a working simulation environment remain inaccessible to this workstream. The synthetic export checks therefore remain software evidence, not recovery experiments.
+
 ## A2-08 — 参考文献
 
 四篇英文注释位于 [annotated-references.md](../research/annotated-references.md)，分别满足 200–300 词的结构检查。正式报告应只纳入实际使用的来源，文献清单和每篇注释由作者本人及另一成员核原文。

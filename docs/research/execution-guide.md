@@ -109,3 +109,9 @@ python -m research_tools.diagnostics evaluate --input runs/ma-smoke/synthetic.js
 JSONL可选提供`stage_cost_score`（全体行均提供或均不提供），由执行前任务图的负剩余代价导出；evaluate自动增加stage_cost选择及与B1的配对。它是启发式代理，不是概率，不替代完整AgentChord复现。不得用候选实际未来用时/最终结果计算此列；候选不能计算代价时保持整个实验不启用该对照，不乱填0分。
 
 真实H1诊断要额外覆盖SADP原生3帧历史对照；当前工具的B0只是单帧下界，B2/B3胜它不足以证明创新。
+
+## 10 PR 2合并后的真实数据接入
+
+新增`python -m research_tools.handoff_audit`审核已提交的真实文件/关节JSON；输出不代表已从原始NPZ重提取。新增完整可信轨迹导出器和纯数值历史读取工具，命令、信任条件、输出结构及最小剩余输入见[接入进展](ma-data-intake-progress.md)。NumPy为可选依赖，本机已有；不要为执行这些离线工具覆盖Isaac的核心包。
+
+旧轨迹缺少时间戳和已执行动作，因此action history与时间保持未知；阶段窗口只按记录顺序，不能用作新鲜度/停止证明。导出包与恢复候选schema不同，不能把正常示范帧直接送入H1/H2候选比较。
