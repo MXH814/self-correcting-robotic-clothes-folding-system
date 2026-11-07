@@ -64,3 +64,8 @@
 | | | | | |
 
 实际同意并参加 __ 人，其中首次 __ 人；完成首次全流程 __ 人；中途退出或跳过 __ 人。问题 __ 项，采纳 __、延后 __、拒绝 __、待评审 __；有实际修改证据 __ 项。每项按实际人数和原始记录报告。同一参与者重试和修改后的复测单列。课程 Design 可引用真实走查及其设计影响；SRS 的 T13 还要求正式首用任务与性能测量，本表不能替代其验收。[SRS §3.3、§7.1 与附录 A](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/submissions/assignment-1/Group3_Assignment1_SRS/Group3_Self%20Correcting%20Robotic%20Clothes%20Folding%20System_SRS_EN.pdf)
+
+
+### 追加观察项（主持人用，真实反馈待采集）
+
+任务 2 可在完成标准首轮后另开一轮模拟遮挡，观察参与者看到 UNKNOWN 时能否说出需要等待什么证据；记录其原话、是否查看原因说明及是否误把原因码当成接管权限。任务 4 在 S04 导出后，请其指出示例来源和能定位事件的序号。把追加环节标为补充观察，保留原首轮计时。材料使用前由组织者实地取得同意。[界面原因说明](ui-contract.md)

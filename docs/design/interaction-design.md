@@ -44,3 +44,6 @@
 - **原型。** 远端五屏的任务顺序、标题含义、角色、控制项和默认预算作为设计起点。每一屏底部可展开对应的第一阶段英文 SVG 原稿。本版将原稿中“点击看说明”的方式改为共享任务状态、来源相关的校验和可回放记录。[远端原型](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/prototypes/ui/index.html)
 - **需求。** 按远端第一阶段计划的交互条目和课程清单 A2-05 核对。页码按本地最终英文 SRS：第 19 页为模型激活，第 21–25 页为执行和停止规则，第 29、32 页为校验来源与失联，第 35 页为自主成功，第 39–43 页为五屏。远端与本地 SRS 文件对象标识不同，本文引用本地页码；与远端计划、远端原型已核对的规则见上表。[第一阶段计划](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/main/docs/first-stage-plan.md) · [课程清单](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/main/docs/assignment-2-checklist.md) · [最终 SRS 目录](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/tree/main/submissions/assignment-1/Group3_Assignment1_SRS)
 - **演示假设。** 一个家庭用户和一个维护者用同一浏览器演示；切换角色模拟权限，重新绑定模拟会话认证。记录保存在内存中，刷新后清空，需要留存时先导出。桌面图只表示阶段，示例质量由测试桩给出。研究试次的合格性在自主成功示例中预设为合格。运行、训练、终测、收费、网络时限和静止证明都由离散事件驱动。真正的身份校验、持久化、停止证据验签与测量、按真实时钟计费、模型质量和系统联调仍需后续验证。
+
+
+**2026-11-08 接口复验。** S02 和 S03 的“接口原因码及处理说明”可展开查看。开始任务后注入过期观测、决策超时、旧代结果；第三次不可用触发求助。S04 导出显示 source=synthetic 及任务内连续序号，回放历史提示保留触发码。暂停后迟到回复不得恢复执行。接口表注明哪些原因仅有说明，供集成时补设备证据。[原因码与导出字段](ui-contract.md)

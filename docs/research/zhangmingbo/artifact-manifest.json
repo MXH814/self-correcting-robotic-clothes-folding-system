@@ -1,0 +1,58 @@
+{
+  "recorded_date": "2026-11-06",
+  "profile": "local-fold-tops-2026-11-04",
+  "artifacts": [
+    {
+      "id": "dex-source-zip", "kind": "upstream source archive",
+      "source": "https://github.com/wayrise/DexGarmentLab",
+      "version": "main ZIP downloaded previously; commit unknown",
+      "sha256": "c5d87aad847bb0bec691d68364481a653ef5a0013035b03146d7a7af27df385c",
+      "size_bytes": 75338080,
+      "author_machine_path": "E:/Robotics/downloads/DexGarmentLab-source.zip",
+      "access": "author machine only; upstream current main is not guaranteed identical",
+      "license": "root license not found in local archive; redistribution status unknown"
+    },
+    {
+      "id": "isaac-sim-windows", "kind": "simulator installer archive", "version": "4.5.0-rc.36+release.19112.f59b3005.gl",
+      "source": "https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/install_workstation.html",
+      "sha256": "29171fe52efa1923162c215d42907f7f1363dfcff2b4e25a12428ab6cbd08fc8",
+      "size_bytes": 7013544567, "author_machine_path": "E:/Robotics/downloads/isaac-sim-4.5.0.zip",
+      "access": "obtain via NVIDIA or arrange authorized access to author machine", "license": "NVIDIA terms; verify separately"
+    },
+    {
+      "id": "fold-official-training-data", "kind": "official training demonstration archive",
+      "source": "https://huggingface.co/datasets/wayrise/DexGarmentLab/blob/main/Fold_Tops.zip",
+      "sha256": "0624b8f40809f017367168d71d16bf0ebe329f75d78e994d7f623f7d56dbe07b", "size_bytes": 2667837749,
+      "author_machine_path": "E:/Robotics/downloads/Fold_Tops-official.zip", "access": "official download",
+      "license": "dataset card lists Apache-2.0; verify any component-specific terms"
+    },
+    {
+      "id": "demo-assets-list", "kind": "extraction inventory", "repo_path": "docs/research/zhangmingbo/local-demo-assets.json",
+      "source": "https://huggingface.co/datasets/wayrise/DexGarmentLab/tree/main",
+      "sha256": "63565add50fb5c07f16e67521c55f6b1bc48417abc94acdb8beca0fc2d3dab32", "size_bytes": 34641,
+      "details": "Lists extracted Robots.zip, TCLC_018 from Garment.zip and default Scene.zip; list hash does not certify every asset file",
+      "installed_at": "ProjectRoot/Assets", "license": "component-specific; verify before redistribution. UR10e includes Universal Robots terms; Shadow Hand includes Apache-2.0 license file"
+    },
+    {
+      "id": "gam-tops-checkpoint", "kind": "GAM checkpoint", "source": "dex-source-zip",
+      "path_in_project": "Model_HALO/GAM/checkpoints/Tops_LongSleeve/checkpoint.pth",
+      "sha256": "c44f79c0bd7aab1f8c3dc5820f02f7b97f0763ced3baeba6c3dee3323e0142d9", "size_bytes": 5946743,
+      "access": "included in the recorded source ZIP; no model file committed here", "license": "model terms unknown; verify",
+      "note": "GAM only; not the three SADP_G stage policy checkpoints"
+    },
+    {
+      "id": "gui-demo-trajectory-2", "kind": "author-generated official demonstration", "generated_local_date": "2026-11-04",
+      "author_machine_path": "E:/Robotics/DexGarmentLab/Data/Fold_Tops/train_data/data_2.npz",
+      "sha256": "2309165bccd101c6ad65460716844d4f47d4b71e2f2f3dd775ecf37c47dac552", "size_bytes": 26983793,
+      "generation": "GUI Fold_Tops, TCLC_018, fixed garment, data collection on, video off, four threads, contact and patch budgets 262144",
+      "access": "author machine only; team storage or same-machine access still to arrange", "license": "generated output; underlying asset terms need review",
+      "caution": "Contains object arrays; loading requires trusted pickle-capable source; hash alone does not guarantee safety"
+    },
+    {
+      "id": "gui-demo-final-image-2", "kind": "final camera image", "generated_local_date": "2026-11-04",
+      "repo_path": "docs/research/zhangmingbo/sample-final.png", "sha256": "6e8e50a23594879a3db3a8afd4df2a4e4c19a7c223537d9917b81c94e5a6119d",
+      "size_bytes": 224560, "resolution": [640, 480], "source": "same logged run as gui-demo-trajectory-2",
+      "license": "generated output; underlying asset terms need review", "note": "final image, not stage_1 frame 0"
+    }
+  ]
+}

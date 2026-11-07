@@ -17,22 +17,60 @@ const maintain = () => role === 'maint' && connected;
 const canRun = () => active() && ['折叠中','恢复中'].includes(task.state) && !pending && !goal && stop === '执行中';
 const money = n => '$' + n.toFixed(3);
 function say(text){notice = text}
-function log(text){
-  say(text);
-  if(task) task.frames.push({event:text,state:task.state,stop,activeSeconds:task.time,billedSeconds:task.wall,attempts:task.attempts, generation:task.gen});
+const reasonMessages = {
+  "UNKNOWN": "观测不足，等待停车后检查衣物。",
+  "STALE_OBSERVATION": "观测过期，等待新观测。",
+  "OLD_GENERATION": "控制代号已更新，旧回复已丢弃。",
+  "DECISION_TIMEOUT": "决策超时，取消本次计算。",
+  "INVALID_SCHEMA": "字段不兼容，拒绝候选。",
+  "NONFINITE": "候选含非有限数值，拒绝候选。",
+  "OUT_OF_BOUNDS": "候选动作超出允许范围，拒绝候选。",
+  "TOO_MANY_CANDIDATES": "候选超过八个，拒绝整份回复。",
+  "NO_SUPPORTED_CANDIDATE": "没有合格候选，停车并求助。",
+  "SCORE_UNCALIBRATED": "缺少有效校准，阻止派发并求助。",
+  "LOW_SCORE": "评分不足，阻止派发并求助。",
+  "BUDGET_EXHAUSTED": "任务预算耗尽，停止执行并保留实际消耗。",
+  "STOP_PENDING": "等待设备静止证明，禁止派发。",
+  "AUTHORITY_REVOKED": "当前权限已撤回，等待来源校验。",
+  "LOG_WRITE_FAILED": "记录写入失败，停止派发并核实。",
+  "EXECUTION_UNCERTAIN": "执行结果待核，停止派发并保留已接受次数。",
+  "IDEMPOTENCY_CONFLICT": "同一请求标识对应不同内容，拒绝重用。"
+};
+function reasonGuide(){
+  const rows = Object.entries(reasonMessages).map(([code, meaning]) =>
+    '<p><code>'+code+'</code>　'+meaning+'</p>');
+  return '<details><summary>接口原因码及处理说明</summary>'+rows.join('')+'</details>';
+}
+function log(text, reasonCode = null){
+  const message = reasonCode ? text+' ['+reasonCode+']' : text;
+  say(message);
+  if(task) task.frames.push({
+    sequence_no:task.frames.length + 1, reason_code:reasonCode, control_generation:task.gen,
+    event:message, state:task.state, stop, activeSeconds:task.time,
+    billedSeconds:task.wall, attempts:task.attempts, generation:task.gen
+  });
+}
+function exportRecord(record){
+  return {
+    ...record, schema_version:'folding-ui-demo/1', source:'synthetic',
+    online_authorized:false, evaluation_eligible:false,
+    task_id:record.id, request_id:record.requestId,
+    decision_id:null, profile_version:null, policy_version:null,
+    capture_wall_monotonic_s:null, sim_time_s:null
+  };
 }
 function halt(){if(task)task.gen++; stop = adapter ? '已接受停止请求' : '静止未确认'}
-function help(reason){
+function help(reason, reasonCode = null){
   task.help = true;task.reason = reason; task.state = '等待协助';goal = false;pending = '';
   if(!rest()) halt();
-  page = 3;log(reason + '。确认静止后请接管。');
+  page = 3;log(reason + '。确认静止后请接管。', reasonCode);
 }
-function finish(state,reason,requestStop=true){
+function finish(state,reason,requestStop=true,reasonCode=null){
   if(!active())return;
   pending = '';goal = false;task.state = state;task.reason = reason;
   if(requestStop)halt();
   task.end = {time:task.time,wall:task.wall,attempts:task.attempts};
-  records.unshift(task);selected = task;frame = 0;page = 4;log(reason);
+  records.unshift(task);selected = task;frame = 0;page = 4;log(reason, reasonCode);
 }
 function proof(){
   stop = '已确认静止';log('收到本代静止证据：速度达标、队列为空。');
@@ -55,16 +93,20 @@ function validate(pass){
   }
 }
 function ready(){return prepared.every(Boolean) && scene==='有效' && rest() && !active()}
-function issue(text){task.bad++;if(task.bad>=3)help('连续三次观测或决策不可用');else log(text+'，已丢弃。连续 '+task.bad+'/3 次，请重新观测。')}
+function issue(code){
+  task.bad++;
+  if(task.bad >= 3) help('连续三次决策不可用。'+reasonMessages[code], code);
+  else log(reasonMessages[code]+' 连续 '+task.bad+'/3 次。', code);
+}
 function allocate(sim,wall){
   task.time+=sim;task.wall+=wall;
   if(active() && (task.time>=task.cfg.time || task.wall/3600>=task.cfg.cap || task.wall>=task.cfg.billLimit)){
-    finish('失败',task.time>=task.cfg.time?'活动时间耗尽':task.wall/3600>=task.cfg.cap?'计费额度耗尽':'资源分配时限耗尽');return
+    finish('失败',task.time>=task.cfg.time?'活动时间耗尽':task.wall/3600>=task.cfg.cap?'计费额度耗尽':'资源分配时限耗尽', true, 'BUDGET_EXHAUSTED');return
   }
   log('已记录活动 '+sim+' 秒、资源占用 '+wall+' 秒。');
 }
 function pause(){
-  savedOrigin=task.state;task.state='已暂停';pending='';goal=false;halt();log('已暂停派发，正在等待设备停车。');
+  savedOrigin=task.state;task.state='已暂停';pending='';goal=false;halt();log('已暂停派发，正在等待设备停车。','STOP_PENDING');
 }
 function disconnectUI(){
   connected=false;
@@ -123,7 +165,7 @@ function assistance(){
  return grid(card('协助请求',rows([['原因',task.reason],['当前状态',pending||task.state],['设备状态',stop],['可用恢复次数',task.cfg.attempts-task.attempts],['已用费用',money(task.wall/3600)]])),card('手动调整',note(pending?'手动权限已撤回。等待新的停车证据与归还校验。':task.state==='人工控制'?'可调整衣物位置或夹持接触，完成后归还控制。':rest()?'已确认静止，请显式接管后调整。':'停止请求已发出。设备确认静止前，手动操作锁定。')+acts(
  button('take','接管',home()&&task.state==='等待协助'&&rest()&&!pending,()=>{task.state='人工控制';task.manual=true;log('已授权本次手动接管。')},'primary'),
  button('adjust','调整衣物位置',home()&&task.state==='人工控制'&&!pending,()=>{task.adjustments++;stop='执行中';task.gen++;log('完成一次示例人工调整。')}),
- button('return','归还控制',home()&&task.state==='人工控制'&&!pending,()=>{pending='归还停车';task.state='等待协助';halt();log('已撤回手动权限，等待本次归还的停车证据。')}),
+ button('return','归还控制',home()&&task.state==='人工控制'&&!pending,()=>{pending='归还停车';task.state='等待协助';halt();log('已撤回手动权限，等待本次归还的停车证据。','AUTHORITY_REVOKED')}),
  terminate())));
 }
 function verdict(r){
@@ -135,7 +177,7 @@ function result(){
  if(!records.length)return card('尚无已保存结果',note('任务完成、失败或终止后，可在此查看其过程。'));
  const r=selected||records[0];const f=r.frames[frame]||r.frames[0];
  return grid(card('任务结果','<label>本会话记录 <select id="record">'+records.map(x=>'<option '+(x===r?'selected ':'')+'value="'+x.id+'">'+x.id+' · '+x.state+'</option>').join('')+'</select></label>'+rows([['运行结果',r.state],['结束原因',r.reason],['求助 / 已接管',(r.help?'有':'无')+' / '+(r.manual?'有':'无')],['终态恢复次数',r.end.attempts],['终态活动时间',r.end.time+' 秒'],['累计活动 / 计费',r.time+' 秒 / '+money(r.wall/3600)],['设备最后记录',r.frames.at(-1).stop],['冻结版本',r.model+' / v'+r.cfg.version],['离线质量',r.quality],['依据',r.qualityReason],['示例自主成功',verdict(r)]])+acts(
- button('export','导出记录',true,()=>{const a=document.createElement('a');const url=URL.createObjectURL(new Blob([JSON.stringify(r,null,2)],{type:'application/json'}));a.href=url;a.download=r.id+'-示例记录.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);say('已生成示例记录。')}),
+ button('export','导出记录',true,()=>{const a=document.createElement('a');const url=URL.createObjectURL(new Blob([JSON.stringify(exportRecord(r),null,2)],{type:'application/json'}));a.href=url;a.download=r.id+'-示例记录.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);say('已生成示例记录。')}),
  button('delete','删除记录',!r.linked&&(r!==task||rest()),()=>{if(!confirm('删除当前示例记录？'))return;records=records.filter(x=>x!==r);if(task===r)task=null;selected=records[0]||null;frame=0;stopPlay();say('已删除选定记录。')},'danger'))+(r.linked?note('存在数据引用，删除已锁定。'):'')),card('事件回放 · 只读',diagram(f.state)+rows([['事件',(frame+1)+' / '+r.frames.length],['当时状态',f.state],['当时设备',f.stop]])+note(f.event)+'<label>定位事件<input id="scrub" type="range" min="0" max="'+(r.frames.length-1)+'" value="'+frame+'"></label>'+acts(button('play',playing?'暂停回放':'播放',r.frames.length>1,()=>{if(playing)stopPlay();else{if(frame===r.frames.length-1)frame=0;playing=setInterval(()=>{if(frame<r.frames.length-1)frame++;else stopPlay();render()},700)}}),button('next','下一事件',frame<r.frames.length-1,()=>{stopPlay();frame++}))));
 }
 const stages=['等待数据','示范已登记','已批准作业预算','已训练','验证通过并冻结','终测通过','终测失败','已激活'];
@@ -173,10 +215,10 @@ function harness(){
     task.state='恢复中';task.attempts++;log(label+'。DR04 示例候选已获准，已使用一次恢复。')});
   }
   add('clear','偏差已消除',task.state==='恢复中',()=>{task.state='折叠中';task.bad=0;log('复查通过，回到正常折叠。')});
-  add('nocandidate','无合格恢复候选',true,()=>help('恢复候选未通过动作约束'));
-  add('unknown','观测被遮挡',true,()=>help('观测置信度不足，需人工检查'));
-  add('staleframe','过期观测',true,()=>issue('观测年龄超过 1 秒'));
-  add('late','决策超时',true,()=>issue('决策超过 2 秒'));
+  add('nocandidate','无合格恢复候选',true,()=>help(reasonMessages.NO_SUPPORTED_CANDIDATE,'NO_SUPPORTED_CANDIDATE'));
+  add('unknown','观测被遮挡',true,()=>help(reasonMessages.UNKNOWN,'UNKNOWN'));
+  add('staleframe','过期观测',true,()=>issue('STALE_OBSERVATION'));
+  add('late','决策超时',true,()=>issue('DECISION_TIMEOUT'));
   add('valid','有效观测',true,()=>{task.bad=0;log('收到有效观测，连续无效次数清零。')});
   add('goal','观测到折叠目标',true,()=>{task.state='折叠中';goal=true;halt();log('DR03 示例通过。停止证据到达后才能记录完成。')});
  }
@@ -188,7 +230,10 @@ function harness(){
  if(task && (active()||!rest())){
   const staleReply={taskId:task.id,generation:task.gen-1};
   add('old','送达旧代动作结果',true,()=>{
-   if(staleReply.taskId!==task.id || staleReply.generation!==task.gen)log('丢弃过期结果：返回代号 '+staleReply.generation+'，当前代号 '+task.gen+'。没有派发动作。');
+   if(staleReply.taskId!==task.id || staleReply.generation!==task.gen){
+    if(canRun()) issue('OLD_GENERATION');
+    else log(reasonMessages.OLD_GENERATION, 'OLD_GENERATION');
+   }
   });
   add('clock','推进 30 秒示例时间',true,()=>allocate((canRun()||(!rest()&&stop!=='执行中'))?30:0,30));
   add('cost','模拟计费额度耗尽',active(),()=>allocate(0,Math.ceil(task.cfg.cap*3600)-task.wall));
@@ -213,7 +258,7 @@ function render(){
  $('role').value=role;$('role').disabled=!connected;
  document.querySelector('nav').innerHTML=views.map((s,i)=>'<button id="nav'+(i+1)+'" data-page="'+(i+1)+'" aria-current="'+(page===i+1)+'" '+(i===4&&!maintain()?'disabled':'')+'><span>S0'+(i+1)+'</span>'+s+'</button>').join('');
  $('sid').textContent='S0'+page+' / 本地演示';$('title').textContent=views[page-1];$('identity').textContent=(connected?'会话在线':'会话失联')+' · '+(adapter?'设备在线':'设备离线');
- $('workspace').innerHTML=[prep,monitor,assistance,result,maintenance][page-1]();
+ $('workspace').innerHTML=[prep,monitor,assistance,result,maintenance][page-1]() + ([2,3].includes(page) ? reasonGuide() : '');
  $('events').innerHTML=harness();$('msg').textContent=notice;
  if($('source').dataset.page!==String(page)){$('source').replaceChildren($('ref'+page).content.cloneNode(true));$('source').dataset.page=page}
  if(focused&&document.getElementById(focused))$(focused).focus({preventScroll:true});

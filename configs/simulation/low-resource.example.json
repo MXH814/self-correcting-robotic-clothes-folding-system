@@ -1,0 +1,17 @@
+{
+  "profile": "local-fold-tops-2026-11-04",
+  "isaac_sim": "4.5.0-rc.36+release.19112.f59b3005.gl",
+  "isaac_python": "3.10.15",
+  "cpu_threads": 4,
+  "gpu_count": 1,
+  "gpu_max_rigid_contact_count": 262144,
+  "gpu_max_rigid_patch_count": 262144,
+  "window_render_width": 960,
+  "window_render_height": 720,
+  "camera_rgb_width": 640,
+  "camera_rgb_height": 480,
+  "garment_random_flag": false,
+  "record_video_flag": false,
+  "data_collection_flag": true,
+  "note": "Evidence profile only: wrappers currently implement these values directly; this JSON is not read by the launcher."
+}
