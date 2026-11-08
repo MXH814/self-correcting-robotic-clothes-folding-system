@@ -113,8 +113,11 @@ try:
                                "joint_velocities": "rad/s"},
                      "wall_elapsed_s": time.perf_counter() - start, "runs": runs,
                      "contact_and_rng_state": None, "mid_task_snapshot": None}
-            (OUTPUT / "garment-reset-result.json").write_text(json.dumps(reset, indent=2, allow_nan=False),
-                                                              encoding="utf-8")
+            result_path = OUTPUT / "garment-reset-result.json"
+            result_path.write_text(json.dumps(reset, indent=2, allow_nan=False), encoding="utf-8")
+            marker = os.environ.get("ROBOTICS_PROBE_MARKER")
+            if marker:
+                Path(marker).write_text(str(result_path), encoding="utf-8")
             print("GARMENT_RESET_MEASURED", flush=True)
             raise SystemExit(0)
         camera = Recording_Camera(camera_position=np.array([0, 4.0, 6.0]), camera_orientation=np.array([0, 60, -90.0]), resolution=(640, 480))

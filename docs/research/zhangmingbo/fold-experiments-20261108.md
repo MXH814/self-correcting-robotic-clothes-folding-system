@@ -47,6 +47,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\simulation\run_local
 
 逐项串行运行。完整折叠另按上游命名规则在 `ProjectRoot/Data/Fold_Tops` 中新增文件。
 
+`fold-camera` 写完三个阶段、最终和标靶图像及投影记录后才确认完成。`garment-reset` 写完三轮重置记录后确认完成。两者都检查本次调用的唯一完成标记。上游折叠判定为 `False`、靶点偏差超过门槛或重置误差偏大时，只要记录齐全，实验仍可正常交付。
+
 ## 待验收
 
 - **D03 抓偏与滑移**仍缺两个按阶段持有意图、实测接触或漂移、阈值和持续窗口记录的失败案例。需要可复核的接触/衣片跟踪记录及标签审核。正常轨迹和橙色像素检查不产生失败标签。

@@ -1,5 +1,7 @@
 """Capture Fold Tops RGB and check the simulated camera projection after the run."""
 import json
+import os
+from pathlib import Path
 import time
 import uuid
 
@@ -112,11 +114,18 @@ class FoldCameraEvidence:
         for _ in range(15):
             env.step()
         after = self.capture(env, "calibration")
-        calibration = (measure_calibration(before, after, centers, projected, 3.0)
-                       if after is not None else {"passed": False, "reason": "missing_rgb"})
+        if after is None:
+            return
+        calibration = measure_calibration(before, after, centers, projected, 3.0)
         self.record["calibration"] = {"camera_prim": camera.prim_path, "intrinsics_px": intrinsics.tolist(),
                                        "world_to_ros_camera": world_to_camera.tolist(),
                                        "sphere_radius_stage_units": 0.035,
                                        **calibration}
         self.save()
+        required_frames = ("stage-1", "stage-2", "stage-3", "final", "calibration")
+        if any(self.record["frames"].get(name, {}).get("image") is None for name in required_frames):
+            return
+        marker = os.environ.get("ROBOTICS_PROBE_MARKER")
+        if marker:
+            Path(marker).write_text(str(self.output / "evidence.json"), encoding="utf-8")
         print("FOLD_CAMERA_MEASURED", self.output, flush=True)

@@ -33,6 +33,7 @@ if ($CheckOnly) { Write-Host 'PATH_CHECK_PASSED (paths only; no simulator or imp
 $names = @('PYTHONPATH','HF_HOME','PIP_CACHE_DIR','ROBOTICS_PROJECT_ROOT','ROBOTICS_OUTPUT_ROOT','ROBOTICS_HEADLESS','ROBOTICS_KEEP_OPEN','ROBOTICS_PROBE_MARKER','ROBOTICS_FOLD_CAMERA','ROBOTICS_RUNTIME_CONTROL')
 $old = @{}
 foreach ($name in $names) { $old[$name] = [Environment]::GetEnvironmentVariable($name, 'Process') }
+$marker = $null
 try {
     $env:PYTHONPATH = "$DependencyRoot;$ProjectRoot;$($old['PYTHONPATH'])"
     $env:HF_HOME = Join-Path $RoboticsRoot 'cache\huggingface'
@@ -41,24 +42,19 @@ try {
     $env:ROBOTICS_OUTPUT_ROOT = $OutputRoot
     $env:ROBOTICS_HEADLESS = if ($Headless) { '1' } else { '0' }
     $env:ROBOTICS_KEEP_OPEN = if ($KeepOpen) { '1' } else { '0' }
+    if ($Stage -in @('runtime-io','runtime-control','fold-camera','garment-reset')) {
+        # Isaac can exit with code 0 before writing the experiment result.
+        $marker = Join-Path ([System.IO.Path]::GetTempPath()) ("robotics-complete-" + [guid]::NewGuid().ToString('N') + '.txt')
+        $env:ROBOTICS_PROBE_MARKER = $marker
+    }
     Push-Location -LiteralPath $ProjectRoot
     try {
         if ($Stage -in @('fold', 'fold-camera')) {
             $env:ROBOTICS_FOLD_CAMERA = if ($Stage -eq 'fold-camera') { '1' } else { '0' }
             & $isaacPython -u (Join-Path $PSScriptRoot 'run_fold_local.py') --garment_random_flag False --record_video_flag False --data_collection_flag True
         } elseif ($Stage -in @('runtime-io','runtime-control')) {
-            # Isaac's app shutdown can return code 0 after an exception. Check
-            # a per-invocation success marker instead of relying on that code.
-            $marker = Join-Path ([System.IO.Path]::GetTempPath()) ("runtime-io-complete-" + [guid]::NewGuid().ToString('N') + '.txt')
-            $env:ROBOTICS_PROBE_MARKER = $marker
             $env:ROBOTICS_RUNTIME_CONTROL = if ($Stage -eq 'runtime-control') { '1' } else { '0' }
-            try {
-                & $isaacPython -u (Join-Path $PSScriptRoot 'capture_runtime_io.py')
-                if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $marker -PathType Leaf)) {
-                    throw 'Runtime I/O sample was not completed; inspect progress.jsonl and capture-error.txt in the output directory.'
-                }
-                Remove-Item -LiteralPath $marker
-            } finally { [Environment]::SetEnvironmentVariable('ROBOTICS_PROBE_MARKER', $old['ROBOTICS_PROBE_MARKER'], 'Process') }
+            & $isaacPython -u (Join-Path $PSScriptRoot 'capture_runtime_io.py')
         } else {
             $arguments = @('-u', (Join-Path $PSScriptRoot 'smoke_test.py'), '--stage', $Stage)
             if ($Headless) { $arguments += '--headless' }
@@ -66,7 +62,11 @@ try {
             & $isaacPython @arguments
         }
         if ($LASTEXITCODE -ne 0) { throw "Simulation exited with code $LASTEXITCODE; inspect its console and output." }
+        if ($marker -and -not (Test-Path -LiteralPath $marker -PathType Leaf)) {
+            throw "$Stage sample was not completed; inspect its console and output directory."
+        }
     } finally { Pop-Location }
 } finally {
     foreach ($name in $names) { [Environment]::SetEnvironmentVariable($name, $old[$name], 'Process') }
+    if ($marker -and (Test-Path -LiteralPath $marker -PathType Leaf)) { Remove-Item -LiteralPath $marker }
 }
