@@ -1,5 +1,7 @@
 # Fold Tops 真实轨迹纯数值导出记录
 
+> 2026-11-08 接收更新：组长已实际下载并核验 ZIP、逐文件清单和帧结构，见 [PR #7 审查](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/pull/7)；下文待确认表述为上传时的状态，独立仿真复跑仍待执行。
+
 记录日期：2026-11-07；负责人：张茗博；状态：**作者机导出并上传私有 GitHub Release；接收方下载和第二人复核待确认**。该包是正常示范的历史观测，不能当作恢复实验结果。
 
 ## 来源与导出
