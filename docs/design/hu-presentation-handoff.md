@@ -1,5 +1,7 @@
 # 第 1–2 页展示交接
 
+11 月 8 日新版 Pre 增加检测与恢复证据。整合十页稿时请同时使用[检测曲线、三场景结果及第 5、10 页修订意见](hu-pre-detection.md)；最终分段由张茗博安排。
+
 张茗博可将[两页可编辑 PowerPoint](slides/hu-ui-slides.pptx)插入整组开头，两页的英文逐字稿分别在 PowerPoint 的“备注”中。建议第 1 页 40 秒、第 2 页 45 秒，时长待全组排练实测。第 2 页末句交给张讲协调器如何执行控制权规则。[三页架构素材](slides/zhang-architecture-slides.pptx) · [整组展示安排](presentation-plan.md)
 
 | 页 | 讲解时要说清什么 | 图像来源及复核 |

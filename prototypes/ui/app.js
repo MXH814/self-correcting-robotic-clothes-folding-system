@@ -190,15 +190,16 @@ function prep(){
 }
 function monitor(){
  if(!task)return card('尚无运行记录',note('请先在准备页启动任务。'));
+ const pauseHint = task.state!=='已暂停'?'确认停车后才能继续或求助。':rest()?'设备已确认静止，可继续或请求协助。调整衣物前请先接管。':'任务已暂停，设备尚未确认静止，请勿移动衣物。';
  return grid(card('本次模拟任务',rows([['任务编号',task.id],['模型 / 配置',task.model+' / v'+task.cfg.version]])+note(task.frames.at(-1)?.event||'等待观测')),card('运行控制 · 交互模拟',status()+acts(
  button('pause','暂停',home()&&active()&&['折叠中','恢复中'].includes(task.state)&&!pending,pause),
  button('resume','继续',home()&&task.state==='已暂停'&&rest()&&!pending,()=>{pending='继续校验';log('正在校验原折叠阶段及剩余预算。')}),
- button('ask','请求协助',home()&&task.state==='已暂停'&&rest()&&!pending,()=>help('用户请求检查衣物')),terminate())+note(task.wall/3600>=.8*task.cfg.cap?'费用已使用至少 80%，请留意剩余额度。已分配的 GPU 在等待期间仍计费。':'确认停车后才能继续或求助。已分配的 GPU 在等待期间仍计费。')));
+ button('ask','请求协助',home()&&task.state==='已暂停'&&rest()&&!pending,()=>help('用户请求检查衣物')),terminate())+note(pauseHint+(task.wall/3600>=.8*task.cfg.cap?'费用已使用至少 80%，请留意剩余额度。':'')+'已分配的 GPU 在等待期间仍计费。')));
 }
 function assistance(){
  if(!active()||!['人工控制','等待协助'].includes(task.state))return card('当前没有人工协助请求',note('出现持续异常时系统会求助，也可在运行监控确认暂停后主动求助。'));
  return grid(card('协助请求',rows([['原因',task.reason],['当前控制权',task.state==='人工控制'&&!pending?'用户已接管':'自动和手动均已锁定'],['当前状态',pending||task.state],['设备状态',stop],['可用恢复次数',task.cfg.attempts-task.attempts],['模拟 GPU 费用',money(task.wall/3600)]])),card('手动调整',note(pending?'手动权限已撤回。等待新的停车证据与归还校验。':task.state==='人工控制'?'可调整衣物位置或夹持接触，完成后归还控制。':rest()?'已确认静止，请显式接管后调整。':'停止请求已发出。设备确认静止前，手动操作锁定。')+acts(
- button('take','接管',home()&&task.state==='等待协助'&&rest()&&!pending,()=>{task.state='人工控制';task.manual=true;log('已授权本次手动接管。')},'primary'),
+ button('take',task.state==='等待协助' && !pending && task.reason==='衣物超出工作区'?'再次接管':'接管',home()&&task.state==='等待协助'&&rest()&&!pending,()=>{task.state='人工控制';task.manual=true;log('已授权本次手动接管。')},'primary'),
  button('adjust','调整衣物位置',home()&&task.state==='人工控制'&&!pending,()=>{task.adjustments++;stop='执行中';advanceGeneration();log('完成一次示例人工调整。')}),
  button('return','归还控制',home()&&task.state==='人工控制'&&!pending,()=>{pending='归还停车';task.state='等待协助';halt();log('已撤回手动权限，等待本次归还的停车证据。','AUTHORITY_REVOKED')}),
  terminate())));
@@ -250,6 +251,7 @@ function harness(){
     task.state='恢复中';task.attempts++;log(label+'。DR04 示例候选已获准，已使用一次恢复。')});
   }
   add('clear','偏差已消除',task.state==='恢复中',()=>{task.state='折叠中';task.bad=0;log('复查通过，回到正常折叠。')});
+  add('recheckfail','恢复后检查未通过',task.state==='恢复中',()=>help('恢复后仍未确认持有衣物，停车并请求协助。'));
   add('nocandidate','无合格恢复候选',true,()=>help(reasonMessages.NO_SUPPORTED_CANDIDATE,'NO_SUPPORTED_CANDIDATE'));
   add('unknown','观测被遮挡',true,()=>help(reasonMessages.UNKNOWN,'UNKNOWN'));
   add('staleframe','过期观测',true,()=>demoReply('STALE_OBSERVATION'));

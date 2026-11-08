@@ -1,0 +1,23 @@
+{
+  "source": "offline software replay with deliberately absent package",
+  "frame": 58,
+  "t": 5.950000310316682,
+  "trial_id": "bc68b5da-8102-427b-a32b-6aca66b316e1",
+  "observation_id": "c81f1c2b-5654-426f-af05-68e27a2b28ea",
+  "status": "UNKNOWN",
+  "detector_reason": "MODEL_OR_CALIBRATION_UNAVAILABLE",
+  "workflow_event": {
+    "schema": "diagnostic-recovery-event/1",
+    "trial_id": "bc68b5da-8102-427b-a32b-6aca66b316e1",
+    "generation": 0,
+    "state": "HELP_REQUIRED",
+    "kind": "REQUEST_HALT_AND_HELP",
+    "reason": "DETECTION_UNAVAILABLE_OR_UNKNOWN",
+    "attempts": 0,
+    "request_id": null,
+    "motion_authorized": false
+  },
+  "simulator_executed": false,
+  "device_rest_confirmed": null,
+  "user_assistance_confirmed": null
+}
