@@ -6,3 +6,11 @@
 *.pdf binary
 *.docx binary
 *.png binary
+
+# Preserve measured evidence bytes: manifests bind the original SHA256, not OS line endings.
+docs/research/zhangmingbo/runtime-io-20261108/*.json* -text whitespace=cr-at-eol
+docs/research/zhangmingbo/runtime-io-camera-20261108/*.json* -text whitespace=cr-at-eol
+docs/research/zhangmingbo/fold-experiments-20261108/*.json* -text whitespace=cr-at-eol
+docs/research/zhangmingbo/preaction-chain-20261108/*.json* -text whitespace=cr-at-eol
+docs/research/zhangmingbo/adapter-fault-evidence-20261108.json -text whitespace=cr-at-eol
+docs/research/zhangmingbo/garment-fault-20261108/*.json* -text whitespace=cr-at-eol

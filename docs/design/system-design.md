@@ -9,7 +9,7 @@ Part I specified a simulated clothes folding system for one supported shirt type
 
 The recovery worker proposes actions; the task coordinator owns execution authority. Before accepting a segment, the coordinator checks the current control generation, observation freshness, action constraints, calibration and remaining budgets. The adapter must reject revoked commands and report measured feedback. This separation adds protocol and latency, but allows the recovery method to change without transferring control authority to the model. A score cannot prove rest, and an earlier terminal outcome cannot be overwritten by a late response. The interaction prototype exercises preparation, pause, assistance, return and replay using explicitly synthetic events.
 
-Isaac Sim 4.5 with DexGarmentLab runs on Zhang Mingbo's workstation, where Ma Xianghui completed the basic rerun. Two normal exports comprising 153 frames were received and encoded. Subsequent records provide named joint mappings, a component position command, measured feedback and visible simulated RGB. Ma's offline intake now encodes sixty joint channels, masked histories and sparse absolute targets. It preserves an important limitation: the new RGB was captured after the command and cannot be reused as its decision input. Legacy joint ordering is not retrospectively declared verified.
+Isaac Sim 4.5 with DexGarmentLab runs on Zhang Mingbo's workstation, where Ma Xianghui completed the basic rerun. Two normal exports comprising 153 frames were received and encoded. Subsequent records provide named joints, visible RGB captured before a local component command, durable acceptance intent and measured feedback. Ma's intake combines visual, proprioceptive and masked candidate features while retaining the causal boundaries. The measured segment becomes history only after its final feedback; it cannot enter its own earlier decision. The action was specified by a script, not selected by a vision model.
 
 A single-process adapter probe records dispatch acknowledgement, deduplication, generation rejection and measured stopping. Independent recalculation gives pause and termination confirmation delays of approximately 0.676 and 0.692 seconds. The submitted windows cover all sixty rotational joints and satisfy the probe's recorded sampling and speed conditions. These results support component feasibility; they do not verify transport queues, disconnection handling or the complete product coordinator. Fold Tops images and a three-target projection check support camera integration. The upstream success flag remains distinct from the system's quality and autonomy criteria.
 
@@ -17,7 +17,7 @@ Repeated initial resets produced maximum settled mesh differences of approximate
 
 Current deliverables include decision records, editable diagrams, grouped-data safeguards, baseline and preflight software, annotation procedures and presentation material. The next integration connects real decision-time observations and executed segments to the coordinator, then collects audited grasp-offset and slip cases. Participant walkthroughs, a timed team rehearsal, classroom feedback and final submission remain pending. The final report will incorporate their actual evidence rather than treating generated documents or component tests as proof of a completed system.
 
-[Editorial check: 494 words. Facts updated after PR #9/#10 and Ma runtime intake. Participant, classroom and personal attribution checks remain pending.]
+[Editorial check: 498 words. Facts updated after PR #12/#13 and causal intake; classroom and personal attribution checks remain pending.]
 
 ## A2-02 · Architecture and key decisions
 
@@ -27,9 +27,9 @@ The user interface displays task state and device state separately. A pause bloc
 
 The local prototype represents these boundaries within a single browser session. Its event controls let a reviewer provide an acknowledgement, a timeout or a disconnection at a chosen step. This makes an ordering error observable during design review. Transport delay, process failure, billing and resource release require separate implementation evidence.
 
-The adopted recovery contract defines authority, candidate rejection and measured rest. Ma’s four decision records cover control, history, reproducibility and platform choice. The UI mapping and independent sample review connect those decisions to the household screens and intake fields. [Logical interfaces](interfaces.md) · [UI and record contract](ui-contract.md) · [Single-frame review](observation-review.md) · [Owner materials](ma-assignment2-material.md)
+The adopted recovery contract defines authority, candidate rejection and measured rest. Ma’s five decision records cover control, history, reproducibility and platform choice. The UI mapping and independent sample review connect those decisions to the household screens and intake fields. [Logical interfaces](interfaces.md) · [UI and record contract](ui-contract.md) · [Single-frame review](observation-review.md) · [Owner materials](ma-assignment2-material.md)
 
-[Zhang: integrate the [three architecture views and decision narrative](architecture-presentation-draft.md) into the final design and review the process, storage and failure boundaries. Ma: cross-check the UI mapping against the adopted recovery contract and confirm its implementation boundary. For each unresolved choice, state its owner and the observation that would change the decision.] [Part I system models](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/submissions/assignment-1/Group3_Assignment1_SRS/Models/Group3_Models.drawio)
+The logical and deployment views locate ownership and the intended process boundaries. The technology view distinguishes the Isaac runtime, inference worker and evidence stores. The storage engine and production transport remain design choices for Part III. [Logical and deployment views](architecture-presentation-draft.md) · [Technology and system interfaces](models/zhang-system-models.md)
 
 ## A2-03 · Design models
 
@@ -65,7 +65,7 @@ sequenceDiagram
 
 The recording design distinguishes one trial, several detection clips and the candidate actions attached to a decision. Each accepted corrective dispatch consumes an attempt even if interrupted. This lets reviewers reconstruct why a candidate was accepted and what happened to the complete trial. [Recording specification](data-design.md)
 
-[Zhang: integrate the domain and structural models, component responsibilities, cardinalities and remaining sequences, including start, pause, termination and model activation. Integrate the [recovery sequence and rejection paths](recovery-design.md). Verify the above draft against the implementation contract.]
+The editable system models document domain responsibilities and cardinalities, plus the start, pause, termination, resume, return and model activation sequences. They complement the recovery sequence and the joint review of this working draft. [System models](models/zhang-system-models.md) · [Recovery sequence and rejection paths](recovery-design.md)
 
 ## A2-04 · Updated requirements
 
@@ -97,7 +97,7 @@ The local prototype was exercised in Chrome, including independent review throug
 | Can the adapter supply valid stop evidence by the deadline? A missing acknowledgement can leave the task terminal while the execution lock remains active. | In Part III, test stale generation, a nonempty queue, residual motion and missed proof. Reject invalid proof, preserve the lock and require fresh evidence. Compare measured wall time with the one-second requirement. Review the adapter or action bounds if it fails. | Zhang |
 | Can quality be assessed across the reserved garments? A local regrasp can succeed while the final fold fails. | Map the eight landmarks and apply the registered stability and error bounds to counterexamples such as an unfolded sleeve. Missing targets yield NOT_ASSESSED. Review the metric on validation cases before final-test access. | Ma with Hu on labels and Zhang on assets |
 
-[Owners: reconcile the active risk register with [Ma’s validation plan](ma-risks-and-validation.md), including measured capacity and outstanding platform checks. Record agreed fallback and review point.]
+[System risk, test criteria and fallbacks](zhang-assignment2-material.md#part-iii-validation) · [Research validation plan](ma-risks-and-validation.md)
 
 ## A2-07 · AI tools reflection
 
@@ -105,14 +105,14 @@ Codex assisted with source extraction, drafting, implementation and repeatable c
 
 Browser automation also required scrutiny. Its first run retained references to checkboxes after the interface had redrawn them. The test then reported that Start was unavailable. The script was changed to locate each current checkbox before clicking it, and the full sequence was rerun. The failure concerned the test procedure; the rerun established the prototype behaviour for that path. Neither automated clicks nor generated recording forms can establish how a first-time participant understood the interface.
 
-[Hu: verify this account against the work record and add any personal assessment, edits, time and attributable cost that can be substantiated. Ma: verify the supplied workstream reflection. Zhang: confirm the scope of the available records and provide your reflection. The work record contains no reliable breakdown of individual hours, tokens or charges.] [Evidence and provenance](delivery-status.md)
+[Zhang’s evidence-based reflection draft](zhang-assignment2-material.md#contribution-and-ai-reflection-for-owner-confirmation) records the lighting and launcher corrections. Each owner still needs to confirm their personal assessment and any attributable effort. [Evidence and provenance](delivery-status.md)
 
 ## A2-08 · Annotated references
 
-Ma’s four design-source annotations are available in the [annotated reference register](../research/annotated-references.md), with primary-source versions in the [source register](../research/source-register.md). They support the recovery interfaces, monitoring boundaries and simulation choice. The final editor must incorporate the other members’ actually used references, cross-check the sources, and verify 200–300 words per final entry. This section does not claim their annotations or cross-review have occurred.
+The source annotations explain how the design uses evidence on recovery, monitoring, simulation, garment readiness and staged continuation. The final editor will consolidate actually used sources, check the primary papers and verify 200–300 words per final entry. [Existing reference register, including DexGarmentLab](../research/annotated-references.md) · [APS-Net and AgentChord annotations](zhang-assignment2-material.md#l02--learning-efficient-robotic-garment-manipulation-with-standardization) · [Source register](../research/source-register.md)
 
 ## A2-09 · Team member contributions
 
 The materials assembled for Hu Zhiyu’s assigned workstream comprise the literature reading brief, the offline five-screen interaction flow, a baseline comparison and traceability matrix, the recording and evaluation protocol, and the walkthrough materials. The local outputs identify which behaviours were exercised with an event harness and which still require participant or simulator evidence. This working draft adds editorial coordination and a review register.
 
-[Hu: confirm personal authorship, decisions and review activities before attribution. Ma: confirm attribution of the supplied workstream record. Zhang: confirm personal contributions with evidence, including reviews. Joint approval and individual effort figures remain open.]
+[Zhang’s workstream record](zhang-assignment2-material.md#contribution-and-ai-reflection-for-owner-confirmation) identifies the submitted environment, experiments and architecture material. Each member still needs to confirm individual contributions, decisions and review activities. Joint approval and individual effort figures remain open.

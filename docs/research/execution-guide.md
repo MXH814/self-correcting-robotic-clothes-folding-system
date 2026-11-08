@@ -1,5 +1,7 @@
 # 马祥珲研究工具：运行与接入说明
 
+**动作前链新入口：** `python -m research_tools.action_chain_intake --input-dir <chain-directory> --output-dir <new-directory>`。验证清单、接纳/反馈/时钟，生成492维输入和只可用于后续同代决策的片段条目；不生成恢复标签，见[实跑结果](preaction-integration-progress.md)。
+
 **新增实测入口：** `python -m research_tools.runtime_intake --sample <component-sample.json> --control-evidence <control-evidence.json> --output-dir <new-directory>`。已在 PR #10 真实组件记录上运行，60 通道本体、单关节候选编码和停止复算见[接入说明](runtime-component-integration.md)。这是离线接入，不会发送动作；动作后 RGB 不进入动作前决策。
 
 2026-11-06。Python 3.9+，主工具仅标准库；另提供可选PyTorch神经基线，使用本机已有安装，不安装 GPU/仿真依赖，不调用外部模型。工具是探索诊断实现，不是最终研究模型或机器人控制程序。
