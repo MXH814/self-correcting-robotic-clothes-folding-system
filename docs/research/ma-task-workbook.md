@@ -8,6 +8,8 @@
 
 本轮进展：[PR #2复审](../reviews/pr2-handoff-review.md) · [数据接入与可直接执行的导出命令](ma-data-intake-progress.md)。
 
+后续PR #6/#7已审查合并：三架构展示源稿已提供，data2/data3正常轨迹已实际下载并通过ZIP/逐文件/全部153帧数值与历史检查；80/81问题关闭。仍缺可运行环境、真实profile和失败/恢复候选数据，见[最新审查](../reviews/pr6-7-handoff-review.md)。
+
 ## 成果导航
 
 | 分工成果 | 入口 | 当前状态 |
@@ -17,7 +19,7 @@
 | RedFlow 精读 | [L08](papers/L08-redflow-reading-note.md) | 明确已有叠衣结果、离线匹配与目标边界 |
 | DexGarmentLab 共同阅读 | [L01](papers/L01-dexgarmentlab-reading-note.md) | 已整理；平台选定，作者环境报告已合并，本工作流独立复跑未完成 |
 | 张茗博分支审查与平台采用 | [审查结论](../reviews/zhang-bc5e48c-review.md)、[ADR-MA-004](../design/decisions/ADR-MA-004-simulation-platform.md) | 文档审查通过并合并；环境已选定，独立复跑仍未完成 |
-| 现有轨迹安全审计与接入 | [接入设计](dex-integration-plan.md)、[接入进展](ma-data-intake-progress.md) | 实际入库样例已审核；完整轨迹纯数值导出/校验/历史已实现，原始NPZ和运行入口仍待访问 |
+| 现有轨迹安全审计与接入 | [接入设计](dex-integration-plan.md)、[接入进展](ma-data-intake-progress.md) | data2/data3纯数值包已接收并校验153帧及阶段内历史；运行入口和恢复候选数据仍待交付，无需再加载原始NPZ |
 | 最近邻比较 | [比较矩阵](related-work-matrix.md) | 已撰写，强基线复现待执行 |
 | 研究提案与问题卡 | [H1/H2/H3](hypothesis-cards.md) | 假设、反证与方案已写，没有实验支持结论 |
 | 诊断实验设计 | [协议](diagnostic-protocol.md) | 分组、配对、指标、统计与资源方案已写 |

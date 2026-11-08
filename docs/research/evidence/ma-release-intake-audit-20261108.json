@@ -1,0 +1,77 @@
+{
+  "review_date": "2026-11-08",
+  "release_url": "https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/tag/handoff-fold-tops-20261108",
+  "method": "Authenticated GitHub CLI download; ZIP SHA256/CRC and exact per-file inventory; existing main load_export with allow_pickle=False; all history boundaries checked. No simulator or raw object NPZ executed.",
+  "packages": {
+    "data2": {
+      "archive": "fold-tops-data2-numeric-20261107.zip",
+      "size_bytes": 24867984,
+      "sha256": "6584a58167d25bef6da25eecdaf8436df8b93b1ad9cea6d8fe01f9fb70986a16",
+      "file_count": 79,
+      "frames_verified": 77,
+      "stage_counts": {
+        "stage_1": 27,
+        "stage_2": 27,
+        "stage_3": 23
+      },
+      "all_inventory_hashes_match": true,
+      "crc_check": "PASS",
+      "numeric_export_validation": "PASS",
+      "history_validation": "all rows/current excluded/stage reset PASS",
+      "source_sha256": "2309165bccd101c6ad65460716844d4f47d4b71e2f2f3dd775ecf37c47dac552",
+      "archive_local_path": "tmp/pr6-7-review-20261108/downloads/fold-tops-data2-numeric-20261107.zip",
+      "extracted_local_path": "tmp/pr6-7-review-20261108/extracted/data2",
+      "capabilities": [
+        "numeric RGB and 60-dimensional joint observations",
+        "stage-local observation history"
+      ],
+      "missing": [
+        "verified joint mapping/units",
+        "real clocks and actual executed actions/ACK",
+        "stop measurements",
+        "failure/recovery candidate branches",
+        "local/final recovery labels"
+      ],
+      "source_archive_bytes_declared": 26983793
+    },
+    "data3": {
+      "archive": "fold-tops-data3-evidence-20261108.zip",
+      "size_bytes": 24814545,
+      "sha256": "4808365cf9caf7454bec5ef3ca1a077bed86e7f6c8d1e5b20b7f9ccbb288cfa9",
+      "file_count": 81,
+      "frames_verified": 76,
+      "stage_counts": {
+        "stage_1": 27,
+        "stage_2": 27,
+        "stage_3": 22
+      },
+      "all_inventory_hashes_match": true,
+      "crc_check": "PASS",
+      "numeric_export_validation": "PASS",
+      "history_validation": "all rows/current excluded/stage reset PASS",
+      "source_sha256": "f65137e0e1fb9e9de169a21d074162a0c0e47096035fb377fc21e4b18abffeb1",
+      "archive_local_path": "tmp/pr6-7-review-20261108/downloads/fold-tops-data3-evidence-20261108.zip",
+      "extracted_local_path": "tmp/pr6-7-review-20261108/extracted/data3",
+      "capabilities": [
+        "numeric RGB and 60-dimensional joint observations",
+        "stage-local observation history"
+      ],
+      "missing": [
+        "verified joint mapping/units",
+        "real clocks and actual executed actions/ACK",
+        "stop measurements",
+        "failure/recovery candidate branches",
+        "local/final recovery labels"
+      ],
+      "file_81": "READ_ME_交接.txt",
+      "source_archive_bytes_declared": 26117224
+    }
+  },
+  "overall": "NORMAL_DEMONSTRATION_INTAKE_VERIFIED; ENVIRONMENT_AND_RECOVERY_DIAGNOSTICS_PENDING",
+  "reviewed_pr_heads": {
+    "6": "389fbdbb0a76f72da6ed430146d64c9afffad2c5",
+    "7": "fb17c75a4f28076321d8f020fa8eb277fabfba29"
+  },
+  "validator_git_blob": "caf9d60c9e7223d831a847348d7fe87d7a639b14",
+  "source_provenance_boundary": "Author-declared source hashes match repository records; original object NPZ payloads were not received or executed."
+}
