@@ -4,6 +4,12 @@
 
 审查更新（2026-11-07）：PR #2及相对路径修复已复审通过合并，启动器轻量回归通过；下表的“待审”为原提交状态，不代表目前仍等待批准。H03/H04/H05的运行/数据缺口仍成立。完整轨迹纯数值导出与下一步入口见[马祥珲接入进展](../ma-data-intake-progress.md)。
 
+## 2026-11-08 交接更新
+
+- 两份已上传的纯数值数据包和逐文件清单：[私有 GitHub Release](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/tag/handoff-fold-tops-20261108)；GitHub 附件显示大小及 SHA-256 与作者机一致，接收方下载/验证待确认。
+- 组长选择**另一台电脑安装**；[第二台电脑复跑准备](second-machine-install.md)给出来源、步骤与仍待提供的精确源码归档和依赖。独立安装和复跑尚未执行，不能当作已验证。
+- 原始对象 NPZ 未上传，纯数值包可先用于离线接入；常规哈希核验不代表来源身份已认证。
+
 ## H01–H05 状态
 
 | ID | 状态 | 已提供与缺口 |
@@ -16,7 +22,7 @@
 
 ## 可复跑入口
 
-首次优先选择**在作者机器上由第二人操作**，因为原始轨迹与安装文件暂未共享。操作者需先取得作者机器的正常使用权限，运行下列命令并自行保存日期、软硬件版本、命令、完整控制台日志、输出清单、耗时和结果。此方案仍依赖人员实际协调，不代表已经提供远程登录。另一台电脑需根据下述来源安装、确认许可并准备全部依赖与资产；该路径尚未从零验证。
+目前计划由组长在另一台电脑安装；纯数值数据已经通过私有 Release 提供，精确源码归档和 wheel 仍需核实获取及许可。操作者需先取得作者机器的正常使用权限，运行下列命令并自行保存日期、软硬件版本、命令、完整控制台日志、输出清单、耗时和结果。此方案仍依赖人员实际协调，不代表已经提供远程登录。另一台电脑需根据下述来源安装、确认许可并准备全部依赖与资产；该路径尚未从零验证。
 
 1. 获取本项目代码及本分支；安装 [Isaac Sim 4.5](https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/install_workstation.html) Windows standalone，并确认显卡/驱动、RAM 和许可。作者机器为 Windows 11、RTX 4060 Laptop 8 GB、RAM 16 GB；官方兼容检查内存要求 32 GB，整体未通过。
 2. 准备 [DexGarmentLab 源码](https://github.com/wayrise/DexGarmentLab)和[官方资产](https://huggingface.co/datasets/wayrise/DexGarmentLab/tree/main)。本次使用的源码 ZIP SHA-256 和模型等见清单；同一上游 main 未来可能变化，不可仅凭分支名断言相同版本。GAM 检查点包含在本次源码 ZIP；三阶段 SADP_G 权重尚未确认。
@@ -45,7 +51,7 @@ $env:ROBOTICS_PROJECT_ROOT = 'E:\Robotics\DexGarmentLab'
 
 图形运行于 2026-11-04，`garment_random_flag=False`，TCLC_018，初始 `pos=[0,0.8,0.2]`、`ori=[0,0,0]`。日志同时记录官方 `final result: True`、`data_2.npz` 与 `img_2.png`；这是上游脚本生成的自采示范，不是 SADP_G 策略评测。图像是环境相机最终 640×480 RGB，不是 stage_1 第 0 帧。轨迹 27/27/23 帧，无原始时间戳，阶段间没有连续记录；详见 [I/O](io-profile.md)。
 
-原始轨迹作者机路径 `E:\Robotics\DexGarmentLab\Data\Fold_Tops\train_data\data_2.npz`，26,983,793 字节；其 SHA-256 和对应图像的哈希见[清单](artifact-manifest.json)。该路径对其他机器不可访问；需要通过团队认可的受控存储分享，或在作者机器同机读取，尚无共享链接。数据包含 Python 对象数组；仅对**自行确认可信来源**且哈希匹配的文件运行以下导出器（匹配 hash 本身不能使恶意 pickle 安全）：
+原始轨迹作者机路径 `E:\Robotics\DexGarmentLab\Data\Fold_Tops\train_data\data_2.npz`，26,983,793 字节；其 SHA-256 和对应图像的哈希见[清单](artifact-manifest.json)。该原始 NPZ 路径对其他机器不可访问；对应的纯数值导出包可在本页更新中的私有 Release 下载。数据包含 Python 对象数组；仅对**自行确认可信来源**且哈希匹配的文件运行以下导出器（匹配 hash 本身不能使恶意 pickle 安全）：
 
 ```powershell
 python .\tools\simulation\export_observation.py --input '<可信的 data_2.npz>' --sha256 2309165bccd101c6ad65460716844d4f47d4b71e2f2f3dd775ecf37c47dac552 --output '<新建的 observation.json>'
