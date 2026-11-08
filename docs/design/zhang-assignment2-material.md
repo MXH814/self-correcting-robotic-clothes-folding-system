@@ -27,7 +27,7 @@ This handoff records evidence and proposed design text for Zhang Mingbo's sectio
 - Deployment and technology. Show the workstation, isolated Isaac runtime, versioned messages and evidence storage. State which links are proposed.
 - Evidence and open risks. Present the 77 checked folding frames, 60 measured joint channels and the 31.7 mm settled reset discrepancy. Describe why branch comparability and external transport matter for Part III.
 
-[Team presentation plan](presentation-plan.md) · [Fold Tops evidence](../research/zhangmingbo/fold-experiments-20261108.md)
+[Editable three-slide PowerPoint section](slides/zhang-architecture-slides.pptx) · [Team presentation plan](presentation-plan.md) · [Fold Tops evidence](../research/zhangmingbo/fold-experiments-20261108.md)
 
 ## Contribution and AI reflection for owner confirmation
 
