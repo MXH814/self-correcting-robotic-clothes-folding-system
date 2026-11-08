@@ -53,6 +53,10 @@ def run(output):
     tips = [env.world.stage.GetPrimAtPath(f"/World/DexLeft/{name}") for name in ("fftip", "thtip")]
     if not all(tip.IsValid() for tip in tips):
         raise RuntimeError("The configured left hand tip prims were not found")
+    dr02 = None
+    if os.environ.get("ROBOTICS_DR02_EVIDENCE") == "1":
+        from garment_dr02_capture import Dr02Capture
+        dr02 = Dr02Capture(output, env.world, tips)
     result = {"asset": asset, "scope": "first_sleeve_only", "pick_world_m": pick.tolist(),
               "transfer_world_m": transfer.tolist(), "left_orientation_wxyz": orientation.tolist(),
               "offset_world_m": offset.tolist(), "torso_reference_width_w0_m": None,
@@ -88,6 +92,10 @@ def run(output):
         garment.set_pose(pos=origin, ori=zeros)
         robot.set_both_hand_state("open", "open")
         tick(100)
+        if dr02:
+            dr02.initialize()
+            dr02.aim()
+            tick(6)
         root = vertices()
         if trace_condition:
             np.savez_compressed(output / "settled-vertices.npz", vertices_m=root)
@@ -130,6 +138,8 @@ def run(output):
         def window(label):
             for index in range(8):
                 measure(label, index)
+                if dr02:
+                    dr02.observe(label, vertices())
                 if index < 7:
                     tick(3)
             rgb = camera.get_rgb_graph()
@@ -171,10 +181,14 @@ def run(output):
 
         def sample_step(*args, **kwargs):
             nonlocal count
+            if dr02 and count % 3 == 0:
+                dr02.aim()
             result = original_step(*args, **kwargs)
             count += 1
             if count % 3 == 0:
                 measure(current_phase, count, "continuous_samples")
+                if dr02:
+                    dr02.observe(current_phase, vertices(), stream="continuous")
             if trace:
                 trace.observe(current_phase)
             return result
@@ -257,6 +271,8 @@ def run(output):
         if trace:
             trace.boundary("trial_end")
             trace.save(condition)
+        if dr02:
+            dr02.save(trial["trial_id"], condition, patch_ids)
         save()
         print("GARMENT_FAULT_CASE_RECORDED", condition, flush=True)
     result["wall_elapsed_s"] = time.perf_counter() - start
