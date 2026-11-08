@@ -47,3 +47,7 @@
 
 
 本轮 UI 原因码、教学导出与入库单帧审核见[界面契约](ui-contract.md)及[样例审核](observation-review.md)。团队已核验两个正常示范包的 153 帧，基础复跑已在张茗博电脑完成。PR #10 已补命名通道、组件时钟/命令/停止记录和正常折叠取景，马已完成[离线接入](../research/runtime-component-integration.md)。仍缺动作前完整视觉/执行历史、跨模块时间映射、产品联调及失败/恢复分支。
+
+
+本地五屏走查入口已支持双角色切换、按序号回放和独立的实测图像浏览。[交互复验](interaction-design.md)记录可直接打开的阶段图和完整轨迹导入方式。PR #11 补上了组件级撤权、断链重连和迟到反馈实测；产品协调器联调与真实参与者记录仍待完成。[适配器证据](../research/zhangmingbo/adapter-fault-probe-20261108.md)
+张茗博的[三页可编辑架构素材](slides/zhang-architecture-slides.pptx)已随 PR #16 合入，供胡知鱼统筹整组 Slides 时选用。

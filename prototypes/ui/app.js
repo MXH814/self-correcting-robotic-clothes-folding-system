@@ -86,7 +86,7 @@ function finish(state,reason,requestStop=true,reasonCode=null){
   records.unshift(task);selected = task;frame = 0;page = 4;log(reason, reasonCode);
 }
 function proof(){
-  stop = '已确认静止';log('收到本代静止证据：速度达标、队列为空。');
+  stop = '已确认静止';log('测试桩已返回本代静止证据：速度达标、队列为空。');
   if(pending === '归还停车')pending = '归还校验';
   if(goal && active())finish('完成','已满足在线目标并确认停止。',false);
 }
@@ -167,11 +167,14 @@ function card(title,body){return '<article class="card"><h2>'+title+'</h2>'+body
 function note(s){return '<p class="note">'+s+'</p>'}
 function grid(a,b){return '<div class="grid">'+a+b+'</div>'}
 function status(){
-  return rows([['任务状态',pending || task?.state || '待准备'],['设备状态',stop],['恢复次数',task?task.attempts+' / '+task.cfg.attempts:'—'],['活动仿真时间',task?task.time+' / '+task.cfg.time+' 秒':'—'],['模拟 GPU 费用',task?money(task.wall/3600)+' / '+money(task.cfg.cap):'—']]);
+  return rows([['任务状态',pending || task?.state || '待准备'],['设备状态',stop],['恢复次数',task?task.attempts+' / '+task.cfg.attempts:'—'],['模拟活动时间',task?task.time+' / '+task.cfg.time+' 秒':'—'],['模拟 GPU 费用',task?money(task.wall/3600)+' / '+money(task.cfg.cap):'—']]);
 }
-function diagram(state){
- const folded=state==='完成',shift=state==='恢复中'?18:0;
- return '<svg class="scene" viewBox="0 0 360 170" role="img" aria-label="桌面上衣示意图，记录状态：'+state+'"><defs><pattern id="mesh" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="#cedacb"/></pattern></defs><rect width="360" height="170" fill="url(#mesh)"/><rect x="80" y="12" width="200" height="143" rx="5" fill="none" stroke="#7b9a7a" stroke-dasharray="5 5"/><g transform="translate('+shift+' 0)"><path d="'+(folded?'M147 66H215V127H147Z':'M151 33L123 43 87 66 105 87 132 72 132 138 228 138 228 72 255 87 273 66 237 43 209 33Q179 55 151 33Z')+'" fill="#aec5ac" stroke="#396448" stroke-width="2"/></g><text x="12" y="155">俯视示意</text></svg>';
+function eventPicker(record){
+  const options = record.frames.map((entry, index) => {
+    const selected = index === frame ? ' selected' : '';
+    return '<option value="'+index+'"'+selected+'>'+entry.sequence_no+' · '+entry.event+'</option>';
+  });
+  return '<label class="event-picker">跳到事件<select id="event-select">'+options.join('')+'</select></label>';
 }
 function terminate(){
  return button('terminate','终止任务',home()&&active(),()=>{if(confirm('终止本次任务并请求停车？已终止的任务无法继续。'))finish('已终止','用户终止任务。')},'danger')
@@ -179,7 +182,7 @@ function terminate(){
 function prep(){
  const checkboxes=['已放好一件展开、无结的上衣','桌面没有杂物，已了解人工协助步骤'].map((s,i)=>'<label><input type="checkbox" id="prep-'+i+'" data-prep="'+i+'" '+(prepared[i]?'checked ':'')+(home()&&!pending&&!active()?'':'disabled')+'> '+s+'</label>').join('');
  const hint=!home()?'请使用已连接的家庭用户会话。':active()?'已有任务，请到运行监控查看。':pending?'等待测试桩返回校验结果，可取消本次启动。':!rest()?'启动已锁定。请等待设备给出新的静止证据。':scene!=='有效'?'修正场景：'+scene+'，然后重新检查。':!prepared.every(Boolean)?'请先确认两项准备条件。':checked?'就绪检查通过，可以启动。':'请检查就绪条件。';
- return grid(card('桌面与衣物',diagram('待准备')+rows([['固定衣物',cfg.scene],['折叠目标','TOPS-FOLD-01'],['已批准模型',model],['当前停车状态',stop]])),card('启动前确认','<div class="checks">'+checkboxes+'</div>'+note(hint)+acts(
+ return grid(card('桌面与衣物',rows([['固定衣物',cfg.scene],['折叠目标','TOPS-FOLD-01'],['已批准模型',model],['当前停车状态',stop]])),card('启动前确认','<div class="checks">'+checkboxes+'</div>'+note(hint)+acts(
  button('check','检查就绪',home()&&!active()&&!pending,()=>{checked=ready();say(checked?'就绪检查通过。':hint)}),
  button('start','开始折叠',home()&&ready()&&checked&&!pending,()=>{requestId='R-'+String(++requestSerial).padStart(3,'0');pending='启动校验';say(requestId+' 已受理。等待 DR01 校验，尚未分配任务。')},'primary'),
  button('cancel','取消启动',home()&&pending==='启动校验',()=>{pending='';checked=false;say('请求已取消。')})
@@ -187,14 +190,14 @@ function prep(){
 }
 function monitor(){
  if(!task)return card('尚无运行记录',note('请先在准备页启动任务。'));
- return grid(card('桌面观测',diagram(task.state)+rows([['任务编号',task.id],['模型 / 配置',task.model+' / v'+task.cfg.version]])+note(task.frames.at(-1)?.event||'等待观测')),card('运行控制',status()+acts(
+ return grid(card('本次模拟任务',rows([['任务编号',task.id],['模型 / 配置',task.model+' / v'+task.cfg.version]])+note(task.frames.at(-1)?.event||'等待观测')),card('运行控制 · 交互模拟',status()+acts(
  button('pause','暂停',home()&&active()&&['折叠中','恢复中'].includes(task.state)&&!pending,pause),
  button('resume','继续',home()&&task.state==='已暂停'&&rest()&&!pending,()=>{pending='继续校验';log('正在校验原折叠阶段及剩余预算。')}),
  button('ask','请求协助',home()&&task.state==='已暂停'&&rest()&&!pending,()=>help('用户请求检查衣物')),terminate())+note(task.wall/3600>=.8*task.cfg.cap?'费用已使用至少 80%，请留意剩余额度。已分配的 GPU 在等待期间仍计费。':'确认停车后才能继续或求助。已分配的 GPU 在等待期间仍计费。')));
 }
 function assistance(){
  if(!active()||!['人工控制','等待协助'].includes(task.state))return card('当前没有人工协助请求',note('出现持续异常时系统会求助，也可在运行监控确认暂停后主动求助。'));
- return grid(card('协助请求',rows([['原因',task.reason],['当前状态',pending||task.state],['设备状态',stop],['可用恢复次数',task.cfg.attempts-task.attempts],['已用费用',money(task.wall/3600)]])),card('手动调整',note(pending?'手动权限已撤回。等待新的停车证据与归还校验。':task.state==='人工控制'?'可调整衣物位置或夹持接触，完成后归还控制。':rest()?'已确认静止，请显式接管后调整。':'停止请求已发出。设备确认静止前，手动操作锁定。')+acts(
+ return grid(card('协助请求',rows([['原因',task.reason],['当前控制权',task.state==='人工控制'&&!pending?'用户已接管':'自动和手动均已锁定'],['当前状态',pending||task.state],['设备状态',stop],['可用恢复次数',task.cfg.attempts-task.attempts],['模拟 GPU 费用',money(task.wall/3600)]])),card('手动调整',note(pending?'手动权限已撤回。等待新的停车证据与归还校验。':task.state==='人工控制'?'可调整衣物位置或夹持接触，完成后归还控制。':rest()?'已确认静止，请显式接管后调整。':'停止请求已发出。设备确认静止前，手动操作锁定。')+acts(
  button('take','接管',home()&&task.state==='等待协助'&&rest()&&!pending,()=>{task.state='人工控制';task.manual=true;log('已授权本次手动接管。')},'primary'),
  button('adjust','调整衣物位置',home()&&task.state==='人工控制'&&!pending,()=>{task.adjustments++;stop='执行中';advanceGeneration();log('完成一次示例人工调整。')}),
  button('return','归还控制',home()&&task.state==='人工控制'&&!pending,()=>{pending='归还停车';task.state='等待协助';halt();log('已撤回手动权限，等待本次归还的停车证据。','AUTHORITY_REVOKED')}),
@@ -208,9 +211,9 @@ function result(){
  if(!home())return card('记录访问受限',note('请切回本地家庭用户并连接会话以访问自己的任务记录。'));
  if(!records.length)return card('尚无已保存结果',note('任务完成、失败或终止后，可在此查看其过程。'));
  const r=selected||records[0];const f=r.frames[frame]||r.frames[0];
- return grid(card('任务结果','<label>本会话记录 <select id="record">'+records.map(x=>'<option '+(x===r?'selected ':'')+'value="'+x.id+'">'+x.id+' · '+x.state+'</option>').join('')+'</select></label>'+rows([['运行结果',r.state],['结束原因',r.reason],['求助 / 已接管',(r.help?'有':'无')+' / '+(r.manual?'有':'无')],['终态恢复次数',r.end.attempts],['终态活动时间',r.end.time+' 秒'],['累计活动 / 计费',r.time+' 秒 / '+money(r.wall/3600)],['设备最后记录',r.frames.at(-1).stop],['冻结版本',r.model+' / v'+r.cfg.version],['离线质量',r.quality],['依据',r.qualityReason],['示例自主成功',verdict(r)]])+acts(
+ return grid(card('任务结果','<label>本会话记录 <select id="record">'+records.map(x=>'<option '+(x===r?'selected ':'')+'value="'+x.id+'">'+x.id+' · '+x.state+'</option>').join('')+'</select></label>'+rows([['运行结果',r.state],['结束原因',r.reason],['求助 / 已接管',(r.help?'有':'无')+' / '+(r.manual?'有':'无')],['人工调整次数',r.adjustments],['终态恢复次数',r.end.attempts],['终态活动时间',r.end.time+' 秒'],['累计活动 / 计费',r.time+' 秒 / '+money(r.wall/3600)],['设备最后记录',r.frames.at(-1).stop],['冻结版本',r.model+' / v'+r.cfg.version],['离线质量',r.quality],['依据',r.qualityReason],['示例自主成功',verdict(r)]])+acts(
  button('export','导出记录',true,()=>{const a=document.createElement('a');const url=URL.createObjectURL(new Blob([JSON.stringify(exportRecord(r),null,2)],{type:'application/json'}));a.href=url;a.download=r.id+'-示例记录.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);say('已生成示例记录。')}),
- button('delete','删除记录',!r.linked&&(r!==task||rest()),()=>{if(!confirm('删除当前示例记录？'))return;records=records.filter(x=>x!==r);if(task===r)task=null;selected=records[0]||null;frame=0;stopPlay();say('已删除选定记录。')},'danger'))+(r.linked?note('存在数据引用，删除已锁定。'):'')),card('事件回放 · 只读',diagram(f.state)+rows([['事件',(frame+1)+' / '+r.frames.length],['当时状态',f.state],['当时设备',f.stop]])+note(f.event)+'<label>定位事件<input id="scrub" type="range" min="0" max="'+(r.frames.length-1)+'" value="'+frame+'"></label>'+acts(button('play',playing?'暂停回放':'播放',r.frames.length>1,()=>{if(playing)stopPlay();else{if(frame===r.frames.length-1)frame=0;playing=setInterval(()=>{if(frame<r.frames.length-1)frame++;else stopPlay();render()},700)}}),button('next','下一事件',frame<r.frames.length-1,()=>{stopPlay();frame++}))));
+ button('delete','删除记录',!r.linked&&(r!==task||rest()),()=>{if(!confirm('删除当前示例记录？'))return;records=records.filter(x=>x!==r);if(task===r)task=null;selected=records[0]||null;frame=0;stopPlay();say('已删除选定记录。')},'danger'))+(r.linked?note('存在数据引用，删除已锁定。'):'')+(r.quality==='通过'&&(r.manual||r.help)?note('末态质量通过；本次有求助或人工接管，因此自主成功为“否”。'):'')),card('模拟事件回放 · 只读',eventPicker(r)+rows([['事件',(frame+1)+' / '+r.frames.length],['当时状态',f.state],['当时设备',f.stop]])+note(f.event)+'<label>定位事件<input id="scrub" type="range" min="0" max="'+(r.frames.length-1)+'" value="'+frame+'"></label>'+acts(button('play',playing?'暂停回放':'播放事件',r.frames.length>1,()=>{if(playing)stopPlay();else{if(frame===r.frames.length-1)frame=0;playing=setInterval(()=>{if(frame<r.frames.length-1)frame++;else stopPlay();render()},700)}}),button('next','下一事件',frame<r.frames.length-1,()=>{stopPlay();frame++}))));
 }
 const stages=['等待数据','示范已登记','已批准作业预算','已训练','验证通过并冻结','终测通过','终测失败','已激活'];
 let compatible=true,draft=null;
@@ -282,9 +285,14 @@ function harness(){
 }
 function render(){
  const focused=document.activeElement?.id; commands.clear();
- $('role').value=role;$('role').disabled=!connected;
- document.querySelector('nav').innerHTML=views.map((s,i)=>'<button id="nav'+(i+1)+'" data-page="'+(i+1)+'" aria-current="'+(page===i+1)+'" '+(i===4&&!maintain()?'disabled':'')+'><span>S0'+(i+1)+'</span>'+s+'</button>').join('');
- $('sid').textContent='S0'+page+' / 本地演示';$('title').textContent=views[page-1];$('identity').textContent=(connected?'会话在线':'会话失联')+' · '+(adapter?'设备在线':'设备离线');
+ for(const control of document.querySelectorAll('[data-role]')){
+   control.setAttribute('aria-pressed',String(control.dataset.role===role));
+   control.disabled = !connected;
+ }
+ $('restore-session').hidden=connected;
+ document.querySelector('nav').innerHTML=views.map((s,i)=>'<button id="nav'+(i+1)+'" data-page="'+(i+1)+'" aria-current="'+(page===i+1)+'" '+(i===4&&!maintain()?'disabled':'')+'>'+s+'</button>').join('');
+ $('sid').textContent='交互模拟';$('title').textContent=views[page-1];$('identity').textContent=(connected?'会话在线':'会话失联')+' · '+(adapter?'设备在线':'设备离线');
+ $('no-maint').hidden=maintain();
  $('workspace').innerHTML=[prep,monitor,assistance,result,maintenance][page-1]() + ([2,3].includes(page) ? reasonGuide() : '');
  $('events').innerHTML=harness();$('msg').textContent=notice;
  if($('source').dataset.page!==String(page)){$('source').replaceChildren($('ref'+page).content.cloneNode(true));$('source').dataset.page=page}
@@ -292,16 +300,41 @@ function render(){
 }
 document.addEventListener('click',e=>{
  const b=e.target.closest('button');if(!b||b.disabled)return;
+ if(b.dataset.role){
+   if(!connected || role===b.dataset.role)return;
+   role=b.dataset.role;
+   draft=null;
+   let nextPage = selected ? 4 : 1;
+   if(active()) nextPage = ['等待协助','人工控制'].includes(task.state) ? 3 : 2;
+   go(role==='maint' ? 5 : nextPage);
+   return;
+ }
+ if(b.id==='restore-session'){commands.get('session').act();render();return}
  if(b.dataset.page){go(Number(b.dataset.page));return}
  const op=commands.get(b.id);if(op?.enabled){op.act();render()}
 });
 document.addEventListener('change',e=>{
  const el=e.target;
- if(el=== $('role')){role=el.value;draft=null;stopPlay();if(page===5&&role==='home')page=1;say('角色已切换。')}
- else if(el.hasAttribute('data-prep')){prepared[Number(el.dataset.prep)]=el.checked;checked=false;notice=''}
+ if(el.hasAttribute('data-prep')){prepared[Number(el.dataset.prep)]=el.checked;checked=false;notice=''}
  else if(el.id==='record'){selected=records.find(x=>x.id===el.value);frame=0;stopPlay()}
- else if(el.id==='scrub'){frame=Number(el.value);stopPlay()}
+ else if(el.id==='scrub'||el.id==='event-select'){frame=Number(el.value);stopPlay()}
  else return;
  render()
 });
 render();
+
+const recordDialog = $('record-dialog');
+$('open-records').onclick = () => {
+  stopPlay();
+  render();
+  const player = document.createElement('iframe');
+  player.src = 'replay/index.html';
+  player.title = '真实取景与轨迹浏览器';
+  $('player-host').replaceChildren(player);
+  recordDialog.showModal();
+};
+$('close-records').onclick = () => recordDialog.close();
+recordDialog.addEventListener('close', () => {
+  $('player-host').replaceChildren();
+  $('open-records').focus();
+});
