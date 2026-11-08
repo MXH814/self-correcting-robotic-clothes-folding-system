@@ -4,10 +4,11 @@ import json
 import os
 from pathlib import Path
 import sys
+import time
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--headless", action="store_true")
-parser.add_argument("--stage", choices=["engine", "garment"], default="garment")
+parser.add_argument("--stage", choices=["engine", "garment", "garment-reset"], default="garment")
 parser.add_argument("--keep-open", action="store_true")
 args = parser.parse_args()
 ROOT = Path(os.environ["ROBOTICS_PROJECT_ROOT"]).resolve()
@@ -54,6 +55,71 @@ try:
         env.scene.add(FixedCuboid(prim_path="/World/Table", position=np.array([0, 0.7, -0.05]), scale=np.array([3.2, 3.2, 0.1]), size=1, color=np.array([0.45, 0.48, 0.5])))
         garment = Particle_Garment(env.world, usd_path=str(ROOT / "Assets/Garment/Tops/Collar_Lsleeve_FrontClose/TCLC_018/TCLC_018_obj.usd"), pos=np.array([0, 0.8, 0.2]), ori=np.zeros(3), visual_material_usd=None)
         robot = Bimanual_Ur10e(env.world, np.array([-0.8, 0, 0.5]), np.zeros(3), np.array([0.8, 0, 0.5]), np.zeros(3))
+        if args.stage == "garment-reset":
+            from pxr import Usd, UsdGeom
+
+            arms = (robot.dexleft, robot.dexright)
+            mesh = garment.garment_mesh
+
+            def world_vertices():
+                points = np.asarray(mesh._get_points_pose())
+                transform = UsdGeom.Xformable(mesh.prim).ComputeLocalToWorldTransform(Usd.TimeCode.Default())
+                return (np.column_stack((points, np.ones(len(points)))) @ np.asarray(transform))[:, :3]
+
+            def snapshot(previous, previous_time):
+                positions = world_vertices()
+                return {
+                    "positions": positions,
+                    "velocities": (positions - previous) / (env.world.current_time - previous_time),
+                    "joint_positions": np.concatenate([arm.get_joint_positions() for arm in arms]),
+                    "joint_velocities": np.concatenate([arm.get_joint_velocities() for arm in arms]),
+                }
+
+            def differences(reference, actual):
+                result = {}
+                for key in reference:
+                    delta = actual[key] - reference[key]
+                    if key in ("positions", "velocities"):
+                        delta = np.linalg.norm(delta, axis=-1)
+                    result[key] = {"max_abs": float(np.max(np.abs(delta))),
+                                   "rms": float(np.sqrt(np.mean(delta ** 2)))}
+                return result
+
+            start = time.perf_counter()
+            runs = []
+            for index in range(3):
+                env.reset()
+                garment.set_pose(pos=np.array([0, 0.8, 0.2]), ori=np.zeros(3))
+                # Synchronize cloth and articulation handles before reading.
+                env.step()
+                before, before_time = world_vertices(), env.world.current_time
+                env.step()
+                initial = snapshot(before, before_time)
+                for _ in range(97):
+                    env.step()
+                before, before_time = world_vertices(), env.world.current_time
+                env.step()
+                settled = snapshot(before, before_time)
+                if index == 0:
+                    reference_initial, reference_settled = initial, settled
+                runs.append({"run_index": index, "initial_steps_after_reset": 2, "settled_steps_after_reset": 100,
+                             "initial_error": differences(reference_initial, initial),
+                             "settled_error": differences(reference_settled, settled),
+                             "motion_during_settling": differences(initial, settled)})
+            reset = {"scope": "initial-state reset and repeated settling", "garment": "TCLC_018",
+                     "mesh_vertex_count": len(reference_initial["positions"]),
+                     "cloth_velocity_source": "finite differences of world-space USD mesh points over one simulation step",
+                     "units": {"positions": "m", "velocities": "m/s", "joint_positions": "rad",
+                               "joint_velocities": "rad/s"},
+                     "wall_elapsed_s": time.perf_counter() - start, "runs": runs,
+                     "contact_and_rng_state": None, "mid_task_snapshot": None}
+            result_path = OUTPUT / "garment-reset-result.json"
+            result_path.write_text(json.dumps(reset, indent=2, allow_nan=False), encoding="utf-8")
+            marker = os.environ.get("ROBOTICS_PROBE_MARKER")
+            if marker:
+                Path(marker).write_text(str(result_path), encoding="utf-8")
+            print("GARMENT_RESET_MEASURED", flush=True)
+            raise SystemExit(0)
         camera = Recording_Camera(camera_position=np.array([0, 4.0, 6.0]), camera_orientation=np.array([0, 60, -90.0]), resolution=(640, 480))
         env.reset()
         garment.set_pose(pos=np.array([0, 0.8, 0.2]), ori=np.zeros(3))

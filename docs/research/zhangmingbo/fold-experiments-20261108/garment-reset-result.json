@@ -1,0 +1,194 @@
+{
+  "scope": "initial-state reset and repeated settling",
+  "garment": "TCLC_018",
+  "mesh_vertex_count": 9844,
+  "cloth_velocity_source": "finite differences of world-space USD mesh points over one simulation step",
+  "units": {
+    "positions": "m",
+    "velocities": "m/s",
+    "joint_positions": "rad",
+    "joint_velocities": "rad/s"
+  },
+  "wall_elapsed_s": 12.277882699971087,
+  "runs": [
+    {
+      "run_index": 0,
+      "initial_steps_after_reset": 2,
+      "settled_steps_after_reset": 100,
+      "initial_error": {
+        "positions": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        },
+        "velocities": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        },
+        "joint_positions": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        },
+        "joint_velocities": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        }
+      },
+      "settled_error": {
+        "positions": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        },
+        "velocities": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        },
+        "joint_positions": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        },
+        "joint_velocities": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        }
+      },
+      "motion_during_settling": {
+        "positions": {
+          "max_abs": 0.3109198118594822,
+          "rms": 0.1592687793376146
+        },
+        "velocities": {
+          "max_abs": 0.7499918550680321,
+          "rms": 0.6532424863029035
+        },
+        "joint_positions": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        },
+        "joint_velocities": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        }
+      }
+    },
+    {
+      "run_index": 1,
+      "initial_steps_after_reset": 2,
+      "settled_steps_after_reset": 100,
+      "initial_error": {
+        "positions": {
+          "max_abs": 3.2141646881867424e-05,
+          "rms": 2.1186565403842472e-06
+        },
+        "velocities": {
+          "max_abs": 0.00104664861239858,
+          "rms": 6.612941834212698e-05
+        },
+        "joint_positions": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        },
+        "joint_velocities": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        }
+      },
+      "settled_error": {
+        "positions": {
+          "max_abs": 0.03136630002413629,
+          "rms": 0.005316662258366247
+        },
+        "velocities": {
+          "max_abs": 0.3044820843309208,
+          "rms": 0.009247423344623302
+        },
+        "joint_positions": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        },
+        "joint_velocities": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        }
+      },
+      "motion_during_settling": {
+        "positions": {
+          "max_abs": 0.31054247871821394,
+          "rms": 0.15934869168519863
+        },
+        "velocities": {
+          "max_abs": 0.7139019402077332,
+          "rms": 0.6530744786190588
+        },
+        "joint_positions": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        },
+        "joint_velocities": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        }
+      }
+    },
+    {
+      "run_index": 2,
+      "initial_steps_after_reset": 2,
+      "settled_steps_after_reset": 100,
+      "initial_error": {
+        "positions": {
+          "max_abs": 2.499372615133211e-05,
+          "rms": 2.5985429514019314e-06
+        },
+        "velocities": {
+          "max_abs": 0.0008667098529649962,
+          "rms": 7.957774207632998e-05
+        },
+        "joint_positions": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        },
+        "joint_velocities": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        }
+      },
+      "settled_error": {
+        "positions": {
+          "max_abs": 0.03168380036826491,
+          "rms": 0.005790981998823596
+        },
+        "velocities": {
+          "max_abs": 0.21563376764274672,
+          "rms": 0.00849587689960754
+        },
+        "joint_positions": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        },
+        "joint_velocities": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        }
+      },
+      "motion_during_settling": {
+        "positions": {
+          "max_abs": 0.31024883323792346,
+          "rms": 0.15913613952433653
+        },
+        "velocities": {
+          "max_abs": 0.794163878569508,
+          "rms": 0.6532044706246549
+        },
+        "joint_positions": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        },
+        "joint_velocities": {
+          "max_abs": 0.0,
+          "rms": 0.0
+        }
+      }
+    }
+  ],
+  "contact_and_rng_state": null,
+  "mid_task_snapshot": null
+}

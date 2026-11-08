@@ -3,7 +3,7 @@ $ErrorActionPreference = 'Stop'
 $launcher = Join-Path $PSScriptRoot '..\tools\simulation\run_local.ps1'
 $launcher = (Resolve-Path -LiteralPath $launcher).Path
 $fixture = Join-Path ([IO.Path]::GetTempPath()) ('launcher-test-' + [guid]::NewGuid().ToString('N'))
-$names = @('PYTHONPATH','HF_HOME','PIP_CACHE_DIR','ROBOTICS_PROJECT_ROOT','ROBOTICS_OUTPUT_ROOT','ROBOTICS_HEADLESS','ROBOTICS_KEEP_OPEN','HANDOFF_CAPTURE','HANDOFF_EXIT')
+$names = @('PYTHONPATH','HF_HOME','PIP_CACHE_DIR','ROBOTICS_PROJECT_ROOT','ROBOTICS_OUTPUT_ROOT','ROBOTICS_HEADLESS','ROBOTICS_KEEP_OPEN','ROBOTICS_PROBE_MARKER','HANDOFF_CAPTURE','HANDOFF_EXIT','HANDOFF_WRITE_MARKER')
 $original = @{}
 foreach ($name in $names) { $original[$name] = [Environment]::GetEnvironmentVariable($name, 'Process') }
 
@@ -26,6 +26,7 @@ function Make-Fixture($root, $isaacName, $projectName, $depsName) {
 >> "%HANDOFF_CAPTURE%" echo ROBOTICS_OUTPUT_ROOT=%ROBOTICS_OUTPUT_ROOT%
 >> "%HANDOFF_CAPTURE%" echo ROBOTICS_HEADLESS=%ROBOTICS_HEADLESS%
 >> "%HANDOFF_CAPTURE%" echo ROBOTICS_KEEP_OPEN=%ROBOTICS_KEEP_OPEN%
+if "%HANDOFF_WRITE_MARKER%"=="1" > "%ROBOTICS_PROBE_MARKER%" echo fixture
 exit /b %HANDOFF_EXIT%
 '@ | Set-Content -LiteralPath (Join-Path $isaac 'python.bat') -Encoding Ascii
 }
@@ -66,6 +67,38 @@ try {
         $caught = $false
         try { & $launcher -RoboticsRoot '.\robotics root with spaces' -Stage engine -Headless } catch { $caught = $_.Exception.Message -like '*code 7*' }
         if (-not $caught) { throw 'Expected the fixture exit code 7 to fail the launcher' }
+        # A zero exit from Isaac is not proof that a sample was written.
+        $env:HANDOFF_EXIT = '0'
+        $env:ROBOTICS_PROBE_MARKER = 'prior-marker'
+        foreach ($stage in @('runtime-io', 'runtime-control', 'fold-camera', 'garment-reset')) {
+            $env:HANDOFF_WRITE_MARKER = '0'
+            $stageOutput = Join-Path $fixture "output-$stage"
+            $caught = $false
+            try {
+                & $launcher -RoboticsRoot '.\robotics root with spaces' -Stage $stage -OutputRoot $stageOutput -Headless
+            } catch { $caught = $_.Exception.Message -like "$stage sample was not completed*" }
+            if (-not $caught) { throw "Expected $stage to reject exit 0 without a completion marker" }
+            if (Test-Path -LiteralPath $stageOutput) { throw "Fixture unexpectedly created output for $stage" }
+            Assert-Equal $env:ROBOTICS_PROBE_MARKER 'prior-marker' "marker environment after $stage failure"
+            $env:HANDOFF_WRITE_MARKER = '1'
+            & $launcher -RoboticsRoot '.\robotics root with spaces' -Stage $stage -OutputRoot $stageOutput -Headless
+            Assert-Equal $env:ROBOTICS_PROBE_MARKER 'prior-marker' "marker environment after $stage success"
+        }
+        # Artifacts from earlier invocations must not satisfy the fresh marker.
+        $env:HANDOFF_WRITE_MARKER = '0'
+        $oldFold = Join-Path $fixture 'output-fold-camera\fold-camera-old'
+        New-Item -ItemType Directory -Path $oldFold -Force | Out-Null
+        Set-Content -LiteralPath (Join-Path $oldFold 'evidence.json') -Value '{"upstream_judge":false}'
+        $oldReset = Join-Path $fixture 'output-garment-reset'
+        New-Item -ItemType Directory -Path $oldReset -Force | Out-Null
+        Set-Content -LiteralPath (Join-Path $oldReset 'garment-reset-result.json') -Value '{"runs":[{},{},{}]}'
+        foreach ($stage in @('fold-camera', 'garment-reset')) {
+            $caught = $false
+            try {
+                & $launcher -RoboticsRoot '.\robotics root with spaces' -Stage $stage -OutputRoot (Join-Path $fixture "output-$stage") -Headless
+            } catch { $caught = $_.Exception.Message -like "$stage sample was not completed*" }
+            if (-not $caught) { throw "Expected $stage to reject output from an earlier invocation" }
+        }
         Assert-Equal (Get-Location).Path $cwd 'working directory'
         foreach ($name in $names[0..6]) { Assert-Equal ([Environment]::GetEnvironmentVariable($name, 'Process')) "original-$name" $name }
         Write-Host 'SIMULATION_LAUNCHER_TESTS_PASSED'
