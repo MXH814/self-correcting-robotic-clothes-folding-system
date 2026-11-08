@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('engine','garment','garment-reset','fold','fold-camera','runtime-io','runtime-control')][string]$Stage = 'garment',
+    [ValidateSet('engine','garment','garment-reset','garment-fault','fold','fold-camera','runtime-io','runtime-control')][string]$Stage = 'garment',
     [string]$RoboticsRoot = 'E:\Robotics',
     [string]$IsaacRoot = '',
     [string]$ProjectRoot = '',
@@ -11,7 +11,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 if ($Headless -and $KeepOpen) { throw 'KeepOpen requires a graphical session.' }
-if ($Stage -in @('runtime-io','runtime-control') -and $KeepOpen) { throw 'Runtime probes are headless and do not support KeepOpen.' }
+if ($Stage -in @('runtime-io','runtime-control','garment-fault') -and $KeepOpen) { throw 'This probe runs headless and does not support KeepOpen.' }
 # Resolve against the caller's PowerShell location, before changing directories.
 # Unlike Resolve-Path, this also supports an output directory not created yet.
 $RoboticsRoot = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($RoboticsRoot)
@@ -42,7 +42,7 @@ try {
     $env:ROBOTICS_OUTPUT_ROOT = $OutputRoot
     $env:ROBOTICS_HEADLESS = if ($Headless) { '1' } else { '0' }
     $env:ROBOTICS_KEEP_OPEN = if ($KeepOpen) { '1' } else { '0' }
-    if ($Stage -in @('runtime-io','runtime-control','fold-camera','garment-reset')) {
+    if ($Stage -in @('runtime-io','runtime-control','fold-camera','garment-reset','garment-fault')) {
         # Isaac can exit with code 0 before writing the experiment result.
         $marker = Join-Path ([System.IO.Path]::GetTempPath()) ("robotics-complete-" + [guid]::NewGuid().ToString('N') + '.txt')
         $env:ROBOTICS_PROBE_MARKER = $marker
@@ -52,6 +52,8 @@ try {
         if ($Stage -in @('fold', 'fold-camera')) {
             $env:ROBOTICS_FOLD_CAMERA = if ($Stage -eq 'fold-camera') { '1' } else { '0' }
             & $isaacPython -u (Join-Path $PSScriptRoot 'run_fold_local.py') --garment_random_flag False --record_video_flag False --data_collection_flag True
+        } elseif ($Stage -eq 'garment-fault') {
+            & $isaacPython -u (Join-Path $PSScriptRoot 'garment_fault_probe.py')
         } elseif ($Stage -in @('runtime-io','runtime-control')) {
             $env:ROBOTICS_RUNTIME_CONTROL = if ($Stage -eq 'runtime-control') { '1' } else { '0' }
             & $isaacPython -u (Join-Path $PSScriptRoot 'capture_runtime_io.py')

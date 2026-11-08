@@ -70,7 +70,7 @@ try {
         # A zero exit from Isaac is not proof that a sample was written.
         $env:HANDOFF_EXIT = '0'
         $env:ROBOTICS_PROBE_MARKER = 'prior-marker'
-        foreach ($stage in @('runtime-io', 'runtime-control', 'fold-camera', 'garment-reset')) {
+        foreach ($stage in @('runtime-io', 'runtime-control', 'fold-camera', 'garment-reset', 'garment-fault')) {
             $env:HANDOFF_WRITE_MARKER = '0'
             $stageOutput = Join-Path $fixture "output-$stage"
             $caught = $false
