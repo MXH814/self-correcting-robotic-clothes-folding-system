@@ -177,7 +177,7 @@ function terminate(){
  return button('terminate','终止任务',home()&&active(),()=>{if(confirm('终止本次任务并请求停车？已终止的任务无法继续。'))finish('已终止','用户终止任务。')},'danger')
 }
 function prep(){
- const checkboxes=['已放好一件展开、无结的上衣','桌面没有杂物，已了解人工协助步骤'].map((s,i)=>'<label><input type="checkbox" data-prep="'+i+'" '+(prepared[i]?'checked ':'')+(home()&&!pending&&!active()?'':'disabled')+'> '+s+'</label>').join('');
+ const checkboxes=['已放好一件展开、无结的上衣','桌面没有杂物，已了解人工协助步骤'].map((s,i)=>'<label><input type="checkbox" id="prep-'+i+'" data-prep="'+i+'" '+(prepared[i]?'checked ':'')+(home()&&!pending&&!active()?'':'disabled')+'> '+s+'</label>').join('');
  const hint=!home()?'请使用已连接的家庭用户会话。':active()?'已有任务，请到运行监控查看。':pending?'等待测试桩返回校验结果，可取消本次启动。':!rest()?'启动已锁定。请等待设备给出新的静止证据。':scene!=='有效'?'修正场景：'+scene+'，然后重新检查。':!prepared.every(Boolean)?'请先确认两项准备条件。':checked?'就绪检查通过，可以启动。':'请检查就绪条件。';
  return grid(card('桌面与衣物',diagram('待准备')+rows([['固定衣物',cfg.scene],['折叠目标','TOPS-FOLD-01'],['已批准模型',model],['当前停车状态',stop]])),card('启动前确认','<div class="checks">'+checkboxes+'</div>'+note(hint)+acts(
  button('check','检查就绪',home()&&!active()&&!pending,()=>{checked=ready();say(checked?'就绪检查通过。':hint)}),
