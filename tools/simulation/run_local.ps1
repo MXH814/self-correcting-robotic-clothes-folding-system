@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('engine','garment','fold')][string]$Stage = 'garment',
+    [ValidateSet('engine','garment','fold','runtime-io')][string]$Stage = 'garment',
     [string]$RoboticsRoot = 'E:\Robotics',
     [string]$IsaacRoot = '',
     [string]$ProjectRoot = '',
@@ -11,6 +11,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 if ($Headless -and $KeepOpen) { throw 'KeepOpen requires a graphical session.' }
+if ($Stage -eq 'runtime-io' -and $KeepOpen) { throw 'runtime-io is headless and does not support KeepOpen.' }
 # Resolve against the caller's PowerShell location, before changing directories.
 # Unlike Resolve-Path, this also supports an output directory not created yet.
 $RoboticsRoot = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($RoboticsRoot)
@@ -44,6 +45,8 @@ try {
     try {
         if ($Stage -eq 'fold') {
             & $isaacPython -u (Join-Path $PSScriptRoot 'run_fold_local.py') --garment_random_flag False --record_video_flag False --data_collection_flag True
+        } elseif ($Stage -eq 'runtime-io') {
+            & $isaacPython -u (Join-Path $PSScriptRoot 'capture_runtime_io.py')
         } else {
             $arguments = @('-u', (Join-Path $PSScriptRoot 'smoke_test.py'), '--stage', $Stage)
             if ($Headless) { $arguments += '--headless' }
