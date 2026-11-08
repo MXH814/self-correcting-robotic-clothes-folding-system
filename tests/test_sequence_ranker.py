@@ -19,6 +19,8 @@ def features(i=0):
                   retreat_world_m=[0,0,.2],pick_world_m=[0,0,0],lift_world_m=[0,0,.3],
                   orientation_wxyz=[1,0,0,0],open_wait_steps=45,close_wait_steps=12)
     return dict(trial_id='t'+str(i),profile_id='software-fixture-profile',input_scope='recovery_macro_decision',
+                continuation_context_reference='software-fixture-controller-goal-budget',
+                encoding_reference='software-fixture-encoding/1',
                 current_observation=[float(i),.3],candidate_target=encode_macro(proposal),
                 recovery_macro_candidate_spec=proposal,as_of=proposal['available_at'],
                 past_observations=[0.,0.,float(i),.1],observation_history_mask=[False,True],
@@ -37,6 +39,7 @@ def rows():
                            candidate_spec_reference='software fixture',candidate_available_before_decision=True,
                            target_definition='fixed-controller-continuation/v1',
                            continuation_context_reference='software-fixture-controller-goal-budget',features=features(i)))
+        result[-1]['encoding_reference']='software-fixture-encoding/1'
     return result
 
 
@@ -73,3 +76,12 @@ class SequenceRankerSoftware(unittest.TestCase):
             self.assertEqual(prediction['scores'],result['development_logits'])
             self.assertEqual(prediction['score_semantics'],'rank_only')
             self.assertFalse(prediction['online_authorized'])
+
+    def test_checkpoint_rejects_different_camera_context_or_encoding(self):
+        r=rows()
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'fixture.pt';train(r,path,epochs=1,hidden=4)
+            for key in ('continuation_context_reference','encoding_reference'):
+                f=copy.deepcopy(r[-1]['features']);f[key]='another-configuration'
+                with self.assertRaises(ValueError):
+                    predict(path,[f])

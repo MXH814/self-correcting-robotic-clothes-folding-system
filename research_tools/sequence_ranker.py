@@ -40,9 +40,9 @@ def build_model(config):
         def __init__(self):
             super().__init__()
             h=config['hidden']
-            self.obs=nn.GRUCell(config['observation_history_dim'],h)
-            self.action=nn.GRUCell(config['action_history_dim'],h)
-            extra=2*h if config['use_history'] else 0
+            self.obs=nn.GRUCell(config['observation_history_dim'],h) if config['observation_history_steps'] else None
+            self.action=nn.GRUCell(config['action_history_dim'],h) if config['action_history_steps'] else None
+            extra=h*(int(self.obs is not None)+int(self.action is not None))
             self.head=nn.Sequential(nn.Linear(config['current_dim']+config['candidate_dim']+extra,h),
                                     nn.ReLU(),nn.Linear(h,1))
 
@@ -57,32 +57,68 @@ def build_model(config):
 
         def forward(self,batch):
             parts=[batch['current_observation'],batch['candidate_target']]
-            if config['use_history']:
-                parts.extend([self.recurrent(self.obs,batch['past_observations'],batch['observation_history_mask']),
-                              self.recurrent(self.action,batch['executed_history'],batch['action_history_mask'])])
+            if self.obs is not None:
+                steps=config['observation_history_steps']
+                parts.append(self.recurrent(self.obs,batch['past_observations'][:,-steps:],
+                                            batch['observation_history_mask'][:,-steps:]))
+            if self.action is not None:
+                steps=config['action_history_steps']
+                parts.append(self.recurrent(self.action,batch['executed_history'][:,-steps:],
+                                            batch['action_history_mask'][:,-steps:]))
             return self.head(torch.cat(parts,dim=1)).flatten()
 
     return Ranker()
 
 
-def configuration(batch,hidden=32,use_history=True):
+def configuration(batch,hidden=32,use_history=True,observation_steps=None,action_steps=None):
     require(type(hidden) is int and hidden>0, 'hidden must be positive')
+    obs=batch['past_observations'].shape[1] if observation_steps is None and use_history else (observation_steps or 0)
+    actions=batch['executed_history'].shape[1] if action_steps is None and use_history else (action_steps or 0)
+    require(type(obs) is int and 0<=obs<=batch['past_observations'].shape[1], 'observation history window unavailable')
+    require(type(actions) is int and 0<=actions<=batch['executed_history'].shape[1], 'action history window unavailable')
     return dict(current_dim=batch['current_observation'].shape[-1],candidate_dim=batch['candidate_target'].shape[-1],
                 observation_history_dim=batch['past_observations'].shape[-1],
-                action_history_dim=batch['executed_history'].shape[-1],hidden=hidden,use_history=use_history)
+                action_history_dim=batch['executed_history'].shape[-1],hidden=hidden,use_history=bool(obs or actions),
+                observation_history_steps=obs,action_history_steps=actions)
 
 
-def validate_training_rows(rows):
+def parameter_count(config):
+    h=config['hidden']
+    extra=0;recurrent=0
+    for key,dimension in (('observation_history_steps','observation_history_dim'),('action_history_steps','action_history_dim')):
+        if config[key]:
+            recurrent+=3*h*config[dimension]+3*h*h+6*h
+            extra+=h
+    return recurrent+(config['current_dim']+config['candidate_dim']+extra+2)*h+1
+
+
+def ablation_configurations(batch,hidden=32):
+    """Temporal/capacity controls, not reproductions of SADP or other papers."""
+    full=configuration(batch,hidden,True,4,4)
+    target=parameter_count(full)
+    base=batch['current_observation'].shape[-1]+batch['candidate_target'].shape[-1]+2
+    near=max(1,int((target-1)/base))
+    width=min((near,near+1),key=lambda n:abs(base*n+1-target))
+    return {'current':configuration(batch,hidden,False),
+            'observation-total3':configuration(batch,hidden,True,2,0),
+            'observation-total5':configuration(batch,hidden,True,4,0),
+            'observation-action-total5':full,
+            'current-capacity-match':configuration(batch,width,False)}
+
+
+def validate_training_rows(rows, require_coverage=True, allow_unassigned=False):
     require(isinstance(rows,list) and bool(rows),'no recovery samples')
     splits={}
     identities=set()
     profiles=set()
     contexts=set()
+    encodings=set()
     for row in rows:
         require(row.get('schema')=='reviewed-recovery-sample/1'
                 and row.get('decision_scope')=='recovery_macro',
                 'training requires reviewed recovery decisions, not articulation dispatches')
-        require(row.get('split') in ('train','development'), 'only train/development allowed; sealed test forbidden')
+        allowed=('train','development','unassigned') if allow_unassigned else ('train','development')
+        require(row.get('split') in allowed, 'only train/development allowed; sealed test forbidden')
         require(type(row.get('continuation_success')) is bool and row.get('label_review_reference'),
                 'reviewed continuation labels required; unknown cannot become negative')
         require(row.get('target_definition')=='fixed-controller-continuation/v1', 'unfrozen supervision target')
@@ -99,6 +135,11 @@ def validate_training_rows(rows):
         require(all(isinstance(x,str) and x for x in ident) and ident not in identities, 'duplicate/missing decision identity')
         identities.add(ident)
         feature=row['features']
+        require(feature.get('continuation_context_reference')==row['continuation_context_reference'],
+                'feature/training context mismatch')
+        require(isinstance(row.get('encoding_reference'),str) and row['encoding_reference']
+                and feature.get('encoding_reference')==row['encoding_reference'], 'feature encoding reference mismatch')
+        encodings.add(row['encoding_reference'])
         require(feature.get('trial_id')==row['trial_id'], 'cross-trial supervision')
         require(feature.get('input_scope')=='recovery_macro_decision',
                 'a whole recovery proposal must replace the articulation target before training')
@@ -112,10 +153,12 @@ def validate_training_rows(rows):
         profiles.add(feature.get('profile_id'))
     require(len(profiles)==1 and None not in profiles, 'inconsistent joint profile')
     require(len(contexts)==1, 'this prototype requires a fixed controller/goal/budget context')
+    require(len(encodings)==1, 'inconsistent feature encodings')
     train=[r for r in rows if r['split']=='train']
     dev=[r for r in rows if r['split']=='development']
-    require(bool(dev) and {r['continuation_success'] for r in train}=={False,True},
-            'need reviewed positive/negative train outcomes and separate development data')
+    if require_coverage:
+        require(bool(dev) and {r['continuation_success'] for r in train}=={False,True},
+                'need reviewed positive/negative train outcomes and separate development data')
     return train,dev
 
 
@@ -145,7 +188,7 @@ def normalize(batch,scale):
     return result
 
 
-def train(rows,output,epochs=30,hidden=32,seed=17,use_history=True):
+def train(rows,output,epochs=30,hidden=32,seed=17,use_history=True,variant=None):
     import torch
     train_rows,dev_rows=validate_training_rows(rows)
     require(type(epochs) is int and epochs>0, 'positive epoch count required')
@@ -153,8 +196,13 @@ def train(rows,output,epochs=30,hidden=32,seed=17,use_history=True):
     torch.set_num_threads(1);torch.manual_seed(seed)
     torch.use_deterministic_algorithms(True)
     x=tensors([r['features'] for r in train_rows]);z=tensors([r['features'] for r in dev_rows])
-    cfg=configuration(x,hidden,use_history)
-    require(configuration(z,hidden,use_history)==cfg,'development feature shape mismatch')
+    if variant is None:
+        cfg=configuration(x,hidden,use_history)
+    else:
+        configs=ablation_configurations(x,hidden)
+        require(variant in configs,'unknown ablation variant');cfg=configs[variant]
+    require(configuration(z,cfg['hidden'],cfg['use_history'],cfg['observation_history_steps'],cfg['action_history_steps'])==cfg,
+            'development feature shape mismatch')
     scale=_fit_scale(x);x=normalize(x,scale);z=normalize(z,scale)
     y=torch.tensor([float(r['continuation_success']) for r in train_rows])
     model=build_model(cfg)
@@ -168,10 +216,13 @@ def train(rows,output,epochs=30,hidden=32,seed=17,use_history=True):
     model.eval()
     with torch.no_grad():
         logits=model(z).tolist()
-    checkpoint={'schema':'experimental-sequence-ranker/1','config':cfg,'weights':model.state_dict(),
+    checkpoint={'schema':'experimental-sequence-ranker/2','config':cfg,'weights':model.state_dict(),
                 'normalization':scale,'score_semantics':'rank_only','online_authorized':False,
                 'seed':seed,'epochs':epochs,'profile_id':train_rows[0]['features']['profile_id'],
                 'target_definition':'fixed-controller-continuation/v1',
+                'continuation_context_reference':train_rows[0]['continuation_context_reference'],
+                'encoding_reference':train_rows[0]['encoding_reference'],
+                'variant':variant or ('history' if use_history else 'current'),
                 'research_conclusion':'NOT_ESTABLISHED'}
     with Path(output).open('xb') as f:
         torch.save(checkpoint,f)
@@ -183,11 +234,15 @@ def train(rows,output,epochs=30,hidden=32,seed=17,use_history=True):
 def predict(checkpoint,features):
     import torch
     saved=torch.load(checkpoint,map_location='cpu',weights_only=True)
-    require(saved['schema']=='experimental-sequence-ranker/1','unsupported checkpoint')
+    require(saved['schema']=='experimental-sequence-ranker/2','unsupported checkpoint; context-bound v2 required')
     require(all(f['profile_id']==saved['profile_id'] for f in features),'checkpoint profile mismatch')
+    require(all(f.get('continuation_context_reference')==saved['continuation_context_reference'] for f in features),
+            'checkpoint controller/target/camera/budget context mismatch')
+    require(all(f.get('encoding_reference')==saved['encoding_reference'] for f in features), 'checkpoint encoding mismatch')
     batch=tensors(features)
     cfg=saved['config']
-    require(configuration(batch,cfg['hidden'],cfg['use_history'])==cfg,'checkpoint input mismatch')
+    require(configuration(batch,cfg['hidden'],cfg['use_history'],cfg['observation_history_steps'],cfg['action_history_steps'])==cfg,
+            'checkpoint input mismatch')
     model=build_model(cfg);model.load_state_dict(saved['weights']);model.eval()
     with torch.no_grad():
         logits=model(normalize(batch,saved['normalization'])).tolist()
@@ -200,9 +255,12 @@ def main():
     parser.add_argument('--checkpoint',required=True)
     parser.add_argument('--epochs',type=int,default=30)
     parser.add_argument('--current-only',action='store_true')
+    parser.add_argument('--variant',choices=('current','observation-total3','observation-total5',
+                                            'observation-action-total5','current-capacity-match'))
     args=parser.parse_args()
     rows=[json.loads(line) for line in Path(args.input).read_text(encoding='utf-8').splitlines() if line.strip()]
-    print(json.dumps(train(rows,args.checkpoint,args.epochs,use_history=not args.current_only),indent=2))
+    require(not(args.current_only and args.variant),'choose --current-only or --variant')
+    print(json.dumps(train(rows,args.checkpoint,args.epochs,use_history=not args.current_only,variant=args.variant),indent=2))
 
 
 if __name__=='__main__':

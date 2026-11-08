@@ -1,0 +1,160 @@
+{
+  "schema": "ma-shared-context-and-proxy-data-audit/1",
+  "dataset_manifest": {
+    "builder_sha256": "ddf2c70fcf8a1bce129814a05ec45316509aa035295e70bca491ef765a4f218f",
+    "expected_shared_context_checked": true,
+    "files": {
+      "proxy-review.json": "7b7d9cab0864bab99e351dc2418f40a1a272217c0a023e46b70d6c21626efe1a",
+      "readiness.json": "9a23e04db3209247b8a4b54bb5d98b70df4766733557d8c25e5fdf93736ae9a8",
+      "samples.jsonl": "917b70da0e08bcf12bbe6cc3c35530e43fd286a97b0b3c8c8da6e3a676f0d6a0",
+      "shared-context.json": "ef6d62a854eb24c38fba5db45165459309a5ace4bedaf9f6a93a56bcabb61408",
+      "source-chain-audit.json": "5e26ceee255be699d2c5fc8e179c981140449e75f877e2882bf1098efda03aed"
+    },
+    "readiness": {
+      "blockers": [
+        "training partition lacks both verified positive and negative proxy outcomes",
+        "no separate development partition with verified outcomes",
+        "unassigned lineage groups require a frozen partition manifest"
+      ],
+      "curated_macro_samples": 1,
+      "development_samples": 0,
+      "negative_proxy_samples": 0,
+      "online_authorized": false,
+      "positive_proxy_samples": 1,
+      "research_sufficiency_established": false,
+      "software_training_admission_ready": false,
+      "training_samples": 0
+    },
+    "schema": "recovery-proxy-dataset-export/1",
+    "shared_context_reference": "shared-context.json#sha256=ef6d62a854eb24c38fba5db45165459309a5ace4bedaf9f6a93a56bcabb61408",
+    "source_context_reference": "continuation-context.json#sha256=0da1a57317713de286139263cdefb0702e1ec3da538f1af1e0a1c43b8c2105fb",
+    "source_initial_point_cloud_sha256": "5e38dc08c3a79fc8b77e41c83cc3c990e21997881861435fd9a0607cfd56fa7b",
+    "source_manifest_sha256": "af3c9642080684c97daa3b0dd5e8f614444f471f35bab4609599bd3089dd447c",
+    "trial_id": "bc68b5da-8102-427b-a32b-6aca66b316e1"
+  },
+  "proxy_review": {
+    "continuation_success_for_this_proxy": true,
+    "final_region_recount": {
+      "inside_count": 2048,
+      "passed": true,
+      "point_count": 2048,
+      "ratio": 1.0
+    },
+    "human_annotation_claimed": false,
+    "independent_team_review_status": "pending",
+    "initial_state_control": {
+      "inside_count": 1395,
+      "passed": false,
+      "point_count": 2048,
+      "ratio": 0.68115234375
+    },
+    "initial_state_is_recovery_training_negative": false,
+    "inside_count": 2048,
+    "method": "deterministic point-cloud recount through validated chain intake",
+    "point_count": 2048,
+    "raw_continuation_success": null,
+    "raw_labels_modified": false,
+    "schema": "deterministic-proxy-review/1",
+    "scope": "development proxy; not DR02, local recovery, SRS quality or autonomous success",
+    "source_final_point_cloud_sha256": "6e7529bb3280b100e19ac0e9022f0004016f2a59950f534940198d7d671d0048",
+    "source_full_fold_record_sha256": "8a9b88b82455c7bafbd281940ec3de35129a8398b565613d200b4571b478d290",
+    "source_manifest_sha256": "af3c9642080684c97daa3b0dd5e8f614444f471f35bab4609599bd3089dd447c",
+    "target_id": "upstream-recorded-region-pass/1",
+    "threshold": 0.88,
+    "trial_id": "bc68b5da-8102-427b-a32b-6aca66b316e1"
+  },
+  "ablation_software_checks": [
+    {
+      "variant": "current",
+      "config": {
+        "current_dim": 312,
+        "candidate_dim": 17,
+        "observation_history_dim": 312,
+        "action_history_dim": 241,
+        "hidden": 32,
+        "use_history": false,
+        "observation_history_steps": 0,
+        "action_history_steps": 0
+      },
+      "parameters": 10593,
+      "finite_random_forward": true,
+      "real_optimizer_steps": 0,
+      "score_published": false
+    },
+    {
+      "variant": "observation-total3",
+      "config": {
+        "current_dim": 312,
+        "candidate_dim": 17,
+        "observation_history_dim": 312,
+        "action_history_dim": 241,
+        "hidden": 32,
+        "use_history": true,
+        "observation_history_steps": 2,
+        "action_history_steps": 0
+      },
+      "parameters": 44833,
+      "finite_random_forward": true,
+      "real_optimizer_steps": 0,
+      "score_published": false
+    },
+    {
+      "variant": "observation-total5",
+      "config": {
+        "current_dim": 312,
+        "candidate_dim": 17,
+        "observation_history_dim": 312,
+        "action_history_dim": 241,
+        "hidden": 32,
+        "use_history": true,
+        "observation_history_steps": 4,
+        "action_history_steps": 0
+      },
+      "parameters": 44833,
+      "finite_random_forward": true,
+      "real_optimizer_steps": 0,
+      "score_published": false
+    },
+    {
+      "variant": "observation-action-total5",
+      "config": {
+        "current_dim": 312,
+        "candidate_dim": 17,
+        "observation_history_dim": 312,
+        "action_history_dim": 241,
+        "hidden": 32,
+        "use_history": true,
+        "observation_history_steps": 4,
+        "action_history_steps": 4
+      },
+      "parameters": 72257,
+      "finite_random_forward": true,
+      "real_optimizer_steps": 0,
+      "score_published": false
+    },
+    {
+      "variant": "current-capacity-match",
+      "config": {
+        "current_dim": 312,
+        "candidate_dim": 17,
+        "observation_history_dim": 312,
+        "action_history_dim": 241,
+        "hidden": 218,
+        "use_history": false,
+        "observation_history_steps": 0,
+        "action_history_steps": 0
+      },
+      "parameters": 72159,
+      "finite_random_forward": true,
+      "real_optimizer_steps": 0,
+      "score_published": false
+    }
+  ],
+  "guard_rejected_single_unassigned_sample": true,
+  "guard_message": "only train/development allowed; sealed test forbidden",
+  "real_supervised_training_performed": false,
+  "real_optimizer_steps": 0,
+  "proposed_collection_config": "configs/research/pilot-macro-collection-v1.json",
+  "model_code_sha256": "c7a6201977dd27accc5d1b3aca6ad11c8e8f0fe1270e9598c49f289a87d16417",
+  "shared_context_code_sha256": "cfacb412fc8c65a52e253929e67203e4f789d916cb4378ff285aa30f8752b64e"
+}
