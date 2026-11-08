@@ -9,7 +9,7 @@ Part I specified a simulated clothes folding system for one supported shirt type
 
 The recovery worker proposes actions; the task coordinator owns execution authority. Before accepting a segment, the coordinator checks the current control generation, observation freshness, action constraints, calibration and remaining budgets. The adapter must reject revoked commands and report measured feedback. This separation adds protocol and latency, but allows the recovery method to change without transferring control authority to the model. A score cannot prove rest, and an earlier terminal outcome cannot be overwritten by a late response. The interaction prototype exercises preparation, pause, assistance, return and replay using explicitly synthetic events.
 
-Isaac Sim 4.5 with DexGarmentLab runs on Zhang Mingbo's workstation, where Ma Xianghui completed the basic rerun. Two normal exports comprising 153 frames were received and encoded. Subsequent records provide named joint mappings, a component position command, measured feedback and visible simulated RGB. Ma's offline intake now encodes sixty joint channels, masked histories and sparse absolute targets. It preserves an important limitation: the new RGB was captured after the command and cannot be reused as its decision input. Legacy joint ordering is not retrospectively declared verified.
+Isaac Sim 4.5 with DexGarmentLab runs on Zhang Mingbo's workstation, where Ma Xianghui completed the basic rerun. Two normal exports comprising 153 frames were received and encoded. Subsequent records provide named joints, visible RGB captured before a local component command, durable acceptance intent and measured feedback. Ma's intake combines visual, proprioceptive and masked candidate features while retaining the causal boundaries. The measured segment becomes history only after its final feedback; it cannot enter its own earlier decision. The action was specified by a script, not selected by a vision model.
 
 A single-process adapter probe records dispatch acknowledgement, deduplication, generation rejection and measured stopping. Independent recalculation gives pause and termination confirmation delays of approximately 0.676 and 0.692 seconds. The submitted windows cover all sixty rotational joints and satisfy the probe's recorded sampling and speed conditions. These results support component feasibility; they do not verify transport queues, disconnection handling or the complete product coordinator. Fold Tops images and a three-target projection check support camera integration. The upstream success flag remains distinct from the system's quality and autonomy criteria.
 
@@ -72,3 +72,8 @@ The next pass added a fixed 8-by-8 RGB mean encoder, raw joint features and mask
 ### 2026-11-08 本轮新增反思与可核验贡献
 
 在 PR #9/#10 合并后，Codex 按组长要求新增运行时 I/O 离线接入、单关节候选编码、停止证明关联检查及 14 项回归，并在已提交的真实组件记录上执行。发现并防止把动作后的唯一 RGB 倒填为动作前输入；未将 API 返回补成产品执行历史，也未把组件停止记为正式 SRS 验收。依据实测重置差异形成 ADR-MA-005，更新摘要、风险与讲解；这些属于本分工的新工具和设计分析，仿真采集仍归张茗博。没有运行新的 Isaac、开展真实用户走查或填写个人工时。本人仍须核实和掌握材料，团队实际反馈与提交记录不预填。
+
+
+### PR #12/#13 后新增工作
+
+审阅并合并课程模型和动作前采集链，独立核验6文件清单、时钟/身份/意图/反馈及位移；实现492维当前输入与仅用于后续决策的242维组件片段。新增9项回归验证当前动作不能进入本次历史、跨任务/代次拒绝及未来反馈不改变早期输入。另修正Git换行对测量文件指纹的影响，并从原始Git blob验证。没有执行新仿真、获得衣物失败标签或证实H1/H2；个人归属仍由本人确认。
