@@ -37,6 +37,8 @@ class FoldRecoveryEvidence:
         step = base_env.step
         judge = Position_Judge.judge_pcd
         self.attached = False
+        self.chain = None
+        self.upstream = upstream
 
         def prepare(env, *args, **kwargs):
             if not self.attached and getattr(env, "garment_pcd", None) is not None:
@@ -86,6 +88,8 @@ class FoldRecoveryEvidence:
         robot = env.bimanual_dex
         left = robot.dexleft
         original = left.dense_step_action
+        from fold_recovery_chain import FullRecoveryChain
+        self.chain = FullRecoveryChain(self, env, self.upstream)
         move_count = 0
         pick = None
         lift = None
@@ -176,21 +180,37 @@ class FoldRecoveryEvidence:
                                                       "contact_sensor_available": False}
                 if eligible:
                     self.record["diagnostic_gate"] = "finite upstream targets; pick-to-lift distance <= 0.32 m"
-                    if self.closed_hand:
-                        attempt("regrasp-open", lambda: robot.set_both_hand_state(left_hand_state="open"))
-                        for _ in range(45):
-                            env.step()
-                    if attempt("approach-regrasp-pick", lambda: original(candidate_pick, target_ori, *args, **kwargs)):
-                        attempt("close", lambda: robot.set_both_hand_state(left_hand_state="close"))
-                        for _ in range(12):
-                            env.step()
-                        attempt("lift", lambda: original(candidate_lift, target_ori, *args, **kwargs))
+                    proposal = self.chain.propose(candidate_pick, candidate_lift, target_ori)
+                    self.record["macro_proposal_reference"] = "macro-proposal.json"
+                    self.chain.operation("release", lambda: robot.set_both_hand_state(left_hand_state="open"),
+                                         wait_steps=proposal["open_wait_steps"], requested={"hand_state": "open"})
+                    orientation = np.asarray(proposal["orientation_wxyz"])
+                    def macro_move(key):
+                        return original(np.asarray(proposal[key]), orientation,
+                                        angular_type="quat", dense_sample_scale=0.01)
+                    def requested(key):
+                        return {"target_world_m": proposal[key], "orientation_wxyz": proposal["orientation_wxyz"],
+                                "dense_sample_scale_m": 0.01}
+                    self.chain.operation("retreat", lambda: macro_move("retreat_world_m"), fail_on_false=True,
+                                         requested=requested("retreat_world_m"))
+                    self.chain.operation("regrasp", lambda: macro_move("pick_world_m"), fail_on_false=True,
+                                         requested=requested("pick_world_m"))
+                    self.chain.operation("close", lambda: robot.set_both_hand_state(left_hand_state="close"),
+                                         wait_steps=proposal["close_wait_steps"], requested={"hand_state": "close"})
+                    self.chain.operation("lift", lambda: macro_move("lift_world_m"), fail_on_false=True,
+                                         requested=requested("lift_world_m"))
                 else:
                     self.record["diagnostic_gate"] = "rejected"
+                    self.save()
+                    raise RuntimeError("Diagnostic macro rejected; no recovery chain completed")
                 checkpoint("after-recovery")
+                self.chain.phase = "fixed-upstream-continuation"
+                self.chain.trace.boundary(self.chain.phase)
             result = original(target_pos, target_ori, *args, **kwargs)
             if move_count == 3:
                 self.record["resume_sdk_result"] = bool(result)
+                if not result:
+                    raise RuntimeError("Fixed first-sleeve continuation IK failed")
                 checkpoint("after-resume-transfer")
                 self.save()
             return result
@@ -202,6 +222,7 @@ class FoldRecoveryEvidence:
             self.save()
             return
         self.snapshot(env, "final")
+        self.chain.finish()
         marker = os.environ.get("ROBOTICS_PROBE_MARKER")
         if marker:
             Path(marker).write_text(str(self.output / "full-fold-recovery.json"), encoding="utf-8")

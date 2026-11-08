@@ -1,0 +1,70 @@
+{
+  "trial_id": "bc68b5da-8102-427b-a32b-6aca66b316e1",
+  "files": [
+    {
+      "file": "after-recovery.png",
+      "bytes": 285105,
+      "sha256": "7d5eed589c01c186f3fdd4f455b873b008cab2565579d0c3984238520b00fb5f"
+    },
+    {
+      "file": "after-resume-transfer.png",
+      "bytes": 286242,
+      "sha256": "6a328590eef002fec83c778dbeb376c899f54198e0fe41dbdd17034dbe1f503f"
+    },
+    {
+      "file": "before-injection.png",
+      "bytes": 284184,
+      "sha256": "ece193c194252830edfe0313be127abfe9d311a0b4fc0f13c505677b584f0915"
+    },
+    {
+      "file": "before-recovery.png",
+      "bytes": 287211,
+      "sha256": "9a965602d81ec88e349a7f3344290b60ab4b976b1cbe395b1b09fdcfcd677ece"
+    },
+    {
+      "file": "continuation-context.json",
+      "bytes": 4633,
+      "sha256": "0da1a57317713de286139263cdefb0702e1ec3da538f1af1e0a1c43b8c2105fb"
+    },
+    {
+      "file": "final-point-cloud.npz",
+      "bytes": 22084,
+      "sha256": "6e7529bb3280b100e19ac0e9022f0004016f2a59950f534940198d7d671d0048"
+    },
+    {
+      "file": "final.png",
+      "bytes": 270989,
+      "sha256": "3ee80b41873b1e174fbc5a901093420f4fd13080787ec207b9263e6645463969"
+    },
+    {
+      "file": "full-fold-recovery.json",
+      "bytes": 11700,
+      "sha256": "8a9b88b82455c7bafbd281940ec3de35129a8398b565613d200b4571b478d290"
+    },
+    {
+      "file": "initial-point-cloud.npz",
+      "bytes": 21595,
+      "sha256": "5e38dc08c3a79fc8b77e41c83cc3c990e21997881861435fd9a0607cfd56fa7b"
+    },
+    {
+      "file": "macro-proposal.json",
+      "bytes": 956,
+      "sha256": "9be2b63ce78103eb649e715c9c5e43d8492cdab63234496b42dae943a715cb61"
+    },
+    {
+      "file": "observation-trace.json",
+      "bytes": 2335682,
+      "sha256": "42008fd3cde394badd67f24c88a4fb7ddb6a2b73f3251a9cc1b004434e06c35f"
+    },
+    {
+      "file": "recovery-decision.json",
+      "bytes": 1123,
+      "sha256": "a454f5f197ec1f1a5d075aafbaf6c877e04ab0935f822ff993c07fa9528a0ea2"
+    },
+    {
+      "file": "rgb-frames.npz",
+      "bytes": 179702086,
+      "sha256": "7e60a88ff8767bc7828a041b5b58565ae398c9e98f6e20bf0b01b194c01eff77"
+    }
+  ]
+}

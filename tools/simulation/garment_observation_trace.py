@@ -98,14 +98,14 @@ class GarmentObservationTrace:
             return result
         return apply
 
-    def save(self, condition):
+    def save(self, condition, *, scope="first_sleeve_component_exploration"):
         frames = self.output / "rgb-frames.npz"
         rgb = np.stack(self.frames)
         with frames.open("xb") as stream:
             np.savez_compressed(stream, rgb=rgb)
         digest = sha256_file(frames)
         evidence = {"schema": "garment-observation-trace-v1", "trial_id": self.trial_id,
-                    "condition": condition, "scope": "first_sleeve_component_exploration",
+                    "condition": condition, "scope": scope,
                     "clock_domains": {"sim_time_s": "Isaac including RGB render time",
                                       "wall_monotonic_ns": "local Python monotonic clock"},
                     "target_units": {"joint_positions": "rad", "joint_velocities": "rad/s", "joint_efforts": "N*m"},

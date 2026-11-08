@@ -1,0 +1,26 @@
+{
+  "schema": "full-fold-recovery-chain-audit/1",
+  "trial_id": "bc68b5da-8102-427b-a32b-6aca66b316e1",
+  "decision_id": "28fce348-e4b1-4ebd-aea2-66cae816e47e",
+  "candidate_id": "59318e92-c546-4641-938c-a0219deb70f4",
+  "rgb_frames": 540,
+  "observations": 545,
+  "actual_dispatches_with_feedback": 838,
+  "macro_dispatches": 61,
+  "macro_feature_dimensions": 17,
+  "proposal_persisted_before_decision": true,
+  "same_trial_continuous_chain": true,
+  "upstream_diagnostic_outcome": {
+    "trial_id": "bc68b5da-8102-427b-a32b-6aca66b316e1",
+    "injection": "early_open_after_first_lift",
+    "inside_count": 2048,
+    "point_count": 2048,
+    "upstream_success": true
+  },
+  "source_manifest_sha256": "af3c9642080684c97daa3b0dd5e8f614444f471f35bab4609599bd3089dd447c",
+  "continuation_success": null,
+  "label_review_reference": null,
+  "training_ready": false,
+  "independent_review_status": "pending",
+  "maximum_rgb_gap_sim_s": 0.06666667014360428
+}
