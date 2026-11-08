@@ -1,0 +1,20 @@
+{
+  "normal": {
+    "trial_id": "67be478a-8d9d-40b2-bcf2-499039fbf732",
+    "file": "dr02-normal-hold-and-legal-release.zip",
+    "bytes": 58583476,
+    "sha256": "47dd8d6e39066836c7fba81fd04453b7706e96ee61226cbc7f09649e3aca308b"
+  },
+  "contact_offset_candidate": {
+    "trial_id": "a3252cfe-b082-47ba-b056-ed1b61bcfdb4",
+    "file": "dr02-offset.zip",
+    "bytes": 59788380,
+    "sha256": "8e0b8331137a7d810e7600d7c29bd05a8dd1aee7011a0850577e385d46809c2c"
+  },
+  "closed_hand_slip_candidate": {
+    "trial_id": "c7420d3d-5a48-4f23-9cda-7df8af2e627a",
+    "file": "dr02-slip.zip",
+    "bytes": 60485166,
+    "sha256": "4709e6d6f4f1b9d3f75e0297e6a44e974a4925fce16927fe595b48f46f5e13d4"
+  }
+}

@@ -12,7 +12,8 @@ def window_indices(rows, phase):
     if len(indices) < 2:
         raise ValueError(f"Missing window: {phase}")
     times = np.array([rows[i]["sim_time_s"] for i in indices])
-    if times[-1] - times[0] < 0.2 or np.any(np.diff(times) > 0.100001):
+    gaps = np.diff(times)
+    if times[-1] - times[0] < 0.2 or np.any((gaps <= 0) | (gaps > 0.100001)):
         raise ValueError(f"Invalid DR02 window: {phase}")
     return indices
 
@@ -58,7 +59,7 @@ def audit(root, reference):
         matrices = data["collider_local_to_world"]
         rgb = data["rgb"]
         equations = [ConvexHull(data[entry["points"]]).equations for entry in meta["colliders"]]
-    if len(equations) != 2 or not np.isfinite(cloth).all():
+    if len(equations) != 2 or not all(np.isfinite(array).all() for array in (cloth, tips, matrices)):
         raise ValueError("Expected two distal mesh colliders and finite cloth geometry")
     rows = meta["phase_samples"]
     if not len(rows) == len(cloth) == len(tips) == len(matrices):
@@ -67,7 +68,10 @@ def audit(root, reference):
     threshold = 0.012
     windows = {}
     margin_by_index = {}
-    for phase in ("closed", "lifted", "hold", "transferred", "planned_release"):
+    phases = ["closed", "lifted", "hold", "transferred", "planned_release"]
+    if any(row["phase"] == "disturbance_closed_hand" and row["stream"] == "window" for row in rows):
+        phases.insert(2, "disturbance_closed_hand")
+    for phase in phases:
         indices = window_indices(rows, phase)
         for i in indices:
             margin_by_index[i] = pad_margins(cloth[i], tips[i], matrices[i], equations)
@@ -75,6 +79,9 @@ def audit(root, reference):
         frame_ids = [rows[i]["frame_index"] for i in indices]
         if any(frame_id is None or not 0 <= frame_id < len(rgb) for frame_id in frame_ids):
             raise ValueError(f"Missing RGB index in {phase}")
+        if any(rows[i]["rendering_time_s"] is None
+               or rows[i]["rendering_time_s"] > rows[i]["sim_time_s"] + 1e-7 for i in indices):
+            raise ValueError(f"RGB render time falls after the physical sample in {phase}")
         best = margins.min(axis=1)
         windows[phase] = {"indices": indices,
                           "span_sim_s": rows[indices[-1]]["sim_time_s"] - rows[indices[0]]["sim_time_s"],

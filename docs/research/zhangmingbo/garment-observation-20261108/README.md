@@ -1,5 +1,7 @@
 # TCLC_018 衣物观测、故障候选和恢复接续
 
+抓偏、部分滑移和对照的后续指尖近景与标签提案见 [DR02 补采](../garment-dr02-20261108/README.md)。后续参考宽度按数据设计采用肩部与下摆的平均值。
+
 需要仓库访问权限才能下载 [原始数据 ZIP](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/tag/zhang-garment-observation-20261108)。[外层 ZIP 的字节数与 SHA256](trace-packages.json) 对应 Release 资产。各 ZIP 内的 `manifest.json` 提供来源、启动入口以及每个成员的字节数和 SHA256。
 
 ## 五组第一袖试次
