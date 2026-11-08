@@ -1,10 +1,10 @@
 """Check a downloaded garment trial without launching Isaac Sim."""
 import argparse
-import hashlib
 import json
 from pathlib import Path
 
 import numpy as np
+from garment_observation_trace import sha256_file
 
 
 def require(condition, message):
@@ -12,20 +12,16 @@ def require(condition, message):
         raise ValueError(message)
 
 
-def verify(root, full_record=None):
+def verify(root):
     trace = json.loads((root / "observation-trace.json").read_text(encoding="utf-8"))
-    if full_record is None:
-        physical = json.loads((root / "fault-evidence.json").read_text(encoding="utf-8"))
-        trial, = physical["trials"]
-    else:
-        trial = {"trial_id": full_record["trial_id"], "condition": full_record["injection"]}
+    physical = json.loads((root / "fault-evidence.json").read_text(encoding="utf-8"))
+    trial, = physical["trials"]
     require(trial["trial_id"] == trace["trial_id"], "Trial identifiers differ")
     require(trial["condition"] == trace["condition"], "Trial conditions differ")
 
     frames = trace["frame_archive"]
     archive = root / "rgb-frames.npz"
-    with archive.open("rb") as stream:
-        require(hashlib.file_digest(stream, "sha256").hexdigest() == frames["sha256"], "RGB SHA256 mismatch")
+    require(sha256_file(archive) == frames["sha256"], "RGB SHA256 mismatch")
     require(archive.stat().st_size == frames["bytes"], "RGB archive length mismatch")
     with np.load(archive, allow_pickle=False) as loaded:
         rgb = loaded["rgb"]
@@ -87,14 +83,10 @@ def verify_full_fold(root):
     expected = {"before-injection", "before-recovery", "after-recovery", "after-resume-transfer", "final"}
     require(expected <= record["checkpoints"].keys(), "Incomplete full-fold checkpoints")
     for name, checkpoint in record["checkpoints"].items():
-        with (root / checkpoint["image"]).open("rb") as stream:
-            digest = hashlib.file_digest(stream, "sha256").hexdigest()
+        digest = sha256_file(root / checkpoint["image"])
         require(digest == checkpoint["image_sha256"], f"Image SHA256 mismatch at {name}")
-    result = {"trial_id": record["trial_id"], "injection": record["injection"], "inside_count": count,
-              "point_count": len(points), "upstream_success": judgment["upstream_success"]}
-    if (root / "observation-trace.json").is_file():
-        result["recovery_trace"] = verify(root, full_record=record)
-    return result
+    return {"trial_id": record["trial_id"], "injection": record["injection"], "inside_count": count,
+            "point_count": len(points), "upstream_success": judgment["upstream_success"]}
 
 
 if __name__ == "__main__":

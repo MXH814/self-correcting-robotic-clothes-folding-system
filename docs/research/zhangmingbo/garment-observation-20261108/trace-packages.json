@@ -52,5 +52,14 @@
     "inside_count": 1824,
     "point_count": 2048,
     "upstream_success": true
+  },
+  "closed_hand_slip_regrasp": {
+    "file": "closed_hand_slip_regrasp.zip",
+    "bytes": 20630032,
+    "sha256": "f52bc2c8096e7b3a094bd44a0b0879e05b77751ddd907c31893fa5071f0a67f1",
+    "trial_id": "53ffafbb-d5f9-4390-b445-28addf58f40e",
+    "rgb_frames": 293,
+    "observations": 305,
+    "dispatches": 259
   }
 }

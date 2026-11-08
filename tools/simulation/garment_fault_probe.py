@@ -38,7 +38,8 @@ def run(output):
     arm = robot.dexleft
     trace_condition = os.environ.get("ROBOTICS_GARMENT_TRACE_CASE")
     cases = ("normal", "grasp_offset", "unexpected_release", "offset_regrasp", "release_regrasp")
-    if trace_condition and trace_condition not in (*cases, "contact_offset_candidate", "closed_hand_slip_candidate"):
+    slip_cases = ("closed_hand_slip_candidate", "closed_hand_slip_regrasp")
+    if trace_condition and trace_condition not in (*cases, "contact_offset_candidate", *slip_cases):
         raise ValueError(f"Unknown garment trace case: {trace_condition}")
     resolution = (240, 180) if trace_condition else (640, 480)
     camera = Recording_Camera(camera_position=np.array([0, 4.0, 6.0]),
@@ -206,7 +207,7 @@ def run(output):
                 hand("injected_open_during_hold", "open")
             elif shifted:
                 trial["injection"] = {"kind": "shifted_approach", "offset_m": offset.tolist()}
-            elif condition == "closed_hand_slip_candidate":
+            elif condition in slip_cases:
                 material = garment.particle_material
                 original_friction = float(material.get_friction())
                 trial["injection"] = {"kind": "reduced_friction_and_coarser_motion_during_closed_hold",
@@ -219,7 +220,18 @@ def run(output):
                 finally:
                     material.set_friction(original_friction)
             window("hold")
-            if condition.endswith("_regrasp"):
+            attempt_regrasp = condition.endswith("_regrasp")
+            if condition == "closed_hand_slip_regrasp":
+                baseline_relative = np.median([sample["patch_minus_hand_m"] for sample in trial["samples"]
+                                              if sample["phase"] == "lifted"], axis=0)
+                held_relative = np.asarray([sample["patch_minus_hand_m"] for sample in trial["samples"]
+                                            if sample["phase"] == "hold"])
+                minimum_drift = float(np.linalg.norm(held_relative - baseline_relative, axis=1).min())
+                threshold = 0.04 * 0.4749789486568581
+                attempt_regrasp = minimum_drift > threshold
+                trial["diagnostic_gate"] = {"passed": attempt_regrasp, "minimum_drift_m": minimum_drift,
+                                            "threshold_m": threshold, "contact_sensor_available": False}
+            if attempt_regrasp:
                 trial["candidate"] = "scripted_regrasp_at_original_pick"
                 hand("experimental_regrasp_release", "open")
                 move("regrasp_retreat", lift + np.array([0, -0.15, 0.05]))

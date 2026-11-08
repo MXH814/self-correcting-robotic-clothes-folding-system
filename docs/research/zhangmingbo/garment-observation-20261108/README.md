@@ -2,7 +2,7 @@
 
 需要仓库访问权限才能下载 [原始数据 ZIP](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/tag/zhang-garment-observation-20261108)。[外层 ZIP 的字节数与 SHA256](trace-packages.json) 对应 Release 资产。各 ZIP 内的 `manifest.json` 提供来源、启动入口以及每个成员的字节数和 SHA256。
 
-## 四组第一袖试次
+## 五组第一袖试次
 
 | 试次 | RGB 帧 | 关节派发及反馈 | 实测范围 |
 | --- | ---: | ---: | --- |
@@ -10,6 +10,7 @@
 | `contact_offset_candidate` | 155 | 151 | 抓取目标相对预期点偏移 46 mm X、25 mm Y，预期区域仍随手抬升约 279 mm。闭合后 0.35 仿真秒内，衣片相对指尖中点的向量与正常对照相差 45.6–49.0 mm。真实接触中心未知，DR02 标签待审。 |
 | `closed_hand_slip_candidate` | 167 | 140 | 闭手期间将布料摩擦设为零并执行偏移运动，恢复原摩擦后的 0.35 仿真秒内，意图区域相对指尖中点的漂移为 20.5–20.7 mm。没有求解器接触读数，DR02 标签待审。 |
 | `release_regrasp` | 277 | 239 | 提前开手后实际重抓并抬升，预期区域在重抓抬升窗口平均比初态高 286 mm。第一袖接续有记录，另见完整折叠试次。 |
+| `closed_hand_slip_regrasp` | 293 | 259 | 闭手扰动后，同一试次连续覆盖 23.32–23.50 mm 持续漂移、恢复前观测、实际重抓、抬升和第一袖接续。重抓后预期区域相对初态抬高约 351 mm，原漂移代理量在重抓后仍为 115.18–117.34 mm。保留局部偏差未消除的结果，真实接触标签待审。 |
 
 第一袖预期区域定义为初始化时离脚本袖口抓取点最近的 12 个布料网格顶点。抓持预期从 `expected_hold_begins` 持续到第一袖移送结束，`planned_release` 是合法打开。条件字段记录注入方式，`dr02_label` 保持未知。意图区域几何和指尖中点是离线证据。接触位置、持续接触与遮挡判定由胡知鱼复核。
 
@@ -29,11 +30,12 @@
 | [提前开手](full-fold-early-open.json) | 规则重抓后，预期区域高度从 41.3 mm 到 285.1 mm。随后接回官方第一袖移送、第二袖、下摆及评分。 | 1984 / 2048（96.875%），通过 | 201.8 s |
 | [闭手扰动](full-fold-closed-hand-slip.json) | 8 个 20 Hz 样本的最小漂移代理值为 27.38 mm。诊断门禁通过后实际执行释放、规则重抓、抬升。接续移送后预期区域仍被抬离台面。恢复后持续接触及漂移消除情况未知。 | 1824 / 2048（89.0625%），通过 | 213.1 s |
 
-官方终点阈值是 88% 点位落在目标区。完整试次的 ZIP 内有阶段截图、点云与控制器文件指纹，可以离线重算评分。完整试次保留恢复前后的阶段图，连续 RGB 与逐条派发见上面的四组第一袖试次。实际候选仅经过诊断门禁，产品层的许可、求助和预算判定未接入。试次期间没有脚本外人工操纵记录。这两次独立运行的初态及 GAM 输出均可变化，分数不能用来估计恢复的因果收益。
+官方终点阈值是 88% 点位落在目标区。完整试次的 ZIP 内有阶段截图、点云与控制器文件指纹，可以离线重算评分。完整试次保留恢复前后的阶段图，连续 RGB 与逐条派发见上面的第一袖试次。实际候选仅经过诊断门禁，产品层的许可、求助和预算判定未接入。试次期间没有脚本外人工操纵记录。这两次独立运行的初态及 GAM 输出均可变化，分数不能用来估计恢复的因果收益。
 
 ```powershell
 python tools/simulation/verify_garment_observation_trace.py <extracted-trial-directory>
 powershell -ExecutionPolicy Bypass -File tools/simulation/run_local.ps1 -Stage garment-fault -Headless -GarmentTraceCase closed_hand_slip_candidate -OutputRoot <output-directory>
+powershell -ExecutionPolicy Bypass -File tools/simulation/run_local.ps1 -Stage garment-fault -Headless -GarmentTraceCase closed_hand_slip_regrasp -OutputRoot <output-directory>
 powershell -ExecutionPolicy Bypass -File tools/simulation/run_local.ps1 -Stage fold-recovery -Headless -FoldRecoveryCondition early-open -RegraspLateralOffsetM 0 -OutputRoot <output-directory>
 powershell -ExecutionPolicy Bypass -File tools/simulation/run_local.ps1 -Stage fold-recovery -Headless -FoldRecoveryCondition closed-hand-slip -RegraspLateralOffsetM 0 -OutputRoot <output-directory>
 ```
