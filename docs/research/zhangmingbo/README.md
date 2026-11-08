@@ -27,7 +27,7 @@
 
 ## 仿真复现材料
 
-- **科研交接继续：[交接与后续待办](handoff-tasks.md)**。PR #7后两个正常轨迹包已实际接收并验证153帧，80/81关闭；现优先补齐可运行环境、真实IO/停止和失败/恢复候选数据，不重复交已接收材料。见[最新审查](../../reviews/pr6-7-handoff-review.md)。
+- **科研交接继续：[交接与后续待办](handoff-tasks.md)**。两个正常包153帧已接收并编码，80/81关闭；马确认在张电脑完成基础复跑，后续统一在张电脑执行，不要求组长换机安装。现优先交真实IO/停止及失败/恢复候选，见[执行安排](../shared-simulation-workflow.md)。
 - [环境可行性报告](environment-feasibility.md)
 - [论文复现进度记录](reproduction-status.md)
 

@@ -13,6 +13,8 @@
 本阶段同时推进 2025—2026 年相关工作、research gap 诊断、仿真最小验证和课程 Design，按任务依赖与证据验收推进。
 计划已依据 Assignment 2 正式 PDF 与 Canvas 页面更新；已形成马祥珲的研究/AI设计成果及可运行离线诊断工具，真实仿真与研究实验、全组设计整合仍待完成。
 
+**仿真安排已确认：马祥珲已在张茗博电脑上复跑，基础复跑事项关闭。后续仿真、采集及恢复闭环实验统一在张茗博电脑运行，不要求组长电脑安装或换机重跑。** 详见[共享仿真执行安排](docs/research/shared-simulation-workflow.md)；真实接口、停止和恢复实验继续分别验收。
+
 **第三组展示：2026-11-09 13:30–15:05场次（上海时间），每组6分钟，全员出席；Slides须在11月9日13:30之前上传Canvas。** 本组具体出场时刻未公布。当前优先整合三架构、关键决策及理由、重要交互、需求变化与开放问题，见 **[展示计划、三人分工与验收](docs/design/presentation-plan.md)**。
 
 **Assignment 2最终截止仍为2026-11-20 19:00。** 展示后纳入实际课堂反馈，完成 **[九项正式交付与验收清单](docs/assignment-2-checklist.md)**；完整训练和研究诊断不是本次展示的前置条件。
@@ -37,8 +39,8 @@
 | [马祥珲两页展示素材](docs/design/ma-presentation-materials.md) | 可编辑SVG/PNG核心图和风险图，中英讲解、决策对比与答辩问答 |
 | [153帧真实观测编码](docs/research/normal-observation-integration.md) | 固定RGB/关节/历史编码已运行、真实预览和可复跑入口；无恢复标签或科研结论 |
 | [评分与并发契约澄清](docs/design/contract-clarifications.md) | 后续成功/整试次指标、旧代不可用计数及adapter代次屏障的精确定义 |
-| [PR #8固定环境准备审查](docs/reviews/pr8-environment-review.md) | 固定源码、50项依赖、584项资产核验入口已补齐；目标机部署/真实控制与恢复仍待验证 |
-| [仿真接入与审查结论](docs/research/dex-integration-plan.md) | 平台已选定，NPZ安全审计、在线来源隔离、评价差异与后续交接；独立复跑未完成 |
+| [PR #8固定环境准备审查](docs/reviews/pr8-environment-review.md) | 固定源码/依赖/资产材料已补齐；换机部署不再是当前任务，真实控制与恢复待验证 |
+| [仿真接入与审查结论](docs/research/dex-integration-plan.md) | 平台已选定，组长确认同机复跑完成；继续验证在线来源、真实接口及恢复数据 |
 | [马祥珲最终剩余清单](docs/research/ma-remaining-checklist.md) | 已完成项、真实环境/数据阻塞、队友最小交付与个人/课程事项 |
 | [Assignment 2 要求与验收](docs/assignment-2-checklist.md) | 九项交付、三人分工、展示/反馈、词数与打包检查 |
 | [第三组课堂展示执行计划](docs/design/presentation-plan.md) | 已确认场次、课前上传、三人素材与讲解分配、六页建议结构及验收 |

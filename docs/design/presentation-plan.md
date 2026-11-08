@@ -2,6 +2,8 @@
 
 更新：2026-11-08。依据[老师新公告及原始截图](../course/assignment-2/presentation-announcement.md)、[Assignment 2九项清单](../assignment-2-checklist.md)和既有SRS。本文是执行计划，不代表Slides、排练、上传或展示已经完成。
 
+运行安排同步：马已确认在张电脑完成基础复跑，后续仿真/采集/恢复实验统一使用张电脑；不把换机安装或再次基础复跑列为风险/前置。当前风险聚焦真实profile、停止和恢复结果，见[执行安排](../research/shared-simulation-workflow.md)。
+
 ## 1 固定事项与优先顺序
 
 | 项目 | 本组必须执行 |

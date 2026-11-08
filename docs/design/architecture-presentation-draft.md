@@ -4,6 +4,8 @@ Prepared for Zhang Mingbo's section; 8 November 2026. **Draft for team integrati
 
 Source baselines: [presentation plan](presentation-plan.md), [system and recovery interfaces](interfaces.md), [recovery design](recovery-design.md), [control and scoring decision](decisions/ADR-MA-001-control-and-scoring.md), [simulation platform decision](decisions/ADR-MA-004-simulation-platform.md), and [environment evidence](../research/zhangmingbo/environment-feasibility.md). The English SRS remains the acceptance baseline.
 
+Execution update, 8 November 2026: Ma Xianghui confirms that he has rerun the existing setup on Zhang Mingbo's workstation. This basic rerun item is closed. Subsequent simulation, collection and recovery experiments use that workstation; a second installation or repeated basic rerun is not required. See the [shared execution arrangement](../research/shared-simulation-workflow.md). New control, stop and recovery capabilities still require their own validation.
+
 ## Slide 3 — Logical architecture
 
 ```mermaid
@@ -64,7 +66,7 @@ The author's Windows workstation has run an Isaac Sim 4.5 / DexGarmentLab Fold T
 
 | Concern | Baseline / decision status | Alternative and reason for comparison | Cost / verification |
 |---|---|---|---|
-| Simulation | Isaac Sim 4.5 and DexGarmentLab selected for development; demonstration reported, independent reproduction pending | Replace cloth platform if assets, stability or control access prove inadequate | 16 GB host RAM fails the original 32 GB compatibility check; measure stability and physical effects of reduced contact budgets. |
+| Simulation | Isaac Sim 4.5 and DexGarmentLab on Zhang's workstation; the leader confirms the basic rerun is complete | Replace cloth platform if assets, stability or control access prove inadequate | Continue checking stability and physical effects of reduced contact budgets; no second-machine installation requirement. |
 | Runtime | Isaac's Python 3.10 and its NumPy/Torch remain isolated; separate application/inference environments proposed | One shared Python environment is simpler but risks conflicting Isaac dependencies | Verify versioned data exchange and profile compatibility; no complete adapter yet. |
 | Communication | Versioned logical messages; concrete transport and deployment **TBD** | In-process calls reduce overhead; IPC/network isolates failures but adds serialization and timeout handling | Test latency, stale observations, reconnection, duplicate commands and clock mapping. |
 | Persistence | Separate small metadata/events from referenced large artifacts; engine/storage technology **TBD** | Database or atomic local files; choose after durability and deployment tests | Validate atomic dispatch-intent writes and recovery after interruption; write failure blocks new dispatch. |

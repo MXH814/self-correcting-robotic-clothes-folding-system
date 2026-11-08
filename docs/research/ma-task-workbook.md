@@ -1,6 +1,6 @@
 # 马祥珲第一阶段成果与完成状态
 
-更新：2026-11-07。研究/设计文档与离线软件已形成；PR #2复审合并，真实入库样例已审核，完整轨迹纯数值导出和历史工具已实现。真实仿真独立复跑、恢复研究实验及个人掌握尚未完成。
+当前状态更新：2026-11-08。研究/设计文档、49项软件测试、153帧正常观测编码及展示素材已形成。马祥珲确认已在张电脑完成基础复跑，该项关闭；后续仿真/采集/恢复闭环统一使用张电脑，不要求组长电脑安装或换机复跑。恢复研究实验、真实新接口与个人答辩掌握分别验收，见[执行安排](shared-simulation-workflow.md)。
 
 最新入口：[运行说明](execution-guide.md) · [执行决定](ma-owner-decisions.md) · [详细剩余清单](ma-remaining-checklist.md)。
 
@@ -21,9 +21,9 @@ PR #8后续已[审查合并](../reviews/pr8-environment-review.md)，固定源�
 | UPS 精读 | [L05](papers/L05-ups-reading-note.md) | 版本、证据索引、方法/实验边界及设计影响已整理 |
 | TAIL-Safe 精读 | [L07](papers/L07-tail-safe-reading-note.md) | 已整理，并提出数字/数学范围待核问题 |
 | RedFlow 精读 | [L08](papers/L08-redflow-reading-note.md) | 明确已有叠衣结果、离线匹配与目标边界 |
-| DexGarmentLab 共同阅读 | [L01](papers/L01-dexgarmentlab-reading-note.md) | 已整理；平台选定，作者环境报告已合并，本工作流独立复跑未完成 |
-| 张茗博分支审查与平台采用 | [审查结论](../reviews/zhang-bc5e48c-review.md)、[ADR-MA-004](../design/decisions/ADR-MA-004-simulation-platform.md) | 文档审查通过并合并；环境已选定，独立复跑仍未完成 |
-| 现有轨迹安全审计与接入 | [接入设计](dex-integration-plan.md)、[接入进展](ma-data-intake-progress.md) | data2/data3纯数值包已接收并校验153帧及阶段内历史；运行入口和恢复候选数据仍待交付，无需再加载原始NPZ |
+| DexGarmentLab 共同阅读 | [L01](papers/L01-dexgarmentlab-reading-note.md) | 已整理；平台选定，用户确认同机基础复跑完成，不重复要求 |
+| 张茗博分支审查与平台采用 | [审查结论](../reviews/zhang-bc5e48c-review.md)、[ADR-MA-004](../design/decisions/ADR-MA-004-simulation-platform.md) | 已采用张电脑已有环境，基础复跑项关闭；新接口/恢复能力待测 |
+| 现有轨迹安全审计与接入 | [接入设计](dex-integration-plan.md)、[接入进展](ma-data-intake-progress.md) | data2/data3纯数值包已校验153帧并编码；继续接真实profile和恢复候选数据 |
 | 真实正常观测编码 | [接入结果/预览](normal-observation-integration.md) | 153帧固定192维RGB、60维原始关节及带mask历史已运行；零学习参数，无候选/恢复标签 |
 | 展示与答辩素材 | [两页素材包](../design/ma-presentation-materials.md) | 两张SVG/PNG已视觉检查，中英讲解、三项取舍和问答已写；全组PPT整合/排练未完成 |
 | 核心契约歧义修正 | [评分/代次/屏障](../design/contract-clarifications.md) | 后续成功与整试次指标分开，旧代只审计，adapter屏障明确；真实并发/停止待测 |
@@ -51,7 +51,8 @@ PR #8后续已[审查合并](../reviews/pr8-environment-review.md)，固定源�
 - [ ] 马祥珲本人完成原文审阅、技术决定确认和个人阅读反馈。
 - [ ] 与张茗博确认环境/动作通道/profile、前缀、停止时效与部署。
 - [ ] 与胡知鱼确认标签、数据字段、参考注释和界面原因码。
-- [ ] 另一成员复现环境与失败；运行诊断并取得支持/否定/未定决定。
+- [x] 基础复跑：马祥珲确认已在张电脑完成；后续统一使用该环境，不要求换机或重复基础复跑。
+- [ ] 张电脑采集真实失败/候选并审核标签，运行诊断取得支持/否定/未定决定。
 - [ ] 数据采集、模型训练、评分校准及运行验收。
 - [ ] 全组报告整合、评审、展示反馈和Canvas提交。
 
@@ -59,8 +60,8 @@ PR #8后续已[审查合并](../reviews/pr8-environment-review.md)，固定源�
 
 已只读核对 `origin/hzy@067cf91` 的数据/需求/追踪/报告草稿，不覆盖、不自动合并。其请求 Ma 提供的恢复交互、算法风险、反思和参考注释，现由本成果包提供。
 
-张茗博分支`bc5e48c`已完成原文/文档审查并保留原提交合并main：已有历史示范与训练小试；当前电脑无其E:\Robotics路径，独立复跑仍需环境交接。平台已选定，详见[审查结论](../reviews/zhang-bc5e48c-review.md)和[剩余清单](ma-remaining-checklist.md)。
+张茗博分支`bc5e48c`已完成原文/文档审查并保留原提交合并main。马祥珲现确认在张电脑完成基础复跑；本开发电脑不存在其E:\Robotics路径不再构成环境阻塞。后续统一在张电脑执行，详见[执行安排](shared-simulation-workflow.md)和[剩余清单](ma-remaining-checklist.md)。
 
-PR #2的`f8bfaaa`已复审合并：已有可配置脚本、配置清单、真实关节JSON和最终图像；PR #7后完整正常轨迹纯数值包也已接收、编码，不再重复索要。仍需可运行环境、真实profile及恢复候选数据。
+PR #2脚本/小样例和PR #7完整正常轨迹均已交接，153帧已编码；基础复跑已关闭。剩余新增输入为真实profile及恢复候选数据，不再索要组长本机安装或重复正常包。
 
 张茗博提供动作与时钟profile、串行接纳/停止和部署事实；胡知鱼可整合注释/报告并审核数据/UI映射。CR-MA-01已由组长授权下采纳为内部接口细化，hzy CR-01/02仍未批准；SRS阈值未修改。没有向队友发送消息、租GPU、产生真实机器人性能结果或预填个人工时。

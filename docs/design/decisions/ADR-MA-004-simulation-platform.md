@@ -2,6 +2,8 @@
 
 状态：Accepted as development baseline，2026-11-06。组长授权下采纳，队友可审核；不是P02/E02/SRS环境验收通过。依据[分支审查](../../reviews/zhang-bc5e48c-review.md)及已合并的[环境报告](../../research/zhangmingbo/environment-feasibility.md)。
 
+2026-11-08安排更新：马祥珲确认已在张电脑完成基础复跑，基础项关闭；后续仿真/采集/恢复闭环统一使用该电脑，不要求组长本机安装或换机复跑。固定环境材料用于现有环境记录/恢复，见[执行安排](../../research/shared-simulation-workflow.md)；新接口、停止和恢复实验继续分别验收。
+
 ## 选择与替代方案
 
 采用张茗博已运行的Isaac Sim 4.5.0 / DexGarmentLab / UR10e+Shadow Hand / Fold_Tops作为首选开发栈。保留其低资源配置及准确归档hash；恢复算法在独立进程/逻辑接口后，不依赖UI中的具体机器人维数。
