@@ -1,7 +1,7 @@
 # Self-Correcting Robotic Clothes Folding System
 ## Assignment 2 · Design working draft
 
-**Review date:** 8 November 2026. **Scope:** integrated working draft after PR #9/#10 (main@627c56b), including Ma’s offline runtime intake and evidence-based decisions. Bracketed review notes identify decisions, authorship or evidence that still need confirmation. The companion [review and handoff register](delivery-status.md) identifies the owner and closure condition for each section.
+**Review date:** 8 November 2026. **Scope:** integrated working draft through main@537fa41, including the full recovery record, its separate proxy review and the two presentation slides. Bracketed review notes identify decisions, authorship or evidence that still need confirmation. The companion [review and handoff register](delivery-status.md) identifies the owner and closure condition for each section.
 
 ## A2-01 · Design Summary
 
@@ -13,11 +13,13 @@ Isaac Sim 4.5 with DexGarmentLab runs on Zhang Mingbo's workstation, where Ma Xi
 
 A single-process adapter probe records dispatch acknowledgement, deduplication, generation rejection and measured stopping. Independent recalculation gives pause and termination confirmation delays of approximately 0.676 and 0.692 seconds. The submitted windows cover all sixty rotational joints and satisfy the probe's recorded sampling and speed conditions. These results support component feasibility; they do not verify transport queues, disconnection handling or the complete product coordinator. Fold Tops images and a three-target projection check support camera integration. The upstream success flag remains distinct from the system's quality and autonomy criteria.
 
-Repeated initial resets produced maximum settled mesh differences of approximately 31.7 millimetres. The design therefore requires mid-task state, velocity and contact checks before treating recovery branches as comparable. If these checks fail, independent blocked trials replace claims about identical-state candidate choices. Research questions about history and continuation quality remain open because labelled failure and recovery branches are unavailable. Local diagnostic reporting uses confirmed recoveries over accepted actions, with unknown outcomes and coverage shown separately. Additional development records distinguish validation origins, offline human judgements, system alarms and stop acceptance without changing product thresholds.
+Settled meshes differ by up to 31.7 millimetres across resets. Distinct trials therefore retain their own lineage. A reviewed first-sleeve hold window supports an offline partial slip label. The offset case still lacks a qualified target region and contact uncertainty estimate.
 
-Current deliverables include decision records, editable diagrams, grouped-data safeguards, baseline and preflight software, annotation procedures and presentation material. The next integration connects real decision-time observations and executed segments to the coordinator, then collects audited grasp-offset and slip cases. Participant walkthroughs, a timed team rehearsal, classroom feedback and final submission remain pending. The final report will incorporate their actual evidence rather than treating generated documents or component tests as proof of a completed system.
+A separate early-opening trial links one proposed recovery macro to 61 dispatches and three subsequent folding stages. All 2048 final points fall inside the upstream target region. This supplies one positive development example under the frozen camera, controller and budget. The initial garment supplies a reference measurement only. The dataset has no executed negative example or separate development partition. Product quality, local recovery and autonomous success remain unknown for this trial.
 
-[Editorial check: 498 words. Facts updated after PR #12/#13 and causal intake; classroom and personal attribution checks remain pending.]
+Two editable slides pair a recorded simulation image with a browser view of a failed return. The user must wait for confirmed rest and take control again before adjusting the garment. Speaker notes hand over to the architecture section. First-time user walkthroughs, a timed rehearsal, classroom feedback and final submission still require records from the people involved.
+
+[Editorial check: 502 words. Evidence through main@537fa41. Participant observations, classroom feedback and personal sign-off remain pending.]
 
 ## A2-02 · Architecture and key decisions
 
@@ -89,7 +91,7 @@ The local prototype was exercised in Chrome, including independent review throug
 
 ## A2-06 · Open issues and risks
 
-**Measured update.** Component I/O and stop records now exist; transport and coordinator integration remain unverified. Settled reset differences reach 31.7 mm, preventing an identical-state branch claim. Decision-time RGB, executed-history linkage, failure labels and recovery outcomes remain missing. [Measured integration](../research/runtime-component-integration.md) · [Updated risk register](ma-risks-and-validation.md) · [Branch-validity decision](decisions/ADR-MA-005-measured-input-and-branch-validity.md)
+**Measured update.** Component I/O and stop records now exist; transport and coordinator integration remain unverified. Settled reset differences reach 31.7 mm, preventing an identical-state branch claim. The first-sleeve SLIP judgement covers 5.800–6.150 s. OFFSET still requires a qualified target. A separate trial links decision-time observations, a recovery macro and a final regional proxy. Training lacks executed negatives and an independent development partition. [Label review](dr02-label-audit.md) · [Full-chain review](full-recovery-proxy-review.md) · [Current dataset](../research/shared-context-and-proxy-protocol.md) [Measured integration](../research/runtime-component-integration.md) · [Updated risk register](ma-risks-and-validation.md) · [Branch-validity decision](decisions/ADR-MA-005-measured-input-and-branch-validity.md)
 
 | Open question and consequence | Proposed check and decision rule | Owner to confirm |
 | --- | --- | --- |
@@ -113,6 +115,6 @@ The source annotations explain how the design uses evidence on recovery, monitor
 
 ## A2-09 · Team member contributions
 
-The materials assembled for Hu Zhiyu’s assigned workstream comprise the literature reading brief, the offline five-screen interaction flow, a baseline comparison and traceability matrix, the recording and evaluation protocol, and the walkthrough materials. The local outputs identify which behaviours were exercised with an event harness and which still require participant or simulator evidence. This working draft adds editorial coordination and a review register.
+The materials assembled for Hu Zhiyu’s assigned workstream comprise the literature reading brief, the offline five-screen interaction flow, a baseline comparison and traceability matrix, the recording and evaluation protocol, and the walkthrough materials. The local outputs identify which behaviours were exercised with an event harness and which still require participant or simulator evidence. The [presentation handoff](hu-presentation-handoff.md) supplies two editable slides, sources and speaker notes. The [label review](dr02-label-audit.md) and [full-chain review](full-recovery-proxy-review.md) record the decisions supported by the available data. Participant observations, personal sign-off and the team rehearsal are outstanding.
 
 [Zhang’s workstream record](zhang-assignment2-material.md#contribution-and-ai-reflection-for-owner-confirmation) identifies the submitted environment, experiments and architecture material. Each member still needs to confirm individual contributions, decisions and review activities. Joint approval and individual effort figures remain open.
