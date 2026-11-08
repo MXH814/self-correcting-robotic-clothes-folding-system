@@ -41,7 +41,7 @@ try:
     import numpy as np
     import omni.physics.tensors
     import imageio.v2 as imageio
-    from pxr import UsdGeom
+    from pxr import Gf, UsdGeom, UsdLux
     from isaacsim.core.api import World
     from isaacsim.core.utils.stage import get_current_stage
     from isaacsim.core.utils.types import ArticulationAction
@@ -53,13 +53,26 @@ try:
     world = World(stage_units_in_meters=1.0)
     robot = Bimanual_Ur10e(world, np.array([-0.8, 0, 0.5]), np.zeros(3),
                            np.array([0.8, 0, 0.5]), np.zeros(3))
-    camera = Recording_Camera(camera_position=np.array([0, 4.0, 6.0]),
-                              camera_orientation=np.array([0, 60, -90.0]),
-                              resolution=(640, 480))
+    stage = get_current_stage()
+    light = UsdLux.DomeLight.Define(stage, "/World/RuntimeProbeDomeLight")
+    light.CreateIntensityAttr(1000.0)
+    eye = [0.0, 3.6, 3.2]
+    look_at_target = [0.0, 0.5, 0.6]
+    resolution = (640, 480)
+    camera = Recording_Camera(camera_position=np.array(eye), resolution=resolution)
     checkpoint("scene_created")
     world.reset()
     checkpoint("world_reset")
     camera.initialize(depth_enable=True)
+    # Set the sensor prim directly so aiming works without an active viewport.
+    view = Gf.Matrix4d().SetLookAt(Gf.Vec3d(*eye), Gf.Vec3d(*look_at_target), Gf.Vec3d(0, 0, 1))
+    rotation = view.GetInverse().ExtractRotationQuat()
+    camera.camera.set_world_pose(position=np.array(eye),
+                                 orientation=np.array([rotation.GetReal(), *rotation.GetImaginary()]),
+                                 camera_axes="usd")
+    camera.camera.set_focal_length(2.4)
+    camera.camera.set_horizontal_aperture(2.4)
+    camera_position, camera_orientation = camera.camera.get_world_pose(camera_axes="usd")
     checkpoint("camera_initialized")
     for _ in range(30):
         world.step(render=True)
@@ -108,7 +121,6 @@ try:
                 "left_positions": left_pos, "left_velocities": left_vel,
                 "right_positions": right_pos, "right_velocities": right_vel}
 
-    stage = get_current_stage()
     sample = {"schema": "component-runtime-io-v1", "run_id": run_id,
               "created_utc": datetime.now(timezone.utc).isoformat(),
               "scope": "headless robot and simulated camera component probe; no garment, folding, project adapter or stop test",
@@ -118,10 +130,15 @@ try:
               "left_prim": "/World/DexLeft", "right_prim": "/World/DexRight",
               "left_dofs": profile(robot.dexleft), "right_dofs": profile(robot.dexright),
               "camera": {"prim_path": camera.camera_prim_path, "source": "Isaac Sim simulated camera RGB",
-                         "configured_position_stage_units": [0, 4.0, 6.0],
-                         "configured_euler_degrees": [0, 60, -90.0],
-                         "orientation_convention": "DexGarmentLab euler_angles_to_quat(degrees=True); calibration not verified",
-                         "configured_resolution": [640, 480], "configured_frequency_hz": camera.frequency,
+                         "configured_position_stage_units": eye,
+                         "look_at_target_stage_units": look_at_target,
+                         "world_position_stage_units": camera_position.tolist(),
+                         "world_orientation_usd_wxyz": camera_orientation.tolist(),
+                         "orientation_convention": "USD camera axes (-Z forward, +Y up); quaternion wxyz",
+                         "focal_length": camera.camera.get_focal_length(),
+                         "horizontal_aperture": camera.camera.get_horizontal_aperture(),
+                         "dome_light_intensity": float(light.GetIntensityAttr().Get()),
+                         "configured_resolution": list(resolution), "configured_frequency_hz": camera.frequency,
                          "depth_enabled": True, "frame_timestamp": None},
               "adapter_ack": None, "stop_request": None, "stop_feedback": None,
               "observations": []}
@@ -154,15 +171,21 @@ try:
             sample["observations"].append(observe())
     checkpoint("feedback_steps_complete")
     image_begin = clock()
-    rgb = camera.get_rgb_graph()
+    frame = camera.camera.get_current_frame()
+    rgba = np.asarray(frame.get("rgba"))
     image_end = clock()
-    if rgb is not None and rgb.size:
+    sample["camera"].update({"image": None, "rgb_status": "missing",
+                             "read_begin": image_begin, "read_end": image_end})
+    if rgba.shape == (resolution[1], resolution[0], 4) and rgba.dtype == np.uint8:
+        rgb = rgba[..., :3]
+        rgb_min, rgb_max = int(rgb.min()), int(rgb.max())
+        status = "all_black" if rgb_max == 0 else "uniform" if rgb_min == rgb_max else "nonuniform"
         imageio.imwrite(out / "camera-rgb.png", rgb)
         sample["camera"].update({"image": "camera-rgb.png", "shape": list(rgb.shape),
-                                 "dtype": str(rgb.dtype), "read_begin": image_begin,
-                                 "read_end": image_end})
-    else:
-        sample["camera"]["image"] = None
+                                 "dtype": str(rgb.dtype), "rgb_status": status,
+                                 "rgb_min": rgb_min, "rgb_max": rgb_max, "rgb_std": float(rgb.std()),
+                                 "rendering_frame": int(frame["rendering_frame"]),
+                                 "rendering_time_s": float(frame["rendering_time"])})
     (out / "sample.json").write_text(json.dumps(sample, indent=2, allow_nan=False), encoding="utf-8")
     checkpoint("sample_written")
     if os.environ.get("ROBOTICS_PROBE_MARKER"):
