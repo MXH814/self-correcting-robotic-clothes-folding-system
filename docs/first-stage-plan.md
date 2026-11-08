@@ -1,6 +1,6 @@
 # 第一阶段：研究问题验证与系统设计
 
-状态：2026-11-08按展示公告及用户新安排更新；原Assignment 2九项交付保留。马祥珲研究/AI设计、真实正常观测编码与展示素材、张茗博架构/环境材料可供整合；基础复跑已由马确认完成，恢复实验和全组Design仍有待办。详见[个人成果](research/ma-task-workbook.md)及[展示计划](design/presentation-plan.md)。
+状态：2026-11-08按展示公告及用户新安排更新；原Assignment 2九项交付保留。马祥珲研究/AI设计、真实正常观测编码与展示素材、张茗博架构/环境材料可供整合；基础复跑已由马确认完成，恢复实验和全组Design仍有待办。胡知鱼的交互、需求追踪、数据和走查设计见[Design交付状态](design/delivery-status.md)。详见[个人成果](research/ma-task-workbook.md)及[展示计划](design/presentation-plan.md)。
 
 执行安排更新：用户已确认马祥珲在张茗博电脑完成基础复跑，该项关闭；后续仿真、采集和恢复闭环统一在张电脑运行，不再安排换机安装或重复基础复跑。以下环境目标中的真实接口/失败案例继续分别验证，见[当前执行安排](research/shared-simulation-workflow.md)。
 
