@@ -24,3 +24,5 @@ docs/research/zhangmingbo/garment-observation-20261108/full-fold-*.json -text wh
 docs/research/zhangmingbo/garment-midstate-20261108/*.json* -text whitespace=cr-at-eol
 docs/research/zhangmingbo/garment-midstate-snapshots-20261108/*.json* -text whitespace=cr-at-eol
 docs/research/zhangmingbo/garment-midstate-snapshots-20261108/*.npz binary
+docs/research/zhangmingbo/full-recovery-chain-20261108/*.json -text whitespace=cr-at-eol
+docs/research/zhangmingbo/full-recovery-chain-20261108/producer-sources.zip binary

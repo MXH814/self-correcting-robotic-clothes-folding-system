@@ -1,0 +1,9 @@
+{
+  "trial_id": "bc68b5da-8102-427b-a32b-6aca66b316e1",
+  "file": "full-fold-recovery-chain-20261108.zip",
+  "bytes": 181617767,
+  "sha256": "a94f32d20b23ef1756649689caa6fc1df4154cd4212eea9c3afac04d6e337e87",
+  "url": "https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/download/zhang-garment-observation-20261108/full-fold-recovery-chain-20261108.zip",
+  "scope": "one complete diagnostic recovery trial; independent labels pending",
+  "source_manifest_sha256": "af3c9642080684c97daa3b0dd5e8f614444f471f35bab4609599bd3089dd447c"
+}
