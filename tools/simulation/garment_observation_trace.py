@@ -8,12 +8,13 @@ import numpy as np
 
 
 class GarmentObservationTrace:
-    def __init__(self, output, world, camera, arms, trial_id):
+    def __init__(self, output, world, camera, arms, trial_id, *, stored_size=None):
         self.output = output
         self.world = world
         self.camera = camera
         self.arms = arms
         self.trial_id = trial_id
+        self.stored_size = stored_size
         self.names = {side: list(arm.dof_names) for side, arm in arms.items()}
         self.frames = []
         self.frame_keys = {}
@@ -42,7 +43,13 @@ class GarmentObservationTrace:
             return None
         if key not in self.frame_keys:
             self.frame_keys[key] = len(self.frames)
-            self.frames.append(rgba[:, :, :3].copy())
+            rgb = rgba[:, :, :3]
+            if self.stored_size:
+                width, height = self.stored_size
+                y = np.arange(height) * rgb.shape[0] // height
+                x = np.arange(width) * rgb.shape[1] // width
+                rgb = rgb[y[:, None], x]
+            self.frames.append(rgb.copy())
         camera_end = self.clock()
         joint_state = {
             side: {"position_rad": arm.get_joint_positions().tolist(),
@@ -90,7 +97,7 @@ class GarmentObservationTrace:
             return result
         return apply
 
-    def save(self, condition):
+    def save(self, condition, *, scope="first_sleeve_component_exploration"):
         frames = self.output / "rgb-frames.npz"
         rgb = np.stack(self.frames)
         with frames.open("xb") as stream:
@@ -98,7 +105,8 @@ class GarmentObservationTrace:
         with frames.open("rb") as stream:
             digest = hashlib.file_digest(stream, "sha256").hexdigest()
         evidence = {"schema": "garment-observation-trace-v1", "trial_id": self.trial_id,
-                    "condition": condition, "scope": "first_sleeve_component_exploration",
+                    "condition": condition, "scope": scope,
+                    "spatial_sampling": ("nearest source pixel" if self.stored_size else "native camera pixels"),
                     "clock_domains": {"sim_time_s": "Isaac including RGB render time",
                                       "wall_monotonic_ns": "local Python monotonic clock"},
                     "target_units": {"joint_positions": "rad", "joint_velocities": "rad/s", "joint_efforts": "N*m"},

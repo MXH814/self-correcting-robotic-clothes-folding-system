@@ -96,8 +96,9 @@ def run(output):
             result["tracked_mesh_vertex_ids"] = patch_ids.tolist()
         err = np.linalg.norm(root - baseline, axis=1)
         trial = {"trial_id": str(uuid.uuid4()), "condition": condition,
-                 "root_mesh_rms_m": float(np.sqrt(np.mean(err ** 2))),
-                 "root_mesh_max_m": float(err.max()), "samples": [], "continuous_samples": [],
+                 "root_mesh_rms_m": None if trace_condition else float(np.sqrt(np.mean(err ** 2))),
+                 "root_mesh_max_m": None if trace_condition else float(err.max()),
+                 "samples": [], "continuous_samples": [],
                  "motions": [], "hand_commands": [], "images": {},
                  "dr02_label": None, "terminal_task_result": None}
         result["trials"].append(trial)

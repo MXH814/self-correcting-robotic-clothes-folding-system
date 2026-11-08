@@ -12,10 +12,13 @@ def require(condition, message):
         raise ValueError(message)
 
 
-def verify(root):
+def verify(root, full_record=None):
     trace = json.loads((root / "observation-trace.json").read_text(encoding="utf-8"))
-    physical = json.loads((root / "fault-evidence.json").read_text(encoding="utf-8"))
-    trial, = physical["trials"]
+    if full_record is None:
+        physical = json.loads((root / "fault-evidence.json").read_text(encoding="utf-8"))
+        trial, = physical["trials"]
+    else:
+        trial = {"trial_id": full_record["trial_id"], "condition": full_record["injection"]}
     require(trial["trial_id"] == trace["trial_id"], "Trial identifiers differ")
     require(trial["condition"] == trace["condition"], "Trial conditions differ")
 
@@ -69,8 +72,35 @@ def verify(root):
             "maximum_render_gap_sim_s": float(intervals.max())}
 
 
+def verify_full_fold(root):
+    record = json.loads((root / "full-fold-recovery.json").read_text(encoding="utf-8"))
+    judgment = record["judgment"]
+    with np.load(root / "final-point-cloud.npz", allow_pickle=False) as loaded:
+        points = loaded["points"]
+    x0, x1, y0, y1 = judgment["boundary_world_xy_m"]
+    inside = (points[:, 0] >= x0) & (points[:, 0] <= x1) & (points[:, 1] >= y0) & (points[:, 1] <= y1)
+    count = int(inside.sum())
+    require(len(points) == judgment["point_count"] > 0 and count == judgment["inside_count"],
+            "Point-cloud count does not match the upstream judgment")
+    require((count / len(points) >= judgment["minimum_ratio"]) == judgment["upstream_success"],
+            "Point-cloud ratio does not match the upstream judgment")
+    expected = {"before-injection", "before-recovery", "after-recovery", "after-resume-transfer", "final"}
+    require(expected <= record["checkpoints"].keys(), "Incomplete full-fold checkpoints")
+    for name, checkpoint in record["checkpoints"].items():
+        with (root / checkpoint["image"]).open("rb") as stream:
+            digest = hashlib.file_digest(stream, "sha256").hexdigest()
+        require(digest == checkpoint["image_sha256"], f"Image SHA256 mismatch at {name}")
+    result = {"trial_id": record["trial_id"], "injection": record["injection"], "inside_count": count,
+              "point_count": len(points), "upstream_success": judgment["upstream_success"]}
+    if (root / "observation-trace.json").is_file():
+        result["recovery_trace"] = verify(root, full_record=record)
+    return result
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("trial_directory", type=Path, nargs="+")
     args = parser.parse_args()
-    print(json.dumps([verify(path) for path in args.trial_directory], indent=2))
+    results = [verify_full_fold(path) if (path / "full-fold-recovery.json").is_file() else verify(path)
+               for path in args.trial_directory]
+    print(json.dumps(results, indent=2))

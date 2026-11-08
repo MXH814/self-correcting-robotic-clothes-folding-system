@@ -3,6 +3,7 @@ param(
     [ValidateSet('normal','grasp_offset','unexpected_release','offset_regrasp','release_regrasp','contact_offset_candidate','closed_hand_slip_candidate')][string]$GarmentTraceCase,
     [ValidateSet('early-open','closed-hand-slip')][string]$FoldRecoveryCondition = 'early-open',
     [ValidateRange(-0.02,0.02)][double]$RegraspLateralOffsetM = 0,
+    [switch]$CaptureRecoveryTrace,
     [string]$RoboticsRoot = 'E:\Robotics',
     [string]$IsaacRoot = '',
     [string]$ProjectRoot = '',
@@ -15,6 +16,7 @@ param(
 $ErrorActionPreference = 'Stop'
 if ($Headless -and $KeepOpen) { throw 'KeepOpen requires a graphical session.' }
 if ($GarmentTraceCase -and $Stage -ne 'garment-fault') { throw 'GarmentTraceCase requires the garment-fault stage.' }
+if ($CaptureRecoveryTrace -and $Stage -ne 'fold-recovery') { throw 'CaptureRecoveryTrace requires the fold-recovery stage.' }
 if ($Stage -in @('runtime-io','runtime-control','runtime-fault','garment-fault') -and $KeepOpen) { throw 'These probes run headless and do not support KeepOpen.' }
 # Resolve against the caller's PowerShell location, before changing directories.
 # Unlike Resolve-Path, this also supports an output directory not created yet.
@@ -34,7 +36,7 @@ foreach ($required in @($isaacPython, (Join-Path $ProjectRoot 'Env_StandAlone\Fo
 Write-Host "Isaac: $IsaacRoot`nProject: $ProjectRoot`nExtra dependencies: $DependencyRoot`nSmoke output: $OutputRoot"
 Write-Host 'Fold output is written by upstream under ProjectRoot/Data/Fold_Tops, not OutputRoot.'
 if ($CheckOnly) { Write-Host 'PATH_CHECK_PASSED (paths only; no simulator or imports tested)'; return }
-$names = @('PYTHONPATH','HF_HOME','PIP_CACHE_DIR','ROBOTICS_PROJECT_ROOT','ROBOTICS_OUTPUT_ROOT','ROBOTICS_HEADLESS','ROBOTICS_KEEP_OPEN','ROBOTICS_PROBE_MARKER','ROBOTICS_FOLD_CAMERA','ROBOTICS_FOLD_RECOVERY','ROBOTICS_FOLD_RECOVERY_CONDITION','ROBOTICS_REGRASP_LATERAL_OFFSET_M','ROBOTICS_GARMENT_TRACE_CASE','ROBOTICS_RUNTIME_CONTROL')
+$names = @('PYTHONPATH','HF_HOME','PIP_CACHE_DIR','ROBOTICS_PROJECT_ROOT','ROBOTICS_OUTPUT_ROOT','ROBOTICS_HEADLESS','ROBOTICS_KEEP_OPEN','ROBOTICS_PROBE_MARKER','ROBOTICS_FOLD_CAMERA','ROBOTICS_FOLD_RECOVERY','ROBOTICS_FOLD_RECOVERY_CONDITION','ROBOTICS_REGRASP_LATERAL_OFFSET_M','ROBOTICS_FOLD_RECOVERY_TRACE','ROBOTICS_GARMENT_TRACE_CASE','ROBOTICS_RUNTIME_CONTROL')
 $old = @{}
 foreach ($name in $names) { $old[$name] = [Environment]::GetEnvironmentVariable($name, 'Process') }
 $marker = $null
@@ -58,6 +60,7 @@ try {
             $env:ROBOTICS_FOLD_RECOVERY = if ($Stage -eq 'fold-recovery') { '1' } else { '0' }
             $env:ROBOTICS_FOLD_RECOVERY_CONDITION = $FoldRecoveryCondition
             $env:ROBOTICS_REGRASP_LATERAL_OFFSET_M = $RegraspLateralOffsetM.ToString([Globalization.CultureInfo]::InvariantCulture)
+            $env:ROBOTICS_FOLD_RECOVERY_TRACE = if ($CaptureRecoveryTrace) { '1' } else { '0' }
             & $isaacPython -u (Join-Path $PSScriptRoot 'run_fold_local.py') --garment_random_flag False --record_video_flag False --data_collection_flag True
         } elseif ($Stage -eq 'garment-fault') {
             if ($GarmentTraceCase) { $env:ROBOTICS_GARMENT_TRACE_CASE = $GarmentTraceCase }

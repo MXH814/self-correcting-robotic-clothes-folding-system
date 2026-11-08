@@ -20,6 +20,7 @@ class FoldRecoveryEvidence:
         self.output.mkdir(parents=True)
         self.started = time.monotonic_ns()
         self.closed_hand = os.environ.get("ROBOTICS_FOLD_RECOVERY_CONDITION") == "closed-hand-slip"
+        self.capture_trace = os.environ.get("ROBOTICS_FOLD_RECOVERY_TRACE") == "1"
         self.lateral_offset_m = float(os.environ.get("ROBOTICS_REGRASP_LATERAL_OFFSET_M", "0"))
         if not abs(self.lateral_offset_m) <= 0.02:
             raise ValueError("Diagnostic regrasp offset must be within 0.02 m of the original pick")
@@ -91,6 +92,40 @@ class FoldRecoveryEvidence:
         lift = None
         patch_ids = None
         tips = [env.world.stage.GetPrimAtPath(f"/World/DexLeft/{name}") for name in ("fftip", "thtip")]
+        trace = None
+        phase = "first_sleeve_prepare"
+        if self.capture_trace:
+            from garment_observation_trace import GarmentObservationTrace
+
+            arms = {"left": left, "right": robot.dexright}
+            trace = GarmentObservationTrace(self.output, env.world, env.env_camera.camera, arms,
+                                            self.record["trial_id"], stored_size=(240, 180))
+            controllers = {side: arm.get_articulation_controller() for side, arm in arms.items()}
+            dispatch = {side: controller.apply_action for side, controller in controllers.items()}
+            original_step = env.world.step
+            original_hand = robot.set_both_hand_state
+            trace.boundary(phase)
+
+            def step_with_trace(*args, **kwargs):
+                result = original_step(*args, **kwargs)
+                trace.observe(phase)
+                return result
+
+            def hand_with_trace(left_hand_state="None", right_hand_state="None"):
+                if phase == "first_sleeve_approach":
+                    boundary("first_sleeve_grasp_" + left_hand_state)
+                return original_hand(left_hand_state, right_hand_state)
+
+            for side, controller in controllers.items():
+                controller.apply_action = trace.wrap_apply(side, dispatch[side], lambda: phase)
+            env.world.step = step_with_trace
+            robot.set_both_hand_state = hand_with_trace
+
+        def boundary(name):
+            nonlocal phase
+            phase = name
+            if trace:
+                trace.boundary(phase)
 
         def vertices():
             mesh = env.garment.garment_mesh
@@ -117,6 +152,7 @@ class FoldRecoveryEvidence:
             return observations
 
         def attempt(label, operation):
+            boundary(label)
             begin = int(env.world.current_time_step_index)
             result = operation()
             self.record["candidate_steps"].append({"operation": label, "begin_sim_step": begin,
@@ -129,11 +165,13 @@ class FoldRecoveryEvidence:
             nonlocal move_count, pick, lift, patch_ids
             move_count += 1
             if move_count == 1:
+                boundary("first_sleeve_approach")
                 pick = np.array(target_pos)
                 patch_ids = np.argsort(np.linalg.norm(vertices()[:, :2] - pick[:2], axis=1))[:12]
                 self.record["intended_patch_vertex_ids"] = patch_ids.tolist()
                 self.record["pick_world_m"] = pick.tolist()
             elif move_count == 2:
+                boundary("first_sleeve_lift")
                 lift = np.array(target_pos)
             elif move_count == 3:
                 self.record["lift_world_m"] = lift.tolist()
@@ -158,6 +196,7 @@ class FoldRecoveryEvidence:
                     for _ in range(45):
                         env.step()
                 checkpoint("before-recovery")
+                boundary("before_recovery_decision")
                 offset = np.array([self.lateral_offset_m, 0, 0])
                 candidate_pick = pick + offset
                 candidate_lift = lift + offset
@@ -188,10 +227,18 @@ class FoldRecoveryEvidence:
                 else:
                     self.record["diagnostic_gate"] = "rejected"
                 checkpoint("after-recovery")
+                boundary("fixed_first_sleeve_transfer")
             result = original(target_pos, target_ori, *args, **kwargs)
             if move_count == 3:
                 self.record["resume_sdk_result"] = bool(result)
                 checkpoint("after-resume-transfer")
+                if trace:
+                    boundary("after_first_sleeve_transfer")
+                    env.world.step = original_step
+                    robot.set_both_hand_state = original_hand
+                    for side, controller in controllers.items():
+                        controller.apply_action = dispatch[side]
+                    trace.save(self.record["injection"], scope="full_fold_first_sleeve_recovery_prefix")
                 self.save()
             return result
 

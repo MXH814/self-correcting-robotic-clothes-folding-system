@@ -34,5 +34,23 @@
     "rgb_frames": 277,
     "observations": 289,
     "dispatches": 239
+  },
+  "full-fold-early-open": {
+    "file": "full-fold-early-open.zip",
+    "bytes": 1266306,
+    "sha256": "9a11980b2235c11ad10ade8d4d61bc75c5d44826f95c113997ec6f7bd52aec7f",
+    "trial_id": "a298a167-cb06-436d-9fd0-423e0caa6cbe",
+    "inside_count": 1984,
+    "point_count": 2048,
+    "upstream_success": true
+  },
+  "full-fold-closed-hand-slip": {
+    "file": "full-fold-closed-hand-slip.zip",
+    "bytes": 1265555,
+    "sha256": "4636a0937e52d0874e6d5dadd2eea89735f7b5b51176c59606e877c269f0c930",
+    "trial_id": "5ee7f246-cfd0-4321-8d80-b608723d789f",
+    "inside_count": 1824,
+    "point_count": 2048,
+    "upstream_success": true
   }
 }
