@@ -13,3 +13,4 @@ docs/research/zhangmingbo/runtime-io-camera-20261108/*.json* -text whitespace=cr
 docs/research/zhangmingbo/fold-experiments-20261108/*.json* -text whitespace=cr-at-eol
 docs/research/zhangmingbo/preaction-chain-20261108/*.json* -text whitespace=cr-at-eol
 docs/research/zhangmingbo/adapter-fault-evidence-20261108.json -text whitespace=cr-at-eol
+docs/research/zhangmingbo/garment-fault-20261108/*.json* -text whitespace=cr-at-eol
