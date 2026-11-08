@@ -1,0 +1,202 @@
+{
+  "package_verification": [
+    {
+      "trial_id": "67be478a-8d9d-40b2-bcf2-499039fbf732",
+      "condition": "normal",
+      "rgb_frames": 136,
+      "observations": 142,
+      "actual_dispatches_with_feedback": 157,
+      "maximum_render_gap_sim_s": 0.05000000260770321,
+      "source_case": "normal"
+    },
+    {
+      "trial_id": "a3252cfe-b082-47ba-b056-ed1b61bcfdb4",
+      "condition": "contact_offset_candidate",
+      "rgb_frames": 134,
+      "observations": 140,
+      "actual_dispatches_with_feedback": 151,
+      "maximum_render_gap_sim_s": 0.05000000260770321,
+      "source_case": "contact_offset_candidate"
+    },
+    {
+      "trial_id": "c7420d3d-5a48-4f23-9cda-7df8af2e627a",
+      "condition": "closed_hand_slip_candidate",
+      "rgb_frames": 138,
+      "observations": 145,
+      "actual_dispatches_with_feedback": 140,
+      "maximum_render_gap_sim_s": 0.05000000260770321,
+      "source_case": "closed_hand_slip_candidate"
+    }
+  ],
+  "geometry_recalculation": [
+    {
+      "source_case": "normal",
+      "trial_id": "67be478a-8d9d-40b2-bcf2-499039fbf732",
+      "w0_m": 0.46556791308452894,
+      "lifted_patch_center": [
+        -0.4200797478147666,
+        0.6518121840052352,
+        0.03536116696376373
+      ],
+      "hold_displacement_mm": [
+        1.2644598211697917,
+        1.9157642995582826
+      ],
+      "legal_release_near_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "normal_reference_offset_mm": 55.28421263994539,
+      "proposed_label_review_state": "pending_independent_visual_review",
+      "native_contact_report": null,
+      "canonical_patch_distance_from_normal_mm": 0.0
+    },
+    {
+      "source_case": "contact_offset_candidate",
+      "trial_id": "a3252cfe-b082-47ba-b056-ed1b61bcfdb4",
+      "w0_m": 0.46556791308452894,
+      "lifted_patch_center": [
+        -0.3840911942740744,
+        0.6756660776915181,
+        0.03122438331890236
+      ],
+      "hold_displacement_mm": [
+        1.4450724163320947,
+        3.4623699154078054
+      ],
+      "legal_release_near_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "normal_reference_offset_mm": 97.86268378152184,
+      "proposed_label_review_state": "pending_independent_visual_review",
+      "native_contact_report": null,
+      "canonical_patch_distance_from_normal_mm": 43.17619980901232
+    },
+    {
+      "source_case": "closed_hand_slip_candidate",
+      "trial_id": "c7420d3d-5a48-4f23-9cda-7df8af2e627a",
+      "w0_m": 0.46556791308452894,
+      "lifted_patch_center": [
+        -0.41968966403553104,
+        0.6444934431442384,
+        0.031129672065923656
+      ],
+      "hold_displacement_mm": [
+        44.709870873973586,
+        46.83967457878664
+      ],
+      "legal_release_near_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "normal_reference_offset_mm": 50.54854588394997,
+      "proposed_label_review_state": "pending_independent_visual_review",
+      "native_contact_report": null,
+      "canonical_patch_distance_from_normal_mm": 7.329129085044631
+    }
+  ],
+  "source_pr": 22,
+  "source_commit": "b2f5c10e30e3c5d794785f8c0ce957728042b095",
+  "input_reports": [
+    {
+      "trial_id": "67be478a-8d9d-40b2-bcf2-499039fbf732",
+      "observations": 142,
+      "rgb_frames": 136,
+      "dispatch_inputs": 157,
+      "channels": 60,
+      "history_length": 4,
+      "dimensions": {
+        "current_observation": 312,
+        "candidate_target": 180,
+        "past_observations": 1248,
+        "executed_history": 964
+      },
+      "inputs_with_prior_observations": 154,
+      "inputs_with_completed_prior_commands": 154,
+      "verified_recovery_labels": 0,
+      "online_authorized": false,
+      "position_unit_declaration": "trace_metadata",
+      "recovery_training_ready": false,
+      "research_conclusion": "NOT_ESTABLISHED",
+      "source_manifest_sha256": "037494178871f118c17f222022ee4dd01e103c485d2fac36d47da79b5408ddb3",
+      "source_trace_sha256": "bfb8be6456b6134361a8a6b55a1c517e5e2354c7c23439e499b089a058634b1f",
+      "producer_sha256": "f10c4a2fbe8a6558a8dabba895cd21c18272d0444a96da18c272c350ec8c0fcf",
+      "camera_domain": "moving near-hand camera; separate from PR18 fixed-view data"
+    },
+    {
+      "trial_id": "a3252cfe-b082-47ba-b056-ed1b61bcfdb4",
+      "observations": 140,
+      "rgb_frames": 134,
+      "dispatch_inputs": 151,
+      "channels": 60,
+      "history_length": 4,
+      "dimensions": {
+        "current_observation": 312,
+        "candidate_target": 180,
+        "past_observations": 1248,
+        "executed_history": 964
+      },
+      "inputs_with_prior_observations": 148,
+      "inputs_with_completed_prior_commands": 148,
+      "verified_recovery_labels": 0,
+      "online_authorized": false,
+      "position_unit_declaration": "trace_metadata",
+      "recovery_training_ready": false,
+      "research_conclusion": "NOT_ESTABLISHED",
+      "source_manifest_sha256": "dd4744d23fda2a3b33b4059f50443fcea54d25c75c2dcd0a78d855c4c550c1ae",
+      "source_trace_sha256": "fb4b724825c65708dbf0467f625081ef4d6fec2f4e214b56242dd2c4173c4d9a",
+      "producer_sha256": "f10c4a2fbe8a6558a8dabba895cd21c18272d0444a96da18c272c350ec8c0fcf",
+      "camera_domain": "moving near-hand camera; separate from PR18 fixed-view data"
+    },
+    {
+      "trial_id": "c7420d3d-5a48-4f23-9cda-7df8af2e627a",
+      "observations": 145,
+      "rgb_frames": 138,
+      "dispatch_inputs": 140,
+      "channels": 60,
+      "history_length": 4,
+      "dimensions": {
+        "current_observation": 312,
+        "candidate_target": 180,
+        "past_observations": 1248,
+        "executed_history": 964
+      },
+      "inputs_with_prior_observations": 137,
+      "inputs_with_completed_prior_commands": 137,
+      "verified_recovery_labels": 0,
+      "online_authorized": false,
+      "position_unit_declaration": "trace_metadata",
+      "recovery_training_ready": false,
+      "research_conclusion": "NOT_ESTABLISHED",
+      "source_manifest_sha256": "401f7babe50aa14e3b608d1c2385c27f200fc9ca3212101a6783793b8eaa105b",
+      "source_trace_sha256": "df0571929a01f6c992c6a058154d1d4b9f97121ac5ead1a98b00f5e7905ba127",
+      "producer_sha256": "f10c4a2fbe8a6558a8dabba895cd21c18272d0444a96da18c272c350ec8c0fcf",
+      "camera_domain": "moving near-hand camera; separate from PR18 fixed-view data"
+    }
+  ],
+  "total_rgb_frames": 408,
+  "total_dispatch_inputs": 448,
+  "random_sequence_forward_inputs": 448,
+  "model_trained": false,
+  "formal_labels_approved": false,
+  "camera_domain": "moving near-hand; do not merge with fixed-view training without an explicit representation/context protocol"
+}
