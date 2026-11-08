@@ -6,6 +6,8 @@
 
 **截至 2026-11-08，本轮可交接的是英文工作稿和胡知鱼分工的证据。九项最终签核仍待团队完成。** 监督会话已逐项核准第 1–5 项，其中第 2 项核准本地交互原型，第 4 项核准规范与空模板，第 5 项核准走查材料。本次核对 hzy@2268c713 与 main@1411e82c。[英文报告工作稿](system-design.md) · [远端九项正式清单](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/docs/assignment-2-checklist.md) · [第一阶段分工](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/docs/first-stage-plan.md)
 
+**分工更新（2026-11-08）：整组 Pre PPT/PDF、完整逐页演讲稿、切页交接、备份问答、排练、场次前上传核对及反馈原始记录改由张茗博统筹；胡知鱼继续 UI/需求变化素材、报告编辑/反馈追踪及最终打包，马祥珲终审技术。详情与公告逐条映射见[展示计划](presentation-plan.md)。**
+
 ## 九项逐条核对
 
 | 官方项 | 已有证据与本轮判断 | 缺项、拟复核人及关闭条件 |
@@ -50,4 +52,4 @@
 
 
 本地五屏走查入口已支持双角色切换、按序号回放和独立的实测图像浏览。[交互复验](interaction-design.md)记录可直接打开的阶段图和完整轨迹导入方式。PR #11 补上了组件级撤权、断链重连和迟到反馈实测；产品协调器联调与真实参与者记录仍待完成。[适配器证据](../research/zhangmingbo/adapter-fault-probe-20261108.md)
-张茗博的[三页可编辑架构素材](slides/zhang-architecture-slides.pptx)已随 PR #16 合入，供胡知鱼统筹整组 Slides 时选用。
+张茗博的[三页可编辑架构素材](slides/zhang-architecture-slides.pptx)已随 PR #16 合入，由张茗博统筹整组 Pre PPT/PDF、完整逐页演讲稿、排练/上传与反馈记录时复用；三页素材不等于整组 Pre 已完成。
