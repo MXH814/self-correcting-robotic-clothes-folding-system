@@ -1,0 +1,228 @@
+{
+  "schema": "ma-garment-intake-audit/1",
+  "source_pr": 18,
+  "source_commit": "639c824d3745a53457a9cbff01140dd33e871fca",
+  "source_release": "zhang-garment-observation-20261108",
+  "reports": [
+    {
+      "source_case": "normal",
+      "trial_id": "cc93a777-7c06-4fd3-8446-94616ae73495",
+      "observations": 165,
+      "rgb_frames": 159,
+      "dispatch_inputs": 157,
+      "channels": 60,
+      "history_length": 4,
+      "dimensions": {
+        "current_observation": 312,
+        "candidate_target": 180,
+        "past_observations": 1248,
+        "executed_history": 964
+      },
+      "inputs_with_prior_observations": 154,
+      "inputs_with_completed_prior_commands": 154,
+      "verified_recovery_labels": 0,
+      "online_authorized": false,
+      "position_unit_declaration": "author SDK radian declaration: garment-observation README@639c824; bound by source_trace_sha256",
+      "recovery_training_ready": false,
+      "research_conclusion": "NOT_ESTABLISHED",
+      "source_manifest_sha256": "49836c5595f8c0a47fdefc342dc5c625fe10f1cf353fe7667c06adbc7f844775",
+      "source_trace_sha256": "dee5b3f66a3e817957fc8ac113381dbe7b22c9cd61ce32368312b5875a0f9c76",
+      "producer_sha256": "f10c4a2fbe8a6558a8dabba895cd21c18272d0444a96da18c272c350ec8c0fcf"
+    },
+    {
+      "source_case": "contact_offset_candidate",
+      "trial_id": "e4a3b682-7822-4a98-ba4b-e0c1cef2a362",
+      "observations": 161,
+      "rgb_frames": 155,
+      "dispatch_inputs": 151,
+      "channels": 60,
+      "history_length": 4,
+      "dimensions": {
+        "current_observation": 312,
+        "candidate_target": 180,
+        "past_observations": 1248,
+        "executed_history": 964
+      },
+      "inputs_with_prior_observations": 150,
+      "inputs_with_completed_prior_commands": 150,
+      "verified_recovery_labels": 0,
+      "online_authorized": false,
+      "position_unit_declaration": "author SDK radian declaration: garment-observation README@639c824; bound by source_trace_sha256",
+      "recovery_training_ready": false,
+      "research_conclusion": "NOT_ESTABLISHED",
+      "source_manifest_sha256": "481b05c25461c11df68d490ce502779c497b3426ede19acf8eb0c52fa90cc874",
+      "source_trace_sha256": "4d28c10d32129bf547118b011f0c691c0a28969b3401e739e2f696ca354d6d5d",
+      "producer_sha256": "f10c4a2fbe8a6558a8dabba895cd21c18272d0444a96da18c272c350ec8c0fcf"
+    },
+    {
+      "source_case": "closed_hand_slip_candidate",
+      "trial_id": "2e947a25-9108-4e54-a5fb-5d1738d5e256",
+      "observations": 174,
+      "rgb_frames": 167,
+      "dispatch_inputs": 140,
+      "channels": 60,
+      "history_length": 4,
+      "dimensions": {
+        "current_observation": 312,
+        "candidate_target": 180,
+        "past_observations": 1248,
+        "executed_history": 964
+      },
+      "inputs_with_prior_observations": 139,
+      "inputs_with_completed_prior_commands": 139,
+      "verified_recovery_labels": 0,
+      "online_authorized": false,
+      "position_unit_declaration": "author SDK radian declaration: garment-observation README@639c824; bound by source_trace_sha256",
+      "recovery_training_ready": false,
+      "research_conclusion": "NOT_ESTABLISHED",
+      "source_manifest_sha256": "ed916c32fe8f2ed05ce9cad22a358b113aef9af8bc7d1e158ad17757d467d3e7",
+      "source_trace_sha256": "af8015f58cce2731c2b76524ba918c3f67eea5e5ce6b53aa7530841a52dfcedc",
+      "producer_sha256": "f10c4a2fbe8a6558a8dabba895cd21c18272d0444a96da18c272c350ec8c0fcf"
+    },
+    {
+      "source_case": "release_regrasp",
+      "trial_id": "f19535ba-7f48-4eb5-b36f-b1339127d748",
+      "observations": 289,
+      "rgb_frames": 277,
+      "dispatch_inputs": 239,
+      "channels": 60,
+      "history_length": 4,
+      "dimensions": {
+        "current_observation": 312,
+        "candidate_target": 180,
+        "past_observations": 1248,
+        "executed_history": 964
+      },
+      "inputs_with_prior_observations": 236,
+      "inputs_with_completed_prior_commands": 236,
+      "verified_recovery_labels": 0,
+      "online_authorized": false,
+      "position_unit_declaration": "author SDK radian declaration: garment-observation README@639c824; bound by source_trace_sha256",
+      "recovery_training_ready": false,
+      "research_conclusion": "NOT_ESTABLISHED",
+      "source_manifest_sha256": "879d40f69ad02b21a85954e2056cdfd640b9a7533a2e5ba0b8b88d957f17c250",
+      "source_trace_sha256": "239a8920633e060cbba6ecd043b9a8ddcb660c7e0ab35d9d678c76ef8b6e7231",
+      "producer_sha256": "f10c4a2fbe8a6558a8dabba895cd21c18272d0444a96da18c272c350ec8c0fcf"
+    },
+    {
+      "source_case": "closed_hand_slip_regrasp",
+      "trial_id": "53ffafbb-d5f9-4390-b445-28addf58f40e",
+      "observations": 305,
+      "rgb_frames": 293,
+      "dispatch_inputs": 259,
+      "channels": 60,
+      "history_length": 4,
+      "dimensions": {
+        "current_observation": 312,
+        "candidate_target": 180,
+        "past_observations": 1248,
+        "executed_history": 964
+      },
+      "inputs_with_prior_observations": 258,
+      "inputs_with_completed_prior_commands": 258,
+      "verified_recovery_labels": 0,
+      "online_authorized": false,
+      "position_unit_declaration": "trace_metadata",
+      "recovery_training_ready": false,
+      "research_conclusion": "NOT_ESTABLISHED",
+      "source_manifest_sha256": "bbb626b0327bf5ec6321040f9bed30876442328fceee56ee782dd952bff99dc2",
+      "source_trace_sha256": "ab11ba4220818dec8a5a3ee4a51c902373be8b56edcbf90f5c5c5accae19e085",
+      "producer_sha256": "f10c4a2fbe8a6558a8dabba895cd21c18272d0444a96da18c272c350ec8c0fcf"
+    }
+  ],
+  "total_rgb_frames": 1051,
+  "total_dispatch_inputs": 946,
+  "verified_recovery_labels": 0,
+  "online_authorized": false,
+  "recovery_training_ready": false,
+  "separate_full_fold_trial_records": [
+    {
+      "trial_id": "a298a167-cb06-436d-9fd0-423e0caa6cbe",
+      "method": "scripted_regrasp",
+      "block_id": "early_open_after_first_lift",
+      "garment": "TCLC_018",
+      "label_audit": "pending",
+      "autonomous_success": null,
+      "local_success": null,
+      "upstream_region_ratio": 0.96875,
+      "upstream_success": true,
+      "online_authorized": false,
+      "continuous_history_trial_id": null,
+      "same_root_comparison_available": false
+    },
+    {
+      "trial_id": "5ee7f246-cfd0-4321-8d80-b608723d789f",
+      "method": "scripted_regrasp",
+      "block_id": "zero_friction_closed_hand_translation",
+      "garment": "TCLC_018",
+      "label_audit": "pending",
+      "autonomous_success": null,
+      "local_success": null,
+      "upstream_region_ratio": 0.890625,
+      "upstream_success": true,
+      "online_authorized": false,
+      "continuous_history_trial_id": null,
+      "same_root_comparison_available": false
+    }
+  ],
+  "trial_summary": {
+    "schema": "independent-trial-description/1",
+    "groups": [
+      {
+        "method": "scripted_regrasp",
+        "block_id": "early_open_after_first_lift",
+        "recorded_trials": 1,
+        "confirmed_autonomous_successes": 0,
+        "confirmed_autonomous_failures": 0,
+        "unknown_autonomous_outcomes": 1
+      },
+      {
+        "method": "scripted_regrasp",
+        "block_id": "zero_friction_closed_hand_translation",
+        "recorded_trials": 1,
+        "confirmed_autonomous_successes": 0,
+        "confirmed_autonomous_failures": 0,
+        "unknown_autonomous_outcomes": 1
+      }
+    ],
+    "pairwise_selection_rate": null,
+    "causal_effect": null,
+    "statistical_independence_confirmed": false,
+    "research_conclusion": "NOT_ESTABLISHED"
+  },
+  "model_software_forward_checks": [
+    {
+      "model": "current-only",
+      "inputs": 946,
+      "config": {
+        "current_dim": 312,
+        "candidate_dim": 180,
+        "observation_history_dim": 312,
+        "action_history_dim": 241,
+        "hidden": 32,
+        "use_history": false
+      },
+      "finite_outputs": true,
+      "weights": "seeded_random_initialization_not_trained",
+      "scores_published": false
+    },
+    {
+      "model": "observation-action-history",
+      "inputs": 946,
+      "config": {
+        "current_dim": 312,
+        "candidate_dim": 180,
+        "observation_history_dim": 312,
+        "action_history_dim": 241,
+        "hidden": 32,
+        "use_history": true
+      },
+      "finite_outputs": true,
+      "weights": "seeded_random_initialization_not_trained",
+      "scores_published": false
+    }
+  ],
+  "model_code_sha256": "4ea711d5036d1d2f63f49db86cd0367790cd79cc62e15522a67d8c0775120d3d",
+  "recovery_macro_encoder_sha256": "410c4ff28af4c96a545bcf3fab6a39b33a02bae5bedc0baad4bd2155fc084bbe",
+  "model_training_on_real_recovery_data_performed": false
+}

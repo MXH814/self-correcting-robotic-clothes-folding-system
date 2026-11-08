@@ -7,6 +7,12 @@
 *.docx binary
 *.png binary
 
+# Keep new algorithm producer fingerprints stable across Windows/Linux checkouts.
+research_tools/garment_trace_intake.py text eol=lf
+research_tools/recovery_candidates.py text eol=lf
+research_tools/sequence_ranker.py text eol=lf
+research_tools/trial_outcomes.py text eol=lf
+
 # Preserve measured evidence bytes: manifests bind the original SHA256, not OS line endings.
 docs/research/zhangmingbo/runtime-io-20261108/*.json* -text whitespace=cr-at-eol
 docs/research/zhangmingbo/runtime-io-camera-20261108/*.json* -text whitespace=cr-at-eol
