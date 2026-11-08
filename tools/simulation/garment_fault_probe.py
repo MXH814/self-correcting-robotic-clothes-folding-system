@@ -1,4 +1,5 @@
 """Collect first-sleeve disturbance evidence with DexGarmentLab's actual cloth and arm."""
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -73,8 +74,48 @@ def run(output):
     camera.initialize(depth_enable=False)
     baseline = None
     patch_ids = None
+    midstate_mode = os.environ.get("ROBOTICS_MIDSTATE_PROBE") == "1"
+    midstate_references = []
+    if midstate_mode:
+        result["scope"] = "first_sleeve_failed_prefix_replay_and_restore_probe"
+        result["resume_phase"] = "fixed_transfer"
+        result["restored_contact_state"] = None
+        result["restored_simulator_rng_state"] = None
+
+    def measured_state():
+        first = vertices()
+        first_time = env.world.current_time
+        tick(1)
+        second = vertices()
+        return {"vertices_m": second,
+                "vertex_velocity_m_s": (second - first) / (env.world.current_time - first_time),
+                "joint_position_rad": np.concatenate([a.get_joint_positions() for a in (arm, robot.dexright)]),
+                "joint_velocity_rad_s": np.concatenate([a.get_joint_velocities() for a in (arm, robot.dexright)])}
+
+    def save_midstate_snapshot(case_index, state):
+        destination = output / f"midstate-{case_index}.npz"
+        with destination.open("xb") as stream:
+            np.savez_compressed(stream, **state)
+        raw = destination.read_bytes()
+        return {"file": destination.name, "bytes": len(raw),
+                "sha256": hashlib.sha256(raw).hexdigest(),
+                "sim_step": env.world.current_time_step_index,
+                "sim_time_s": env.world.current_time, "wall_monotonic_ns": time.monotonic_ns()}
+
+    def state_errors(reference, replay):
+        errors = {}
+        for key in reference:
+            delta = replay[key] - reference[key]
+            if delta.ndim == 2:
+                delta = np.linalg.norm(delta, axis=1)
+            errors[key] = {"max_abs": float(np.abs(delta).max()),
+                           "rms": float(np.sqrt(np.mean(delta ** 2)))}
+        return errors
+
     start = time.perf_counter()
-    for condition in ("normal", "grasp_offset", "unexpected_release", "offset_regrasp", "release_regrasp"):
+    conditions = (("unexpected_release",) * 3 if midstate_mode else
+                  ("normal", "grasp_offset", "unexpected_release", "offset_regrasp", "release_regrasp"))
+    for case_index, condition in enumerate(conditions):
         env.reset()
         garment.set_pose(pos=origin, ori=zeros)
         robot.set_both_hand_state("open", "open")
@@ -85,7 +126,7 @@ def run(output):
             patch_ids = np.argsort(np.linalg.norm(root[:, :2] - pick[:2], axis=1))[:12]
             result["tracked_mesh_vertex_ids"] = patch_ids.tolist()
         err = np.linalg.norm(root - baseline, axis=1)
-        trial = {"condition": condition, "root_mesh_rms_m": float(np.sqrt(np.mean(err ** 2))),
+        trial = {"condition": condition, "case_index": case_index, "root_mesh_rms_m": float(np.sqrt(np.mean(err ** 2))),
                  "root_mesh_max_m": float(err.max()), "samples": [], "continuous_samples": [],
                  "motions": [], "hand_commands": [], "images": {},
                  "dr02_label": None, "terminal_task_result": None}
@@ -112,7 +153,8 @@ def run(output):
                     tick(3)
             rgb = camera.get_rgb_graph()
             if rgb is not None and rgb.shape == (480, 640, 3):
-                name = f"{condition}-{label}.png"
+                prefix = f"replay-{case_index}" if midstate_mode else condition
+                name = f"{prefix}-{label}.png"
                 imageio.imwrite(output / name, rgb)
                 trial["images"][label] = name
             save()
@@ -172,6 +214,17 @@ def run(output):
             elif shifted:
                 trial["injection"] = {"kind": "shifted_approach", "offset_m": offset.tolist()}
             window("hold")
+            if midstate_mode:
+                midstate = measured_state()
+                result["midstate_joint_names"] = {
+                    "left": list(arm.dof_names), "right": list(robot.dexright.dof_names)
+                }
+                result["midstate_vertex_velocity_source"] = "one-step finite difference of world-space USD mesh"
+                trial["midstate_snapshot"] = save_midstate_snapshot(case_index, midstate)
+                midstate_references.append(midstate)
+                trial["midstate_sim_time_s"] = env.world.current_time
+                trial["midstate_error_vs_first"] = state_errors(midstate_references[0], midstate)
+                save()
             if condition.endswith("_regrasp"):
                 trial["candidate"] = "scripted_regrasp_at_original_pick"
                 hand("experimental_regrasp_release", "open")
@@ -195,6 +248,40 @@ def run(output):
             env.world.step = original_step
         save()
         print("GARMENT_FAULT_CASE_RECORDED", condition, flush=True)
+    if midstate_mode:
+        if len(midstate_references) != len(conditions):
+            raise RuntimeError("A replay did not reach the recorded failure point")
+        reference = midstate_references[0]
+        direct = {"particle_state_applied": False, "joint_state_applied": False}
+        result["direct_restore"] = direct
+        current = vertices()
+        try:
+            cloth = garment.particle_controller
+            cloth.initialize()
+            solver = np.asarray(cloth.get_world_positions())
+            direct["solver_particle_shape"] = list(solver.shape)
+            if solver.shape != (1, *current.shape):
+                raise RuntimeError("Particle view shape differs from the measured mesh")
+            order_error = float(np.linalg.norm(solver[0] - current, axis=1).max())
+            direct["solver_to_mesh_max_m"] = order_error
+            if not np.isfinite(solver).all() or order_error > 0.001:
+                raise RuntimeError("Particle-to-mesh correspondence could not be verified within 1 mm")
+            cloth.set_world_positions(reference["vertices_m"][None].astype(np.float32))
+            cloth.set_velocities(reference["vertex_velocity_m_s"][None].astype(np.float32))
+            direct["particle_state_applied"] = True
+            direct["particle_position_error_after_apply_m"] = float(
+                np.linalg.norm(np.asarray(cloth.get_world_positions())[0] - reference["vertices_m"], axis=1).max())
+        except (RuntimeError, AttributeError, TypeError, ValueError) as error:
+            direct["particle_restore_error"] = str(error)
+        for index, a in enumerate((arm, robot.dexright)):
+            channels = slice(30 * index, 30 * (index + 1))
+            a.set_joint_positions(reference["joint_position_rad"][channels])
+            a.set_joint_velocities(reference["joint_velocity_rad_s"][channels])
+        direct["joint_state_applied"] = True
+        direct["joint_error_immediate"] = state_errors(
+            {key: reference[key] for key in ("joint_position_rad", "joint_velocity_rad_s")},
+            {"joint_position_rad": np.concatenate([a.get_joint_positions() for a in (arm, robot.dexright)]),
+             "joint_velocity_rad_s": np.concatenate([a.get_joint_velocities() for a in (arm, robot.dexright)])})
     result["wall_elapsed_s"] = time.perf_counter() - start
     save()
 
