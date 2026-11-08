@@ -36,3 +36,7 @@ Thumbs.db
 *.pth
 *.ckpt
 *.safetensors
+
+# Locally verified trajectory payloads from the team release
+/prototypes/ui/replay/frames/
+/prototypes/ui/replay/records.js
