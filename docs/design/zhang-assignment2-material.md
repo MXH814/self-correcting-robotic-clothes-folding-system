@@ -21,6 +21,10 @@ This handoff records evidence and proposed design text for Zhang Mingbo's sectio
 | Protected simulator data reach the runtime detector. | Tag each source and inspect runtime features. Inject a privileged mesh field into a development observation and verify that validation rejects it. | Restrict privileged geometry to offline evaluation and rebuild affected data. |
 | The product profile lacks an asset or upstream dependency. | Start from the recorded commit, verify local asset hashes and run the small baseline before candidate trials. Check the license terms before sharing asset files. | Pin the last validated profile, store hashes and official download references, and reopen platform review if blocked. |
 
+## Whole-team presentation ownership
+
+Per the group leader's updated allocation on 8 November 2026, Zhang owns the complete team Pre PPTX/PDF, slide-by-slide script for all three speakers, transitions, backup Q&A and demonstration fallback, rehearsal timing, pre-session Canvas upload verification, classroom feedback capture and revised final slides. Hu supplies UI/requirements-change material and maintains report change tracking and final packaging; Ma reviews technical claims. Speaking sections and all-member attendance remain unchanged. This is an assignment of work, not a claim that files, rehearsal or upload are complete. See the [presentation plan and announcement coverage](presentation-plan.md).
+
 ## Slide handoff
 
 - Logical view. Show how a recovery proposal reaches the coordinator and how measured execution returns through the adapter. Describe why only the coordinator can authorize motion.
