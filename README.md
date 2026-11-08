@@ -49,6 +49,8 @@
 | [PR #8固定环境准备审查](docs/reviews/pr8-environment-review.md) | 固定源码/依赖/资产材料已补齐；换机部署不再是当前任务，真实控制与恢复待验证 |
 | [仿真接入与审查结论](docs/research/dex-integration-plan.md) | 平台已选定，组长确认同机复跑完成；继续验证在线来源、真实接口及恢复数据 |
 | [动作前因果输入接入](docs/research/preaction-integration-progress.md) | PR #12/#13已合并；492维输入、后续片段和原始字节交接已验证；失败/恢复标签仍缺 |
+| [PR #11–#16审查与任务解锁](docs/reviews/pr11-16-readiness.md) | 控制/课程/动作前输入成果已合并，衣物扰动和中段重放草稿待交接修正；72项软件测试通过 |
+| [不可比中段的分块先导方案](docs/research/blocked-trial-pilot-plan.md) | 区分实际试次与同根候选池，处理遗留效应和失败标签边界，不生成虚构研究结论 |
 | [运行时动作／观测接入](docs/research/runtime-component-integration.md) | 实测 60 通道、历史／候选编码、停止复算及动作后 RGB 防泄漏；本批已运行 |
 | [实测输入与分支有效性决定](docs/design/decisions/ADR-MA-005-measured-input-and-branch-validity.md) | 重置误差的实验影响、后备设计、记录细化与局部分母决定 |
 | [马祥珲最终剩余清单](docs/research/ma-remaining-checklist.md) | 已完成项、真实环境/数据阻塞、队友最小交付与个人/课程事项 |
