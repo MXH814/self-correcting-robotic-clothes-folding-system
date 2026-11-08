@@ -41,11 +41,12 @@ function reasonGuide(){
     '<p><code>'+code+'</code>　'+meaning+'</p>');
   return '<details><summary>接口原因码及处理说明</summary>'+rows.join('')+'</details>';
 }
-function log(text, reasonCode = null){
+function log(text, reasonCode = null, reply = null){
   const message = reasonCode ? text+' ['+reasonCode+']' : text;
   say(message);
   if(task) task.frames.push({
     sequence_no:task.frames.length + 1, reason_code:reasonCode, control_generation:task.gen,
+    decision_id:reply?.id ?? null, reply_generation:reply?.generation ?? null,
     event:message, state:task.state, stop, activeSeconds:task.time,
     billedSeconds:task.wall, attempts:task.attempts, generation:task.gen
   });
@@ -59,7 +60,19 @@ function exportRecord(record){
     capture_wall_monotonic_s:null, sim_time_s:null
   };
 }
-function halt(){if(task)task.gen++; stop = adapter ? '已接受停止请求' : '静止未确认'}
+let nextDecision = 1;
+let lastReply = null;
+const processedDecisions = new Set();
+function clearDecisionCache(){
+  processedDecisions.clear();
+  lastReply = null;
+}
+function advanceGeneration(){
+  task.gen++;
+  task.bad = 0;
+  clearDecisionCache();
+}
+function halt(){if(task)advanceGeneration(); stop = adapter ? '已接受停止请求' : '静止未确认'}
 function help(reason, reasonCode = null){
   task.help = true;task.reason = reason; task.state = '等待协助';goal = false;pending = '';
   if(!rest()) halt();
@@ -81,11 +94,12 @@ function validate(pass){
   const origin = pending; pending = '';
   if(origin === '启动校验'){
     if(!pass || !ready()){checked=false;requestError='相机观测超过 1 秒，请重新取景。';scene='相机观测已过期';say(requestId+' 校验失败：'+requestError);return}
+    clearDecisionCache();
     task = {id:'F-'+String(nextId++).padStart(3,'0'),requestId,seed:100+requestSerial,goalId:'TOPS-FOLD-01',state:'折叠中',gen:1,cfg:{...cfg},model,time:0,wall:0,attempts:0,bad:0,adjustments:0,help:false,manual:false,quality:'待审核',qualityReason:'等待离线证据',reason:'',frames:[],linked:false};
     stop='执行中';page=2;checked=false;prepared=[false,false];log('任务已创建，已冻结模型及配置。');return
   }
   if(pass && rest()){
-    task.state=origin === '继续校验' ? savedOrigin : '折叠中'; stop='执行中';task.gen++;task.bad=0;page=2;
+    task.state=origin === '继续校验' ? savedOrigin : '折叠中'; stop='执行中';advanceGeneration();page=2;
     log(task.state === '恢复中' ? '校验通过。下一次纠正仍需接受新候选。' : '校验通过，已恢复自动控制。');
   }else{
     task.state=origin === '继续校验' ? '已暂停' : '等待协助';page=origin === '继续校验'?2:3;
@@ -93,10 +107,28 @@ function validate(pass){
   }
 }
 function ready(){return prepared.every(Boolean) && scene==='有效' && rest() && !active()}
-function issue(code){
+function receiveReply(reply){
+  if(reply.taskId !== task.id || reply.generation !== task.gen){
+    log(reasonMessages.OLD_GENERATION, 'OLD_GENERATION', reply);
+    return;
+  }
+  if(processedDecisions.has(reply.id)){
+    log('重复回复，沿用首次处置。', reply.code, reply);
+    return;
+  }
+  processedDecisions.add(reply.id);
+  lastReply = reply;
+  if(!reply.code){
+    task.bad = 0;
+    log('收到有效决策，连续无效次数清零。', null, reply);
+    return;
+  }
   task.bad++;
-  if(task.bad >= 3) help('连续三次决策不可用。'+reasonMessages[code], code);
-  else log(reasonMessages[code]+' 连续 '+task.bad+'/3 次。', code);
+  log(reasonMessages[reply.code]+' 连续 '+task.bad+'/3 次。', reply.code, reply);
+  if(task.bad >= 3) help('本代连续三次独立决策不可用');
+}
+function demoReply(code, generation = task.gen){
+  receiveReply({id:'demo-D'+nextDecision++, taskId:task.id, generation, code});
 }
 function allocate(sim,wall){
   task.time+=sim;task.wall+=wall;
@@ -120,7 +152,7 @@ function disconnectUI(){
 }
 function offline(){
   adapter=false;pending='';goal=false;checked=false;stop='静止未确认';
-  if(active())finish('失败','设备适配器失联');else {if(task)task.gen++;log('设备适配器失联，保留已有结果。')}
+  if(active())finish('失败','设备适配器失联');else {if(task)advanceGeneration();log('设备适配器失联，保留已有结果。')}
   stop='静止未确认';say('设备失联。重连后仍需新的静止证据。');
 }
 function stopPlay(){clearInterval(playing);playing=null}
@@ -164,7 +196,7 @@ function assistance(){
  if(!active()||!['人工控制','等待协助'].includes(task.state))return card('当前没有人工协助请求',note('出现持续异常时系统会求助，也可在运行监控确认暂停后主动求助。'));
  return grid(card('协助请求',rows([['原因',task.reason],['当前状态',pending||task.state],['设备状态',stop],['可用恢复次数',task.cfg.attempts-task.attempts],['已用费用',money(task.wall/3600)]])),card('手动调整',note(pending?'手动权限已撤回。等待新的停车证据与归还校验。':task.state==='人工控制'?'可调整衣物位置或夹持接触，完成后归还控制。':rest()?'已确认静止，请显式接管后调整。':'停止请求已发出。设备确认静止前，手动操作锁定。')+acts(
  button('take','接管',home()&&task.state==='等待协助'&&rest()&&!pending,()=>{task.state='人工控制';task.manual=true;log('已授权本次手动接管。')},'primary'),
- button('adjust','调整衣物位置',home()&&task.state==='人工控制'&&!pending,()=>{task.adjustments++;stop='执行中';task.gen++;log('完成一次示例人工调整。')}),
+ button('adjust','调整衣物位置',home()&&task.state==='人工控制'&&!pending,()=>{task.adjustments++;stop='执行中';advanceGeneration();log('完成一次示例人工调整。')}),
  button('return','归还控制',home()&&task.state==='人工控制'&&!pending,()=>{pending='归还停车';task.state='等待协助';halt();log('已撤回手动权限，等待本次归还的停车证据。','AUTHORITY_REVOKED')}),
  terminate())));
 }
@@ -217,9 +249,10 @@ function harness(){
   add('clear','偏差已消除',task.state==='恢复中',()=>{task.state='折叠中';task.bad=0;log('复查通过，回到正常折叠。')});
   add('nocandidate','无合格恢复候选',true,()=>help(reasonMessages.NO_SUPPORTED_CANDIDATE,'NO_SUPPORTED_CANDIDATE'));
   add('unknown','观测被遮挡',true,()=>help(reasonMessages.UNKNOWN,'UNKNOWN'));
-  add('staleframe','过期观测',true,()=>issue('STALE_OBSERVATION'));
-  add('late','决策超时',true,()=>issue('DECISION_TIMEOUT'));
-  add('valid','有效观测',true,()=>{task.bad=0;log('收到有效观测，连续无效次数清零。')});
+  add('staleframe','过期观测',true,()=>demoReply('STALE_OBSERVATION'));
+  add('late','决策超时',true,()=>demoReply('DECISION_TIMEOUT'));
+  add('valid','有效观测',true,()=>demoReply(null));
+  add('repeatReply','重送上一条决策回复',lastReply !== null,()=>receiveReply(lastReply));
   add('goal','观测到折叠目标',true,()=>{task.state='折叠中';goal=true;halt();log('DR03 示例通过。停止证据到达后才能记录完成。')});
  }
  if(stop==='已接受停止请求')add('stopping','设备正在停车',adapter,()=>{stop='停车中';log('设备正在减速，尚未取得静止证据。')});
@@ -228,13 +261,7 @@ function harness(){
   add('timeout','停止确认超时',stop!=='静止未确认',()=>{if(active())finish('失败','1 秒内未取得停车证据',false);pending='';goal=false;stop='静止未确认';log('停止超时，维持全局执行锁。')});
  }
  if(task && (active()||!rest())){
-  const staleReply={taskId:task.id,generation:task.gen-1};
-  add('old','送达旧代动作结果',true,()=>{
-   if(staleReply.taskId!==task.id || staleReply.generation!==task.gen){
-    if(canRun()) issue('OLD_GENERATION');
-    else log(reasonMessages.OLD_GENERATION, 'OLD_GENERATION');
-   }
-  });
+  add('old','送达旧代动作结果',true,()=>demoReply('OLD_GENERATION',task.gen-1));
   add('clock','推进 30 秒示例时间',true,()=>allocate((canRun()||(!rest()&&stop!=='执行中'))?30:0,30));
   add('cost','模拟计费额度耗尽',active(),()=>allocate(0,Math.ceil(task.cfg.cap*3600)-task.wall));
  }

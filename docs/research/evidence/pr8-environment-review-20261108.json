@@ -1,0 +1,434 @@
+{
+  "date": "2026-11-08",
+  "pr": 8,
+  "reviewed_head": "51b72e0c9ac4d5f5188d6c542bda85e4f7e863a6",
+  "upstream": {
+    "commit": "e4e298e696bae5d866ded3b31e0ae27becea5376",
+    "api_url": "https://api.github.com/repos/wayrise/DexGarmentLab/git/trees/e4e298e696bae5d866ded3b31e0ae27becea5376?recursive=1",
+    "blob_count": 761,
+    "truncated": false,
+    "original_author_archive_payloads_rechecked": false
+  },
+  "wheel_metadata_checks": [
+    {
+      "name": "asttokens",
+      "version": "3.0.2",
+      "filename": "asttokens-3.0.2-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.8"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "filename": "attrs-26.1.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.9"
+    },
+    {
+      "name": "av",
+      "version": "17.1.0",
+      "filename": "av-17.1.0-cp310-cp310-win_amd64.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "blinker",
+      "version": "1.9.0",
+      "filename": "blinker-1.9.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.9"
+    },
+    {
+      "name": "click",
+      "version": "8.5.0",
+      "filename": "click-8.5.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "colorama",
+      "version": "0.4.6",
+      "filename": "colorama-0.4.6-py2.py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
+    },
+    {
+      "name": "comm",
+      "version": "0.2.3",
+      "filename": "comm-0.2.3-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.8"
+    },
+    {
+      "name": "configargparse",
+      "version": "1.9.0",
+      "filename": "configargparse-1.9.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.6"
+    },
+    {
+      "name": "dash-core-components",
+      "version": "2.0.0",
+      "filename": "dash_core_components-2.0.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ""
+    },
+    {
+      "name": "dash-html-components",
+      "version": "2.0.0",
+      "filename": "dash_html_components-2.0.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ""
+    },
+    {
+      "name": "dash-table",
+      "version": "5.0.0",
+      "filename": "dash_table-5.0.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ""
+    },
+    {
+      "name": "dash",
+      "version": "2.18.2",
+      "filename": "dash-2.18.2-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.8"
+    },
+    {
+      "name": "decorator",
+      "version": "5.3.1",
+      "filename": "decorator-5.3.1-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.8"
+    },
+    {
+      "name": "executing",
+      "version": "2.3.0",
+      "filename": "executing-2.3.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.8"
+    },
+    {
+      "name": "fastjsonschema",
+      "version": "2.22.2",
+      "filename": "fastjsonschema-2.22.2-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "flask",
+      "version": "3.0.3",
+      "filename": "flask-3.0.3-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.8"
+    },
+    {
+      "name": "imageio-ffmpeg",
+      "version": "0.7.0",
+      "filename": "imageio_ffmpeg-0.7.0-py3-none-win_amd64.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "imageio",
+      "version": "2.38.0",
+      "filename": "imageio-2.38.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "importlib-metadata",
+      "version": "9.0.1",
+      "filename": "importlib_metadata-9.0.1-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "ipython",
+      "version": "8.39.0",
+      "filename": "ipython-8.39.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "ipywidgets",
+      "version": "8.1.9",
+      "filename": "ipywidgets-8.1.9-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.7"
+    },
+    {
+      "name": "itsdangerous",
+      "version": "2.2.0",
+      "filename": "itsdangerous-2.2.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.8"
+    },
+    {
+      "name": "jedi",
+      "version": "0.20.1",
+      "filename": "jedi-0.20.1-py2.py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "jinja2",
+      "version": "3.1.6",
+      "filename": "jinja2-3.1.6-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.7"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "filename": "jsonschema_specifications-2025.9.1-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.9"
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "filename": "jsonschema-4.26.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "jupyter-core",
+      "version": "5.9.1",
+      "filename": "jupyter_core-5.9.1-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "jupyterlab-widgets",
+      "version": "3.0.17",
+      "filename": "jupyterlab_widgets-3.0.17-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.7"
+    },
+    {
+      "name": "markupsafe",
+      "version": "3.0.4",
+      "filename": "markupsafe-3.0.4-cp310-cp310-win_amd64.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.9"
+    },
+    {
+      "name": "matplotlib-inline",
+      "version": "0.2.2",
+      "filename": "matplotlib_inline-0.2.2-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.9"
+    },
+    {
+      "name": "narwhals",
+      "version": "2.28.0",
+      "filename": "narwhals-2.28.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "nbformat",
+      "version": "5.11.1",
+      "filename": "nbformat-5.11.1-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "nest-asyncio",
+      "version": "1.6.0",
+      "filename": "nest_asyncio-1.6.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.5"
+    },
+    {
+      "name": "open3d",
+      "version": "0.18.0",
+      "filename": "open3d-0.18.0-cp310-cp310-win_amd64.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.8"
+    },
+    {
+      "name": "parso",
+      "version": "0.8.7",
+      "filename": "parso-0.8.7-py2.py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.6"
+    },
+    {
+      "name": "platformdirs",
+      "version": "4.12.4",
+      "filename": "platformdirs-4.12.4-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "plotly",
+      "version": "7.1.0",
+      "filename": "plotly-7.1.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.8"
+    },
+    {
+      "name": "prompt-toolkit",
+      "version": "3.0.53",
+      "filename": "prompt_toolkit-3.0.53-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "pure-eval",
+      "version": "0.2.4",
+      "filename": "pure_eval-0.2.4-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": null
+    },
+    {
+      "name": "pygments",
+      "version": "2.21.0",
+      "filename": "pygments-2.21.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.9"
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0",
+      "filename": "referencing-0.37.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "retrying",
+      "version": "1.4.2",
+      "filename": "retrying-1.4.2-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.6"
+    },
+    {
+      "name": "rpds-py",
+      "version": "0.30.0",
+      "filename": "rpds_py-0.30.0-cp310-cp310-win_amd64.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "stack-data",
+      "version": "0.6.3",
+      "filename": "stack_data-0.6.3-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ""
+    },
+    {
+      "name": "termcolor",
+      "version": "3.3.0",
+      "filename": "termcolor-3.3.0-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "traitlets",
+      "version": "5.16.1",
+      "filename": "traitlets-5.16.1-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    },
+    {
+      "name": "wcwidth",
+      "version": "0.9.4",
+      "filename": "wcwidth-0.9.4-cp310-abi3-win_amd64.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.9"
+    },
+    {
+      "name": "werkzeug",
+      "version": "3.0.6",
+      "filename": "werkzeug-3.0.6-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.8"
+    },
+    {
+      "name": "widgetsnbextension",
+      "version": "4.0.16",
+      "filename": "widgetsnbextension-4.0.16-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.7"
+    },
+    {
+      "name": "zipp",
+      "version": "4.1.2",
+      "filename": "zipp-4.1.2-py3-none-any.whl",
+      "pypi_hash_matches": true,
+      "python310_compatible": true,
+      "requires_python": ">=3.10"
+    }
+  ],
+  "wheel_download_or_install_performed": false,
+  "asset_manifest": {
+    "count": 584,
+    "total_bytes": 296488662,
+    "path_set_and_archive_mapping_match_existing_list": true,
+    "actual_assets_rechecked": false
+  },
+  "isolated_pr_branch_tests": {
+    "python_passed": 41,
+    "launcher_assertions": "SIMULATION_LAUNCHER_TESTS_PASSED",
+    "expected_failure_fixture_native_exit_code": 7,
+    "handoff_sample_audit": "PASS"
+  },
+  "simulator_installed_or_launched": false,
+  "review": "APPROVED_SCOPE_ENVIRONMENT_PREPARATION",
+  "remaining": [
+    "target-machine deployment and independent simulator run",
+    "verified runtime channels/clocks/ACK/stop",
+    "failure/recovery candidates and reviewed outcomes"
+  ]
+}

@@ -19,7 +19,7 @@
 | `detect()` / DeviationReport | 新观测、预期持有、历史 | NORMAL/OFFSET/SLIP/UNKNOWN、主/次类、置信/持续窗口、证据引用；不产生动作 |
 | `proposeRecovery()` / RecoveryRequest | obs、history、deviation、goal、continuation version、剩余预算、model/calibration refs | RecoveryDecision：0–8候选、状态、原因、预测来源和耗时；只是提案 |
 | `acceptAndDispatch()` | decision + coordinator current snapshot | ACCEPTED(command_id, attempt_no) 或 REJECTED(reason)；唯一接纳入口 |
-| `cancelGeneration()` | new generation/reason | 取消计算与队列，旧 worker 回复不可执行；本调用不证明物理静止 |
+| `cancelGeneration()` | new generation/reason | 协调器撤权，并在adapter安装单调代次屏障；接纳和实际执行前均拒绝旧代，清理旧队列。取消计算本身不证明物理静止 |
 | `completeSegment()` / AdapterFeedback | command/generation、实测执行量、队列、结果与故障 | 协调器接受本代反馈后触发重新观测，不用策略自报完成替代 |
 | `requestHalt()/reportRest()` | 当前代、最后命令、测量通道/采样、队列/活动状态 | 按 SRS 验证静止；超时锁定；无效证明不解锁 |
 | `appendEvaluation()` | trial/task、evidence、review/schema version | 追加 local/quality/autonomous verdict，不改变 terminal outcome |
@@ -32,6 +32,7 @@ Candidate：`candidate_id, action_schema, frame_id, channels, values, units, rep
 - `prefix_duration_sim_s>0` 且不大于 profile 最大值及剩余动作预算；速度/轨迹连续性由 adapter profile 可验证方法计算，不能只查端点。
 - score 为 `[0,1]`、语义为 `conditional_full_task_success`，校准与模型/输入版本一致时才可用于门槛。`rank_only`、Q、logit 或相似度不能转成概率门禁。
 - 评分条件包括同一目标、接续控制器和剩余预算；拒绝 `continuation_version` 不匹配。
+- `conditional_full_task_success`指从当前候选决策起、在剩余预算与固定接续控制器下，无进一步求助/人工介入地完成并通过最终质量的概率。历史求助不会把该后续目标永久置零；整试次`autonomous_success`仍保留既往求助/介入并按AI03判定。未验证人工返回后的输入/校准适用性时拒绝派发，不因为目标可定义就声称模型可用。
 - 候选 >8 整个响应返回 `TOO_MANY_CANDIDATES`；其余逐个过滤后，最高合格分≥0.60才可被接受。无合格返回 help 建议，由协调器发起停止和交接。
 
 ## 4. 纯教学消息例子
@@ -61,7 +62,8 @@ Candidate：`candidate_id, action_schema, frame_id, channels, values, units, rep
 | 原因 | 处置 | 尝试/状态 |
 | --- | --- | --- |
 | UNKNOWN / unsupported deviation | 取消自主计算、停止、求助 | 无新动作不计次 |
-| STALE_OBSERVATION / OLD_GENERATION | 丢弃，当前状态允许时重新观测 | 不恢复旧代权限；计不可用决策 |
+| STALE_OBSERVATION | 当前代内丢弃，状态允许时重新观测 | 按当前代不可用规则计数；不能恢复过期权限 |
+| OLD_GENERATION | 丢弃并记旧代审计/T18相关记录 | 不改变当前代的连续不可用计数或状态，不触发新代停止 |
 | DECISION_TIMEOUT | 2 wall s 取消，记录不可用 | 连续3次停止求助 |
 | INVALID_SCHEMA / NONFINITE / OUT_OF_BOUNDS | 拒绝候选/响应、保留理由 | 不计未派发尝试 |
 | SCORE_UNCALIBRATED / LOW_SCORE | 禁止自主派发，停止/求助 | 不虚构概率 |
@@ -70,6 +72,8 @@ Candidate：`candidate_id, action_schema, frame_id, channels, values, units, rep
 | LOG_WRITE_FAILED / EXECUTION_UNCERTAIN | 禁止新动作，停止并核实 | 不自动回滚已接受计数 |
 
 同代连续段不强制每段请求停车，但需前段完成 ACK、无冲突/排队、观测新鲜和当前授权；Pause/Return 等来源才要求相应新停止证明。约束来源为 SRS §5.6.4/5.6.5。
+
+代次更新使当前代的连续不可用计数从零开始，旧代累计审计保留；重复回复按decision ID去重，不重复推进连续计数。报告静止前，adapter必须已确认撤权/代次屏障、清空旧代队列并满足SRS测量窗口；首次迟到的旧命令也不能仅因command ID未见过而获准执行。具体并发协议和反例见[契约澄清](contract-clarifications.md)。
 
 ## 6. 训练/验证契约
 

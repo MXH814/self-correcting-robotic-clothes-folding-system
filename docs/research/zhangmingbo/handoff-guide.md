@@ -1,22 +1,30 @@
 # 仿真最小交接：Fold Tops
 
-负责人：张茗博；2026-11-06。此包交接已有工作和未解决问题，等待组长审查；第二人复跑尚未进行。依据[交接待办](handoff-tasks.md)、[环境报告](environment-feasibility.md)及[复现状态](reproduction-status.md)。
+负责人：张茗博；原记录2026-11-06。**当前2026-11-08：马祥珲确认在张电脑完成基础复跑，该项关闭；后续仿真/采集/恢复闭环统一在张电脑执行，不再安排换机或重复基础复跑。** 依据[执行安排](../shared-simulation-workflow.md)、[交接待办](handoff-tasks.md)及[环境报告](environment-feasibility.md)。后续旧日期段落保留为交接快照。
 
 审查更新（2026-11-07）：PR #2及相对路径修复已复审通过合并，启动器轻量回归通过；下表的“待审”为原提交状态，不代表目前仍等待批准。H03/H04/H05的运行/数据缺口仍成立。完整轨迹纯数值导出与下一步入口见[马祥珲接入进展](../ma-data-intake-progress.md)。
+
+版本核验更新（2026-11-08）：上游源码已通过 ZIP comment 和全部 761 个 Git blob 匹配固定到 `e4e298e696bae5d866ded3b31e0ae27becea5376`；50 项附加 wheel 已生成哈希锁清单，584 项资产已有本机逐文件指纹。[第二台电脑安装入口](second-machine-install.md)记录获取和验证步骤、作者机隔离安装结果与尚未完成的换机验证。此前“commit 未知”是旧记录，资产/源码具体许可和目标机完整复跑仍待核验。
+
+## 2026-11-08 交接更新
+
+- 两份已上传的纯数值数据包和逐文件清单：[私有 GitHub Release](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/tag/handoff-fold-tops-20261108)；组长已实际下载并核验哈希、完整性及 153 帧结构，见 [PR #7 审查](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/pull/7)。
+- 当前使用张电脑已有环境，组长确认基础复跑已完成；[固定环境与可选迁移资料](second-machine-install.md)保留源码、依赖和资产核验，不要求现在换机安装。
+- 原始对象 NPZ 未上传，纯数值包可先用于离线接入；常规哈希核验不代表来源身份已认证。
 
 ## H01–H05 状态
 
 | ID | 状态 | 已提供与缺口 |
 |---|---|---|
-| H01 | 已提交待审 | 仓库内启动器、两种 Python 包装和资产获取脚本；路径已参数化，修改后只做路径、语法及轻量检查，完整仿真尚未复跑。 |
-| H02 | 已提交待审 | [资产清单](artifact-manifest.json)、[原资产列表](local-demo-assets.json)、[配置](../../../configs/simulation/low-resource.example.json)及原环境报告。部分许可和源码 commit 仍未知。 |
-| H03 | 部分已提交，完整轨迹访问阻塞 | [真实观察数值](observation-example.json)和[对应最终图像](sample-final.png)入库；原始轨迹仅在作者机器，需要约定可访问存储或同机访问。 |
+| H01 | 已合并 | 启动器、包装和资产脚本已入库，基础复跑按用户确认关闭；新接口/停止能力仍单独验收。 |
+| H02 | 部分已核验 | [资产清单](artifact-manifest.json)、[原资产列表](local-demo-assets.json)、[配置](../../../configs/simulation/low-resource.example.json)及原环境报告；源码 commit 已核对，部分许可和换机复跑仍待验证。 |
+| H03 | 正常数值包已接收 | data2/data3共153帧已实际下载、校验并编码；无需再交原始对象NPZ或重复正常包，恢复候选数据另列。 |
 | H04 | 部分已提交待审 | [字段与动作说明](io-profile.md)给出真实样例和来源；60 个关节的名字顺序、真实时钟、逐命令 ACK、停止反馈仍待验证。 |
-| H05 | 部分已提交，独立复跑待执行 | 下方提供作者机器入口和新机器准备步骤；路径检查通过并非运行或独立复跑通过，未提供远程访问能力。 |
+| H05 | 已完成，事项关闭 | 马确认在张电脑复跑；后续统一使用该电脑，不再要求换机或重复基础复跑。 |
 
 ## 可复跑入口
 
-首次优先选择**在作者机器上由第二人操作**，因为原始轨迹与安装文件暂未共享。操作者需先取得作者机器的正常使用权限，运行下列命令并自行保存日期、软硬件版本、命令、完整控制台日志、输出清单、耗时和结果。此方案仍依赖人员实际协调，不代表已经提供远程登录。另一台电脑需根据下述来源安装、确认许可并准备全部依赖与资产；该路径尚未从零验证。
+目前计划由组长在另一台电脑安装；[第二台电脑复跑准备](second-machine-install.md)提供固定 commit、依赖及资产校验入口。操作者需在自己的目标机器准备软件和资源，并自行保存日期、软硬件版本、命令、完整日志、输出清单、耗时和结果；从零安装和复跑尚未验证。
 
 1. 获取本项目代码及本分支；安装 [Isaac Sim 4.5](https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/install_workstation.html) Windows standalone，并确认显卡/驱动、RAM 和许可。作者机器为 Windows 11、RTX 4060 Laptop 8 GB、RAM 16 GB；官方兼容检查内存要求 32 GB，整体未通过。
 2. 准备 [DexGarmentLab 源码](https://github.com/wayrise/DexGarmentLab)和[官方资产](https://huggingface.co/datasets/wayrise/DexGarmentLab/tree/main)。本次使用的源码 ZIP SHA-256 和模型等见清单；同一上游 main 未来可能变化，不可仅凭分支名断言相同版本。GAM 检查点包含在本次源码 ZIP；三阶段 SADP_G 权重尚未确认。
@@ -45,7 +53,7 @@ $env:ROBOTICS_PROJECT_ROOT = 'E:\Robotics\DexGarmentLab'
 
 图形运行于 2026-11-04，`garment_random_flag=False`，TCLC_018，初始 `pos=[0,0.8,0.2]`、`ori=[0,0,0]`。日志同时记录官方 `final result: True`、`data_2.npz` 与 `img_2.png`；这是上游脚本生成的自采示范，不是 SADP_G 策略评测。图像是环境相机最终 640×480 RGB，不是 stage_1 第 0 帧。轨迹 27/27/23 帧，无原始时间戳，阶段间没有连续记录；详见 [I/O](io-profile.md)。
 
-原始轨迹作者机路径 `E:\Robotics\DexGarmentLab\Data\Fold_Tops\train_data\data_2.npz`，26,983,793 字节；其 SHA-256 和对应图像的哈希见[清单](artifact-manifest.json)。该路径对其他机器不可访问；需要通过团队认可的受控存储分享，或在作者机器同机读取，尚无共享链接。数据包含 Python 对象数组；仅对**自行确认可信来源**且哈希匹配的文件运行以下导出器（匹配 hash 本身不能使恶意 pickle 安全）：
+原始轨迹作者机路径 `E:\Robotics\DexGarmentLab\Data\Fold_Tops\train_data\data_2.npz`，26,983,793 字节；其 SHA-256 和对应图像的哈希见[清单](artifact-manifest.json)。该原始 NPZ 路径对其他机器不可访问；对应的纯数值导出包可在本页更新中的私有 Release 下载。数据包含 Python 对象数组；仅对**自行确认可信来源**且哈希匹配的文件运行以下导出器（匹配 hash 本身不能使恶意 pickle 安全）：
 
 ```powershell
 python .\tools\simulation\export_observation.py --input '<可信的 data_2.npz>' --sha256 2309165bccd101c6ad65460716844d4f47d4b71e2f2f3dd775ecf37c47dac552 --output '<新建的 observation.json>'

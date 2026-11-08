@@ -32,6 +32,12 @@ def select_candidate(decision, ctx):
     Numeric limits are endpoint limits; full trajectory validity remains an adapter task.
     Calibration reference equality assumes an independently approved trusted context.
     """
+    if not isinstance(decision, dict):
+        return None, "INVALID_SCHEMA"
+    if type(ctx.generation) is not int or ctx.generation < 0:
+        return None, "INVALID_CONTEXT"
+    if type(decision.get("control_generation")) is not int or decision["control_generation"] < 0:
+        return None, "INVALID_SCHEMA"
     times = (ctx.now_s, ctx.observation_s, ctx.inference_started_s, ctx.active_sim_s,
              ctx.cost, ctx.cost_cap, ctx.max_prefix_s)
     if not all(finite(x) for x in times) or ctx.cost < 0 or ctx.cost_cap <= 0 or ctx.active_sim_s < 0:

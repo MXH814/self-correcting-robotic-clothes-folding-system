@@ -1,7 +1,7 @@
 # Self-Correcting Robotic Clothes Folding System
 ## Assignment 2 · Design working draft
 
-**Review date:** 8 November 2026. **Scope:** Hu Zhiyu’s interaction and evaluation materials at hzy@067cf91c and the merged technical evidence at main@0b0fd543. Bracketed review notes identify decisions, authorship or evidence that still need confirmation. The companion [review and handoff register](delivery-status.md) identifies the owner and closure condition for each section.
+**Review date:** 8 November 2026. **Scope:** Hu Zhiyu’s interaction and evaluation materials at hzy@2268c713 and main@1411e82c. Bracketed review notes identify decisions, authorship or evidence that still need confirmation. The companion [review and handoff register](delivery-status.md) identifies the owner and closure condition for each section.
 
 ## A2-01 · Design Summary
 
@@ -13,9 +13,9 @@ The requirements review traced thirty requirements to eighteen acceptance tests 
 
 The evaluation design separates a detection clip, a corrective action and a complete trial. A robot may regain its grip but leave a sleeve outside the intended fold. That case can support a local recovery label while still counting as an unsuccessful autonomous trial. The proposed recording sheets preserve that distinction and link disagreements to the original evidence. They also keep failures that occur before a scheduled disturbance in the trial denominator. The procedure reserves garment instances and related trajectories together to protect the final comparison from reuse of development examples.
 
-The team selected DexGarmentLab on Isaac Sim for development and adopted a logical recovery contract. The coordinator owns dispatch authority. An offline preflight implementation checks part of this contract. The collected demonstration yielded a numeric export of seventy-seven frames on the author's machine. Our intake review verified sixty finite joint positions in one repository sample. The missing capture timestamps and command acknowledgements prevent freshness and recovery scoring for that frame. The prototype now exports sequenced synthetic events with interface reason codes. Independent reproduction, measured stop evidence and a walkthrough with prospective users remain open.
+The team selected DexGarmentLab on Isaac Sim and adopted a logical recovery contract. Ma completed the basic rerun on Zhang's workstation. The team verified two normal demonstrations containing 153 frames and encoded their RGB, joint and stage history inputs. The available records support inspection of observations. Actual command acknowledgements, measured stop evidence and labelled recovery branches still require collection. The prototype now audits late replies and deduplicates replies within a control generation. Its exported event sequence identifies synthetic inputs. The team has a draft covering three architecture views and materials for a walkthrough with prospective users.
 
-[Editorial check: 495 words in the five paragraphs above. Ma Xianghui to verify project and research facts. Zhang Mingbo to verify architecture and implementation status. Update following actual walkthrough and classroom feedback, then recount.]
+[Editorial check: 497 words in the five paragraphs above. Ma Xianghui to verify project and research facts. Zhang Mingbo to verify architecture and implementation status. Update following actual walkthrough and classroom feedback, then recount.]
 
 ## A2-02 · Architecture and key decisions
 
@@ -25,7 +25,7 @@ The local prototype represents these boundaries within a single browser session.
 
 The adopted recovery contract defines authority, candidate rejection and measured rest. Ma’s four decision records cover control, history, reproducibility and platform choice. The UI mapping and independent sample review connect those decisions to the household screens and intake fields. [Logical interfaces](interfaces.md) · [UI and record contract](ui-contract.md) · [Single-frame review](observation-review.md) · [Owner materials](ma-assignment2-material.md)
 
-[Zhang: supply the system diagram and its narrative, logical and deployment views, process and storage boundaries, technology alternatives and decision records. Ma: cross-check the UI mapping against the adopted recovery contract and confirm its implementation boundary. For each unresolved choice, state its owner and the observation that would change the decision.] [Part I system models](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/submissions/assignment-1/Group3_Assignment1_SRS/Models/Group3_Models.drawio)
+[Zhang: integrate the [three architecture views and decision narrative](architecture-presentation-draft.md) into the final design and review the process, storage and failure boundaries. Ma: cross-check the UI mapping against the adopted recovery contract and confirm its implementation boundary. For each unresolved choice, state its owner and the observation that would change the decision.] [Part I system models](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/4191e8f5d9f065dd009367f83572693141c4d551/submissions/assignment-1/Group3_Assignment1_SRS/Models/Group3_Models.drawio)
 
 ## A2-03 · Design models
 
@@ -40,7 +40,8 @@ sequenceDiagram
     User->>UI: Return control
     UI->>TM: Return request for the active task
     TM->>TM: Revoke manual authority and invalidate old commands
-    TM->>AD: Halt for the current control generation
+    TM->>AD: Install revocation barrier and halt for the new generation
+    AD-->>TM: Barrier installed, old queued commands cancelled
     alt Fresh rest evidence received before deadline
         AD-->>TM: Task, generation, last command, rest samples and empty queue
         TM->>TM: Validate pinned profile, observations, stage and budgets

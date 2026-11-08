@@ -1,0 +1,3509 @@
+{
+  "schema_version": "asset-fingerprints/1",
+  "files": [
+    {
+      "path": "Garment/Tops/Collar_Lsleeve_FrontClose/TCLC_018/textures/018_normal_1001.png",
+      "archive": "Garment.zip",
+      "size_bytes": 1001660,
+      "sha256": "404c408276867408953427a6cb35ee700670714c2e226156e743f967b793d21c"
+    },
+    {
+      "path": "Garment/Tops/Collar_Lsleeve_FrontClose/TCLC_018/textures/018_diffuse_1001.png",
+      "archive": "Garment.zip",
+      "size_bytes": 272850,
+      "sha256": "32a63c0640cb5c65918a10b5f34e3ff68f3e5c43c0d1633a21d6b25cb3a80dea"
+    },
+    {
+      "path": "Garment/Tops/Collar_Lsleeve_FrontClose/TCLC_018/TCLC_018_obj.usd",
+      "archive": "Garment.zip",
+      "size_bytes": 1374896,
+      "sha256": "c2bd61a9f06f8766125caaf04cabac081b6c795fffed1b37073d2d172db931df"
+    },
+    {
+      "path": "Garment/Tops/Collar_Lsleeve_FrontClose/TCLC_018/border_obj.usd",
+      "archive": "Garment.zip",
+      "size_bytes": 24504,
+      "sha256": "8a533711ee2b904511b717f9163819c4241cc5ffda7c815ccbc11e9f0e4a381d"
+    },
+    {
+      "path": "Robots/franka/franka.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 113806,
+      "sha256": "cd6c758d46d618365a7f8ac6a3ad94ba3728a71e5f60de77d36bc9806afa383b"
+    },
+    {
+      "path": "Robots/franka/SubUSDs/Materials.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 4696,
+      "sha256": "163ad21137370dfa8f8fda6337fa5a84aab3b7dbcdd134c91792239272c33691"
+    },
+    {
+      "path": "Robots/franka/SubUSDs/panda_hand.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 686706,
+      "sha256": "f2ca6efb3cef3a64383f2bd2bd217f98f45447159a58cbc81bb330ddbf723cb5"
+    },
+    {
+      "path": "Robots/franka/SubUSDs/panda_leftfinger.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 68350,
+      "sha256": "c265efed2ae43deb88278247723fcb0f926102ca8248f365e49cba1263179656"
+    },
+    {
+      "path": "Robots/franka/SubUSDs/panda_link0.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 2153677,
+      "sha256": "79d2675e8c4aaf49e10bac6f103835def87896906a8b6c44c116470a0cda16e7"
+    },
+    {
+      "path": "Robots/franka/SubUSDs/panda_link1.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 501318,
+      "sha256": "9600e56bea6cba26e0c559e982039876a117ef70f0da583d0c64bf6b1e2c1eb7"
+    },
+    {
+      "path": "Robots/franka/SubUSDs/panda_link2.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 501303,
+      "sha256": "6d13b5ce1c40aed718289b2b19a9a6e08633dcafa6675031056f930751cdc9b0"
+    },
+    {
+      "path": "Robots/franka/SubUSDs/panda_link3.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 867193,
+      "sha256": "f8c7daed301bbf942003202219c8e526bc20d6fcbfb120dfd8a4da07d0f45650"
+    },
+    {
+      "path": "Robots/franka/SubUSDs/panda_link4.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 867194,
+      "sha256": "0e3d01b8877229b3f69d2a8f180020ea6a710fe2fe4f4593d34058fd0c7de10c"
+    },
+    {
+      "path": "Robots/franka/SubUSDs/panda_link5.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 778545,
+      "sha256": "cb947398e14907689a65038b1f2d49004946dc0b392c2ee48d257485578e4511"
+    },
+    {
+      "path": "Robots/franka/SubUSDs/panda_link6.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 2272195,
+      "sha256": "0facab5af949165a01316be5aab6db4c35a338851de20642c5e84e4ae024ae3d"
+    },
+    {
+      "path": "Robots/franka/SubUSDs/panda_link7.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 1254182,
+      "sha256": "aec196289039af99dffa357a59e012f79f3831e990ce8f141165493cb8538dd9"
+    },
+    {
+      "path": "Robots/franka/SubUSDs/panda_rightfinger.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 68353,
+      "sha256": "d33e23fc12e4d362d6e6dc2b8df1773cab72dd60c76a4ffd1c996e780272e66c"
+    },
+    {
+      "path": "Robots/arms/iiwa14/iiwa14.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 7189,
+      "sha256": "6d7b1dadcbda8935ccea069ab5c74e0031962f30b7abebd10c5dd8585ed0ebc1"
+    },
+    {
+      "path": "Robots/arms/iiwa14/iiwa14_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 7189,
+      "sha256": "d27245d09a481527d684a9532bb21e982ce8c098bc585ff1baca7300ab7ad2a1"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/collision/link_0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 57375,
+      "sha256": "dc648c93c31f91aec065e0c71a8fefd975c8c5903f282c134f1ad70901afee4f"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/collision/link_1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 156878,
+      "sha256": "0d0e8428ac1700ce4507c67c48a00e0b358e2337f14df0e06cb1cdf22ab626a0"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/collision/link_2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 224779,
+      "sha256": "24b889df27f67cf64db4c7271c32e46b8257551b29faa63570e5f1ccc70dcfe7"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/collision/link_3.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 201753,
+      "sha256": "f34c83995fd447c6be203895190b64014343e49a374a7021ed1773df688c173e"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/collision/link_4.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 199500,
+      "sha256": "0aba58604d70a46594d634dc96299faae1a3c552d5263a169a602ed987a92724"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/collision/link_5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 138522,
+      "sha256": "077bf48ea7c7f7eab03e7570584ef812f744f1c3c73ad104d6d6d2776697a098"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/collision/link_6.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 251367,
+      "sha256": "c0c6d1428d4e0d3b0535c14c3d1b49b181b43fd9a80d15df6905c80db75883ad"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/collision/link_7.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 91346,
+      "sha256": "73ada4c99e35217e6adaa20a724da818aec45f4eaabe45eb5c7ae1342e21d59a"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_0.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 286844,
+      "sha256": "23892ad8a88c6ba6d3ee8314338dfe5751ad2e0629da674f9e4fc8946eb0a82d"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_0.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 445,
+      "sha256": "0da7b86ae42ba35c10b811107e6679ec67f31c70fd3a447849f95a46e750c9aa"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 795785,
+      "sha256": "32d5006dd5278affd6bcb41a89a356d6ebf5b6cb6539feb51dd631b804cb5b50"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_1.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 153180,
+      "sha256": "527cc918f50750dd3fd37fa30079c67696fbeaa03fa9c441bcb1b7b3d0005474"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_1.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 248,
+      "sha256": "3817609fac910eac58d56673f7f884f9db43c5bcf822b88e19a7caf4381893fb"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 530540,
+      "sha256": "18a546e607d0c7cfdfd6c76094ef71b17aa8e96e7f9bf9e2491fd925dec89e44"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_2.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 249844,
+      "sha256": "a7bd0f67ee818e4a76b2ef7fe92f5946c636a56341308b515e1d02caa1c3c31c"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_2.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 834,
+      "sha256": "005016264f48bb33d3b1eb12e9a2868a537b4a5f5b53b6819de0026618c8d8bf"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 715600,
+      "sha256": "8b890b8b7d7ffa16a4439b4cf18aea26a53f3bd6735023823f6d0fe6324dbade"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_3.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 173560,
+      "sha256": "e171b1cfcfc98333266698db0062797a002babf7e919ecc0ec8017a56aba717f"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_3.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 248,
+      "sha256": "3817609fac910eac58d56673f7f884f9db43c5bcf822b88e19a7caf4381893fb"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_3.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 605249,
+      "sha256": "e52c8edad7b35aedeebb6bc48626c02752792fcef2660c10fc524f517f46992e"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_4.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 418780,
+      "sha256": "76855e6bfa4c5a5edf1e79429cab53922b227cabd46765ed5765f57db7fc1eb8"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_4.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 637,
+      "sha256": "c288ad10e2b2632a1c1844526cd7afa8b9f0f230770d915aedc765c74f53c518"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_4.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 1237809,
+      "sha256": "856221b5dc704ccbb8de74fd4a871c66e6e3fd65bef4bd7cdd6108187c00e5e6"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_5.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 194904,
+      "sha256": "1530e82854043013583a05b65238e181c6e3c56b6483569d20229705472c55be"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_5.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 248,
+      "sha256": "3817609fac910eac58d56673f7f884f9db43c5bcf822b88e19a7caf4381893fb"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 645673,
+      "sha256": "4bcc4800a31c88a84bf591c3a7a978e4c31d68f545cc843688d121b59dc7b058"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_6.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 336916,
+      "sha256": "6048a33f4e34496f82af84ad77220592e2b1faa7dc47a7ad6552db3c2d0a049d"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_6.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 637,
+      "sha256": "2886621c7d7f11c70684eab4f7ad396088b19e6d4c8fe36769ceb0d78ca68f7b"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_6.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 1004614,
+      "sha256": "04445d64c5417bd27330b2814d39560844958e8f71fccbe7c9a7c8625fce88a0"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_7.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 179660,
+      "sha256": "d8ef47c0eb4772e3d048f9c7310c5d87d8693b2fd47318522bf35469e42ecfc8"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_7.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 631,
+      "sha256": "02d817dc9818519b7c28ce83756550c32b1b5ef8c6b06dcf0ec4adf2a577f97e"
+    },
+    {
+      "path": "Robots/arms/iiwa14/meshes/visual/link_7.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 354287,
+      "sha256": "62766a2c847d80b49ab105c0f82dbca6491ba9ebbce4529f7c99cb03c66487da"
+    },
+    {
+      "path": "Robots/arms/iiwa7/iiwa7.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 7193,
+      "sha256": "3ad6a56b5e6b6188d4ef3f013304f1566b0ab3458a72b28259552488330f7aa9"
+    },
+    {
+      "path": "Robots/arms/iiwa7/iiwa7_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 7193,
+      "sha256": "b09ad5cea0bd84f2bab5652d588667ec5650c5802502d2282ffb9b5dc4e5e35a"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/collision/link_0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 54802,
+      "sha256": "ff2f5e859a3dd06a20acd10df662c4de4c7374a70e4baa219b89f4ffaee16bbd"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/collision/link_1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 212018,
+      "sha256": "24c1404e080bb1d8649160940b9e0878096115fa3b1be02d1feccbea904cae3b"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/collision/link_2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 216746,
+      "sha256": "bb51f19b532ff46a01abdc6b754bae4341aed1e1d87f95f73192e3c95eb05b07"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/collision/link_3.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 201237,
+      "sha256": "5bae07e90dd2ec544d272436f54664b44370eefe7420df00387a4cc2edab615d"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/collision/link_4.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 218124,
+      "sha256": "a8ea0b13894cd56686302435799d7418f1971cc5f0bce982f935a777c9cbe9a8"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/collision/link_5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 149082,
+      "sha256": "783f74a1200380b5efa920721c22eb2300a6b400cb0090cf29a65e2d14197d78"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/collision/link_6.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 256036,
+      "sha256": "fff453ca498c49ef7c65d435790158c37ccc2bdef028bb1c2a89b276e4b189b2"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/collision/link_7.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 101222,
+      "sha256": "dc9a896b8c51152be806c83e61d06e32df1e033455df21a4da6be6cf19a911ee"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_0.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 275972,
+      "sha256": "c8ad080ca4ed08a372e70c35c71cac100396bcc2c3246bdbe27877e3b47c5f16"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_0.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 445,
+      "sha256": "4e073518e78a4219ae46884230796ea8d81dcc846a8bda6393579a75b49c4db1"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 753721,
+      "sha256": "5020d682df717cdb3d24fc6f0e3aaa2a16480359d1b8264468bd1a9995f4930d"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_1.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 177128,
+      "sha256": "0d24a3c4e69eeda9fdcdacc5e911ffb69c101bf0b896cc030b296f9e6e8b06a9"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_1.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 248,
+      "sha256": "3817609fac910eac58d56673f7f884f9db43c5bcf822b88e19a7caf4381893fb"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 622868,
+      "sha256": "494b68b3d7e274c7215c1b0d23c3587e83c7bbc17ab5592eea69d2b2761b0c89"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_2.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 419992,
+      "sha256": "f727f7bf8f10abbb8a355302298f62606429fd07cfeaf5a61d39ce565c3de3eb"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_2.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 830,
+      "sha256": "98c3f139aed5bf4b79690b69495dc01edb1d5528662a1ba0f45fc2ee9f683d7d"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 1232766,
+      "sha256": "6b65fd1fb2d4ff51dd78a5ad9d169be13012dca229f71230846ade646a932425"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_3.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 177120,
+      "sha256": "b0d87f33d57122b8a547989e5badd08a125259ee5b11a686721325db8b3295f3"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_3.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 248,
+      "sha256": "3817609fac910eac58d56673f7f884f9db43c5bcf822b88e19a7caf4381893fb"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_3.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 618860,
+      "sha256": "ee7572a7d78b836f3acc67a434d2241672e2a772609be5a2690fdc44ec8356cb"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_4.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 420316,
+      "sha256": "999a4e20c0c05dff410a59a211a173d739488ba50731ed7dae8d6d0d568b5840"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_4.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 834,
+      "sha256": "f15cb93b19cdd9a5924a9e2e95903d36cf77d182f8e05a14ee47da36166c9253"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_4.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 1238821,
+      "sha256": "331e487ad0c99be39a3d83ea48c261a0992a53610e5091d55ab27244fcde2882"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_5.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 194484,
+      "sha256": "9f7d8ea3d4ce9988d22c616ade8a87fa348a02938e72d74f52d4915d55124a8e"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_5.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 248,
+      "sha256": "3817609fac910eac58d56673f7f884f9db43c5bcf822b88e19a7caf4381893fb"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 645263,
+      "sha256": "1610749efc6928581552abb5985fa74c1b8c09b9df8346ddad542189505e836d"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_6.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 336476,
+      "sha256": "8b4319cc74dde39cdcb450c6cb74c55c5dc3e9201f3809dd5ba9898d8198fe1d"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_6.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 637,
+      "sha256": "2d7eadc77e3bb4ede043c58cc46e20173945f83633c0d358ecd8875ee2878d1f"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_6.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 1005322,
+      "sha256": "f591509faceb7c9b2ca76eab2602adf5fe73c1a3666b3585289bd87d1d4634a2"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_7.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 176560,
+      "sha256": "df740627902694793309c45419a43876ce79536d415dea4769a1a0ad10cb3fba"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_7.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 634,
+      "sha256": "384370e98616d52b5fd1b1986fc45f7d84bc03471e8c2259040e84c4af274c03"
+    },
+    {
+      "path": "Robots/arms/iiwa7/meshes/visual/link_7.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 354046,
+      "sha256": "6bc83669282855ff015fccd63ad23ab32dff5cc557a0fe8af22093718e46e08a"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/collision/rm75_link_0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 61866,
+      "sha256": "bbae5beef4ca1e198a40316e18194862c60b1e297a418404a30541ef9c9d94e3"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/collision/rm75_link_1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 105570,
+      "sha256": "374e400b0a5ed6fed3e65c5f9b44c5d561dfb14ba7b629fc6503d1589376cc99"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/collision/rm75_link_2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 101509,
+      "sha256": "079e8672d1092d28f081b89e281a1d1f213be9bd77ccb3730bc2f8553e2991c3"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/collision/rm75_link_3.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 99991,
+      "sha256": "5a5f4c8545c0938d55833497e7bc002cac76ec6a9b1268a7195877e869d93605"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/collision/rm75_link_4.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 119514,
+      "sha256": "ef30474c37f0a350179ab94c570e528d7a8b18f8c7532e6c3d371643d436b8da"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/collision/rm75_link_5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 107391,
+      "sha256": "ab640d76193f59a0a88400436b091ffb8596a846d3fd6a7c2206da9a44db9ddf"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/collision/rm75_link_6.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 109278,
+      "sha256": "3d8b2349efa11b4f12d68e4e4ae706181888f8de217d9aa6fdfa75ad34f4263b"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/collision/rm75_link_7.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 39930,
+      "sha256": "dfb6a269539f722aa2fd6b1b1c40bd4aab7df4e34160bf2500824fa8cb8a5fd0"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_0.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 208408,
+      "sha256": "97166c6cf21d57a82d43395a577c02822c0e3d52d2ce2bbee632660dcee378e9"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_0.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 1156,
+      "sha256": "17cea8bce150ee7d55d7621e347dfb5048aa8faf07f402fa02937c5274cdbbb7"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 461278,
+      "sha256": "3303c8c6fbb9ea294feba3d17fbcee8dae5a851e34e92aca251f3e6638ddae24"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_1.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 56592,
+      "sha256": "039cedc948141c971cd38e2955ff386fff1e4f7979d98b710cd449cdc5c43d6d"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_1.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 421,
+      "sha256": "2358598cf6af98d779364ec300b5b0571130f777e0990e8112b51d287e1a1963"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 141745,
+      "sha256": "1932ab8eafdb196047f8ebe8bf4d6ba6d09514981ce8d74783ccd6203cd72ae6"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_2.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 82236,
+      "sha256": "6ab351fac545f078bb4783094b33339356e63488595e83a9bdf196115c5f7a5d"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_2.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 421,
+      "sha256": "2358598cf6af98d779364ec300b5b0571130f777e0990e8112b51d287e1a1963"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 213187,
+      "sha256": "a2f6c187d53a7e0281e4e50179013baf9f136b3351ec4854544470fd19c01e0a"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_3.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 56944,
+      "sha256": "f9caa528a42642ee577d2f8741049540f0d01e141a03c2c77b56b9b9bc4225e5"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_3.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 421,
+      "sha256": "2358598cf6af98d779364ec300b5b0571130f777e0990e8112b51d287e1a1963"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_3.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 138478,
+      "sha256": "8b07a2e1e5c1b90cfae5038c7cdde252da7056c96168f87becf78929fd5dff85"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_4.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 78708,
+      "sha256": "9cfe50a92a2e6d4d92356a5b9f1fd7707b92120312a0ad771768933960c709fe"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_4.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 421,
+      "sha256": "2358598cf6af98d779364ec300b5b0571130f777e0990e8112b51d287e1a1963"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_4.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 204658,
+      "sha256": "f4f978b75daf71ddbe8de15b1c369f2aa1237790abc8c5bda99bf24828a09439"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_5.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 60816,
+      "sha256": "77801ddfcca827dd68ad13ea38716d2d6a566325c8a2c7c9b8b41eb633187870"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_5.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 421,
+      "sha256": "2358598cf6af98d779364ec300b5b0571130f777e0990e8112b51d287e1a1963"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 148001,
+      "sha256": "c5d8251b8c6123d6900e3eb62a5445965fa6f3c1b8dc3c1ae7c162e58bb31ba7"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_6.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 77428,
+      "sha256": "48bb439c07aa8228e2fc4d3f86a2c828ce51838a34955babb8bf1760cef7e6b4"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_6.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 421,
+      "sha256": "2358598cf6af98d779364ec300b5b0571130f777e0990e8112b51d287e1a1963"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_6.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 200790,
+      "sha256": "ccb4c3d8c2291112034878c40c01356c7326255a1db73b7f6f015ec6c675ec6e"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_7.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 107948,
+      "sha256": "870af9c1c9e0b2944432631bd5998a74fda3ead484d884c77f3e8a05978daa1f"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_7.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 598,
+      "sha256": "2661ad7f67ecdf2b7ca9a938914f149f26c1cc1656ab22f0198745ad57351738"
+    },
+    {
+      "path": "Robots/arms/rm75/meshes/visual/rm75_link_7.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 253166,
+      "sha256": "635e9acb77c95423743c6100caab30bab417e58e9a5a6af1a2ae54b660d10e2a"
+    },
+    {
+      "path": "Robots/arms/rm75/rm75.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 7122,
+      "sha256": "41b9bd92a4a14392f9d52f88c2075b2cebe9c4039dee52c5581e36753dd4b69b"
+    },
+    {
+      "path": "Robots/arms/rm75/rm75_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 7122,
+      "sha256": "0d88cc622029cf0d82164a110276ff7d4aa280984a703ef1354fec9df307102d"
+    },
+    {
+      "path": "Robots/arms/ur10e/LICENSE",
+      "archive": "Robots.zip",
+      "size_bytes": 13745,
+      "sha256": "4244dfd5c739fb5e57a78156b09b7cc5eebdc3ac7d93d9b2054052188f9c3239"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/collision/base.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 21713,
+      "sha256": "4977d739c947a10e60c0a2eea357ffa2559f8dba1008fa4f4ba8224a91e5f8f0"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/collision/forearm.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 64584,
+      "sha256": "ef7a926b70ec917a1153929b5b4227ca065f0020b86a82826d563f634e25d898"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/collision/shoulder.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 81628,
+      "sha256": "4dfa8dc344053270c706c49cc5af4eac50b7e12fabefd07e274a6f2942e8ac41"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/collision/upperarm.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 89279,
+      "sha256": "288ec0a42f142611483cb8e609f586b8236007420c0d7af3b29d254638694eed"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/collision/wrist1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 61739,
+      "sha256": "72144e788272da12a18ba088f4712dfdf5e12dc2cdf3a753b9e11446fb8c44ea"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/collision/wrist2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 83668,
+      "sha256": "6c032c3c7861b06d2380d164abfcae57743473b0591d9755d7725dff47c3991a"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/collision/wrist3.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 6396,
+      "sha256": "4c06720f30ef73863bdbca1a921139346921fa6ef3ca7e59d76cd85ee8d9e08e"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/base.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 380524,
+      "sha256": "6fbe9bc0e1d993996f5cc6688e6a3337b7a0833683821e3d030f84e3c84405ab"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/base.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 421,
+      "sha256": "492947c0117b930ce0237ac5516162442671ceb872581ea9bd342d444d15008e"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/base.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 727100,
+      "sha256": "3187c8665260da09da9a12908ee106245fe9d46337456f4cbbb6a3659a552393"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/forearm.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 1396440,
+      "sha256": "16ba3c45d162163390702020bca1299025bcf727729d0105056dc3951e80436f"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/forearm.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 792,
+      "sha256": "662e55d296f09ae58d5fd0fccd8a2386f56af0c3d333459cb41010eac0c7c7c4"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/forearm.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 2775300,
+      "sha256": "3703865d5f0a67459064496a46f676646e99c0470666fabf2dee2cdcbe46494a"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/shoulder.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 2332648,
+      "sha256": "c4af2e58465d4019de71c5394a3ca2f548ca5a72141bc68572effe7234c6e4e0"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/shoulder.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 606,
+      "sha256": "bfbbc9521140bb68f6c2cf0e85d976ee743f163e13e2af1d2aa66cac92c20900"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/shoulder.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 4622672,
+      "sha256": "44ca2da44bb109f9cc59a2368e3893d7d9d848abd23e1f9af8a3d491b91c3fa0"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/upperarm.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 3186448,
+      "sha256": "6d13dddbfaf63a91d35da34a01ca0d2b9f4ff427d166a011ded95547ece4a811"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/upperarm.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 792,
+      "sha256": "c1da878e2f31c8da31c5b6501289d29000ff1374e5762cf1d4818bfc3f12042a"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/upperarm.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 6360534,
+      "sha256": "b4f0e2e96c57ed46b9158c8dd8739413dac9574708baa6a906d60035a2252082"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/wrist1.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 1246364,
+      "sha256": "f79dcf607e45b4eae95fb7f89607e7b7811b4fd78eb61828a577a2044aeb7291"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/wrist1.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 606,
+      "sha256": "c08a5daae6a13e1dc586326a2b9e04765581da9eff126610306f0ab0221e1207"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/wrist1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 2475024,
+      "sha256": "107afa5700ef9b221327a71f8e2889063541242ea733454cc7985cc1e8672828"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/wrist2.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 1429792,
+      "sha256": "b60bf142fe6f6f20455cf32014cb86e883cad2218a2d15ab1bead8215c02449e"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/wrist2.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 606,
+      "sha256": "d82032536a275c79853dd95cda4e94ca107fd6e2d003e94f62eacbb56d3fc07d"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/wrist2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 2838684,
+      "sha256": "e6003782cd410df8fdccd753dd4983f891e2f76048a37ccf2875c61215e70dcf"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/wrist3.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 72316,
+      "sha256": "8f9e146d2c55f53bf183c61ec6c7740ca99fa281fb661e30c72c86337799f5a9"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/wrist3.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 237,
+      "sha256": "b0a2b7a9a82c95141eb571e3435cf14dd367823159c76dfccdc8a1bf61c3d291"
+    },
+    {
+      "path": "Robots/arms/ur10e/meshes/visual/wrist3.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 131163,
+      "sha256": "f970c7391a95fa9872d38ab97f708f4d4968c3a4934b09af790a98f2435ff839"
+    },
+    {
+      "path": "Robots/arms/ur10e/ur10e.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 9322,
+      "sha256": "2a7b0892a021acc2acc546afcfbddc5f2835a0e179b9536702f5b954b841b6ba"
+    },
+    {
+      "path": "Robots/arms/ur10e/ur10e_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 9322,
+      "sha256": "2a48eb815ceb7a40a5876335b7ffdcdeb6c93d5da45cd6ab7e358c66bd0a7728"
+    },
+    {
+      "path": "Robots/arms/ur5e/LICENSE",
+      "archive": "Robots.zip",
+      "size_bytes": 13745,
+      "sha256": "4244dfd5c739fb5e57a78156b09b7cc5eebdc3ac7d93d9b2054052188f9c3239"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/collision/base.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 19832,
+      "sha256": "226372cf042a809a521433187e88fcbb51f3d59b2730bc370fcef25c2194faa9"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/collision/forearm.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 49961,
+      "sha256": "f609114b617d718b68c9432cce5424d3ae9d389c7e62c247b52f6cfe6ac1c737"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/collision/shoulder.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 66839,
+      "sha256": "ff033b288bf74b41d17d93b178d3c5798d31b45f6c8ba9982a49c1789e3a4217"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/collision/upperarm.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 95614,
+      "sha256": "fccb98bfe872a7d376f2b1fd7a109b00948a11e9459a992c3171007907ec4071"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/collision/wrist1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 55811,
+      "sha256": "a67b41b4002cb72867b6d0a3cd3a13ac24e5c1b26174e6a957beeed2d76e6639"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/collision/wrist2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 64835,
+      "sha256": "9344fb0d69e82dc6886654863e523215157b1542ccca239e4c1ecce87dfe179a"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/collision/wrist3.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 6308,
+      "sha256": "a42f6617a74db63841cbba88b5dd5c9dc5d7335890d0c6812588cfb79448b217"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/base.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 368124,
+      "sha256": "67ffb4c5c919a4708ad4cfa391f98d461b63efedebee6f6c61f69e88b55aeb24"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/base.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 427,
+      "sha256": "1f15f9ace42caaf138de4389c16a18bf52714fdd7c2bcff44b6b810faf8b3d60"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/base.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 702457,
+      "sha256": "e0e31581dd7dbd372989944801cad56e2f1ffd16501adad51359413427b563f2"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/forearm.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 1155520,
+      "sha256": "09b85eaed57b76a824f25ab9fa4398c6b0f480b4f0633e0da40b6440a8c2f84f"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/forearm.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 1164,
+      "sha256": "812cbb9dd1adc0f06e0f25a9846ae0354fb4bd847a39464d622a326e9055838f"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/forearm.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 2196406,
+      "sha256": "eb893b45aaaeeddf96657fbe448b01305038f61e6f030175e8010a4dafa76abe"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/shoulder.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 1798352,
+      "sha256": "b588aa9474950f2a44d2ff24152f490bc986d46c8ad1050d642395387497ae2c"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/shoulder.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 612,
+      "sha256": "d0191fbec6229e6361d149273222367386ed93f439878afaa971caa955ce7143"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/shoulder.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 3567630,
+      "sha256": "8b073cc39e662f6f940446e26faf7c661433d2843c05d154ce7671ac7a5d4d6d"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/upperarm.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 3100400,
+      "sha256": "3afb095c8877e5f57b7088a69742433168cf5510f50b206f700de89a29cc8a90"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/upperarm.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 798,
+      "sha256": "43230fe8b684a3c3ded70469e4113d08f5001bde34b3ff30609d7838a332d66c"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/upperarm.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 6179552,
+      "sha256": "a4011fc249a7dace1d3d419781a062916d30c9bdc00aab803f62154e69b8937e"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/wrist1.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 1326428,
+      "sha256": "15aed8e46251b419914bbcd33077354ea2db49b79f9a85bd30043a906b407e0c"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/wrist1.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 612,
+      "sha256": "e267d444fb4e898616dd839058c1c2e01ae29105d9bac591e5bf3b232a078e61"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/wrist1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 2634492,
+      "sha256": "7aacdf7bede92652a2d314139904a4543327e629509bc27dcf7c9ff0f9634cc8"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/wrist2.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 1550924,
+      "sha256": "729d2be79132e13597a75102ee16478ba901d6fdad283734ce0f03f4918a4ec5"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/wrist2.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 612,
+      "sha256": "832fbf1a455d32bfa399dd179448798108ed68de677dc1fabc4fbe11730d1079"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/wrist2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 3084441,
+      "sha256": "27bef3817a51f5dc02621859296aeb9b4660ecf977d0e835442aa168d815a37a"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/wrist3.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 66464,
+      "sha256": "c1a2e1e9ab806f6d03cb7ba0c17c1f3781f5aa33b92ec196ced76b8127b4926e"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/wrist3.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 243,
+      "sha256": "43ca62f08130bf3740a4fe112a19227841a37304fa0ebb0f3541872982190bf5"
+    },
+    {
+      "path": "Robots/arms/ur5e/meshes/visual/wrist3.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 121228,
+      "sha256": "e5aee5055e6ecc44b8eac32c00a920b3fe6a8194e6cd818afed04267f3299799"
+    },
+    {
+      "path": "Robots/arms/ur5e/ur5e.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 9310,
+      "sha256": "875f96534563f2e3acb5c7b29b0d756cdf0149b6b3da39643eae375f8e72ccd1"
+    },
+    {
+      "path": "Robots/arms/ur5e/ur5e_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 9310,
+      "sha256": "87fbff59308cda4f45ba6a53d116ecee9f0aee02261c823a79fe752c37c38011"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/collision/link1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 116072,
+      "sha256": "3ed8b4dd7f52aa7b6adb2401fa4b5180aa00de992a8e9855c779bc710360425d"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/collision/link2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 168124,
+      "sha256": "8b14a3ab7e3832c4461489c93b4630442ab014fccabb86020dd17a57a008b430"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/collision/link3.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 151783,
+      "sha256": "f7d0f65320d3e5771951f8a6c6720898681a06b71e1007ce124b0035d3fcec8f"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/collision/link4.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 101962,
+      "sha256": "01f8d5f9f9d5263c3147cb741f95ac9643b8e25e8975daae012f1cd816453359"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/collision/link5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 116129,
+      "sha256": "573e2f33632d65d2f67e0ed98d54b310e08616c254751af13fc0bf99cf1b7e06"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/collision/link6.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 148638,
+      "sha256": "cf8c9b693b904d7d3856815be1b112ef7097772daaf0336a40d0f36e2a0e3246"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/collision/link7.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 18058,
+      "sha256": "58a9e2dfc4a1a4441cc616db0e32abcbcb9fd189829264e94373ed0eaf682f10"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/collision/link_base.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 79568,
+      "sha256": "20fd20c2c5b1adff08b0753b24f5c75776927eec54c8227fc19c58bb8c8fd40f"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link1.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 285308,
+      "sha256": "cacc86a7715434ea829df2b769c74897fae02621dfb3cfc1dd091e7fb09ec867"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link1.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 418,
+      "sha256": "1dc54a683817c2c9b3958961aca81195c0bb9c2a0eee7aac735fcd27016fb7dd"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 534531,
+      "sha256": "57ab93159d892b19742e1335ecf3b1f252c6ac4aef197acead87ae2d92a98f83"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link2.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 353388,
+      "sha256": "05008cb4969ec3bfe74b1590b01996787674ff1061397e95db21a7e67a017641"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link2.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 418,
+      "sha256": "5a3b758f5d9fbe40e33ad5e18ecec0b14eb2adf9843c643b73147994a00186dd"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 669635,
+      "sha256": "5e20fddb264019440a4cb6ade29299fe4faa119664a41478d29dddf0f4105b45"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link3.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 371424,
+      "sha256": "07bb8fc6ac49a49afed17489764e5ecb37dd262b1237945ee4b9094b74b68a07"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link3.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 418,
+      "sha256": "57a4cb6b23310f54b7dc59ed4aa5e35680b72504fed73f0d22ae36863a1d66aa"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link3.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 704022,
+      "sha256": "87093aa7c3dfd01cf6dcb6b3eb8182af58afa4dcb10ec79907b00861c18ce1db"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link4.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 381572,
+      "sha256": "ad096114f1f305f39a8ff8a2aed73050e2da708904ae5d957f7ca76fe5798106"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link4.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 418,
+      "sha256": "dd8795c3e73f96cbeac82a41f43b2fb0a9029f8d5ff99289449c49b40f37f61f"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link4.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 715935,
+      "sha256": "23328ddfaa7c0b0f566402b830b48d551517ce4f904d4d61b3b927dfc0fa7cb1"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link5.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 358824,
+      "sha256": "2da0e51debf30a99634dccc960f77d4253194ce2f748c2ab48ae5244ab02facf"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link5.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 418,
+      "sha256": "32e89afcea55874fe7b8f4e51b560238c448e31aac9431ea0419f6e2fcb0e877"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 681081,
+      "sha256": "cba47f92045c39e0c72f4d95fa5184fd3a1c5f573de3990203f96698e298e8ad"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link6.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 621744,
+      "sha256": "16612a56f22d286a7e7ff7df3731bb557652c7a83f8b56055d59d1ab83d9f188"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link6.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 414,
+      "sha256": "06e7eedcaa9388e008ad5768710230aecb07859c6396eb9438f5fd0cd5b4a4d8"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link6.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 1177070,
+      "sha256": "b0d8fd4abeaceb8bfa65d67aba06d490e2beec52832df94ef58b77574f80b1e9"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link7.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 336888,
+      "sha256": "6996ad0023afdb45496e2dad384c814743d2fcf4ea49fbd2ccef1e969452636b"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link7.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 231,
+      "sha256": "da21c00cf29cfd10cddeb9d964d1c1ebe931779893cced84c243ad508645d0cc"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link7.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 573500,
+      "sha256": "10c1301ea1b579c988ecaed12f478d017d2a2dcb829ee2ef380fcc8aa34e3803"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link_base.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 467668,
+      "sha256": "bdccb694dd55ef68c8b120d14f464a56c911ff4a55397b43bc19313b6184356b"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link_base.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 418,
+      "sha256": "dfc729368b5f2efaec2f0b8a1e70b4443ecfe7a54b967395f3c085db3de442f4"
+    },
+    {
+      "path": "Robots/arms/xarm7/meshes/visual/link_base.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 665448,
+      "sha256": "56f4e4524d0e3c8eee589a1e724f3b54705899b9426194fbb272fdd24f5078ba"
+    },
+    {
+      "path": "Robots/arms/xarm7/xarm7.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 7095,
+      "sha256": "b6df35f677dafa875c28a77de3ecfcae6ce08e682e4830b5791d31a66e732df2"
+    },
+    {
+      "path": "Robots/arms/xarm7/xarm7_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 7095,
+      "sha256": "c64a9e686d885fc024bb70ff069171fbd67698a2e5a30a97755581ff5ea9abb1"
+    },
+    {
+      "path": "Robots/assembly/rm75_inspire/.asset_hash",
+      "archive": "Robots.zip",
+      "size_bytes": 32,
+      "sha256": "a9eae89fc480f12d5f9fced6201f81d0bad7d96876fa944677dd7c65615f8e2c"
+    },
+    {
+      "path": "Robots/assembly/rm75_inspire/config.yaml",
+      "archive": "Robots.zip",
+      "size_bytes": 557,
+      "sha256": "8342711a2b98d9d5c3d4cd31f892e40dba0bca46574423499005313c78dd0412"
+    },
+    {
+      "path": "Robots/assembly/rm75_inspire/rm75_inspire_left_hand.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 22702,
+      "sha256": "d6d47a86d5a9a0e9086ffecd75db383ade0a28a528a21c0fa1337919cb3b8c0a"
+    },
+    {
+      "path": "Robots/assembly/rm75_inspire/rm75_inspire_left_hand.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 5735991,
+      "sha256": "6cbef9e9ed20ff8075c299b50ff17e9531d47586e2ebcae635a186e844bfdb30"
+    },
+    {
+      "path": "Robots/assembly/rm75_inspire/rm75_inspire_right_hand.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 22692,
+      "sha256": "38528ed3fb1794ed31ad220f6cca4794a989bfbc4b084d1886d9a92e32fb1698"
+    },
+    {
+      "path": "Robots/assembly/rm75_inspire/rm75_inspire_right_hand.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 5534051,
+      "sha256": "dcd19dfff9ce804bf4678f89bd0a1c01590f457b745472204c35cff91b5711b8"
+    },
+    {
+      "path": "Robots/assembly/ur10e_shadow/.asset_hash",
+      "archive": "Robots.zip",
+      "size_bytes": 32,
+      "sha256": "f908d529703a52bbf766ac7f87c29a9da5f069d36496feeee795d50f150f2fe3"
+    },
+    {
+      "path": "Robots/assembly/ur10e_shadow/.thumbs/256x256/ur10e_shadow_left_hand_glb.usd.png",
+      "archive": "Robots.zip",
+      "size_bytes": 11623,
+      "sha256": "438ffeebfc9a76e9d95a857fe22b3d1d6fd1757bb49bb704aca69d8fb6c6d328"
+    },
+    {
+      "path": "Robots/assembly/ur10e_shadow/.thumbs/256x256/ur10e_shadow_left_hand_glb_test.usd.png",
+      "archive": "Robots.zip",
+      "size_bytes": 31539,
+      "sha256": "ba8bd328b098f3817073b14dfe991ad00cd281e096b30495d48d06c1c24db82c"
+    },
+    {
+      "path": "Robots/assembly/ur10e_shadow/.thumbs/256x256/ur10e_shadow_right_hand_glb.usd.png",
+      "archive": "Robots.zip",
+      "size_bytes": 17037,
+      "sha256": "2658e632dd2351dae05f838001214fe0cd79765e3bf49d937c1906082dc74290"
+    },
+    {
+      "path": "Robots/assembly/ur10e_shadow/.thumbs/256x256/ur10e_shadow_right_hand_glb_test.usd.png",
+      "archive": "Robots.zip",
+      "size_bytes": 40219,
+      "sha256": "9c3c60c6f499d640bd9f3c966adbab849b810a7c71acfdcb9c0a8a340e47c8a1"
+    },
+    {
+      "path": "Robots/assembly/ur10e_shadow/config.yaml",
+      "archive": "Robots.zip",
+      "size_bytes": 594,
+      "sha256": "158f252f04687d51bbd170bb6defbb7e508a7f751c2ed6f57555caeea311045c"
+    },
+    {
+      "path": "Robots/assembly/ur10e_shadow/ur10e_shadow_left_hand_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 37909,
+      "sha256": "8b762ca51c7539f1136b3d1a0cb32787f01cfbbe6c13bffca5a4210ae2e7d397"
+    },
+    {
+      "path": "Robots/assembly/ur10e_shadow/ur10e_shadow_left_hand_glb.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 14058616,
+      "sha256": "73a9a266ffb5e10169c78b7be81b455a3589de6603e1f6cbb28f9778df8a8ad8"
+    },
+    {
+      "path": "Robots/assembly/ur10e_shadow/ur10e_shadow_right_hand_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 37789,
+      "sha256": "7b9cf2e5782eb9588974b43d2e5237ea8b491dee32ab86719775dfc4c07d9e07"
+    },
+    {
+      "path": "Robots/assembly/ur10e_shadow/ur10e_shadow_right_hand_glb.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 14052510,
+      "sha256": "711a04224c3dfd1affd05259a43ac6ebeeb98ac0b76267ea4d567bcb4784b208"
+    },
+    {
+      "path": "Robots/assembly/ur5e_inspire/.asset_hash",
+      "archive": "Robots.zip",
+      "size_bytes": 32,
+      "sha256": "d695d31f81c74cc4308ebeb40a48bab6857b94083fa9e3e7847a77876f493048"
+    },
+    {
+      "path": "Robots/assembly/ur5e_inspire/.thumbs/256x256/ur5e_shadow_left_hand_glb.usd.png",
+      "archive": "Robots.zip",
+      "size_bytes": 26504,
+      "sha256": "ea9f220984e435315fa68b6766736989e66b32ef2f0c6ab30ff44528e23d1ccd"
+    },
+    {
+      "path": "Robots/assembly/ur5e_inspire/config.yaml",
+      "archive": "Robots.zip",
+      "size_bytes": 586,
+      "sha256": "6c71a2272218f4caee15a342ca8a43d4ee881dd534131192eb94e031944f8c02"
+    },
+    {
+      "path": "Robots/assembly/ur5e_inspire/ur5e_shadow_left_hand_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 23405,
+      "sha256": "b0de97ffea4130c1edad95ab82a6eed9e8dcda6c4df693afc25ad2e22495e56b"
+    },
+    {
+      "path": "Robots/assembly/ur5e_inspire/ur5e_shadow_left_hand_glb.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 13449942,
+      "sha256": "a10003b3303342b19723adbb649b3b5c4846ddf77dba019e75a3596826bb6600"
+    },
+    {
+      "path": "Robots/assembly/ur5e_inspire/ur5e_shadow_right_hand_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 23394,
+      "sha256": "c843f192b9a875b30556b12114b29ad0137039f9fea92b1a83b25fc72623f00c"
+    },
+    {
+      "path": "Robots/assembly/ur5e_inspire/ur5e_shadow_right_hand_glb.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 13238270,
+      "sha256": "f74131f8a86cc5dbaed17c1c538daa842632deafe4e5cc9203600f1af4e4583b"
+    },
+    {
+      "path": "Robots/assembly/ur5e_shadow/.asset_hash",
+      "archive": "Robots.zip",
+      "size_bytes": 32,
+      "sha256": "ef8db7be14aa618e8a101460027855decadb59e457764d0fb07e8c42ffffd739"
+    },
+    {
+      "path": "Robots/assembly/ur5e_shadow/config.yaml",
+      "archive": "Robots.zip",
+      "size_bytes": 561,
+      "sha256": "bd1c491a5af7030637efdf99f2f74c76e7beedc00c7dd9f38ae377e4aba1192f"
+    },
+    {
+      "path": "Robots/assembly/ur5e_shadow/ur5e_shadow_left_hand_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 37886,
+      "sha256": "2915ef5dd56e43f603aa04d6f63c5990a8e06baf5750b380c651bf42a5750e6b"
+    },
+    {
+      "path": "Robots/assembly/ur5e_shadow/ur5e_shadow_left_hand_glb.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 12973334,
+      "sha256": "12a75d992bc4118edd88480c270947e3a91cf734898aa4edc4a06fdc79d186f1"
+    },
+    {
+      "path": "Robots/assembly/ur5e_shadow/ur5e_shadow_right_hand_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 37766,
+      "sha256": "80b76805acbdb570d130dbd2604760f07febc33358226afaeda5cf493d298f3e"
+    },
+    {
+      "path": "Robots/assembly/ur5e_shadow/ur5e_shadow_right_hand_glb.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 12973234,
+      "sha256": "a40cdcfccde4851110c41edca529e62c8e0cb988c086f390f1e3de7e15014800"
+    },
+    {
+      "path": "Robots/assembly/xarm7_ability/.asset_hash",
+      "archive": "Robots.zip",
+      "size_bytes": 32,
+      "sha256": "a55d8e59dcc2fc43595109ab885e45a7a6add80eef2edd475d8b4dfb7983d95f"
+    },
+    {
+      "path": "Robots/assembly/xarm7_ability/.thumbs/256x256/xarm7_ability_left_hand_glb.usd.png",
+      "archive": "Robots.zip",
+      "size_bytes": 27066,
+      "sha256": "875f9817390362a00eb1e11a738dcda2e1452ed898753868fe163f510928e5ca"
+    },
+    {
+      "path": "Robots/assembly/xarm7_ability/.thumbs/256x256/xarm7_ability_right_hand_glb.usd.png",
+      "archive": "Robots.zip",
+      "size_bytes": 15873,
+      "sha256": "0309c708bc455b1d5f4a00a14f0193d580b6e76045cc60be2e21001f44998518"
+    },
+    {
+      "path": "Robots/assembly/xarm7_ability/config.yaml",
+      "archive": "Robots.zip",
+      "size_bytes": 592,
+      "sha256": "bad4da95136bdac25c7e9ad8c594d56a1ffa7fad03efdd956f00632d8d9a688f"
+    },
+    {
+      "path": "Robots/assembly/xarm7_ability/meshes/hand_base.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 219221,
+      "sha256": "24bab2a495b358efd1f01b37f72eddf08ff0786624953f16ded7d1a148debdb6"
+    },
+    {
+      "path": "Robots/assembly/xarm7_ability/xarm7_ability_left_hand.srdf",
+      "archive": "Robots.zip",
+      "size_bytes": 6693,
+      "sha256": "2d99cf6c0124c6af5e5875bc65b280c6099e98ad84a87593ca555d87e34a4dc2"
+    },
+    {
+      "path": "Robots/assembly/xarm7_ability/xarm7_ability_left_hand.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 26301,
+      "sha256": "43927402bfd31e3cedb1ecaf5b652cb80ade0c33e6cf55fa7d89b4e986926a57"
+    },
+    {
+      "path": "Robots/assembly/xarm7_ability/xarm7_ability_left_hand_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 26301,
+      "sha256": "a4df091928065c465026571d04a8f05f5965876b0a6ffa38299ab59a51d11d40"
+    },
+    {
+      "path": "Robots/assembly/xarm7_ability/xarm7_ability_left_hand_glb.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 7781823,
+      "sha256": "f63f6a7f77b3ff48453066eab667517e71b663091f4544a5b4eb766628041b12"
+    },
+    {
+      "path": "Robots/assembly/xarm7_ability/xarm7_ability_right_hand.srdf",
+      "archive": "Robots.zip",
+      "size_bytes": 3163,
+      "sha256": "e7b7b5472837c5baaa82af4da3f506b52260a9e69fa1f4b657dc9e8135e342d1"
+    },
+    {
+      "path": "Robots/assembly/xarm7_ability/xarm7_ability_right_hand.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 26558,
+      "sha256": "4c6a1168d1a0985d7a15b05ee12d777596d467f67c196dd899e4957e7222e7db"
+    },
+    {
+      "path": "Robots/assembly/xarm7_ability/xarm7_ability_right_hand_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 26558,
+      "sha256": "202e98be31d77e3b9c979cc20b9a966d03d1371de36ab2be9b01d0c1ea0e375a"
+    },
+    {
+      "path": "Robots/assembly/xarm7_ability/xarm7_ability_right_hand_glb.usd",
+      "archive": "Robots.zip",
+      "size_bytes": 7779656,
+      "sha256": "e0ed7085b11c7758dc0e3d722172ba09c7c26cee974bd4d1e311726431f7319e"
+    },
+    {
+      "path": "Robots/hands/ability_hand/LICENSE.txt",
+      "archive": "Robots.zip",
+      "size_bytes": 365,
+      "sha256": "a16615485e02b7a21cecf12280a3515c4b3d1f2f6afb957af5a1f637e4c79b3b"
+    },
+    {
+      "path": "Robots/hands/ability_hand/ability_hand_left.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 18094,
+      "sha256": "bd54257c678bb95468a473518b63aabf50be90e5b1cbc791d22cb8cd043424c2"
+    },
+    {
+      "path": "Robots/hands/ability_hand/ability_hand_left_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 18094,
+      "sha256": "57a5d405482c7fd543cc5390162bff3a00a537d6cf0cec270317739445a3f992"
+    },
+    {
+      "path": "Robots/hands/ability_hand/ability_hand_right.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 18377,
+      "sha256": "395bcf4963b5e05a0f6f5333c1a3537db4e24cefc4348e290424fb59120e3fb3"
+    },
+    {
+      "path": "Robots/hands/ability_hand/ability_hand_right_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 18377,
+      "sha256": "bf7cb29b5a622a648d7887c0f5d60074ca00a3c9dc135502a8ace388e0d73b12"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/collision/FB_palm_ref.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 31522,
+      "sha256": "71c94a39fc3c2aac767a263f621287bf4da21f13cd1cd14caa83d656c0bc75f5"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/collision/FB_palm_ref_MIR.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 32872,
+      "sha256": "3af64e454a1973be4982e8f538ae572ee2563bedea76ca570c65b780781ab433"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/collision/idx-F2_C.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 22835,
+      "sha256": "b3cc09c18998b5cfca10a577045dee83795d22f7945591eb12b911fd09c3175c"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/collision/thumb-F1-MIR_C.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 5627,
+      "sha256": "20de784151d7cbdbdb1df9e5383c9037fb661959a516edbbb2fa5873054e6d32"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/collision/thumb-F1_C.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 5639,
+      "sha256": "cfde72aec713a7cf61440b3010be1043cc4b5f1e1cee759fb7d4968c6bdd8395"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/collision/thumb-F2_C.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 12656,
+      "sha256": "cee181057eb6010ee002c3f0ac7e66ca82cb0f3c3a3f5b45eb606814ec37e2e0"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/collision/wristmesh_C.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 15023,
+      "sha256": "683629e54d0711b07f632ba14e83e4cfffd5107ff85ce0734a0dbc78508298cc"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/FB_palm_ref.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 918408,
+      "sha256": "b66964bdd39a20b9c859c4469fd49d8f70b94552e94df01ceee33224e907cbd9"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/FB_palm_ref.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 239,
+      "sha256": "614176c99b96f8f3938b4006c4292f26dfc31805ef3b12f1d54e6070a55ef8fd"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/FB_palm_ref.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 1026040,
+      "sha256": "5ffd7705b618756c71fee073d6799b3dae4bb68fb870246a4791a142cc3d11b7"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/FB_palm_ref_MIR.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 707156,
+      "sha256": "185fb959e23dd65c29ea9086c61f4e24ce468c3eb8de39407887edf0e3ce120d"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/FB_palm_ref_MIR.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 239,
+      "sha256": "614176c99b96f8f3938b4006c4292f26dfc31805ef3b12f1d54e6070a55ef8fd"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/FB_palm_ref_MIR.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 1005301,
+      "sha256": "26ca1cfb231d747224ce0b4f746f6e094ed2596d038c00b492a13674cc4b4e9a"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/idx-F1.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 60100,
+      "sha256": "ab7d91d3e0c586133e0a668d63b1c071a8659f6367ff27c619e9e984e36dcbd2"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/idx-F1.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 239,
+      "sha256": "e049fb0540c4d42738fa4f86c05558ec6dad735f49ff32ab60a106218165bcd9"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/idx-F1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 62705,
+      "sha256": "75b874a160bf756a10db31d99c55339ebcb26bc429c5ebcc6b01222f81026006"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/idx-F2.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 10208,
+      "sha256": "b26e5dd3f23745f2146bdf3715fdd0a1b9b7a0515040e72ec771b453a064e703"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/idx-F2.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 239,
+      "sha256": "e049fb0540c4d42738fa4f86c05558ec6dad735f49ff32ab60a106218165bcd9"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/idx-F2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 26678,
+      "sha256": "458b603364e916b3a45e7d93b12f94d8b1e84fdaa2f48609765bb1e2c36a39cf"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/thumb-F1-MIR.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 9248,
+      "sha256": "c21bb175a987e46860a3be221e8f38bb8b0c86175b9ab12d47692a5ba6dd4cde"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/thumb-F1-MIR.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 239,
+      "sha256": "e049fb0540c4d42738fa4f86c05558ec6dad735f49ff32ab60a106218165bcd9"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/thumb-F1-MIR.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 8238,
+      "sha256": "c17073d7166aa71a3ba35bf4536c949a95a6ab4566a7b151b2c2714283fd62aa"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/thumb-F1.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 3620,
+      "sha256": "7c256a928e8d0992a675cb8b804a3f92d11104dc83ea17fd32b24f24d34358b3"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/thumb-F1.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 239,
+      "sha256": "e049fb0540c4d42738fa4f86c05558ec6dad735f49ff32ab60a106218165bcd9"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/thumb-F1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 6250,
+      "sha256": "e8a595336b0baefc72e7859d4c6d25ceb3d33076fccead439032bbfa9135c20b"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/thumb-F2.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 21604,
+      "sha256": "540909edd1c4634aa0bf112a32c7f5bf043858b3832992b8b924eb0d6e7765cd"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/thumb-F2.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 239,
+      "sha256": "e049fb0540c4d42738fa4f86c05558ec6dad735f49ff32ab60a106218165bcd9"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/thumb-F2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 18604,
+      "sha256": "575cf0f348a59e847697d41342522eff7abafe17b1203633fe36355e4b16b1f5"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/wristmesh.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 2401876,
+      "sha256": "7f920cebe9cef71830f34ebac8bce9553eb3af4db830e528ed254ffe3f7bfa45"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/wristmesh.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 240,
+      "sha256": "6e084eac674ac58d66837dd7b1fc74b798574849862d7e354483cd7f863b44e1"
+    },
+    {
+      "path": "Robots/hands/ability_hand/meshes/visual/wristmesh.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 3569269,
+      "sha256": "bbba82def982ca550dc5a1f5d2129a249895e80998a8116aff7e0d25ce17130f"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/LICENSE",
+      "archive": "Robots.zip",
+      "size_bytes": 732,
+      "sha256": "dfd5ad7a2b5f150ed3628cf378662fe6349f24a79f6f893ba498264cc1affa39"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/allegro_hand_left.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 16881,
+      "sha256": "36bfe87b4731c96bc2dc178136d1eb54d780bf32f876a9412f1d6e0d717b903f"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/allegro_hand_left_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 16881,
+      "sha256": "0649659188aa474e1312fc8736a155f935518ae3586ce4af96aa99e7eef355c0"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/allegro_hand_right.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 16826,
+      "sha256": "c0b80e9f740514eb98407a8b6aaa887a964392c8b8003912f7bf9ab88d8c55c3"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/allegro_hand_right_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 16826,
+      "sha256": "2f115433f4227273e76363ebb7fee60c286b507847658398195fd3bec7590f4c"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/collision/link_tip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 67338,
+      "sha256": "cd517fb6f1b4ccec9ef48501b2a41494d700fdf376f37aa6909afcee172e64f4"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/base_link.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 150276,
+      "sha256": "a5b957aa87e9fe4aa0f58a5192ca4583b6d4c3584f0a51ee8cd99ad76261c8d8"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/base_link.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 232,
+      "sha256": "9fe02681269c274299689f750c91c104253bc14fbf25045df935e44fbb01f9eb"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/base_link.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 195076,
+      "sha256": "6bf8daf270ac7e427ee477515bfcbcee306958e8b2ea8a23ecb7a319c5c8690f"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/base_link_left.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 454240,
+      "sha256": "fe83ed36849fac8a2b8cc0b346474ae4e6d0b94aa2d414528309d9cff0033f2b"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/base_link_left.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 232,
+      "sha256": "9fe02681269c274299689f750c91c104253bc14fbf25045df935e44fbb01f9eb"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/base_link_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 599153,
+      "sha256": "fbc01616cbd28d9c133a4ed6942ddf07e55ec84fa99a900c6b9bf6499d87ceca"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_0.0.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 51836,
+      "sha256": "3efc9af7866efcfd61b51a19dec4454f88bf9c86787fba0f44f0ccb911cc364d"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_0.0.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 232,
+      "sha256": "9fe02681269c274299689f750c91c104253bc14fbf25045df935e44fbb01f9eb"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_0.0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 60750,
+      "sha256": "f8ba6316f4fe17e740276b7f28864f53c0296a1d8b0072e98561be1c6f063732"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_1.0.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 67276,
+      "sha256": "a009c6e53176c0252f31a23cc3c32e9096ec275c7891c4bdd4c407b787f4cb84"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_1.0.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 232,
+      "sha256": "9fe02681269c274299689f750c91c104253bc14fbf25045df935e44fbb01f9eb"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_1.0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 72591,
+      "sha256": "3f379c94cb867d8421db1879d50f4b11d9ddfde0e4c46e25e0a7da41466368ae"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_12.0_left.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 229708,
+      "sha256": "d9f09385c918aeaf8e332cb4cd4b2ba7aef1c1373eef97911135191301b5c5e1"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_12.0_left.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 236,
+      "sha256": "ea595f92d913827f629051ce12661f90587854ea94f21c3665783f7f6c67fbb2"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_12.0_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 269052,
+      "sha256": "59ba34b4fe47f46381bf02ce835bae978411095c632fee6006823135daa9915a"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_12.0_right.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 217268,
+      "sha256": "53e6798f41c0b3b2eff598a6afec322d04ba2f848c00100aeb31c7f04e765809"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_12.0_right.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 232,
+      "sha256": "9fe02681269c274299689f750c91c104253bc14fbf25045df935e44fbb01f9eb"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_12.0_right.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 283840,
+      "sha256": "cd4ed89d517ab35fc1148d50d695672d6720df5e45e931039f14c227ae8a2047"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_13.0.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 20140,
+      "sha256": "ab032e67897db4ac66343914f9a862afd9efeea44b9f2328ae42d4dd8ad31830"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_13.0.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 232,
+      "sha256": "9fe02681269c274299689f750c91c104253bc14fbf25045df935e44fbb01f9eb"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_13.0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 20840,
+      "sha256": "774f0a09ae38e0ce3192cf53063cc39d9c8400096435a4491bac52f25c7012ff"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_14.0.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 44288,
+      "sha256": "726b42767f0b7f29e6a822df52d278a213d8c017364f330560645d5fc3a918d3"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_14.0.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 232,
+      "sha256": "9fe02681269c274299689f750c91c104253bc14fbf25045df935e44fbb01f9eb"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_14.0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 50104,
+      "sha256": "0b5d6e3e2294abb0c046bd2397021877e012fd14ebf899713470f8bdfca32d38"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_15.0.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 41696,
+      "sha256": "3bbf8697a7923cb2aa1c0144571068806c83f3346820ca27ce65b8a7c9c1fb48"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_15.0.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 232,
+      "sha256": "9fe02681269c274299689f750c91c104253bc14fbf25045df935e44fbb01f9eb"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_15.0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 49458,
+      "sha256": "f682074d43e0f3dc08a44eb6a821bf93fff9015b168cb1e75913aaaea4873782"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_2.0.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 50284,
+      "sha256": "67f2184095711736cc03a315c79b5167299c4039ae2e6cd2b6b7b7fd8f8669e1"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_2.0.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 232,
+      "sha256": "9fe02681269c274299689f750c91c104253bc14fbf25045df935e44fbb01f9eb"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_2.0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 60526,
+      "sha256": "81886acc0097e0872c3ff7004025481a984fd73d9ebe70213693d6d66a713e07"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_3.0.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 16296,
+      "sha256": "a7c1b43da27f17611cc9cf6687517acbd3f91f263d123d3f1ac10081ec3b619a"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_3.0.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 232,
+      "sha256": "9fe02681269c274299689f750c91c104253bc14fbf25045df935e44fbb01f9eb"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_3.0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 16527,
+      "sha256": "6495c4ed4e0950539c0e6145c3593b065ed0befe5e2802d2fade0d66c840dd72"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_4.0.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 20472,
+      "sha256": "0a3dce458365c3251cd6e286673f0f1b6be75ffa44fa72724b557518d1f29dc3"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_4.0.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 232,
+      "sha256": "9fe02681269c274299689f750c91c104253bc14fbf25045df935e44fbb01f9eb"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_4.0.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 20978,
+      "sha256": "ac59782293ebf679e40e8db47a48bd1aae918ecac2098c2992f70994203a0700"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_tip.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 78524,
+      "sha256": "578c515dda261f5f633ed3d9de2c588843b4a4bc009e82be672aafa3f8663555"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_tip.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 231,
+      "sha256": "ea6c5affc10c704bb36d608488152de69e2bc63468405139bb404404b04e0a45"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/meshes/visual/link_tip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 118848,
+      "sha256": "4c1cdca17b218ad9cf912ff2ecc9509bfff35fdc8ca4c58468e8c5e9689d30b7"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/variation/allegro_hand_right_fsr.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 25342,
+      "sha256": "effa52d8ae3dff4f4fa8fbcdeac91b94e619fa0aba290f3216bfd96660f5253b"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/variation/allegro_hand_right_fsr_cylinder.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 25021,
+      "sha256": "542d6c174551a336b09b2affd8a7b83ffe7b9d9a008c6a990ce4697ff4166a18"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/variation/allegro_hand_right_fsr_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 25342,
+      "sha256": "2b0869bd55704c82cbdfc891b11b1254488b479f6a278d682f1f0a3d07fef1dd"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/variation/allegro_hand_right_fsr_simple.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 25252,
+      "sha256": "55e926b8e0741dfa9c7e3401db44320cb21599d297b5291f1979caf6f77b0f91"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/variation/meshes/collision/longer_finger_tip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 102200,
+      "sha256": "0b9bcc85a90a9d63f4767ba4a3e931e67dedb952132e3605f9cbcc697a1dbb88"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/variation/meshes/visual/longer_finger_tip.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 166232,
+      "sha256": "a99b74adc1b7b28a4fd90dcea4046016d8e9aefe27ec87e7e15159ad9ea42bd9"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/variation/meshes/visual/longer_finger_tip.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 236,
+      "sha256": "d5cf890734a1def3349f0352d3fbcb62844fb54b932ee1fe030c5b37b33424ee"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/variation/meshes/visual/longer_finger_tip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 320165,
+      "sha256": "45bf44eaed5c647aa79c54b8a93192b29ce996d0b320dba6a207403f141c4a32"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/variation/meshes/visual/tactile.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 328600,
+      "sha256": "d1eff9d29d0f953084ec38e48054bf2f8ea085deafb29a74072fabf87cc6060f"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/variation/meshes/visual/tactile.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 417,
+      "sha256": "baf872b59a4d3e761633b17072c690bcf4a46c59051c55b571782cc98aa29375"
+    },
+    {
+      "path": "Robots/hands/allegro_hand/variation/meshes/visual/tactile.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 647838,
+      "sha256": "ec6112bda50cfa7478faae3df4767d5ed471c26b9bb6216550848578a8d9994d"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/LICENSE",
+      "archive": "Robots.zip",
+      "size_bytes": 744,
+      "sha256": "fa608e3dfd66bfd5bb1bfd3827480c8b950231ddccfd9235564cbf2845828612"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/bhand_model.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 12697,
+      "sha256": "13cbfdb7715e54f4e10f9e1f2c7620db6c5f6b2b05adf9a16cdd795cda620fc1"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/bhand_model_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 12703,
+      "sha256": "5d6f3282a8489b1b812aa8fd1f2bbec26ba40c7006a1d230f9fc8c2e508e55c7"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/collision/base_link_cylinder.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 14991,
+      "sha256": "49c5e25eaa9d308e0eecc3275d560670ed005029ba0f3f2a230a7b7640586ae2"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/collision/prox_link_cylinder.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 7370,
+      "sha256": "bf699a29e783c35f3eb095cec1d1ae1361e89139307f6aa78bd8b69e59b25c52"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/visual/base_link.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 470508,
+      "sha256": "adf5a24b9beb12f80d6150be1d3997b151590e0cf2d427c875afa56bd1127c45"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/visual/base_link.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 427,
+      "sha256": "95e7d51a8fb0731c4bd49f990b002026c6df86b56b5d3f76edf24652694069f1"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/visual/base_link.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 489745,
+      "sha256": "e963f3f9570b1ec41c1084c5d5725994a4f5bc1a8be8c07fe3b333892bef66fa"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/visual/dist_link.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 189552,
+      "sha256": "023c444c1acec07c0eed03ef9e86c9e07c46b143fb224dd9fb29083948d3e287"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/visual/dist_link.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 427,
+      "sha256": "95e7d51a8fb0731c4bd49f990b002026c6df86b56b5d3f76edf24652694069f1"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/visual/dist_link.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 190698,
+      "sha256": "7de4ace9a09910bc42578c456871f48df7e2916ce6cc2fef3cfeb918f1e54a39"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/visual/med_link.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 44408,
+      "sha256": "9f8c88b063da027430be4e5bef3a35337f1d8be6e7ead93b5f98b45f8cfb8a12"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/visual/med_link.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 243,
+      "sha256": "ade8fc6d6b9d7aadb924f1a2ac4198b3727714eeaac8835266087ca95b73e464"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/visual/med_link.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 42485,
+      "sha256": "066c870b44c34dfde43a855fd1574882b855cbcb93dfda2a1a6753d543995530"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/visual/prox_link.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 91996,
+      "sha256": "6c9faae8c11ea6e302539fbe577bd281dd0bed44903e0df637fa161877f3ff0b"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/visual/prox_link.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 243,
+      "sha256": "ade8fc6d6b9d7aadb924f1a2ac4198b3727714eeaac8835266087ca95b73e464"
+    },
+    {
+      "path": "Robots/hands/barrett_hand/meshes/visual/prox_link.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 90196,
+      "sha256": "72797ef02e2183e1499ad046835b3c1ffcc9f7fdb309bb523c30ae5d4e7dfc3e"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/LICENSE",
+      "archive": "Robots.zip",
+      "size_bytes": 11614,
+      "sha256": "b32bd400d75914adbc7398990186a7337e741ec3f9e7f61e599aee151cf71eca"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/dclaw_gripper.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 14357,
+      "sha256": "308c40aa16d93e96fbec323ece532067813420050950f9f0dfdd09399e364054"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/dclaw_gripper_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 14357,
+      "sha256": "5a7140f15a566bc9cf6327ab2f09e86f82df36f8b9f5c72fd1126d827585d611"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/collision/base_link_cylinder.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 7370,
+      "sha256": "038fce444975c9d763a26ba594cc1f2ffc75f5d20c2602ef2c2e80c282ac2b0f"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/collision/finger_tip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 72020,
+      "sha256": "186a67df7b7f27734ca0f936b0c646d14d8c17058a9456d66845b0511fb5f303"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/visual/base_link.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 3176500,
+      "sha256": "438e5ab306e31130ec4cc6ac03662cc76e45bf6c2e8dd394c70fded44a2b6120"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/visual/base_link.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 244,
+      "sha256": "618dd8abda77f6824d8fd3baf60cabc9a60d7bdbaf9a946c3dc873a7df70ca23"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/visual/base_link.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 2691993,
+      "sha256": "adc9593bccc40dc3e98ad3c3e88343c12b350c62e32df12b160c663c223578a6"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/visual/link_1.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 2325976,
+      "sha256": "fe0232aecae53efbf45c8482d05155126cf5b3c8262976b7a268f680d0ce933c"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/visual/link_1.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 244,
+      "sha256": "618dd8abda77f6824d8fd3baf60cabc9a60d7bdbaf9a946c3dc873a7df70ca23"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/visual/link_1.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 1904112,
+      "sha256": "376d9d100ed6235e4e4bf32242964ca0ad2dac0a89c18032a37ecf2c076ae7e7"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/visual/link_2.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 2379768,
+      "sha256": "bfb59659008d10bced76bf1a271fd6df494351b3e60a1052e56a772fd8784392"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/visual/link_2.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 244,
+      "sha256": "618dd8abda77f6824d8fd3baf60cabc9a60d7bdbaf9a946c3dc873a7df70ca23"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/visual/link_2.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 1895985,
+      "sha256": "667d6484f6fba50fc2d4d3d67476035944aa60f855e5bf85d83ff4c08393f7cf"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/visual/link_3.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 957224,
+      "sha256": "99d640b75e97f24a674a4bede31d095b9761634c6ca2a873b0267d664b24a253"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/visual/link_3.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 244,
+      "sha256": "618dd8abda77f6824d8fd3baf60cabc9a60d7bdbaf9a946c3dc873a7df70ca23"
+    },
+    {
+      "path": "Robots/hands/dclaw_gripper/meshes/visual/link_3.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 839825,
+      "sha256": "47bc7ecb8570e87552102565349ad9ab3391f64b17ef15a449df185167a5bb9b"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/LICENSE.txt",
+      "archive": "Robots.zip",
+      "size_bytes": 376,
+      "sha256": "85d27de711aaad343c2c8b9be4712391a4ed3e5c7b3d2cd14c8af399b91a923c"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/inspire_hand_left.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 15216,
+      "sha256": "29ed0ba326083938b3b7a04d72256f974a376d2e29805c3f710cd9208c16db83"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/inspire_hand_right.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 14717,
+      "sha256": "bfc377800d1913a36d4bf4693ffce0003f8a2555bf2a803b9a02c1f24b055769"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/left_index_intermediate.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 104519,
+      "sha256": "7e29a7ed6b070a6a07cde1a60356c5b993e601d3a72c02d83bf1296f0f5fb902"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/left_index_proximal.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 42128,
+      "sha256": "e4729ae88acb28358ba90a094c0a014a3536cc112a7451bc14ecc34baa399026"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/left_middle_intermediate.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 101298,
+      "sha256": "58f8e4f6bd3e5df1e02c4fb08e72cffda93a8ba69eba5d723424d70171d0aa29"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/left_pinky_intermediate.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 164842,
+      "sha256": "78455326a6e15df785fb0e2f55662e43e8231e4cabedb8aa4ffe6e2a95890198"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/left_thumb_distal.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 70918,
+      "sha256": "37b579f6cd36fe4599e400d7d56eab4f913fc3c255ce5e3af57d6f496a87b053"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/left_thumb_intermediate.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 44768,
+      "sha256": "b2c83a75ab32e3044fe132e4e652135e5978d3c61c1cef4641cd70225859525f"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/left_thumb_proximal.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 59031,
+      "sha256": "954b06c2605e1e56042aa2cbcb6e044cc49f200d3da4e40a84ae5dae01e5fc82"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/left_thumb_proximal_base.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 5415,
+      "sha256": "89b9807a27b9139a4abaf87a8204c6b7990d3d3145ee220893dd62306f3be8f8"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/right_index_intermediate.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 169645,
+      "sha256": "dd53ff65ae730edafd9ff80a90615c50576a0dd0acd228b2c0bdb03271fed417"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/right_index_proximal.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 70325,
+      "sha256": "b03fd612bc35f229d7d567801165f2bfa241a8fc3ed6ef00e8c8fd4e143f222d"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/right_middle_intermediate.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 69424,
+      "sha256": "cdd6b0035d17b2ae8ca908b743ab85da74aa0415b30ea911bd4c5be376a91ca0"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/right_pinky_intermediate.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 112643,
+      "sha256": "34f210b27d682ac50aaed9632b8cc6d09fddb6c08fa7d0d25428eeaa2b3441be"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/right_thumb_distal.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 116917,
+      "sha256": "45fda90356a618728e33db7f5077b591b3aa778ada8395e5ee2d68080ab16a3d"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/right_thumb_intermediate.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 75284,
+      "sha256": "c8779b10337cca5477abc35f3287f6f5d07fbe58933a43738ebd1d1e297c560d"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/right_thumb_proximal.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 98037,
+      "sha256": "e58d05f48e5a5bb72b14fe16e516e5c6d779da9722d58704765c5ca715bbfa10"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/collision/right_thumb_proximal_base.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 9466,
+      "sha256": "058319b2f7fb81b67e34f442171c7672a9b953652e80f263edb4b12968ddb2f5"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/left_base_link.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 898872,
+      "sha256": "f69967f7eecd1806baf1e67c32488c17ba16f1f5f5701204fdeb6d49331f5a15"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/left_index_intermediate.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 167048,
+      "sha256": "3a4bd7dae131b19da606b7611680c9886e83072d6c61e7b947bc735c8ab29747"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/left_index_proximal.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 212348,
+      "sha256": "1ea4313f0efc0a18de3d2b7d06145760a574c0d19b21b001f7227e0e8e22ecf9"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/left_middle_intermediate.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 161244,
+      "sha256": "672ef42a4fe9a3adf1aa93ad579c12419085c7b164dc3895b441fc318fdee885"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/left_pinky_intermediate.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 204556,
+      "sha256": "2bbeb5d8013f95f4a567004364e74ece6f5e367e8597ef630aefb462fd223990"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/left_thumb_distal.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 45312,
+      "sha256": "993a02fe7f87003960c104bf6fdc76a297dc4a100b1de50042074d906dc52589"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/left_thumb_intermediate.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 89504,
+      "sha256": "22e0c4cfd7b531d36f0bd9ead646c51c2257f39a00a68b7d236b5b2c78fee505"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/left_thumb_proximal.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 45684,
+      "sha256": "658c983511369d1817a2206694540e1074908752f70ee730c7b2d6173fa747fa"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/left_thumb_proximal_base.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 39924,
+      "sha256": "0623a10ac8f6d7a0f5d8b974fa48af59da7f46d2440bed1e4161f385feb1883e"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/right_base_link.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 851444,
+      "sha256": "5e4523c936818785318829a5ae64831994d7a85814e53d6461c0ee9212ca6750"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/right_index_intermediate.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 167248,
+      "sha256": "55f2041dd7674ba95d3fca88dbfdd721bf6f4c4b17d8ae56733ca040a6ee0584"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/right_index_proximal.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 225860,
+      "sha256": "aa989ff69ebf066dabef421ed9062d34a4588162aa1569c717a3262a99a031ba"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/right_middle_intermediate.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 146144,
+      "sha256": "57ae7d1525270ac4edef4f9ff1b98898e3943e39d3ccc4ab068831fd54349636"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/right_pinky_intermediate.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 204908,
+      "sha256": "6b49449acc77fc66f78eaa2025e608b8eae94f22c1cc3e6b6663c960035675e3"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/right_thumb_distal.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 45788,
+      "sha256": "eb4f5ac8fc524c0c70d06f98dd897307a0a340fa74091d3345c981d2a8f23cf8"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/right_thumb_intermediate.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 88992,
+      "sha256": "1e9df1f663633b73c918479c2b27bd7c586a90a7c9273f10b00e87030197c228"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/right_thumb_proximal.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 45796,
+      "sha256": "c3b9fdd15bcea183e0f05fa261cb7da93ba4d905e7fa04906c7776c9d3975d5a"
+    },
+    {
+      "path": "Robots/hands/inspire_hand/meshes/visual/right_thumb_proximal_base.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 40060,
+      "sha256": "3e1143d3fc366a169e795be8003892f7e5d7cd5b7b322ac55b39089aca5c9f81"
+    },
+    {
+      "path": "Robots/hands/leap_hand/LICENSE.txt",
+      "archive": "Robots.zip",
+      "size_bytes": 1467,
+      "sha256": "1d660716f774406d39d5bc2f074bf2b3da42a5bc4688afc796b9f34a38198b25"
+    },
+    {
+      "path": "Robots/hands/leap_hand/leap_hand_left.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 24964,
+      "sha256": "08dc0cb86492b1f3cf4f43a5a66fbe08370fe28ee82fa1b6f62752ba6e02e538"
+    },
+    {
+      "path": "Robots/hands/leap_hand/leap_hand_left_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 24964,
+      "sha256": "21dd6fa53ac7eb0c65d24eea65939aca14d1df34d3bbcfafd8823b8a4aa6de42"
+    },
+    {
+      "path": "Robots/hands/leap_hand/leap_hand_right.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 24927,
+      "sha256": "7170056b44553779af566a33a3f80fc44c431f739d85fff809e9a16ed4887f76"
+    },
+    {
+      "path": "Robots/hands/leap_hand/leap_hand_right_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 24927,
+      "sha256": "7289f7bde0b61a790ab04c2a5611058ee29664f26246e7395b0f9513fc263d0e"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/collision/white_tip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 640739,
+      "sha256": "bbc1d4b64f4f4115fb0fd776a14abd9496e339804bf42cb645d30aee13e61f88"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/collision/white_tip_thumb.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 402712,
+      "sha256": "80e7c3de59c0b1b141e2c91ffa36374bef11636e362173d7a68a79022829020f"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/dip.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 1485152,
+      "sha256": "548013ccb478a29552b2d8e150cc5f90f45c6a638bc008e9ed4f81b23228a6c0"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/dip.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 253,
+      "sha256": "240a97143e932aba69009abdd728066939517cf808108623a014ef577976caeb"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/dip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 1013886,
+      "sha256": "472e054348c5a0e987829e721d5ba8486ddd47d867e416bb45d8d2a2ff917acf"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/fingertip.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 544612,
+      "sha256": "e422eb83230fed126c38d7b6f43a5f9ec71b58059c8acefdcf6b2ec04bdc0e7c"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/fingertip.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 436,
+      "sha256": "7e972e2fb3bd55d0aac677a6cc41a2c1a6678868ac0b4f1a03af5786540fc3d7"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/fingertip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 359831,
+      "sha256": "6bfa2afb2a06557ce0c54b03baec13522bfe561aabb576bd4701d4704f93ec0f"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/mcp_joint.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 1557804,
+      "sha256": "7b33228fa19433e260c20588698416d4a0fc7018cdf927c28316513d21f79c3e"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/mcp_joint.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 253,
+      "sha256": "240a97143e932aba69009abdd728066939517cf808108623a014ef577976caeb"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/mcp_joint.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 1065471,
+      "sha256": "3d7194a6a33626ffcdfce78a0ca854e67b6b49f2e09a3bd62656f94515fdfbec"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/palm_lower.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 5045588,
+      "sha256": "3262010395bce54e8441adffc704b4cf10a2a1f69c3aa726ff5bb63de61a9f57"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/palm_lower.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 253,
+      "sha256": "240a97143e932aba69009abdd728066939517cf808108623a014ef577976caeb"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/palm_lower.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 2978219,
+      "sha256": "90d1d9b2a1c9eea15fbeb2232019c6191a55a3c4afa7f7427ce7afa0e3108b07"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/palm_lower_left.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 5338144,
+      "sha256": "c080628e0d47dd074db4499a942a3d623261034d6dabbb5c3b6be985eb1a7977"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/palm_lower_left.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 236,
+      "sha256": "8d089b69a407ec56c2beea4be14c24d0be0a8eab7fae7df04f35cb147ef69153"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/palm_lower_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 4514064,
+      "sha256": "5369c7bb802fb7effb58ff24d64da77b8630330c800cf490d96b631e93fed1e9"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/pip.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 1036400,
+      "sha256": "f538bd1a1aff270032c55ec12b6b5f6df263465d8ad70900ef71ea8b3c7755f2"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/pip.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 253,
+      "sha256": "240a97143e932aba69009abdd728066939517cf808108623a014ef577976caeb"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/pip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 673869,
+      "sha256": "3fff19dc1f0100bb5f34eaf8a40fcf3db40f96fd7179bb7336e538b21ff8e067"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/pip_left.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 1076996,
+      "sha256": "297c1aa40bc83e12b471f0e16950188153ea88f20a3fe8197823b9c1a3702470"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/pip_left.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 236,
+      "sha256": "8d089b69a407ec56c2beea4be14c24d0be0a8eab7fae7df04f35cb147ef69153"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/pip_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 1115403,
+      "sha256": "8a9206845849784efef43486e2dafaad142f32a53c0d0fdde0381d178ec6acb4"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/thumb_dip.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 1452096,
+      "sha256": "90d8564dfc71b191a14a0464c6812255f32350647bae32eab8eac15972cc6db5"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/thumb_dip.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 253,
+      "sha256": "240a97143e932aba69009abdd728066939517cf808108623a014ef577976caeb"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/thumb_dip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 968312,
+      "sha256": "5b402876601f2b0b36631e6a54ad20588f88e74f52320b6c902a8bc694578689"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/thumb_fingertip.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 1263544,
+      "sha256": "a88ba3ddc33179f6cb9427ab5dc8019dc1005d38ba1b75adf36d1c5531a30654"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/thumb_fingertip.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 436,
+      "sha256": "7e972e2fb3bd55d0aac677a6cc41a2c1a6678868ac0b4f1a03af5786540fc3d7"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/thumb_fingertip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 734609,
+      "sha256": "4695d72a70285e8a0132ed4de49876cf99c813182e3a24b172b53631224890de"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/thumb_pip.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 402568,
+      "sha256": "4fc1fcc3421ef81e07492ec1842e2fba1b2c3dcf60007ba2ae03525836e5be2d"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/thumb_pip.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 253,
+      "sha256": "240a97143e932aba69009abdd728066939517cf808108623a014ef577976caeb"
+    },
+    {
+      "path": "Robots/hands/leap_hand/meshes/visual/thumb_pip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 294575,
+      "sha256": "d28876cc3b674323aa7d8a628a4240cda2757c61263b05e86a66280035a2689d"
+    },
+    {
+      "path": "Robots/hands/panda_gripper/meshes/visual/finger.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 50100,
+      "sha256": "3362790a5d76ab35d74e414e2c54ec6491e02c05aa16ff2b37b67c897824ae77"
+    },
+    {
+      "path": "Robots/hands/panda_gripper/meshes/visual/hand.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 544984,
+      "sha256": "8d6407d57d6e1303aef33cdaf3c4c7bf2a407c25af73f60ad6f2c7b041e171f9"
+    },
+    {
+      "path": "Robots/hands/panda_gripper/panda_gripper_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 3743,
+      "sha256": "45ff745fe9476959f8d86bc5bf6e482a40302e4a007dff0f41d9f333b16f9ad8"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/LICENSE",
+      "archive": "Robots.zip",
+      "size_bytes": 35349,
+      "sha256": "61a7eadb76f18896e20379ca6d161288d3f6c01ba128309e0ff7786d87656398"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/d11.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 12531,
+      "sha256": "52808c3e08e71cfa0855389ea9dc766cc9d60f6e5a2737cf109251d627da3ea2"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/d11_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 12561,
+      "sha256": "bd37f58bd09fd12f9ad9a5304a9dd893edf589aa03d52b317bbf18f8fd71d6e0"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/d12.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 20074,
+      "sha256": "1f105ba785377433f8358f944f6966c62e49701358b03bc6f2de9d958de85e85"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/d12_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 11709,
+      "sha256": "298f1b37993035372dec3549151f64ea429b9bc5219c8a8b193d5b9f355aa192"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/d13.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 10339,
+      "sha256": "222d28123d15145cab9b99b1b51f57ca32b9e249d5f5c35e2b6f50bb7fc08d26"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/d13_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 5934,
+      "sha256": "5dc4debce6b7aad8835171488c5835ebfb314bb64e386451fa6eac98db473e48"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/f11.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 9192,
+      "sha256": "e6dfd6157b3542f0d1c3f1e3a8b3fff6d1aca73dd0d4f64e459b74d5af3c0c75"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/f12.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 26526,
+      "sha256": "0518531385ebc027807240b3c1ad4f2963f01ead98b86fc0121adf519b48d1b5"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/f21.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 8659,
+      "sha256": "10066df55328bbde94c30cdaf6d098962ba68bc5d6e996ab07721fc5970c156f"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/f22_f32.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 30409,
+      "sha256": "07ac1ed0e8c6da49dad9fdbff6b0672de1cf47d9e737a18eaff5ed090f6d0a13"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/f31.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 4950,
+      "sha256": "f47a0654479cc1b139b42f4e0e2619b66d746cac72e31984e4ac2467fb019c6e"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/f41.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 7503,
+      "sha256": "1f86c8c614e7633cdc0e03f3dc79c0f8572e15f84326994d362115603b41a800"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/f42.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 17436,
+      "sha256": "ce707cc5cdbde0e0f13d4f8d47b311538e2c1f8ad237adb153aab24143b1bacd"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/collision/finger_tip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 17651,
+      "sha256": "253083989fb6824b2022c52c3089357a90657afbbea71f6e257760e2b7478a1c"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/base10.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 65352,
+      "sha256": "97afc4877751230ae05e7f0a7a79558c4ee133d9cb5c508d950b95940e0019fd"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/base10.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 57411,
+      "sha256": "a417edf6e6b45663f981b2be258c761551470132584708b0b8e4da04b0f175ef"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d10.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 11300,
+      "sha256": "8ec2898e06d31bead803b436bf123f5abac897c6241355b6522334aae0ddad36"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d10.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 25857,
+      "sha256": "236a4e402a9e4a11903e4ec213e74435951432ea623c1048e1d4d2f7cd039565"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d10_left.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 11312,
+      "sha256": "6d82a284a812fe281ba2f20e0d39c8f9b34952a7e0e41b7fdc064819641180d5"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d10_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 25862,
+      "sha256": "485e68fe98e73aa0306ced9159b40e3eac94ddc71edd876a74f34039dbd5384e"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d11.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 23212,
+      "sha256": "fad69fe7d11c54c0c55054ab0e1650628dccb3bcb4c927c80d419f2f4032b639"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d11.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 55829,
+      "sha256": "192d4ed0ef7a36c2845a6a768cc1eef7918cff29777b45c7c8e8115bc858965e"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d11_left.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 23216,
+      "sha256": "fb2612093743d3b79279ad2cc3de4f5ec7ee65bc98cda7e08ef01614a4fac26b"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d11_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 56204,
+      "sha256": "7635f5469b9c3e6328a2ab575aba0bfcb2e28c1164ccca0c5e0ecef8445cce0b"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d12.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 14444,
+      "sha256": "3eab43dd8803592bcde1c3d5cf5a21deb642e341ef737a6854037064563e9bcb"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d12.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 34733,
+      "sha256": "d93c0547ff67fc2b88d817cb79eb616b5555cbe411065692b951d5342939041d"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d12_left.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 14452,
+      "sha256": "55233567a8bd30343505fc4b7472f8715015d8e9897162334b785fb60c8597a2"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d12_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 34807,
+      "sha256": "81fe124d8ce2dbbb2eea5ce6def1b6bb8efb2a47c74a08b010ffb5ce33641755"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d13.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 11788,
+      "sha256": "f5080c7ad409553e7505055454bc0cdf16b2288198b7802f6b33788df54dcc06"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d13.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 26840,
+      "sha256": "dc8be8ee1f5ae7f2ccea88329c2a31dd5460c7b526d15cecd5e60837aef4bec4"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d13_left.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 11796,
+      "sha256": "f7743c35e63b3a9cf9b25dc81d537e8ae23ddfec8cb121b247d270fa3c8bda3d"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/d13_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 26817,
+      "sha256": "e0f2174826c3bd658b7ac8c2ca0f7aeea7c3f6601425c0a758059380c418ee21"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f10_f20.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 8616,
+      "sha256": "4d8121a11ef9a5b6ebe27b65b095b269fb1940cd25d582577a212a013701259a"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f10_f20.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 18309,
+      "sha256": "83f0f607c6c0da70a0c7affdf09c50e38a7aed5e2f78fc0990335f6aed85a7c7"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f11.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 22800,
+      "sha256": "9b0a6f0a44eb347ce79999a6da19e80e8fdd10642786bb6149f32df865436cc2"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f11.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 56519,
+      "sha256": "89b8d79fe7ae9e49577c31a5a8566f378e95cbbc53b9f175d055427f77232434"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f12.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 17408,
+      "sha256": "7f751bf042a30d4b5a9556f1a39f6f3136076617614a9ad64eb3de11308cbb63"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f12.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 45020,
+      "sha256": "6cbef64f6e246479d7da474790f9db73f16c847e3bc0760789020931659a55f1"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f21.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 22824,
+      "sha256": "06411c508ce7768d13fb4889fa194eec1ca78a973036be0b3bdea5ba3be5bf3d"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f21.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 56610,
+      "sha256": "e266e08964bc614719919b803ca3ed9a5db6ad48b7349c6dba9cdd5ed249b212"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f22_f32.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 18556,
+      "sha256": "61725d949513e86899cd1a75eef0c98a96d0654a3236a463e814bf97d6199295"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f22_f32.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 48752,
+      "sha256": "00c35e29c129b68073d60f5df8f0f093545f399a03988da216eb343d7d2ec41a"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f30_f40.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 8612,
+      "sha256": "5ce97835ab175f4b4f468a537612a7ea5d6f2935189fca40ca183e38b1978280"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f30_f40.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 18152,
+      "sha256": "7446445d20a84fb1ee0384e419674ba25771304e67e1cdde004c3c28071a2041"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f31.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 24716,
+      "sha256": "ae0260780378e03db449c5922f581d5f8f8ddeda30046133798bb557a715acb2"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f31.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 62559,
+      "sha256": "a36b081baf7526427b7ddee001da8f4dd9a81553e2dc6b69de8ca2003ce438fb"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f41.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 24716,
+      "sha256": "70955f0036a6afab758535d9479f69407fe96105e9ce1b8770bc2521d1c93b89"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f41.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 62546,
+      "sha256": "03716108ae7b75117a8bad19ca9d96650bb530779f883b24e202d407e1170f0b"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f42.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 15772,
+      "sha256": "4c2401950a1526369595dd809dacdcfebb6b31683b12bef59674f0362782d9eb"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/f42.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 44213,
+      "sha256": "7d926b70a635de4cd5d2efd6d34ad713377823265d1f229bb1d95e3773ec999c"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/finger.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 1011,
+      "sha256": "8ae395c7bd4431f2bb950c52bd97d4b557754b353ff527ff9638830b373b6045"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/finger_tip.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 13628,
+      "sha256": "90b37fab655bbce5379de84738a3d0ddfae0bfb2f34c763d91cc68fb00ab8ade"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/finger_tip.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 32466,
+      "sha256": "18124aa5471efceab687cf6ec2188bb5960ce8ac10caea823a45ea8343823d30"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/h10.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 47632,
+      "sha256": "8cd18461a820b8cb791f6267829f72615daf9831bf207b5c412ad4c06c4af61b"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/h10.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 118254,
+      "sha256": "17f9b588d4e2720820d4d8bcdc11f8e819b767308e010b02e2275decde382207"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/h10_left.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 47684,
+      "sha256": "0406acbf7798a3728f97ba984e2a39f38a5422e013fa67966b6015d9d6ea60eb"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/h10_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 118162,
+      "sha256": "b6c988c110d09d3240e12cd8c3f11c5ef5e6134cfded783f1ccb5f413f539f60"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/h11.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 35920,
+      "sha256": "9f6ec0fdfd2b9b665d3be5b215313f07130dfc0d3f098622d6ce6414315e8535"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/h11.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 91231,
+      "sha256": "0c5d99a41e890c420a061bf5296b37e090d9aee09791432bf6cfc1ef34361944"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/h11_left.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 35952,
+      "sha256": "ca00f3b263aba7768ef8faa42ca934a448749f660f8e275a69cd83bccd3f27a8"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/h11_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 91965,
+      "sha256": "45d8e18ee47faa08ac7e43fcc91334b5014382e85cb5eda9c9056a8c2520736f"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/meshes/visual/palm.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 1401,
+      "sha256": "87c0754452e16a69429277523e8bba9434cc64ad3f46a7935ab36a5fc5cee2d6"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/schunk_svh_hand_left.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 17698,
+      "sha256": "21a319e5a15986c568c6015896a2408886a04490f9f91c72bf14f57c036e24a2"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/schunk_svh_hand_left_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 17698,
+      "sha256": "32710c20db594677a2989fa7eabf384b191dbb00eec5f70facbb591411026e1b"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/schunk_svh_hand_right.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 17752,
+      "sha256": "149795d35925f9ddb35a4270407a5dc5f839f3d29f9d929c80484981637c046a"
+    },
+    {
+      "path": "Robots/hands/schunk_hand/schunk_svh_hand_right_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 17752,
+      "sha256": "092d9c3de9a1151c4dc6c5affe582ba9eb4351e95687bd2bc06ecdc7e6427762"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/LICENSE",
+      "archive": "Robots.zip",
+      "size_bytes": 11555,
+      "sha256": "a0cde1d0181b6b646c06d3a976f0499ae5128f9ea8516e5fa1ff73abb6a1ccff"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/README.md",
+      "archive": "Robots.zip",
+      "size_bytes": 745,
+      "sha256": "7142c32b7f51e5c72f071db6f518abbd7940f7948d2278e3fc716dc321f0e2c3"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/bimanual.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 64648,
+      "sha256": "2c4118783b2e6a3ee9dfcf069ee628086bb2f6d23a790139b6304ff0d374813f"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/collision/f_distal_pst.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 29008,
+      "sha256": "60fc4387b60b9362cdbc5b40d8f3869247cc5049de75fc6e7e7ae32cf8e87e33"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/collision/f_knuckle_E3M5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 7362,
+      "sha256": "7b76866ef85a388f79dba377293c7d12a17154d369c225e760afa9ccd5fa6b22"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/collision/forearm_E3M5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 29880,
+      "sha256": "ae348fdf00c61695dbd484455070101e901d89f3977a7585ae575742cec4a3be"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/collision/th_middle_E3M5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 321510,
+      "sha256": "de7278a75a3cc202f7186f0e0701c22c2cd6cdaf6ea68f991cbefb819d7bce38"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/collision/th_proximal_E3M5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 353175,
+      "sha256": "1763d80c8e34ed86bc20f0de67cd683aaf10eb7ff3b8395a9ab2b35554183c4c"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/f_distal_pst.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 393712,
+      "sha256": "a961159aafcda9906e30456dbe6956890b207bea6dd82aa83494473a2a7692a4"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/f_distal_pst.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 237,
+      "sha256": "997065356d2a865204443d1cba21d19067369da599e9d3a4bbaa02bfe8ef3360"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/f_distal_pst.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 378684,
+      "sha256": "04d7ddc2166089b0c670806c1d1eb4b47b8f8c48428c00581b0fe64d59d4e5f8"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/f_knuckle_E3M5.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 41528,
+      "sha256": "4cfd18bc698f89813900fd1a743459b35f95c8aa3d873e37bd5749ef4cdef16a"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/f_knuckle_E3M5.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 237,
+      "sha256": "a689c3f677cda3adfa1cabd6f60c7b17770ad6cecc3d9aea57f6be4865ff1510"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/f_knuckle_E3M5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 36617,
+      "sha256": "1452690f5f93875665e5b23f022e89fa04f2a6aab6e49ae0112db7821f759792"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/f_middle_E3M5.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 33764,
+      "sha256": "88aa04c5c084e64eb1d210c74638d552fb3efbdff6e5875f0193fe22a40a695d"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/f_middle_E3M5.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 237,
+      "sha256": "997065356d2a865204443d1cba21d19067369da599e9d3a4bbaa02bfe8ef3360"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/f_middle_E3M5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 29082,
+      "sha256": "c1c0b460c69894cbef8bc1ab8bfed6112832a20aa77531f3823a4fb8090daeac"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/f_proximal_E3M5.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 78800,
+      "sha256": "9c43089eac777d05cf902620931b81870aa3bfb811370ffa58d34548577d8c85"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/f_proximal_E3M5.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 237,
+      "sha256": "997065356d2a865204443d1cba21d19067369da599e9d3a4bbaa02bfe8ef3360"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/f_proximal_E3M5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 71175,
+      "sha256": "adb5475347a153997da789b0ab46b3b1b945906c9bf6a4e28787150ed3afa8cd"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/forearm_E3M5.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 471844,
+      "sha256": "82bbef2f9dead84f527fef66bd1993895477388daeb1550b9bcd7a25e713754c"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/forearm_E3M5.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 609,
+      "sha256": "5f99cbfe0015ff932b593b00f3d42c1b68928a49ef7d7ec6918c04f48528709d"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/forearm_E3M5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 442301,
+      "sha256": "67f719d4131da5edd1c43e8a560481087074833e3fe4580f4ffe0ea3d07691fb"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/lf_metacarpal_E3M5.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 107936,
+      "sha256": "3be27d164d5eafa1ab272d755f5f363454c5204102135ef0bb486045520b878f"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/lf_metacarpal_E3M5.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 237,
+      "sha256": "997065356d2a865204443d1cba21d19067369da599e9d3a4bbaa02bfe8ef3360"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/lf_metacarpal_E3M5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 98772,
+      "sha256": "def539fcdefb4399ae69cb4fc5b2c5296b43ec7015c5581c2b90e7643a030a62"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/lf_metacarpal_E3M5_left.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 107824,
+      "sha256": "b69f0ad7600c6f1eb7c74ba563d0acaa5864b31531e94a660ba8bf5cd7a23817"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/lf_metacarpal_E3M5_left.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 237,
+      "sha256": "aced883bd97a1bd04abe5c74e44224a7116eab8cc61f332a51c3b4a1e017c7d2"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/lf_metacarpal_E3M5_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 43756,
+      "sha256": "dbe1dc639cd9c212229a4010f60ebc56b174ff6891eac05410e6bee2965f927f"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/palm_E3M5.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 857944,
+      "sha256": "dcb1a4b613d28970100090830626a09ad1ca4d5479278880226baa7ed915a3fc"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/palm_E3M5.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 237,
+      "sha256": "997065356d2a865204443d1cba21d19067369da599e9d3a4bbaa02bfe8ef3360"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/palm_E3M5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 807151,
+      "sha256": "529d6bcf4f356aeaece8a9c884d98bc399d039fdb2f3174449aeaaf262aa812d"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/palm_E3M5_left.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 858264,
+      "sha256": "1f9871bc32f2385187a199fa840c08528201f5ba05d690388b652326e6eb8714"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/palm_E3M5_left.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 237,
+      "sha256": "8e79f263296075919dff5bd28d6eb21fe2d4ca7704d848e306f41dd788663c3a"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/palm_E3M5_left.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 385205,
+      "sha256": "3f7b3a9f8e00602aaba900fe107a19e7a9ab480750faa63812311d5009711bdf"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/th_distal_pst.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 353408,
+      "sha256": "b664fc97df01a855e237a1cac0b25e6dfeb3322ead9c77dc338877cb5854d6e7"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/th_distal_pst.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 237,
+      "sha256": "997065356d2a865204443d1cba21d19067369da599e9d3a4bbaa02bfe8ef3360"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/th_distal_pst.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 338390,
+      "sha256": "da8ca3aa9aeceeb6aac940a6db0605cac4014dcd496133080bc5787e217346ce"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/th_middle_E3M5.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 95600,
+      "sha256": "3ee962b02fd4d1f40cf71e9d44c10fccaea022c5c08312ab318b6045b8426a3b"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/th_middle_E3M5.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 237,
+      "sha256": "997065356d2a865204443d1cba21d19067369da599e9d3a4bbaa02bfe8ef3360"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/th_middle_E3M5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 85987,
+      "sha256": "49416cd8b0ca8a976749cc7c954ce56a59fc9e4664c68fc931d14a1a53ffd2ba"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/th_proximal_E3M5.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 30940,
+      "sha256": "3a16729bc49472397cc02663998e903f49cab353b9385d4469b801d6c9ceadb9"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/th_proximal_E3M5.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 237,
+      "sha256": "997065356d2a865204443d1cba21d19067369da599e9d3a4bbaa02bfe8ef3360"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/th_proximal_E3M5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 26737,
+      "sha256": "c021a0c066743274d4133d0e85146a3fa3433102616a5e56e2aa18ff602bf996"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/wrist_E3M5.glb",
+      "archive": "Robots.zip",
+      "size_bytes": 132856,
+      "sha256": "e7f04596fc7e45d5f33f797a20187842433e36c560cde1eae8fe6f51728b915e"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/wrist_E3M5.mtl",
+      "archive": "Robots.zip",
+      "size_bytes": 237,
+      "sha256": "ddf7562276de61678b848d82160baee5c654af0de07c744581a740f2e1b6ba45"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/meshes/visual/wrist_E3M5.obj",
+      "archive": "Robots.zip",
+      "size_bytes": 124663,
+      "sha256": "29724f4640064dde710b3725cbd37b0ee1ba8e000b0b5ad402d66bbba284bd29"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/shadow_hand_left.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 30723,
+      "sha256": "24988ac25c1d9136e0c18bed0d3d9d5d2745d7aa83df2b4a9ec0abf36be36d48"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/shadow_hand_left_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 30726,
+      "sha256": "2f4a478f8a09353a179e32f93013684c40e73c780d209d4cb52cb35a40ec0e77"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/shadow_hand_right.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 30600,
+      "sha256": "29a50063cced2fba81dfe3d208ba54499fc12635c9189d0822f7caa2771c36de"
+    },
+    {
+      "path": "Robots/hands/shadow_hand/shadow_hand_right_glb.urdf",
+      "archive": "Robots.zip",
+      "size_bytes": 30603,
+      "sha256": "84189a3b6fd3d9cefb114922c3d86ccdc1b0d8211859ebca554f682e61ab95df"
+    },
+    {
+      "path": "Scene/Collected_default_environment/default_environment.usd",
+      "archive": "Scene.zip",
+      "size_bytes": 10139,
+      "sha256": "f16a9e1234bcd1f87380436688aae8d5152b7aa5fe84e3834c02cbd5690d3f63"
+    },
+    {
+      "path": "Scene/Collected_default_environment/.collect.mapping.json",
+      "archive": "Scene.zip",
+      "size_bytes": 1179,
+      "sha256": "aa6b9132387b8ce1f3890552bfe21be78aab3749dea818a4e090f6943dd51beb"
+    },
+    {
+      "path": "Scene/Collected_default_environment/SubUSDs/textures/Wireframe_blue.png",
+      "archive": "Scene.zip",
+      "size_bytes": 111895,
+      "sha256": "940b96ee8c8e53bd1acbc770d4ca0ac98bed9c96439ab386d1b27dbc9790cc4e"
+    },
+    {
+      "path": "Scene/Collected_default_environment/SubUSDs/textures/WireframeBlur_blue.png",
+      "archive": "Scene.zip",
+      "size_bytes": 1474958,
+      "sha256": "44fc0e82007bb0bd94631cd7ec45986a71ed74b9413899fbffac13efe151be4b"
+    },
+    {
+      "path": "Scene/Collected_default_environment/SubUSDs/textures/WireframeBlur_basecolor.png",
+      "archive": "Scene.zip",
+      "size_bytes": 436257,
+      "sha256": "deab39088eaf39ed7be951966c5e6bd5e58b90ab64743b0cdc8e5579fd5a99d9"
+    },
+    {
+      "path": "Scene/Collected_default_environment/.thumbs/256x256/default_environment.usd.png",
+      "archive": "Scene.zip",
+      "size_bytes": 86454,
+      "sha256": "5e380abf40dd451bd7fe2103016a09441fca9b5782190b18471178a36c6760e4"
+    }
+  ]
+}

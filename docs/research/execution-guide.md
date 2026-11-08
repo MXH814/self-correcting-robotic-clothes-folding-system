@@ -2,6 +2,8 @@
 
 2026-11-06。Python 3.9+，主工具仅标准库；另提供可选PyTorch神经基线，使用本机已有安装，不安装 GPU/仿真依赖，不调用外部模型。工具是探索诊断实现，不是最终研究模型或机器人控制程序。
 
+2026-11-08执行安排：马确认在张电脑完成基础复跑，后续仿真/采集/恢复闭环统一在张电脑运行，不要求组长电脑安装Isaac或重复基础复跑；本页离线命令可在开发电脑使用。见[当前安排](shared-simulation-workflow.md)。
+
 ## 1. 从仓库根目录运行
 
 ```powershell
@@ -77,7 +79,7 @@ python -m research_tools.diagnostics evaluate --input runs/ma-smoke/synthetic.js
 
 以上仍是人工fixture软件小试。真实数据时将路径替换、先用validation选开发配置并记录决定，再冻结开发诊断。MLP是两层ReLU隐藏层＋单logit输出，Adam、BCE，训练集标准化，默认width=32、50步全批优化。B0–B3同宽，B4增大B1输入的宽度以近似匹配B3参数量；报告维数、参数量/比率、优化步数、CPU时间和损失。**步数相同不代表FLOPs相同**，正式实验仍需算力控制和多种子。CLI每次可指定seed，不自动挑最好种子。
 
-模型训练只用train，预测时不读取开发标签；输出logit仍为rank_only，不作概率派发。评估导入需原数据SHA256一致，B0–B4对同一批合法候选覆盖完整且无重复。保存输入指纹、PyTorch版本、代码commit及dirty状态；本工具不保存checkpoint，只用于小数据诊断，不替代完整训练/模型管理流水线。真实视觉encoder和接续控制器仍未实现。
+模型训练只用train，预测时不读取开发标签；输出logit仍为rank_only，不作概率派发。评估导入需原数据SHA256一致，B0–B4对同一批合法候选覆盖完整且无重复。保存输入指纹、PyTorch版本、代码commit及dirty状态；本工具不保存checkpoint，只用于小数据诊断，不替代完整训练/模型管理流水线。固定RGB网格观测编码现已实现（第11节）；学习式视觉编码、候选动作映射和真实接续控制器仍未接入。
 
 ## 5. 报告如何读
 
@@ -115,3 +117,11 @@ JSONL可选提供`stage_cost_score`（全体行均提供或均不提供），由
 新增`python -m research_tools.handoff_audit`审核已提交的真实文件/关节JSON；输出不代表已从原始NPZ重提取。新增完整可信轨迹导出器和纯数值历史读取工具，命令、信任条件、输出结构及最小剩余输入见[接入进展](ma-data-intake-progress.md)。NumPy为可选依赖，本机已有；不要为执行这些离线工具覆盖Isaac的核心包。
 
 旧轨迹缺少时间戳和已执行动作，因此action history与时间保持未知；阶段窗口只按记录顺序，不能用作新鲜度/停止证明。导出包与恢复候选schema不同，不能把正常示范帧直接送入H1/H2候选比较。
+
+## 11 已收到真实数据后的固定编码
+
+`python -m research_tools.legacy_features --input-dir <data2目录> --input-dir <data3目录> --output-dir <新的输出目录> --grid 8 --history 4`。
+
+先用现有工具核输入manifest/图像，再输出固定RGB空间均值、原始关节及带mask的过去记录。没有拟合参数，没有动作/时间/结果补造；输出不是诊断候选schema。本机已在153帧运行，详见[真实接入结果和预览](normal-observation-integration.md)。不要为这两条正常轨迹自动创建训练/验证划分。
+
+现有诊断监督限定无既往求助/介入的根状态，人工返回后的后续成功目标不能与整试次自主指标混用。评分与旧代回复/屏障定义见[契约澄清](../design/contract-clarifications.md)。preflight仍仅返回候选/原因；新增非法响应类型和布尔/浮点代次拒绝，不代表实现了协调器或物理停止。

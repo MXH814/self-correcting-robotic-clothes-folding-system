@@ -136,6 +136,17 @@ class GateTests(unittest.TestCase):
                     replace(self.ctx, authority=False)):
             self.assertIsNone(select_candidate(self.decision, ctx)[0])
 
+    def test_malformed_response_does_not_raise_or_select(self):
+        for decision in (None, [], "invalid", 1):
+            self.assertEqual(select_candidate(decision, self.ctx), (None, "INVALID_SCHEMA"))
+
+    def test_generation_is_integer_not_boolean_or_float(self):
+        for generation in (True, 1., "1", None, -1):
+            decision = dict(self.decision, control_generation=generation)
+            self.assertEqual(select_candidate(decision, self.ctx), (None, "INVALID_SCHEMA"))
+        self.assertEqual(select_candidate(self.decision, replace(self.ctx, generation=True)),
+                         (None, "INVALID_CONTEXT"))
+
     def test_time_and_budget(self):
         for ctx in (replace(self.ctx, observation_s=8.), replace(self.ctx, observation_s=11.),
                     replace(self.ctx, attempts=3), replace(self.ctx, cost=.25),

@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | UNKNOWN | 观测不足，等待停车后检查衣物 | 停止、求助；无新派发不计次 | S02 遮挡 → S03 |
 | STALE_OBSERVATION、DECISION_TIMEOUT | 观测过期需重取，或决策超时已取消 | 记录原始原因；活跃决策中连续三次不可用，停止求助 | S02 过期、超时 |
-| OLD_GENERATION | 旧控制代号已失效 | 丢弃；活跃决策中计不可用，停车后迟到的回复只审计，保留执行锁 | S02 旧代回复 |
+| OLD_GENERATION | 旧控制代号已失效 | 只记审计；当前代连续不可用计数、任务状态和控制权保持原值 | S02 旧代回复 |
 | INVALID_SCHEMA、NONFINITE、OUT_OF_BOUNDS | 候选格式、数值或边界检查失败 | 候选级拒绝，保留原因。可继续审核其余候选 | S02/S03 说明 |
 | TOO_MANY_CANDIDATES | 候选数超过 8 | 拒绝整份响应，未派发不计次 | 说明 |
 | NO_SUPPORTED_CANDIDATE | 无可执行候选，等待停车和协助 | 整组筛选结束后求助，保留尝试数 | S02 无合格候选 |
@@ -25,10 +25,13 @@
 | 导出位置 | 审核表对应字段及含义 |
 | --- | --- |
 | task_id、request_id | 试次登记的任务号、请求号。演示编号只在本次浏览器会话有效，跨会话应保留原文件身份。 |
-| frames[].sequence_no、control_generation、reason_code | 事件记录的序号、控制代号、原因。每个任务从 1 连续递增，键为该文件中的任务号与序号。多次导出同一任务保留既有序号。普通界面事件的原因码为 null。 |
+| frames[].sequence_no、control_generation、reason_code | 事件记录的序号、控制代号、原因。每个任务从 1 连续递增，键为该文件中的任务号与序号。多次导出同一任务保留既有序号。普通界面事件的原因码为 null。决策事件另带合成 decision_id 和 reply_generation，可复核旧代或重复回复；其余事件相应字段为空。 |
 | frames[].state、stop、event、attempts | 采样时的演示任务态、停车态、提示、累计已接受次数。界面回放逐条对应。 |
 | frames[].activeSeconds、billedSeconds | 手动推进的示例计数。没有观测采样时间、墙钟映射或真实资源账单。 |
 | decision_id、profile_version、policy_version、capture_wall_monotonic_s、sim_time_s | 缺少真实对应值时均为 null。现有 cfg、model 字段只描述演示设置。 |
 | quality、qualityReason、help、manual | 当前选定记录上的示例质量、依据、求助和接管情况。S04 质量控件更新示例审核结果，终态继续保留。 |
 
 导入正式试次前按来源门禁过滤 synthetic；合格分母仅由已审真实试次构成。真实样例的来源及未知标签见[首帧审核](observation-review.md)。
+
+
+计数以任务号和控制代号为界。当前代同一决策号首次处置后，重送只追加审计；有效决策或切代清零当前连续数。历史帧保留当时的来源代号与处置原因。归还后的接续预测只考虑此后新增的求助和介入，S04 的整试次自主结论仍使用任务开始以来的完整记录。[契约澄清](contract-clarifications.md)
