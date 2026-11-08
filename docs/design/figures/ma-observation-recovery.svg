@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810">
+  <defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#315976"/></marker></defs>
+  <rect width="1440" height="810" fill="white"/>
+  <g font-family="Times New Roman,serif" fill="#16364e">
+    <text x="45" y="55" font-size="36" font-weight="bold">Observation-based detection and bounded recovery</text>
+    <text x="45" y="91" font-size="22">FIPER observation-branch adaptation; current normal controller remains GAM + script</text>
+    <g fill="#fff5e5" stroke="#bb8844" stroke-width="2">
+      <rect x="45" y="127" width="370" height="99" rx="9"/>
+      <rect x="485" y="127" width="370" height="99" rx="9"/>
+    </g>
+    <g font-size="24" text-anchor="middle">
+      <text x="230" y="162">Independent normal trials</text><text x="230" y="198">Fit predictor / calibrate threshold</text>
+      <text x="670" y="162">Frozen detector package</text><text x="670" y="198">Encoder + context + threshold IDs</text>
+    </g>
+    <path d="M415 177 H485" fill="none" stroke="#315976" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="920" y="159" font-size="23" fill="#8b6029">Real normal fitting / calibration:</text>
+    <text x="920" y="193" font-size="23" fill="#8b6029">pending matched trial handoff</text>
+    <g stroke="#315976" stroke-width="2" fill="#edf5fa">
+      <rect x="45" y="300" width="280" height="120" rx="9" fill="#eaf5ee"/>
+      <rect x="395" y="300" width="280" height="120" rx="9" fill="#eaf5ee"/>
+      <rect x="745" y="300" width="280" height="120" rx="9"/>
+      <rect x="1095" y="300" width="300" height="120" rx="9"/>
+      <rect x="1095" y="535" width="300" height="120" rx="9"/>
+      <rect x="745" y="535" width="280" height="120" rx="9"/>
+      <rect x="395" y="535" width="280" height="120" rx="9"/>
+      <rect x="45" y="535" width="280" height="120" rx="9"/>
+    </g>
+    <g font-size="26" text-anchor="middle">
+      <text x="185" y="343">Camera RGB</text><text x="185" y="382" font-size="22">Unique frame / valid clocks</text>
+      <text x="535" y="343">Frozen ResNet18</text><text x="535" y="382" font-size="22">512-D visual feature</text>
+      <text x="885" y="343">RND-OE score</text><text x="885" y="382" font-size="22">Frozen target / fitted predictor</text>
+      <text x="1245" y="343">Past-only window</text><text x="1245" y="382" font-size="22">Score vs. calibrated reference</text>
+      <text x="1245" y="578">External preflight</text><text x="1245" y="617" font-size="22">Authority / rest / limits / budget</text>
+      <text x="885" y="578">Five-operation macro</text><text x="885" y="617" font-size="22">Persist before execution</text>
+      <text x="535" y="578">New hold observations</text><text x="535" y="617" font-size="22">Post-macro distance / height</text>
+      <text x="185" y="578">Fixed continuation</text><text x="185" y="617" font-size="22">New control generation</text>
+    </g>
+    <g stroke="#315976" stroke-width="2.5" fill="none" marker-end="url(#arrow)">
+      <path d="M325 360 H395"/><path d="M675 360 H745"/><path d="M1025 360 H1095"/>
+      <path d="M1245 420 V535"/>
+      <path d="M1095 595 H1025"/><path d="M745 595 H675"/><path d="M395 595 H325"/>
+    </g>
+    <text x="1266" y="484" font-size="23">OOD alert</text>
+    <text x="346" y="557" font-size="21">Held</text>
+    <text x="745" y="472" font-size="22">Normal: continue; warmup: wait</text>
+    <text x="395" y="698" font-size="24" fill="#a03f31">Unavailable, rejected or unconfirmed: request halt / help</text>
+    <path d="M45 730 H1395" stroke="#cedae2"/>
+    <text x="45" y="765" font-size="21">Green: real RGB encoding checked. Blue: software flow checked; simulator connection pending.</text>
+    <text x="45" y="796" font-size="21">OOD is not a failure class or probability. Hold check is not final garment-quality acceptance.</text>
+  </g>
+</svg>

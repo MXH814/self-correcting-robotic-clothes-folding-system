@@ -1,0 +1,25 @@
+{
+  "schema": "ma-pre-detection-evidence/1",
+  "source_trial_id": "bc68b5da-8102-427b-a32b-6aca66b316e1",
+  "raw_trace_sha256": "42008fd3cde394badd67f24c88a4fb7ddb6a2b73f3251a9cc1b004434e06c35f",
+  "visual_encoding": {
+    "frames": 540,
+    "dimension": 512,
+    "finite": true,
+    "encoder_reference": "resnet18-imagenet1k-v1-pil-resize256-centercrop224/1#sha256=f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "context_reference": "pre-detection-context#sha256=45a3fe13bcdfcb7df82f930d7322ae3dc6c5d331d1a3246669b53c70becf2c30",
+    "features_sha256": "1dfc756e6ff2b2114b9aa9f0e51c96c27da43f050d46f039743016ff729a26ec",
+    "phase": "UNSPECIFIED",
+    "split": "unassigned"
+  },
+  "software_tests": {
+    "command": "python -m unittest discover -s tests",
+    "passed": 143,
+    "new_detection_tests": 28
+  },
+  "actual_normal_fitting": false,
+  "actual_calibration": false,
+  "actual_detection_accuracy": null,
+  "actual_simulation_detection_triggered_recovery": false,
+  "validation_scope": "Real RGB encoding plus software fixtures; not a performance claim"
+}

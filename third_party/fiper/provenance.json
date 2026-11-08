@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/learnsyslab/fiper",
+  "commit": "13d79c5c3069def843e454787ff128defc249838",
+  "source": "rnd/rnd_models.py",
+  "source_sha256": "88d9f01ae73ca721c62f157c43c64795c59015ebf229327cdacbaf9230e6cc17",
+  "copied_methods": [
+    "RND_OE.get_target_network",
+    "RND_OE.get_predictor_network"
+  ],
+  "adaptation": [
+    "standalone lifecycle; no Hydra",
+    "128-dimensional output is project configuration",
+    "L2 error; upstream Linear initialization and target freezing",
+    "no action entropy or combined alarm"
+  ]
+}
