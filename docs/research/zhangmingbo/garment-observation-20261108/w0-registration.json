@@ -1,0 +1,28 @@
+{
+  "garment": "TCLC_018",
+  "asset": {
+    "path": "Assets/Garment/Tops/Collar_Lsleeve_FrontClose/TCLC_018/TCLC_018_obj.usd",
+    "sha256": "c2bd61a9f06f8766125caaf04cabac081b6c795fffed1b37073d2d172db931df"
+  },
+  "reference_trial_id": "cc93a777-7c06-4fd3-8446-94616ae73495",
+  "reference_file": "settled-vertices.npz",
+  "reference_sha256": "1088a3164f0f455da34fbfa5199be85bef64561eaab677414dbeec16b7de4b2c",
+  "method": "World XY projection of the settled flat normal garment; torso hem strip centered at minimum Y + 40 mm, half-width 5 mm. Projected X span between extremal vertices in this strip.",
+  "settle_steps": 100,
+  "strip_center_world_y_m": 0.5329581174880298,
+  "strip_half_width_m": 0.005,
+  "left_vertex_id": 1744,
+  "right_vertex_id": 7460,
+  "left_world_xyz_m": [
+    -0.23825576354463007,
+    0.5373334803885186,
+    0.0314715048874421
+  ],
+  "right_world_xyz_m": [
+    0.236723185112228,
+    0.5362317461672674,
+    0.016941725200052993
+  ],
+  "w0_m": 0.4749789486568581,
+  "team_review": "pending"
+}

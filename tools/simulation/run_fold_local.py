@@ -13,6 +13,10 @@ from isaacsim import SimulationApp as OriginalSimulationApp
 
 class LocalSimulationApp(OriginalSimulationApp):
     def close(self, *args, **kwargs):
+        if getattr(self, "_fold_recovery_evidence", None) is not None:
+            evidence = self._fold_recovery_evidence
+            self._fold_recovery_evidence = None
+            evidence.finish(self._fold_env)
         if getattr(self, "_fold_camera_evidence", None) is not None:
             evidence = self._fold_camera_evidence
             self._fold_camera_evidence = None
@@ -38,9 +42,14 @@ class LocalSimulationApp(OriginalSimulationApp):
         from Env_StandAlone.BaseEnv import BaseEnv
         self._fold_env = None
         self._fold_camera_evidence = None
+        self._fold_recovery_evidence = None
         if os.environ.get("ROBOTICS_FOLD_CAMERA") == "1":
             from fold_camera_evidence import FoldCameraEvidence
             self._fold_camera_evidence = FoldCameraEvidence(Path(os.environ["ROBOTICS_OUTPUT_ROOT"]), BaseEnv)
+        if os.environ.get("ROBOTICS_FOLD_RECOVERY") == "1":
+            from fold_recovery_evidence import FoldRecoveryEvidence
+            self._fold_recovery_evidence = FoldRecoveryEvidence(
+                Path(os.environ["ROBOTICS_OUTPUT_ROOT"]), ROOT, BaseEnv)
         original_init = BaseEnv.__init__
 
         def local_init(instance, *env_args, **env_kwargs):

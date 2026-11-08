@@ -1,0 +1,38 @@
+{
+  "normal": {
+    "file": "normal.zip",
+    "bytes": 11455647,
+    "sha256": "4d27b01d06032f6a8536ac93b71aa498128271af894d82a30492b0e7238a9148",
+    "trial_id": "cc93a777-7c06-4fd3-8446-94616ae73495",
+    "rgb_frames": 159,
+    "observations": 165,
+    "dispatches": 157
+  },
+  "contact_offset_candidate": {
+    "file": "contact_offset_candidate.zip",
+    "bytes": 11171058,
+    "sha256": "02f584ca74b5701d6f6a28772176c41e5e442c17327651dcd441d0e0d423bd84",
+    "trial_id": "e4a3b682-7822-4a98-ba4b-e0c1cef2a362",
+    "rgb_frames": 155,
+    "observations": 161,
+    "dispatches": 151
+  },
+  "closed_hand_slip_candidate": {
+    "file": "closed_hand_slip_candidate.zip",
+    "bytes": 12030401,
+    "sha256": "4f1fd77a4586e0c1898a4641794bbe9c32a4964286301aca7d0b312b9d27668b",
+    "trial_id": "2e947a25-9108-4e54-a5fb-5d1738d5e256",
+    "rgb_frames": 167,
+    "observations": 174,
+    "dispatches": 140
+  },
+  "release_regrasp": {
+    "file": "release_regrasp.zip",
+    "bytes": 19386000,
+    "sha256": "d5b6d2239ce2a2b34ea00d8a0d00d71883d62ba64d579c066a9d0948fa3096a8",
+    "trial_id": "f19535ba-7f48-4eb5-b36f-b1339127d748",
+    "rgb_frames": 277,
+    "observations": 289,
+    "dispatches": 239
+  }
+}
