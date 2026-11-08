@@ -1,43 +1,78 @@
-# 第二台电脑复跑入口（准备方案，尚未独立验证）
+# 第二台 Windows 电脑的 Fold Tops 环境准备
 
-2026-11-08；张茗博提供。组长选择在另一台电脑安装。本文使安装、验证和未解决的版本获取问题可追踪；**尚未证明从零安装成功，也不代表组长已下载或复跑。** 当前路径示例针对 Windows，按实际磁盘位置修改。
+2026-11-08；张茗博提供，组长选择在另一台电脑安装。本页提供固定源码、依赖与资产核验入口。**组长电脑尚未完成安装或独立复跑；以下可用性和测试结果均来自作者机器。** 同机重新下载/导入不等于换机成功。
 
-## 0. 组长现在可以先取得数据
+## 1. 已交接的数据
 
-从[私有 GitHub Release](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/tag/handoff-fold-tops-20261108)下载 data2、data3 及各自文件清单。需要用有该仓库访问权的 GitHub 账号登录。Release 的附件大小和 GitHub 返回的 SHA-256 已与作者机相符；是否收到、能否解压和独立核验由接收者记录。
+[私有 GitHub Release](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/tag/handoff-fold-tops-20261108)提供两份正常示范纯数值数据和逐文件清单；组长已实际下载并完成校验，数据接入不必等待环境安装。数据不包含实际命令、ACK、时间或恢复标签。参见[接入说明](../ma-data-intake-progress.md)；不将正常示范视为恢复案例。
 
-```powershell
-Get-FileHash -Algorithm SHA256 '<下载目录>\fold-tops-data2-numeric-20261107.zip'
-Get-FileHash -Algorithm SHA256 '<下载目录>\fold-tops-data3-evidence-20261108.zip'
-```
+## 2. 硬件和 Isaac Sim
 
-data2 应为 `6584a58167d25bef6da25eecdaf8436df8b93b1ad9cea6d8fe01f9fb70986a16`；data3 应为 `4808365cf9caf7454bec5ef3ca1a077bed86e7f6c8d1e5b20b7f9ccbb288cfa9`。两份清单列各文件哈希；解压后依据[数据接入说明](../ma-data-intake-progress.md)运行 `research_tools.legacy_observations`。来源确认和普通哈希一致性是不同检查。data3 中第 81 项是 `READ_ME_交接.txt`：76 RGB＋观测记录＋manifest＋最终图＋脱敏日志＋交接说明。
+组长先确认 Windows、NVIDIA GPU/驱动、RAM 和空闲空间，查阅 [NVIDIA 官方安装文档](https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/install_workstation.html)及许可。选择 Windows standalone 4.5.0，解压到例如 `D:\Robotics\isaacsim-4.5.0`；安装包允许通过官方渠道自行获取。作者原包 7,013,544,567 字节，SHA-256 `29171fe52efa1923162c215d42907f7f1363dfcff2b4e25a12428ab6cbd08fc8`，解压后版本 `4.5.0-rc.36+release.19112.f59b3005.gl`、Python 3.10.15。新下载的归档若 hash 不同，应核明发行版差异；不把不同归档直接当成相同包。
 
-## 1. 环境与资产获取
+作者电脑约 16 GB RAM、RTX 4060 Laptop 8 GB，NVIDIA 兼容检查的内存项未通过（要求 32 GB）；小场景曾使用低资源参数运行。这不是对其他机器的兼容保证。不要用本页附加依赖覆盖 Isaac 自带 NumPy/Torch。
 
-1. 组长确认目标机 Windows、NVIDIA GPU/驱动、空闲空间、RAM 与 Isaac 4.5 兼容，并查阅 [NVIDIA 安装说明](https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/install_workstation.html)及许可。作者机器是 16 GB RAM、RTX 4060 Laptop 约 8 GB、驱动 566.26，官方检查的内存项未通过；这些不是推荐配置保证。
-2. 在独立根目录准备 Isaac Sim 4.5 Windows standalone，例如 `<ROOT>\isaacsim-4.5.0`。作者的安装包 7,013,544,567 字节，SHA-256 `29171fe52efa1923162c215d42907f7f1363dfcff2b4e25a12428ab6cbd08fc8`。若官方文件不匹配，应记录版本差异，不标记相同环境。
-3. 从 [DexGarmentLab 官方仓库](https://github.com/wayrise/DexGarmentLab)获取源码并放在 `<ROOT>\DexGarmentLab`。作者所用 ZIP 的 SHA-256 为 `c5d87aad847bb0bec691d68364481a653ef5a0013035b03146d7a7af27df385c`；**来源是当时下载的 main 压缩包，commit 未知，当前上游 main 不保证相同。** 原始相同 ZIP 及组件许可目前尚无团队下载入口；若官方获取文件不匹配，先联系张茗博确认许可及相同版本可否交接，再决定是作为不同版本运行还是等待归档，不得冒称完全复现。
-4. 依[官方数据资产页面](https://huggingface.co/datasets/wayrise/DexGarmentLab/tree/main)准备 TCLC_018、机器人和默认场景；所需文件详见 [local-demo-assets.json](local-demo-assets.json) 与 [artifact-manifest.json](artifact-manifest.json)。作者源码包内含 GAM 长袖 checkpoint，其文件 SHA-256 为 `c44f79c0bd7aab1f8c3dc5820f02f7b97f0763ced3baeba6c3dee3323e0142d9`；这个 checkpoint 不代表三阶段 SADP_G 策略权重。各组件许可单独核对。
-5. 附加依赖安装到独立 `<ROOT>\python-deps`，保留 Isaac 自带 NumPy/Torch。作者 wheel 文件名及版本列于 [wheels-local-filenames.txt](../../../configs/simulation/wheels-local-filenames.txt)；该列表不是锁文件。按目标平台获取匹配 wheel 并检查来源后，可用 Isaac Python 的 pip 在目标独立目录安装，避免覆盖原始环境。作者 wheel 包尚未共享，换机安装完整依赖尚未验证。
+## 3. 获取固定上游源码
 
-例如，已在 `<WHEEL_DIR>` 准备并核验清单中全部适用于 Isaac Python 3.10/Windows 的 wheel 后，可以在 PowerShell 中使用下面的**候选安装命令**；它不自动下载或验证 wheel，且尚未在第二台机器运行：
+作者最初下载的 `DexGarmentLab-source.zip` 的 ZIP comment 为 `e4e298e696bae5d866ded3b31e0ae27becea5376`。2026-11-08 将压缩包内 **761 个文件**逐个计算 Git blob SHA-1，与该 commit 的官方 Git tree 比较，文件集合及内容全部一致；随后将这 761 个原文件与作者已安装目录逐项按 SHA-256 对比，未发现缺失或修改。目录中另有本地包装和下载资产等新增内容，分别由团队仓库和官方资产来源提供。归档本身 SHA-256 仍为 `c5d87aad847bb0bec691d68364481a653ef5a0013035b03146d7a7af27df385c`。
+
+在 PowerShell 中，若 `D:\Robotics\DexGarmentLab` **尚不存在**，可运行：
 
 ```powershell
 $root = 'D:\Robotics'
-$wheelDir = 'D:\Robotics\wheels'
-$deps = Join-Path $root 'python-deps'
-$wheels = @(Get-ChildItem -LiteralPath $wheelDir -Filter '*.whl' -File | ForEach-Object { $_.FullName })
-if ($wheels.Count -eq 0) { throw 'No wheel files found' }
-& (Join-Path $root 'isaacsim-4.5.0\python.bat') -m pip install --no-deps --target $deps @wheels
-if ($LASTEXITCODE -ne 0) { throw 'Dependency installation failed' }
+New-Item -ItemType Directory -Force -Path $root | Out-Null
+git clone https://github.com/wayrise/DexGarmentLab.git (Join-Path $root 'DexGarmentLab')
+git -C (Join-Path $root 'DexGarmentLab') checkout --detach e4e298e696bae5d866ded3b31e0ae27becea5376
+git -C (Join-Path $root 'DexGarmentLab') rev-parse HEAD
 ```
 
-`--no-deps` 不会自动补齐依赖；须逐项核对 wheel 列表与导入结果。不要将训练依赖及其可能携带的 NumPy/Torch 混装到 Isaac 的核心目录；出错先记录具体缺项。
+HEAD 应为 `e4e298e696bae5d866ded3b31e0ae27becea5376`。也可从[官方固定 commit 源码页](https://github.com/wayrise/DexGarmentLab/tree/e4e298e696bae5d866ded3b31e0ae27becea5376)获取；按 commit 下载的 ZIP 名称和根目录可能不同，不能用原 `main` ZIP 的文件 SHA-256 验证另一次打包字节。上述 clone 步骤在目标机尚未执行。上游源码根目录未发现明确 LICENSE；具体使用及再分发权利需核查，不能从代码可访问推断其他组件许可。
 
-## 2. 代码入口（安装并准备好资产后）
+## 4. 额外 Python 依赖（Windows x86-64，Isaac Python 3.10）
 
-从团队仓库获取当前 `main`（或组长认可的冻结 commit），进入仓库根目录。例如根目录实际为 `D:\Robotics`：
+[带哈希的 50 项 wheel 清单](../../../configs/simulation/fold-tops-windows-cp310-requirements.txt)根据作者的 `wheels-local.txt` 中实际 50 个文件生成，并对每个文件计算 SHA-256。它只涵盖本次示范的作者机附加依赖，不代表完整训练/HALO 环境，也不替代第三方许可检查。
+
+在团队仓库根目录的 PowerShell 中执行，路径按目标机器调整，确保目标目录是新目录：
+
+```powershell
+$root = 'D:\Robotics'
+$isaacPython = Join-Path $root 'isaacsim-4.5.0\python.bat'
+$deps = Join-Path $root 'python-deps'
+$wheels = Join-Path $root 'wheels-fold-tops'
+$lock = '.\configs\simulation\fold-tops-windows-cp310-requirements.txt'
+if (Test-Path -LiteralPath $deps) { throw 'Dependency target already exists; choose a new empty target' }
+New-Item -ItemType Directory -Force -Path $wheels | Out-Null
+& $isaacPython -m pip download --index-url 'https://pypi.org/simple' --require-hashes --no-deps --only-binary=:all: -r $lock --dest $wheels
+if ($LASTEXITCODE -ne 0) { throw 'Wheel download or hash validation failed' }
+& $isaacPython -m pip install --no-index --find-links $wheels --require-hashes --no-deps --target $deps -r $lock
+if ($LASTEXITCODE -ne 0) { throw 'Dependency install failed' }
+```
+
+`--require-hashes` 要求文件匹配作者记录，`--no-deps` 不自行补充依赖；不能把别的 NumPy/Torch wheel 安装进 Isaac。作者机器实际完成 50 项下载和哈希校验，再在独立目录安装；`open3d 0.18.0`、`av 17.1.0`、`imageio 2.38.0`、`termcolor` 从该独立目录导入，NumPy 1.26.0 与 Torch 2.5.1+cu118 仍来自 Isaac。第二次使用显式 PyPI URL 时本地 wheel 已存在，不能据此单独声称所有文件均从该 URL 重新下载；若目标机下载失败请记录具体包、来源和错误。目标机完整安装尚未验证。
+
+## 5. 衣物、机器人、场景及 GAM
+
+官方 [Hugging Face 资产库](https://huggingface.co/datasets/wayrise/DexGarmentLab/tree/main)提供 `Garment.zip`、`Robots.zip`、`Scene.zip`。作者选择了 TCLC_018 衣物及贴图、机器人集合和默认场景：逐文件清单 [demo-asset-sha256.json](../../../configs/simulation/demo-asset-sha256.json) 包含 584 项、296,488,662 字节。团队仓库的资产提取器是此前作者使用的脚本，指向官方 main；上游更新或下载失败时必须以逐文件核验结果为准。
+
+在团队仓库根目录、确认 `DexGarmentLab/local-demo-assets.json` 尚不存在的前提下：
+
+```powershell
+$root = 'D:\Robotics'
+$project = Join-Path $root 'DexGarmentLab'
+$env:ROBOTICS_PROJECT_ROOT = $project
+& (Join-Path $root 'isaacsim-4.5.0\python.bat') .\tools\simulation\download_demo_assets.py
+if ($LASTEXITCODE -ne 0) { throw 'Asset acquisition failed; inspect output' }
+& (Join-Path $root 'isaacsim-4.5.0\python.bat') .\tools\simulation\verify_demo_assets.py --project-root $project --manifest .\configs\simulation\demo-asset-sha256.json
+if ($LASTEXITCODE -ne 0) { throw 'Asset fingerprint mismatch' }
+```
+
+下载器按清单提取机器人集合、TCLC_018、默认场景；现有同大小文件会跳过，**大小相同不等于内容相同**，因此必须运行 SHA-256 核验。脚本仅在新环境尝试，已有 manifest 或不同大小文件会拒绝覆盖；若中途中断检查残留文件，不要盲目覆盖。584 项中包含不一定用于当前 Fold Tops 的其他机器人文件，是作者已下载集合，不代表全部为最小依赖。作者机实测全部 584 项匹配；新的远程资产获取及新机器运行未测试。数据卡、机器人和场景各组件可能有不同许可，逐项核验。
+
+官方固定源码包含 GAM 长袖 `Model_HALO/GAM/checkpoints/Tops_LongSleeve/checkpoint.pth`，作者该文件 SHA-256 为 `c44f79c0bd7aab1f8c3dc5820f02f7b97f0763ced3baeba6c3dee3323e0142d9`。它不是三个 SADP_G 阶段策略 checkpoint，不能代表完整 HALO 权重。
+
+## 6. 运行入口及需要组长配合的操作
+
+从包含本 PR 的团队仓库根目录：
 
 ```powershell
 $root = 'D:\Robotics'
@@ -45,10 +80,12 @@ $root = 'D:\Robotics'
 & .\tools\simulation\run_local.ps1 -RoboticsRoot $root -Stage engine -Headless
 & .\tools\simulation\run_local.ps1 -RoboticsRoot $root -Stage garment -Headless
 & .\tools\simulation\run_local.ps1 -RoboticsRoot $root -Stage fold -Headless
-# 图形运行；完成后保留窗口，关闭窗口退出
+# 如果需要图形演示，完成后手动关闭窗口：
 & .\tools\simulation\run_local.ps1 -RoboticsRoot $root -Stage fold -KeepOpen
 ```
 
-若 Isaac、源码、依赖位置不符合默认结构，另传 `-IsaacRoot`、`-ProjectRoot`、`-DependencyRoot`、`-OutputRoot`。`-CheckOnly` 只核路径存在，不检验导入或仿真。组件检查关注 `LOCAL_SMOKE_TEST_PASSED`；折叠检查 `LOCAL_FOLD_PROFILE`、`final result` 与新生成轨迹/最终图。上游折叠输出写在源码目录 `Data/Fold_Tops` 并追加采集日志，开始前确认不覆盖团队已有数据；参见[交接指南](handoff-guide.md)。
+若安装位置不同，使用 `-IsaacRoot`、`-ProjectRoot`、`-DependencyRoot` 和 `-OutputRoot` 覆盖。`-CheckOnly` 只验证路径；组件关注 `LOCAL_SMOKE_TEST_PASSED`，折叠记录 `final result` 与对应的新轨迹和图像。上游折叠输出写入源码 `Data/Fold_Tops` 并追加日志，运行前检查目录和空间。上游 True 不等于 SRS 质量或恢复验收。
 
-在新机器上，组长记录实际机器/驱动、源码及资产指纹、命令/配置、运行时间、完整日志、输出及失败或结果。上游 True 是脚本自带判定，不等同独立 SRS 质量或恢复验收。若安装失败，保留步骤和错误；作者负责协助确认缺失资源、版本和许可，不代签独立复跑结果。
+作者在 2026-11-08 使用重建的隔离依赖、现有作者机源码及资产发起过无窗口 garment 测试：启动后出现线程等待提示，长时间无输出，随后**由操作者主动停止**；未看到通过标志，结果为**未完成验证**，不将人工停止记为程序错误，也不能认定仿真通过或根因。启动时日志显示约 2.2 GB 空闲内存，但无法仅凭这个快照确定原因。先前独立目录安装和 Python 导入通过，范围限于上述记录。
+
+组长实际操作后记录机器/驱动、源码 commit、依赖/资产核验结果、完整命令、配置、日志、输出、耗时及实际故障；作者协助定位不同版本或缺失文件。独立复跑、真实关节映射、时钟与停止/恢复能力仍待单独验证。

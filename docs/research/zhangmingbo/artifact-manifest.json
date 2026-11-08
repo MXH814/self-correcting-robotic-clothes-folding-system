@@ -5,11 +5,11 @@
     {
       "id": "dex-source-zip", "kind": "upstream source archive",
       "source": "https://github.com/wayrise/DexGarmentLab",
-      "version": "main ZIP downloaded previously; commit unknown",
+      "version": "e4e298e696bae5d866ded3b31e0ae27becea5376; archive ZIP comment and all 761 Git blob hashes matched official commit tree",
       "sha256": "c5d87aad847bb0bec691d68364481a653ef5a0013035b03146d7a7af27df385c",
       "size_bytes": 75338080,
       "author_machine_path": "E:/Robotics/downloads/DexGarmentLab-source.zip",
-      "access": "author machine only; upstream current main is not guaranteed identical",
+      "access": "fixed official commit available at https://github.com/wayrise/DexGarmentLab/tree/e4e298e696bae5d866ded3b31e0ae27becea5376; original main ZIP is author machine only and differs in archive identity from a commit ZIP",
       "license": "root license not found in local archive; redistribution status unknown"
     },
     {

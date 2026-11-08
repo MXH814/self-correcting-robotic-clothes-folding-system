@@ -4,10 +4,12 @@
 
 审查更新（2026-11-07）：PR #2及相对路径修复已复审通过合并，启动器轻量回归通过；下表的“待审”为原提交状态，不代表目前仍等待批准。H03/H04/H05的运行/数据缺口仍成立。完整轨迹纯数值导出与下一步入口见[马祥珲接入进展](../ma-data-intake-progress.md)。
 
+版本核验更新（2026-11-08）：上游源码已通过 ZIP comment 和全部 761 个 Git blob 匹配固定到 `e4e298e696bae5d866ded3b31e0ae27becea5376`；50 项附加 wheel 已生成哈希锁清单，584 项资产已有本机逐文件指纹。[第二台电脑安装入口](second-machine-install.md)记录获取和验证步骤、作者机隔离安装结果与尚未完成的换机验证。此前“commit 未知”是旧记录，资产/源码具体许可和目标机完整复跑仍待核验。
+
 ## 2026-11-08 交接更新
 
-- 两份已上传的纯数值数据包和逐文件清单：[私有 GitHub Release](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/tag/handoff-fold-tops-20261108)；GitHub 附件显示大小及 SHA-256 与作者机一致，接收方下载/验证待确认。
-- 组长选择**另一台电脑安装**；[第二台电脑复跑准备](second-machine-install.md)给出来源、步骤与仍待提供的精确源码归档和依赖。独立安装和复跑尚未执行，不能当作已验证。
+- 两份已上传的纯数值数据包和逐文件清单：[私有 GitHub Release](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/tag/handoff-fold-tops-20261108)；组长已实际下载并核验哈希、完整性及 153 帧结构，见 [PR #7 审查](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/pull/7)。
+- 组长选择**另一台电脑安装**；[第二台电脑复跑准备](second-machine-install.md)给出固定官方源码版本、依赖获取及资产核验。独立安装和复跑尚未执行，不能当作已验证。
 - 原始对象 NPZ 未上传，纯数值包可先用于离线接入；常规哈希核验不代表来源身份已认证。
 
 ## H01–H05 状态
@@ -15,14 +17,14 @@
 | ID | 状态 | 已提供与缺口 |
 |---|---|---|
 | H01 | 已提交待审 | 仓库内启动器、两种 Python 包装和资产获取脚本；路径已参数化，修改后只做路径、语法及轻量检查，完整仿真尚未复跑。 |
-| H02 | 已提交待审 | [资产清单](artifact-manifest.json)、[原资产列表](local-demo-assets.json)、[配置](../../../configs/simulation/low-resource.example.json)及原环境报告。部分许可和源码 commit 仍未知。 |
+| H02 | 部分已核验 | [资产清单](artifact-manifest.json)、[原资产列表](local-demo-assets.json)、[配置](../../../configs/simulation/low-resource.example.json)及原环境报告；源码 commit 已核对，部分许可和换机复跑仍待验证。 |
 | H03 | 部分已提交，完整轨迹访问阻塞 | [真实观察数值](observation-example.json)和[对应最终图像](sample-final.png)入库；原始轨迹仅在作者机器，需要约定可访问存储或同机访问。 |
 | H04 | 部分已提交待审 | [字段与动作说明](io-profile.md)给出真实样例和来源；60 个关节的名字顺序、真实时钟、逐命令 ACK、停止反馈仍待验证。 |
 | H05 | 部分已提交，独立复跑待执行 | 下方提供作者机器入口和新机器准备步骤；路径检查通过并非运行或独立复跑通过，未提供远程访问能力。 |
 
 ## 可复跑入口
 
-目前计划由组长在另一台电脑安装；纯数值数据已经通过私有 Release 提供，精确源码归档和 wheel 仍需核实获取及许可。操作者需先取得作者机器的正常使用权限，运行下列命令并自行保存日期、软硬件版本、命令、完整控制台日志、输出清单、耗时和结果。此方案仍依赖人员实际协调，不代表已经提供远程登录。另一台电脑需根据下述来源安装、确认许可并准备全部依赖与资产；该路径尚未从零验证。
+目前计划由组长在另一台电脑安装；[第二台电脑复跑准备](second-machine-install.md)提供固定 commit、依赖及资产校验入口。操作者需在自己的目标机器准备软件和资源，并自行保存日期、软硬件版本、命令、完整日志、输出清单、耗时和结果；从零安装和复跑尚未验证。
 
 1. 获取本项目代码及本分支；安装 [Isaac Sim 4.5](https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/install_workstation.html) Windows standalone，并确认显卡/驱动、RAM 和许可。作者机器为 Windows 11、RTX 4060 Laptop 8 GB、RAM 16 GB；官方兼容检查内存要求 32 GB，整体未通过。
 2. 准备 [DexGarmentLab 源码](https://github.com/wayrise/DexGarmentLab)和[官方资产](https://huggingface.co/datasets/wayrise/DexGarmentLab/tree/main)。本次使用的源码 ZIP SHA-256 和模型等见清单；同一上游 main 未来可能变化，不可仅凭分支名断言相同版本。GAM 检查点包含在本次源码 ZIP；三阶段 SADP_G 权重尚未确认。
