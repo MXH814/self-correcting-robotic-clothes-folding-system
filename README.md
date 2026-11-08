@@ -1,5 +1,7 @@
 # Self Correcting Robotic Clothes Folding System
 
+**当前优先完成 Pre 核心演示，研究训练暂缓。** 马已交付 FIPER RND-OE 观测分支适配、固定 ResNet18 编码、在线窗口/缺测处理、恢复请求和新观测复检；143 项软件检查通过，真实 540 帧已编码。胡负责同配置独立正常数据的拟合/校准/验证及分数回放，张负责观测导出、真实 A/B/C 接线和整组 PPT。缺 SADP_G 不阻塞该观测分支；当前尚无真实检测效果或由检测触发的仿真恢复结论。[实际接口与命令](docs/design/pre-detection-integration.md) · [新核心图与讲稿](docs/design/ma-presentation-materials.md) · [选型 ADR](docs/design/decisions/ADR-MA-006-observation-detector.md)
+
 **当前算法进展：** #23/#24已合并，共享相机/控制器/目标/预算配置已冻结，首条同次宏样本已编译为明确命名的区域代理正样本。五种时间/容量对照及配置绑定模型已实现，115项测试通过；真实训练尚未发生，当前缺更多结局覆盖和训练/开发分组。[共享协议及下一步](docs/research/shared-context-and-proxy-protocol.md) · [组长剩余清单](docs/research/ma-remaining-checklist.md)
 
 同济大学《系统分析与设计》课程第三组项目。

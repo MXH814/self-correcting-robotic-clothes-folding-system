@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/pytorch/vision",
+  "commit": "3ac97aa9120137381ed1060f37237e44485ac2aa",
+  "tag": "v0.20.1",
+  "source": "torchvision/models/resnet.py",
+  "source_sha256": "7499a5059ad7b1a1f8f7543c04b4a13795140fad837c38530b48ff5d9610bf6e",
+  "adaptation": "Extract conv helpers, BasicBlock, Bottleneck, ResNet; remove logging hook and registry. All weights must load strictly before fc becomes Identity."
+}

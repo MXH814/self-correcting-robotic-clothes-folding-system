@@ -1,6 +1,8 @@
 # 张茗博待办：仿真环境交接、研究接入与课程 Design
 
-**当前最高优先：扩真实宏候选与结局，不重交第一条链。** #24已审阅合并，组长已冻结共享配置、编译首条代理样本并完成算法接口/对照。张沿原入口按[固定先导配置](../../../configs/research/pilot-macro-collection-v1.json)先做一轮偏置候选，全部实际UUID/失败/未知保留。当前只有1条正代理、0负；不能追着目标标签补造数据。具体命令、冻结项及停止规则见[共享协议](../shared-context-and-proxy-protocol.md)。
+**当前最高优先：先完成 Pre 检测与恢复接线、整组展示。** 保持 GAM＋脚本，不等待 SADP_G。马的 FIPER 观测分支/固定 RGB 编码/在线接口/恢复复检已交付，胡负责正常拟合与独立校准。张先交匹配相机的真实连续 RGB、时戳、试次/阶段和上下文，接 `DetectionRuntime`、已有宏及实际测量前检，跑 A/B/C 并保存证据；缺模型/阈值的 C 继续拒绝恢复，不能当 A/B 通过。详见[可调用接口和命令](../../design/pre-detection-integration.md)、[缺 SADP_G 处理](../../design/detection-input-handoff.md)。整组 PPT/完整讲稿、排练和课前上传仍归张。
+
+**展示后的科研采集保留：** #24已审阅合并；第一条链不重交。后续按[先导配置](../../../configs/research/pilot-macro-collection-v1.json)扩候选/结局并保留失败/未知，见[共享协议](../shared-context-and-proxy-protocol.md)。下方科研待办不作为本次 Pre 前置。
 
 #22近景/均值提案和#23限定窗口SLIP审核均已交接；主观局部及SRS目标仍由胡独立核。Pre整组PPT/完整讲稿、排练/课前上传统筹仍归张，科研与课程并行。旧数据/快照/环境/基础复跑及首条完整链不重复索要。
 

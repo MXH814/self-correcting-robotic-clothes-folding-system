@@ -1,5 +1,44 @@
 # 马祥珲：课堂展示素材与讲解
 
+## 本次 Pre 最新主讲素材：观测检测与恢复
+
+优先使用本节替换下方早期“主要讲权限/停止”的安排。旧素材可放备份。图与稿依据当前实际状态，不代表已经完成实际计时排练。
+
+![观测检测与恢复流程](figures/ma-observation-recovery.png)
+
+[可编辑 SVG](figures/ma-observation-recovery.svg) · [代码与接入命令](pre-detection-integration.md) · [ADR-MA-006](decisions/ADR-MA-006-observation-detector.md)。图中绿色表示真实图像编码已验证；蓝色表示软件流程已验证、仿真接线待完成；橙色正常拟合/独立校准待匹配数据。不是每个框都已实机运行。
+
+### 中文主讲候选（约 60—75 秒，待实测）
+
+我们的核心是把观测检测与实际恢复接起来。检测优先复用 NeurIPS 2025 的 FIPER 观测异常分支：固定视觉编码器提取特征，RND 用正常记录学习参考分布，通过过去窗口和独立校准阈值报警。当前控制器是 GAM 加脚本，没有生成式动作采样，所以这是观测分支适配，不能称完整 FIPER。
+
+报警后系统先请求权限、时效、静止和动作检查，通过并记录后才执行已有五步重抓宏。动作执行结束还不够，必须用宏结束后的新观测确认持有恢复，才能接回正常折叠；否则停止并求助。我们已完成核心代码和软件验证，真实 540 帧也已跑通视觉编码。实际正常拟合、校准以及告警驱动的仿真恢复仍待联调，当前不能报告检测准确率或恢复成功率。
+
+### English speaking draft（约 70—85 秒，待实测）
+
+We connect observation monitoring to a bounded recovery macro. The detector adapts the observation branch of FIPER, published at NeurIPS 2025. A frozen visual encoder provides features. Random network distillation learns a normal reference, and a past-only window is compared with a threshold from separate normal trials. Our current controller is GAM plus a script, so we do not have generative action samples. This is an observation-branch adaptation, rather than a complete FIPER reproduction.
+
+An alert requests external checks of authority, freshness, rest and motion validity. The accepted request is recorded before the five-operation regrasp macro. Execution alone does not establish recovery. New observations after the macro must confirm sustained holding before the controller resumes folding; otherwise it requests a halt and help. The software flow has regression checks, and we encoded 540 real camera frames. Real normal-data fitting, calibration and detection-triggered simulation recovery remain to be verified.
+
+### 核心问答与事实修正
+
+| 问题 | 当前准确回答 |
+| --- | --- |
+| 为什么不用完整 FIPER 或 SAFE？ | 完整 FIPER 需要真实生成式动作采样；SAFE 需要 VLA 特征及成败监督。当前复用只需观测特征的 RND-OE 分支，保留正常控制器 |
+| 不需要失败数据就直接能用了？ | 仍需正常拟合、独立校准和新试次验证；不能将同一条视频拆成独立校准 |
+| 检测到的是哪类故障？ | 当前输出观测 OOD，不直接判定正式 OFFSET/SLIP；类别和实际后果另核 |
+| 上次完整恢复记录证明了检测吗？ | 不证明。上次是预定故障注入后执行脚本宏；新的观测触发必须另验证 |
+| 目前真的做了什么？ | 核心软件/接口、作者网络复用、固定预训练编码和真实 540 帧接入；真实检测包和在线 A/B/C 待交接 |
+| 叠好怎么判断？ | 区域比例只是开发代理；持有复检、最终质量、人工协助和自主成功分开，不混报 |
+
+### 对当前十页 PPT 的技术终审意见
+
+第 3、8 页“检测偏差/观测触发”在新证据前改为脚本恢复链；第 6 页把区域代理与产品叠衣质量分开；第 5、10 页修正接管/归还不等于终止、任务态与停止阶段混用；第 7 页区分学习适配和真实在线能力。压缩连续权限说明，补本图、文献选型、分数/事件证据、三架构和需求变化。最终修改版仍需重新终审，当前意见不是最终 Slides 通过。
+
+---
+
+## 以下为早期权限与研究风险素材，保留备查
+
 2026-11-08。供张茗博整合全组Slides、完整逐页演讲稿及备份问答；本页交付的是两页展示图、取舍表、讲解及问答素材，不是已完成的整组PPT或真实排练记录。配合[展示计划](presentation-plan.md)，本人正文建议70秒＋40秒，全组实际计时不超过6分钟。
 
 ## 第5页 恢复核心设计

@@ -1,5 +1,7 @@
 # 第一阶段：研究问题验证与系统设计
 
+**当前执行优先级：先 Pre，后论文实验。** 马负责 FIPER 观测分支核心适配、编码/推理和恢复检查；胡负责离线数据划分、正常拟合/独立校准/验证、案例和分数可视化；张提供实际观测并接 A/B/C、整合全组 PPT/讲稿。核心软件与真实 RGB 编码已交付，真实检测包及仿真接线仍待。后文研究数量/训练任务暂缓，不作为此次 Pre 前置。接口、验收和边界见[接入指南](design/pre-detection-integration.md)与[ADR-MA-006](design/decisions/ADR-MA-006-observation-detector.md)。完整真实用户走查及全面文献总结保留在最终 Design 工作中，当前排在检测适配和展示证据之后。
+
 **最新证据与决策：** PR #9/#10 已合并；五屏原型、正常取景、运行时关节与组件停止已有证据。马的[运行时接入](research/runtime-component-integration.md)和[ADR-MA-005](design/decisions/ADR-MA-005-measured-input-and-branch-validity.md)已补充动作/历史编码、未来信息隔离与分支有效性条件。当前分工以[马剩余项](research/ma-remaining-checklist.md)和[张交接清单](research/zhangmingbo/handoff-tasks.md)的最新表为准；不把整套恢复实验设为课程 Design 定稿前置。
 
 状态：2026-11-08按展示公告及用户新安排更新；原Assignment 2九项交付保留。马祥珲研究/AI设计、真实正常观测编码与展示素材、张茗博架构/环境材料可供整合；基础复跑已由马确认完成，恢复实验和全组Design仍有待办。胡知鱼的交互、需求追踪、数据和走查设计见[Design交付状态](design/delivery-status.md)。详见[个人成果](research/ma-task-workbook.md)及[展示计划](design/presentation-plan.md)。
