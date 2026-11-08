@@ -256,9 +256,10 @@ try:
         (out / "action-chain.json").write_text(json.dumps(chain, indent=2, allow_nan=False), encoding="utf-8")
         checkpoint("action_chain_written")
     checkpoint("sample_written")
-    if os.environ.get("ROBOTICS_RUNTIME_CONTROL") == "1":
+    control_mode = os.environ.get("ROBOTICS_RUNTIME_CONTROL")
+    if control_mode in ("1", "fault"):
         from runtime_control_probe import run_control_probe
-        run_control_probe(world, robot, sample, out)
+        run_control_probe(world, robot, sample, out, inject_transport_fault=control_mode == "fault")
         checkpoint("control_probe_written")
     if os.environ.get("ROBOTICS_PROBE_MARKER"):
         Path(os.environ["ROBOTICS_PROBE_MARKER"]).write_text(str(out), encoding="utf-8")
