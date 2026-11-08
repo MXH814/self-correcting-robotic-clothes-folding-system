@@ -25,18 +25,18 @@
 | 案例索引 | 连续样本／仿真秒 | 可复核的阶段与结果 | 本例待补证据 |
 | --- | --- | --- | --- |
 | [normal](../research/zhangmingbo/garment-fault-20261108/normal-hold.png) | 125／2.033–8.233 | 闭手、提起、保持、转移后计划释放；对照提起约 306.4 mm。 | 核实真实接触和预期持有窗，计划释放需按阶段豁免。正常条件本身不能生成 NORMAL 真值。 |
-| [grasp_offset](../research/zhangmingbo/garment-fault-20261108/grasp_offset-lifted.png) | 129／2.033–8.433 | 指令抓点横移 −130 mm，目标衣片仅升约 0.1 mm。 | 注入位移与闭合后的接触中心误差是两个量；需注册 W₀、测得接触中心并复核 0.2 秒持续窗。 |
+| [grasp_offset](../research/zhangmingbo/garment-fault-20261108/grasp_offset-lifted.png) | 129／2.033–8.433 | 指令抓点横移 −130 mm，目标衣片仅升约 0.1 mm。 | 注入位移与闭合后的接触中心误差是两个量；需注册 W0、测得接触中心并复核 0.2 秒持续窗。 |
 | [unexpected_release](../research/zhangmingbo/garment-fault-20261108/unexpected_release-hold.png) | 131／2.033–8.533 | 有效提起迹象后在 5.083 秒注入开手，持有窗首末漂移约 39.8 mm；五张阶段图相同，像素全黑。 | 用原始运动序列及补充视觉/接触证据核实先前夹持与失持起点；开手命令不能直接定为 SLIP。 |
 | [offset_regrasp](../research/zhangmingbo/garment-fault-20261108/offset_regrasp-hold.png) | 79／2.033–5.933 | 已闭手、提起、保持；退让 IK 失败，脚本以 aborted 结束，后续重抓未执行。 | 保留中断与失败原因，区分脚本尝试及产品接受派发；未执行的候选无成功或失败标签。 |
 | [release_regrasp](../research/zhangmingbo/garment-fault-20261108/release_regrasp-regrasp_lifted.png) | 216／2.033–12.783 | 提前开手后尝试重抓，重抓提起约 299.6 mm；随后转移、计划释放。 | 补重抓实际接触、DR05 持续清除与下一阶段可行证据，固定全任务接续后另审最终质量。 |
 
-**共同裁决。** 原始 W₀ 与接触传感字段均为 null。衣片网格质心及指尖几何中点可供离线预审，正式主类须由张茗博补注册 W₀、阶段持有及接触/持续窗证据，再由胡知鱼独立复核。五例仅覆盖第一袖，起点网格也有差异。原始 dr02_label 和 terminal_task_result 五例均为 null；本轮局部恢复、整任务质量、自主成功均留空。脚本 completed 仅表示该脚本路径走完。这五例本轮对 AI01、局部恢复率和 AI03 正式分母的新增数均为 0。
+**共同裁决。** 原始 W0 与接触传感字段均为 null。衣片网格质心及指尖几何中点可供离线预审，正式主类须由张茗博补注册 W0、阶段持有及接触/持续窗证据，再由胡知鱼独立复核。五例仅覆盖第一袖，起点网格也有差异。原始 dr02_label 和 terminal_task_result 五例均为 null；本轮局部恢复、整任务质量、自主成功均留空。脚本 completed 仅表示该脚本路径走完。这五例本轮对 AI01、局部恢复率和 AI03 正式分母的新增数均为 0。
 
-## PR #18 五条视觉试次复核
+## TCLC_018 首袖视觉试次复核（2026-11-08）
 
-这次复核使用 Release 的五个第一袖 ZIP，以试次 UUID 关联观测、命令和离线测量。已逐包比对字节数与 SHA-256，并运行仓库的核验器，检查 RGB、观测索引、命令与反馈观测的时序及通道名。下表依次列 RGB 帧数／观测数／有关联反馈观测的派发数。阶段抽样图可辨衣物与手部位置，夹指遮住的接触面仍缺少接触中心或持续接触的独立测量。原始五例的 contact_sensor、dr02_label 和 terminal_task_result 均为空。[数据包指纹及 UUID](../research/zhangmingbo/garment-observation-20261108/trace-packages.json) · [验证程序](../../tools/simulation/verify_garment_observation_trace.py)
+这次复核使用 [PR #18](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/pull/18) 对应 Release 的五个第一袖 ZIP，以试次 UUID 关联观测、命令和离线测量。已逐包比对字节数与 SHA-256，并运行仓库的核验器，检查 RGB、观测索引、命令与反馈观测的时序及通道名。下表依次列 RGB 帧数／观测数／有关联反馈观测的派发数。阶段抽样图可辨衣物与手部位置，夹指遮住的接触面仍缺少接触中心或持续接触的独立测量。原始五例的 contact_sensor、dr02_label 和 terminal_task_result 均为空。[数据包指纹及 UUID](../research/zhangmingbo/garment-observation-20261108/trace-packages.json) · [验证程序](../../tools/simulation/verify_garment_observation_trace.py)
 
-**W₀ 的复算和适用范围。** 用 normal 包的 settled-vertices.npz 校验登记文件哈希后，取顶点 7460 与 1744 的世界 X 坐标之差，得 474.978949 mm。该量取自近下摆横截面。SRS §7.3 的 W₀ 定义为平铺参考衣物肩部和下摆躯干宽的均值，登记状态仍为 pending。以下用该截面的 5%（23.749 mm）和 4%（18.999 mm）作探索性对照。正式阈值冻结需补肩部映射并核对均值，或提交有依据的口径修订。[W₀ 登记](../research/zhangmingbo/garment-observation-20261108/w0-registration.json)
+**暂定参考宽度 W0。** 复算使用 normal 试次沉降后的网格，文件哈希与登记一致。将顶点投影到世界 XY 平面，以最小 Y 加 40 mm 为中心，取上下各 5 mm 的近下摆窄带。在带内按 X 坐标取左右端点，本次分别得到顶点 1744 和 7460；两端 X 坐标之差给出该截面的投影宽度 475.0 mm。此处顶点编号用于回查这份网格，换网格需重新核对截面。该宽度的 5% 为 23.7 mm，4% 为 19.0 mm，仅用于下表的探索性对照。上述三个数值展示至 0.1 mm，计算采用登记原值；显示位数不代表测量精度。SRS §7.3 要求取平铺参考衣物肩部与下摆躯干宽的均值。登记状态仍为 pending，正式冻结前需补肩部映射并核对均值，或提交口径修订。[W0 登记](../research/zhangmingbo/garment-observation-20261108/w0-registration.json)
 
 | 包名／UUID 前缀 | 帧／观测／派发 | 离线复算与判读 |
 | --- | --- | --- |
