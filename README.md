@@ -1,6 +1,6 @@
 # Self Correcting Robotic Clothes Folding System
 
-**最新审阅 #23/#24：** 限定窗口的离线SLIP审核及第一条同次完整恢复链已批准合并。新链含540帧、838派发和61条宏执行指令；本机98项测试通过。同次链交接阻塞关闭，接下来冻结共享监督上下文、审核新链标签并扩大候选/结局覆盖。[审阅及任务解锁](docs/reviews/pr23-24-review.md)
+**当前算法进展：** #23/#24已合并，共享相机/控制器/目标/预算配置已冻结，首条同次宏样本已编译为明确命名的区域代理正样本。五种时间/容量对照及配置绑定模型已实现，115项测试通过；真实训练尚未发生，当前缺更多结局覆盖和训练/开发分组。[共享协议及下一步](docs/research/shared-context-and-proxy-protocol.md) · [组长剩余清单](docs/research/ma-remaining-checklist.md)
 
 同济大学《系统分析与设计》课程第三组项目。
 
@@ -56,6 +56,8 @@
 | [仿真接入与审查结论](docs/research/dex-integration-plan.md) | 平台已选定，组长确认同机复跑完成；继续验证在线来源、真实接口及恢复数据 |
 | [动作前因果输入接入](docs/research/preaction-integration-progress.md) | PR #12/#13已合并；492维输入、后续片段和原始字节交接已验证；失败/恢复标签仍缺 |
 | [真实衣物输入与核心算法进展](docs/research/garment-algorithm-progress.md) | 946条因果输入、17维恢复宏、序列评分训练/推理和独立试次工具；真实训练标签仍待审核 |
+| [共享配置与代理监督协议](docs/research/shared-context-and-proxy-protocol.md) | 冻结共享头、首条自动数值代理样本、五种对照和固定先导采集，不修改原始标签 |
+| [先导采集配置](configs/research/pilot-macro-collection-v1.json) | 一轮5个宏偏置位置，保留全部试次/失败/未知；不是充分训练或统计规模 |
 | [恢复评分训练样本契约](docs/research/recovery-sample-contract.md) | 同次预决策宏计划/上下文/执行/结局、划分与审核要求，拒绝低层派发冒充恢复样本 |
 | [PR #15/#18/#20/#21最新审阅](docs/reviews/pr15-18-20-review.md) | 四PR已合并，七包指纹/两次点云评分与UI实测核验；91项软件测试通过 |
 | [PR #11–#16历史审查](docs/reviews/pr11-16-readiness.md) | 控制/课程/动作前输入成果已合并，保留当时快照；原始字节/快照问题现已解决，当前以#15/#18/#20审阅为准 |
