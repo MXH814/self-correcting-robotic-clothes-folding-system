@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('engine','garment','fold','runtime-io')][string]$Stage = 'garment',
+    [ValidateSet('engine','garment','garment-reset','fold','fold-camera','runtime-io','runtime-control')][string]$Stage = 'garment',
     [string]$RoboticsRoot = 'E:\Robotics',
     [string]$IsaacRoot = '',
     [string]$ProjectRoot = '',
@@ -11,7 +11,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 if ($Headless -and $KeepOpen) { throw 'KeepOpen requires a graphical session.' }
-if ($Stage -eq 'runtime-io' -and $KeepOpen) { throw 'runtime-io is headless and does not support KeepOpen.' }
+if ($Stage -in @('runtime-io','runtime-control') -and $KeepOpen) { throw 'Runtime probes are headless and do not support KeepOpen.' }
 # Resolve against the caller's PowerShell location, before changing directories.
 # Unlike Resolve-Path, this also supports an output directory not created yet.
 $RoboticsRoot = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($RoboticsRoot)
@@ -30,7 +30,7 @@ foreach ($required in @($isaacPython, (Join-Path $ProjectRoot 'Env_StandAlone\Fo
 Write-Host "Isaac: $IsaacRoot`nProject: $ProjectRoot`nExtra dependencies: $DependencyRoot`nSmoke output: $OutputRoot"
 Write-Host 'Fold output is written by upstream under ProjectRoot/Data/Fold_Tops, not OutputRoot.'
 if ($CheckOnly) { Write-Host 'PATH_CHECK_PASSED (paths only; no simulator or imports tested)'; return }
-$names = @('PYTHONPATH','HF_HOME','PIP_CACHE_DIR','ROBOTICS_PROJECT_ROOT','ROBOTICS_OUTPUT_ROOT','ROBOTICS_HEADLESS','ROBOTICS_KEEP_OPEN','ROBOTICS_PROBE_MARKER')
+$names = @('PYTHONPATH','HF_HOME','PIP_CACHE_DIR','ROBOTICS_PROJECT_ROOT','ROBOTICS_OUTPUT_ROOT','ROBOTICS_HEADLESS','ROBOTICS_KEEP_OPEN','ROBOTICS_PROBE_MARKER','ROBOTICS_FOLD_CAMERA','ROBOTICS_RUNTIME_CONTROL')
 $old = @{}
 foreach ($name in $names) { $old[$name] = [Environment]::GetEnvironmentVariable($name, 'Process') }
 try {
@@ -43,13 +43,15 @@ try {
     $env:ROBOTICS_KEEP_OPEN = if ($KeepOpen) { '1' } else { '0' }
     Push-Location -LiteralPath $ProjectRoot
     try {
-        if ($Stage -eq 'fold') {
+        if ($Stage -in @('fold', 'fold-camera')) {
+            $env:ROBOTICS_FOLD_CAMERA = if ($Stage -eq 'fold-camera') { '1' } else { '0' }
             & $isaacPython -u (Join-Path $PSScriptRoot 'run_fold_local.py') --garment_random_flag False --record_video_flag False --data_collection_flag True
-        } elseif ($Stage -eq 'runtime-io') {
+        } elseif ($Stage -in @('runtime-io','runtime-control')) {
             # Isaac's app shutdown can return code 0 after an exception. Check
             # a per-invocation success marker instead of relying on that code.
             $marker = Join-Path ([System.IO.Path]::GetTempPath()) ("runtime-io-complete-" + [guid]::NewGuid().ToString('N') + '.txt')
             $env:ROBOTICS_PROBE_MARKER = $marker
+            $env:ROBOTICS_RUNTIME_CONTROL = if ($Stage -eq 'runtime-control') { '1' } else { '0' }
             try {
                 & $isaacPython -u (Join-Path $PSScriptRoot 'capture_runtime_io.py')
                 if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $marker -PathType Leaf)) {

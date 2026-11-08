@@ -188,6 +188,10 @@ try:
                                  "rendering_time_s": float(frame["rendering_time"])})
     (out / "sample.json").write_text(json.dumps(sample, indent=2, allow_nan=False), encoding="utf-8")
     checkpoint("sample_written")
+    if os.environ.get("ROBOTICS_RUNTIME_CONTROL") == "1":
+        from runtime_control_probe import run_control_probe
+        run_control_probe(world, robot, sample, out)
+        checkpoint("control_probe_written")
     if os.environ.get("ROBOTICS_PROBE_MARKER"):
         Path(os.environ["ROBOTICS_PROBE_MARKER"]).write_text(str(out), encoding="utf-8")
     print("COMPONENT_SAMPLE_WRITTEN", out, flush=True)

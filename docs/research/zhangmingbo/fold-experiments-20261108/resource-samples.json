@@ -1,0 +1,130 @@
+[
+  {
+    "utc": "2026-11-08T08:05:49.6937301Z",
+    "physical_free_kib": 789548,
+    "commit_free_kib": 946952,
+    "kit_working_set_bytes": 5022072832,
+    "kit_private_bytes": 10758262784,
+    "gpu_total_used_mib": "4937"
+  },
+  {
+    "utc": "2026-11-08T08:05:55.1151644Z",
+    "physical_free_kib": 766576,
+    "commit_free_kib": 937572,
+    "kit_working_set_bytes": 5029687296,
+    "kit_private_bytes": 10765680640,
+    "gpu_total_used_mib": "4937"
+  },
+  {
+    "utc": "2026-11-08T08:06:00.3997228Z",
+    "physical_free_kib": 751420,
+    "commit_free_kib": 910200,
+    "kit_working_set_bytes": 5033259008,
+    "kit_private_bytes": 10769080320,
+    "gpu_total_used_mib": "4937"
+  },
+  {
+    "utc": "2026-11-08T08:06:05.6785180Z",
+    "physical_free_kib": 744620,
+    "commit_free_kib": 890896,
+    "kit_working_set_bytes": 5033873408,
+    "kit_private_bytes": 10770128896,
+    "gpu_total_used_mib": "4937"
+  },
+  {
+    "utc": "2026-11-08T08:06:10.9853107Z",
+    "physical_free_kib": 762988,
+    "commit_free_kib": 923844,
+    "kit_working_set_bytes": 5034467328,
+    "kit_private_bytes": 10771177472,
+    "gpu_total_used_mib": "4936"
+  },
+  {
+    "utc": "2026-11-08T08:06:16.2958862Z",
+    "physical_free_kib": 753252,
+    "commit_free_kib": 916508,
+    "kit_working_set_bytes": 5035323392,
+    "kit_private_bytes": 10772168704,
+    "gpu_total_used_mib": "4933"
+  },
+  {
+    "utc": "2026-11-08T08:06:21.6604590Z",
+    "physical_free_kib": 779408,
+    "commit_free_kib": 906608,
+    "kit_working_set_bytes": 5039579136,
+    "kit_private_bytes": 10775871488,
+    "gpu_total_used_mib": "4937"
+  },
+  {
+    "utc": "2026-11-08T08:06:27.1157085Z",
+    "physical_free_kib": 779720,
+    "commit_free_kib": 912860,
+    "kit_working_set_bytes": 5047308288,
+    "kit_private_bytes": 10783281152,
+    "gpu_total_used_mib": "4938"
+  },
+  {
+    "utc": "2026-11-08T08:06:32.4634537Z",
+    "physical_free_kib": 724496,
+    "commit_free_kib": 846808,
+    "kit_working_set_bytes": 5056958464,
+    "kit_private_bytes": 10793820160,
+    "gpu_total_used_mib": "4938"
+  },
+  {
+    "utc": "2026-11-08T08:06:37.7699004Z",
+    "physical_free_kib": 737428,
+    "commit_free_kib": 883800,
+    "kit_working_set_bytes": 5064261632,
+    "kit_private_bytes": 10800738304,
+    "gpu_total_used_mib": "4937"
+  },
+  {
+    "utc": "2026-11-08T08:06:43.0447000Z",
+    "physical_free_kib": 738760,
+    "commit_free_kib": 878900,
+    "kit_working_set_bytes": 5066899456,
+    "kit_private_bytes": 10804686848,
+    "gpu_total_used_mib": "4937"
+  },
+  {
+    "utc": "2026-11-08T08:06:48.3091019Z",
+    "physical_free_kib": 742800,
+    "commit_free_kib": 891932,
+    "kit_working_set_bytes": 5067468800,
+    "kit_private_bytes": 10804686848,
+    "gpu_total_used_mib": "4933"
+  },
+  {
+    "utc": "2026-11-08T08:06:53.5718688Z",
+    "physical_free_kib": 740844,
+    "commit_free_kib": 891828,
+    "kit_working_set_bytes": 5072977920,
+    "kit_private_bytes": 10800414720,
+    "gpu_total_used_mib": "4937"
+  },
+  {
+    "utc": "2026-11-08T08:06:58.8616453Z",
+    "physical_free_kib": 727656,
+    "commit_free_kib": 873660,
+    "kit_working_set_bytes": 5091373056,
+    "kit_private_bytes": 10818424832,
+    "gpu_total_used_mib": "4936"
+  },
+  {
+    "utc": "2026-11-08T08:07:04.1465134Z",
+    "physical_free_kib": 712304,
+    "commit_free_kib": 859768,
+    "kit_working_set_bytes": 5094875136,
+    "kit_private_bytes": 10821824512,
+    "gpu_total_used_mib": "4933"
+  },
+  {
+    "utc": "2026-11-08T08:07:09.4407923Z",
+    "physical_free_kib": 720516,
+    "commit_free_kib": 874516,
+    "kit_working_set_bytes": 5092651008,
+    "kit_private_bytes": 10821537792,
+    "gpu_total_used_mib": "4937"
+  }
+]

@@ -1,0 +1,297 @@
+{
+  "garment": "TCLC_018",
+  "frames": {
+    "stage-1": {
+      "sim_step": 435,
+      "sim_time_s": 7.250000378116965,
+      "capture_wall_monotonic_ns": 445673312000000,
+      "image": "stage-1.png",
+      "rgb_status": "nonuniform",
+      "rgb_min": 1,
+      "rgb_max": 237,
+      "rgb_std": 42.91658433176757,
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "rendering_frame": 986,
+      "rendering_time_s": 7.200000375509262
+    },
+    "stage-2": {
+      "sim_step": 933,
+      "sim_time_s": 15.550000810995698,
+      "capture_wall_monotonic_ns": 445718343000000,
+      "image": "stage-2.png",
+      "rgb_status": "nonuniform",
+      "rgb_min": 2,
+      "rgb_max": 237,
+      "rgb_std": 42.619251448765965,
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "rendering_frame": 1484,
+      "rendering_time_s": 15.500000808387995
+    },
+    "stage-3": {
+      "sim_step": 1420,
+      "sim_time_s": 23.66666790097952,
+      "capture_wall_monotonic_ns": 445760828000000,
+      "image": "stage-3.png",
+      "rgb_status": "nonuniform",
+      "rgb_min": 2,
+      "rgb_max": 237,
+      "rgb_std": 42.53160068526389,
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "rendering_frame": 1973,
+      "rendering_time_s": 23.650001233443618
+    },
+    "final": {
+      "sim_step": 1570,
+      "sim_time_s": 26.16666803136468,
+      "capture_wall_monotonic_ns": 445786890000000,
+      "image": "final.png",
+      "rgb_status": "nonuniform",
+      "rgb_min": 3,
+      "rgb_max": 238,
+      "rgb_std": 40.64868440241181,
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "rendering_frame": 2123,
+      "rendering_time_s": 26.15000136382878
+    },
+    "calibration": {
+      "sim_step": 1585,
+      "sim_time_s": 26.416668044403195,
+      "capture_wall_monotonic_ns": 445790921000000,
+      "image": "calibration.png",
+      "rgb_status": "nonuniform",
+      "rgb_min": 3,
+      "rgb_max": 238,
+      "rgb_std": 41.832028438048745,
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "rendering_frame": 2138,
+      "rendering_time_s": 26.400001376867294
+    }
+  },
+  "upstream_judge": true,
+  "wall_elapsed_s": 180.891,
+  "calibration": {
+    "camera_prim": "/World/env_camera",
+    "intrinsics_px": [
+      [
+        1527.081787109375,
+        0.0,
+        320.0
+      ],
+      [
+        0.0,
+        1527.081787109375,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "world_to_ros_camera": [
+      [
+        -1.0,
+        1.1829179067875828e-16,
+        -3.169619126193763e-17,
+        -2.829900019085175e-16
+      ],
+      [
+        1.1829179067875828e-16,
+        0.8660253882408142,
+        -0.5000000596046448,
+        -0.4641011655330658
+      ],
+      [
+        -3.169619126193763e-17,
+        -0.5000000596046448,
+        -0.8660253882408142,
+        7.196152210235596
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "sphere_radius_stage_units": 0.035,
+    "targets": [
+      {
+        "world_xyz": [
+          0.34999999999999987,
+          2.783493295311928,
+          4.392948761582375
+        ],
+        "projected_uv": [
+          52.7607955331987,
+          49.11494310436154
+        ],
+        "measured_uv": [
+          52.10913348946136,
+          48.3536299765808
+        ],
+        "error_px": 1.0021282840930226,
+        "color_pixel_count": 2135
+      },
+      {
+        "world_xyz": [
+          -4.413208511224235e-17,
+          3.033826473355293,
+          3.7865385752916336
+        ],
+        "projected_uv": [
+          320.00006102472645,
+          411.7967991814439
+        ],
+        "measured_uv": [
+          319.48618784530385,
+          411.4067679558011
+        ],
+        "error_px": 0.6451278954643701,
+        "color_pixel_count": 1448
+      },
+      {
+        "world_xyz": [
+          -0.42000000000000015,
+          2.383493247628212,
+          3.700128450989723
+        ],
+        "projected_uv": [
+          549.0622973695416,
+          103.65351494219581
+        ],
+        "measured_uv": [
+          548.7347865576749,
+          103.17711171662125
+        ],
+        "error_px": 0.5781205455849806,
+        "color_pixel_count": 1101
+      }
+    ],
+    "tolerance_px": 3.0,
+    "passed": true,
+    "pixel_method": "centroid of largest connected changed color region per target"
+  },
+  "calibration_initial_measurement": {
+    "camera_prim": "/World/env_camera",
+    "intrinsics_px": [
+      [
+        1527.081787109375,
+        0.0,
+        320.0
+      ],
+      [
+        0.0,
+        1527.081787109375,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "world_to_ros_camera": [
+      [
+        -1.0,
+        1.1829179067875828e-16,
+        -3.169619126193763e-17,
+        -2.829900019085175e-16
+      ],
+      [
+        1.1829179067875828e-16,
+        0.8660253882408142,
+        -0.5000000596046448,
+        -0.4641011655330658
+      ],
+      [
+        -3.169619126193763e-17,
+        -0.5000000596046448,
+        -0.8660253882408142,
+        7.196152210235596
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "sphere_radius_stage_units": 0.035,
+    "targets": [
+      {
+        "world_xyz": [
+          0.34999999999999987,
+          2.783493295311928,
+          4.392948761582375
+        ],
+        "projected_uv": [
+          52.7607955331987,
+          49.11494310436154
+        ],
+        "measured_uv": [
+          57.967904630903256,
+          54.1421366345713
+        ],
+        "error_px": 7.237862940508092,
+        "color_pixel_count": 2181
+      },
+      {
+        "world_xyz": [
+          -4.413208511224235e-17,
+          3.033826473355293,
+          3.7865385752916336
+        ],
+        "projected_uv": [
+          320.00006102472645,
+          411.7967991814439
+        ],
+        "measured_uv": [
+          319.48618784530385,
+          411.4067679558011
+        ],
+        "error_px": 0.6451278954643701,
+        "color_pixel_count": 1448
+      },
+      {
+        "world_xyz": [
+          -0.42000000000000015,
+          2.383493247628212,
+          3.700128450989723
+        ],
+        "projected_uv": [
+          549.0622973695416,
+          103.65351494219581
+        ],
+        "measured_uv": [
+          548.7347865576749,
+          103.17711171662125
+        ],
+        "error_px": 0.5781205455849806,
+        "color_pixel_count": 1101
+      }
+    ],
+    "tolerance_px": 3.0,
+    "passed": false
+  }
+}
