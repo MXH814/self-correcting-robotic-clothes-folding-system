@@ -1,6 +1,6 @@
 # Fold Tops 真实轨迹纯数值导出记录
 
-记录日期：2026-11-07；负责人：张茗博；状态：**作者机导出与核验完成，团队访问和第二人复核待完成**。该包是正常示范的历史观测，不能当作恢复实验结果。
+记录日期：2026-11-07；负责人：张茗博；状态：**作者机导出并上传私有 GitHub Release；接收方下载和第二人复核待确认**。该包是正常示范的历史观测，不能当作恢复实验结果。
 
 ## 来源与导出
 
@@ -18,6 +18,6 @@
 
 作者机生成 `fold-tops-data2-numeric-20261107.zip`，24,867,984 字节，SHA-256 `6584a58167d25bef6da25eecdaf8436df8b93b1ad9cea6d8fe01f9fb70986a16`。ZIP 完整性检查通过，包含 79 个文件：77 个图像数组、记录和 manifest。
 
-压缩包目前位于作者机课程目录 `output/fold-tops-data2-numeric-20261107.zip`，**没有上传团队存储，其他成员目前不能通过此路径访问**。需要通过团队认可的受控存储或同机方式交接；接收方先通过可信渠道核对 ZIP hash，再依据[数据接入说明](../ma-data-intake-progress.md)校验 manifest 和历史窗口。
+压缩包已上传[团队私有 GitHub Release](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/tag/handoff-fold-tops-20261108)，仓库成员登录后可下载 data2 及逐文件清单；GitHub 显示的大小与 SHA-256 与上方一致。接收方是否已下载、校验和接入仍待确认；接收方先通过可信渠道核对 ZIP hash，再依据[数据接入说明](../ma-data-intake-progress.md)校验 manifest 和历史窗口。
 
 原始时间、命令、ACK、动作语义、成功标签均未记录，导出保持 null；关节名称/单位和相机来源未验证。RGB 与关节值来自相同记录，不据此宣称真实时钟同步。该正常示范不能替代抓偏/滑移案例或 H1/H2 结果。
