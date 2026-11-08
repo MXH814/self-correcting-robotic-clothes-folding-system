@@ -4,6 +4,7 @@ This is not the project coordinator/adapter, a folding run, or a stop test.
 Run through run_local.ps1 so that Isaac's Python and local dependencies are used.
 """
 import json
+import hashlib
 import os
 from pathlib import Path
 import sys
@@ -143,7 +144,42 @@ try:
               "adapter_ack": None, "stop_request": None, "stop_feedback": None,
               "observations": []}
     checkpoint("profile_read")
+    chain = None
+    if os.environ.get("ROBOTICS_RECORD_ACTION_CHAIN") == "1":
+        read_begin = clock()
+        frame = camera.camera.get_current_frame()
+        rgba = np.asarray(frame.get("rgba")).copy()
+        rendering_frame = int(frame["rendering_frame"])
+        rendering_time = float(frame["rendering_time"])
+        read_end = clock()
+        if rgba.shape != (resolution[1], resolution[0], 4) or rgba.dtype != np.uint8:
+            raise RuntimeError("Action chain requires a valid RGB frame before dispatch")
+        rgb = rgba[..., :3]
+        if rgb.min() == rgb.max() or not 0 < rendering_time <= read_begin["sim_time_s"]:
+            raise RuntimeError("Action chain requires an informative frame rendered before its read")
+        pre_image = out / "pre-action-rgb.png"
+        imageio.imwrite(pre_image, rgb)
+        chain = {
+            "schema": "component-action-chain-v1",
+            "scope": "single-process simulated component acceptance and execution",
+            "task_id": str(uuid.uuid4()),
+            "control_generation": 0,
+            "run_id": run_id,
+            "clock_domains": {
+                "wall_monotonic_ns": "same-host Python time.monotonic_ns, no external clock mapping",
+                "sim_time_s": "Isaac simulation time, including the camera rendering time",
+                "created_utc": "UTC audit timestamp, not used for duration",
+            },
+            "observation": {
+                "observation_id": str(uuid.uuid4()),
+                "camera": {"image": pre_image.name, "sha256": hashlib.sha256(pre_image.read_bytes()).hexdigest(),
+                           "rendering_frame": rendering_frame, "rendering_time_s": rendering_time,
+                           "read_begin": read_begin, "read_end": read_end, "shape": list(rgb.shape)},
+            },
+        }
     before = observe()
+    if chain is not None:
+        chain["observation"]["joint_state"] = before
     checkpoint("before_observation_read")
     sample["observations"].append(before)
     index = int(robot.dexleft.arm_dof_indices[0])
@@ -158,13 +194,27 @@ try:
                "joint_name": prop["name"], "joint_index": index, "unit": "rad",
                "current_position_before": current, "target": target,
                "target_construction_offset_rad": 0.03,
-               "issued": clock(), "api": "DexLeft.apply_action(ArticulationAction)",
+               "api": "DexLeft.apply_action(ArticulationAction)",
                "adapter_ack": None, "api_returned": None}
     sample["command"] = command
+    if chain is not None:
+        chain["action"] = {
+            "task_id": chain["task_id"], "observation_id": chain["observation"]["observation_id"],
+            "command_id": command["command_id"], "control_generation": chain["control_generation"],
+            "channel": "left:" + prop["name"], "runtime_index": index, "unit": "rad",
+            "representation": "absolute", "target": target,
+            "accepted": clock(), "acceptance_source": "local component probe after type and target checks",
+        }
+        # Persist the accepted local intent before the simulator receives it.
+        with (out / "accepted-intent.json").open("x", encoding="utf-8") as stream:
+            json.dump(chain["action"], stream, indent=2, allow_nan=False)
+            stream.flush()
+            os.fsync(stream.fileno())
+    command["issued"] = clock()
     robot.dexleft.apply_action(ArticulationAction(joint_positions=np.array([target]),
                                                   joint_indices=np.array([index])))
-    checkpoint("api_returned")
     command["api_returned"] = clock()
+    checkpoint("api_returned")
     for step in range(60):
         world.step(render=True)
         if step in (0, 9, 29, 59):
@@ -186,7 +236,25 @@ try:
                                  "rgb_min": rgb_min, "rgb_max": rgb_max, "rgb_std": float(rgb.std()),
                                  "rendering_frame": int(frame["rendering_frame"]),
                                  "rendering_time_s": float(frame["rendering_time"])})
-    (out / "sample.json").write_text(json.dumps(sample, indent=2, allow_nan=False), encoding="utf-8")
+    sample_path = out / "sample.json"
+    sample_path.write_text(json.dumps(sample, indent=2, allow_nan=False), encoding="utf-8")
+    if chain is not None:
+        feedback = sample["observations"][1:]
+        segment_end = feedback[-1]["capture_end"]
+        chain["execution"] = {
+            "command_id": command["command_id"], "control_generation": chain["control_generation"],
+            "segment_start": command["issued"], "api_returned": command["api_returned"],
+            "segment_end": segment_end,
+            "measured_step_delta": segment_end["sim_step"] - command["issued"]["sim_step"],
+            "measured_joint_delta_rad": feedback[-1]["left_positions"][index] - current,
+            "measured_feedback": feedback,
+        }
+        chain["joint_profile"] = {"source": sample_path.name, "sha256": hashlib.sha256(sample_path.read_bytes()).hexdigest(),
+                                  "left_names": [d["name"] for d in sample["left_dofs"]],
+                                  "right_names": [d["name"] for d in sample["right_dofs"]],
+                                  "position_unit": "rad", "velocity_unit": "rad/s"}
+        (out / "action-chain.json").write_text(json.dumps(chain, indent=2, allow_nan=False), encoding="utf-8")
+        checkpoint("action_chain_written")
     checkpoint("sample_written")
     if os.environ.get("ROBOTICS_RUNTIME_CONTROL") == "1":
         from runtime_control_probe import run_control_probe

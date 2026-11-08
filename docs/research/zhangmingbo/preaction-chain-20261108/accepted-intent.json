@@ -1,0 +1,17 @@
+{
+  "task_id": "6f0a97fb-6800-4f32-8c80-2adda20f83bd",
+  "observation_id": "7558a9ae-04cc-499b-aac1-fcf745d62237",
+  "command_id": "ab0e211b-cb6b-435b-9c17-976a601b6d53",
+  "control_generation": 0,
+  "channel": "left:shoulder_pan_joint",
+  "runtime_index": 0,
+  "unit": "rad",
+  "representation": "absolute",
+  "target": -1.5400000524520874,
+  "accepted": {
+    "wall_monotonic_ns": 451047703000000,
+    "sim_time_s": 0.5333333611488342,
+    "sim_step": 32
+  },
+  "acceptance_source": "local component probe after type and target checks"
+}

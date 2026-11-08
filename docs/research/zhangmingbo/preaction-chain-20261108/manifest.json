@@ -1,0 +1,26 @@
+{
+  "accepted-intent.json": {
+    "size_bytes": 555,
+    "sha256": "eb655cbe6b97c6656f9fb49e95874235607d79ba77a85362e17e01003fb4220d"
+  },
+  "action-chain.json": {
+    "size_bytes": 20273,
+    "sha256": "9ef68eb84a67a9ff7cb74b877f3560a9fa1b9b6ee8ccfd20667af770ff50dd35"
+  },
+  "camera-rgb.png": {
+    "size_bytes": 24434,
+    "sha256": "675aa4e51c8db61f24b7c0980ec1e11cba56ce8bc7cc32cc8f897525ef412175"
+  },
+  "pre-action-rgb.png": {
+    "size_bytes": 23843,
+    "sha256": "986575e04d0a1deb394c4c6da7bd5e068a2816c43917c8c0049676be9f8bb7e6"
+  },
+  "progress.jsonl": {
+    "size_bytes": 918,
+    "sha256": "b3fcfca7f49868e9be33314052011702ecae3668b547fae88bf5a25385f22ffa"
+  },
+  "sample.json": {
+    "size_bytes": 41820,
+    "sha256": "e8a000d3d4d0098e41a85ae5274da9eae1a56e5f4ecc7c81c58c3c899b28aa89"
+  }
+}
