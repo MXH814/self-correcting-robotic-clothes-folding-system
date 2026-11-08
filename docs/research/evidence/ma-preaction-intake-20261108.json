@@ -1,0 +1,32 @@
+{
+  "schema": "preaction-intake-audit/1",
+  "purpose": "causal_offline_component_integration",
+  "source_manifest_sha256": "e2c670b7597cfa53b1eaa8285413be0270fab4bcdaa415a66ee1f9113e8bcfd3",
+  "chain_sha256": "9ef68eb84a67a9ff7cb74b877f3560a9fa1b9b6ee8ccfd20667af770ff50dd35",
+  "producer_sha256": "8e871c05e7033e88dd68a1a911ca4cb2b9db35d0079e3e6f08ddb7eacdea18b2",
+  "run_id": "e0b6e45c-f9c2-4b97-93d3-9c4041018655",
+  "profile_id": "a85793026d20bc1df2969d1e9fa397786de3ef719161095b5ef26e1f4f51cfb5",
+  "verified_files": 6,
+  "current_dimension": 492,
+  "block_dimensions": {
+    "rgb_grid": 192,
+    "joint_q_dq": 120,
+    "masked_candidate": 180
+  },
+  "render_to_read_age_sim_s": 0.03333333507180214,
+  "pre_rgb_read_end_to_joint_begin_wall_s": 0.094,
+  "image_read_to_admission_wall_s": 0.11,
+  "segment_sim_s": 1.0000000521540642,
+  "segment_wall_s": 1.218,
+  "segment_steps": 60,
+  "feedback_samples": 4,
+  "measured_commanded_joint_delta_rad": 0.02996087074279785,
+  "pre_command_rgb_available": true,
+  "prior_executed_history_for_this_decision_available": false,
+  "subsequent_component_history_entry_available": true,
+  "product_coordinator_verified": false,
+  "recovery_outcomes_available": false,
+  "diagnostic_dataset_ready": false,
+  "online_authorized": false,
+  "research_conclusion": "NOT_ESTABLISHED"
+}
