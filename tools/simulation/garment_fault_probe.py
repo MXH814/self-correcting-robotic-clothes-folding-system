@@ -1,4 +1,5 @@
 """Collect first-sleeve disturbance evidence with DexGarmentLab's actual cloth and arm."""
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -90,6 +91,16 @@ def run(output):
                 "vertex_velocity_m_s": (second - first) / (env.world.current_time - first_time),
                 "joint_position_rad": np.concatenate([a.get_joint_positions() for a in (arm, robot.dexright)]),
                 "joint_velocity_rad_s": np.concatenate([a.get_joint_velocities() for a in (arm, robot.dexright)])}
+
+    def save_midstate_snapshot(case_index, state):
+        destination = output / f"midstate-{case_index}.npz"
+        with destination.open("xb") as stream:
+            np.savez_compressed(stream, **state)
+        raw = destination.read_bytes()
+        return {"file": destination.name, "bytes": len(raw),
+                "sha256": hashlib.sha256(raw).hexdigest(),
+                "sim_step": env.world.current_time_step_index,
+                "sim_time_s": env.world.current_time, "wall_monotonic_ns": time.monotonic_ns()}
 
     def state_errors(reference, replay):
         errors = {}
@@ -205,9 +216,15 @@ def run(output):
             window("hold")
             if midstate_mode:
                 midstate = measured_state()
+                result["midstate_joint_names"] = {
+                    "left": list(arm.dof_names), "right": list(robot.dexright.dof_names)
+                }
+                result["midstate_vertex_velocity_source"] = "one-step finite difference of world-space USD mesh"
+                trial["midstate_snapshot"] = save_midstate_snapshot(case_index, midstate)
                 midstate_references.append(midstate)
                 trial["midstate_sim_time_s"] = env.world.current_time
                 trial["midstate_error_vs_first"] = state_errors(midstate_references[0], midstate)
+                save()
             if condition.endswith("_regrasp"):
                 trial["candidate"] = "scripted_regrasp_at_original_pick"
                 hand("experimental_regrasp_release", "open")

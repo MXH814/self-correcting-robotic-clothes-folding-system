@@ -15,3 +15,5 @@ docs/research/zhangmingbo/preaction-chain-20261108/*.json* -text whitespace=cr-a
 docs/research/zhangmingbo/adapter-fault-evidence-20261108.json -text whitespace=cr-at-eol
 docs/research/zhangmingbo/garment-fault-20261108/*.json* -text whitespace=cr-at-eol
 docs/research/zhangmingbo/garment-midstate-20261108/*.json* -text whitespace=cr-at-eol
+docs/research/zhangmingbo/garment-midstate-snapshots-20261108/*.json* -text whitespace=cr-at-eol
+docs/research/zhangmingbo/garment-midstate-snapshots-20261108/*.npz binary
