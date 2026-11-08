@@ -1,0 +1,399 @@
+{
+  "trial_id": "5ee7f246-cfd0-4321-8d80-b608723d789f",
+  "garment": "TCLC_018",
+  "injection": "zero_friction_closed_hand_translation",
+  "dr02_label": null,
+  "candidate": "regrasp_near_original_pick",
+  "product_legality": null,
+  "regrasp_lateral_offset_m": 0.0,
+  "resume_at": "upstream first-sleeve transfer, third left dense move",
+  "upstream_sha256": {
+    "Env_StandAlone/Fold_Tops_Env.py": "ccb545bf3af108cee112dd83600fa2b730bf2c0e8e6488d78044fbfaa948d66e",
+    "Env_Config/Robot/DexLeft_Ur10e.py": "5dbb3132c11bb89bcfcdabbdb0325d15171398f8a5822bfa7196426fc25b379b",
+    "Env_Config/Robot/BimanualDex_Ur10e.py": "dbfc20cb34fa2a9113aae239a93c99a082a0b4131e55e7e27ef2ee5adb407524",
+    "Env_Config/Utils_Project/Position_Judge.py": "94c61f0705a43736d94d71d01407bc834fe004303976d8fd60f137fb2ced3804"
+  },
+  "checkpoints": {
+    "before-injection": {
+      "sim_step": 347,
+      "sim_time_s": 5.783333634957671,
+      "read_begin_monotonic_ns": 457591234000000,
+      "read_end_monotonic_ns": 457591234000000,
+      "image": "before-injection.png",
+      "image_sha256": "05e0950a0c8e0ba9c158e220f91acaa847c08a8491f985dbcf777a18d8bcc138",
+      "rendering_time_s": 5.733333632349968,
+      "intended_patch_xyz_m": [
+        -0.5059814205568616,
+        0.6362205978705179,
+        0.3056943414010096
+      ]
+    },
+    "before-recovery": {
+      "sim_step": 393,
+      "sim_time_s": 6.55000034160912,
+      "read_begin_monotonic_ns": 457602500000000,
+      "read_end_monotonic_ns": 457602500000000,
+      "image": "before-recovery.png",
+      "image_sha256": "46792c43d151a4c6dda170ff893ad1ac2abd88d589f89ea1407ed22427bd404b",
+      "rendering_time_s": 6.533333674073219,
+      "intended_patch_xyz_m": [
+        -0.3168148462490586,
+        0.7179424209877868,
+        0.32654935085837095
+      ]
+    },
+    "after-recovery": {
+      "sim_step": 555,
+      "sim_time_s": 9.250000482425094,
+      "read_begin_monotonic_ns": 457634671000000,
+      "read_end_monotonic_ns": 457634671000000,
+      "image": "after-recovery.png",
+      "image_sha256": "d3fa0b8ba24217e97d0ea87c7218456de9bdf6c1b70cb4aaf37b8329e07c3161",
+      "rendering_time_s": 9.233333814889193,
+      "intended_patch_xyz_m": [
+        -0.4207403862446275,
+        0.6017819265955402,
+        0.31306832880094576
+      ]
+    },
+    "after-resume-transfer": {
+      "sim_step": 625,
+      "sim_time_s": 10.416667209938169,
+      "read_begin_monotonic_ns": 457650968000000,
+      "read_end_monotonic_ns": 457650968000000,
+      "image": "after-resume-transfer.png",
+      "image_sha256": "25f58a309f90cf23646949e0cff3b153fd5330fdaa81e3a8b859ebf0bae0e413",
+      "rendering_time_s": 10.383333874866366,
+      "intended_patch_xyz_m": [
+        0.11915353983885218,
+        0.9176459381610055,
+        0.2681406531784349
+      ]
+    },
+    "final": {
+      "sim_step": 1784,
+      "sim_time_s": 29.73333488404751,
+      "read_begin_monotonic_ns": 457769968000000,
+      "read_end_monotonic_ns": 457769968000000,
+      "image": "final.png",
+      "image_sha256": "e1bea36b814c9800d89483acd5fead91e81d510b918a158de516c6e616ecc81b",
+      "rendering_time_s": 29.716668216511607
+    }
+  },
+  "candidate_steps": [
+    {
+      "operation": "closed-hand-translation",
+      "begin_sim_step": 368,
+      "end_sim_step": 372,
+      "sdk_result": true
+    },
+    {
+      "operation": "regrasp-open",
+      "begin_sim_step": 393,
+      "end_sim_step": 413,
+      "sdk_result": null
+    },
+    {
+      "operation": "approach-regrasp-pick",
+      "begin_sim_step": 458,
+      "end_sim_step": 500,
+      "sdk_result": true
+    },
+    {
+      "operation": "close",
+      "begin_sim_step": 500,
+      "end_sim_step": 520,
+      "sdk_result": null
+    },
+    {
+      "operation": "lift",
+      "begin_sim_step": 532,
+      "end_sim_step": 555,
+      "sdk_result": true
+    }
+  ],
+  "judgment": {
+    "upstream_success": true,
+    "inside_count": 1824,
+    "point_count": 2048,
+    "minimum_ratio": 0.88,
+    "boundary_world_xy_m": [
+      -0.3381020903587341,
+      0.33384283185005187,
+      0.6249872088432312,
+      1.2036521196365357
+    ]
+  },
+  "intended_patch_vertex_ids": [
+    4934,
+    4988,
+    4888,
+    4987,
+    67,
+    4889,
+    4864,
+    4890,
+    66,
+    5062,
+    4928,
+    207
+  ],
+  "pick_world_m": [
+    -0.47334355115890503,
+    0.6103171706199646,
+    0.019999999552965164
+  ],
+  "lift_world_m": [
+    -0.47334355115890503,
+    0.6103171706199646,
+    0.3
+  ],
+  "fixed_transfer_world_m": [
+    0.15139596164226532,
+    1.0241355895996094,
+    0.3
+  ],
+  "wall_elapsed_s": 213.125,
+  "before_disturbance": [
+    {
+      "sim_time_s": 5.783333634957671,
+      "patch_minus_tip_midpoint_m": [
+        -0.050114070455390625,
+        -0.0045573476479757735,
+        0.025040134529023206
+      ],
+      "patch_world_m": [
+        -0.5059814205568616,
+        0.6362205978705179,
+        0.3056943414010096
+      ]
+    },
+    {
+      "sim_time_s": 5.833333637565374,
+      "patch_minus_tip_midpoint_m": [
+        -0.0501376571254698,
+        -0.004964396500566237,
+        0.02461906547540832
+      ],
+      "patch_world_m": [
+        -0.5076177748041121,
+        0.6290669290781233,
+        0.3234656530141275
+      ]
+    },
+    {
+      "sim_time_s": 5.883333640173078,
+      "patch_minus_tip_midpoint_m": [
+        -0.050362134776980816,
+        -0.004691034244052816,
+        0.02534986560294722
+      ],
+      "patch_world_m": [
+        -0.5080344476327013,
+        0.620611280514248,
+        0.3281370503182182
+      ]
+    },
+    {
+      "sim_time_s": 5.933333642780781,
+      "patch_minus_tip_midpoint_m": [
+        -0.05035195720467589,
+        -0.004888170520859547,
+        0.02538367619862808
+      ],
+      "patch_world_m": [
+        -0.5080392904308798,
+        0.6141431395606224,
+        0.32923399916043533
+      ]
+    },
+    {
+      "sim_time_s": 5.983333645388484,
+      "patch_minus_tip_midpoint_m": [
+        -0.050314060953431494,
+        -0.005190097618539391,
+        0.025212483742165503
+      ],
+      "patch_world_m": [
+        -0.5079376023085646,
+        0.6096090442653107,
+        0.32906621906988615
+      ]
+    },
+    {
+      "sim_time_s": 6.033333647996187,
+      "patch_minus_tip_midpoint_m": [
+        -0.050308876597972785,
+        -0.00540295502224597,
+        0.02493837868539356
+      ],
+      "patch_world_m": [
+        -0.5078812771678886,
+        0.6067144546838698,
+        0.32861563956109546
+      ]
+    },
+    {
+      "sim_time_s": 6.08333365060389,
+      "patch_minus_tip_midpoint_m": [
+        -0.050099158377230224,
+        -0.005563522722927039,
+        0.024720225187322142
+      ],
+      "patch_world_m": [
+        -0.5076379419274927,
+        0.6048898445103493,
+        0.3282226656398978
+      ]
+    },
+    {
+      "sim_time_s": 6.133333653211594,
+      "patch_minus_tip_midpoint_m": [
+        -0.04988908348304488,
+        -0.005802516038581729,
+        0.024705025399078095
+      ],
+      "patch_world_m": [
+        -0.5074084359191106,
+        0.6036329826758653,
+        0.3280795095804822
+      ]
+    }
+  ],
+  "disturbance": {
+    "target_world_m": [
+      -0.273343551158905,
+      0.7103171706199646,
+      0.32
+    ],
+    "sample_scale_m": 0.04,
+    "original_friction": 25.0,
+    "friction": 0.0
+  },
+  "after_disturbance": [
+    {
+      "sim_time_s": 6.200000323355198,
+      "patch_minus_tip_midpoint_m": [
+        -0.04832851426203211,
+        -0.023431790500590743,
+        0.004732168520217794
+      ],
+      "patch_world_m": [
+        -0.5053203059871908,
+        0.6413922780457044,
+        0.3068820901758727
+      ]
+    },
+    {
+      "sim_time_s": 6.250000325962901,
+      "patch_minus_tip_midpoint_m": [
+        -0.04430314559513859,
+        -0.014509239843196409,
+        -0.002130250893393526
+      ],
+      "patch_world_m": [
+        -0.4944211806731873,
+        0.7236321180555157,
+        0.3301504296438303
+      ]
+    },
+    {
+      "sim_time_s": 6.300000328570604,
+      "patch_minus_tip_midpoint_m": [
+        -0.059500592478066494,
+        0.0024750065642061836,
+        -0.0005528876808287286
+      ],
+      "patch_world_m": [
+        -0.47989265871837716,
+        0.7740737330752078,
+        0.35866033041208967
+      ]
+    },
+    {
+      "sim_time_s": 6.3500003311783075,
+      "patch_minus_tip_midpoint_m": [
+        -0.060616272657381565,
+        0.01996911760579223,
+        0.0061074686559236535
+      ],
+      "patch_world_m": [
+        -0.42718017396258023,
+        0.7822090208173859,
+        0.36257069235167866
+      ]
+    },
+    {
+      "sim_time_s": 6.400000333786011,
+      "patch_minus_tip_midpoint_m": [
+        -0.057121171463746734,
+        0.014977459281386829,
+        0.007665814542818339
+      ],
+      "patch_world_m": [
+        -0.3770932693374345,
+        0.7561086755689997,
+        0.3547621832132819
+      ]
+    },
+    {
+      "sim_time_s": 6.450000336393714,
+      "patch_minus_tip_midpoint_m": [
+        -0.05211849632403115,
+        0.01265361642231111,
+        -0.0005839077734560161
+      ],
+      "patch_world_m": [
+        -0.3463139397158311,
+        0.7390482399403012,
+        0.3387783559060484
+      ]
+    },
+    {
+      "sim_time_s": 6.500000339001417,
+      "patch_minus_tip_midpoint_m": [
+        -0.04763930686886714,
+        0.004985769323095801,
+        -0.005529101128028291
+      ],
+      "patch_world_m": [
+        -0.32694394537384913,
+        0.7216118472134919,
+        0.3280978695207373
+      ]
+    },
+    {
+      "sim_time_s": 6.55000034160912,
+      "patch_minus_tip_midpoint_m": [
+        -0.046126535983517514,
+        0.007404093293847613,
+        -0.003333554028828456
+      ],
+      "patch_world_m": [
+        -0.3168148462490586,
+        0.7179424209877868,
+        0.32654935085837095
+      ]
+    }
+  ],
+  "candidate_targets_world_m": {
+    "pick": [
+      -0.47334355115890503,
+      0.6103171706199646,
+      0.019999999552965164
+    ],
+    "lift": [
+      -0.47334355115890503,
+      0.6103171706199646,
+      0.3
+    ]
+  },
+  "slip_proxy_gate": {
+    "passed": true,
+    "minimum_drift_m": 0.0273838269655329,
+    "w0_m": 0.4749789486568581,
+    "contact_sensor_available": false
+  },
+  "diagnostic_gate": "finite upstream targets; pick-to-lift distance <= 0.32 m",
+  "resume_sdk_result": true
+}

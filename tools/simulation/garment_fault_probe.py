@@ -37,8 +37,15 @@ def run(output):
                                fluid_rest_offset=0.010, solid_rest_offset=0.010)
     robot = Bimanual_Ur10e(env.world, np.array([-0.8, 0, 0.5]), zeros, np.array([0.8, 0, 0.5]), zeros)
     arm = robot.dexleft
+    trace_condition = os.environ.get("ROBOTICS_GARMENT_TRACE_CASE")
+    cases = ("normal", "grasp_offset", "unexpected_release", "offset_regrasp", "release_regrasp")
+    slip_cases = ("closed_hand_slip_candidate", "closed_hand_slip_regrasp")
+    if trace_condition and trace_condition not in (*cases, "contact_offset_candidate", *slip_cases):
+        raise ValueError(f"Unknown garment trace case: {trace_condition}")
+    resolution = (240, 180) if trace_condition else (640, 480)
     camera = Recording_Camera(camera_position=np.array([0, 4.0, 6.0]),
-                              camera_orientation=np.array([0, 60, -90.0]))
+                              camera_orientation=np.array([0, 60, -90.0]), resolution=resolution,
+                              frequency=30 if trace_condition else 20)
     pick = np.array([-0.4600427, 0.6103945, 0.02])
     transfer = np.array([0.160156, 1.0065818, 0.30])
     orientation = np.array([0.579, -0.579, -0.406, 0.406])
@@ -70,11 +77,15 @@ def run(output):
         for _ in range(count):
             env.step()
 
+    if trace_condition:
+        np.savez_compressed(output / "reference-vertices.npz", vertices_m=vertices())
     env.reset()
     camera.initialize(depth_enable=False)
     baseline = None
     patch_ids = None
     midstate_mode = os.environ.get("ROBOTICS_MIDSTATE_PROBE") == "1"
+    if midstate_mode and trace_condition:
+        raise ValueError("Choose either midstate replay or one observation-trace case")
     midstate_references = []
     if midstate_mode:
         result["scope"] = "first_sleeve_failed_prefix_replay_and_restore_probe"
@@ -113,24 +124,37 @@ def run(output):
         return errors
 
     start = time.perf_counter()
-    conditions = (("unexpected_release",) * 3 if midstate_mode else
-                  ("normal", "grasp_offset", "unexpected_release", "offset_regrasp", "release_regrasp"))
+    conditions = ((trace_condition,) if trace_condition else
+                  ("unexpected_release",) * 3 if midstate_mode else cases)
     for case_index, condition in enumerate(conditions):
         env.reset()
         garment.set_pose(pos=origin, ori=zeros)
         robot.set_both_hand_state("open", "open")
         tick(100)
         root = vertices()
+        if trace_condition:
+            np.savez_compressed(output / "settled-vertices.npz", vertices_m=root)
         if baseline is None:
             baseline = root
             patch_ids = np.argsort(np.linalg.norm(root[:, :2] - pick[:2], axis=1))[:12]
             result["tracked_mesh_vertex_ids"] = patch_ids.tolist()
         err = np.linalg.norm(root - baseline, axis=1)
-        trial = {"condition": condition, "case_index": case_index, "root_mesh_rms_m": float(np.sqrt(np.mean(err ** 2))),
-                 "root_mesh_max_m": float(err.max()), "samples": [], "continuous_samples": [],
+        trial = {"trial_id": str(uuid.uuid4()), "condition": condition, "case_index": case_index,
+                 "root_mesh_rms_m": None if trace_condition else float(np.sqrt(np.mean(err ** 2))),
+                 "root_mesh_max_m": None if trace_condition else float(err.max()),
+                 "samples": [], "continuous_samples": [],
                  "motions": [], "hand_commands": [], "images": {},
                  "dr02_label": None, "terminal_task_result": None}
         result["trials"].append(trial)
+        trace = None
+        original_apply = {}
+        if trace_condition:
+            from garment_observation_trace import GarmentObservationTrace
+            arms = {"left": arm, "right": robot.dexright}
+            trace = GarmentObservationTrace(output, env.world, camera.camera, arms, trial["trial_id"])
+            for side, robot_arm in arms.items():
+                controller = robot_arm.get_articulation_controller()
+                original_apply[side] = (controller, controller.apply_action)
         patch_z0 = float(root[patch_ids, 2].mean())
 
         def measure(label, index, stream="samples"):
@@ -152,7 +176,7 @@ def run(output):
                 if index < 7:
                     tick(3)
             rgb = camera.get_rgb_graph()
-            if rgb is not None and rgb.shape == (480, 640, 3):
+            if rgb is not None and rgb.shape == (resolution[1], resolution[0], 3):
                 prefix = f"replay-{case_index}" if midstate_mode else condition
                 name = f"{prefix}-{label}.png"
                 imageio.imwrite(output / name, rgb)
@@ -165,16 +189,21 @@ def run(output):
         def hand(label, state):
             nonlocal current_phase
             current_phase = label
+            if trace:
+                trace.boundary(label)
             begin = timestamp()
             robot.set_both_hand_state(left_hand_state=state)
             trial["hand_commands"].append({"phase": label, "state": state, "begin": begin, "end": timestamp()})
 
-        def move(label, target):
+        def move(label, target, step_m=0.01):
             nonlocal current_phase
             current_phase = label
+            if trace:
+                trace.boundary(label)
             begin = timestamp()
-            success = arm.dense_step_action(target, orientation)
+            success = arm.dense_step_action(target, orientation, dense_sample_scale=step_m)
             trial["motions"].append({"phase": label, "target_m": target.tolist(), "ik_reported": bool(success),
+                                     "dense_sample_scale_m": step_m,
                                      "begin": begin, "end": timestamp()})
             if not success:
                 raise CaseAbort(f"upstream IK reported failure in {label}")
@@ -190,14 +219,23 @@ def run(output):
             count += 1
             if count % 3 == 0:
                 measure(current_phase, count, "continuous_samples")
+            if trace:
+                trace.observe(current_phase)
             return result
 
         try:
+            if trace:
+                trace.boundary(current_phase)
+                for side, (controller, apply) in original_apply.items():
+                    controller.apply_action = trace.wrap_apply(side, apply, lambda: current_phase)
             measure(current_phase, 0, "continuous_samples")
             env.world.step = sample_step
             shifted = condition in ("grasp_offset", "offset_regrasp")
             opened_early = condition in ("unexpected_release", "release_regrasp")
             applied_pick = pick + offset if shifted else pick.copy()
+            if condition == "contact_offset_candidate":
+                applied_pick += np.array([0.046, 0.025, 0.0])
+                trial["injection"] = {"kind": "shifted_approach", "offset_m": (applied_pick - pick).tolist()}
             move("approach", applied_pick)
             hand("expected_hold_begins", "close")
             tick(12)
@@ -213,6 +251,18 @@ def run(output):
                 hand("injected_open_during_hold", "open")
             elif shifted:
                 trial["injection"] = {"kind": "shifted_approach", "offset_m": offset.tolist()}
+            elif condition in slip_cases:
+                material = garment.particle_material
+                original_friction = float(material.get_friction())
+                trial["injection"] = {"kind": "reduced_friction_and_coarser_motion_during_closed_hold",
+                                      "sim_time_s": env.world.current_time,
+                                      "original_friction": original_friction, "friction": 0.0}
+                try:
+                    material.set_friction(0.0)
+                    move("disturbance_closed_hand", lift + np.array([0.20, 0.10, 0.02]), step_m=0.04)
+                    window("disturbance_closed_hand")
+                finally:
+                    material.set_friction(original_friction)
             window("hold")
             if midstate_mode:
                 midstate = measured_state()
@@ -225,7 +275,18 @@ def run(output):
                 trial["midstate_sim_time_s"] = env.world.current_time
                 trial["midstate_error_vs_first"] = state_errors(midstate_references[0], midstate)
                 save()
-            if condition.endswith("_regrasp"):
+            attempt_regrasp = condition.endswith("_regrasp")
+            if condition == "closed_hand_slip_regrasp":
+                baseline_relative = np.median([sample["patch_minus_hand_m"] for sample in trial["samples"]
+                                              if sample["phase"] == "lifted"], axis=0)
+                held_relative = np.asarray([sample["patch_minus_hand_m"] for sample in trial["samples"]
+                                            if sample["phase"] == "hold"])
+                minimum_drift = float(np.linalg.norm(held_relative - baseline_relative, axis=1).min())
+                threshold = 0.04 * 0.4749789486568581
+                attempt_regrasp = minimum_drift > threshold
+                trial["diagnostic_gate"] = {"passed": attempt_regrasp, "minimum_drift_m": minimum_drift,
+                                            "threshold_m": threshold, "contact_sensor_available": False}
+            if attempt_regrasp:
                 trial["candidate"] = "scripted_regrasp_at_original_pick"
                 hand("experimental_regrasp_release", "open")
                 move("regrasp_retreat", lift + np.array([0, -0.15, 0.05]))
@@ -246,6 +307,11 @@ def run(output):
             trial.update(status="aborted", abort_reason=str(error))
         finally:
             env.world.step = original_step
+            for controller, apply in original_apply.values():
+                controller.apply_action = apply
+        if trace:
+            trace.boundary("trial_end")
+            trace.save(condition)
         save()
         print("GARMENT_FAULT_CASE_RECORDED", condition, flush=True)
     if midstate_mode:

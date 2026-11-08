@@ -1,0 +1,65 @@
+{
+  "normal": {
+    "file": "normal.zip",
+    "bytes": 11455647,
+    "sha256": "4d27b01d06032f6a8536ac93b71aa498128271af894d82a30492b0e7238a9148",
+    "trial_id": "cc93a777-7c06-4fd3-8446-94616ae73495",
+    "rgb_frames": 159,
+    "observations": 165,
+    "dispatches": 157
+  },
+  "contact_offset_candidate": {
+    "file": "contact_offset_candidate.zip",
+    "bytes": 11171058,
+    "sha256": "02f584ca74b5701d6f6a28772176c41e5e442c17327651dcd441d0e0d423bd84",
+    "trial_id": "e4a3b682-7822-4a98-ba4b-e0c1cef2a362",
+    "rgb_frames": 155,
+    "observations": 161,
+    "dispatches": 151
+  },
+  "closed_hand_slip_candidate": {
+    "file": "closed_hand_slip_candidate.zip",
+    "bytes": 12030401,
+    "sha256": "4f1fd77a4586e0c1898a4641794bbe9c32a4964286301aca7d0b312b9d27668b",
+    "trial_id": "2e947a25-9108-4e54-a5fb-5d1738d5e256",
+    "rgb_frames": 167,
+    "observations": 174,
+    "dispatches": 140
+  },
+  "release_regrasp": {
+    "file": "release_regrasp.zip",
+    "bytes": 19386000,
+    "sha256": "d5b6d2239ce2a2b34ea00d8a0d00d71883d62ba64d579c066a9d0948fa3096a8",
+    "trial_id": "f19535ba-7f48-4eb5-b36f-b1339127d748",
+    "rgb_frames": 277,
+    "observations": 289,
+    "dispatches": 239
+  },
+  "full-fold-early-open": {
+    "file": "full-fold-early-open.zip",
+    "bytes": 1266306,
+    "sha256": "9a11980b2235c11ad10ade8d4d61bc75c5d44826f95c113997ec6f7bd52aec7f",
+    "trial_id": "a298a167-cb06-436d-9fd0-423e0caa6cbe",
+    "inside_count": 1984,
+    "point_count": 2048,
+    "upstream_success": true
+  },
+  "full-fold-closed-hand-slip": {
+    "file": "full-fold-closed-hand-slip.zip",
+    "bytes": 1265555,
+    "sha256": "4636a0937e52d0874e6d5dadd2eea89735f7b5b51176c59606e877c269f0c930",
+    "trial_id": "5ee7f246-cfd0-4321-8d80-b608723d789f",
+    "inside_count": 1824,
+    "point_count": 2048,
+    "upstream_success": true
+  },
+  "closed_hand_slip_regrasp": {
+    "file": "closed_hand_slip_regrasp.zip",
+    "bytes": 20630032,
+    "sha256": "f52bc2c8096e7b3a094bd44a0b0879e05b77751ddd907c31893fa5071f0a67f1",
+    "trial_id": "53ffafbb-d5f9-4390-b445-28addf58f40e",
+    "rgb_frames": 293,
+    "observations": 305,
+    "dispatches": 259
+  }
+}

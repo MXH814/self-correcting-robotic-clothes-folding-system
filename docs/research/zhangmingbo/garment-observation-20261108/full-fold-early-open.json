@@ -1,0 +1,152 @@
+{
+  "trial_id": "a298a167-cb06-436d-9fd0-423e0caa6cbe",
+  "garment": "TCLC_018",
+  "injection": "early_open_after_first_lift",
+  "dr02_label": null,
+  "candidate": "regrasp_at_original_pick",
+  "product_legality": null,
+  "resume_at": "upstream first-sleeve transfer, third left dense move",
+  "upstream_sha256": {
+    "Env_StandAlone/Fold_Tops_Env.py": "ccb545bf3af108cee112dd83600fa2b730bf2c0e8e6488d78044fbfaa948d66e",
+    "Env_Config/Robot/DexLeft_Ur10e.py": "5dbb3132c11bb89bcfcdabbdb0325d15171398f8a5822bfa7196426fc25b379b",
+    "Env_Config/Robot/BimanualDex_Ur10e.py": "dbfc20cb34fa2a9113aae239a93c99a082a0b4131e55e7e27ef2ee5adb407524",
+    "Env_Config/Utils_Project/Position_Judge.py": "94c61f0705a43736d94d71d01407bc834fe004303976d8fd60f137fb2ced3804"
+  },
+  "checkpoints": {
+    "before-injection": {
+      "sim_step": 347,
+      "sim_time_s": 5.783333634957671,
+      "read_begin_monotonic_ns": 457352750000000,
+      "read_end_monotonic_ns": 457352750000000,
+      "image": "before-injection.png",
+      "image_sha256": "cae030ebf0c6bfa0515b2db2c7056ba97ee87773101b645d97680fc3cd270d1a",
+      "rendering_time_s": 5.750000299885869,
+      "intended_patch_xyz_m": [
+        -0.4748019181732897,
+        0.6371322895857136,
+        0.31143336460362586
+      ]
+    },
+    "before-recovery": {
+      "sim_step": 412,
+      "sim_time_s": 6.866667024791241,
+      "read_begin_monotonic_ns": 457367468000000,
+      "read_end_monotonic_ns": 457367468000000,
+      "image": "before-recovery.png",
+      "image_sha256": "97b4c5d769f919a9a6fea9e895e62ffc42715dc2f80f82f89d30f476e780bd42",
+      "rendering_time_s": 6.8166670221835375,
+      "intended_patch_xyz_m": [
+        -0.5058553976945722,
+        0.6340096446736823,
+        0.04129929751484142
+      ]
+    },
+    "after-recovery": {
+      "sim_step": 500,
+      "sim_time_s": 8.333333767950535,
+      "read_begin_monotonic_ns": 457387218000000,
+      "read_end_monotonic_ns": 457387218000000,
+      "image": "after-recovery.png",
+      "image_sha256": "98e1067cbe6fed760e4e80ed68724ac7f2469f253582a2ab7ca3f3cb25eff93a",
+      "rendering_time_s": 8.316667100414634,
+      "intended_patch_xyz_m": [
+        -0.5224977118012276,
+        0.6420427207607761,
+        0.28505673433418116
+      ]
+    },
+    "after-resume-transfer": {
+      "sim_step": 567,
+      "sim_time_s": 9.450000492855906,
+      "read_begin_monotonic_ns": 457400906000000,
+      "read_end_monotonic_ns": 457400906000000,
+      "image": "after-resume-transfer.png",
+      "image_sha256": "96c5232a9ec23dbc6736253f2fd791139f4575b680a282344aa6a13a24b02a92",
+      "rendering_time_s": 9.416667157784104,
+      "intended_patch_xyz_m": [
+        0.012056728024854172,
+        0.9153604555904473,
+        0.29637053766815064
+      ]
+    },
+    "final": {
+      "sim_step": 1722,
+      "sim_time_s": 28.700001496821642,
+      "read_begin_monotonic_ns": 457518593000000,
+      "read_end_monotonic_ns": 457518593000000,
+      "image": "final.png",
+      "image_sha256": "12667c4e7ecff633cdaaff818ec76955c4d6470820cbc636fce65a8f8d26cd0d",
+      "rendering_time_s": 28.65000149421394
+    }
+  },
+  "candidate_steps": [
+    {
+      "operation": "injected-open",
+      "begin_sim_step": 347,
+      "end_sim_step": 367,
+      "sdk_result": null
+    },
+    {
+      "operation": "approach-original-pick",
+      "begin_sim_step": 412,
+      "end_sim_step": 445,
+      "sdk_result": true
+    },
+    {
+      "operation": "close",
+      "begin_sim_step": 445,
+      "end_sim_step": 465,
+      "sdk_result": null
+    },
+    {
+      "operation": "lift",
+      "begin_sim_step": 477,
+      "end_sim_step": 500,
+      "sdk_result": true
+    }
+  ],
+  "judgment": {
+    "upstream_success": true,
+    "inside_count": 1984,
+    "point_count": 2048,
+    "minimum_ratio": 0.88,
+    "boundary_world_xy_m": [
+      -0.33356340527534484,
+      0.346988308429718,
+      0.6340814471244812,
+      1.2036951541900636
+    ]
+  },
+  "intended_patch_vertex_ids": [
+    5116,
+    5198,
+    5196,
+    4808,
+    5195,
+    5197,
+    4809,
+    4956,
+    4864,
+    5158,
+    4981,
+    5114
+  ],
+  "pick_world_m": [
+    -0.4509957730770111,
+    0.6150035858154297,
+    0.019999999552965164
+  ],
+  "lift_world_m": [
+    -0.4509957730770111,
+    0.6150035858154297,
+    0.3
+  ],
+  "fixed_transfer_world_m": [
+    0.15577158331871033,
+    1.010969877243042,
+    0.3
+  ],
+  "wall_elapsed_s": 201.797,
+  "diagnostic_gate": "finite upstream targets; pick-to-lift distance <= 0.32 m",
+  "resume_sdk_result": true
+}
