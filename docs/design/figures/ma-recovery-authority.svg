@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#31628a"/></marker></defs><rect width="1280" height="720" fill="white"/><g font-family="Times New Roman,serif"><text x="48" y="60" font-size="37" font-weight="bold" fill="#20344b" text-anchor="start">Recovery proposals and execution authority</text>
+<text x="48" y="104" font-size="24" font-weight="normal" fill="#20344b" text-anchor="start">The task coordinator authorizes each accepted segment</text>
+<text x="48" y="148" font-size="21" font-weight="normal" fill="#20344b" text-anchor="start">Choice: centralized checks. Cost: additional protocol and dispatch latency.</text>
+<rect x="48" y="200" width="232" height="190" rx="8" fill="#eef4f8" stroke="#31628a" stroke-width="2"/>
+<text x="164.0" y="238" font-size="23" font-weight="bold" fill="#20344b" text-anchor="middle">Observations</text>
+<text x="64" y="278" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">RGB and robot state</text>
+<text x="64" y="306" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">Past frames and masks</text>
+<text x="64" y="334" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">Goal and budget</text>
+<rect x="352" y="200" width="232" height="190" rx="8" fill="#eef4f8" stroke="#31628a" stroke-width="2"/>
+<text x="468.0" y="238" font-size="23" font-weight="bold" fill="#20344b" text-anchor="middle">Recovery worker</text>
+<text x="368" y="278" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">Detect supported errors</text>
+<text x="368" y="306" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">Generate and score</text>
+<text x="368" y="334" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">Return proposals only</text>
+<rect x="672" y="200" width="256" height="190" rx="8" fill="#eef4f8" stroke="#31628a" stroke-width="2"/>
+<text x="800.0" y="238" font-size="23" font-weight="bold" fill="#20344b" text-anchor="middle">Task coordinator</text>
+<text x="688" y="278" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">Authority and generation</text>
+<text x="688" y="306" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">Freshness and action limits</text>
+<text x="688" y="334" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">Budget and calibration</text>
+<text x="688" y="362" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">Persist before dispatch</text>
+<rect x="1000" y="200" width="232" height="190" rx="8" fill="#eef4f8" stroke="#31628a" stroke-width="2"/>
+<text x="1116.0" y="238" font-size="23" font-weight="bold" fill="#20344b" text-anchor="middle">Simulation adapter</text>
+<text x="1016" y="278" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">Accept current commands</text>
+<text x="1016" y="306" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">Execute finite segment</text>
+<text x="1016" y="334" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">Measured feedback</text>
+<text x="1016" y="362" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">Fence revoked generations</text>
+<path d="M 280 295 H 348" fill="none" stroke="#31628a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="316.0" y="275" font-size="17" font-weight="normal" fill="#20344b" text-anchor="middle">context</text>
+<path d="M 584 295 H 668" fill="none" stroke="#31628a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="628.0" y="275" font-size="17" font-weight="normal" fill="#20344b" text-anchor="middle">propose</text>
+<path d="M 928 295 H 996" fill="none" stroke="#31628a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="964.0" y="275" font-size="17" font-weight="normal" fill="#20344b" text-anchor="middle">dispatch</text>
+<path d="M800 390 V464" fill="none" stroke="#31628a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="814" y="435" font-size="19" font-weight="normal" fill="#20344b" text-anchor="start">reject</text>
+<rect x="672" y="468" width="256" height="66" rx="8" fill="#fff4df" stroke="#b88322" stroke-width="2"/>
+<text x="800" y="508" font-size="23" font-weight="normal" fill="#20344b" text-anchor="middle">Reobserve / stop / help</text>
+<path d="M1116 390 V600 H164 V394" fill="none" stroke="#31628a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<text x="640" y="581" font-size="23" font-weight="normal" fill="#20344b" text-anchor="middle">Measured feedback and a new observation</text>
+<text x="48" y="675" font-size="20" font-weight="normal" fill="#20344b" text-anchor="start">Design baseline. Stop confirmation requires fresh measurements and an active generation barrier.</text></g></svg>

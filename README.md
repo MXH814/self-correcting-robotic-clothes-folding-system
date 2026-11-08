@@ -34,6 +34,10 @@
 | [马祥珲数据接入进展](docs/research/ma-data-intake-progress.md) | 两条正常轨迹153帧已实际校验；数值导出、阶段内历史、环境及恢复实验剩余输入 |
 | [PR #6/#7审查与数据接收](docs/reviews/pr6-7-handoff-review.md) | 架构素材已合并，两个正常数据包153帧已实际校验；80/81关闭，环境/profile/恢复数据仍待完成 |
 | [三架构展示素材](docs/design/architecture-presentation-draft.md) | 张茗博的逻辑/部署图源、技术取舍、交互及135秒讲解候选稿，待整合Slides |
+| [马祥珲两页展示素材](docs/design/ma-presentation-materials.md) | 可编辑SVG/PNG核心图和风险图，中英讲解、决策对比与答辩问答 |
+| [153帧真实观测编码](docs/research/normal-observation-integration.md) | 固定RGB/关节/历史编码已运行、真实预览和可复跑入口；无恢复标签或科研结论 |
+| [评分与并发契约澄清](docs/design/contract-clarifications.md) | 后续成功/整试次指标、旧代不可用计数及adapter代次屏障的精确定义 |
+| [PR #8固定环境准备审查](docs/reviews/pr8-environment-review.md) | 固定源码、50项依赖、584项资产核验入口已补齐；目标机部署/真实控制与恢复仍待验证 |
 | [仿真接入与审查结论](docs/research/dex-integration-plan.md) | 平台已选定，NPZ安全审计、在线来源隔离、评价差异与后续交接；独立复跑未完成 |
 | [马祥珲最终剩余清单](docs/research/ma-remaining-checklist.md) | 已完成项、真实环境/数据阻塞、队友最小交付与个人/课程事项 |
 | [Assignment 2 要求与验收](docs/assignment-2-checklist.md) | 九项交付、三人分工、展示/反馈、词数与打包检查 |

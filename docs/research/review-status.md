@@ -2,6 +2,16 @@
 
 日期：2026-11-07。复核对象为马祥珲分工的文献/设计、离线软件及PR #2复审后的接入，不涵盖未合并的 hzy 文件或完整课程交付。
 
+## 2026-11-08 后续推进记录
+
+- PR #6/#7已合并并实际接收两个正常包，153帧校验及固定RGB/关节/历史编码已运行；见[接入结果](normal-observation-integration.md)及[机器证据](evidence/ma-normal-feature-integration-20261108.json)。没有使用缺失动作/时间或生成恢复标签。
+- 两张可编辑SVG展示图及PNG已渲染查看并修正文字边界，两个真实观测预览也已查看；[中英讲解、取舍与问答](../design/ma-presentation-materials.md)已交付。没有真实计时排练、全组PPT整合或Canvas回执。
+- PR #1遗留的评分目标/旧代计数/adapter屏障歧义已[澄清并同步](../design/contract-clarifications.md)；preflight增加非法响应与代次类型拒绝。物理并发与停止尚未验证。
+- PR #8已[审查合并](../reviews/pr8-environment-review.md)，源码/依赖/资产获取与核验入口已补齐；目标机未安装或独立复跑，不再重复索要旧归档。
+- PR #8隔离分支41项Python测试及启动器断言通过；整合本人新增代码后49项Python测试通过，compileall通过。本轮变更的135个本地Markdown链接、围栏、SVG/XML、PNG及JSON检查通过；Summary候选523词。既有四篇200–300词参考注释未改。
+
+以下保留11月7日检查快照；本段及最新接入记录优先，不用旧待办否定已发生的交接/编码，也不把新软件检查冒充恢复研究。
+
 ## 已执行的文档检查
 
 - 四份版本化源HTML获取指纹与 source-registry.json 一致；引用不跨版本混用。

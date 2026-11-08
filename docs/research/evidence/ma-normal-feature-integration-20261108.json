@@ -1,0 +1,95 @@
+{
+  "date": "2026-11-08",
+  "input_kind": "actual received normal demonstration numeric exports",
+  "feature_export_manifest": {
+    "schema_version": "legacy-feature-export/1",
+    "status": "EXPORT_COMPLETE",
+    "purpose": "offline_normal_observation",
+    "feature_version": "rgb-grid-mean/1/g8/h4",
+    "frames": 153,
+    "sources": [
+      {
+        "source_sha256": "2309165bccd101c6ad65460716844d4f47d4b71e2f2f3dd775ecf37c47dac552",
+        "source_manifest_sha256": "b884797c0a8f85ffff94c26391f9c292b82be834222e8d1395c23b3c57c68d6c",
+        "source_records_sha256": "834bc6727f62b09a9f2681b4a28da1675726fcba1d735e57c963fdfe2ec2d19e",
+        "frames": 77,
+        "stage_counts": {
+          "stage_1": 27,
+          "stage_2": 27,
+          "stage_3": 23
+        }
+      },
+      {
+        "source_sha256": "f65137e0e1fb9e9de169a21d074162a0c0e47096035fb377fc21e4b18abffeb1",
+        "source_manifest_sha256": "ab5eb2a981cc315e684b2be7373fec3ff19a91df29c1fa65469e8bc8e9fad6e4",
+        "source_records_sha256": "84469d7737ffb056eef51999b2b88fce5dd0077281f7690653749a9e5e294b5e",
+        "frames": 76,
+        "stage_counts": {
+          "stage_1": 27,
+          "stage_2": 27,
+          "stage_3": 22
+        }
+      }
+    ],
+    "features_sha256": "cf2b43cf4239f060f521f220bbaa7dde855009cdb21839205e3ab63ddee63f43",
+    "encoder": {
+      "kind": "fixed spatial RGB means",
+      "grid": [
+        8,
+        8
+      ],
+      "dimension": 192,
+      "normalization": "uint8 / 255",
+      "order": "row-major cells, RGB within cell",
+      "fitted_parameters": 0
+    },
+    "history": {
+      "length": 4,
+      "current_excluded": true,
+      "stage_local": true,
+      "zero_padding_with_explicit_mask": true,
+      "record_order_only": true
+    },
+    "joint_dimension": 60,
+    "joint_units_verified": false,
+    "camera_provenance_verified": false,
+    "online_authorized": false,
+    "actions_available": false,
+    "recovery_outcomes_available": false,
+    "train_validation_split_created": false,
+    "research_conclusion": "NOT_ESTABLISHED",
+    "limitations": [
+      "Normal observations only; no executed action or candidate representation.",
+      "No real elapsed time, stop evidence or verified runtime camera/joint profile.",
+      "Coarse pixel means are an integration baseline, not a learned visual model.",
+      "Do not convert frames into independent recovery trials or H1/H2 candidates."
+    ]
+  },
+  "history_valid_count_distribution": {
+    "0": 6,
+    "1": 6,
+    "2": 6,
+    "3": 6,
+    "4": 129
+  },
+  "unique_rgb_file_hashes": 153,
+  "all_153_rows_dimension_and_unknown_field_check": "PASS",
+  "software_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 49,
+    "synthetic_fixtures_do_not_establish_robot_performance": true,
+    "additional_preflight_checks": [
+      "malformed response rejects without selection",
+      "boolean/float generation cannot equal a valid integer generation"
+    ],
+    "integration_note": "Includes the asset-verifier test merged in PR #8; the prior own-work-only suite had 48 tests."
+  },
+  "implementation_git_blob": "5c56d60a54fe849297adc673432ddb33f8e42e33",
+  "output_path": "runs/ma-20261108-normal-features/",
+  "research_conclusion": "NOT_ESTABLISHED",
+  "runtime": {
+    "python": "3.9.13",
+    "numpy": "2.0.2",
+    "training_or_gpu_rental_performed": false
+  }
+}
