@@ -1,5 +1,7 @@
 # AI 恢复与系统控制接口基线
 
+**当前实测接入：** PR #10 已提供命名关节、组件时钟/绝对命令/反馈、可见 RGB 与组件停止；[Ma 编码和独立校验](../research/runtime-component-integration.md)已运行。仍不是冻结的产品 profile：该 RGB 仅为动作后检查，真实前缀/路径约束、跨模块时钟及协调器联调仍待完成。
+
 版本：`recovery-contract/0.1-draft`（保留消息兼容标识）。状态：组长授权下采纳的逻辑接口基线，队友可审核修订；已实现独立离线preflight子集，完整adapter/协调器尚未实现。逻辑方法名不强制 HTTP、语言或消息中间件。SRS 是验收基线，不能因示例值改变阈值。实现范围见[运行说明](../research/execution-guide.md)。
 
 ## 1. 身份、版本与时间

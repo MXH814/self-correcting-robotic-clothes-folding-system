@@ -15,10 +15,10 @@
 英文讲解候选（目标约70秒，未实际计时）：
 
 <!-- speech5:start -->
-The recovery worker proposes bounded actions, while the task coordinator owns execution authority. Observations, history, the goal and remaining budget provide the context. The coordinator checks the current generation, observation freshness, action limits and calibration, then records an accepted dispatch before sending it to the adapter. We chose this separation instead of letting the model command the robot directly. It adds protocol and latency, but lets us replace the recovery method while preserving control rules. After pause or handover, the adapter must reject revoked commands even if they arrive late. A high score cannot prove that the robot has stopped. When a proposal fails the checks, the system reobserves or enters the required stop and assistance path. We have designed this mechanism. Physical execution and stop feedback still require integration tests.
+The recovery worker proposes bounded actions, while the task coordinator owns execution authority. Observations, history, the goal and remaining budget provide the context. The coordinator checks the current generation, observation freshness, action limits and calibration, then records an accepted dispatch before sending it to the adapter. We chose this separation instead of letting the model command the robot directly. It adds protocol and latency, but lets us replace the recovery method while preserving control rules. After pause or handover, the adapter must reject revoked commands even if they arrive late. A high score cannot prove that the robot has stopped. When a proposal fails the checks, the system reobserves or enters the required stop and assistance path. We have designed this mechanism. Component motion and measured stops now have evidence; the product coordinator still requires integration tests.
 <!-- speech5:end -->
 
-中文理解稿：恢复模型只提出有限动作，协调器决定能否执行。与模型直接控制相比，这会增加协议和延迟，但能统一权限、预算与旧结果处理，并允许替换算法。暂停/接管后，adapter仍须拒绝迟到旧命令；停止需要新鲜测量，不能靠预测分数证明。该图表达设计，真实执行和停止还待联调。
+中文理解稿：恢复模型只提出有限动作，协调器决定能否执行。与模型直接控制相比，这会增加协议和延迟，但能统一权限、预算与旧结果处理，并允许替换算法。暂停/接管后，adapter仍须拒绝迟到旧命令；停止需要新鲜测量，不能靠预测分数证明。该图表达产品设计；组件执行和停止已有证据，完整协调器仍待联调。
 
 ## 第6页 开放问题与验证
 
@@ -31,10 +31,14 @@ The recovery worker proposes bounded actions, while the task coordinator owns ex
 英文讲解候选（目标约40秒，未实际计时）：
 
 <!-- speech6:start -->
-We have received and checked 153 normal demonstration frames. They support observation integration, but provide no recovery outcomes. Three issues remain. First, we need verified joint mappings, units and real command feedback. Second, we must test generation fencing and measured stopping under delayed commands. Third, we need comparable failure branches to test whether history and continuation scoring improve recovery. Each issue has an owner, a verification method and a fallback. Until the evidence is available, model scores remain offline rankings and unsupported online profiles stay disabled.
+We now have causal pre-action RGB, named joint state and a measured component action chain. The current action enters history only after feedback, so it cannot influence its own earlier decision. Product coordinator integration remains unverified. We also measured about thirty-two millimetres of variation after repeated settling. Comparable mid-task resets, labelled failures and actual recovery branches are the next steps. If states cannot be matched, we use independent blocked trials and limit our claims. Scores remain offline rankings until calibrated evidence supports execution.
 <!-- speech6:end -->
 
-中文理解稿：已接收153帧正常观测，但没有恢复结果。下一步核实真实通道/单位/反馈，验证迟到旧命令下的代次屏障与测量停止，再采集可比较恢复分支检验历史和延续评分。每项都有负责人、验证和后备，未满足输入与校准条件时保持离线诊断。
+中文理解稿：动作前RGB、命名关节与真实组件执行链现已接入；动作只能在反馈结束后供后续决策作历史，不能影响自己的早期决策。完整协调器尚未验证。沉降重置差异约32mm，下一步先验证中段起点，再采带标签的失败/恢复分支；不能匹配时改用独立分块试次并限定主张。分数未校准时继续离线。
+
+图中 Observation timing 的下一步验证现指衣物场景、连续决策与跨模块时钟。PR #13 的单次组件动作前采集已经完成，不重复要求；最新输入及历史边界见[接入结果](../research/preaction-integration-progress.md)。
+
+本轮事实与方法选择详见[实测接入](../research/runtime-component-integration.md)及[ADR-MA-005](decisions/ADR-MA-005-measured-input-and-branch-validity.md)。图和讲稿不是完整PPT，也不代表已经实际计时。
 
 ## 关键决策备份表
 
@@ -52,7 +56,7 @@ We have received and checked 153 normal demonstration frames. They support obser
 | --- | --- |
 | 创新点已经确定了吗？ | 目前是待验证问题：历史是否提供独立信息、局部重抓是否代表后续完成收益。已有研究包含时序、候选选择和价值修正，不能把它们的组合直接称创新。 |
 | 为什么不直接让LLM控制？ | 当前需求是明确的衣物恢复与受限执行，尚无必须用自然语言代理的证据。保留模型接口，按可部署信息、收益、延迟和成本决定方法。 |
-| 已经训练好恢复模型了吗？ | 已有离线工具及人工fixture软件测试；真实正常数据编码已运行。没有恢复候选标签，尚未完成恢复训练或有效H1/H2实验。 |
+| 已经训练好恢复模型了吗？ | 已有离线工具及人工fixture软件测试；真实正常数据编码已运行。新增真实组件编码和停止复算已完成；没有恢复候选标签，尚未完成恢复训练或有效H1/H2实验。 |
 | 153帧是不是153次试验？ | 不是。它们来自两条正常示范，且作者记录是同一衣物配置；不能逐帧随机划分或当独立恢复试验。没有由此得到泛化/成功率结论。 |
 | 固定RGB编码器有什么作用？ | 用8×8空间均值验证真实图像、历史和血缘的工程接入；零学习参数，不等于语义编码器、接触估计或方法创新。 |
 | 人工帮助过后还能恢复吗？ | 合法返回后可按当前条件评估“后续无需进一步帮助”的成功延续；整试次仍保留人工历史，不能重新计为全程自主成功。后返回校准证据目前缺失。 |

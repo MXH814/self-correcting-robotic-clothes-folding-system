@@ -1,29 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#31628a"/></marker></defs><rect width="1280" height="720" fill="white"/><g font-family="Times New Roman,serif"><text x="48" y="60" font-size="37" font-weight="bold" fill="#20344b" text-anchor="start">Open issues and verification</text>
-<text x="48" y="105" font-size="24" font-weight="normal" fill="#20344b" text-anchor="start">Current evidence covers 153 normal frames. Recovery experiments remain pending.</text>
+<text x="48" y="105" font-size="24" font-weight="normal" fill="#20344b" text-anchor="start">Measured 60-joint I/O and component stops; recovery outcomes remain unavailable.</text>
 <rect x="48" y="150" width="1184" height="48" fill="#203f60"/>
 <text x="64" y="182" font-size="23" font-weight="bold" fill="white" text-anchor="start">Open issue</text>
 <text x="306" y="182" font-size="23" font-weight="bold" fill="white" text-anchor="start">Part III verification</text>
 <text x="848" y="182" font-size="23" font-weight="bold" fill="white" text-anchor="start">Fallback</text>
 <rect x="48" y="198" width="1184" height="132" fill="#f0f4f8"/>
-<text x="64" y="241" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Input semantics</text>
+<text x="64" y="241" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Observation timing</text>
 <text x="64" y="292" font-size="20" font-weight="normal" fill="#526b83" text-anchor="start">Zhang + Ma</text>
-<text x="306" y="241" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Capture runtime joint maps, units, clocks</text>
-<text x="306" y="273" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">and actual command feedback.</text>
-<text x="848" y="241" font-size="22" font-weight="normal" fill="#20344b" text-anchor="start">Reject unsupported online profiles.</text>
-<text x="848" y="273" font-size="22" font-weight="normal" fill="#20344b" text-anchor="start">Keep old data for offline work.</text>
+<text x="306" y="241" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Capture pre-action RGB and align clocks.</text>
+<text x="306" y="273" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Separate deployed inputs from labels.</text>
+<text x="848" y="241" font-size="22" font-weight="normal" fill="#20344b" text-anchor="start">Do not backfill post-action RGB.</text>
+<text x="848" y="273" font-size="22" font-weight="normal" fill="#20344b" text-anchor="start">Legacy joint order stays unverified.</text>
 <rect x="48" y="330" width="1184" height="132" fill="#ffffff"/>
-<text x="64" y="373" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Cancellation and stop</text>
+<text x="64" y="373" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Control integration</text>
 <text x="64" y="424" font-size="20" font-weight="normal" fill="#526b83" text-anchor="start">Zhang + Ma</text>
-<text x="306" y="373" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Delay an old command until after halt.</text>
-<text x="306" y="405" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Verify fencing and measured rest.</text>
+<text x="306" y="373" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Extend component stops to real queues.</text>
+<text x="306" y="405" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Test loss, late replies and handover.</text>
 <text x="848" y="373" font-size="22" font-weight="normal" fill="#20344b" text-anchor="start">Keep the stop lock until evidence</text>
 <text x="848" y="405" font-size="22" font-weight="normal" fill="#20344b" text-anchor="start">passes the SRS conditions.</text>
 <rect x="48" y="462" width="1184" height="132" fill="#f0f4f8"/>
-<text x="64" y="505" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Recovery value</text>
-<text x="64" y="556" font-size="20" font-weight="normal" fill="#526b83" text-anchor="start">Ma + Hu</text>
-<text x="306" y="505" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Collect comparable recovery branches.</text>
-<text x="306" y="537" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Test H1 / H2, baselines and calibration.</text>
-<text x="848" y="505" font-size="22" font-weight="normal" fill="#20344b" text-anchor="start">Use offline ranking while evidence</text>
-<text x="848" y="537" font-size="22" font-weight="normal" fill="#20344b" text-anchor="start">or probability calibration is missing.</text>
+<text x="64" y="505" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Comparable recovery</text>
+<text x="64" y="556" font-size="20" font-weight="normal" fill="#526b83" text-anchor="start">Ma + Hu + Zhang</text>
+<text x="306" y="505" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Verify mid-task resets and contact state.</text>
+<text x="306" y="537" font-size="23" font-weight="normal" fill="#20344b" text-anchor="start">Test H1 / H2 with audited outcomes.</text>
+<text x="848" y="505" font-size="22" font-weight="normal" fill="#20344b" text-anchor="start">Use blocked trials if resets differ.</text>
+<text x="848" y="537" font-size="22" font-weight="normal" fill="#20344b" text-anchor="start">Keep ranks offline until calibrated.</text>
 <text x="48" y="642" font-size="22" font-weight="normal" fill="#20344b" text-anchor="start">Each PoC records raw evidence, pass/fail criteria, a responsible member and the fallback.</text>
-<text x="48" y="682" font-size="20" font-weight="normal" fill="#20344b" text-anchor="start">Status: design plan. Recovery performance and physical stopping await validation.</text></g></svg>
+<text x="48" y="682" font-size="20" font-weight="normal" fill="#20344b" text-anchor="start">Measured component probe; product integration and recovery performance remain unverified.</text></g></svg>

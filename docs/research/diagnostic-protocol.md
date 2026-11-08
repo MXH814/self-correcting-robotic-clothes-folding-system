@@ -1,5 +1,7 @@
 # 开发诊断与后续实验协议
 
+**PR #10 后的启动门禁：** [ADR-MA-005](../design/decisions/ADR-MA-005-measured-input-and-branch-validity.md)记录已测重置差异。不同重置实例未经中段状态/接触验证，不得伪称同根候选池；独立分块试次不导入现有同起点选择率工具。CR-01/02 已采纳为开发设计记录细化，局部统计采用 S/A＋覆盖率，正式产品阈值和通过条件不变。
+
 状态：研究方案与离线软件已形成，真实恢复数据尚未采集/诊断。环境已按[ADR-MA-004](../design/decisions/ADR-MA-004-simulation-platform.md)选定；张已有示范与训练小试报告，不等于恢复验收。负责人马祥珲；胡知鱼审核标签，张茗博负责可重现运行。本协议与 SRS 后续 180 次正式比较分开。
 
 ## 1. 启动前检查
@@ -56,4 +58,4 @@
 
 ## 8. 与队友数据规范衔接
 
-已只读参考胡知鱼 `hzy` 分支提交 `067cf91` 的 [数据规范](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/067cf91/docs/design/data-design.md) 与需求变更。该分支未并入本工作，记录/命名仍待团队一致确认。CR-01/CR-02 仍是 deferred；本协议的附加研究字段不能自动改变产品验收基线。
+已只读参考胡知鱼 `hzy` 分支提交 `067cf91` 的 [数据规范](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/blob/067cf91/docs/design/data-design.md) 与需求变更。该工作流现已通过 PR #9 合并；CR-01/CR-02 已由组长授权采纳为开发设计细化，见 ADR-MA-005。实际采集、审核和字段联调仍待完成，附加研究字段不改变产品验收基线。

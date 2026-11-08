@@ -1,0 +1,84 @@
+{
+  "schema": "runtime-intake-audit/1",
+  "source_sha256": "ba00eff5b1ab06ba484254f2147d73c352fcf98cf74668980f1ea9dde5329f18",
+  "producer_sha256": "c1334bf8b6dc1c66f9a187d30c38d9cda1aa8e53a568b3139c8733342b99e63d",
+  "run_id": "91f35734-86ce-4057-904c-f3ae9070159f",
+  "purpose": "offline_component_integration",
+  "joint_channels": 60,
+  "observation_count": 5,
+  "joint_feature_dimension": 120,
+  "joint_history_dimension": 480,
+  "command_feature_dimension": 180,
+  "commanded_channels": 1,
+  "camera": {
+    "status": "nonuniform",
+    "source_sha256": "0635d5d9fc1ce71b991cd17cc9d362fafee8e50a97a00247a549e6010d2e8a62",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "read_begin": {
+      "wall_monotonic_ns": 445151296000000,
+      "sim_time_s": 1.5333334133028984,
+      "sim_step": 92
+    },
+    "read_end": {
+      "wall_monotonic_ns": 445151296000000,
+      "sim_time_s": 1.5333334133028984,
+      "sim_step": 92
+    },
+    "rendering_time_s": 1.4833334106951952,
+    "age_at_read_sim_s": 0.05000000260770321,
+    "grid": 8,
+    "pre_command_rgb_available": false,
+    "role": "post_command_inspection_only",
+    "online_authorized": false
+  },
+  "control_probe": {
+    "source_sha256": "4dc091cedacd64f535156d23ab0383544caaf2b888c00046c98f7494fe315514",
+    "scope": "single_process_live_simulation_probe",
+    "criteria": {
+      "threshold_rad_s": 0.01,
+      "rest_window_s": 0.1,
+      "max_sample_gap_s": 0.02,
+      "stop_deadline_s": 1.0
+    },
+    "cases": [
+      {
+        "reason": "pause",
+        "request_id": "24ca86dc-f1fa-43db-81de-867bd1d60a70",
+        "generation": 1,
+        "confirmed_in_component_probe": true,
+        "receipt_delay_s": 0.6762731,
+        "window_s": 0.1003257,
+        "window_samples": 7,
+        "max_gap_s": 0.0175298,
+        "max_speed_rad_s": 0.0003211482835467905
+      },
+      {
+        "reason": "terminate",
+        "request_id": "cde97125-2fb6-4b1d-8097-4a908657a860",
+        "generation": 2,
+        "confirmed_in_component_probe": true,
+        "receipt_delay_s": 0.6924048,
+        "window_s": 0.1159827,
+        "window_samples": 8,
+        "max_gap_s": 0.0171634,
+        "max_speed_rad_s": 0.0003211891744285822
+      }
+    ],
+    "queue_fields": "adapter declarations in a synchronous queue-free probe; no transport-queue measurement",
+    "product_coordinator_verified": false,
+    "srs_tests_accepted": false,
+    "online_authorized": false
+  },
+  "profile_id": "a85793026d20bc1df2969d1e9fa397786de3ef719161095b5ef26e1f4f51cfb5",
+  "pre_command_rgb_available": false,
+  "executed_action_history_available": false,
+  "legacy_mapping_authorized": false,
+  "recovery_outcomes_available": false,
+  "diagnostic_dataset_ready": false,
+  "online_authorized": false,
+  "research_conclusion": "NOT_ESTABLISHED"
+}

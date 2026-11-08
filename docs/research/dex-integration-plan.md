@@ -1,5 +1,7 @@
 # 已有DexGarmentLab环境到恢复研究的接入设计
 
+**当前状态（PR #9/#10 合并后）：** 基础复跑、旧正常包和运行时关节 profile 已收到；新 I/O、相机取景、组件 ACK/停止及重置诊断不再列为“尚无”。马已完成[实测编码与独立停止校验](runtime-component-integration.md)。后文早期记录保留为历史快照，当前缺口以[剩余清单](ma-remaining-checklist.md)为准：动作前视觉/执行片段、产品协调器联调、DR02失败、中段可比重置和恢复分支标签。
+
 2026-11-06。环境选型已定，见[ADR-MA-004](../design/decisions/ADR-MA-004-simulation-platform.md)。本文完成马祥珲可独立承担的来源/特征/评价与对照设计；真实adapter依赖张的环境交接，不发明接口能返回的字段。
 
 2026-11-08当前执行安排：用户确认已在张电脑完成基础复跑，该项关闭；后续仿真、采集和恢复闭环统一在张电脑进行，不要求组长换机安装或重复基础复跑。真实adapter/profile/停止及恢复候选继续单独验证，见[执行安排](shared-simulation-workflow.md)。
