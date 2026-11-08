@@ -57,17 +57,17 @@ def recovery_figure():
 
 def risk_figure():
     items = [text(48, 60, "Open issues and verification", 37, "bold"),
-             text(48, 105, "Current evidence covers 153 normal frames. Recovery experiments remain pending.", 24),
+             text(48, 105, "Measured 60-joint I/O and component stops; recovery outcomes remain unavailable.", 24),
              '<rect x="48" y="150" width="1184" height="48" fill="#203f60"/>']
     for x, label in ((64, "Open issue"), (306, "Part III verification"), (848, "Fallback")):
         items.append(text(x, 182, label, 23, "bold", "white"))
     rows = [
-        (["Input semantics"], "Zhang + Ma", ["Capture runtime joint maps, units, clocks", "and actual command feedback."],
-         ["Reject unsupported online profiles.", "Keep old data for offline work."]),
-        (["Cancellation and stop"], "Zhang + Ma", ["Delay an old command until after halt.", "Verify fencing and measured rest."],
+        (["Observation timing"], "Zhang + Ma", ["Capture pre-action RGB and align clocks.", "Separate deployed inputs from labels."],
+         ["Do not backfill post-action RGB.", "Legacy joint order stays unverified."]),
+        (["Control integration"], "Zhang + Ma", ["Extend component stops to real queues.", "Test loss, late replies and handover."],
          ["Keep the stop lock until evidence", "passes the SRS conditions."]),
-        (["Recovery value"], "Ma + Hu", ["Collect comparable recovery branches.", "Test H1 / H2, baselines and calibration."],
-         ["Use offline ranking while evidence", "or probability calibration is missing."]),
+        (["Comparable recovery"], "Ma + Hu + Zhang", ["Verify mid-task resets and contact state.", "Test H1 / H2 with audited outcomes."],
+         ["Use blocked trials if resets differ.", "Keep ranks offline until calibrated."]),
     ]
     for index, (label, owner, checks, fallback) in enumerate(rows):
         y = 198 + 132 * index
@@ -75,7 +75,7 @@ def risk_figure():
                   multiline(64, y + 43, label, 23), text(64, y + 94, owner, 20, color="#526b83"),
                   multiline(306, y + 43, checks, 23, 32), multiline(848, y + 43, fallback, 22, 32)]
     items += [text(48, 642, "Each PoC records raw evidence, pass/fail criteria, a responsible member and the fallback.", 22),
-              text(48, 682, "Status: design plan. Recovery performance and physical stopping await validation.", 20)]
+              text(48, 682, "Measured component probe; product integration and recovery performance remain unverified.", 20)]
     return document(items)
 
 

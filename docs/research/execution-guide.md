@@ -1,5 +1,7 @@
 # 马祥珲研究工具：运行与接入说明
 
+**新增实测入口：** `python -m research_tools.runtime_intake --sample <component-sample.json> --control-evidence <control-evidence.json> --output-dir <new-directory>`。已在 PR #10 真实组件记录上运行，60 通道本体、单关节候选编码和停止复算见[接入说明](runtime-component-integration.md)。这是离线接入，不会发送动作；动作后 RGB 不进入动作前决策。
+
 2026-11-06。Python 3.9+，主工具仅标准库；另提供可选PyTorch神经基线，使用本机已有安装，不安装 GPU/仿真依赖，不调用外部模型。工具是探索诊断实现，不是最终研究模型或机器人控制程序。
 
 2026-11-08执行安排：马确认在张电脑完成基础复跑，后续仿真/采集/恢复闭环统一在张电脑运行，不要求组长电脑安装Isaac或重复基础复跑；本页离线命令可在开发电脑使用。见[当前安排](shared-simulation-workflow.md)。
@@ -54,7 +56,7 @@ python -m research_tools.diagnostics evaluate --input data/development-split.jso
 - `visual_history`：默认诊断采样最近4个有效已执行前缀边界的视觉表示；与当前同编码器。按时间顺序展平，缺失位以零及显式mask表示，不跨未观测人工操作拼接。4帧是可修改的开发配置，不是SRS采样要求。
 - `action_history`：对应过去已执行动作、实际执行量、间隔及gap mask；不能使用尚未执行候选的未来反馈。当前候选编码已经在current中。
 
-机器人维数、坐标、单位、速度和相机外参不预填。适配器提供profile后实现真实编码并冻结feature_version；规范已定，具体维数属于待提供硬件事实。缺少历史可以带mask运行；不能把mask当作缺测已解决的证据。
+运行时组件 profile 已提供并实现 60 通道映射和单关节绝对目标编码；只适用于该内容指纹及已声明的关节单位，不回填旧示范顺序。完整动作原语、相机标定、执行量与产品 profile 冻结仍待验证。缺少历史可以带mask运行；不能把mask当作缺测已解决的证据。
 
 ## 4. B0–B4 与解释边界
 
@@ -79,7 +81,7 @@ python -m research_tools.diagnostics evaluate --input runs/ma-smoke/synthetic.js
 
 以上仍是人工fixture软件小试。真实数据时将路径替换、先用validation选开发配置并记录决定，再冻结开发诊断。MLP是两层ReLU隐藏层＋单logit输出，Adam、BCE，训练集标准化，默认width=32、50步全批优化。B0–B3同宽，B4增大B1输入的宽度以近似匹配B3参数量；报告维数、参数量/比率、优化步数、CPU时间和损失。**步数相同不代表FLOPs相同**，正式实验仍需算力控制和多种子。CLI每次可指定seed，不自动挑最好种子。
 
-模型训练只用train，预测时不读取开发标签；输出logit仍为rank_only，不作概率派发。评估导入需原数据SHA256一致，B0–B4对同一批合法候选覆盖完整且无重复。保存输入指纹、PyTorch版本、代码commit及dirty状态；本工具不保存checkpoint，只用于小数据诊断，不替代完整训练/模型管理流水线。固定RGB网格观测编码现已实现（第11节）；学习式视觉编码、候选动作映射和真实接续控制器仍未接入。
+模型训练只用train，预测时不读取开发标签；输出logit仍为rank_only，不作概率派发。评估导入需原数据SHA256一致，B0–B4对同一批合法候选覆盖完整且无重复。保存输入指纹、PyTorch版本、代码commit及dirty状态；本工具不保存checkpoint，只用于小数据诊断，不替代完整训练/模型管理流水线。固定RGB网格观测编码现已实现（第11节）；运行时单关节绝对候选映射见实测接入页。学习式视觉编码、完整决策时输入与真实接续控制器仍未接入。
 
 ## 5. 报告如何读
 

@@ -8,11 +8,11 @@
 
 已完成选题、软件需求规格说明（SRS）、九张可编辑系统模型和五屏界面原型。
 胡知鱼分工已有可操作测试桩原型、需求追踪、数据规范、用户走查材料和英文 Design 工作稿，具体证据与待办见 [Design 交付状态](docs/design/delivery-status.md)。
-仿真集成、机器人控制、模型训练与正式实验尚待实施。界面原型不连接机器人或云服务。
+已收到并复核双臂运行时 I/O、可见仿真 RGB、完整正常折叠取景、投影检查、组件停止与初态重置诊断。马祥珲已完成这些记录的离线编码与停止证据接入。产品协调器完整集成、失败/恢复采集、模型训练与正式实验仍待完成；界面原型仍不连接机器人或云服务。
 
 当前执行计划为 **[第一阶段：研究问题验证与系统设计](docs/first-stage-plan.md)**。
 本阶段同时推进 2025—2026 年相关工作、research gap 诊断、仿真最小验证和课程 Design，按任务依赖与证据验收推进。
-计划已依据 Assignment 2 正式 PDF 与 Canvas 页面更新；已形成马祥珲的研究/AI设计成果及可运行离线诊断工具，真实仿真与研究实验、全组设计整合仍待完成。
+计划已依据 Assignment 2 正式 PDF 与 Canvas 页面更新；已形成马祥珲的研究/AI设计成果及可运行离线诊断工具，组件与正常流程已有实测，恢复研究实验、产品闭环与全组设计定稿仍待完成。
 
 **仿真安排已确认：马祥珲已在张茗博电脑上复跑，基础复跑事项关闭。后续仿真、采集及恢复闭环实验统一在张茗博电脑运行，不要求组长电脑安装或换机重跑。** 详见[共享仿真执行安排](docs/research/shared-simulation-workflow.md)；真实接口、停止和恢复实验继续分别验收。
 
@@ -48,6 +48,8 @@
 | [评分与并发契约澄清](docs/design/contract-clarifications.md) | 后续成功/整试次指标、旧代不可用计数及adapter代次屏障的精确定义 |
 | [PR #8固定环境准备审查](docs/reviews/pr8-environment-review.md) | 固定源码/依赖/资产材料已补齐；换机部署不再是当前任务，真实控制与恢复待验证 |
 | [仿真接入与审查结论](docs/research/dex-integration-plan.md) | 平台已选定，组长确认同机复跑完成；继续验证在线来源、真实接口及恢复数据 |
+| [运行时动作／观测接入](docs/research/runtime-component-integration.md) | 实测 60 通道、历史／候选编码、停止复算及动作后 RGB 防泄漏；本批已运行 |
+| [实测输入与分支有效性决定](docs/design/decisions/ADR-MA-005-measured-input-and-branch-validity.md) | 重置误差的实验影响、后备设计、记录细化与局部分母决定 |
 | [马祥珲最终剩余清单](docs/research/ma-remaining-checklist.md) | 已完成项、真实环境/数据阻塞、队友最小交付与个人/课程事项 |
 | [Assignment 2 要求与验收](docs/assignment-2-checklist.md) | 九项交付、三人分工、展示/反馈、词数与打包检查 |
 | [第三组课堂展示执行计划](docs/design/presentation-plan.md) | 已确认场次、课前上传、三人素材与讲解分配、六页建议结构及验收 |
