@@ -30,7 +30,7 @@ foreach ($required in @($isaacPython, (Join-Path $ProjectRoot 'Env_StandAlone\Fo
 Write-Host "Isaac: $IsaacRoot`nProject: $ProjectRoot`nExtra dependencies: $DependencyRoot`nSmoke output: $OutputRoot"
 Write-Host 'Fold output is written by upstream under ProjectRoot/Data/Fold_Tops, not OutputRoot.'
 if ($CheckOnly) { Write-Host 'PATH_CHECK_PASSED (paths only; no simulator or imports tested)'; return }
-$names = @('PYTHONPATH','HF_HOME','PIP_CACHE_DIR','ROBOTICS_PROJECT_ROOT','ROBOTICS_OUTPUT_ROOT','ROBOTICS_HEADLESS','ROBOTICS_KEEP_OPEN')
+$names = @('PYTHONPATH','HF_HOME','PIP_CACHE_DIR','ROBOTICS_PROJECT_ROOT','ROBOTICS_OUTPUT_ROOT','ROBOTICS_HEADLESS','ROBOTICS_KEEP_OPEN','ROBOTICS_PROBE_MARKER')
 $old = @{}
 foreach ($name in $names) { $old[$name] = [Environment]::GetEnvironmentVariable($name, 'Process') }
 try {
@@ -46,7 +46,17 @@ try {
         if ($Stage -eq 'fold') {
             & $isaacPython -u (Join-Path $PSScriptRoot 'run_fold_local.py') --garment_random_flag False --record_video_flag False --data_collection_flag True
         } elseif ($Stage -eq 'runtime-io') {
-            & $isaacPython -u (Join-Path $PSScriptRoot 'capture_runtime_io.py')
+            # Isaac's app shutdown can return code 0 after an exception. Check
+            # a per-invocation success marker instead of relying on that code.
+            $marker = Join-Path ([System.IO.Path]::GetTempPath()) ("runtime-io-complete-" + [guid]::NewGuid().ToString('N') + '.txt')
+            $env:ROBOTICS_PROBE_MARKER = $marker
+            try {
+                & $isaacPython -u (Join-Path $PSScriptRoot 'capture_runtime_io.py')
+                if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $marker -PathType Leaf)) {
+                    throw 'Runtime I/O sample was not completed; inspect progress.jsonl and capture-error.txt in the output directory.'
+                }
+                Remove-Item -LiteralPath $marker
+            } finally { [Environment]::SetEnvironmentVariable('ROBOTICS_PROBE_MARKER', $old['ROBOTICS_PROBE_MARKER'], 'Process') }
         } else {
             $arguments = @('-u', (Join-Path $PSScriptRoot 'smoke_test.py'), '--stage', $Stage)
             if ($Headless) { $arguments += '--headless' }

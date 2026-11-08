@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import sys
 import time
+import traceback
 import uuid
 from datetime import datetime, timezone
 
@@ -20,6 +21,13 @@ run_id = str(uuid.uuid4())
 out = output_root / ("runtime-io-" + run_id)
 out.mkdir()
 
+def checkpoint(name):
+    with (out / "progress.jsonl").open("a", encoding="utf-8") as stream:
+        stream.write(json.dumps({"stage": name, "wall_monotonic_ns": time.monotonic_ns()}) + "\n")
+    print("CAPTURE_STAGE", name, flush=True)
+
+checkpoint("starting_simulation_app")
+
 from isaacsim import SimulationApp
 
 app = SimulationApp({"headless": True, "width": 640, "height": 480, "extra_args": [
@@ -27,9 +35,11 @@ app = SimulationApp({"headless": True, "width": 640, "height": 480, "extra_args"
     "--/plugins/omni.tbb.globalcontrol/maxThreadCount=4",
     "--/persistent/physics/numThreads=4",
 ]})
+checkpoint("simulation_app_started")
 
 try:
     import numpy as np
+    import omni.physics.tensors
     import imageio.v2 as imageio
     from pxr import UsdGeom
     from isaacsim.core.api import World
@@ -38,16 +48,22 @@ try:
     from Env_Config.Robot.BimanualDex_Ur10e import Bimanual_Ur10e
     from Env_Config.Camera.Recording_Camera import Recording_Camera
 
+    checkpoint("imports_complete")
+
     world = World(stage_units_in_meters=1.0)
     robot = Bimanual_Ur10e(world, np.array([-0.8, 0, 0.5]), np.zeros(3),
                            np.array([0.8, 0, 0.5]), np.zeros(3))
     camera = Recording_Camera(camera_position=np.array([0, 4.0, 6.0]),
                               camera_orientation=np.array([0, 60, -90.0]),
                               resolution=(640, 480))
+    checkpoint("scene_created")
     world.reset()
+    checkpoint("world_reset")
     camera.initialize(depth_enable=True)
+    checkpoint("camera_initialized")
     for _ in range(30):
         world.step(render=True)
+    checkpoint("initial_steps_complete")
 
     def clock():
         return {"wall_monotonic_ns": time.monotonic_ns(),
@@ -57,15 +73,24 @@ try:
     def profile(arm):
         props = arm.dof_properties
         names = arm.dof_names
-        if len(names) != len(props):
-            raise RuntimeError("runtime DOF names and properties differ in length")
+        # SingleArticulation.dof_properties uses get_dof_types()[0] in this
+        # Isaac version, which broadcasts one type; read each type directly.
+        types = arm._articulation_view.get_dof_types()
+        if len(names) != len(props) or len(names) != len(types):
+            raise RuntimeError("runtime DOF names, types and properties differ in length")
         records = []
         for index, name in enumerate(names):
             p = props[index]
-            dof_type = int(p["type"])
-            records.append({"index": index, "name": name, "type_code": dof_type,
-                            "position_unit": {1: "rad", 2: "stage_unit"}.get(dof_type),
-                            "velocity_unit": {1: "rad/s", 2: "stage_unit/s"}.get(dof_type),
+            actual_type = types[index]
+            if actual_type == omni.physics.tensors.DofType.Rotation:
+                kind, pos_unit, vel_unit = "rotation", "rad", "rad/s"
+            elif actual_type == omni.physics.tensors.DofType.Translation:
+                kind, pos_unit, vel_unit = "translation", "stage_unit", "stage_unit/s"
+            else:
+                kind, pos_unit, vel_unit = "unknown", None, None
+            records.append({"index": index, "name": name, "type": kind,
+                            "runtime_type_repr": str(actual_type),
+                            "position_unit": pos_unit, "velocity_unit": vel_unit,
                             "has_limits": bool(p["hasLimits"]),
                             "lower": float(p["lower"]), "upper": float(p["upper"]),
                             "drive_mode_code": int(p["driveMode"]),
@@ -100,11 +125,13 @@ try:
                          "depth_enabled": True, "frame_timestamp": None},
               "adapter_ack": None, "stop_request": None, "stop_feedback": None,
               "observations": []}
+    checkpoint("profile_read")
     before = observe()
+    checkpoint("before_observation_read")
     sample["observations"].append(before)
     index = int(robot.dexleft.arm_dof_indices[0])
     prop = sample["left_dofs"][index]
-    if prop["type_code"] != 1:
+    if prop["type"] != "rotation":
         raise RuntimeError("selected joint is not reported as rotational")
     current = float(before["left_positions"][index])
     target = current + 0.03
@@ -119,11 +146,13 @@ try:
     sample["command"] = command
     robot.dexleft.apply_action(ArticulationAction(joint_positions=np.array([target]),
                                                   joint_indices=np.array([index])))
+    checkpoint("api_returned")
     command["api_returned"] = clock()
     for step in range(60):
         world.step(render=True)
         if step in (0, 9, 29, 59):
             sample["observations"].append(observe())
+    checkpoint("feedback_steps_complete")
     image_begin = clock()
     rgb = camera.get_rgb_graph()
     image_end = clock()
@@ -135,6 +164,14 @@ try:
     else:
         sample["camera"]["image"] = None
     (out / "sample.json").write_text(json.dumps(sample, indent=2, allow_nan=False), encoding="utf-8")
+    checkpoint("sample_written")
+    if os.environ.get("ROBOTICS_PROBE_MARKER"):
+        Path(os.environ["ROBOTICS_PROBE_MARKER"]).write_text(str(out), encoding="utf-8")
     print("COMPONENT_SAMPLE_WRITTEN", out, flush=True)
+except BaseException:
+    failure = traceback.format_exc()
+    (out / "capture-error.txt").write_text(failure, encoding="utf-8")
+    print("CAPTURE_ERROR\n" + failure, flush=True)
+    raise
 finally:
     app.close()
