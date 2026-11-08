@@ -2,6 +2,8 @@
 
 记录日期：2026-11-08，指本团队收到并整理截图的日期，截图未显示公告发布时间。来源为用户提供的刘岩老师Canvas公告“Assignment 2 (Design): Presentation Schedule”；[原始截图](presentation-schedule-20261108.png)保留原样。
 
+本次用户再次提供的[完整公告截图](presentation-schedule-confirmation-20261108.png)也已原样保存；与先前截图逐项核对，排期、时长、全员出席、内容和提交要求一致。历史原图和本次确认图均保留，不覆盖旧版本。截图和其他历史用户图片的保存情况见[保存索引](../user-screenshot-index.md)。
+
 ## 公告明确要求
 
 - 每组6分钟，全体成员出席，展示设计进展。
