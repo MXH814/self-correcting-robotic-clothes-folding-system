@@ -17,3 +17,17 @@
 **两包来源与现状（2026-11-08）。** main 的入库审核记录显示 data2 的 79 个文件、77 帧（27/27/23），data3 的 81 个文件、76 帧（27/27/22）均已完成 ZIP、逐文件和阶段内历史校验。团队已完成 153 帧固定 RGB、关节与阶段内历史编码，马祥珲已在张茗博电脑完成基础复跑，后续采集使用该机。该结论引用团队记录；本工作流的直接检查仍限前述入库单帧。[包核验记录](../research/evidence/ma-release-intake-audit-20261108.json) · [共享机运行安排](../research/shared-simulation-workflow.md) · [研究进展](../research/ma-remaining-checklist.md)
 
 这 153 帧可用于正常观测接入和阶段内历史检查。缺少命名动作通道、可比时钟、实际派发及 ACK、停止测量和恢复分支，AI01 失败片段、局部恢复及 AI03 合格试次的正式分母均未从两包增加。
+
+## PR #14 首袖五例的证据预审
+
+源运行编号 `5cca8e1b-b938-4dab-b6fd-b7be7c0405e2`，固定上衣 TCLC_018。已逐文件核对 manifest 的 SHA-256；原始 JSON 为 610,459 字节。索引用 `trials[].condition` 定位；下列时间为各例 `continuous_samples` 第一条到末条的仿真秒，不能充当标注的故障起点。[原始测量](../research/zhangmingbo/garment-fault-20261108/fault-evidence.json) · [文件清单](../research/zhangmingbo/garment-fault-20261108/manifest.json)
+
+| 案例索引 | 连续样本／仿真秒 | 可复核的阶段与结果 | 本例待补证据 |
+| --- | --- | --- | --- |
+| [normal](../research/zhangmingbo/garment-fault-20261108/normal-hold.png) | 125／2.033–8.233 | 闭手、提起、保持、转移后计划释放；对照提起约 306.4 mm。 | 核实真实接触和预期持有窗，计划释放需按阶段豁免。正常条件本身不能生成 NORMAL 真值。 |
+| [grasp_offset](../research/zhangmingbo/garment-fault-20261108/grasp_offset-lifted.png) | 129／2.033–8.433 | 指令抓点横移 −130 mm，目标衣片仅升约 0.1 mm。 | 注入位移与闭合后的接触中心误差是两个量；需注册 W₀、测得接触中心并复核 0.2 秒持续窗。 |
+| [unexpected_release](../research/zhangmingbo/garment-fault-20261108/unexpected_release-hold.png) | 131／2.033–8.533 | 有效提起迹象后在 5.083 秒注入开手，持有窗首末漂移约 39.8 mm；五张阶段图相同，像素全黑。 | 用原始运动序列及补充视觉/接触证据核实先前夹持与失持起点；开手命令不能直接定为 SLIP。 |
+| [offset_regrasp](../research/zhangmingbo/garment-fault-20261108/offset_regrasp-hold.png) | 79／2.033–5.933 | 已闭手、提起、保持；退让 IK 失败，脚本以 aborted 结束，后续重抓未执行。 | 保留中断与失败原因，区分脚本尝试及产品接受派发；未执行的候选无成功或失败标签。 |
+| [release_regrasp](../research/zhangmingbo/garment-fault-20261108/release_regrasp-regrasp_lifted.png) | 216／2.033–12.783 | 提前开手后尝试重抓，重抓提起约 299.6 mm；随后转移、计划释放。 | 补重抓实际接触、DR05 持续清除与下一阶段可行证据，固定全任务接续后另审最终质量。 |
+
+**共同裁决。** 原始 W₀ 与接触传感字段均为 null。衣片网格质心及指尖几何中点可供离线预审，正式主类须由张茗博补注册 W₀、阶段持有及接触/持续窗证据，再由胡知鱼独立复核。五例仅覆盖第一袖，起点网格也有差异。原始 dr02_label 和 terminal_task_result 五例均为 null；本轮局部恢复、整任务质量、自主成功均留空。脚本 completed 仅表示该脚本路径走完。这五例本轮对 AI01、局部恢复率和 AI03 正式分母的新增数均为 0。

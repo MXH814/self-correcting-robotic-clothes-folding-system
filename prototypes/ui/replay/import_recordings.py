@@ -43,6 +43,8 @@ def convert(name, directory):
     if not path.is_file():
         filename = {"data2":"fold-tops-data2-numeric-20261107.zip", "data3":"fold-tops-data3-evidence-20261108.zip"}[name]
         path = directory / filename
+        if not path.is_file():
+            raise FileNotFoundError(f"{directory} 中缺少 {filename}（也可命名为 {name}.zip）")
     verify(digest(path.read_bytes()) == ARCHIVES[name], name)
     target = OUTPUT / "frames" / name
     target.mkdir(exist_ok=True, parents=True)
@@ -80,7 +82,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path, help="包含两个已下载 ZIP 的目录")
     args = parser.parse_args()
-    data = {name: convert(name, args.directory) for name in ARCHIVES}
+    try:
+        data = {name: convert(name, args.directory) for name in ARCHIVES}
+    except FileNotFoundError as error:
+        parser.exit(1, f"{error}\n")
     script = "const trajectories = " + json.dumps(data, separators=(",", ":")) + ";\n"
     publish(OUTPUT / "records.js", script.encode("utf8"))
     for name, entry in data.items():
