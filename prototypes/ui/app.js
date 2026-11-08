@@ -323,18 +323,7 @@ document.addEventListener('change',e=>{
 });
 render();
 
-const recordDialog = $('record-dialog');
-$('open-records').onclick = () => {
+$('open-records').addEventListener('click', () => {
   stopPlay();
   render();
-  const player = document.createElement('iframe');
-  player.src = 'replay/index.html';
-  player.title = '真实取景与轨迹浏览器';
-  $('player-host').replaceChildren(player);
-  recordDialog.showModal();
-};
-$('close-records').onclick = () => recordDialog.close();
-recordDialog.addEventListener('close', () => {
-  $('player-host').replaceChildren();
-  $('open-records').focus();
 });

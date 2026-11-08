@@ -28,7 +28,12 @@ function draw() {
     const li = document.createElement('li'); li.textContent = String(v); return li;
   }));
 }
-function jump(to) { stop(); index = to; draw(); }
+function jump(to) {
+  if (!Number.isInteger(to) || to < 0 || to >= records().length) return;
+  stop();
+  index = to;
+  draw();
+}
 function selectRun() {
   const rows = records();
   el('stage').replaceChildren(...Array.from(new Set(rows.map(r => r.stage)), s => new Option(s,s)));
@@ -85,5 +90,9 @@ localRecords.onload = () => {
   el('back').hidden = false;
   el('install').hidden = true;
   showFull();
+};
+localRecords.onerror = () => {
+  el('install').hidden = false;
+  el('load-status').textContent = '完整轨迹未载入。请按下方步骤导入，或检查浏览器的本地文件权限。';
 };
 document.body.append(localRecords);
