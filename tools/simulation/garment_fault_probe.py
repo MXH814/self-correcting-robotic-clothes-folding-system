@@ -42,10 +42,13 @@ def run(output):
     slip_cases = ("closed_hand_slip_candidate", "closed_hand_slip_regrasp")
     if trace_condition and trace_condition not in (*cases, "contact_offset_candidate", *slip_cases):
         raise ValueError(f"Unknown garment trace case: {trace_condition}")
+    collect_dr02 = os.environ.get("ROBOTICS_DR02_EVIDENCE") == "1"
     resolution = (240, 180) if trace_condition else (640, 480)
-    camera = Recording_Camera(camera_position=np.array([0, 4.0, 6.0]),
-                              camera_orientation=np.array([0, 60, -90.0]), resolution=resolution,
-                              frequency=30 if trace_condition else 20)
+    camera = None
+    if not collect_dr02:
+        camera = Recording_Camera(camera_position=np.array([0, 4.0, 6.0]),
+                                  camera_orientation=np.array([0, 60, -90.0]), resolution=resolution,
+                                  frequency=30 if trace_condition else 20)
     pick = np.array([-0.4600427, 0.6103945, 0.02])
     transfer = np.array([0.160156, 1.0065818, 0.30])
     orientation = np.array([0.579, -0.579, -0.406, 0.406])
@@ -54,6 +57,12 @@ def run(output):
     tips = [env.world.stage.GetPrimAtPath(f"/World/DexLeft/{name}") for name in ("fftip", "thtip")]
     if not all(tip.IsValid() for tip in tips):
         raise RuntimeError("The configured left hand tip prims were not found")
+    dr02 = None
+    if collect_dr02:
+        if trace_condition not in ("normal", "contact_offset_candidate", "closed_hand_slip_candidate"):
+            raise ValueError("DR02 capture requires one supported first-sleeve trial")
+        from garment_dr02_capture import Dr02Capture
+        dr02 = Dr02Capture(output, env.world, tips)
     result = {"asset": asset, "scope": "first_sleeve_only", "pick_world_m": pick.tolist(),
               "transfer_world_m": transfer.tolist(), "left_orientation_wxyz": orientation.tolist(),
               "offset_world_m": offset.tolist(), "torso_reference_width_w0_m": None,
@@ -80,7 +89,8 @@ def run(output):
     if trace_condition:
         np.savez_compressed(output / "reference-vertices.npz", vertices_m=vertices())
     env.reset()
-    camera.initialize(depth_enable=False)
+    if camera:
+        camera.initialize(depth_enable=False)
     baseline = None
     patch_ids = None
     midstate_mode = os.environ.get("ROBOTICS_MIDSTATE_PROBE") == "1"
@@ -131,6 +141,10 @@ def run(output):
         garment.set_pose(pos=origin, ori=zeros)
         robot.set_both_hand_state("open", "open")
         tick(100)
+        if dr02:
+            dr02.initialize()
+            dr02.aim()
+            tick(6)
         root = vertices()
         if trace_condition:
             np.savez_compressed(output / "settled-vertices.npz", vertices_m=root)
@@ -151,7 +165,8 @@ def run(output):
         if trace_condition:
             from garment_observation_trace import GarmentObservationTrace
             arms = {"left": arm, "right": robot.dexright}
-            trace = GarmentObservationTrace(output, env.world, camera.camera, arms, trial["trial_id"])
+            trace = GarmentObservationTrace(output, env.world, dr02.camera if dr02 else camera.camera,
+                                            arms, trial["trial_id"])
             for side, robot_arm in arms.items():
                 controller = robot_arm.get_articulation_controller()
                 original_apply[side] = (controller, controller.apply_action)
@@ -173,9 +188,11 @@ def run(output):
         def window(label):
             for index in range(8):
                 measure(label, index)
+                if dr02:
+                    dr02.observe(label, vertices())
                 if index < 7:
                     tick(3)
-            rgb = camera.get_rgb_graph()
+            rgb = camera.get_rgb_graph() if camera else None
             if rgb is not None and rgb.shape == (resolution[1], resolution[0], 3):
                 prefix = f"replay-{case_index}" if midstate_mode else condition
                 name = f"{prefix}-{label}.png"
@@ -215,10 +232,14 @@ def run(output):
 
         def sample_step(*args, **kwargs):
             nonlocal count
+            if dr02 and count % 3 == 0:
+                dr02.aim()
             result = original_step(*args, **kwargs)
             count += 1
             if count % 3 == 0:
                 measure(current_phase, count, "continuous_samples")
+                if dr02:
+                    dr02.observe(current_phase, vertices(), stream="continuous")
             if trace:
                 trace.observe(current_phase)
             return result
@@ -312,6 +333,8 @@ def run(output):
         if trace:
             trace.boundary("trial_end")
             trace.save(condition)
+        if dr02:
+            dr02.save(trial["trial_id"], condition, patch_ids)
         save()
         print("GARMENT_FAULT_CASE_RECORDED", condition, flush=True)
     if midstate_mode:
