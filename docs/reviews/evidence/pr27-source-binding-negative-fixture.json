@@ -1,0 +1,10 @@
+{
+  "purpose": "negative software review fixture, not experiment",
+  "expected_reviewed_source": "manifest#sha256=739bb464b88a2c7d3406517bb13b60b71fea09d7e8d42ef569c41718db782263",
+  "actual_modified_source": "manifest#sha256=ebc8b4e3af3d0fb4ea9b133cb174cd1a6c4e0e00baa0bc06135ba3f292096fa2",
+  "changed_lift_frame": 50,
+  "prepare_accepted_modified_source": true,
+  "encoded_rows": 468,
+  "no_fitting_or_calibration_executed": true,
+  "run_would_assign_normal_review_unconditionally": true
+}
