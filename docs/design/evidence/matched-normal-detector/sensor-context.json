@@ -1,0 +1,113 @@
+{
+  "camera": {
+    "mode": "fixed explicitly aimed environment camera; no hand tracking",
+    "prim_path": "/World/env_camera",
+    "resolution_wh": [
+      640,
+      480
+    ],
+    "dome_light_intensity": 1000.0,
+    "warmup_physics_steps": 12,
+    "orientation_axes": "world (Camera.get_world_pose default)",
+    "look_at_target_world_m": [
+      0.0,
+      0.5,
+      0.6
+    ],
+    "focal_length": 2.4,
+    "horizontal_aperture": 2.4,
+    "position_world_m": [
+      0.0,
+      3.5999999046325684,
+      3.200000047683716
+    ],
+    "orientation_wxyz": [
+      -0.6644906977956072,
+      -0.2417687170481473,
+      -0.24176871704814726,
+      0.6644906977956072
+    ],
+    "intrinsics_px": [
+      [
+        640.0,
+        0.0,
+        320.0
+      ],
+      [
+        0.0,
+        640.0,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "world_to_ros_camera": [
+      [
+        -1.0,
+        1.1098476831504045e-16,
+        -5.176850637531265e-17,
+        -2.338859402391892e-16
+      ],
+      [
+        1.1098476831504045e-16,
+        0.6426122784614563,
+        -0.7661915421485901,
+        0.138408824801445
+      ],
+      [
+        -5.176850637531265e-17,
+        -0.7661915421485901,
+        -0.6426122784614563,
+        4.814648628234863
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "controller": {
+    "upstream_sha256": {
+      "Env_StandAlone/Fold_Tops_Env.py": "ccb545bf3af108cee112dd83600fa2b730bf2c0e8e6488d78044fbfaa948d66e",
+      "Env_Config/Robot/DexLeft_Ur10e.py": "5dbb3132c11bb89bcfcdabbdb0325d15171398f8a5822bfa7196426fc25b379b",
+      "Env_Config/Robot/BimanualDex_Ur10e.py": "dbfc20cb34fa2a9113aae239a93c99a082a0b4131e55e7e27ef2ee5adb407524",
+      "Env_Config/Utils_Project/Position_Judge.py": "94c61f0705a43736d94d71d01407bc834fe004303976d8fd60f137fb2ced3804",
+      "Env_Config/Robot/DexRight_Ur10e.py": "fc6ff335b90905da8d5cb41a69de2e260fe154090db3b857bd30da560841e2ed",
+      "Env_StandAlone/BaseEnv.py": "04fc374d5a179d85f8c5e5559927f514d8fd503d484218e3ac460e2a9112e9d2",
+      "Env_Config/Camera/Recording_Camera.py": "1d5546e721bfc351f15bb3cdb468a5c193a475a503c26606c8a80d78ab342704"
+    },
+    "wrapper_sha256": {
+      "fold_recovery_chain.py": "86c08c0ed242660d14bfd7390227ac5ea3b9edafafa9119f4e81037924c1e5fe",
+      "fold_recovery_evidence.py": "a671699371f74a2424462fc974437f03815912e3b5c9e54bbb33e2fe79a8591c",
+      "garment_observation_trace.py": "88bed809f06fbd2e7e562839159e27d08b72374f61b9bc388996c84dd1159475",
+      "run_fold_local.py": "8be5b9ed45f11ff4e407a97f0d1e76e8cbe47e8d65cad9a933ab7676f4c989e1",
+      "run_local.ps1": "3afb18e3fe36a45d8a4847c555673d275d6c2dcf3a7fbee5ee2bf06e764a4f19"
+    },
+    "resume": "third left dense move, then right sleeve and bottom-top",
+    "macro_motion_sample_scale_m": 0.01,
+    "failed_ik_policy": "abort the run; do not continue or assign a negative label"
+  },
+  "execution_profile": {
+    "physics_dt_s": 0.016666666666666666,
+    "observation_interval_physics_steps": 3,
+    "position_unit": "m",
+    "coordinate_frame": "world",
+    "joint_position_unit": "rad",
+    "worker_threads": 4,
+    "gpu_contact_patch_budget_each": 262144,
+    "product_legality": null,
+    "contact_limits_verified": false,
+    "velocity_limits_verified": false
+  },
+  "preprocessing": {
+    "version": "garment_trace_intake rgb_grid/8 history/4",
+    "raw_rgb": "uint8 RGB, unresized; unique rendering timestamps",
+    "online_features": "RGB and named q/dq; no hidden mesh, injection or outcome"
+  },
+  "garment": "TCLC_018"
+}
