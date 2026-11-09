@@ -23,6 +23,7 @@ PHASE = {f"normal-{arm}-{move}": phase for arm in ("left","right")
          for move, phase in (("lift","LIFT"),("transfer","HOLD"))}
 PHASE["normal-planned-release"] = "RELEASE"
 BASE = Path(__file__).resolve().parents[1]
+REVIEW = BASE / "docs/design/evidence/matched-normal-detector/review.json"
 TARGET = BASE / "docs/research/zhangmingbo/full-recovery-chain-20261108/continuation-context.json"
 
 
@@ -34,7 +35,21 @@ def save(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False)+"\n", encoding="utf8")
 
 
+def reviewed_source(raw, folder, uid, role):
+    entry = read(REVIEW).get(uid, {})
+    manifest = raw / "manifest.json"
+    if (raw.parent.name != folder or entry.get("folder") != folder or entry.get("role") != role
+            or entry.get("source_reference") != "manifest#sha256=" + file_hash(manifest)
+            or read(manifest).get("trial_id") != uid):
+        raise ValueError(f"{folder} no longer matches its reviewed source or role; independent review required")
+    return entry["source_reference"]
+
+
 def prepare(raw, weights, work, folder, uid):
+    role = next((role for name, trial_id, role in TRIALS if (name, trial_id) == (folder, uid)), None)
+    if role is None:
+        raise ValueError("Unknown trial; independent review required")
+    reviewed_source(raw, folder, uid, role)
     context = read(raw/"continuation-context.json")
     target = read(TARGET)
     shared = {k:context[k] for k in ("camera","controller","execution_profile","preprocessing")}
@@ -73,6 +88,9 @@ def run(source,weights,work):
     trials={}
     summary={}
     shared=None
+    # Reject the entire batch before decoding even the first trial.
+    sources = {uid: reviewed_source(source / folder / "raw", folder, uid, role)
+               for folder, uid, role in TRIALS}
     for folder,uid,role in TRIALS:
         raw=source/folder/"raw"
         path,rows,context=prepare(raw,weights,work,folder,uid)
@@ -80,7 +98,7 @@ def run(source,weights,work):
         shared=context
         trials[uid]=rows
         item={"features":path.relative_to(work).as_posix(),"feature_sha256":file_hash(path),
-              "source_reference":"manifest#sha256="+file_hash(raw/"manifest.json"),"normal_review":True,
+              "source_reference":sources[uid],"normal_review":True,
               "review_reference":"docs/design/matched-normal-detector.md#normal-review"}
         if role in parts: parts[role].append(item)
         summary[uid]={"folder":folder,"role":role,"frames":len(rows),"feature_sha256":item["feature_sha256"],
