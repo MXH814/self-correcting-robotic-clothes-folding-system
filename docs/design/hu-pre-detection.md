@@ -1,8 +1,14 @@
 # 胡知鱼 · Pre 检测验证与交互交接
 
-**课堂演示入口。** 在检出仓库的电脑上用 Chrome 或 Edge 打开[检测与恢复回放](../../prototypes/ui/replay/detection.html)。页面自带九条经指纹核对的试次缩略图和离线结果，可断网使用。默认打开提前开手试次，拖动至第 95 帧看分数，再切到“完整折叠”，跳至 `macro-regrasp` 看实际派发，拖到末帧核对区域代理。全图与数值原始包见下方索引。
+**当前交接（PR29）。** [最新 A/B/C 判读、B 可见分离区间与个人讲稿](hu-abc-case-review.md) · [最新结果页](evidence/pre-detection/PR29-ABC-results.png) · [Z3 真实视频与截图](../research/zhangmingbo/pre-abc-evidence-20261109/Z3/index.html)。已有一次由观测告警触发重抓并接续的开发实跑。PR27 完整拟合与校准的[封存检测包](matched-normal-detector.md)已验收。PR29 使用张的分阶段包。
 
-**给张的 PPT 素材。** [逐例结果页](evidence/pre-detection/scenario-results.png) · [带仿真时刻的案例图](evidence/pre-detection/case-frames.jpg) · [正常和提前开手实测曲线](evidence/pre-detection/score-curves.png) · [只读回放截图](evidence/pre-detection/replay.png)。展示选择真实图、实验结论及页码；两页原有[UI 素材和讲话备注](hu-presentation-handoff.md)供整合复用。
+## 以下为 PR25 提交时的历史记录
+
+以下“当前”“待补”和结果图均以 PR25 当时的数据为准。首袖分数、旧阈值状态和脚本恢复的结论只适用于原试次。
+
+**历史九试次入口。** 在检出仓库的电脑上用 Chrome 或 Edge 打开[检测与恢复回放](../../prototypes/ui/replay/detection.html)。页面自带九条经指纹核对的试次缩略图和离线结果，可断网使用。默认打开提前开手试次，拖动至第 95 帧看分数，再切到“完整折叠”，跳至 `macro-regrasp` 看实际派发，拖到末帧核对区域代理。全图与数值原始包见下方索引。
+
+**PR25 历史素材。** [逐例结果页](evidence/pre-detection/scenario-results.png) · [带仿真时刻的案例图](evidence/pre-detection/case-frames.jpg) · [正常和提前开手实测曲线](evidence/pre-detection/score-curves.png) · [只读回放截图](evidence/pre-detection/replay.png)。展示选择真实图、实验结论及页码；两页原有[UI 素材和讲话备注](hu-presentation-handoff.md)供整合复用。
 
 ## H1 · 离线拟合和试次划分
 
