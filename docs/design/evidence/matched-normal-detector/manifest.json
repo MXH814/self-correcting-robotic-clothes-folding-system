@@ -1,0 +1,65 @@
+{
+  "schema": "observation-detector-package/1",
+  "method": "fiper-rnd-oe-resnet18-adaptation/1",
+  "trained": true,
+  "encoder_reference": "resnet18-imagenet1k-v1-pil-resize256-centercrop224/1#sha256=f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "context_reference": "pre-detection-context#sha256=0cb85481e561ec8f54e65dd1fb1f39b77bc28a8565cb1df386f1b3ece42476f3",
+  "input_dim": 512,
+  "output_dim": 128,
+  "allowed_phases": [
+    "LIFT",
+    "HOLD"
+  ],
+  "window": 5,
+  "max_gap_s": 0.25,
+  "threshold": 1.1895795583724975,
+  "threshold_method": "empirical-higher-quantile-of-trial-window-maxima/1",
+  "quantile": 0.95,
+  "calibration_trial_maxima": [
+    1.1895795583724975
+  ],
+  "normal_data": {
+    "fit": [
+      {
+        "features": "normal-01/reviewed-features.jsonl",
+        "feature_sha256": "e81eb98020753b46f52eaa3f7e967ff54fb4dbb3a80599f54c8241686ff5ec3e",
+        "source_reference": "manifest#sha256=739bb464b88a2c7d3406517bb13b60b71fea09d7e8d42ef569c41718db782263",
+        "normal_review": true,
+        "review_reference": "docs/design/matched-normal-detector.md#normal-review"
+      }
+    ],
+    "calibration": [
+      {
+        "features": "normal-02/reviewed-features.jsonl",
+        "feature_sha256": "703207bdb400df95bbd2953c4a016802065e05a9edcfbfe9b1702c80b434aa88",
+        "source_reference": "manifest#sha256=90033b613dda257bca4264c49d0b2d5617219693dad9333cc86b1486e4d440ba",
+        "normal_review": true,
+        "review_reference": "docs/design/matched-normal-detector.md#normal-review"
+      }
+    ]
+  },
+  "training": {
+    "epochs": 10,
+    "batch_size": 64,
+    "lr": 0.0001,
+    "seed": 17,
+    "predictor_l2_losses": [
+      10.273486137390137,
+      5.2895684242248535,
+      3.2398366928100586,
+      2.0683252811431885,
+      1.7581353187561035,
+      1.6601483821868896,
+      1.4803484678268433,
+      1.2931302785873413,
+      1.1913914680480957,
+      1.1244112253189087
+    ]
+  },
+  "failure_probability": null,
+  "statistical_guarantee": null,
+  "full_fiper": false,
+  "online_authorized": false,
+  "package_id": "ea15ab95a3766cc1733e552360a1a24c5ee5d36e6b0f6abcb1f495eef05dc095",
+  "checkpoint_sha256": "b9f1e4c3bc1bff4d6881814b6442c02e9def8d7181fd7fdac6c237273b291752"
+}

@@ -1,0 +1,20 @@
+{
+  "fit": [
+    {
+      "features": "normal-01/reviewed-features.jsonl",
+      "feature_sha256": "e81eb98020753b46f52eaa3f7e967ff54fb4dbb3a80599f54c8241686ff5ec3e",
+      "source_reference": "manifest#sha256=739bb464b88a2c7d3406517bb13b60b71fea09d7e8d42ef569c41718db782263",
+      "normal_review": true,
+      "review_reference": "docs/design/matched-normal-detector.md#normal-review"
+    }
+  ],
+  "calibration": [
+    {
+      "features": "normal-02/reviewed-features.jsonl",
+      "feature_sha256": "703207bdb400df95bbd2953c4a016802065e05a9edcfbfe9b1702c80b434aa88",
+      "source_reference": "manifest#sha256=90033b613dda257bca4264c49d0b2d5617219693dad9333cc86b1486e4d440ba",
+      "normal_review": true,
+      "review_reference": "docs/design/matched-normal-detector.md#normal-review"
+    }
+  ]
+}
