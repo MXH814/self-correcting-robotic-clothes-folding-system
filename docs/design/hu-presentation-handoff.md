@@ -1,11 +1,23 @@
-# 第 1–2 页展示交接
+# 胡知鱼｜整组中文稿第 1–4 页核对
 
-当前汇报使用[PR29 三场景判读、结果页、最终页意见与更新口播](hu-abc-case-review.md)。以下两页是早期 UI 素材，最终页序以张的整组稿为准。
+核对版本为 main 的 `8d14933`。本次逐页对照[整组 PPTX](slides/Group3_Assignment2_Design_Pre.pptx)、[19 页 PDF](slides/Group3_Assignment2_Design_Pre.pdf)、[Word 讲稿](slides/Group3_Assignment2_Design_Pre_Script.docx)和[Markdown 讲稿](slides/Group3_Assignment2_Design_Pre_Script.md)，并用[原型控制逻辑](../../prototypes/ui/app.js)和[已采纳的设计细化](requirements-changes.md)复核措辞。
 
+| 页／预算 | 核对结论 |
+| --- | --- |
+| 1 开场／10 秒 | 封面和讲稿都把范围限定为系统设计与仿真验证。 |
+| 2 用户需求／25 秒 | 普通用户准备及启动，异常时接受协助；维护者管理配置和模型。项目限定固定桌面和一类仿真上衣，计划释放单列。 |
+| 3 五屏与接管／30 秒 | 页面已标明测试事件驱动。停止请求、确认本代静止、显式接管的顺序正确。讲稿中的“归还后重新校验”可用下方一句话具体说明。回放暂停只停止播放。 |
+| 4 需求细化／20 秒 | 30 项产品需求与 18 项测试保留。CR-01 记录校验来源、编号与失败检查项；CR-02 分开记录人工判断、首次报警与接受停止的时刻和时间域。两项属于开发记录设计。讲完交张介绍第 5 页架构。 |
+
+**第 3 页建议替换句。** “归还后，手动权限立即撤回。系统等到新的静止证据并校验通过才继续；若衣物越界，用户可再次接管。” 这句话对应原型中归还失败的实际分支，可替换原讲稿关于归还的一句，待张整合。
+
+第 11 页现已将 A 列为正常场景；B 一次告警驱动恢复、C 缺包求助及其证据范围见[逐例判读](hu-abc-case-review.md)。B 视频由马在第 9 页口播中同步播放。胡的预算合计 85 秒，不另加旧稿的 B 段口播。本次核对限于文件内容；本人讲解、设备播放、三人实际计时与出席由现场登记。[展示计划](presentation-plan.md)
+
+## 历史两页 UI 素材
 
 11 月 8 日新版 Pre 增加检测与恢复证据。整合十页稿时请同时使用[检测曲线、三场景结果及第 5、10 页修订意见](hu-pre-detection.md)；最终分段由张茗博安排。
 
-张茗博可将[两页可编辑 PowerPoint](slides/hu-ui-slides.pptx)插入整组开头，两页的英文逐字稿分别在 PowerPoint 的“备注”中。建议第 1 页 40 秒、第 2 页 45 秒，时长待全组排练实测。第 2 页末句交给张讲协调器如何执行控制权规则。[三页架构素材](slides/zhang-architecture-slides.pptx) · [整组展示安排](presentation-plan.md)
+早期[两页可编辑 PowerPoint](slides/hu-ui-slides.pptx)保留作素材，两页的英文逐字稿分别在 PowerPoint 的“备注”中。建议第 1 页 40 秒、第 2 页 45 秒，时长待全组排练实测。第 2 页末句交给张讲协调器如何执行控制权规则。[三页架构素材](slides/zhang-architecture-slides.pptx) · [整组展示安排](presentation-plan.md)
 
 | 页 | 讲解时要说清什么 | 图像来源及复核 |
 | --- | --- | --- |
