@@ -1,0 +1,21 @@
+{
+  "trial_id": "70e36c5e-c0cc-458e-8c43-0ace14b91fc2",
+  "rgb_frames": 59,
+  "observations": 59,
+  "dispatches_before_refusal": 86,
+  "dispatches_after_refusal": 0,
+  "recovery_attempts": 0,
+  "detector_status": "UNKNOWN",
+  "fiper_scores_computed": false,
+  "missing": [
+    "encoder_ref",
+    "preprocessing_ref",
+    "obs_embeddings",
+    "rnd_checkpoint_ref",
+    "calibration_ref"
+  ],
+  "physical_rest_verified": false,
+  "scope": "actual simulation, unavailable observation detector -> no new dispatch",
+  "final_state": "HELP_REQUESTED_AUTOMATIC_DISPATCH_DISABLED",
+  "independent_review": "pending"
+}

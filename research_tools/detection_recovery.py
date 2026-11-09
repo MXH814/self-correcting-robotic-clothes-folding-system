@@ -128,8 +128,32 @@ class DiagnosticRecoveryWorkflow:
         self.state = "HELP_REQUIRED"
         return self._event("REQUEST_HALT_AND_HELP", reason)
 
-    def on_detection(self, report, *, now_wall_s, expected_holding):
+    def _detection_report_error(self, report, now_wall_s):
+        """Common score/provenance/clock checks for initial and refreshed alerts."""
         from .observation_detector import METHOD
+        if not (report.get("schema") == "observation-deviation-report/1" and report.get("method") == METHOD
+                and report.get("motion_authorized") is False and type(report.get("generation")) is int):
+            return "INVALID_DETECTION_REPORT"
+        decision = report.get("decision_wall_s")
+        captured = report.get("captured_wall_s")
+        if not (finite(now_wall_s) and finite(decision) and finite(captured)
+                and 0 <= decision - captured <= 1 and 0 <= now_wall_s - decision <= 1
+                and now_wall_s - captured <= 1):
+            return "STALE_OR_INVALID_REPORT"
+        status = report.get("status")
+        if status in ("NORMAL", "ANOMALY"):
+            if not self.detector_package_id or not self.context_reference:
+                return "DETECTOR_PACKAGE_NOT_BOUND"
+            if (report.get("package_id") != self.detector_package_id
+                    or report.get("context_reference") != self.context_reference):
+                return "DETECTOR_PACKAGE_OR_CONTEXT_MISMATCH"
+            score, raw, threshold = report.get("score"), report.get("raw_score"), report.get("threshold")
+            if not (all(finite(x) and x >= 0 for x in (score, raw, threshold))
+                    and (score > threshold) == (status == "ANOMALY")):
+                return "INCONSISTENT_DETECTION_SCORE"
+        return None
+
+    def on_detection(self, report, *, now_wall_s, expected_holding):
         if not isinstance(report, dict):
             return self._help("INVALID_DETECTION_REPORT")
         if report.get("trial_id") != self.trial_id or report.get("generation") != self.generation:
@@ -144,26 +168,10 @@ class DiagnosticRecoveryWorkflow:
         self.seen.add(observed)
         if expected_holding is not True:
             return self._event("NO_RECOVERY", "OUTSIDE_EXPECTED_HOLD")
-        if not (report.get("schema") == "observation-deviation-report/1" and report.get("method") == METHOD
-                and report.get("motion_authorized") is False and type(report.get("generation")) is int):
-            return self._help("INVALID_DETECTION_REPORT")
-        decision = report.get("decision_wall_s")
-        captured = report.get("captured_wall_s")
-        if not (finite(now_wall_s) and finite(decision) and finite(captured)
-                and 0 <= decision - captured <= 1 and 0 <= now_wall_s - decision <= 1
-                and now_wall_s - captured <= 1):
-            return self._help("STALE_OR_INVALID_REPORT")
+        error = self._detection_report_error(report, now_wall_s)
+        if error:
+            return self._help(error)
         status = report.get("status")
-        if status in ("NORMAL", "ANOMALY"):
-            if not self.detector_package_id or not self.context_reference:
-                return self._help("DETECTOR_PACKAGE_NOT_BOUND")
-            if (report.get("package_id") != self.detector_package_id
-                    or report.get("context_reference") != self.context_reference):
-                return self._help("DETECTOR_PACKAGE_OR_CONTEXT_MISMATCH")
-            score, raw, threshold = report.get("score"), report.get("raw_score"), report.get("threshold")
-            if not (all(finite(x) and x >= 0 for x in (score, raw, threshold))
-                    and (score > threshold) == (status == "ANOMALY")):
-                return self._help("INCONSISTENT_DETECTION_SCORE")
         if status == "NORMAL":
             return self._event("CONTINUE", "NORMAL_REFERENCE")
         if status == "UNKNOWN" and report.get("reason") == "WINDOW_WARMUP":
@@ -176,6 +184,51 @@ class DiagnosticRecoveryWorkflow:
         self.accepted_report = dict(report)
         return self._event("REQUEST_RECOVERY_PREFLIGHT", "OBSERVATION_ALERT",
                            source_observation_id=observed, detector_reason=report.get("reason"))
+
+    def refresh_preflight_detection(self, request_id, report, *, now_wall_s):
+        """Revalidate a pending request using a strictly newer, still-anomalous report.
+
+        Waiting for measured rest is not permission to extend an old report's
+        clock. A new report must pass the same provenance/score checks. A failed
+        refresh makes the old report unusable; this never resets the budget or
+        creates a new request/generation. No motion is authorized here.
+        """
+        if self.state != "RECOVERY_REQUESTED" or request_id != self.request_id:
+            return self._event("REJECT", "INVALID_OR_DUPLICATE_REQUEST")
+        if not isinstance(report, dict):
+            return self._help("INVALID_DETECTION_REPORT")
+        if report.get("trial_id") != self.trial_id or report.get("generation") != self.generation:
+            return self._help("OLD_GENERATION_OR_OTHER_TRIAL")
+        observed = report.get("observation_id")
+        if not isinstance(observed, str) or not observed:
+            return self._help("MISSING_OBSERVATION")
+        if observed in self.seen:
+            return self._help("DUPLICATE_OBSERVATION")
+        self.seen.add(observed)
+        error = self._detection_report_error(report, now_wall_s)
+        if error:
+            return self._help(error)
+        if report.get("status") != "ANOMALY":
+            return self._help("PREFLIGHT_ANOMALY_NOT_RECONFIRMED")
+        previous = self.accepted_report
+        if (not isinstance(previous, dict)
+                or report["captured_wall_s"] <= previous["captured_wall_s"]):
+            return self._help("PREFLIGHT_OBSERVATION_NOT_NEWER")
+        # Actual runtime reports have observed_sim_s. Reject reused render times
+        # even when a caller rereads an old frame under a fresh wall clock.
+        observed_sim = report.get("observed_sim_s")
+        previous_sim = previous.get("observed_sim_s")
+        if (not finite(observed_sim) or observed_sim < 0
+                or (finite(previous_sim) and observed_sim <= previous_sim)):
+            return self._help("PREFLIGHT_FRAME_NOT_NEWER")
+        if self.journal is None:
+            return self._help("PERSISTENT_JOURNAL_REQUIRED")
+        event = self._event("PREFLIGHT_DETECTION_REFRESHED", "FRESH_OBSERVATION_ALERT",
+                            source_observation_id=observed,
+                            previous_observation_id=previous["observation_id"], report=report)
+        # A failed journal write must leave the old report in place, not refresh it.
+        self.accepted_report = dict(report)
+        return event
 
     def begin_macro(self, request_id, *, permit):
         if self.state != "RECOVERY_REQUESTED" or request_id != self.request_id:

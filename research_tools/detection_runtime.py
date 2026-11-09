@@ -45,12 +45,19 @@ class DetectionRuntime:
             require(rgb is not None, "MISSING_RGB")
             embedding = self.encoder.encode([rgb])[0].tolist()
             row = dict(observation, embedding=embedding)
-            effective_now = now_wall_s + time.monotonic() - started
+            effective_now = time.monotonic()
             report = self.detector.detect(row, generation=generation, captured_wall_s=captured_wall_s,
                                           now_wall_s=effective_now)
-            report["end_to_end_processing_wall_s"] = time.monotonic() - started
+            # Record the clock directly. Adding elapsed floats to an earlier
+            # timestamp can round a report slightly into the future.
+            finished = time.monotonic()
+            report["decision_wall_s"] = finished
+            report["end_to_end_processing_wall_s"] = finished - started
+            if finished - captured_wall_s > self.detector.max_age_wall_s:
+                self.detector.reset()
+                report.update(status="UNKNOWN", reason="DETECTION_RUNTIME_EXPIRED")
             return report
         except (ValueError, TypeError, KeyError, RuntimeError) as error:
             self.detector.reset()
-            report.update(reason=str(error), decision_wall_s=now_wall_s + time.monotonic() - started)
+            report.update(reason=str(error), decision_wall_s=time.monotonic())
             return report

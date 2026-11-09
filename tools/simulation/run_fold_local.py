@@ -12,6 +12,8 @@ from isaacsim import SimulationApp as OriginalSimulationApp
 
 
 class LocalSimulationApp(OriginalSimulationApp):
+    active_instance = None
+
     def close(self, *args, **kwargs):
         if getattr(self, "_fold_recovery_evidence", None) is not None:
             evidence = self._fold_recovery_evidence
@@ -43,11 +45,30 @@ class LocalSimulationApp(OriginalSimulationApp):
         self._fold_env = None
         self._fold_camera_evidence = None
         self._fold_recovery_evidence = None
+        LocalSimulationApp.active_instance = self
         if os.environ.get("ROBOTICS_FOLD_CAMERA") == "1":
             from fold_camera_evidence import FoldCameraEvidence
             self._fold_camera_evidence = FoldCameraEvidence(Path(os.environ["ROBOTICS_OUTPUT_ROOT"]), BaseEnv)
         if os.environ.get("ROBOTICS_FOLD_RECOVERY") == "1":
             from fold_recovery_evidence import FoldRecoveryEvidence
+            if os.environ.get("ROBOTICS_FIPER_PRE_SCENARIO"):
+                scenario = os.environ["ROBOTICS_FIPER_PRE_SCENARIO"]
+                if scenario == "official-missing-inputs":
+                    from official_pre_evidence import OfficialPreEvidence
+                    FoldRecoveryEvidence = OfficialPreEvidence
+                elif scenario == "missing-inputs":
+                    from fiper_pre_evidence import FiperPreEvidence
+                    FoldRecoveryEvidence = FiperPreEvidence
+                elif scenario in ("normal-a", "fault-b"):
+                    from official_ab_evidence import OfficialABEvidence
+                    FoldRecoveryEvidence = OfficialABEvidence
+                else:
+                    raise ValueError("Unsupported FIPER Pre scenario: " + scenario)
+                if os.environ.get("ROBOTICS_PRE_NORMAL_COLLECTION") == "1":
+                    raise ValueError("Detection and detector-disabled collection are mutually exclusive")
+            if os.environ.get("ROBOTICS_PRE_NORMAL_COLLECTION") == "1":
+                from pre_observation_evidence import PreObservationEvidence
+                FoldRecoveryEvidence = PreObservationEvidence
             self._fold_recovery_evidence = FoldRecoveryEvidence(
                 Path(os.environ["ROBOTICS_OUTPUT_ROOT"]), ROOT, BaseEnv)
         original_init = BaseEnv.__init__
@@ -64,4 +85,20 @@ class LocalSimulationApp(OriginalSimulationApp):
 
 isaacsim.SimulationApp = LocalSimulationApp
 sys.argv = [str(ROOT / "Env_StandAlone/Fold_Tops_Env.py")] + sys.argv[1:]
-runpy.run_path(sys.argv[0], run_name="__main__")
+try:
+    runpy.run_path(sys.argv[0], run_name="__main__")
+except BaseException as error:
+    app = LocalSimulationApp.active_instance
+    evidence = getattr(app, "_fold_recovery_evidence", None)
+    if evidence is not None:
+        try:
+            evidence.abort(error)
+        except Exception as save_error:
+            print("PARTIAL_EVIDENCE_SAVE_FAILED", repr(save_error), flush=True)
+        app._fold_recovery_evidence = None
+    if app is not None:
+        try:
+            app.close()
+        except Exception as close_error:
+            print("SIMULATOR_CLOSE_FAILED", repr(close_error), flush=True)
+    raise
