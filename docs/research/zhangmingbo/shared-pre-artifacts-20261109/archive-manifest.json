@@ -1,0 +1,1175 @@
+{
+  "schema": "pre-team-shared-archive/1",
+  "package_id": "b9df07d40a29968947949a7a202e89b31d1fb37771fb4c2ff5094fc73ff3eb1b",
+  "archives": [
+    {
+      "file": "detector-b9df07d4.zip",
+      "bytes": 132732878,
+      "sha256": "72fd4cf58d73ad03c4b480039ef4d3506e00580bcc20ef77acb0474efa1e22a0",
+      "files": [
+        {
+          "path": "detector.pt",
+          "bytes": 132726810,
+          "sha256": "6decf0155074222b7fd69a720db103b9bbd87e3b7f3034b4b193db74745b4dd4"
+        },
+        {
+          "path": "manifest.json",
+          "bytes": 5774,
+          "sha256": "b0ff35cca0d55d31ce4c7312d60012c4a055bf996b7b60d47521971fd6236b23"
+        }
+      ]
+    },
+    {
+      "file": "normal-calibration-v2.zip",
+      "bytes": 320068396,
+      "sha256": "d63076a66c7e0f6e35954c7276f1a147c523e72324c53974ade9957ad2494ba0",
+      "files": [
+        {
+          "path": "normal-01/console.log",
+          "bytes": 42820,
+          "sha256": "ad2353fd382ea3b8edc0e96e8af44250cbf49082d7d7d9f8f7abcfc7ac5a07f8"
+        },
+        {
+          "path": "normal-01/export/audit.json",
+          "bytes": 3468,
+          "sha256": "72f7e0594c32925f851d691274e7c9e7089fee7062f02dbeae5c0f3b866434d6"
+        },
+        {
+          "path": "normal-01/export/camera.json",
+          "bytes": 1288,
+          "sha256": "1168a25258cf9e3e8c93d9a5e54832fc57c19ff68c9e7ece6c3da49697a6cac7"
+        },
+        {
+          "path": "normal-01/export/observation-sample.json",
+          "bytes": 4594,
+          "sha256": "1a809053654592dbce450faa30ee12d5ded10030c1ab6250c831d7450f6291db"
+        },
+        {
+          "path": "normal-01/export/observations.jsonl",
+          "bytes": 1559499,
+          "sha256": "94185c3c6e5e4b97a3d59f3d938e057ec1da2182b7bf909d5ac34e14ee56c2e9"
+        },
+        {
+          "path": "normal-01/export/sample-final.png",
+          "bytes": 283708,
+          "sha256": "8280094fe87f0ff1bb19d4b2f02d48a42f6ce9ada047701b60e37e10d22ff71a"
+        },
+        {
+          "path": "normal-01/export/sample-first.png",
+          "bytes": 298577,
+          "sha256": "19c8a21cf22ca0e97c620bada1118a2aff2599ce1ad86d71c8eda13b052e21bc"
+        },
+        {
+          "path": "normal-01/fold-recovery-28ca26b1-3fa4-4dd6-8333-3f4e44cbd950/continuation-context.json",
+          "bytes": 4633,
+          "sha256": "5cda328c3227c0867876694232648d74a8bec6d939c30c4e9b9336e5470997bb"
+        },
+        {
+          "path": "normal-01/fold-recovery-28ca26b1-3fa4-4dd6-8333-3f4e44cbd950/final-point-cloud.npz",
+          "bytes": 22119,
+          "sha256": "886d57062ed0e0d93a7c5e6cd19f972031d523780c963ca8c6798a85e029d806"
+        },
+        {
+          "path": "normal-01/fold-recovery-28ca26b1-3fa4-4dd6-8333-3f4e44cbd950/final.png",
+          "bytes": 270666,
+          "sha256": "bff8a78c538a034d1af1debbddfa1ce213eb38253334052ef3e244f52f3cd266"
+        },
+        {
+          "path": "normal-01/fold-recovery-28ca26b1-3fa4-4dd6-8333-3f4e44cbd950/full-fold-recovery.json",
+          "bytes": 1725,
+          "sha256": "79aea5241586295ca871e50d213782767995041823a67bc81767b848f49e8692"
+        },
+        {
+          "path": "normal-01/fold-recovery-28ca26b1-3fa4-4dd6-8333-3f4e44cbd950/initial-point-cloud.npz",
+          "bytes": 21649,
+          "sha256": "354f105c9ff4f7625d5ae2696e6c9b714fbdd50ccc79200c0c7d1cb76f4a2d79"
+        },
+        {
+          "path": "normal-01/fold-recovery-28ca26b1-3fa4-4dd6-8333-3f4e44cbd950/manifest.json",
+          "bytes": 1586,
+          "sha256": "0b728836ccba2537f207a9c0aa6f37825c83571e14680d388e9cbbd7ca65b43b"
+        },
+        {
+          "path": "normal-01/fold-recovery-28ca26b1-3fa4-4dd6-8333-3f4e44cbd950/observation-trace.json",
+          "bytes": 2064208,
+          "sha256": "1fae1645e364bbfae38b4d1a898a36f6159726f55f7a973060dbb0191e72ade6"
+        },
+        {
+          "path": "normal-01/fold-recovery-28ca26b1-3fa4-4dd6-8333-3f4e44cbd950/pre-demo-events.jsonl",
+          "bytes": 8448,
+          "sha256": "feb3daa9e9c72e382d9ba3b7fbe2dbfcc53364f9f8d0f079458cae4c5ed613aa"
+        },
+        {
+          "path": "normal-01/fold-recovery-28ca26b1-3fa4-4dd6-8333-3f4e44cbd950/pre-observation-config.json",
+          "bytes": 1092,
+          "sha256": "06ea96591e15d265cbb31b412302147544b5ad74a2ca96e2ed3968fbf5127930"
+        },
+        {
+          "path": "normal-01/fold-recovery-28ca26b1-3fa4-4dd6-8333-3f4e44cbd950/rgb-frames.npz",
+          "bytes": 155127711,
+          "sha256": "dbf0d7c7b421a010d9d9591e347df07c6a1ed4d2f941b19a8297da87cd4d486b"
+        },
+        {
+          "path": "normal-01/invocation.json",
+          "bytes": 554,
+          "sha256": "58882244699c605611e33196b657ecdf373144b06f8e8ae54fb4a2de35c9bf59"
+        },
+        {
+          "path": "normal-02/console.log",
+          "bytes": 42820,
+          "sha256": "7b1fe61cca1eda80c62963749bb0420e8c2ecaaa6b633efeb9299ffcd9359ff4"
+        },
+        {
+          "path": "normal-02/export/audit.json",
+          "bytes": 3470,
+          "sha256": "08e6ef7074002d3fc7d706fd0318e3c27cec87e1ea10b832d87d326c442977c6"
+        },
+        {
+          "path": "normal-02/export/camera.json",
+          "bytes": 1288,
+          "sha256": "1168a25258cf9e3e8c93d9a5e54832fc57c19ff68c9e7ece6c3da49697a6cac7"
+        },
+        {
+          "path": "normal-02/export/observation-sample.json",
+          "bytes": 4594,
+          "sha256": "289db572ffc6aa1b2503e1989751a6f8d44cce8be68db945572393fbe45883c8"
+        },
+        {
+          "path": "normal-02/export/observations.jsonl",
+          "bytes": 1562556,
+          "sha256": "ca567b0c3ded6442535cd69f4b5e438565d88b4f3a05be2b2cf9110dff40553d"
+        },
+        {
+          "path": "normal-02/export/sample-final.png",
+          "bytes": 280761,
+          "sha256": "3f8541e1d11f096fff55f1087077e7bbcb6545a71ff252d85cea54fea76de491"
+        },
+        {
+          "path": "normal-02/export/sample-first.png",
+          "bytes": 299680,
+          "sha256": "7c27a4f1ba8b8156fcc1fe408415ffd1095cd47aa3b1bfed8c0de60383809b3e"
+        },
+        {
+          "path": "normal-02/fold-recovery-9790af1e-a247-4c6b-b1ca-d5a2b539bdae/continuation-context.json",
+          "bytes": 4633,
+          "sha256": "523caa3e79cbd2e8dde593a09926b643752b837c973faf4fe19a32e39a448edc"
+        },
+        {
+          "path": "normal-02/fold-recovery-9790af1e-a247-4c6b-b1ca-d5a2b539bdae/final-point-cloud.npz",
+          "bytes": 22140,
+          "sha256": "f9f3929b06c3896d150f261171001f673f96aa83156ee2f6a30f2c4c33e27aab"
+        },
+        {
+          "path": "normal-02/fold-recovery-9790af1e-a247-4c6b-b1ca-d5a2b539bdae/final.png",
+          "bytes": 267501,
+          "sha256": "7467da182119489878c840899da43e453295639b14252ab3e514356d9c934f14"
+        },
+        {
+          "path": "normal-02/fold-recovery-9790af1e-a247-4c6b-b1ca-d5a2b539bdae/full-fold-recovery.json",
+          "bytes": 1728,
+          "sha256": "2331acceeac2a3fc191f43cdc43023d5986de0f34c9c25cb559f1427b11bc3d7"
+        },
+        {
+          "path": "normal-02/fold-recovery-9790af1e-a247-4c6b-b1ca-d5a2b539bdae/initial-point-cloud.npz",
+          "bytes": 21652,
+          "sha256": "0ef2431c2b2217a51c5ed01fa6ef95d59e80b4d903d7ca183d691fc2c4ff98de"
+        },
+        {
+          "path": "normal-02/fold-recovery-9790af1e-a247-4c6b-b1ca-d5a2b539bdae/manifest.json",
+          "bytes": 1586,
+          "sha256": "f36a82e749584811ee03e1bdbbe79bc8ff6626cba08b47c10fac1bf3d0e42407"
+        },
+        {
+          "path": "normal-02/fold-recovery-9790af1e-a247-4c6b-b1ca-d5a2b539bdae/observation-trace.json",
+          "bytes": 2073112,
+          "sha256": "d0522560a3b76055c032d298b3527581b9cb07fb53a5e03ee17d914265def890"
+        },
+        {
+          "path": "normal-02/fold-recovery-9790af1e-a247-4c6b-b1ca-d5a2b539bdae/pre-demo-events.jsonl",
+          "bytes": 8447,
+          "sha256": "d3c6bcdc652a362dcfc6098a156e53a8e8a0c90e280c1464c9009ad2f87ad4ed"
+        },
+        {
+          "path": "normal-02/fold-recovery-9790af1e-a247-4c6b-b1ca-d5a2b539bdae/pre-observation-config.json",
+          "bytes": 1092,
+          "sha256": "39627257c2874567cf7c5c4a135df696e30b5cf3ac2e2b66c5dd692984f86a23"
+        },
+        {
+          "path": "normal-02/fold-recovery-9790af1e-a247-4c6b-b1ca-d5a2b539bdae/rgb-frames.npz",
+          "bytes": 155406465,
+          "sha256": "44e95c211bcf2618505906fdadc7a806e52e991f46a264e6dbf558abb890565e"
+        },
+        {
+          "path": "normal-02/invocation.json",
+          "bytes": 554,
+          "sha256": "7c5bdde51db5c68addc50bed81f18f3b1c005d6675df69d6b06ea850d7b49171"
+        },
+        {
+          "path": "plan.json",
+          "bytes": 377,
+          "sha256": "d9cf2d7a9b6d45877eda25082d1386c946f0361940d3bb3920686d914a116aec"
+        },
+        {
+          "path": "producer-sources/__pycache__/fold_recovery_chain.cpython-310.pyc",
+          "bytes": 10073,
+          "sha256": "2d52242957da100eaed2efc8f6d6c79f5959beead4c1cc8c5866a6b5410cdbdf"
+        },
+        {
+          "path": "producer-sources/__pycache__/fold_recovery_evidence.cpython-310.pyc",
+          "bytes": 12199,
+          "sha256": "ce7ee6a886ebca85859bddc83eb14e24e7bed6ebbb863bf8445744a03334bd7d"
+        },
+        {
+          "path": "producer-sources/__pycache__/garment_observation_trace.cpython-310.pyc",
+          "bytes": 5521,
+          "sha256": "744010d81a05ef7f9cc680edabf0cc2c6524def586ea63ee42310398eb809e61"
+        },
+        {
+          "path": "producer-sources/__pycache__/pre_observation_evidence.cpython-310.pyc",
+          "bytes": 5604,
+          "sha256": "cac0a04d4d611065b0cc715b3dc27d99d27d25cdc935b8a5cdc5b6ff1b0ea886"
+        },
+        {
+          "path": "producer-sources/audit_dr02_geometry.py",
+          "bytes": 7033,
+          "sha256": "3853e53c3f4437d3630f026b6eb514503f46b34a186f5510d1ddf15b56c4c373"
+        },
+        {
+          "path": "producer-sources/build_pre_abc_evidence.py",
+          "bytes": 14062,
+          "sha256": "35c8be3d492d063fd716fa6f9e95d3ecfa07105c6268b8e051a155247ad344cb"
+        },
+        {
+          "path": "producer-sources/build_pre_z3_evidence.py",
+          "bytes": 12154,
+          "sha256": "d405cb3cf61aa115069c57f87a30189c8e7ac829a54fbb2e60bd8b4eb1fdb18c"
+        },
+        {
+          "path": "producer-sources/capture_runtime_io.py",
+          "bytes": 14719,
+          "sha256": "809a178e04b4759dff6060442426a2b718c9d49b219f56facbc69b67f9e29e2e"
+        },
+        {
+          "path": "producer-sources/download_demo_assets.py",
+          "bytes": 4823,
+          "sha256": "7b8096ee5d858d15a72f57c1c273f80b165ecdd3efd4bbb12cc22103828162be"
+        },
+        {
+          "path": "producer-sources/export_numeric_trajectory.py",
+          "bytes": 5416,
+          "sha256": "d8b362930edceb21ba83053d9887e7982840bd68a49aaf39215a09e58ee83a03"
+        },
+        {
+          "path": "producer-sources/export_observation.py",
+          "bytes": 2343,
+          "sha256": "b8335131e4aa4398fe292f54ae532659ede7ed97eadb4376748895e60d0d790d"
+        },
+        {
+          "path": "producer-sources/fiper_input_gate.py",
+          "bytes": 1811,
+          "sha256": "a94a1702795c94d4f4e7cf48a089d490dc8fb719ff855f11a3cc0c20f6c51619"
+        },
+        {
+          "path": "producer-sources/fiper_pre_evidence.py",
+          "bytes": 5573,
+          "sha256": "51528265e34be35df24734c357bde9fecc07c68bebe5feac191b5ac43c3d9e22"
+        },
+        {
+          "path": "producer-sources/fold_camera_evidence.py",
+          "bytes": 6144,
+          "sha256": "0ee6c9bc6b32a1fab8a04e73eb6a1e1c1b672fb606701e70512cf86f4969b19e"
+        },
+        {
+          "path": "producer-sources/fold_recovery_chain.py",
+          "bytes": 11540,
+          "sha256": "86c08c0ed242660d14bfd7390227ac5ea3b9edafafa9119f4e81037924c1e5fe"
+        },
+        {
+          "path": "producer-sources/fold_recovery_evidence.py",
+          "bytes": 13429,
+          "sha256": "a671699371f74a2424462fc974437f03815912e3b5c9e54bbb33e2fe79a8591c"
+        },
+        {
+          "path": "producer-sources/garment_dr02_capture.py",
+          "bytes": 5336,
+          "sha256": "343dd1b3ad02a62b9eae9111e99e2dbef3a5c1b31ab9d341afebcf825f34771f"
+        },
+        {
+          "path": "producer-sources/garment_fault_probe.py",
+          "bytes": 20613,
+          "sha256": "a616313fadbe39e0e732d9c8782c06025c19ada65fc9d7f3dd3a8f590f500923"
+        },
+        {
+          "path": "producer-sources/garment_observation_trace.py",
+          "bytes": 5486,
+          "sha256": "88bed809f06fbd2e7e562839159e27d08b72374f61b9bc388996c84dd1159475"
+        },
+        {
+          "path": "producer-sources/official_ab_evidence.py",
+          "bytes": 18519,
+          "sha256": "4824ee34310dfdbf1c8f1f299bcaf08935edcd38b048301eb72f60b092eb6ca5"
+        },
+        {
+          "path": "producer-sources/official_pre_adapter.py",
+          "bytes": 10550,
+          "sha256": "afed9de1d3e43845c5f9ec7b2b165db74c3c607c66646c843eb86d1d072722d9"
+        },
+        {
+          "path": "producer-sources/official_pre_evidence.py",
+          "bytes": 4201,
+          "sha256": "2a0371af7b1103ac6fb43b0c93c021bb4c4b74897b3f01d965367e45d114dc94"
+        },
+        {
+          "path": "producer-sources/package_pre_observations.py",
+          "bytes": 5832,
+          "sha256": "13c94778ba857d8bd8b4ef1fcf9894e1ac7ff28fce95769039c863afebad519c"
+        },
+        {
+          "path": "producer-sources/pre_detection_bridge.py",
+          "bytes": 2478,
+          "sha256": "f5525965826831f73d86f94e00ab79c926f8dbc243c831dbca99a380f8a1ca0e"
+        },
+        {
+          "path": "producer-sources/pre_execution_support.py",
+          "bytes": 22514,
+          "sha256": "a2e0e3912ba5f8f9e68241fbfa0d744f6edd37c553177eff57898d4ff25da0de"
+        },
+        {
+          "path": "producer-sources/pre_observation_evidence.py",
+          "bytes": 5583,
+          "sha256": "327e628a8ae0f5bd0d84a5082825568b278b4dd66e7a7d7110bb01350c394e3c"
+        },
+        {
+          "path": "producer-sources/pre_observation_reader.py",
+          "bytes": 1294,
+          "sha256": "b64849af5533a05635de0648711fba62280e05e0ba25d3ec65abeb544ed485bc"
+        },
+        {
+          "path": "producer-sources/pre_runtime_bridge.py",
+          "bytes": 8142,
+          "sha256": "8bc93c2140282994c28e2ff55dda75e31806032e9a630318fe6a03a0762ee376"
+        },
+        {
+          "path": "producer-sources/run_fiper_pre.ps1",
+          "bytes": 1478,
+          "sha256": "dd827851a131afe73ad34118d8e6f0d229ff52cda9ebc3f6cb2dafa341adf662"
+        },
+        {
+          "path": "producer-sources/run_fold_local.py",
+          "bytes": 5084,
+          "sha256": "c502599c519c62968ea5144baf323a1c7cd97f2b7b15729e798195f1b40f8d8b"
+        },
+        {
+          "path": "producer-sources/run_local.ps1",
+          "bytes": 6656,
+          "sha256": "3afb18e3fe36a45d8a4847c555673d275d6c2dcf3a7fbee5ee2bf06e764a4f19"
+        },
+        {
+          "path": "producer-sources/run_official_ab.ps1",
+          "bytes": 2714,
+          "sha256": "8e71f4e92434d0d119173f2597062b6e42370fda08691781dca091bcdf0e1079"
+        },
+        {
+          "path": "producer-sources/run_pre_normal_batch.py",
+          "bytes": 3636,
+          "sha256": "094bf514e358abe22c7af47e98a74a326450302f40b2707954d20e6d85f80cfc"
+        },
+        {
+          "path": "producer-sources/runtime_control_probe.py",
+          "bytes": 11293,
+          "sha256": "15a51dee42ce3b9ed2c0d04ad8528bb5141c5b573292d109a3d133534a010c85"
+        },
+        {
+          "path": "producer-sources/smoke_test.py",
+          "bytes": 10996,
+          "sha256": "ed959330aafe0a1f7230da3a10cf2b84c7e8c81e24e145b061f5f3e84bd25bea"
+        },
+        {
+          "path": "producer-sources/verify_demo_assets.py",
+          "bytes": 1639,
+          "sha256": "58e599e5886dc8dbfd3f060a1ec5107b74ea4df48ab99bdaa7e9704d63141cb2"
+        },
+        {
+          "path": "producer-sources/verify_fiper_refusal.py",
+          "bytes": 4376,
+          "sha256": "e450a63e4580a8b558c65a5d054cda7d20ab8f7c90c625fd017da55c5baf0850"
+        },
+        {
+          "path": "producer-sources/verify_fold_recovery_chain.py",
+          "bytes": 8879,
+          "sha256": "5f856fe493021d579f4e0fc880e12b3a245e367cf29fda07f0a38347fac64d3b"
+        },
+        {
+          "path": "producer-sources/verify_garment_observation_trace.py",
+          "bytes": 5909,
+          "sha256": "c3c342a730c7dcfc735c87a97fef87d9de206a8de237287123a2005172316dc5"
+        },
+        {
+          "path": "producer-sources/verify_midstate_snapshots.py",
+          "bytes": 3975,
+          "sha256": "1e3d4b82f3ce6c56cf57d6481e33c2f2987ed59443f842a231e4e39a6b7a7305"
+        },
+        {
+          "path": "producer-sources/verify_official_ab.py",
+          "bytes": 6403,
+          "sha256": "afec51e01aeb39fe8f4c3d419c07de7e2f76cf83ac63ff5f80b8e7e7f04c7811"
+        },
+        {
+          "path": "producer-sources/verify_pre_observations.py",
+          "bytes": 3454,
+          "sha256": "7d4a04b3771ef6dab0ac074860735f920e56276f894edbf1be2b25bdc4d3da5d"
+        },
+        {
+          "path": "results.json",
+          "bytes": 8669,
+          "sha256": "380dc565f6a0f73c6c3c3ecd027ee0b72139e8a2ff2fbac6821e993204a1f771"
+        }
+      ]
+    },
+    {
+      "file": "official-A-db18b274.zip",
+      "bytes": 159026335,
+      "sha256": "85bcebe8407f3ca99d4ea8ac828fa216c7078ccbdf93c58bd6223dadb8dc7c0d",
+      "files": [
+        {
+          "path": "ab-invocation.json",
+          "bytes": 816,
+          "sha256": "1ca61fddd753ce2bb3e371192bfc3279d0dca201685ffe12ba55784e7feca46f"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/continuation-context.json",
+          "bytes": 4633,
+          "sha256": "7d9f57837aca3a1582aa07cd8a327a9e22bc746642a8b50cda19dcbddebcb3de"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/final-point-cloud.npz",
+          "bytes": 22158,
+          "sha256": "a92dc02c489c3b1bcc83b812ecfd0f98f7cc42fe6fef51955e5cc5ec744affb8"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/final.png",
+          "bytes": 270169,
+          "sha256": "96c4adc6f03b9e35ed94e42e929d61e0a381fa10d54e53f1c39b2666fc241053"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/full-fold-recovery.json",
+          "bytes": 2908,
+          "sha256": "b2cdccc6ef00289efcd0c8539187806688ffba6e12d1a81272f02ee099e640a5"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/initial-point-cloud.npz",
+          "bytes": 21637,
+          "sha256": "ed4ee2729a1e4452c0e0a6455900c28f7885cddf474632ddf384bc67ade6bc58"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/manifest.json",
+          "bytes": 1705,
+          "sha256": "56f0c5f195eb422711740b85dcd404d18b9e856fc5cc133a00f74c92ec64d418"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/observation-trace.json",
+          "bytes": 2086994,
+          "sha256": "37572097de100bdb8ebf69c561576e3b9787a96b88499bf8ccfdb6443d21c730"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/official-ab-config.json",
+          "bytes": 14078,
+          "sha256": "c883661efe54be783b6d7782871226528540a76a7ff3ffc0c6dbee82a2e01792"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/official-workflow-events.jsonl",
+          "bytes": 117237,
+          "sha256": "0958dff2ec4f9d395eba0a090fa40325ed5ca5e3ade0b6d17cacfa2bc91bed20"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/pre-demo-events.jsonl",
+          "bytes": 901308,
+          "sha256": "975da401a24e3ef1de0024143da99b2a4abbf097553fdcb49d1e51540bf23275"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/rgb-frames.npz",
+          "bytes": 155057780,
+          "sha256": "bcc85b09749e5296dff3f0099ab830ddb084744d5597f3dc48b82e02d624b9ca"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/__init__.py",
+          "bytes": 80,
+          "sha256": "2e6329a71b2d390c29b7ff082145d2aad8cd0dea5dc1ec5af6d8e18507bd25fb"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/action_chain_intake.py",
+          "bytes": 11771,
+          "sha256": "d502e0a9687ae46351a1a5784e01837fcecdb726b5f1af351346170b0cfd78de"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/detection_encoder.py",
+          "bytes": 7922,
+          "sha256": "e5dfebd6b770ff2f39d5ddae295de96ed6bd582437c533cf80fb181e56eec6d5"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/detection_recovery.py",
+          "bytes": 17306,
+          "sha256": "f2899c2dffabde388ea6d2bb5f382d615913f7ad6b776988a7b77929f263e178"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/detection_runtime.py",
+          "bytes": 3909,
+          "sha256": "bd8b4b88de2f6bb83a8a243b682ccff996cb45f76a956af5ba6cdc4dd8001a12"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/dex_dataset.py",
+          "bytes": 3674,
+          "sha256": "18f103e2ea0e24c52510c3f408e1b32d68cc753cdad336503bb8c65ddbda9cf8"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/diagnostics.py",
+          "bytes": 20623,
+          "sha256": "0bbf853cdedfcaf101e3f32bb2f7fb90c368bf4f858268ee641bcd3069b0acfb"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/garment_trace_intake.py",
+          "bytes": 13046,
+          "sha256": "f10c4a2fbe8a6558a8dabba895cd21c18272d0444a96da18c272c350ec8c0fcf"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/handoff_audit.py",
+          "bytes": 3529,
+          "sha256": "430a74a0fb89a4bbc0e0cb78ed3ad870ca904a92130b7871b98c4539fda1b189"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/legacy_features.py",
+          "bytes": 6926,
+          "sha256": "b21ff3d1aa59de27de6486f9bffe02385c3cabf2224e84c4c2a27a226a594833"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/legacy_observations.py",
+          "bytes": 6216,
+          "sha256": "1d196df8aafa74687400f5f4dab6b49058620e444116a657ccf7d06262825449"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/neural_baselines.py",
+          "bytes": 4997,
+          "sha256": "d70ff7c5d852caf0062b6b9af633e8db51e280046a31b2b0e2cb9d4618fe66c5"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/observation_detector.py",
+          "bytes": 18969,
+          "sha256": "2330b2f8962556bd95566eb8b84326a5fa1cf6317ef4fdf0e08f18ded18d2a58"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/pre_observation_rnd.py",
+          "bytes": 11028,
+          "sha256": "eb9f9f5f03ac6ae078727b15c80aca4665bd0f3d8cdad6c77d64d244cba0948f"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/prepare_pre_normal_detector.py",
+          "bytes": 18858,
+          "sha256": "ea8fec8ec8fbba12fed484ca141a0e3945c925e5c5d412a737e5d42f1c74616f"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/prepare_sleeve_detector.py",
+          "bytes": 11810,
+          "sha256": "e8e400f57cf460ec5d414520b01ea03a1ac9f93837d87529a98d140b1ff1309b"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/recovery_candidates.py",
+          "bytes": 2364,
+          "sha256": "410c4ff28af4c96a545bcf3fab6a39b33a02bae5bedc0baad4bd2155fc084bbe"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/recovery_dataset.py",
+          "bytes": 8912,
+          "sha256": "ddf2c70fcf8a1bce129814a05ec45316509aa035295e70bca491ef765a4f218f"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/recovery_gate.py",
+          "bytes": 4428,
+          "sha256": "5403e9c121ed1c11a630bd64685b55a23393a13301155d62c290d74487b9706c"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/resources.py",
+          "bytes": 1987,
+          "sha256": "c4fae6c2cd82daab2f402d056e161921a2c4fc2bcaa45626667ce84c041753b8"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/runtime_intake.py",
+          "bytes": 19293,
+          "sha256": "5d0702303939e515a587e402480788be58dd1921bf956fcb0119d322edbf4a4c"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/sequence_ranker.py",
+          "bytes": 14774,
+          "sha256": "c7a6201977dd27accc5d1b3aca6ad11c8e8f0fe1270e9598c49f289a87d16417"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/shared_context.py",
+          "bytes": 3805,
+          "sha256": "cfacb412fc8c65a52e253929e67203e4f789d916cb4378ff285aa30f8752b64e"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/research_tools/trial_outcomes.py",
+          "bytes": 3642,
+          "sha256": "4eb9afebf49a91304b42672cacf831f4cc7c398b333420e4f5e329317237a48f"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/audit_dr02_geometry.py",
+          "bytes": 7033,
+          "sha256": "3853e53c3f4437d3630f026b6eb514503f46b34a186f5510d1ddf15b56c4c373"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/build_pre_abc_evidence.py",
+          "bytes": 14062,
+          "sha256": "35c8be3d492d063fd716fa6f9e95d3ecfa07105c6268b8e051a155247ad344cb"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/build_pre_z3_evidence.py",
+          "bytes": 12154,
+          "sha256": "d405cb3cf61aa115069c57f87a30189c8e7ac829a54fbb2e60bd8b4eb1fdb18c"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/capture_runtime_io.py",
+          "bytes": 14719,
+          "sha256": "809a178e04b4759dff6060442426a2b718c9d49b219f56facbc69b67f9e29e2e"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/download_demo_assets.py",
+          "bytes": 4823,
+          "sha256": "7b8096ee5d858d15a72f57c1c273f80b165ecdd3efd4bbb12cc22103828162be"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/export_numeric_trajectory.py",
+          "bytes": 5416,
+          "sha256": "d8b362930edceb21ba83053d9887e7982840bd68a49aaf39215a09e58ee83a03"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/export_observation.py",
+          "bytes": 2343,
+          "sha256": "b8335131e4aa4398fe292f54ae532659ede7ed97eadb4376748895e60d0d790d"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/fiper_input_gate.py",
+          "bytes": 1811,
+          "sha256": "a94a1702795c94d4f4e7cf48a089d490dc8fb719ff855f11a3cc0c20f6c51619"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/fiper_pre_evidence.py",
+          "bytes": 5573,
+          "sha256": "51528265e34be35df24734c357bde9fecc07c68bebe5feac191b5ac43c3d9e22"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/fold_camera_evidence.py",
+          "bytes": 6144,
+          "sha256": "0ee6c9bc6b32a1fab8a04e73eb6a1e1c1b672fb606701e70512cf86f4969b19e"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/fold_recovery_chain.py",
+          "bytes": 11540,
+          "sha256": "86c08c0ed242660d14bfd7390227ac5ea3b9edafafa9119f4e81037924c1e5fe"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/fold_recovery_evidence.py",
+          "bytes": 13429,
+          "sha256": "a671699371f74a2424462fc974437f03815912e3b5c9e54bbb33e2fe79a8591c"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/garment_dr02_capture.py",
+          "bytes": 5336,
+          "sha256": "343dd1b3ad02a62b9eae9111e99e2dbef3a5c1b31ab9d341afebcf825f34771f"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/garment_fault_probe.py",
+          "bytes": 20613,
+          "sha256": "a616313fadbe39e0e732d9c8782c06025c19ada65fc9d7f3dd3a8f590f500923"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/garment_observation_trace.py",
+          "bytes": 5486,
+          "sha256": "88bed809f06fbd2e7e562839159e27d08b72374f61b9bc388996c84dd1159475"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/official_ab_evidence.py",
+          "bytes": 21733,
+          "sha256": "1e8d199bc12d069da896c6ea6407601d69a4127329ec1a00e225cee81e894e85"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/official_pre_adapter.py",
+          "bytes": 10591,
+          "sha256": "6c40af31b660d5ff3b591c7c1dd9b8479cc7093ac7ba520e93157c04bd3c096e"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/official_pre_evidence.py",
+          "bytes": 4201,
+          "sha256": "2a0371af7b1103ac6fb43b0c93c021bb4c4b74897b3f01d965367e45d114dc94"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/package_pre_observations.py",
+          "bytes": 5832,
+          "sha256": "13c94778ba857d8bd8b4ef1fcf9894e1ac7ff28fce95769039c863afebad519c"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/pre_detection_bridge.py",
+          "bytes": 2553,
+          "sha256": "7a9f8ab24b9a4f307ae56319d0a94d658d35201d165bd7eff59583219bcf7cb7"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/pre_execution_support.py",
+          "bytes": 22514,
+          "sha256": "a2e0e3912ba5f8f9e68241fbfa0d744f6edd37c553177eff57898d4ff25da0de"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/pre_observation_evidence.py",
+          "bytes": 5583,
+          "sha256": "327e628a8ae0f5bd0d84a5082825568b278b4dd66e7a7d7110bb01350c394e3c"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/pre_observation_reader.py",
+          "bytes": 1294,
+          "sha256": "b64849af5533a05635de0648711fba62280e05e0ba25d3ec65abeb544ed485bc"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/pre_runtime_bridge.py",
+          "bytes": 8142,
+          "sha256": "8bc93c2140282994c28e2ff55dda75e31806032e9a630318fe6a03a0762ee376"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/run_fold_local.py",
+          "bytes": 5084,
+          "sha256": "c502599c519c62968ea5144baf323a1c7cd97f2b7b15729e798195f1b40f8d8b"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/run_pre_normal_batch.py",
+          "bytes": 3636,
+          "sha256": "094bf514e358abe22c7af47e98a74a326450302f40b2707954d20e6d85f80cfc"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/runtime_control_probe.py",
+          "bytes": 11293,
+          "sha256": "15a51dee42ce3b9ed2c0d04ad8528bb5141c5b573292d109a3d133534a010c85"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/smoke_test.py",
+          "bytes": 10996,
+          "sha256": "ed959330aafe0a1f7230da3a10cf2b84c7e8c81e24e145b061f5f3e84bd25bea"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/verify_demo_assets.py",
+          "bytes": 1639,
+          "sha256": "58e599e5886dc8dbfd3f060a1ec5107b74ea4df48ab99bdaa7e9704d63141cb2"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/verify_fiper_refusal.py",
+          "bytes": 4376,
+          "sha256": "e450a63e4580a8b558c65a5d054cda7d20ab8f7c90c625fd017da55c5baf0850"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/verify_fold_recovery_chain.py",
+          "bytes": 8879,
+          "sha256": "5f856fe493021d579f4e0fc880e12b3a245e367cf29fda07f0a38347fac64d3b"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/verify_garment_observation_trace.py",
+          "bytes": 5909,
+          "sha256": "c3c342a730c7dcfc735c87a97fef87d9de206a8de237287123a2005172316dc5"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/verify_midstate_snapshots.py",
+          "bytes": 3975,
+          "sha256": "1e3d4b82f3ce6c56cf57d6481e33c2f2987ed59443f842a231e4e39a6b7a7305"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/verify_official_ab.py",
+          "bytes": 10631,
+          "sha256": "b7324228f3236864071d200c72500d43b6f9b868df8148c154b22084ca4180a0"
+        },
+        {
+          "path": "fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3/source-snapshot/tools/simulation/verify_pre_observations.py",
+          "bytes": 3454,
+          "sha256": "7d4a04b3771ef6dab0ac074860735f920e56276f894edbf1be2b25bdc4d3da5d"
+        }
+      ]
+    },
+    {
+      "file": "official-B-b5e90454.zip",
+      "bytes": 189719298,
+      "sha256": "4875a95d7a21f2e885a79f3eb6240d8eb9b0c7048c4c212c84ae334ce547fa58",
+      "files": [
+        {
+          "path": "ab-invocation.json",
+          "bytes": 822,
+          "sha256": "c422049c20f8b164bcf01e199e24c7e71a12b081023b749665e301d2d4b9f8ac"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/before-injection.png",
+          "bytes": 284408,
+          "sha256": "66098aa839de182d0184c54ef5814a4070834677d2ff8f797cc4ee18e7e78faf"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/continuation-context.json",
+          "bytes": 4633,
+          "sha256": "ce2f32a5e9acb72e5ba02a5626e2b10d8537548786915057d6fd55adfad264d1"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/execution-measurements.jsonl",
+          "bytes": 198747,
+          "sha256": "894ed90005a849c57746c17a2af20463b3fc670d9f67e7724551f9cb6ad58578"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/final-point-cloud.npz",
+          "bytes": 22125,
+          "sha256": "baf57ad8444628d18a8c51eaa6a969a8d68b7756dad4ff8f8cc4ec8083e0aaa3"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/final.png",
+          "bytes": 269871,
+          "sha256": "67f0705c2bff636f604b57fc281b1eea1d138ae462305d86fb2153086a634f6e"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/full-fold-recovery.json",
+          "bytes": 10240,
+          "sha256": "588725c8a81b18752f710ac3b9f162d9784462f2927f04e1953e37b74b7fba0b"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/initial-point-cloud.npz",
+          "bytes": 21613,
+          "sha256": "fc8c2de51d5c76db4f25ca78523e19f8cf2dd7afabce197084057c049bb14d4e"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/macro-proposal.json",
+          "bytes": 959,
+          "sha256": "adcf1e5d5af29f1424d577e8b2a0246cf277a6ee21d8772d0ff89c4aab35139c"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/manifest.json",
+          "bytes": 2359,
+          "sha256": "a68d0789e9420f3248867f944ce2dd5197bfaadbaaee904144f9c9dd2e258fa0"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/observation-trace.json",
+          "bytes": 2616482,
+          "sha256": "8bd3f243e24607e87b43dd7e5e45c9df8bf3e52fc104a5fc592c3910894e0427"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/official-ab-config.json",
+          "bytes": 14077,
+          "sha256": "cc92d7e86d822f7495c7d03d8f41e1918b3c3ae1f502ff836a0e66eb173eeec1"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/official-workflow-events.jsonl",
+          "bytes": 160893,
+          "sha256": "9e3ecb7fa23c2d3c5fefc1c5ecd7bc20cf79a04f83fac822a22c92445fda49e8"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/pre-demo-events.jsonl",
+          "bytes": 1058512,
+          "sha256": "0da6c69c2b701c95ca3ee8b4dc91713f9305c01c10c54bae191e1041d0e56335"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/recovery-decision.json",
+          "bytes": 1123,
+          "sha256": "39101255f326186afa55d8a5c02d282305de8236c6126caed4b63966f1faeb53"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/rgb-frames.npz",
+          "bytes": 184529397,
+          "sha256": "99f75fd4c971b7329f7177fc18e0a1a11ef292f1e24362ea2252c03ea88d42d4"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/__init__.py",
+          "bytes": 80,
+          "sha256": "2e6329a71b2d390c29b7ff082145d2aad8cd0dea5dc1ec5af6d8e18507bd25fb"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/action_chain_intake.py",
+          "bytes": 11771,
+          "sha256": "d502e0a9687ae46351a1a5784e01837fcecdb726b5f1af351346170b0cfd78de"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/detection_encoder.py",
+          "bytes": 7922,
+          "sha256": "e5dfebd6b770ff2f39d5ddae295de96ed6bd582437c533cf80fb181e56eec6d5"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/detection_recovery.py",
+          "bytes": 17306,
+          "sha256": "f2899c2dffabde388ea6d2bb5f382d615913f7ad6b776988a7b77929f263e178"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/detection_runtime.py",
+          "bytes": 3909,
+          "sha256": "bd8b4b88de2f6bb83a8a243b682ccff996cb45f76a956af5ba6cdc4dd8001a12"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/dex_dataset.py",
+          "bytes": 3674,
+          "sha256": "18f103e2ea0e24c52510c3f408e1b32d68cc753cdad336503bb8c65ddbda9cf8"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/diagnostics.py",
+          "bytes": 20623,
+          "sha256": "0bbf853cdedfcaf101e3f32bb2f7fb90c368bf4f858268ee641bcd3069b0acfb"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/garment_trace_intake.py",
+          "bytes": 13046,
+          "sha256": "f10c4a2fbe8a6558a8dabba895cd21c18272d0444a96da18c272c350ec8c0fcf"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/handoff_audit.py",
+          "bytes": 3529,
+          "sha256": "430a74a0fb89a4bbc0e0cb78ed3ad870ca904a92130b7871b98c4539fda1b189"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/legacy_features.py",
+          "bytes": 6926,
+          "sha256": "b21ff3d1aa59de27de6486f9bffe02385c3cabf2224e84c4c2a27a226a594833"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/legacy_observations.py",
+          "bytes": 6216,
+          "sha256": "1d196df8aafa74687400f5f4dab6b49058620e444116a657ccf7d06262825449"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/neural_baselines.py",
+          "bytes": 4997,
+          "sha256": "d70ff7c5d852caf0062b6b9af633e8db51e280046a31b2b0e2cb9d4618fe66c5"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/observation_detector.py",
+          "bytes": 18969,
+          "sha256": "2330b2f8962556bd95566eb8b84326a5fa1cf6317ef4fdf0e08f18ded18d2a58"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/pre_observation_rnd.py",
+          "bytes": 11028,
+          "sha256": "eb9f9f5f03ac6ae078727b15c80aca4665bd0f3d8cdad6c77d64d244cba0948f"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/prepare_pre_normal_detector.py",
+          "bytes": 18858,
+          "sha256": "ea8fec8ec8fbba12fed484ca141a0e3945c925e5c5d412a737e5d42f1c74616f"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/prepare_sleeve_detector.py",
+          "bytes": 11810,
+          "sha256": "e8e400f57cf460ec5d414520b01ea03a1ac9f93837d87529a98d140b1ff1309b"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/recovery_candidates.py",
+          "bytes": 2364,
+          "sha256": "410c4ff28af4c96a545bcf3fab6a39b33a02bae5bedc0baad4bd2155fc084bbe"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/recovery_dataset.py",
+          "bytes": 8912,
+          "sha256": "ddf2c70fcf8a1bce129814a05ec45316509aa035295e70bca491ef765a4f218f"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/recovery_gate.py",
+          "bytes": 4428,
+          "sha256": "5403e9c121ed1c11a630bd64685b55a23393a13301155d62c290d74487b9706c"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/resources.py",
+          "bytes": 1987,
+          "sha256": "c4fae6c2cd82daab2f402d056e161921a2c4fc2bcaa45626667ce84c041753b8"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/runtime_intake.py",
+          "bytes": 19293,
+          "sha256": "5d0702303939e515a587e402480788be58dd1921bf956fcb0119d322edbf4a4c"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/sequence_ranker.py",
+          "bytes": 14774,
+          "sha256": "c7a6201977dd27accc5d1b3aca6ad11c8e8f0fe1270e9598c49f289a87d16417"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/shared_context.py",
+          "bytes": 3805,
+          "sha256": "cfacb412fc8c65a52e253929e67203e4f789d916cb4378ff285aa30f8752b64e"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/research_tools/trial_outcomes.py",
+          "bytes": 3642,
+          "sha256": "4eb9afebf49a91304b42672cacf831f4cc7c398b333420e4f5e329317237a48f"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/audit_dr02_geometry.py",
+          "bytes": 7033,
+          "sha256": "3853e53c3f4437d3630f026b6eb514503f46b34a186f5510d1ddf15b56c4c373"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/build_pre_abc_evidence.py",
+          "bytes": 14062,
+          "sha256": "35c8be3d492d063fd716fa6f9e95d3ecfa07105c6268b8e051a155247ad344cb"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/build_pre_z3_evidence.py",
+          "bytes": 12154,
+          "sha256": "d405cb3cf61aa115069c57f87a30189c8e7ac829a54fbb2e60bd8b4eb1fdb18c"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/capture_runtime_io.py",
+          "bytes": 14719,
+          "sha256": "809a178e04b4759dff6060442426a2b718c9d49b219f56facbc69b67f9e29e2e"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/download_demo_assets.py",
+          "bytes": 4823,
+          "sha256": "7b8096ee5d858d15a72f57c1c273f80b165ecdd3efd4bbb12cc22103828162be"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/export_numeric_trajectory.py",
+          "bytes": 5416,
+          "sha256": "d8b362930edceb21ba83053d9887e7982840bd68a49aaf39215a09e58ee83a03"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/export_observation.py",
+          "bytes": 2343,
+          "sha256": "b8335131e4aa4398fe292f54ae532659ede7ed97eadb4376748895e60d0d790d"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/fiper_input_gate.py",
+          "bytes": 1811,
+          "sha256": "a94a1702795c94d4f4e7cf48a089d490dc8fb719ff855f11a3cc0c20f6c51619"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/fiper_pre_evidence.py",
+          "bytes": 5573,
+          "sha256": "51528265e34be35df24734c357bde9fecc07c68bebe5feac191b5ac43c3d9e22"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/fold_camera_evidence.py",
+          "bytes": 6144,
+          "sha256": "0ee6c9bc6b32a1fab8a04e73eb6a1e1c1b672fb606701e70512cf86f4969b19e"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/fold_recovery_chain.py",
+          "bytes": 11540,
+          "sha256": "86c08c0ed242660d14bfd7390227ac5ea3b9edafafa9119f4e81037924c1e5fe"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/fold_recovery_evidence.py",
+          "bytes": 13429,
+          "sha256": "a671699371f74a2424462fc974437f03815912e3b5c9e54bbb33e2fe79a8591c"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/garment_dr02_capture.py",
+          "bytes": 5336,
+          "sha256": "343dd1b3ad02a62b9eae9111e99e2dbef3a5c1b31ab9d341afebcf825f34771f"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/garment_fault_probe.py",
+          "bytes": 20613,
+          "sha256": "a616313fadbe39e0e732d9c8782c06025c19ada65fc9d7f3dd3a8f590f500923"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/garment_observation_trace.py",
+          "bytes": 5486,
+          "sha256": "88bed809f06fbd2e7e562839159e27d08b72374f61b9bc388996c84dd1159475"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/official_ab_evidence.py",
+          "bytes": 21733,
+          "sha256": "1e8d199bc12d069da896c6ea6407601d69a4127329ec1a00e225cee81e894e85"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/official_pre_adapter.py",
+          "bytes": 10591,
+          "sha256": "6c40af31b660d5ff3b591c7c1dd9b8479cc7093ac7ba520e93157c04bd3c096e"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/official_pre_evidence.py",
+          "bytes": 4201,
+          "sha256": "2a0371af7b1103ac6fb43b0c93c021bb4c4b74897b3f01d965367e45d114dc94"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/package_pre_observations.py",
+          "bytes": 5832,
+          "sha256": "13c94778ba857d8bd8b4ef1fcf9894e1ac7ff28fce95769039c863afebad519c"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/pre_detection_bridge.py",
+          "bytes": 2553,
+          "sha256": "7a9f8ab24b9a4f307ae56319d0a94d658d35201d165bd7eff59583219bcf7cb7"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/pre_execution_support.py",
+          "bytes": 22514,
+          "sha256": "a2e0e3912ba5f8f9e68241fbfa0d744f6edd37c553177eff57898d4ff25da0de"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/pre_observation_evidence.py",
+          "bytes": 5583,
+          "sha256": "327e628a8ae0f5bd0d84a5082825568b278b4dd66e7a7d7110bb01350c394e3c"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/pre_observation_reader.py",
+          "bytes": 1294,
+          "sha256": "b64849af5533a05635de0648711fba62280e05e0ba25d3ec65abeb544ed485bc"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/pre_runtime_bridge.py",
+          "bytes": 8142,
+          "sha256": "8bc93c2140282994c28e2ff55dda75e31806032e9a630318fe6a03a0762ee376"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/run_fold_local.py",
+          "bytes": 5084,
+          "sha256": "c502599c519c62968ea5144baf323a1c7cd97f2b7b15729e798195f1b40f8d8b"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/run_pre_normal_batch.py",
+          "bytes": 3636,
+          "sha256": "094bf514e358abe22c7af47e98a74a326450302f40b2707954d20e6d85f80cfc"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/runtime_control_probe.py",
+          "bytes": 11293,
+          "sha256": "15a51dee42ce3b9ed2c0d04ad8528bb5141c5b573292d109a3d133534a010c85"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/smoke_test.py",
+          "bytes": 10996,
+          "sha256": "ed959330aafe0a1f7230da3a10cf2b84c7e8c81e24e145b061f5f3e84bd25bea"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/verify_demo_assets.py",
+          "bytes": 1639,
+          "sha256": "58e599e5886dc8dbfd3f060a1ec5107b74ea4df48ab99bdaa7e9704d63141cb2"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/verify_fiper_refusal.py",
+          "bytes": 4376,
+          "sha256": "e450a63e4580a8b558c65a5d054cda7d20ab8f7c90c625fd017da55c5baf0850"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/verify_fold_recovery_chain.py",
+          "bytes": 8879,
+          "sha256": "5f856fe493021d579f4e0fc880e12b3a245e367cf29fda07f0a38347fac64d3b"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/verify_garment_observation_trace.py",
+          "bytes": 5909,
+          "sha256": "c3c342a730c7dcfc735c87a97fef87d9de206a8de237287123a2005172316dc5"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/verify_midstate_snapshots.py",
+          "bytes": 3975,
+          "sha256": "1e3d4b82f3ce6c56cf57d6481e33c2f2987ed59443f842a231e4e39a6b7a7305"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/verify_official_ab.py",
+          "bytes": 7706,
+          "sha256": "0bceb51a4c11511f8857ae4521e03b1a66e228ee857514cbc1c87a0421f97234"
+        },
+        {
+          "path": "fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa/source-snapshot/tools/simulation/verify_pre_observations.py",
+          "bytes": 3454,
+          "sha256": "7d4a04b3771ef6dab0ac074860735f920e56276f894edbf1be2b25bdc4d3da5d"
+        }
+      ]
+    }
+  ],
+  "independent_review": "new calibration trials and new checkpoint independent review pending"
+}

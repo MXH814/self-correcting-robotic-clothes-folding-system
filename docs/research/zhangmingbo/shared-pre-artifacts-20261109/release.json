@@ -1,0 +1,58 @@
+{
+  "schema": "pre-shared-release/1",
+  "tag": "zhang-pre-shared-b9df07d4-20261109",
+  "url": "https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/tag/zhang-pre-shared-b9df07d4-20261109",
+  "published": true,
+  "assets": [
+    {
+      "file": "detector-b9df07d4.zip",
+      "bytes": 132732878,
+      "sha256": "72fd4cf58d73ad03c4b480039ef4d3506e00580bcc20ef77acb0474efa1e22a0",
+      "url": "https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/download/zhang-pre-shared-b9df07d4-20261109/detector-b9df07d4.zip",
+      "asset_id": 726588928,
+      "verification": "GitHub server SHA-256 and size match local bytes",
+      "authenticated_download_status": 206,
+      "authenticated_download_content_type": "application/octet-stream"
+    },
+    {
+      "file": "normal-calibration-v2.zip",
+      "bytes": 320068396,
+      "sha256": "d63076a66c7e0f6e35954c7276f1a147c523e72324c53974ade9957ad2494ba0",
+      "url": "https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/download/zhang-pre-shared-b9df07d4-20261109/normal-calibration-v2.zip",
+      "asset_id": 726593751,
+      "verification": "GitHub server SHA-256 and size match local bytes",
+      "authenticated_download_status": 206,
+      "authenticated_download_content_type": "application/octet-stream"
+    },
+    {
+      "file": "official-A-db18b274.zip",
+      "bytes": 159026335,
+      "sha256": "85bcebe8407f3ca99d4ea8ac828fa216c7078ccbdf93c58bd6223dadb8dc7c0d",
+      "url": "https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/download/zhang-pre-shared-b9df07d4-20261109/official-A-db18b274.zip",
+      "asset_id": 726599515,
+      "verification": "GitHub server SHA-256 and size match local bytes",
+      "authenticated_download_status": 206,
+      "authenticated_download_content_type": "application/octet-stream"
+    },
+    {
+      "file": "official-B-b5e90454.zip",
+      "bytes": 189719298,
+      "sha256": "4875a95d7a21f2e885a79f3eb6240d8eb9b0c7048c4c212c84ae334ce547fa58",
+      "url": "https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/download/zhang-pre-shared-b9df07d4-20261109/official-B-b5e90454.zip",
+      "asset_id": 726601922,
+      "verification": "GitHub server SHA-256 and size match local bytes",
+      "authenticated_download_status": 206,
+      "authenticated_download_content_type": "application/octet-stream"
+    },
+    {
+      "file": "archive-manifest.json",
+      "bytes": 55855,
+      "sha256": "2eab80b46f45f0dd5d79c2e6f06f28cc45ae03be03ebb343fae9700c0c904c39",
+      "url": "https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/download/zhang-pre-shared-b9df07d4-20261109/archive-manifest.json",
+      "asset_id": 726604467,
+      "verification": "GitHub server SHA-256 and size match local bytes",
+      "authenticated_download_status": 206,
+      "authenticated_download_content_type": "application/octet-stream"
+    }
+  ]
+}
