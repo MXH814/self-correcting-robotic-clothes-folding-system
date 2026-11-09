@@ -2,15 +2,15 @@
 
 **PR30 / PR31 / PR32已审合并，当前新包的数值复核已完成。** 四个原始ZIP共801,546,907字节、228个内部文件核验通过；用完整RGB和checkpoint重算A 465次、B 493次记录调用（含1次前检刷新），判定字段一致。本机205项软件测试通过。[独立审阅与重算证据](docs/reviews/pr30-31-review.md) · [团队原始材料下载](docs/research/zhangmingbo/shared-pre-artifacts-20261109/README.md)
 
-**已实际运行正常A、告警恢复B和缺包求助C。** B由RGB告警触发五步宏、13次宏后几何复检与23次接续检查，最终区域2002/2048。恢复接续依赖声明的仿真内部几何。胡已交最新案例判读及可见分离区间，新增两条正常性的独立技术审核也已通过PR32验收；统计效果、正式质量和产品停车保留各自验收。[当前设计和时序](docs/design/pre-current-runtime-contract.md) · [ADR-MA-007](docs/design/decisions/ADR-MA-007-phase-conditioned-detection-and-verified-continuation.md) · [案例表](docs/design/hu-abc-case-review.md)
+**已实际运行正常A、告警恢复B和缺包求助C。** B由RGB告警触发五步宏，宏后13份几何报告包含12次预热与1份HELD，之后建立新代次基线并进行23次接续检查，最终区域2002/2048。恢复接续依赖声明的仿真内部几何。胡已交最新案例判读及可见分离区间，新增两条正常性的独立技术审核也已通过PR32验收；统计效果、正式质量和产品停车保留各自验收。[当前设计和时序](docs/design/pre-current-runtime-contract.md) · [ADR-MA-007](docs/design/decisions/ADR-MA-007-phase-conditioned-detection-and-verified-continuation.md) · [案例表](docs/design/hu-abc-case-review.md)
 
-**当前优先课程Pre，研究训练暂缓。** 中文19页实跑修订稿和逐页讲稿已在课程作业目录生成，含嵌入B视频及离线备份；实际设备检查、三人计时、上传和课堂反馈由张统筹，马终审技术。当前任务与历史研究计划分别见[组长剩余清单](docs/research/ma-remaining-checklist.md)和[第一阶段计划](docs/first-stage-plan.md)。
+**当前优先课程Pre，研究训练暂缓。** 中文精简课堂版已更新为12页，其中正文9页、备份3页，配套讲稿与嵌入视频已同步；实际设备检查、三人计时、上传和课堂反馈由张统筹，马终审技术。当前任务与历史研究计划分别见[组长剩余清单](docs/research/ma-remaining-checklist.md)和[第一阶段计划](docs/first-stage-plan.md)。
 
-**当前中文版展示文件：** [可编辑PPTX](docs/design/slides/Group3_Assignment2_Design_Pre.pptx) · [静态PDF](docs/design/slides/Group3_Assignment2_Design_Pre.pdf) · [Word逐页讲稿](docs/design/slides/Group3_Assignment2_Design_Pre_Script.docx) · [讲稿Markdown](docs/design/slides/Group3_Assignment2_Design_Pre_Script.md) · [播放与问答](docs/design/slides/Group3_Assignment2_Design_Pre_QA.md)。正文12页按胡85秒、张105秒、马140秒安排，另留30秒交接；第19页B视频28.95秒计入正文恢复讲解预算。张继续维护最终版，三人实际排练及Canvas回执未登记完成。
+**当前中文版展示文件：** [可编辑PPTX](docs/design/slides/Group3_Assignment2_Design_Pre.pptx) · [静态PDF](docs/design/slides/Group3_Assignment2_Design_Pre.pdf) · [Word逐页讲稿](docs/design/slides/Group3_Assignment2_Design_Pre_Script.docx) · [讲稿Markdown](docs/design/slides/Group3_Assignment2_Design_Pre_Script.md) · [播放与问答](docs/design/slides/Group3_Assignment2_Design_Pre_QA.md)。胡第1—3页78秒，张第4—5页75秒，马第6—9页165秒，另留42秒交接；第8页直接播放28.95秒B视频，计入该页50秒预算。张继续维护最终版，三人实际排练及Canvas回执未登记完成。
 
 **第三组尚未展示，已改到下周。** 组长11月9日确认改期；原公告下周场次为11月16日13:30–15:05，具体安排以老师最新通知为准。最终截止仍为11月20日19:00。[改期来源与影响](docs/course/assignment-2/presentation-reschedule-20261109.md)
 
-**模型与个人确认补充：** [诊断类/交互及产品映射](docs/design/models/pre-diagnostic-models.md)已明确1次请求、1次宏接受、5项操作和61条SDK派发的层级，并对13份预热/持有报告和双日志刷新去重进行了源绑定复核。马已本人确认理解核心设计、认可个人贡献并练过个人讲解；全组计时、课堂展示及回执另行登记。[个人确认范围](docs/design/ma-owner-confirmation-20261109.md)
+**模型与个人确认补充：** [诊断类/交互及产品映射](docs/design/models/pre-diagnostic-models.md)已明确1次请求、1次宏接受、5项操作和61条SDK派发的层级，并对13份预热/持有报告和双日志刷新去重进行了源绑定复核。马已本人确认理解核心设计、认可个人贡献并练过旧版个人讲解；新版页序和分段须再练，全组计时、课堂展示及回执另行登记。[个人确认范围](docs/design/ma-owner-confirmation-20261109.md)
 
 同济大学《系统分析与设计》课程第三组项目。
 

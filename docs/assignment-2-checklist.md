@@ -89,7 +89,7 @@ Part III 才要求通过 agentic development 构建原型/PoC 并验证设计。
 - [ ] 张茗博组织三人至少完整计时排练一次，记录实际总时长、切页/交接、超时修改；在展示设备检查文件和离线备份。
 - [ ] 张茗博负责在改期后的所属场次开始前上传Slides，打开Canvas回执/文件核对版本与时间；GitHub推送不替代Canvas上传。
 
-详细素材清单、当前12页正文结构和330秒正文加30秒切页/交接余量见[展示执行计划](design/presentation-plan.md)；页数和秒数为团队方案，不是教师规定。实际排练、上传、出席和反馈见[事实登记](design/presentation-feedback.md)，未发生不勾选。
+详细素材清单、当前9页正文结构和318秒口播加42秒切页/交接余量见[展示执行计划](design/presentation-plan.md)；页数和秒数为团队方案，不是教师规定。实际排练、上传、出席和反馈见[事实登记](design/presentation-feedback.md)，未发生不勾选。
 
 ### 展示后
 

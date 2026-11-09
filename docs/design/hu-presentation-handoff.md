@@ -1,5 +1,7 @@
 # 胡知鱼｜整组中文稿第 1–4 页核对
 
+**当前页序更新：** 组长已将课堂版精简为12页，正文9页。胡现在讲第1—3页，共78秒；CR-01/02由马在第9页简述，第3页仍保留归还后的新静止证据及校验。下面PR33核对是旧版第1—4页的历史验收，新页序与新版讲稿需在实际排练确认。交互语义沿用已核设计，不重交原案例/数据。
+
 核对版本为 main 的 `8d14933`。本次逐页对照[整组 PPTX](slides/Group3_Assignment2_Design_Pre.pptx)、[19 页 PDF](slides/Group3_Assignment2_Design_Pre.pdf)、[Word 讲稿](slides/Group3_Assignment2_Design_Pre_Script.docx)和[Markdown 讲稿](slides/Group3_Assignment2_Design_Pre_Script.md)，并用[原型控制逻辑](../../prototypes/ui/app.js)和[已采纳的设计细化](requirements-changes.md)复核措辞。
 
 | 页／预算 | 核对结论 |
