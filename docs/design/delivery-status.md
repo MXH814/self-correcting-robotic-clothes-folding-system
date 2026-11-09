@@ -1,5 +1,7 @@
 # Assignment 2 九项检查与个人交接
 
+**2026-11-09 当前增量：** PR30案例判读、PR31完整材料共享及958次记录调用分数复算、PR32新增正常性技术审核均已关闭；205项软件测试通过。设计已同步ADR-MA-007、运行合同/时序、SVG/PNG、同一500词摘要及FIPER英文注释。[19页中文PPTX](slides/Group3_Assignment2_Design_Pre.pptx)和[Word逐页讲稿](slides/Group3_Assignment2_Design_Pre_Script.docx)已入库，最终设备、真实计时和个人确认仍待补。第三组尚未展示、已调到下周，见[改期记录](../course/assignment-2/presentation-reschedule-20261109.md)及[当前个人完成审计](ma-current-completion-audit.md)。下面11月8日文字保留为交接历史。
+
 **2026-11-09 本地新 A/B 开发复验通过。** A 完整折叠、告警 0、恢复 0。B 经 RGB 告警、实际五操作、宏后连续持有和接续检查完成整次折叠。C 缺检测条件时求助、后续新增派发 0。恢复接续采用仿真几何证据，实验独立人工审核 pending。[最终方法与证据](../research/zhangmingbo/pre-ab-revision2-20261109.md)
 
 **11 月 8 日交接（主分支 537fa41）**。五屏原型与十例预审已合并，首袖标签和另一个完整恢复试次的代理结局已有审核记录。第 1–2 页可编辑 PPT 和逐页讲稿已备好。仍需两位首次使用者实际走查、张茗博整合版的页序与排练计时、成员本人确认和课堂反馈。[个人展示交接](hu-presentation-handoff.md) · [英文工作稿](system-design.md) · [组长分工 #19](https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/issues/19)
@@ -10,7 +12,7 @@
 
 | 官方项 | 已有证据与本轮判断 | 缺项、拟复核人及关闭条件 |
 | --- | --- | --- |
-| A2-01 设计摘要 | 英文稿第 1 节正文 **502 词**，落在团队内部 450–550 词范围；课程措辞为“约 500 词”。已写 Part I 后的进展、理由与证据边界。 | **草稿待事实复核。** 马祥珲确认研究与方法事实，张茗博确认平台、架构和实现进度。真实走查及课堂反馈产生后，胡知鱼再编辑、核词数。 |
+| A2-01 设计摘要 | 英文稿与马的集成材料已同步为同一**500词**正文，涵盖现行方法、A/B/C与独立复算。 | 真实走查及课堂反馈产生后再修订、核词数；不代签成员事实确认。 |
 | A2-02 架构与关键决策 | 第 2 节写了 UI、协调器、适配器间的控制权边界，以及测试桩能核查的事件顺序。 | **局部正文。** 张茗博的[三视图与架构取舍草稿](architecture-presentation-draft.md)已入库，待整合、交叉复核；马祥珲的[恢复设计](recovery-design.md)、[接口](interfaces.md)及四项 ADR 已入库，待全组整合与核对。三人核实性能、安全、成本取舍和实施证据。 |
 | A2-03 设计模型 | 第 3 节有可编辑的归还控制时序草图、只读回放职责与试次/片段/动作关系。 | **局部模型待联审。** PR #12 system model sources are merged; unify graphical exports and cross-review their messages and recovery sequences.核对接口字段、生命周期、版本、异常和图文一致性，再登记最终模型源。 |
 | A2-04 更新需求 | 第 4 节汇入版本差异、反馈归属、30 项需求、18 项测试与 44 条直接关联。D01/D02 已在基线；CR-01/02 已按组长授权采纳为开发设计细化，产品通过条件不变。[变更记录](requirements-changes.md) · [双向追踪](traceability.md) | **基线与内部设计决定已记录，课堂反馈待补。** 三人确认各自条款；课堂反馈按来源、日期、影响、理由与 accepted/deferred/rejected 记录。界面走查造成的修订另载来源。 |

@@ -1,0 +1,32 @@
+{
+  "schema": "shared-pre-archive-audit/1",
+  "manifest_sha256": "2eab80b46f45f0dd5d79c2e6f06f28cc45ae03be03ebb343fae9700c0c904c39",
+  "package_id": "b9df07d40a29968947949a7a202e89b31d1fb37771fb4c2ff5094fc73ff3eb1b",
+  "archives": [
+    {
+      "file": "detector-b9df07d4.zip",
+      "bytes": 132732878,
+      "sha256": "72fd4cf58d73ad03c4b480039ef4d3506e00580bcc20ef77acb0474efa1e22a0",
+      "verified_files": 2
+    },
+    {
+      "file": "normal-calibration-v2.zip",
+      "bytes": 320068396,
+      "sha256": "d63076a66c7e0f6e35954c7276f1a147c523e72324c53974ade9957ad2494ba0",
+      "verified_files": 80
+    },
+    {
+      "file": "official-A-db18b274.zip",
+      "bytes": 159026335,
+      "sha256": "85bcebe8407f3ca99d4ea8ac828fa216c7078ccbdf93c58bd6223dadb8dc7c0d",
+      "verified_files": 71
+    },
+    {
+      "file": "official-B-b5e90454.zip",
+      "bytes": 189719298,
+      "sha256": "4875a95d7a21f2e885a79f3eb6240d8eb9b0c7048c4c212c84ae334ce547fa58",
+      "verified_files": 75
+    }
+  ],
+  "coverage": "all"
+}

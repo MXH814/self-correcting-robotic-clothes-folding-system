@@ -2,6 +2,20 @@
 
 Status: AI-assisted draft for owner and team review. These annotations explain proposed design influence; they do not claim experiments or joint approval. Each English annotation body is separately checked against the required 200–300 words. Bibliographic headings and source links are excluded from the count.
 
+## L03 — Römer, R., Kobras, A., Worbis, L., and Schoellig, A. P. Failure Prediction at Runtime for Generative Robot Policies. NeurIPS, 2025.
+
+Source: [conference record](https://proceedings.neurips.cc/paper_files/paper/2025/hash/0b7cb3b8cc44e652761245537027db44-Abstract-Conference.html), [primary full text version 2](https://arxiv.org/html/2510.09459v2). Design supplement for Ma's implemented observation adapter; Hu remains the assigned primary reader. Source checks cover the method, calibration, evaluation and limitation sections. The project's implementation is a partial adaptation.
+
+<!-- annotation:L03:start -->
+FIPER studies runtime failure prediction for generative imitation policies without requiring failure examples. It combines random network distillation on policy observation embeddings with uncertainty measured from generated action chunks. Temporal aggregation and calibrated thresholds support a conjunction of observation and action warnings. Its experiments distinguish unfamiliar situations that remain solvable from actual policy failures. The paper also separates empirical threshold performance from the assumptions needed for its false alarm guarantee.
+
+This source directly informs our detector boundary. The available garment controller uses GAM and scripted motion, so it does not provide the stochastic action samples required for the complete action entropy branch. We therefore reuse the attributed observation network while substituting fixed pretrained ResNet18 features. The resulting score measures visual deviation, not a calibrated probability of failure. It proposes a recovery preflight request, while separate execution checks retain control of motion.
+
+The design also adapts the temporal and calibration choices explicitly. Five past frames form the online window, unsupported phases return UNKNOWN, and stage or generation changes reset history. The current package uses sleeve specific empirical thresholds and a documented calibration floor. These changes prevent us from inheriting the original method's statistical guarantees. The archived normal false alarm and failed development records remain visible.
+
+The limitations motivate our validation plan. Richer observation and action histories, larger calibration coverage, and reliable distinction between benign novelty and harmful deviation remain relevant questions. Our independently reproduced RGB scores and one recovery case establish implementation evidence only. Recovery selection, formal folding quality, transfer across garments, and product stopping require their own validation.
+<!-- annotation:L03:end -->
+
 ## L05 — Yuan, J., Wu, Y., and Bajcsy, A. When to Act, Ask, or Learn: Uncertainty-Aware Policy Steering. RSS, 2026.
 
 Source: [version 2](https://arxiv.org/html/2602.22474v2). CAAI A (2024 catalogue); not listed in CCF 2026.

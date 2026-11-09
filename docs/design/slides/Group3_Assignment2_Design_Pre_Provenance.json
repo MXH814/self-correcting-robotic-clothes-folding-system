@@ -1,0 +1,77 @@
+{
+  "schema": "group3-chinese-pre-source/1",
+  "reviewed_prs": [
+    27,
+    29,
+    30,
+    31,
+    32
+  ],
+  "slides": 19,
+  "main_slides": 12,
+  "script_seconds_budget": 330,
+  "handoff_seconds_budget": 30,
+  "rehearsal_recorded": false,
+  "canvas_receipt_recorded": false,
+  "source_video_sha256": "97fb982ca6d4bc86495653e1cf3166aa858cbb1c1f4c68ff8dfd9a33c7525145",
+  "B_clip": {
+    "source_start_s": 15.25,
+    "source_end_exclusive_s": 44.2,
+    "source_frames_inclusive": [
+      305,
+      883
+    ],
+    "expected_frames": 579,
+    "fps": 20,
+    "duration_s": 28.95,
+    "additional_speedup": false,
+    "sha256": "81a1f498e7c15b266c013a4043817299c5b7c457ccc989fe22c01c2f83325951"
+  },
+  "chart_snapshot_decimals": 6,
+  "canonical_source_events": "docs/research/zhangmingbo/pre-abc-evidence-20261109/B/pre-demo-events.jsonl",
+  "validation": {
+    "package": "pass",
+    "fonts": "pass",
+    "native_tables": 6,
+    "native_charts": 1,
+    "embedded_workbook": true,
+    "native_powerpoint_opened": true,
+    "native_video_length_ms": 28950,
+    "native_slide_renders": 19,
+    "script_pdf_engine": "WPS",
+    "script_pages": 5
+  },
+  "files": [
+    {
+      "local_name": "第三组_Part2设计汇报_中文_实跑修订版.pptx",
+      "repository_name": "Group3_Assignment2_Design_Pre.pptx",
+      "bytes": 6293293,
+      "sha256": "e6581d7f4382694bd20fe6d5d0d728b2b8b1a4b29054be43766fbdecb2922681"
+    },
+    {
+      "local_name": "第三组_Part2设计汇报_中文_实跑修订版.pdf",
+      "repository_name": "Group3_Assignment2_Design_Pre.pdf",
+      "bytes": 696166,
+      "sha256": "4891e6d49b11dc1fcda3c204a32d82eece098da524adcf935c141d8feae33a3d"
+    },
+    {
+      "local_name": "第三组_中文逐页演讲稿_实跑修订版.docx",
+      "repository_name": "Group3_Assignment2_Design_Pre_Script.docx",
+      "bytes": 42485,
+      "sha256": "bfdc6eaca320f125fdce919ad8f64855e186aac6383c312d9df0f6578ca1a298"
+    },
+    {
+      "local_name": "第三组_中文逐页演讲稿_实跑修订版.md",
+      "repository_name": "Group3_Assignment2_Design_Pre_Script.md",
+      "bytes": 9976,
+      "sha256": "bffc5ad3c14dfd18813bcf0a500df684cd7af2ae90060925b1b47a4b6e9ba62a"
+    },
+    {
+      "local_name": "第三组_中文逐页演讲稿_实跑修订版.pdf",
+      "repository_name": "Group3_Assignment2_Design_Pre_Script.pdf",
+      "bytes": 203911,
+      "sha256": "d1d45e4752080fef27ba37df7e57c41dc43be20ec7431ec1db73677f07c7f715"
+    }
+  ],
+  "human_scope": "Prepared material only. Actual rehearsal, contribution confirmation, presentation, classroom feedback and Canvas receipt require separate records."
+}

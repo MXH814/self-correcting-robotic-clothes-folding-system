@@ -1,6 +1,6 @@
 # 自主恢复模块设计
 
-Design 实现基线，2026-11-06。马祥珲工作流，AI 辅助撰写；组长已授权独立推进，队友可审核提意见。产品约束来自英文 SRS；逻辑方案已采纳，离线门禁与诊断子集已有代码，完整物理系统/校准模型未实现。见[执行决定](../research/ma-owner-decisions.md)与[运行说明](../research/execution-guide.md)。
+Design 实现基线，2026-11-06；证据更新2026-11-09。马祥珲工作流，AI辅助撰写，组长已授权独立推进，队友可审核提意见。PR27完整检测模型已独立复现，PR29已运行RGB告警、前检、五步宏与新窗口几何接续。当前分阶段/刷新/限定接续的实际行为见[运行合同](pre-current-runtime-contract.md)和[ADR-MA-007](decisions/ADR-MA-007-phase-conditioned-detection-and-verified-continuation.md)。下文为目标产品与学习型恢复设计；学习排序、产品概率校准、完整协调器/网页实控及产品质量未因诊断实跑而验收。见[执行决定](../research/ma-owner-decisions.md)与[运行说明](../research/execution-guide.md)。
 
 ## 1. 目的与需求覆盖
 

@@ -1,0 +1,29 @@
+{
+  "reviewed_head": "01f6cec24f93ad3cd25b7977e2da114d848aa0f3",
+  "normal_records": [
+    {
+      "trial_id": "94f7069b-ac87-4db6-8c6b-858e3dc3c795",
+      "source_manifest_sha256": "0b728836ccba2537f207a9c0aa6f37825c83571e14680d388e9cbbd7ca65b43b",
+      "frames": 466,
+      "reviewed_frame_identifiers": 10,
+      "region": [
+        2048,
+        2048
+      ],
+      "raw_event_and_time_binding_passed": true
+    },
+    {
+      "trial_id": "045e146f-ce0e-4a74-8dae-9af37eeab272",
+      "source_manifest_sha256": "f36a82e749584811ee03e1bdbbe79bc8ff6626cba08b47c10fac1bf3d0e42407",
+      "frames": 467,
+      "reviewed_frame_identifiers": 10,
+      "region": [
+        2048,
+        2048
+      ],
+      "raw_event_and_time_binding_passed": true
+    }
+  ],
+  "independent_human_signoff": false,
+  "scope": "source/event/frame binding and point-cloud recomputation; visual technical interpretation reviewed separately"
+}

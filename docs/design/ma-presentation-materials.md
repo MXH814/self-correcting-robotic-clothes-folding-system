@@ -1,39 +1,58 @@
 # 马祥珲：课堂展示素材与讲解
 
-## 本次 Pre 最新主讲素材：观测检测与恢复
+## 当前主讲素材 2026年11月9日
 
-优先使用本节替换下方早期“主要讲权限/停止”的安排。旧素材可放备份。图与稿依据当前实际状态，不代表已经完成实际计时排练。
+依据PR29审阅及本轮计时复算。下方早期材料保留作历史备份，不能把其中“尚无模型/尚无告警驱动记录”的旧描述作为当前口播。
 
-![观测检测与恢复流程](figures/ma-observation-recovery.png)
+![当前分阶段检测与几何接续流程](figures/ma-current-observation-recovery.png)
 
-[可编辑 SVG](figures/ma-observation-recovery.svg) · [代码与接入命令](pre-detection-integration.md) · [ADR-MA-006](decisions/ADR-MA-006-observation-detector.md)。图中绿色表示真实图像编码已验证；蓝色表示软件流程已验证、仿真接线待完成；橙色正常拟合/独立校准待匹配数据。不是每个框都已实机运行。
+[可编辑SVG](figures/ma-current-observation-recovery.svg) · [当前运行合同与序列](pre-current-runtime-contract.md) · [ADR-MA-007](decisions/ADR-MA-007-phase-conditioned-detection-and-verified-continuation.md) · [计时原始摘要](../research/evidence/ma-pr29-runtime-measurements-20261109.json)
 
-### 中文主讲候选（约 60—75 秒，待实测）
+图中每条箭头对应单一流向，标签放在连线外。当前主路径有实际开发记录；这不表示图中的产品授权、完整协调器或最终质量已经验收。几何接续的特权信息来源与原始RND告警保留规则单独写明。
 
-我们的核心是把观测检测与实际恢复接起来。检测优先复用 NeurIPS 2025 的 FIPER 观测异常分支：固定视觉编码器提取特征，RND 用正常记录学习参考分布，通过过去窗口和独立校准阈值报警。当前控制器是 GAM 加脚本，没有生成式动作采样，所以这是观测分支适配，不能称完整 FIPER。
+### 中文核心讲解候选 约75秒
 
-报警后系统先请求权限、时效、静止和动作检查，通过并记录后才执行已有五步重抓宏。动作执行结束还不够，必须用宏结束后的新观测确认持有恢复，才能接回正常折叠；否则停止并求助。我们已完成核心代码和软件验证，真实 540 帧也已跑通视觉编码。实际正常拟合、校准以及告警驱动的仿真恢复仍待联调，当前不能报告检测准确率或恢复成功率。
+检测采用FIPER的观测分支适配：固定ResNet18输出512维特征，RND产生偏离分数，再用过去五帧和阶段阈值判断。左右袖正常画面不同，所以当前版本分别校准；原normal-03已经转作校准，不再称当前版本的独立留出。分数也不是失败概率。
 
-### English speaking draft（约 70—85 秒，待实测）
+告警后先阻断正常派发，实际测静止、同步队列与名义宏路径，再取得新的图像确认异常，记录接受后才执行释放、退让、重抓、闭手、抬升。B已有61条实际宏指令，宏后13次新测量确认持有，再以新代次进行23次接续检查。接续依赖明确声明的仿真材料片和指尖几何，原始视觉分数始终保留。
 
-We connect observation monitoring to a bounded recovery macro. The detector adapts the observation branch of FIPER, published at NeurIPS 2025. A frozen visual encoder provides features. Random network distillation learns a normal reference, and a past-only window is compared with a threshold from separate normal trials. Our current controller is GAM plus a script, so we do not have generative action samples. This is an observation-branch adaptation, rather than a complete FIPER reproduction.
+### 中文证据与局限候选 约35秒
 
-An alert requests external checks of authority, freshness, rest and motion validity. The accepted request is recorded before the five-operation regrasp macro. Execution alone does not establish recovery. New observations after the macro must confirm sustained holding before the controller resumes folding; otherwise it requests a halt and help. The software flow has regression checks, and we encoded 540 real camera frames. Real normal-data fitting, calibration and detection-triggered simulation recovery remain to be verified.
+A正常运行无告警，B由RGB告警触发恢复并完成接续，C缺检测包时求助且没有后续新派发。检测调用内处理中位约32毫秒、最大约63毫秒，不是完整系统时延。B最终区域2002/2048达标，只是开发代理。新包A/B全部958次记录调用已从原始RGB独立复算，判定一致。统计效果、正式叠衣质量和产品停车分别待验收。
 
-### 核心问答与事实修正
+上面75秒与35秒是独立核心候选稿。当前完整中文稿已把本人正文扩展为第8–12页约140秒，包括证据和收尾；胡85秒、张105秒，全组330秒加30秒交接余量。第9页35秒预算内可同步播放28.95秒B片段，实际计时仍待执行。
 
-| 问题 | 当前准确回答 |
+### English speaking candidate
+
+Our detector adapts FIPER's observation branch. A fixed ResNet18 provides features, and RND deviations are aggregated over five past frames. Left and right sleeve phases use separate thresholds based on past normal controller intent. A previously viewed development trial is now calibration data, so we do not present it as an unseen test for this version. The score is not a failure probability.
+
+An alert blocks normal dispatch. The diagnostic measures rest, synchronous queue state and the nominal macro path, then reconfirms the alert using a new image. Acceptance is recorded before five macro operations. The B record contains sixty-one macro dispatches, thirteen post-macro measurements and twenty-three continuation checks in a new generation. This restricted continuation uses declared simulation geometry while preserving the original RGB reports.
+
+A completes normally without an alarm; B completes after alarm-triggered recovery; C requests help when detector inputs are missing. Recorded detector-call processing has a median of about32milliseconds and a maximum of63milliseconds. These are not full system latencies. The final regional proxy does not establish folding quality, statistical detection performance or product stop acceptance. The shared checkpoint and complete RGB now reproduce all 958 recorded calls, including one preflight refresh; decision fields remain identical.
+
+### 最新问答
+
+| 问题 | 准确回答 |
 | --- | --- |
-| 为什么不用完整 FIPER 或 SAFE？ | 完整 FIPER 需要真实生成式动作采样；SAFE 需要 VLA 特征及成败监督。当前复用只需观测特征的 RND-OE 分支，保留正常控制器 |
-| 不需要失败数据就直接能用了？ | 仍需正常拟合、独立校准和新试次验证；不能将同一条视频拆成独立校准 |
-| 检测到的是哪类故障？ | 当前输出观测 OOD，不直接判定正式 OFFSET/SLIP；类别和实际后果另核 |
-| 上次完整恢复记录证明了检测吗？ | 不证明。上次是预定故障注入后执行脚本宏；新的观测触发必须另验证 |
-| 目前真的做了什么？ | 核心软件/接口、作者网络复用、固定预训练编码和真实 540 帧接入；真实检测包和在线 A/B/C 待交接 |
-| 叠好怎么判断？ | 区域比例只是开发代理；持有复检、最终质量、人工协助和自主成功分开，不混报 |
+| 现在是否仍只有预设恢复？ | #24是历史预设恢复；#29的B已有RGB异常报告、前检刷新、宏执行和接续的实际开发记录。二者不混用 |
+| 是胡的PR27模型直接完成的吗？ | 不是。PR27封存包独立复现完成；PR29采用张的新分阶段包，版本和数据用途分别记录 |
+| 为什么恢复后还看几何？ | 恢复状态可能偏离原正常视觉分布。限定接续需要新鲜HELD证据，允许保留RGB ANOMALY继续；因此不是纯视觉全程能力 |
+| 开始报警到动作隔了3秒，图像是否已经过期？ | 初报到宏开始约3.109墙钟秒；等待前检后有新帧重确认，刷新图像距宏开始约0.062秒。没有延长旧报告时效 |
+| 32毫秒说明实时产品通过了吗？ | 只是已加载检测调用内处理的记录中位数；不含未测传输、队列、UI、相机曝光或产品停车 |
+| 检测延迟是多少？ | PR30/32给出6.683–6.883秒的画面分离区间；这不是精确物理起点，仍不把注入时刻当真值计算正式检测延迟 |
+| B是不是97.75%的恢复成功率？ | 不是。2002/2048是该试次最终点云区域比例，试次恢复成功率/最终质量需要各自标准和更多证据 |
+| A/B证明恢复提高成功率吗？ | A是正常案例，B是故障恢复案例，不是同故障有/无恢复的公平消融 |
+| 新模型全部独立复算完成了吗？ | PR27封存包已完成；PR31提供当前包和完整RGB后，A 465次、B 493次记录调用全部重算且判定一致 |
 
-### 对当前十页 PPT 的技术终审意见
+### 最终展示技术核对
 
-第 3、8 页“检测偏差/观测触发”在新证据前改为脚本恢复链；第 6 页把区域代理与产品叠衣质量分开；第 5、10 页修正接管/归还不等于终止、任务态与停止阶段混用；第 7 页区分学习适配和真实在线能力。压缩连续权限说明，补本图、文献选型、分数/事件证据、三架构和需求变化。最终修改版仍需重新终审，当前意见不是最终 Slides 通过。
+- 用新A/B/C实跑替换“待实测”“尚无告警驱动恢复”的旧占位；A统一为正常抓取与提起。
+- 明确展示当前包左右袖阈值和几何接续策略；旧PR27曲线若保留须标历史版本。
+- 显示五步宏、宏后复检与接续证据；不要只展示最终True或未标来源的动画。
+- 区域代理、局部持有、正式质量和自主成功分开。
+- 用户接管/归还与终止规则继续按SRS；回放暂停不控制真实仿真。
+- 视频若播放全片50.7秒，应相应缩短口播；不能直接加在330秒讲话之外。
+- 课堂反馈、出席和上传回执须实际发生后登记，不由脚本或此候选稿代签。
 
 ---
 

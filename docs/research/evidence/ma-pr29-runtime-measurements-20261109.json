@@ -1,0 +1,139 @@
+{
+  "schema": "pre-recorded-runtime-summary/1",
+  "cases": {
+    "A": {
+      "trial_id": "db18b274-f2e2-4cf2-9962-856a8364aad7",
+      "reports": 465,
+      "status_counts": {
+        "UNKNOWN": 413,
+        "NORMAL": 52
+      },
+      "phase_counts": {
+        "OTHER": 201,
+        "LEFT_SLEEVE_HOLD": 29,
+        "RELEASE": 204,
+        "RIGHT_SLEEVE_HOLD": 31
+      },
+      "internal_processing": {
+        "count": 465,
+        "min_s": 0.030999999959021807,
+        "median_s": 0.03200000000651926,
+        "p95_s": 0.0470000000204891,
+        "max_s": 0.06300000002374873
+      },
+      "read_to_decision": {
+        "count": 465,
+        "min_s": 0.030999999959021807,
+        "median_s": 0.045999999972991645,
+        "p95_s": 0.0470000000204891,
+        "max_s": 0.06300000002374873
+      },
+      "recovery_attempts": 0,
+      "final_state": "MONITORED_CONTROLLER_COMPLETED",
+      "final_sim_s": 26.400001376867294
+    },
+    "B": {
+      "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+      "reports": 492,
+      "status_counts": {
+        "UNKNOWN": 417,
+        "NORMAL": 70,
+        "ANOMALY": 5
+      },
+      "phase_counts": {
+        "OTHER": 202,
+        "LEFT_SLEEVE_HOLD": 55,
+        "RELEASE": 203,
+        "RIGHT_SLEEVE_HOLD": 32
+      },
+      "internal_processing": {
+        "count": 492,
+        "min_s": 0.030999999959021807,
+        "median_s": 0.03200000000651926,
+        "p95_s": 0.0470000000204891,
+        "max_s": 0.06300000002374873
+      },
+      "read_to_decision": {
+        "count": 492,
+        "min_s": 0.030999999959021807,
+        "median_s": 0.046999999962281436,
+        "p95_s": 0.0470000000204891,
+        "max_s": 0.06300000002374873
+      },
+      "recovery_attempts": 1,
+      "final_state": "MONITORED_CONTROLLER_COMPLETED",
+      "final_sim_s": 30.85000160895288,
+      "first_alert": {
+        "observed_sim_s": 7.033333700150251,
+        "decision_wall_s": 517002.812,
+        "observation_id": "306946eb-3787-4931-af68-eef9608e4593"
+      },
+      "preflight_refresh": {
+        "observed_sim_s": 7.283333713188767,
+        "captured_wall_s": 517005.859,
+        "decision_wall_s": 517005.906,
+        "observation_id": "ded5c5f3-2043-439f-b42a-8a1979f2470e",
+        "kind": "PREFLIGHT_DETECTION_REFRESHED"
+      },
+      "macro_begin_sim_s": 7.3000003807246685,
+      "first_alert_decision_to_macro_begin_wall_s": 3.1089999999967404,
+      "refreshed_image_read_to_macro_begin_wall_s": 0.061999999976251274,
+      "macro_duration_sim_s": 2.600000135600567,
+      "macro_duration_wall_s": 29.032,
+      "detection_delay_ground_truth_s": null,
+      "delay_note": "No independent human anomaly-onset label; injection time is not that label"
+    },
+    "C": {
+      "trial_id": "f1054552-963e-4bde-85e8-34f0af80c8f6",
+      "reports": 1,
+      "status_counts": {
+        "UNKNOWN": 1
+      },
+      "phase_counts": {
+        "HOLD": 1
+      },
+      "internal_processing": {
+        "count": 0,
+        "min_s": null,
+        "median_s": null,
+        "p95_s": null,
+        "max_s": null
+      },
+      "read_to_decision": {
+        "count": 1,
+        "min_s": 0.015000000013969839,
+        "median_s": 0.015000000013969839,
+        "p95_s": 0.015000000013969839,
+        "max_s": 0.015000000013969839
+      },
+      "recovery_attempts": 0,
+      "final_state": "HELP_REQUESTED_AUTOMATIC_DISPATCH_DISABLED",
+      "final_sim_s": null
+    }
+  },
+  "package_id": "b9df07d40a29968947949a7a202e89b31d1fb37771fb4c2ff5094fc73ff3eb1b",
+  "phase_thresholds": {
+    "LEFT_SLEEVE_HOLD": 1.2066080808639525,
+    "RIGHT_SLEEVE_HOLD": 1.311397171020508
+  },
+  "scope": "recorded producer timings and event order; no new inference or simulation",
+  "timing_definition": "end_to_end_processing_wall_s is DetectionRuntime.observe internal processing only",
+  "excluded_from_timing": [
+    "camera exposure",
+    "unmeasured transport/worker queues",
+    "UI",
+    "product stop acceptance"
+  ],
+  "statistical_performance_claim": null,
+  "full_rgb_scores_recomputed": false,
+  "srs_quality_accepted": false,
+  "verified_input_sha256": {
+    "model/manifest.json": "b0ff35cca0d55d31ce4c7312d60012c4a055bf996b7b60d47521971fd6236b23",
+    "A/pre-demo-events.jsonl": "975da401a24e3ef1de0024143da99b2a4abbf097553fdcb49d1e51540bf23275",
+    "A/full-fold-recovery.json": "b2cdccc6ef00289efcd0c8539187806688ffba6e12d1a81272f02ee099e640a5",
+    "B/pre-demo-events.jsonl": "0da6c69c2b701c95ca3ee8b4dc91713f9305c01c10c54bae191e1041d0e56335",
+    "B/full-fold-recovery.json": "588725c8a81b18752f710ac3b9f162d9784462f2927f04e1953e37b74b7fba0b",
+    "C/pre-demo-events.jsonl": "d4e02816d8161ae033ca713fe211b8e69e2dc70afa9c4b2e36fa3d069f625511",
+    "C/full-fold-recovery.json": "95a6448fb8054eedeb7fe344b8e7e06ffb63d8eba12c7f1a07e344ea57fba841"
+  }
+}

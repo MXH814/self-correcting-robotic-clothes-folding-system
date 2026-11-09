@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs><marker id="tip" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0 0 L9 4 L0 8Z" fill="#007e80"/></marker></defs>
+<rect width="1600" height="900" fill="#f8fafa"/>
+<g font-family="Times New Roman,SimSun,serif" fill="#0d2638">
+<text x="60" y="64" font-size="39" font-weight="bold">Phase-conditioned monitoring and verified recovery</text>
+<text x="60" y="108" font-size="25" fill="#536c7d">Current PR29 diagnostic path; product coordination and acceptance remain separate</text>
+<g fill="#eaf4f3" stroke="#007e80" stroke-width="2">
+<rect x="60" y="210" width="300" height="132"/><rect x="450" y="210" width="300" height="132"/>
+<rect x="840" y="210" width="300" height="132"/><rect x="1230" y="210" width="310" height="132"/>
+<rect x="1230" y="497" width="310" height="137"/><rect x="785" y="497" width="355" height="137"/>
+<rect x="335" y="497" width="360" height="137"/>
+</g>
+<g text-anchor="middle" font-size="27" font-weight="bold">
+<text x="210" y="247">Fresh RGB</text><text x="600" y="247">RND observation score</text>
+<text x="990" y="247">External preflight</text><text x="1385" y="247">Five-operation macro</text>
+<text x="1385" y="535">New hold window</text><text x="962" y="535">Verified left continuation</text>
+<text x="515" y="535">Continue fixed folding</text>
+</g>
+<g text-anchor="middle" font-size="23">
+<text x="210" y="286">Frozen ResNet18 features</text><text x="210" y="320">Past normal controller intent</text>
+<text x="600" y="286">Left / right phase thresholds</text><text x="600" y="320">Five-frame causal window</text>
+<text x="990" y="286">Rest, queue, path, authority</text><text x="990" y="320">Reconfirm on a NEW image</text>
+<text x="1385" y="286">Release / retreat / regrasp</text><text x="1385" y="320">Close / lift; record feedback</text>
+<text x="1385" y="577">Strictly after macro completion</text><text x="1385" y="612">Declared simulation geometry</text>
+<text x="962" y="577">New generation and hold baseline</text><text x="962" y="612">New HELD evidence for each RGB</text>
+<text x="515" y="577">Keep raw RGB status and score</text><text x="515" y="612">Planned release ends this hold guard</text>
+</g>
+<g fill="none" stroke="#007e80" stroke-width="3" marker-end="url(#tip)">
+<path d="M360 276 H450"/><path d="M750 276 H840"/><path d="M1140 276 H1230"/>
+<path d="M1385 342 V497"/><path d="M1230 566 H1140"/><path d="M785 566 H695"/>
+</g>
+<g fill="#007e80" font-size="22" text-anchor="middle">
+<text x="405" y="190">512-D</text><text x="795" y="190">OOD alert</text><text x="1185" y="190">Accepted</text>
+<text x="1450" y="420">Feedback</text><text x="1185" y="474">HELD</text><text x="740" y="474">Permit</text>
+</g>
+<g font-size="24">
+<text x="60" y="402">NORMAL continues the normal controller. WINDOW_WARMUP waits for fresh evidence.</text>
+<text x="60" y="440">Missing / stale input or any required failed gate stops new dispatch and requests help.</text>
+</g>
+<rect x="60" y="700" width="1480" height="137" fill="#f7ede6" stroke="#b95e29" stroke-width="1.5"/>
+<g font-size="24" fill="#8c4622">
+<text x="82" y="739" font-weight="bold">Scope of the geometric override</text>
+<text x="82" y="777">Only the verified recovered left-sleeve continuation may proceed with fresh HELD geometry despite RGB OOD.</text>
+<text x="82" y="814">The original ANOMALY remains logged. Internal geometry is not RGB perception or product-quality evidence.</text>
+</g>
+<text x="60" y="878" font-size="21" fill="#536c7d">B: one recovery, 61 macro dispatches, 13 post-macro checks, 23 continuation checks; final regional proxy 2002/2048</text>
+</g></svg>

@@ -1,6 +1,6 @@
 # AI 恢复与系统控制接口基线
 
-**当前实测接入：** PR #10 已提供命名关节、组件时钟/绝对命令/反馈、可见 RGB 与组件停止；[Ma 编码和独立校验](../research/runtime-component-integration.md)已运行。仍不是冻结的产品 profile：该 RGB 仅为动作后检查，真实前缀/路径约束、跨模块时钟及协调器联调仍待完成。
+**当前实测接入（2026-11-09）：** 早期PR10组件记录之后，PR29已接真实RGB、版本化RND、同步仿真前检和五步宏；B有新窗口几何复检及限定接续记录。当前诊断消息、阶段阈值、刷新和几何接续语义见[Pre运行合同](pre-current-runtime-contract.md)与[ADR-MA-007](decisions/ADR-MA-007-phase-conditioned-detection-and-verified-continuation.md)。以下保留目标产品逻辑合同，完整协调器/网页控制、产品队列/停车、概率门槛及质量未由该诊断运行验收。
 
 版本：`recovery-contract/0.1-draft`（保留消息兼容标识）。状态：组长授权下采纳的逻辑接口基线，队友可审核修订；已实现独立离线preflight子集，完整adapter/协调器尚未实现。逻辑方法名不强制 HTTP、语言或消息中间件。SRS 是验收基线，不能因示例值改变阈值。实现范围见[运行说明](../research/execution-guide.md)。
 

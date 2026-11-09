@@ -1,0 +1,18 @@
+{
+  "schema": "group3-pre-final-output-audit/1",
+  "pptx_sha256": "e6581d7f4382694bd20fe6d5d0d728b2b8b1a4b29054be43766fbdecb2922681",
+  "pptx_pages": 19,
+  "pptx_pdf_pages": 19,
+  "wps_script_pdf_pages": 5,
+  "repository_copies_identical": true,
+  "embedded_video_sha_verified": true,
+  "B_video_decoded_frames": 579,
+  "new_prs_merged": [
+    30,
+    31,
+    32
+  ],
+  "rehearsal_recorded": false,
+  "classroom_presentation_completed": false,
+  "scope": "artifact/data checks only; human participation and future feedback remain open"
+}

@@ -1,36 +1,39 @@
 # 马祥珲 Assignment 2 集成材料
 
-状态：本工作流的 AI 辅助设计/分析稿。已依据 PR #9/#10 整合入英文 Design 工作稿；本页保留本人分工材料及归属边界，不声明三人已批准。以下 Summary 为全组报告候选文本，需整合最终实际进展/课堂反馈；不是马祥珲个人总结或已经提交的作业。
+更新：2026-11-09。本工作流的AI辅助设计/分析材料已同步PR27/PR29及PR30至PR32；下方Summary与英文主文档保持同一500词文本。现行诊断协议、ADR-MA-007、可编辑流程图和记录计时已补齐，新包A/B全部958次记录调用已独立重算，PR32新增正常性技术审核也已验收；实际课堂反馈与个人确认仍待对应证据。下方按日期列出的早期增量保留其历史状态，不代表当前仍无检测包或告警恢复记录。本文不代签三人批准或最终提交。
 
 ## A2-01 — Design Summary candidate
 
 <!-- summary:start -->
-Part I specified a simulated clothes folding system for one supported shirt type on a fixed table. The design prioritises grasp offset and partial slippage, bounded recovery, and explicit human assistance. It translates these requirements into three architecture views, five interface screens, recovery contracts and verification procedures. The team retains the original acceptance requirements while recording implementation evidence separately from design decisions.
 
-The recovery worker proposes actions; the task coordinator owns execution authority. Before accepting a segment, the coordinator checks the current control generation, observation freshness, action constraints, calibration and remaining budgets. The adapter must reject revoked commands and report measured feedback. This separation adds protocol and latency, but allows the recovery method to change without transferring control authority to the model. A score cannot prove rest, and an earlier terminal outcome cannot be overwritten by a late response. The interaction prototype exercises preparation, pause, assistance, return and replay using explicitly synthetic events.
+Part I specified a simulated clothes folding system for household users, with maintenance roles managing configurations and models. The scope remains one supported shirt type on a fixed table, focusing on grasp offset and partial slippage. Thirty product requirements and eighteen acceptance tests remain unchanged. Part II develops logical, deployment and technology architectures, domain and interaction models, five interface screens, decision records, and explicit verification plans. Implementation evidence supports these designs without replacing their acceptance conditions.
 
-Isaac Sim 4.5 with DexGarmentLab runs on Zhang Mingbo's workstation, where Ma Xianghui completed the basic rerun. Two normal exports comprising 153 frames were received and encoded. Subsequent records provide named joints, visible RGB captured before a local component command, durable acceptance intent and measured feedback. Ma's intake combines visual, proprioceptive and masked candidate features while retaining the causal boundaries. The measured segment becomes history only after its final feedback; it cannot enter its own earlier decision. The action was specified by a script, not selected by a vision model.
+The task coordinator owns dispatch authority. Detection and recovery workers propose results; the adapter checks execution conditions and reports measurements. Versioned observations, control generations, bounded attempts and persisted acceptance records prevent late proposals from silently regaining authority. The interface separates task state from measured rest. Manual adjustment requires confirmed rest and explicit takeover; returning control requires fresh validation. The browser prototype exercises these interactions using labelled synthetic events and remains separate from actual simulator control.
 
-A single-process adapter probe records dispatch acknowledgement, deduplication, generation rejection and measured stopping. Independent recalculation gives pause and termination confirmation delays of approximately 0.676 and 0.692 seconds. The submitted windows cover all sixty rotational joints and satisfy the probe's recorded sampling and speed conditions. These results support component feasibility; they do not verify transport queues, disconnection handling or the complete product coordinator. Fold Tops images and a three-target projection check support camera integration. The upstream success flag remains distinct from the system's quality and autonomy criteria.
+The development deployment uses Zhang Mingbo's existing workstation with Isaac Sim 4.5 and DexGarmentLab. The normal controller remains GAM plus scripted actions. Simulation dependencies remain isolated from application and inference environments. Process transport and persistent storage choices remain open. The workstation's limited RAM, shared compute resources and untested distributed failure paths remain architectural risks. Subsequent simulation continues on that workstation rather than requiring another installation.
 
-Repeated initial resets produced maximum settled mesh differences of approximately 31.7 millimetres. The design therefore requires mid-task state, velocity and contact checks before treating recovery branches as comparable. If these checks fail, independent blocked trials replace claims about identical-state candidate choices. Research questions about history and continuation quality remain open because labelled failure and recovery branches are unavailable. Local diagnostic reporting uses confirmed recoveries over accepted actions, with unknown outcomes and coverage shown separately. Additional development records distinguish validation origins, offline human judgements, system alarms and stop acceptance without changing product thresholds.
+The detector adapts FIPER's observation branch using pretrained ResNet18 features and random network distillation. Hu's archived package was independently reproduced, including its normal false alarm. Zhang's subsequent package distinguishes left and right sleeve phases using past controller intent. One complete normal trial supplies fitting and four supply calibration. A previously viewed development trial is reassigned to calibration. Thresholds, sources and failed development records remain versioned; no statistical guarantee or failure probability is claimed.
 
-Current deliverables include decision records, editable diagrams, grouped-data safeguards, baseline and preflight software, annotation procedures and presentation material. The next integration connects real decision-time observations and executed segments to the coordinator, then collects audited grasp-offset and slip cases. Participant walkthroughs, a timed team rehearsal, classroom feedback and final submission remain pending. The final report will incorporate their actual evidence rather than treating generated documents or component tests as proof of a completed system.
+New A/B/C records connect this design to execution. A completes normal folding without alarms or recovery. In B, an RGB alarm requests preflight; after measured rest and nominal path checks, a new image reconfirms the alert. Five macro operations produce sixty-one dispatches. Thirteen post-macro measurements confirm sustained holding; a new generation then performs twenty-three continuation checks using declared simulation geometry. During this restricted continuation, fresh holding geometry can support progress despite an unchanged RGB anomaly report. Both channels retain their independent records. The final regional proxy contains 2002 of 2048 points. C returns UNKNOWN for missing detector inputs and requests help without further dispatch. These are development cases, not a recovery-benefit comparison or product-quality certification.
+
+Independent review checks logs, source snapshots, geometry, regional counts and video provenance. Recorded detector-call processing has a median of approximately 32 milliseconds and a maximum of 63 milliseconds in A and B; this excludes unmeasured system queues, UI and exposure latency. Shared checkpoint and RGB now reproduce all recorded decisions within declared numerical tolerance. Design refinements preserve validation origins and distinguish human judgement, alarms and stop acceptance times. AI-assisted material requires source checks, counterexamples and honest attribution. Remaining work includes user evaluation, complete system validation, personal confirmation and classroom-feedback revision before final submission.
 <!-- summary:end -->
 
 ## A2-02 / A2-03 — 本人负责的具体设计
 
-恢复职责、逻辑组件图、领域关联、恢复时序、输入/动作/评分、取消/拒绝/接管及记录见 [recovery-design.md](recovery-design.md)、[interfaces.md](interfaces.md) 和三个 [ADR](decisions/ADR-MA-001-control-and-scoring.md)。系统总体架构/部署/技术三视图仍由张茗博整合；本组件图不冒充完成全组架构。
+恢复职责、逻辑组件图、领域关联、恢复时序、输入/动作/评分、取消/拒绝/接管及记录见 [recovery-design.md](recovery-design.md)、[interfaces.md](interfaces.md)和七份核心ADR。当前实际路径以[运行合同](pre-current-runtime-contract.md)、[ADR-MA-007](decisions/ADR-MA-007-phase-conditioned-detection-and-verified-continuation.md)及[新流程图](figures/ma-current-observation-recovery.svg)为准。系统总体架构/部署/技术三视图仍由张茗博整合；本组件图不冒充全组最终架构验收。
 
 ## A2-04 — 需求建议
 
-现行 FR/NFR/AI/DR 阈值不变。CR-MA-01 已依据组长授权采纳为内部接口细化，显式记录评分语义、校准与接续版本；未改变产品验收。胡知鱼 CR-01/CR-02 仍待审，本稿不批准其变更。
+现行FR/NFR/AI/DR产品阈值不变。CR-MA-01已采纳为内部接口细化，记录评分语义、校准与接续版本；CR-01/CR-02已按组长授权采纳为开发记录设计。当前分阶段阈值、前检刷新和限定几何接续由ADR-MA-007补记，不将诊断宏直接当作通过产品0.60概率门槛的实现。
 
 ## A2-06 — 算法开放问题
 
 见 [ma-risks-and-validation.md](ma-risks-and-validation.md)。每项有影响、最小 PoC、判据、负责人/复核及后备方案。部分统计规模和阈值校准需试跑后决定，不能预填通过。
 
 ## A2-07 — AI Tools Reflection contribution draft
+
+The current contribution adds a concrete audit trail rather than accepting generated evidence summaries at face value. A self-consistent modified-image fixture exposed the missing review-source binding in PR27; the revised gate rejected it before decoding or fitting. Full numerical reproduction then verified the archived package. For PR29, independent source, event, geometry, regional and video checks established a limited development execution chain. Tiny floating-point differences were isolated from unchanged identity, timing and status. A new analysis tool checks original file hashes before summarizing recorded processing times, explicitly separating internal detector-call time from product end-to-end latency. PR31 subsequently supplied the checkpoint and complete RGB. Independent replay now reproduces all 958 recorded calls, including the preflight refresh, with identical decision fields and explicit score tolerances. Simulation capture belongs to Zhang and the archived detector package belongs to Hu; personal understanding, effort and classroom participation still require the owner’s confirmation.
 
 Codex assisted this workstream by locating versioned primary sources, extracting the SRS constraints, comparing the existing teammate branch, and drafting literature notes, hypothesis cards, interfaces, decision records, and report material. The outputs were checked for source attribution, document links, requirement consistency, and annotation length. These checks establish document properties, not model accuracy or successful robot execution.
 
@@ -48,11 +51,11 @@ The next pass added a fixed 8-by-8 RGB mean encoder, raw joint features and mask
 
 ## A2-08 — 参考文献
 
-四篇英文注释位于 [annotated-references.md](../research/annotated-references.md)，分别满足 200–300 词的结构检查。正式报告应只纳入实际使用的来源，文献清单和每篇注释由作者本人及另一成员核原文。
+原四篇英文注释及新增FIPER设计影响注释位于 [annotated-references.md](../research/annotated-references.md)，分别满足 200–300 词的结构检查。正式报告应只纳入实际使用的来源，文献清单和每篇注释由作者本人及另一成员核原文。
 
 ## A2-09 — 可核验贡献与署名边界
 
-本分工已形成的文档成果：四篇原文分析、最近邻比较、H1/H2问题卡、诊断协议、AI组件/接口、四项ADR、风险/PoC、参考注释和此报告片段；新增张茗博PR审查、实际数据接收校验、153帧固定观测编码、核心契约澄清、两张SVG展示图及讲解/问答。关联Git提交可证明产物版本，不等于证明个人阅读掌握、独立实现或人工评审完成。代码与文字的AI辅助及人工待确认边界保留。
+本分工已形成的文档成果：四篇原文分析、最近邻比较、H1/H2问题卡、诊断协议、AI组件/接口、七项ADR、风险/PoC、参考注释和此报告片段；新增组员PR审查、完整原始材料接收与958次检测调用复算、当前运行合同/时序、可编辑流程图、记录计时、19页中文展示整合稿及讲解/问答。关联Git提交可证明产物版本，不等于证明个人阅读掌握、独立实现或人工评审完成。代码与文字的AI辅助及人工待确认边界保留。
 
 组长授权下当前技术基线已确定；本人仍需掌握文章/注释、审核真实接口和参加展示。后续新增离线诊断软件与测试见[运行说明](../research/execution-guide.md)。张茗博/胡知鱼工作不得据本稿归为本人完成；贡献表记录实际参与及审核，不预填工时或比例。
 

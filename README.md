@@ -1,18 +1,14 @@
 # Self Correcting Robotic Clothes Folding System
 
-**2026-11-09 新 A/B 开发复验通过。** 同一冻结模型包下，A 完整折叠、告警 0、恢复 0。B 由 RGB 告警驱动五操作，宏后连续持有检查通过，接续至整次折叠结束。恢复接续使用持续仿真几何检查，原始 RND 报告独立保留。实验独立人工审核 pending。[最终结果与方法](docs/research/zhangmingbo/pre-ab-revision2-20261109.md)
+**PR30 / PR31 / PR32已审合并，当前新包的数值复核已完成。** 四个原始ZIP共801,546,907字节、228个内部文件核验通过；用完整RGB和checkpoint重算A 465次、B 493次记录调用（含1次前检刷新），判定字段一致。本机205项软件测试通过。[独立审阅与重算证据](docs/reviews/pr30-31-review.md) · [团队原始材料下载](docs/research/zhangmingbo/shared-pre-artifacts-20261109/README.md)
 
-**PR #29 已审合并：** 201项软件测试通过；便携文件、执行链、几何复检、最终点云及1014帧视频已独立核验。新模型、完整 A/B RGB 和新增两条正常材料现已共享，供成员开展全分数独立复算和案例审核。[团队下载与读取](docs/research/zhangmingbo/shared-pre-artifacts-20261109/README.md)。归档材料及一处非阻塞浮点比较改进见[审阅与后续](docs/reviews/pr29-review.md)。中文版Pre初稿已制作，后续据此更新待测占位。
+**已实际运行正常A、告警恢复B和缺包求助C。** B由RGB告警触发五步宏、13次宏后几何复检与23次接续检查，最终区域2002/2048。恢复接续依赖声明的仿真内部几何。胡已交最新案例判读及可见分离区间，新增两条正常性的独立技术审核也已通过PR32验收；统计效果、正式质量和产品停车保留各自验收。[当前设计和时序](docs/design/pre-current-runtime-contract.md) · [ADR-MA-007](docs/design/decisions/ADR-MA-007-phase-conditioned-detection-and-verified-continuation.md) · [案例表](docs/design/hu-abc-case-review.md)
 
-**胡的封存交付 PR #27 已复审合并。** 完整模型、阈值 `1.1895795584` 及逐帧正常复验可独立复现；固定审核源绑定已修复，145 项测试通过。normal-03 保留一次误报片段；该包的历史复验与源码绑定保持封存，本地后续分阶段版本及 A/B 接线结果见顶部记录。[审阅与证据](docs/reviews/pr27-review.md)
+**当前优先课程Pre，研究训练暂缓。** 中文19页实跑修订稿和逐页讲稿已在课程作业目录生成，含嵌入B视频及离线备份；实际设备检查、三人计时、上传和课堂反馈由张统筹，马终审技术。当前任务与历史研究计划分别见[组长剩余清单](docs/research/ma-remaining-checklist.md)和[第一阶段计划](docs/first-stage-plan.md)。
 
-**PR #26 已审核合并：** 三条固定 640×480 正常采集共 1,401 帧、1,428 次观测、2,318 条派发，原包/时序/读取器/相机与控制兼容性已独立核验。匹配原始数据交接缺口关闭；胡可直接开展阶段审核、完整试次划分、拟合和独立校准，不重复索要数据。[下载与读取](docs/research/zhangmingbo/matched-normal-data-20261109/README.md) · [复审证据与后续](docs/reviews/pr26-review.md)。原始正常标签及用途仍待接收方审核分配，不代表 A/B 或 SRS 质量通过。
+**当前中文版展示文件：** [可编辑PPTX](docs/design/slides/Group3_Assignment2_Design_Pre.pptx) · [静态PDF](docs/design/slides/Group3_Assignment2_Design_Pre.pdf) · [Word逐页讲稿](docs/design/slides/Group3_Assignment2_Design_Pre_Script.docx) · [讲稿Markdown](docs/design/slides/Group3_Assignment2_Design_Pre_Script.md) · [播放与问答](docs/design/slides/Group3_Assignment2_Design_Pre_QA.md)。正文12页按胡85秒、张105秒、马140秒安排，另留30秒交接；第19页B视频28.95秒计入正文恢复讲解预算。张继续维护最终版，三人实际排练及Canvas回执未登记完成。
 
-**PR #25 已合并。** 胡的 5 条首袖离线分数（1,051帧）已独立复算一致，九试次回放可用；这是只拟合输出头的开发探针，没有正式阈值或在线检测包。#26 匹配数据已接收，当前优先完整拟合/独立校准和真实恢复接线，**PPT 暂不制作或修改，工作完成后最后整理**。[复审记录与待办](docs/reviews/pr25-review.md)
-
-**当前优先完成 Pre 核心演示，研究训练暂缓。** 马已交付 FIPER RND-OE 观测分支适配、固定 ResNet18 编码、在线窗口/缺测处理、恢复请求和新观测复检；143 项软件检查通过，真实 540 帧已编码。胡负责同配置独立正常数据的拟合/校准/验证及分数回放，张负责观测导出、真实 A/B/C 接线和整组 PPT。缺 SADP_G 不阻塞该观测分支。本地联调结果及剩余检测问题以本页顶部记录为准。[实际接口与命令](docs/design/pre-detection-integration.md) · [新核心图与讲稿](docs/design/ma-presentation-materials.md) · [选型 ADR](docs/design/decisions/ADR-MA-006-observation-detector.md)
-
-**当前算法进展：** #23/#24已合并，共享相机/控制器/目标/预算配置已冻结，首条同次宏样本已编译为明确命名的区域代理正样本。五种时间/容量对照及配置绑定模型已实现，115项测试通过；真实训练尚未发生，当前缺更多结局覆盖和训练/开发分组。[共享协议及下一步](docs/research/shared-context-and-proxy-protocol.md) · [组长剩余清单](docs/research/ma-remaining-checklist.md)
+**第三组尚未展示，已改到下周。** 组长11月9日确认改期；原公告下周场次为11月16日13:30–15:05，具体安排以老师最新通知为准。最终截止仍为11月20日19:00。[改期来源与影响](docs/course/assignment-2/presentation-reschedule-20261109.md)
 
 同济大学《系统分析与设计》课程第三组项目。
 
@@ -32,7 +28,7 @@
 
 **仿真安排已确认：马祥珲已在张茗博电脑上复跑，基础复跑事项关闭。后续仿真、采集及恢复闭环实验统一在张茗博电脑运行，不要求组长电脑安装或换机重跑。** 详见[共享仿真执行安排](docs/research/shared-simulation-workflow.md)；真实接口、停止和恢复实验继续分别验收。
 
-**第三组展示：2026-11-09 13:30–15:05场次（上海时间），每组6分钟，全员出席；Slides须在11月9日13:30之前上传Canvas。** 本组具体出场时刻未公布。当前优先整合三架构、关键决策及理由、重要交互、需求变化与开放问题，见 **[展示计划、三人分工与验收](docs/design/presentation-plan.md)**。
+**第三组展示已调至下周，尚未展示。** 原公告下周场次为2026-11-16 13:30–15:05，具体安排以老师最新通知为准；每组6分钟、全员出席、所属场次开始前上传Slides。当前优先整合三架构、关键决策及理由、重要交互、需求变化与开放问题，见 **[展示计划、三人分工与验收](docs/design/presentation-plan.md)**。
 
 **Pre 总负责人现为张茗博：整组 PPTX/PDF、完整逐页演讲稿与三人交接、备份问答、排练计时、课前 Canvas 上传核对和课堂反馈原始记录均由张茗博统筹。马祥珲终审核心技术事实；胡知鱼交 UI/需求变化素材并负责后续报告变更追踪。讲解仍按胡→张→马分段，三人均到场。** 具体交付和公告逐条覆盖见[展示计划](docs/design/presentation-plan.md)。
 
