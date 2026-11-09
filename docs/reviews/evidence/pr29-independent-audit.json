@@ -1,0 +1,182 @@
+{
+  "head": "9ffa54681f583f47afc6f7bf6715387985cd1763",
+  "tests": {
+    "passed": 201,
+    "skipped": 0
+  },
+  "scope": "independent audit of portable artifacts; full RGB and current checkpoint unavailable",
+  "portable_files": 89,
+  "portable_hash_errors": [],
+  "package_metadata_hash_verified": true,
+  "package_id": "b9df07d40a29968947949a7a202e89b31d1fb37771fb4c2ff5094fc73ff3eb1b",
+  "local_only_sources": [
+    {
+      "case": "A",
+      "file": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\official-A-v3-final\\fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3\\rgb-frames.npz",
+      "bytes": 155057780,
+      "sha256": "bcc85b09749e5296dff3f0099ab830ddb084744d5597f3dc48b82e02d624b9ca",
+      "storage": "local source retained"
+    },
+    {
+      "case": "B",
+      "file": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\official-B-v3-continuation\\fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa\\rgb-frames.npz",
+      "bytes": 184529397,
+      "sha256": "99f75fd4c971b7329f7177fc18e0a1a11ef292f1e24362ea2252c03ea88d42d4",
+      "storage": "local source retained"
+    },
+    {
+      "case": "C",
+      "file": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\official-C-01\\fold-recovery-221bcf7f-113f-4a91-b7cd-647be33eeda9\\rgb-frames.npz",
+      "bytes": 19795176,
+      "sha256": "7a3b4d98a3c6b802343c630bdad606e8b1603c57ac7b5312f562cde65f251e9f",
+      "storage": "local source retained"
+    },
+    {
+      "file": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\AB_detector_v2\\package-preserved-floor\\detector.pt",
+      "bytes": 132726810,
+      "sha256": "6decf0155074222b7fd69a720db103b9bbd87e3b7f3034b4b193db74745b4dd4",
+      "storage": "local source retained"
+    }
+  ],
+  "A": {
+    "trial_id": "db18b274-f2e2-4cf2-9962-856a8364aad7",
+    "observations": 480,
+    "dispatches": 774,
+    "reports": 465,
+    "status_counts": {
+      "UNKNOWN": 413,
+      "NORMAL": 52
+    },
+    "producer_snapshot_verified": 59,
+    "state": "MONITORED_CONTROLLER_COMPLETED",
+    "inside_count": 2048,
+    "point_count": 2048,
+    "ratio": 1.0
+  },
+  "B": {
+    "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+    "observations": 633,
+    "dispatches": 842,
+    "reports": 492,
+    "status_counts": {
+      "UNKNOWN": 417,
+      "NORMAL": 70,
+      "ANOMALY": 5
+    },
+    "producer_snapshot_verified": 59,
+    "state": "MONITORED_CONTROLLER_COMPLETED",
+    "inside_count": 2002,
+    "point_count": 2048,
+    "ratio": 0.9775390625,
+    "alert_sim_s": 7.033333700150251,
+    "macro_dispatches": 61,
+    "post_macro_checks": 13,
+    "continuation_checks": 23,
+    "post_macro_geometry_recomputed": true,
+    "geometry_float_differences": [
+      {
+        "group": "recovery",
+        "observation_id": "98921d2f-b22c-4109-927d-a09e391e56d2",
+        "field": "distance_m",
+        "recalculated": 0.0769410558142674,
+        "stored": 0.07694105581426741,
+        "absolute_difference": 1.3877787807814457e-17
+      },
+      {
+        "group": "recovery",
+        "observation_id": "2e7cdfa4-e0e6-4cc1-99d2-c669fb2de955",
+        "field": "distance_m",
+        "recalculated": 0.07702688266480334,
+        "stored": 0.07702688266480336,
+        "absolute_difference": 1.3877787807814457e-17
+      },
+      {
+        "group": "continuation",
+        "observation_id": "3834d812-6305-4e51-a604-24a478dd1c4f",
+        "field": "distance_m",
+        "recalculated": 0.07489332044102112,
+        "stored": 0.07489332044102114,
+        "absolute_difference": 1.3877787807814457e-17
+      },
+      {
+        "group": "continuation",
+        "observation_id": "054d5d9a-eb4b-41ed-8feb-6afea9c8ed7e",
+        "field": "distance_m",
+        "recalculated": 0.07475388920199058,
+        "stored": 0.07475388920199057,
+        "absolute_difference": 1.3877787807814457e-17
+      },
+      {
+        "group": "continuation",
+        "observation_id": "49d30d29-894c-4472-ae9e-8b4da786e243",
+        "field": "distance_m",
+        "recalculated": 0.07473824269805146,
+        "stored": 0.07473824269805147,
+        "absolute_difference": 1.3877787807814457e-17
+      },
+      {
+        "group": "continuation",
+        "observation_id": "d4a1a6ed-51de-4904-ab19-6f45f6e05086",
+        "field": "distance_m",
+        "recalculated": 0.07580395645745398,
+        "stored": 0.07580395645745397,
+        "absolute_difference": 1.3877787807814457e-17
+      },
+      {
+        "group": "continuation",
+        "observation_id": "ce7fb5e0-1bad-442a-9b50-5687c5af3f6f",
+        "field": "distance_m",
+        "recalculated": 0.07612509914734811,
+        "stored": 0.07612509914734812,
+        "absolute_difference": 1.3877787807814457e-17
+      },
+      {
+        "group": "continuation",
+        "observation_id": "90ef0500-41ad-4869-99c9-bd45adc05b87",
+        "field": "distance_m",
+        "recalculated": 0.07994672502578082,
+        "stored": 0.07994672502578083,
+        "absolute_difference": 1.3877787807814457e-17
+      },
+      {
+        "group": "continuation",
+        "observation_id": "14c06ec1-8f24-4021-9d8b-c30a610960b2",
+        "field": "distance_m",
+        "recalculated": 0.08349262231935198,
+        "stored": 0.08349262231935196,
+        "absolute_difference": 1.3877787807814457e-17
+      },
+      {
+        "group": "continuation",
+        "observation_id": "3d6d11c3-4b45-442d-9548-2bfe700e1169",
+        "field": "distance_m",
+        "recalculated": 0.08410233930982323,
+        "stored": 0.08410233930982325,
+        "absolute_difference": 1.3877787807814457e-17
+      }
+    ]
+  },
+  "C": {
+    "trial_id": "f1054552-963e-4bde-85e8-34f0af80c8f6",
+    "observations": 59,
+    "dispatches": 86,
+    "reports": 1,
+    "status_counts": {
+      "UNKNOWN": 1
+    },
+    "producer_snapshot_verified": 51,
+    "state": "HELP_REQUESTED_AUTOMATIC_DISPATCH_DISABLED",
+    "dispatches_after_help": 0,
+    "macro_accepted": false
+  },
+  "video_mapping_rows": 1014,
+  "screenshot_pairs": 8,
+  "video_full_decode_passed": true,
+  "decoded_frames": 1014,
+  "video_duration_s": 50.7,
+  "video_visual_samples_inspected": 6,
+  "review_decision": "approved for development code and portable run records, merged as 50c27a6",
+  "full_rgb_to_rnd_independently_reproduced": false,
+  "product_quality_accepted": false,
+  "physical_product_stop_accepted": false
+}
