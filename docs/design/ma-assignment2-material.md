@@ -1,6 +1,6 @@
 # 马祥珲 Assignment 2 集成材料
 
-更新：2026-11-09。本工作流的AI辅助设计/分析材料已同步PR27/PR29及PR30至PR32；下方Summary与英文主文档保持同一500词文本。现行诊断协议、ADR-MA-007、可编辑流程图和记录计时已补齐，新包A/B全部958次记录调用已独立重算，PR32新增正常性技术审核也已验收；实际课堂反馈与个人确认仍待对应证据。下方按日期列出的早期增量保留其历史状态，不代表当前仍无检测包或告警恢复记录。本文不代签三人批准或最终提交。
+更新：2026-11-09。本工作流的AI辅助设计/分析材料已同步PR27/PR29及PR30至PR32；下方Summary与英文主文档保持同一500词文本。现行协议、ADR-MA-007、可编辑图、计时与诊断/产品模型映射已补齐，当前包958次调用已独立重算，新正常技术审核已验收。本人又确认已理解核心方案、认可个人贡献并练过本人讲解，见[确认范围](ma-owner-confirmation-20261109.md)；全组计时、课堂反馈和最终提交仍待实际证据。按日期列出的早期增量保留历史状态，不作为当前欠账。
 
 ## A2-01 — Design Summary candidate
 
@@ -33,6 +33,8 @@ Independent review checks logs, source snapshots, geometry, regional counts and 
 
 ## A2-07 — AI Tools Reflection contribution draft
 
+Owner update on 9 November: Ma confirmed understanding the current core design, accepting the personal contribution record and practising the individual slides. This confirmation does not supply measured effort, whole-team rehearsal time, classroom participation or another member's sign-off. The [confirmation record](ma-owner-confirmation-20261109.md) preserves that scope.
+
 The current contribution adds a concrete audit trail rather than accepting generated evidence summaries at face value. A self-consistent modified-image fixture exposed the missing review-source binding in PR27; the revised gate rejected it before decoding or fitting. Full numerical reproduction then verified the archived package. For PR29, independent source, event, geometry, regional and video checks established a limited development execution chain. Tiny floating-point differences were isolated from unchanged identity, timing and status. A new analysis tool checks original file hashes before summarizing recorded processing times, explicitly separating internal detector-call time from product end-to-end latency. PR31 subsequently supplied the checkpoint and complete RGB. Independent replay now reproduces all 958 recorded calls, including the preflight refresh, with identical decision fields and explicit score tolerances. Simulation capture belongs to Zhang and the archived detector package belongs to Hu; personal understanding, effort and classroom participation still require the owner’s confirmation.
 
 Codex assisted this workstream by locating versioned primary sources, extracting the SRS constraints, comparing the existing teammate branch, and drafting literature notes, hypothesis cards, interfaces, decision records, and report material. The outputs were checked for source attribution, document links, requirement consistency, and annotation length. These checks establish document properties, not model accuracy or successful robot execution.
@@ -57,7 +59,7 @@ The next pass added a fixed 8-by-8 RGB mean encoder, raw joint features and mask
 
 本分工已形成的文档成果：四篇原文分析、最近邻比较、H1/H2问题卡、诊断协议、AI组件/接口、七项ADR、风险/PoC、参考注释和此报告片段；新增组员PR审查、完整原始材料接收与958次检测调用复算、当前运行合同/时序、可编辑流程图、记录计时、19页中文展示整合稿及讲解/问答。关联Git提交可证明产物版本，不等于证明个人阅读掌握、独立实现或人工评审完成。代码与文字的AI辅助及人工待确认边界保留。
 
-组长授权下当前技术基线已确定；本人仍需掌握文章/注释、审核真实接口和参加展示。后续新增离线诊断软件与测试见[运行说明](../research/execution-guide.md)。张茗博/胡知鱼工作不得据本稿归为本人完成；贡献表记录实际参与及审核，不预填工时或比例。
+组长已确认理解当前核心设计、认可本人贡献并练过个人讲解。原始论文/注释的个人全文回查、后续真实接口验收和实际课堂展示分别按证据登记，不从这次肯定回复推导全部完成。后续新增离线诊断软件与测试见[运行说明](../research/execution-guide.md)。张茗博/胡知鱼工作不得据本稿归为本人完成；未记录工时或比例不补成事实。
 
 ## 展示讲稿提纲（个人部分）
 

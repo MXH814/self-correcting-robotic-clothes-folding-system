@@ -162,4 +162,4 @@ TaskSnapshot 固定 profile/model/goal/continuation；RecoveryRequest 携带当�
 
 ## 10. 与队友集成
 
-只读参考 `origin/hzy` 固定提交 `067cf91` 的数据与追踪稿。本文不覆盖其文件，不视作团队接受 CR-01/02。三人确认字段命名/时钟/profile 后再由张茗博整合总体部署，胡知鱼映射 UI/事件和汇总报告，马祥珲维护模型输入/评分与实验边界。
+早期设计参考 `hzy@067cf91`；后续CR-01/02已按组长授权采纳为开发记录设计，见[当前需求变更](requirements-changes.md)，产品通过条件不变。不能再将其写成未采纳。张茗博维护总体模型/部署与最终Slides，胡知鱼映射UI/事件并统筹报告，马祥珲维护模型输入/评分及证据边界。现行实跑的请求、宏接受、五步操作和SDK派发层级见[诊断模型与产品映射](models/pre-diagnostic-models.md)；底层指令数不改变产品恢复计次。

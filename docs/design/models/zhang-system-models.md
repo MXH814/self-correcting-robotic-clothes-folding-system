@@ -1,6 +1,6 @@
 # Editable system design models
 
-These models describe the proposed product design for Assignment 2. The local simulation evidence covers the Fold Tops baseline and component probes. The UI, coordinator and adapter together still require integration. Use the English SRS for acceptance thresholds. [Control contract](../interfaces.md) · [UI contract](../ui-contract.md) · [Measured evidence](../../research/zhangmingbo/fold-experiments-20261108.md)
+These models describe the proposed product design for Assignment 2. Evidence now also includes the PR29 A/B/C diagnostic and PR31 independent RGB-score replay. The complete UI, product coordinator and adapter still require integration. Use the English SRS for acceptance thresholds. The [diagnostic model and product mapping](pre-diagnostic-models.md) identifies actual record layers and remaining implementation boundaries. [Control contract](../interfaces.md) · [UI contract](../ui-contract.md) · [Reviewed evidence](../../reviews/pr30-31-review.md)
 
 ## Technology architecture
 
@@ -85,6 +85,8 @@ classDiagram
 ```
 
 One accepted task pins its versions. A new control generation invalidates old authority and old rest proofs while preserving accepted dispatch accounting. A normal segment can have no recovery decision. A stop proof refers to the last command of its task and generation. An offline evaluation can append results without rewriting the terminal outcome. [Record definitions](../data-design.md)
+
+Here `Dispatch` represents an accepted bounded product intent, not an individual SDK sample. In the current diagnostic, one accepted macro links five operation records and 61 SDK command IDs; those IDs do not each consume a recovery attempt. The [implementation view](pre-diagnostic-models.md) preserves this distinction rather than changing product cardinality to match raw command counts.
 
 ## System API surface
 

@@ -7,15 +7,15 @@
 | M1 适配已有检测方法 | `research_tools/detection_encoder.py`、`observation_detector.py`、`detection_runtime.py`、ADR-MA-006/007 | 观测适配已实现；不声称完整FIPER或失败概率 |
 | 新包完整数值复核 | [PR30/31审阅](../reviews/pr30-31-review.md)，A465次、B493次（含刷新）原始RGB/模型实际重算 | 本次记录调用全部通过，状态/原因/阈值精确一致；未重新训练或重测在线时延 |
 | M2 检测到恢复与新观测复检 | `detection_recovery.py`、`official_pre_adapter.py`及实际B五步宏/61条指令、13次宏后与23次接续测量 | 已有开发实跑并独立复核；仿真内部几何和产品权限范围明确 |
-| M3 核心设计、接口与图 | [现行合同/时序](pre-current-runtime-contract.md)、[ADR-MA-007](decisions/ADR-MA-007-phase-conditioned-detection-and-verified-continuation.md)、[SVG](figures/ma-current-observation-recovery.svg)、[接口](interfaces.md) | 已同步当前版本及失败/缺输入路径，仍不冒充产品实现验收 |
+| M3 核心设计、接口与图 | [现行合同/时序](pre-current-runtime-contract.md)、[诊断类/交互与产品映射](models/pre-diagnostic-models.md)、[ADR-MA-007](decisions/ADR-MA-007-phase-conditioned-detection-and-verified-continuation.md)、[SVG](figures/ma-current-observation-recovery.svg)、[接口](interfaces.md) | 已同步当前版本及失败/缺输入路径，并按实际事件核计次；仍不冒充产品实现验收 |
 | A2-01 摘要事实整合 | `system-design.md`与`ma-assignment2-material.md`中相同标记正文 | 两份同一500词文本；反馈后需再核 |
-| A2-02/03 具体设计 | 七份核心ADR、恢复逻辑、领域/结构、运行时序与控制代次 | 本人可独立写的部分已产出；全组最终模型仍需交叉确认和报告导出 |
+| A2-02/03 具体设计 | 七份核心ADR、恢复逻辑、领域/结构、运行时序、控制代次及源绑定计次复算 | 当前诊断与产品模型的技术层级已交叉核对；组员各自事实及最终报告模型导出仍需完成 |
 | A2-04 需求细化 | 30项产品需求/18项测试未改；CR-MA-01、CR-01/02及版本边界已记录 | 未为演示降低产品阈值；课堂反馈待真实发生 |
 | A2-06 风险与PoC | [风险表](ma-risks-and-validation.md)、[原日志计时](../research/evidence/ma-pr29-runtime-measurements-20261109.json) | 可解释当前32/63ms、几何信息和统计/产品缺口；不把记录调用时长当完整时延 |
-| A2-07 AI反思 | [本人集成材料](ma-assignment2-material.md)，含PR27篡改源反例、PR29浮点问题及PR31重算 | 有实际纠正与限制；本人理解、真实投入和归属确认仍需本人补充 |
+| A2-07 AI反思 | [本人集成材料](ma-assignment2-material.md)，含PR27篡改源反例、PR29浮点问题及PR31重算；[本人确认](ma-owner-confirmation-20261109.md) | 本人已确认理解核心设计及认可贡献归属；没有新增可归属工时/费用计量，不据此编造 |
 | A2-08 注释参考文献 | [原四篇与新增FIPER设计影响注释](../research/annotated-references.md) | 每篇正文按200–300英文词核验，来源/设计影响及适用范围分开；各成员仍需确认实际采用项 |
-| A2-09 贡献 | Git变更、审阅和上述实际工具/输出 | 可证明产物/操作，不能代签个人掌握、工时或他人贡献 |
-| P11 本人讲解与技术终审 | 19页中文实跑修订PPTX，正文8–12页个人约140秒，7项问答与B视频 | 材料已生成/检查；真实排练、个人讲解和设备检查未登记完成 |
+| A2-09 贡献 | Git变更、审阅、上述实际工具/输出及本人会话确认 | 本人认可现行个人归属；他人贡献、未记录工时及课堂事实各自验收 |
+| P11 本人讲解与技术终审 | 19页中文实跑修订PPTX，正文8–12页个人约140秒，7项问答与B视频；本人确认已练过 | 个人练习已确认；全组完整计时、设备、实际课堂讲解及上传回执未登记完成 |
 | P12 课堂反馈修订 | [改期记录](../course/assignment-2/presentation-reschedule-20261109.md)、[展示事实登记](presentation-feedback.md) | 组长确认尚未展示，不能提前形成课堂反馈或代填采纳意见 |
 | P13 最终交付技术核查 | [九项清单](../assignment-2-checklist.md)、个人材料与当前展示稿 | 完整反馈后报告/模型/ZIP和Canvas回执尚待形成，当前不宣称作业已最终提交 |
 | P01/P07/P10 研究线 | 四篇精读、比较矩阵、问题卡、诊断/消融代码及协议见[原任务工作簿](../research/ma-task-workbook.md) | 文档和软件已有；真实H1/H2诊断、训练、泛化/统计结果按用户要求暂缓，不能由Pre案例代替 |
@@ -28,6 +28,6 @@
 
 1. **胡知鱼**：PR30案例与PR32新增正常性技术审核已验收，不重复索要。最终Design仍需真实用户走查、报告/注释统筹、反馈追踪和打包。
 2. **张茗博**：维护当前PPT/讲稿，实际展示设备检查，组织三人完整计时，所属场次前Canvas上传及回执，展示和反馈原始记录。当前视频、模型、RGB和浮点核验小修已验收，不列为欠账。
-3. **马祥珲本人**：掌握140秒讲稿和问答、核实实际贡献/AI反思并参加排练和展示。新的实质性审核意见或课堂反馈到来后，按影响修订方法、需求和图；最终审核AI事实。
+3. **马祥珲本人**：已确认理解核心设计、认可本人贡献并练过本人讲解；继续参加全组计时与实际展示。新的实质性审核意见或课堂反馈到来后，按影响修订方法、需求和图；最终审核AI事实。
 
 第三组已改到下周且尚未展示。原公告下周为11月16日，具体以最新通知为准；最终设计截止保持11月20日19:00。当前可独立完成的Pre技术材料已推进到可整合版本，整体分工不能因此标成全部完成。

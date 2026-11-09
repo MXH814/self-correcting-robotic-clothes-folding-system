@@ -1,0 +1,105 @@
+{
+  "schema": "pre-event-layer-summary/1",
+  "cases": {
+    "A": {
+      "trial_id": "db18b274-f2e2-4cf2-9962-856a8364aad7",
+      "main_rgb_reports": 465,
+      "main_report_status_counts": {
+        "UNKNOWN": 413,
+        "NORMAL": 52
+      },
+      "recovery_requests": 0,
+      "preflight_refresh_calls": 0,
+      "refresh_log_copies_not_extra_calls": 0,
+      "accepted_macro_attempts": 0,
+      "accepted_event_counter_snapshots": [],
+      "allocated_attempt_numbers": [],
+      "macro_operations": 0,
+      "macro_sdk_dispatches": 0,
+      "all_sdk_dispatches": 774,
+      "post_macro_reports": 0,
+      "post_macro_status_counts": {},
+      "new_generation_baseline_reports": 0,
+      "baseline_status_counts": {},
+      "continuation_hold_reports": 0,
+      "continuation_status_counts": {},
+      "help_records_in_main_stream": 0
+    },
+    "B": {
+      "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+      "main_rgb_reports": 492,
+      "main_report_status_counts": {
+        "UNKNOWN": 417,
+        "NORMAL": 70,
+        "ANOMALY": 5
+      },
+      "recovery_requests": 1,
+      "preflight_refresh_calls": 1,
+      "refresh_log_copies_not_extra_calls": 1,
+      "accepted_macro_attempts": 1,
+      "accepted_event_counter_snapshots": [
+        0
+      ],
+      "allocated_attempt_numbers": [
+        1
+      ],
+      "macro_operations": 5,
+      "macro_sdk_dispatches": 61,
+      "all_sdk_dispatches": 842,
+      "post_macro_reports": 13,
+      "post_macro_status_counts": {
+        "UNKNOWN": 12,
+        "HELD": 1
+      },
+      "new_generation_baseline_reports": 13,
+      "baseline_status_counts": {
+        "UNKNOWN": 12,
+        "HELD": 1
+      },
+      "continuation_hold_reports": 23,
+      "continuation_status_counts": {
+        "HELD": 23
+      },
+      "help_records_in_main_stream": 0
+    },
+    "C": {
+      "trial_id": "f1054552-963e-4bde-85e8-34f0af80c8f6",
+      "main_rgb_reports": 1,
+      "main_report_status_counts": {
+        "UNKNOWN": 1
+      },
+      "recovery_requests": 0,
+      "preflight_refresh_calls": 0,
+      "refresh_log_copies_not_extra_calls": 0,
+      "accepted_macro_attempts": 0,
+      "accepted_event_counter_snapshots": [],
+      "allocated_attempt_numbers": [],
+      "macro_operations": 0,
+      "macro_sdk_dispatches": 0,
+      "all_sdk_dispatches": 86,
+      "post_macro_reports": 0,
+      "post_macro_status_counts": {},
+      "new_generation_baseline_reports": 0,
+      "baseline_status_counts": {},
+      "continuation_hold_reports": 0,
+      "continuation_status_counts": {},
+      "help_records_in_main_stream": 1
+    }
+  },
+  "source_sha256": {
+    "A/pre-demo-events.jsonl": "975da401a24e3ef1de0024143da99b2a4abbf097553fdcb49d1e51540bf23275",
+    "A/official-workflow-events.jsonl": "0958dff2ec4f9d395eba0a090fa40325ed5ca5e3ade0b6d17cacfa2bc91bed20",
+    "A/full-fold-recovery.json": "b2cdccc6ef00289efcd0c8539187806688ffba6e12d1a81272f02ee099e640a5",
+    "A/observation-trace.json": "37572097de100bdb8ebf69c561576e3b9787a96b88499bf8ccfdb6443d21c730",
+    "B/pre-demo-events.jsonl": "0da6c69c2b701c95ca3ee8b4dc91713f9305c01c10c54bae191e1041d0e56335",
+    "B/official-workflow-events.jsonl": "9e3ecb7fa23c2d3c5fefc1c5ecd7bc20cf79a04f83fac822a22c92445fda49e8",
+    "B/full-fold-recovery.json": "588725c8a81b18752f710ac3b9f162d9784462f2927f04e1953e37b74b7fba0b",
+    "B/observation-trace.json": "8bd3f243e24607e87b43dd7e5e45c9df8bf3e52fc104a5fc592c3910894e0427",
+    "C/pre-demo-events.jsonl": "d4e02816d8161ae033ca713fe211b8e69e2dc70afa9c4b2e36fa3d069f625511",
+    "C/official-workflow-events.jsonl": "b8e93f747af7cc917d9299f8cfd6e7c9bfe495b8a8cb5fb2c599c5a389105f68",
+    "C/full-fold-recovery.json": "95a6448fb8054eedeb7fe344b8e7e06ffb63d8eba12c7f1a07e344ea57fba841",
+    "C/observation-trace.json": "50f4778bdc570ad915e9f787aa31950c22df0e58c31971146bec9f4c31e89b60"
+  },
+  "scope": "frozen diagnostic object and event mapping; no product or human acceptance",
+  "independence_claim": null
+}

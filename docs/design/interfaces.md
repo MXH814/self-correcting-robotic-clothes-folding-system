@@ -6,7 +6,17 @@
 
 ## 1. 身份、版本与时间
 
-所有请求/事件带 `schema_version, request_id, task_id, decision_id, control_generation, sequence_no, profile_version, policy_version`；仅已接受任务有 task_id。重试沿用 idempotency key，禁止复用到不同 payload，冲突返回 `IDEMPOTENCY_CONFLICT`。
+身份字段按消息类型适用，不能给尚未存在的对象伪造ID。`schema_version`标识对应的产品消息合同；请求有`request_id`，已接受任务才有`task_id`，恢复决策生成后才有`decision_id`。控制命令和相关反馈带`control_generation`及对应的`sequence_no`；profile/policy引用按任务冻结后校验。Start被拒或取消时不生成任务ID，普通观测/正常派发也不必伪造恢复决策ID。重试沿用idempotency key，禁止复用到不同payload，冲突返回`IDEMPOTENCY_CONFLICT`。
+
+| 消息阶段 | 必须关联的身份 | 此时不能假定已存在 |
+| --- | --- | --- |
+| Start与校验拒绝/取消 | request/idempotency及所选profile引用 | task、recovery decision、自动控制命令 |
+| 任务接受后的观测/状态 | 已接受task、冻结profile、观测/事件序号及时钟域 | 每个观测都对应一个恢复决策 |
+| 恢复提案 | task、decision、源观测、当前generation和模型/校准引用 | command ID或已消费的尝试号 |
+| 恢复接受与派发 | 已持久化的decision处置、command、generation、sequence及尝试号 | 物理执行一定完成或已获得最终质量 |
+| 动作反馈/停止证明 | 原task/command或stop request、所属generation及测量引用；停止证明须匹配当前代 | 新的恢复决策或无条件恢复权限；旧代反馈不能改写为新代 |
+
+本表澄清字段分配时点，不改变既有消息版本或验收阈值。当前诊断代码使用其独立`schema`及`trial_id`记录，不将产品Start字段反填进历史实跑；对应关系见[诊断模型](models/pre-diagnostic-models.md)。
 
 `capture_wall_monotonic_s` 必须属于协调器可比较的时钟域；远程相机需标明 clock domain、映射与不确定性，不能直接相减。无法可靠证明≤1s新鲜度时拒绝。`sim_time_s` 仅用于物理窗口，不与 wall time 混算；UTC 用于审计而非时效。
 

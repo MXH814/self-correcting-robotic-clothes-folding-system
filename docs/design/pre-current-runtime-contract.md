@@ -80,6 +80,8 @@ PR31已共享原始权重与完整RGB；[独立复算](../reviews/pr31-review.md
 
 ## 运行时计时的解释
 
+计次需按[诊断模型与产品映射](models/pre-diagnostic-models.md)分层：B为1次请求、1次宏接受、5项操作及61条底层派发。宏后13份几何报告为12次预热UNKNOWN和最后1份HELD；切代后另有13份新基线报告，再进行23次接续检查。它们不是多次独立恢复成功。前检刷新在两个日志流各存一份，但只计1次推理，A/B合计仍为958次记录调用。[逐项源绑定复算](../research/evidence/ma-pre-event-layers-20261109.json)。
+
 [可重算JSON](../research/evidence/ma-pr29-runtime-measurements-20261109.json)使用已绑定指纹的原始日志：
 
 | 量 | A | B | 含义 |

@@ -32,7 +32,7 @@ The user interface displays task state and device state separately. A pause bloc
 
 The local prototype represents these boundaries within a single browser session. Its event controls let a reviewer provide an acknowledgement, a timeout or a disconnection at a chosen step. This makes an ordering error observable during design review. Transport delay, process failure, billing and resource release require separate implementation evidence.
 
-The adopted recovery contract defines authority, candidate rejection and measured rest. Ma’s five decision records cover control, history, reproducibility and platform choice. The UI mapping and independent sample review connect those decisions to the household screens and intake fields. [Logical interfaces](interfaces.md) · [UI and record contract](ui-contract.md) · [Single-frame review](observation-review.md) · [Owner materials](ma-assignment2-material.md)
+The adopted recovery contract defines authority, candidate rejection and measured rest. Ma’s seven decision records cover control, history, reproducibility, platform choice, observation monitoring and restricted continuation. The UI mapping and independent sample review connect those decisions to the household screens and intake fields. [Logical interfaces](interfaces.md) · [UI and record contract](ui-contract.md) · [Single-frame review](observation-review.md) · [Owner materials](ma-assignment2-material.md)
 
 The logical and deployment views locate ownership and the intended process boundaries. The technology view distinguishes the Isaac runtime, inference worker and evidence stores. The storage engine and production transport remain design choices for Part III. [Logical and deployment views](architecture-presentation-draft.md) · [Technology and system interfaces](models/zhang-system-models.md)
 
@@ -71,6 +71,8 @@ sequenceDiagram
 The recording design distinguishes one trial, several detection clips and the candidate actions attached to a decision. Each accepted corrective dispatch consumes an attempt even if interrupted. This lets reviewers reconstruct why a candidate was accepted and what happened to the complete trial. [Recording specification](data-design.md)
 
 The editable system models document domain responsibilities and cardinalities, plus the start, pause, termination, resume, return and model activation sequences. They complement the recovery sequence and the joint review of this working draft. [System models](models/zhang-system-models.md) · [Recovery sequence and rejection paths](recovery-design.md)
+
+The [current diagnostic implementation model](models/pre-diagnostic-models.md) maps those product abstractions to the actual report, request, macro acceptance, operation and SDK-command records. B has one accepted attempt, five operations and 61 linked SDK commands. Its thirteen post-macro reports contain twelve warmup results followed by one HELD window; a separate thirteen-report baseline establishes the new generation before twenty-three continuation checkpoints. Neither sample counts nor overlapping windows represent independent recovery successes. A source-bound event analysis checks these identities and prevents double-counting the preflight report saved in two logs.
 
 ## A2-04 · Updated requirements
 
@@ -119,6 +121,8 @@ Browser automation also required scrutiny. Its first run retained references to 
 The source annotations explain how the design uses evidence on recovery, monitoring, simulation, garment readiness and staged continuation. The final editor will consolidate actually used sources, check the primary papers and verify 200–300 words per final entry. [Existing reference register, including DexGarmentLab](../research/annotated-references.md) · [APS-Net and AgentChord annotations](zhang-assignment2-material.md#l02--learning-efficient-robotic-garment-manipulation-with-standardization) · [Source register](../research/source-register.md)
 
 ## A2-09 · Team member contributions
+
+Ma has now confirmed understanding the current core design, accepting the personal contribution record and practising the individual slides. This is an explicit owner statement, separate from repository evidence. It does not confirm measured effort, another member's contribution, whole-team timing or classroom attendance. [Owner confirmation](ma-owner-confirmation-20261109.md)
 
 Current evidence adds distinct workstreams: Hu supplied the independently reproduced PR27 full detection package; Zhang implemented and captured the later phase-conditioned A/B/C diagnostic, including macro preflight, geometry continuation and video. Ma's AI-assisted workstream supplied the detector/recovery interfaces and independently audited provenance, model reproduction where accessible, execution records, geometry, regional outcomes and video alignment. ADR-MA-007, the current runtime contract and recorded timing analysis integrate these findings into the design. Personal contribution confirmation, understanding, presentation attendance and classroom feedback are not inferred from repository artifacts.
 
