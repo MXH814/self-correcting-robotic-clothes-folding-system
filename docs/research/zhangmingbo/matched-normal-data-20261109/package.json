@@ -1,0 +1,11 @@
+{
+  "file": "rnd-oe-normal-observations.zip",
+  "bytes": 480177447,
+  "sha256": "a2e4c4e22641b37108b90b14b658730f0a085c5185b8bb822b1c604ff2e5b5ac",
+  "trial_count": 3,
+  "crc_checked": true,
+  "original_local_filename": "RND-OE_正常观测交接.zip",
+  "release_url": "https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/tag/zhang-matched-normal-data-20261109",
+  "download_url": "https://github.com/MXH814/self-correcting-robotic-clothes-folding-system/releases/download/zhang-matched-normal-data-20261109/rnd-oe-normal-observations.zip",
+  "raw_bytes_unchanged": true
+}
