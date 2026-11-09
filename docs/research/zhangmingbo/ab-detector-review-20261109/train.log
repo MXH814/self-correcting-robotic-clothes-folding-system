@@ -1,0 +1,23 @@
+Encoding normal-01 0 / 468
+Encoding normal-01 80 / 468
+Encoding normal-01 160 / 468
+Encoding normal-01 240 / 468
+Encoding normal-01 320 / 468
+Encoding normal-01 400 / 468
+Encoded normal-01 468 frames in 12.5 s
+Encoding normal-02 0 / 466
+Encoding normal-02 80 / 466
+Encoding normal-02 160 / 466
+Encoding normal-02 240 / 466
+Encoding normal-02 320 / 466
+Encoding normal-02 400 / 466
+Encoded normal-02 466 frames in 12.48399999999674 s
+Encoding normal-03 0 / 467
+Encoding normal-03 80 / 467
+Encoding normal-03 160 / 467
+Encoding normal-03 240 / 467
+Encoding normal-03 320 / 467
+Encoding normal-03 400 / 467
+Encoded normal-03 467 frames in 12.60899999999674 s
+FIT_COMPLETE {"epochs": 10, "batch_size": 64, "lr": 0.0001, "seed": 17, "predictor_l2_losses": [10.263588905334473, 5.279488563537598, 3.240990161895752, 2.0725064277648926, 1.759020209312439, 1.656962513923645, 1.4771572351455688, 1.2975112199783325, 1.1988906860351562, 1.1301828622817993]} threshold 1.2066079378128052
+RESULT [{"name": "normal-01", "trial_id": "eff5d921-804f-4aeb-b1cb-2fe6d462ee23", "role": "fit", "status_counts": {"UNKNOWN": 413, "NORMAL": 55}, "reason_counts": {"UNSUPPORTED_PHASE": 405, "WINDOW_WARMUP": 8, "WITHIN_NORMAL_REFERENCE": 55}, "hold_max_score": 1.1992793083190918, "first_alarm": null}, {"name": "normal-02", "trial_id": "a4d9c33f-d5e9-40d2-985d-0b06f5f3a61e", "role": "calibration", "status_counts": {"UNKNOWN": 413, "NORMAL": 52, "ANOMALY": 1}, "reason_counts": {"UNSUPPORTED_PHASE": 405, "WINDOW_WARMUP": 8, "WITHIN_NORMAL_REFERENCE": 52, "OBSERVATION_OOD": 1}, "hold_max_score": 1.2066080808639525, "first_alarm": 15.400000803172588}, {"name": "normal-03", "trial_id": "c9eb5255-24f9-451e-88c1-837a1842b73a", "role": "heldout_development", "status_counts": {"UNKNOWN": 413, "NORMAL": 44, "ANOMALY": 10}, "reason_counts": {"UNSUPPORTED_PHASE": 405, "WINDOW_WARMUP": 8, "WITHIN_NORMAL_REFERENCE": 44, "OBSERVATION_OOD": 10}, "hold_max_score": 1.311397171020508, "first_alarm": 14.916667444631457}]

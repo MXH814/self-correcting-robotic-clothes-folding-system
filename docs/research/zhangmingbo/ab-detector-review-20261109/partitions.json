@@ -1,0 +1,20 @@
+{
+  "fit": [
+    {
+      "features": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_dev\\normal-01-features.jsonl",
+      "feature_sha256": "bae9c40cb71225d71c683fc80dbbfc98c0adf0bbdf4f450c53d869b4a7f63395",
+      "source_reference": "manifest.json#sha256=739bb464b88a2c7d3406517bb13b60b71fea09d7e8d42ef569c41718db782263",
+      "normal_review": true,
+      "review_reference": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_dev\\technical-review.json#sha256=8b2a62adbfa9e8ffab5fdd9d66fe4402bd7b91ecbe78b941d0a73f44cba85de4"
+    }
+  ],
+  "calibration": [
+    {
+      "features": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_dev\\normal-02-features.jsonl",
+      "feature_sha256": "c709aeb35865d85c98d6df2cbecc52d9959fab14f2f66a50762e160aa3fea874",
+      "source_reference": "manifest.json#sha256=90033b613dda257bca4264c49d0b2d5617219693dad9333cc86b1486e4d440ba",
+      "normal_review": true,
+      "review_reference": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_dev\\technical-review.json#sha256=8b2a62adbfa9e8ffab5fdd9d66fe4402bd7b91ecbe78b941d0a73f44cba85de4"
+    }
+  ]
+}

@@ -7,6 +7,13 @@
 *.docx binary
 *.png binary
 
+# Preserve hashed diagnostic evidence and store large model weights in Git LFS.
+docs/research/zhangmingbo/ab-detector-review-20261109/*.json -text whitespace=cr-at-eol
+docs/research/zhangmingbo/ab-detector-review-20261109/*.jsonl -text whitespace=cr-at-eol
+docs/research/zhangmingbo/ab-detector-review-20261109/package/*.json -text whitespace=cr-at-eol
+docs/research/zhangmingbo/ab-detector-review-20261109/package/detector.pt filter=lfs diff=lfs merge=lfs -text
+docs/research/zhangmingbo/ab-detector-review-20261109/resnet18-f37072fd.pth filter=lfs diff=lfs merge=lfs -text
+
 # Keep new algorithm producer fingerprints stable across Windows/Linux checkouts.
 research_tools/garment_trace_intake.py text eol=lf
 research_tools/recovery_candidates.py text eol=lf

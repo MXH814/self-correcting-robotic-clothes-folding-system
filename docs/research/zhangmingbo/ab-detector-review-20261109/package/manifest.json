@@ -1,0 +1,72 @@
+{
+  "schema": "observation-detector-package/1",
+  "method": "fiper-rnd-oe-resnet18-adaptation/1",
+  "trained": true,
+  "encoder_reference": "resnet18-imagenet1k-v1-pil-resize256-centercrop224/1#sha256=f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "context_reference": "pre-observation-context/1#sha256=69399af7f77adeb93296408633b2047b4274815de441cd8e38ce907365c41804",
+  "input_dim": 512,
+  "output_dim": 128,
+  "allowed_phases": [
+    "HOLD"
+  ],
+  "window": 5,
+  "max_gap_s": 0.25,
+  "threshold": 1.2066080808639525,
+  "threshold_method": "empirical-higher-quantile-of-trial-window-maxima/1",
+  "quantile": 0.95,
+  "calibration_trial_maxima": [
+    1.2066080808639525
+  ],
+  "normal_data": {
+    "fit": [
+      {
+        "features": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_dev\\normal-01-features.jsonl",
+        "feature_sha256": "bae9c40cb71225d71c683fc80dbbfc98c0adf0bbdf4f450c53d869b4a7f63395",
+        "source_reference": "manifest.json#sha256=739bb464b88a2c7d3406517bb13b60b71fea09d7e8d42ef569c41718db782263",
+        "normal_review": true,
+        "review_reference": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_dev\\technical-review.json#sha256=8b2a62adbfa9e8ffab5fdd9d66fe4402bd7b91ecbe78b941d0a73f44cba85de4"
+      }
+    ],
+    "calibration": [
+      {
+        "features": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_dev\\normal-02-features.jsonl",
+        "feature_sha256": "c709aeb35865d85c98d6df2cbecc52d9959fab14f2f66a50762e160aa3fea874",
+        "source_reference": "manifest.json#sha256=90033b613dda257bca4264c49d0b2d5617219693dad9333cc86b1486e4d440ba",
+        "normal_review": true,
+        "review_reference": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_dev\\technical-review.json#sha256=8b2a62adbfa9e8ffab5fdd9d66fe4402bd7b91ecbe78b941d0a73f44cba85de4"
+      }
+    ]
+  },
+  "training": {
+    "epochs": 10,
+    "batch_size": 64,
+    "lr": 0.0001,
+    "seed": 17,
+    "predictor_l2_losses": [
+      10.263588905334473,
+      5.279488563537598,
+      3.240990161895752,
+      2.0725064277648926,
+      1.759020209312439,
+      1.656962513923645,
+      1.4771572351455688,
+      1.2975112199783325,
+      1.1988906860351562,
+      1.1301828622817993
+    ]
+  },
+  "failure_probability": null,
+  "statistical_guarantee": null,
+  "full_fiper": false,
+  "online_authorized": false,
+  "calibration_inference_batch_size": 1,
+  "calibration_runtime_parity": {
+    "parent_package_id": "34b84359f0a3c32aae9df36236501aa69d8e3038d293b5e7770d2c96a05231ae",
+    "parent_threshold": 1.2066079378128052,
+    "reason": "match batch=1 online numerical inference",
+    "model_parameters_changed": false,
+    "heldout_used": false
+  },
+  "package_id": "31f9c052c5a26d63d45af66049b7bea6290d7edef1e19dad7812c235f1cd5a6a",
+  "checkpoint_sha256": "1d5921dcbc294eef24d8dc5eeb10e488018dd2c478fc8ce5367788b053f05ba6"
+}

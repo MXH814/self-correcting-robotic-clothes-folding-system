@@ -1,0 +1,75 @@
+{
+  "schema": "pre-normal-technical-review/1",
+  "reviewer_kind": "agent-technical-review",
+  "reviewer": "Codex ab_detector_package agent, current session",
+  "scope": "small-development-fit-only",
+  "independent_human_review": "pending",
+  "intake_sha256": "7d236b494ba360102a7845811aa311348a3374faf9751b21d588b6d0ccae65bf",
+  "accepted_trial_ids": [
+    "eff5d921-804f-4aeb-b1cb-2fe6d462ee23",
+    "a4d9c33f-d5e9-40d2-985d-0b06f5f3a61e",
+    "c9eb5255-24f9-451e-88c1-837a1842b73a"
+  ],
+  "review_method": "Verified source manifests, RGB/trace clocks/actions, unchanged normal collection configuration, and visually inspected ten representative frames per trial covering each sleeve HOLD beginning/middle/end, planned-release followup, start and final. No fault injection or recovery executed.",
+  "visual_findings": [
+    "Across all three trials, sleeve corners visibly follow the intended hand during representative lift/transfer frames; no gross detachment is visible in those samples.",
+    "Planned releases are supported by command events and subsequent images, excluded from HOLD model fitting and calibration.",
+    "Final images show folded cloth; recorded region proxy is not used as proof of local grasp or full product quality."
+  ],
+  "limitations": [
+    "Sampled images do not establish continuous contact or rule out subtle transient slip/occlusion.",
+    "These are near-identical scripted repetitions; one calibration trial cannot establish a statistical false alarm guarantee.",
+    "Normality is a bounded development assumption supported by logs and visual samples; not Hu or human independent acceptance.",
+    "The heldout trial is used once for development reporting; no threshold selection or hyperparameter tuning uses it."
+  ],
+  "review_images": [
+    {
+      "file": "normal-01-review.jpg",
+      "sha256": "60fab3e4ed66ac6a0cfd1a7f7548b396045a9a2a87339533f7bde138de45509c",
+      "frames": [
+        52,
+        67,
+        82,
+        88,
+        217,
+        233,
+        248,
+        254,
+        0,
+        467
+      ]
+    },
+    {
+      "file": "normal-02-review.jpg",
+      "sha256": "75ba3f92b7c63c95cb9ff87f5a239f03f6edb9dc2569a18558bf49806827d360",
+      "frames": [
+        52,
+        67,
+        81,
+        87,
+        217,
+        232,
+        247,
+        253,
+        0,
+        465
+      ]
+    },
+    {
+      "file": "normal-03-review.jpg",
+      "sha256": "4fb663f7712a9f21c33e527a42d117bd6b4aeb4830919112d6fb4237b8f43ffe",
+      "frames": [
+        52,
+        67,
+        81,
+        87,
+        216,
+        232,
+        247,
+        253,
+        0,
+        466
+      ]
+    }
+  ]
+}

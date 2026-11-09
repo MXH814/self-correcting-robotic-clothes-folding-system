@@ -1,0 +1,125 @@
+{
+  "schema": "pre-normal-intake/1",
+  "trials": [
+    {
+      "name": "normal-01",
+      "source": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261108\\正常观测三试次\\normal-01\\fold-recovery-bb3c5263-669f-4dcb-a997-00e8f60bbdb0",
+      "trial_id": "eff5d921-804f-4aeb-b1cb-2fe6d462ee23",
+      "manifest_sha256": "739bb464b88a2c7d3406517bb13b60b71fea09d7e8d42ef569c41718db782263",
+      "trace_sha256": "0bb1aa7a828c0d22c1d64bd0b115a19fa4e9489d361802308137c14de674a7df",
+      "rgb_sha256": "2a10b90aaf1872d58cd648ed735b492b042c4563243f90c3981288d92e1def1e",
+      "events_sha256": "9b0ecc71350677d117ff8678f2c18b03c77151361a869326cf6c7810f1a4a5f2",
+      "frames": 468,
+      "phase_counts": {
+        "OTHER": 202,
+        "HOLD": 63,
+        "RELEASE": 203
+      },
+      "hold_episodes": [
+        [
+          5.650000294670463,
+          7.150000372901559
+        ],
+        [
+          13.900000724941492,
+          15.450000805780292
+        ]
+      ],
+      "review_frames": [
+        52,
+        67,
+        82,
+        88,
+        217,
+        233,
+        248,
+        254,
+        0,
+        467
+      ],
+      "review_sheet": "normal-01-review.jpg",
+      "normal_review": null
+    },
+    {
+      "name": "normal-02",
+      "source": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261108\\正常观测三试次\\normal-02\\fold-recovery-12dec905-e6d8-4fba-8528-6cadf7c6bceb",
+      "trial_id": "a4d9c33f-d5e9-40d2-985d-0b06f5f3a61e",
+      "manifest_sha256": "90033b613dda257bca4264c49d0b2d5617219693dad9333cc86b1486e4d440ba",
+      "trace_sha256": "c5ac132d7d88f17f1dc9d0c5bd51eb8d7dde59a068ee14d622f232061eaa9be0",
+      "rgb_sha256": "0d66c7e598a321ae771943779607f28f0c3aae11b6b96b2b4c2f4f4d9830a8bd",
+      "events_sha256": "2449f3258414ec9c6ba76a6b0d0626e95cdcbcdb4c5027e1048e5e934a34e196",
+      "frames": 466,
+      "phase_counts": {
+        "OTHER": 202,
+        "HOLD": 61,
+        "RELEASE": 203
+      },
+      "hold_episodes": [
+        [
+          5.650000294670463,
+          7.100000370293856
+        ],
+        [
+          13.900000724941492,
+          15.400000803172588
+        ]
+      ],
+      "review_frames": [
+        52,
+        67,
+        81,
+        87,
+        217,
+        232,
+        247,
+        253,
+        0,
+        465
+      ],
+      "review_sheet": "normal-02-review.jpg",
+      "normal_review": null
+    },
+    {
+      "name": "normal-03",
+      "source": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261108\\正常观测三试次\\normal-03\\fold-recovery-41f7bcb7-bf26-4829-9eac-36cfdedd3797",
+      "trial_id": "c9eb5255-24f9-451e-88c1-837a1842b73a",
+      "manifest_sha256": "ecb66eac8d213d65784526e492756fe5c0749e4c98d726c49a85452a1fc2a6d6",
+      "trace_sha256": "be913ba86af4018285dada7b3c21ab00eb8f9db3dbda8de89afd88e262704e36",
+      "rgb_sha256": "ffa2e9343d2258a89e9c443f93b0aff4cba9663489b5789315ad18be340f25dc",
+      "events_sha256": "e71135463049dad21d361647de6b0271af1e06f2d3a4e80639cf13df15942084",
+      "frames": 467,
+      "phase_counts": {
+        "OTHER": 202,
+        "HOLD": 62,
+        "RELEASE": 203
+      },
+      "hold_episodes": [
+        [
+          5.650000294670463,
+          7.100000370293856
+        ],
+        [
+          13.86666738986969,
+          15.41666747070849
+        ]
+      ],
+      "review_frames": [
+        52,
+        67,
+        81,
+        87,
+        216,
+        232,
+        247,
+        253,
+        0,
+        466
+      ],
+      "review_sheet": "normal-03-review.jpg",
+      "normal_review": null
+    }
+  ],
+  "context_reference": "pre-observation-context/1#sha256=69399af7f77adeb93296408633b2047b4274815de441cd8e38ce907365c41804",
+  "independent_human_review": "pending",
+  "fit_started": false
+}

@@ -1,0 +1,115 @@
+{
+  "schema": "pre-runtime-parity-result/1",
+  "package_id": "31f9c052c5a26d63d45af66049b7bea6290d7edef1e19dad7812c235f1cd5a6a",
+  "package_directory": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_dev\\package-runtime-parity",
+  "threshold": 1.2066080808639525,
+  "old_threshold": 1.2066079378128052,
+  "model_parameters_unchanged": true,
+  "calibration_inference_batch_size": 1,
+  "heldout_used_for_threshold": false,
+  "independent_human_review": "pending",
+  "small_development_package_only": true,
+  "trials": [
+    {
+      "name": "normal-01",
+      "trial_id": "eff5d921-804f-4aeb-b1cb-2fe6d462ee23",
+      "role": "fit",
+      "status_counts": {
+        "UNKNOWN": 413,
+        "NORMAL": 55
+      },
+      "reason_counts": {
+        "UNSUPPORTED_PHASE": 405,
+        "WINDOW_WARMUP": 8,
+        "WITHIN_NORMAL_REFERENCE": 55
+      },
+      "max_score": 1.1992793083190918,
+      "alarm_observations": []
+    },
+    {
+      "name": "normal-02",
+      "trial_id": "a4d9c33f-d5e9-40d2-985d-0b06f5f3a61e",
+      "role": "calibration",
+      "status_counts": {
+        "UNKNOWN": 413,
+        "NORMAL": 53
+      },
+      "reason_counts": {
+        "UNSUPPORTED_PHASE": 405,
+        "WINDOW_WARMUP": 8,
+        "WITHIN_NORMAL_REFERENCE": 53
+      },
+      "max_score": 1.2066080808639525,
+      "alarm_observations": []
+    },
+    {
+      "name": "normal-03",
+      "trial_id": "c9eb5255-24f9-451e-88c1-837a1842b73a",
+      "role": "heldout_development",
+      "status_counts": {
+        "UNKNOWN": 413,
+        "NORMAL": 44,
+        "ANOMALY": 10
+      },
+      "reason_counts": {
+        "UNSUPPORTED_PHASE": 405,
+        "WINDOW_WARMUP": 8,
+        "WITHIN_NORMAL_REFERENCE": 44,
+        "OBSERVATION_OOD": 10
+      },
+      "max_score": 1.311397171020508,
+      "alarm_observations": [
+        {
+          "observation_id": "f2ab3534-6976-44ea-aca0-05b55fc75fb2",
+          "sim_time_s": 14.916667444631457,
+          "score": 1.2105993270874023
+        },
+        {
+          "observation_id": "458f5e11-e230-4571-a04c-300fdeeb457a",
+          "sim_time_s": 14.96666744723916,
+          "score": 1.2589914560317994
+        },
+        {
+          "observation_id": "94551d61-e8a7-40d5-96bb-a3fa7f6da689",
+          "sim_time_s": 15.016667449846864,
+          "score": 1.2768969058990478
+        },
+        {
+          "observation_id": "b5cb2a05-0406-44b5-8490-6d3f4d644c89",
+          "sim_time_s": 15.066667452454567,
+          "score": 1.2741830825805665
+        },
+        {
+          "observation_id": "fa5c8c62-91bb-40d3-b4f7-fe5131204a6f",
+          "sim_time_s": 15.11666745506227,
+          "score": 1.261168622970581
+        },
+        {
+          "observation_id": "917db76d-8e4b-4bdc-b610-57c28ded943f",
+          "sim_time_s": 15.166667457669973,
+          "score": 1.2482205629348755
+        },
+        {
+          "observation_id": "dacb13b1-8373-4021-901a-2339c99f35f5",
+          "sim_time_s": 15.216667460277677,
+          "score": 1.2218127489089965
+        },
+        {
+          "observation_id": "c96d229b-081a-43aa-91c6-dba49b2fe43c",
+          "sim_time_s": 15.316667465493083,
+          "score": 1.221063494682312
+        },
+        {
+          "observation_id": "9f946e5b-0977-4ce7-9644-40a7bb9d752b",
+          "sim_time_s": 15.366667468100786,
+          "score": 1.2615680932998656
+        },
+        {
+          "observation_id": "c56160a4-be5f-4bb7-922a-002601fad45c",
+          "sim_time_s": 15.41666747070849,
+          "score": 1.311397171020508
+        }
+      ]
+    }
+  ]
+}
