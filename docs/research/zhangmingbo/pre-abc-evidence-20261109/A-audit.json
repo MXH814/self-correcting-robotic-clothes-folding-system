@@ -1,0 +1,53 @@
+{
+  "schema": "official-ab-audit/1",
+  "trial_id": "db18b274-f2e2-4cf2-9962-856a8364aad7",
+  "scenario": "normal-a",
+  "source_hashes_verified": true,
+  "observations": 480,
+  "rgb_frames": 466,
+  "dispatches": 774,
+  "continuous_unique_rgb_reports": 465,
+  "detection_status_counts": {
+    "UNKNOWN": 413,
+    "NORMAL": 52
+  },
+  "detection_phase_counts": {
+    "OTHER": 201,
+    "LEFT_SLEEVE_HOLD": 29,
+    "RELEASE": 204,
+    "RIGHT_SLEEVE_HOLD": 31
+  },
+  "anomaly_reports": [],
+  "first_injection_sim_s": null,
+  "dispatches_after_help": null,
+  "recovery_attempts": 0,
+  "macro_operations": [],
+  "macro_dispatches": 0,
+  "continuous_geometry_checks": 0,
+  "hold_check_passed": false,
+  "hold_check_method": null,
+  "hold_check_report": null,
+  "continuation_geometry_checks": 0,
+  "continuation_geometry_recomputed": false,
+  "continuation_raw_ood_reports": 0,
+  "continuation_policy": "continuous-simulation-hold-with-rgb-ood-journal/1",
+  "fixed_continuation_started": false,
+  "final_state": "MONITORED_CONTROLLER_COMPLETED",
+  "help_reason": null,
+  "complete_fold_recorded": true,
+  "expected_case_automatic_checks_passed": true,
+  "upstream_region_proxy": {
+    "upstream_success": true,
+    "inside_count": 2048,
+    "point_count": 2048,
+    "minimum_ratio": 0.88,
+    "boundary_world_xy_m": [
+      -0.3337066054344177,
+      0.3425312519073486,
+      0.6249854803085327,
+      1.1948859453201295
+    ]
+  },
+  "independent_human_review": "pending",
+  "product_stop_acceptance": null
+}

@@ -1,0 +1,312 @@
+{
+  "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+  "garment": "TCLC_018",
+  "injection": "early_open_after_first_lift",
+  "dr02_label": null,
+  "candidate": null,
+  "product_legality": null,
+  "regrasp_lateral_offset_m": 0.0,
+  "resume_at": "upstream first-sleeve transfer, third left dense move",
+  "upstream_sha256": {
+    "Env_StandAlone/Fold_Tops_Env.py": "ccb545bf3af108cee112dd83600fa2b730bf2c0e8e6488d78044fbfaa948d66e",
+    "Env_Config/Robot/DexLeft_Ur10e.py": "5dbb3132c11bb89bcfcdabbdb0325d15171398f8a5822bfa7196426fc25b379b",
+    "Env_Config/Robot/BimanualDex_Ur10e.py": "dbfc20cb34fa2a9113aae239a93c99a082a0b4131e55e7e27ef2ee5adb407524",
+    "Env_Config/Utils_Project/Position_Judge.py": "94c61f0705a43736d94d71d01407bc834fe004303976d8fd60f137fb2ced3804"
+  },
+  "checkpoints": {
+    "before-injection": {
+      "sim_step": 359,
+      "sim_time_s": 5.983333645388484,
+      "read_begin_monotonic_ns": 516987531000000,
+      "read_end_monotonic_ns": 516987531000000,
+      "image": "before-injection.png",
+      "image_sha256": "66098aa839de182d0184c54ef5814a4070834677d2ff8f797cc4ee18e7e78faf",
+      "rendering_time_s": 5.950000310316682
+    },
+    "final": {
+      "sim_step": 1851,
+      "sim_time_s": 30.85000160895288,
+      "read_begin_monotonic_ns": 517189656000000,
+      "read_end_monotonic_ns": 517189656000000,
+      "image": "final.png",
+      "image_sha256": "67f0705c2bff636f604b57fc281b1eea1d138ae462305d86fb2153086a634f6e",
+      "rendering_time_s": 30.800001606345177
+    }
+  },
+  "candidate_steps": [],
+  "judgment": {
+    "upstream_success": true,
+    "inside_count": 2002,
+    "point_count": 2048,
+    "minimum_ratio": 0.88,
+    "boundary_world_xy_m": [
+      -0.33356340527534484,
+      0.34700729250907897,
+      0.6249854803085327,
+      1.1992618799209596
+    ]
+  },
+  "pre_scenario": "fault-b",
+  "detection_entry": "OfficialPreAdapter/DetectionRuntime",
+  "recovery_attempts": 1,
+  "fixed_continuation_started": true,
+  "final_control_state": "MONITORED_CONTROLLER_COMPLETED",
+  "product_stop_verified": false,
+  "independent_review_status": "pending",
+  "geometry_profile": {
+    "table_z_m": 0.0,
+    "min_cloth_height_m": 0.15,
+    "max_hand_distance_m": 0.12,
+    "window_s": 0.2,
+    "min_samples": 3,
+    "max_gap_s": 0.25,
+    "scope": "declared simulation hold heuristic; not product acceptance"
+  },
+  "intended_patch_vertex_ids": [
+    5198,
+    5196,
+    4864,
+    4808,
+    5116,
+    5158,
+    5195,
+    4981,
+    5197,
+    4807,
+    4988,
+    4987
+  ],
+  "wall_elapsed_s": 315.172,
+  "alerts": [
+    {
+      "observation_id": "306946eb-3787-4931-af68-eef9608e4593",
+      "observed_sim_s": 7.033333700150251,
+      "score": 1.2310325622558593,
+      "threshold": 1.2066080808639525,
+      "dispatch_count": 87
+    }
+  ],
+  "macro_execution": [
+    {
+      "operation": "release",
+      "begin": {
+        "sim_time_s": 7.3000003807246685,
+        "sim_step": 438,
+        "wall_monotonic_ns": 517005921000000
+      },
+      "command_ids": [
+        "59a595f9-26ea-4dfc-813a-dc54289adeb1"
+      ],
+      "candidate_id": "e9460be7-06ee-43f8-8da7-84c785a89ffb",
+      "extra_wait_steps": 45,
+      "requested": {
+        "hand_state": "open"
+      },
+      "sdk_result": null,
+      "end": {
+        "sim_time_s": 8.383333770558238,
+        "sim_step": 503,
+        "wall_monotonic_ns": 517018609000000
+      }
+    },
+    {
+      "operation": "retreat",
+      "begin": {
+        "sim_time_s": 8.383333770558238,
+        "sim_step": 503,
+        "wall_monotonic_ns": 517018625000000
+      },
+      "command_ids": [
+        "0b65628a-e20a-4daa-8c51-a4d5fea1fd3a",
+        "50361bec-da2e-4337-af99-7356af506af1",
+        "76c73746-80f3-4c4c-827d-03a2e0b4d73d"
+      ],
+      "candidate_id": "e9460be7-06ee-43f8-8da7-84c785a89ffb",
+      "extra_wait_steps": 0,
+      "requested": {
+        "target_world_m": [
+          -0.45532453060150146,
+          0.6106644868850708,
+          0.35
+        ],
+        "orientation_wxyz": [
+          0.5789554221486758,
+          -0.5789554221486758,
+          -0.4059687416102977,
+          0.4059687416102977
+        ],
+        "dense_sample_scale_m": 0.01
+      },
+      "sdk_result": true,
+      "end": {
+        "sim_time_s": 8.433333773165941,
+        "sim_step": 506,
+        "wall_monotonic_ns": 517018796000000
+      }
+    },
+    {
+      "operation": "regrasp",
+      "begin": {
+        "sim_time_s": 8.433333773165941,
+        "sim_step": 506,
+        "wall_monotonic_ns": 517018796000000
+      },
+      "command_ids": [
+        "e2498ea2-b09c-475e-ba80-0ad030d04b07",
+        "a33692ac-a790-4b96-a6a1-90836eafea47",
+        "66b20374-dc30-4c43-a3dd-4524dc606e56",
+        "36e2266d-540b-4cf6-8115-6611e85cf5aa",
+        "35c955d0-6ef3-4d5b-a3b6-bdda1bee9db3",
+        "631a8375-fb3a-4e13-8317-83c23ad11674",
+        "495f950c-313d-4d3f-b2c0-618251ea4d9b",
+        "8d3f691d-7f03-46d1-a4a3-63dc7f32c4f8",
+        "d61546fd-66f7-4ea8-9520-f432e72d78ee",
+        "e60bb4c6-e233-46a1-8945-cb91aa636b83",
+        "17cae972-e963-4190-ac31-0068e49601ff",
+        "33b0fcb4-69b9-40a5-840a-c2b805d676ae",
+        "e238afde-833c-46e9-b402-493f9980ccec",
+        "4d593f79-1fda-45c7-ad99-67339ea284a4",
+        "d8836a69-5a8d-4e55-8c50-2936a96a48f0",
+        "bb7c8d37-d128-4e15-8b46-16fb00c10604",
+        "8e1cb1ec-088e-4d17-a40d-12555193f72f",
+        "ef0b4488-ea21-47aa-ac05-df3614aadec6",
+        "dd5c3131-3c89-40de-8e0c-ba0e65c08d2b",
+        "9bd2f911-1c08-44e5-b888-160bfefb03eb",
+        "2399941c-452a-410d-9c7d-74b83a9d1afa",
+        "0162fa52-f23b-4173-86a1-48963ff55501",
+        "b0a1f8ab-29f3-42ba-b333-9e204709c8f2",
+        "f731632d-e6fa-4b61-93ac-6ce26c0bb38a",
+        "6ec813a5-0257-4cb3-a065-2115fbe22bc4",
+        "d603b749-b299-4ac0-b36e-b891507d8c96",
+        "0fb247c1-742f-4c6b-bc50-90bdfe65892f",
+        "6871d6ce-ba7a-40a6-b616-0cb1fd66c555",
+        "24b41592-5f48-4a04-8b48-a4c9bad43d96",
+        "6137d204-39f0-4340-94fb-e6fedf744e8f",
+        "eccf78dc-2e85-4a9f-a7d4-055fd19bdcdb",
+        "b34528d9-bba8-4b0b-aa04-0b1f3fca7e9a",
+        "d4bf997c-899d-44db-8501-8c1181ec5b02"
+      ],
+      "candidate_id": "e9460be7-06ee-43f8-8da7-84c785a89ffb",
+      "extra_wait_steps": 0,
+      "requested": {
+        "target_world_m": [
+          -0.45532453060150146,
+          0.6106644868850708,
+          0.019999999552965164
+        ],
+        "orientation_wxyz": [
+          0.5789554221486758,
+          -0.5789554221486758,
+          -0.4059687416102977,
+          0.4059687416102977
+        ],
+        "dense_sample_scale_m": 0.01
+      },
+      "sdk_result": true,
+      "end": {
+        "sim_time_s": 8.983333801850677,
+        "sim_step": 539,
+        "wall_monotonic_ns": 517024734000000
+      }
+    },
+    {
+      "operation": "close",
+      "begin": {
+        "sim_time_s": 8.983333801850677,
+        "sim_step": 539,
+        "wall_monotonic_ns": 517024734000000
+      },
+      "command_ids": [
+        "fb8c7dc5-66af-4b27-9dc2-6ea989ab96ca"
+      ],
+      "candidate_id": "e9460be7-06ee-43f8-8da7-84c785a89ffb",
+      "extra_wait_steps": 12,
+      "requested": {
+        "hand_state": "close"
+      },
+      "sdk_result": null,
+      "end": {
+        "sim_time_s": 9.51666716299951,
+        "sim_step": 571,
+        "wall_monotonic_ns": 517030296000000
+      }
+    },
+    {
+      "operation": "lift",
+      "begin": {
+        "sim_time_s": 9.51666716299951,
+        "sim_step": 571,
+        "wall_monotonic_ns": 517030296000000
+      },
+      "command_ids": [
+        "e13e1b97-7293-46e1-ac6c-345e66fd575d",
+        "00974b7e-4d52-4288-af14-f7cf4a56d538",
+        "2a6abe80-3613-4682-be2d-898f87c3d322",
+        "bbb6749b-ef54-4346-9e16-c6d86a8cd497",
+        "64fef117-6683-4eca-8c5c-6727aee23356",
+        "18ba2780-2693-4b3e-bdfd-284d7675f046",
+        "040d6f9f-6713-4d43-b79e-5bc714a0a072",
+        "555d082e-a70d-47ab-b9cb-79d9b15d30b8",
+        "597c0147-1a6a-476b-ae6d-5504ff32f627",
+        "7e9ed2ec-a1a1-4fe7-b83f-8ee563444eb7",
+        "f6e94b76-94d1-4abd-97fd-219fc18460bb",
+        "50be766b-0917-464f-80ce-f3ebb7f9a627",
+        "242aae7c-3d62-467d-ad90-40a7ec0e9c30",
+        "f97ac93f-af1e-47f5-9f67-cb5da49b6219",
+        "5764c3b3-e00e-456d-8f7e-d279a606f83d",
+        "c08a9a0c-727f-4030-b333-fc3a81cc7730",
+        "fa9e84c6-3887-4588-99b9-d92df6408b3f",
+        "e7817bfd-fff2-4331-a798-409d6506173b",
+        "2dc86c26-3390-4685-a5b6-3780689be368",
+        "caead148-3f0d-4c0b-b154-cc66aacaa0dc",
+        "5077fb1b-3824-4ad4-9dbf-affa89f5b620",
+        "09a9f289-8dd7-4c90-b3fc-1c82cc6cc84e",
+        "decd9914-2cfd-4535-8d6a-3950986a3fac"
+      ],
+      "candidate_id": "e9460be7-06ee-43f8-8da7-84c785a89ffb",
+      "extra_wait_steps": 0,
+      "requested": {
+        "target_world_m": [
+          -0.45532453060150146,
+          0.6106644868850708,
+          0.3
+        ],
+        "orientation_wxyz": [
+          0.5789554221486758,
+          -0.5789554221486758,
+          -0.4059687416102977,
+          0.4059687416102977
+        ],
+        "dense_sample_scale_m": 0.01
+      },
+      "sdk_result": true,
+      "end": {
+        "sim_time_s": 9.900000516325235,
+        "sim_step": 594,
+        "wall_monotonic_ns": 517034953000000
+      }
+    }
+  ],
+  "detection_status_counts": {
+    "UNKNOWN": 417,
+    "NORMAL": 70,
+    "ANOMALY": 5
+  },
+  "detection_phase_counts": {
+    "OTHER": 202,
+    "LEFT_SLEEVE_HOLD": 55,
+    "RELEASE": 203,
+    "RIGHT_SLEEVE_HOLD": 32
+  },
+  "chain": {
+    "decision_reference": "recovery-decision.json",
+    "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+    "candidate_id": "e9460be7-06ee-43f8-8da7-84c785a89ffb",
+    "trace_reference": "observation-trace.json",
+    "context_reference": "continuation-context.json#sha256=ce2f32a5e9acb72e5ba02a5626e2b10d8537548786915057d6fd55adfad264d1",
+    "local_recovery_label": null,
+    "srs_quality_label": null,
+    "autonomous_success": null,
+    "independent_review_status": "pending"
+  }
+}

@@ -58,7 +58,7 @@ def current_state(segment, target, events):
             if operation['begin']['sim_time_s'] <= target < operation['end']['sim_time_s']:
                 return '恢复操作 · ' + OPERATIONS[operation['operation']]
         if any(event['kind'] == 'FIXED_CONTINUATION_ENABLED' for event in events):
-            return '持有复检通过 / 接续'
+            return '复检通过 / 固定流程接续'
         if any(event['kind'] == 'MACRO_RESULT' for event in events):
             return '恢复后连续持有检查'
         if any(event.get('request', {}).get('kind') == 'REQUEST_RECOVERY_PREFLIGHT'
@@ -145,7 +145,8 @@ def render(segment, index, target, mode, caption=None):
         checks = [event for event in events if event['kind'] in ('RECOVERY_CHECK','CONTINUATION_HOLD_CHECK')]
         if checks:
             check = checks[-1]['report']
-            note = f"几何检查 {check['status']} / {check.get('sample_count', 0)} 样本\n恢复接续持续检查持有\n仿真内部材料片与指尖坐标"
+            label='历史几何' if target-checks[-1]['clock']['sim_time_s']>.25 else '新几何检查'
+            note = f"{label} {check['status']} / {check.get('sample_count', 0)} 样本\n检查日志 {checks[-1]['clock']['sim_time_s']:.3f}s\n仿真内部材料片与指尖坐标"
         else:
             note = 'RGB 编码与五帧过去窗口\n执行前取得测量证据\n宏后采新观测检查持有'
     elif key == 'A':

@@ -1,0 +1,51 @@
+{
+  "trial_id": "f1054552-963e-4bde-85e8-34f0af80c8f6",
+  "scope": "incomplete_pre_demo_missing_fiper_inputs",
+  "files": [
+    {
+      "file": "continuation-context.json",
+      "bytes": 4633,
+      "sha256": "9422b31ede56b63146a449457b4384b067f5872a028cf9f38a209f9856f94749"
+    },
+    {
+      "file": "full-fold-recovery.json",
+      "bytes": 2510,
+      "sha256": "95a6448fb8054eedeb7fe344b8e7e06ffb63d8eba12c7f1a07e344ea57fba841"
+    },
+    {
+      "file": "help-requested.png",
+      "bytes": 284080,
+      "sha256": "cd66c54308d5de3027d5ba7faefa849d795cce3146428accff7478af52b27d30"
+    },
+    {
+      "file": "initial-point-cloud.npz",
+      "bytes": 21620,
+      "sha256": "12302830f1d790c78b4239d55d731e16aa534256d1fcc2b672617c02e065064c"
+    },
+    {
+      "file": "observation-trace.json",
+      "bytes": 250106,
+      "sha256": "50f4778bdc570ad915e9f787aa31950c22df0e58c31971146bec9f4c31e89b60"
+    },
+    {
+      "file": "official-pre-config.json",
+      "bytes": 6205,
+      "sha256": "a75cda4978f41493c2a8cbe471c9d06230228e440178beee76fbf638d71b984c"
+    },
+    {
+      "file": "official-workflow-events.jsonl",
+      "bytes": 280,
+      "sha256": "b8e93f747af7cc917d9299f8cfd6e7c9bfe495b8a8cb5fb2c599c5a389105f68"
+    },
+    {
+      "file": "pre-demo-events.jsonl",
+      "bytes": 2080,
+      "sha256": "d4e02816d8161ae033ca713fe211b8e69e2dc70afa9c4b2e36fa3d069f625511"
+    },
+    {
+      "file": "rgb-frames.npz",
+      "bytes": 19795176,
+      "sha256": "7a3b4d98a3c6b802343c630bdad606e8b1603c57ac7b5312f562cde65f251e9f"
+    }
+  ]
+}

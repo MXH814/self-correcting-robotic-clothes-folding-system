@@ -1,0 +1,29 @@
+[
+  {
+    "case": "A",
+    "file": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\official-A-v3-final\\fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3\\rgb-frames.npz",
+    "bytes": 155057780,
+    "sha256": "bcc85b09749e5296dff3f0099ab830ddb084744d5597f3dc48b82e02d624b9ca",
+    "storage": "local source retained"
+  },
+  {
+    "case": "B",
+    "file": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\official-B-v3-continuation\\fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa\\rgb-frames.npz",
+    "bytes": 184529397,
+    "sha256": "99f75fd4c971b7329f7177fc18e0a1a11ef292f1e24362ea2252c03ea88d42d4",
+    "storage": "local source retained"
+  },
+  {
+    "case": "C",
+    "file": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\official-C-01\\fold-recovery-221bcf7f-113f-4a91-b7cd-647be33eeda9\\rgb-frames.npz",
+    "bytes": 19795176,
+    "sha256": "7a3b4d98a3c6b802343c630bdad606e8b1603c57ac7b5312f562cde65f251e9f",
+    "storage": "local source retained"
+  },
+  {
+    "file": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_v2\\package-preserved-floor\\detector.pt",
+    "bytes": 132726810,
+    "sha256": "6decf0155074222b7fd69a720db103b9bbd87e3b7f3034b4b193db74745b4dd4",
+    "storage": "local source retained"
+  }
+]

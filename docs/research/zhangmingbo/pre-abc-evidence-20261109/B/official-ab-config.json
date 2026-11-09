@@ -1,0 +1,190 @@
+{
+  "schema": "official-ab-run/1",
+  "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+  "scenario": "fault-b",
+  "producer_sha256": {
+    "tools/simulation/audit_dr02_geometry.py": "3853e53c3f4437d3630f026b6eb514503f46b34a186f5510d1ddf15b56c4c373",
+    "tools/simulation/build_pre_abc_evidence.py": "35c8be3d492d063fd716fa6f9e95d3ecfa07105c6268b8e051a155247ad344cb",
+    "tools/simulation/build_pre_z3_evidence.py": "d405cb3cf61aa115069c57f87a30189c8e7ac829a54fbb2e60bd8b4eb1fdb18c",
+    "tools/simulation/capture_runtime_io.py": "809a178e04b4759dff6060442426a2b718c9d49b219f56facbc69b67f9e29e2e",
+    "tools/simulation/download_demo_assets.py": "7b8096ee5d858d15a72f57c1c273f80b165ecdd3efd4bbb12cc22103828162be",
+    "tools/simulation/export_numeric_trajectory.py": "d8b362930edceb21ba83053d9887e7982840bd68a49aaf39215a09e58ee83a03",
+    "tools/simulation/export_observation.py": "b8335131e4aa4398fe292f54ae532659ede7ed97eadb4376748895e60d0d790d",
+    "tools/simulation/fiper_input_gate.py": "a94a1702795c94d4f4e7cf48a089d490dc8fb719ff855f11a3cc0c20f6c51619",
+    "tools/simulation/fiper_pre_evidence.py": "51528265e34be35df24734c357bde9fecc07c68bebe5feac191b5ac43c3d9e22",
+    "tools/simulation/fold_camera_evidence.py": "0ee6c9bc6b32a1fab8a04e73eb6a1e1c1b672fb606701e70512cf86f4969b19e",
+    "tools/simulation/fold_recovery_chain.py": "86c08c0ed242660d14bfd7390227ac5ea3b9edafafa9119f4e81037924c1e5fe",
+    "tools/simulation/fold_recovery_evidence.py": "a671699371f74a2424462fc974437f03815912e3b5c9e54bbb33e2fe79a8591c",
+    "tools/simulation/garment_dr02_capture.py": "343dd1b3ad02a62b9eae9111e99e2dbef3a5c1b31ab9d341afebcf825f34771f",
+    "tools/simulation/garment_fault_probe.py": "a616313fadbe39e0e732d9c8782c06025c19ada65fc9d7f3dd3a8f590f500923",
+    "tools/simulation/garment_observation_trace.py": "88bed809f06fbd2e7e562839159e27d08b72374f61b9bc388996c84dd1159475",
+    "tools/simulation/official_ab_evidence.py": "1e8d199bc12d069da896c6ea6407601d69a4127329ec1a00e225cee81e894e85",
+    "tools/simulation/official_pre_adapter.py": "6c40af31b660d5ff3b591c7c1dd9b8479cc7093ac7ba520e93157c04bd3c096e",
+    "tools/simulation/official_pre_evidence.py": "2a0371af7b1103ac6fb43b0c93c021bb4c4b74897b3f01d965367e45d114dc94",
+    "tools/simulation/package_pre_observations.py": "13c94778ba857d8bd8b4ef1fcf9894e1ac7ff28fce95769039c863afebad519c",
+    "tools/simulation/pre_detection_bridge.py": "7a9f8ab24b9a4f307ae56319d0a94d658d35201d165bd7eff59583219bcf7cb7",
+    "tools/simulation/pre_execution_support.py": "a2e0e3912ba5f8f9e68241fbfa0d744f6edd37c553177eff57898d4ff25da0de",
+    "tools/simulation/pre_observation_evidence.py": "327e628a8ae0f5bd0d84a5082825568b278b4dd66e7a7d7110bb01350c394e3c",
+    "tools/simulation/pre_observation_reader.py": "b64849af5533a05635de0648711fba62280e05e0ba25d3ec65abeb544ed485bc",
+    "tools/simulation/pre_runtime_bridge.py": "8bc93c2140282994c28e2ff55dda75e31806032e9a630318fe6a03a0762ee376",
+    "tools/simulation/runtime_control_probe.py": "15a51dee42ce3b9ed2c0d04ad8528bb5141c5b573292d109a3d133534a010c85",
+    "tools/simulation/run_fold_local.py": "c502599c519c62968ea5144baf323a1c7cd97f2b7b15729e798195f1b40f8d8b",
+    "tools/simulation/run_pre_normal_batch.py": "094bf514e358abe22c7af47e98a74a326450302f40b2707954d20e6d85f80cfc",
+    "tools/simulation/smoke_test.py": "ed959330aafe0a1f7230da3a10cf2b84c7e8c81e24e145b061f5f3e84bd25bea",
+    "tools/simulation/verify_demo_assets.py": "58e599e5886dc8dbfd3f060a1ec5107b74ea4df48ab99bdaa7e9704d63141cb2",
+    "tools/simulation/verify_fiper_refusal.py": "e450a63e4580a8b558c65a5d054cda7d20ab8f7c90c625fd017da55c5baf0850",
+    "tools/simulation/verify_fold_recovery_chain.py": "5f856fe493021d579f4e0fc880e12b3a245e367cf29fda07f0a38347fac64d3b",
+    "tools/simulation/verify_garment_observation_trace.py": "c3c342a730c7dcfc735c87a97fef87d9de206a8de237287123a2005172316dc5",
+    "tools/simulation/verify_midstate_snapshots.py": "1e3d4b82f3ce6c56cf57d6481e33c2f2987ed59443f842a231e4e39a6b7a7305",
+    "tools/simulation/verify_official_ab.py": "0bceb51a4c11511f8857ae4521e03b1a66e228ee857514cbc1c87a0421f97234",
+    "tools/simulation/verify_pre_observations.py": "7d4a04b3771ef6dab0ac074860735f920e56276f894edbf1be2b25bdc4d3da5d",
+    "research_tools/action_chain_intake.py": "d502e0a9687ae46351a1a5784e01837fcecdb726b5f1af351346170b0cfd78de",
+    "research_tools/detection_encoder.py": "e5dfebd6b770ff2f39d5ddae295de96ed6bd582437c533cf80fb181e56eec6d5",
+    "research_tools/detection_recovery.py": "f2899c2dffabde388ea6d2bb5f382d615913f7ad6b776988a7b77929f263e178",
+    "research_tools/detection_runtime.py": "bd8b4b88de2f6bb83a8a243b682ccff996cb45f76a956af5ba6cdc4dd8001a12",
+    "research_tools/dex_dataset.py": "18f103e2ea0e24c52510c3f408e1b32d68cc753cdad336503bb8c65ddbda9cf8",
+    "research_tools/diagnostics.py": "0bbf853cdedfcaf101e3f32bb2f7fb90c368bf4f858268ee641bcd3069b0acfb",
+    "research_tools/garment_trace_intake.py": "f10c4a2fbe8a6558a8dabba895cd21c18272d0444a96da18c272c350ec8c0fcf",
+    "research_tools/handoff_audit.py": "430a74a0fb89a4bbc0e0cb78ed3ad870ca904a92130b7871b98c4539fda1b189",
+    "research_tools/legacy_features.py": "b21ff3d1aa59de27de6486f9bffe02385c3cabf2224e84c4c2a27a226a594833",
+    "research_tools/legacy_observations.py": "1d196df8aafa74687400f5f4dab6b49058620e444116a657ccf7d06262825449",
+    "research_tools/neural_baselines.py": "d70ff7c5d852caf0062b6b9af633e8db51e280046a31b2b0e2cb9d4618fe66c5",
+    "research_tools/observation_detector.py": "2330b2f8962556bd95566eb8b84326a5fa1cf6317ef4fdf0e08f18ded18d2a58",
+    "research_tools/prepare_pre_normal_detector.py": "ea8fec8ec8fbba12fed484ca141a0e3945c925e5c5d412a737e5d42f1c74616f",
+    "research_tools/prepare_sleeve_detector.py": "e8e400f57cf460ec5d414520b01ea03a1ac9f93837d87529a98d140b1ff1309b",
+    "research_tools/pre_observation_rnd.py": "eb9f9f5f03ac6ae078727b15c80aca4665bd0f3d8cdad6c77d64d244cba0948f",
+    "research_tools/recovery_candidates.py": "410c4ff28af4c96a545bcf3fab6a39b33a02bae5bedc0baad4bd2155fc084bbe",
+    "research_tools/recovery_dataset.py": "ddf2c70fcf8a1bce129814a05ec45316509aa035295e70bca491ef765a4f218f",
+    "research_tools/recovery_gate.py": "5403e9c121ed1c11a630bd64685b55a23393a13301155d62c290d74487b9706c",
+    "research_tools/resources.py": "c4fae6c2cd82daab2f402d056e161921a2c4fc2bcaa45626667ce84c041753b8",
+    "research_tools/runtime_intake.py": "5d0702303939e515a587e402480788be58dd1921bf956fcb0119d322edbf4a4c",
+    "research_tools/sequence_ranker.py": "c7a6201977dd27accc5d1b3aca6ad11c8e8f0fe1270e9598c49f289a87d16417",
+    "research_tools/shared_context.py": "cfacb412fc8c65a52e253929e67203e4f789d916cb4378ff285aa30f8752b64e",
+    "research_tools/trial_outcomes.py": "4eb9afebf49a91304b42672cacf831f4cc7c398b333420e4f5e329317237a48f",
+    "research_tools/__init__.py": "2e6329a71b2d390c29b7ff082145d2aad8cd0dea5dc1ec5af6d8e18507bd25fb"
+  },
+  "package_directory": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\AB_detector_v2\\package-preserved-floor",
+  "encoder_weights": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\AB_detector_dev\\resnet18-f37072fd.pth",
+  "separate_sleeves": true,
+  "verified_continuation_policy": "continuous-simulation-hold-with-rgb-ood-journal/1",
+  "detector_source": "RGB only; no injection events, material points or future outcomes",
+  "scope": "small development diagnostic; independent human acceptance pending",
+  "context_reference": "pre-observation-context/1#sha256=1d1647b37737a31c865659e5fab23eaa2ecde0739f950d07bd4b33c737f26a75",
+  "detector_metadata": {
+    "schema": "observation-detector-package/1",
+    "method": "fiper-rnd-oe-resnet18-adaptation/1",
+    "trained": true,
+    "encoder_reference": "resnet18-imagenet1k-v1-pil-resize256-centercrop224/1#sha256=f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "context_reference": "pre-observation-context/1#sha256=1d1647b37737a31c865659e5fab23eaa2ecde0739f950d07bd4b33c737f26a75",
+    "input_dim": 512,
+    "output_dim": 128,
+    "allowed_phases": [
+      "LEFT_SLEEVE_HOLD",
+      "RIGHT_SLEEVE_HOLD"
+    ],
+    "window": 5,
+    "max_gap_s": 0.25,
+    "threshold": 1.311397171020508,
+    "threshold_method": "empirical-phase-trial-maxima-with-pooled-normal-calibration-floor/1",
+    "quantile": 0.95,
+    "calibration_trial_maxima": [
+      1.2066080808639525,
+      1.311397171020508,
+      1.194877314567566,
+      1.200505757331848
+    ],
+    "normal_data": {
+      "fit": [
+        {
+          "features": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\AB_detector_v2\\original-normal-01-features.jsonl",
+          "feature_sha256": "1b4645c604de3b7abe84c65db20f467d58c502cb8c05a8514c96d7da9322bb26",
+          "source_reference": "manifest.json#sha256=739bb464b88a2c7d3406517bb13b60b71fea09d7e8d42ef569c41718db782263",
+          "normal_review": true,
+          "review_reference": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\AB_detector_v2\\technical-review.json#sha256=d3c9ecf292952a159246b73934c5831c76b858c8c55af69c3338e23499eed58e"
+        }
+      ],
+      "calibration": [
+        {
+          "features": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\AB_detector_v2\\original-normal-02-features.jsonl",
+          "feature_sha256": "776e44e79253fc4288dab5e262e3a074ad9e05d9eec3089effa84b43fbc79c79",
+          "source_reference": "manifest.json#sha256=90033b613dda257bca4264c49d0b2d5617219693dad9333cc86b1486e4d440ba",
+          "normal_review": true,
+          "review_reference": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\AB_detector_v2\\technical-review.json#sha256=d3c9ecf292952a159246b73934c5831c76b858c8c55af69c3338e23499eed58e"
+        },
+        {
+          "features": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\AB_detector_v2\\original-normal-03-features.jsonl",
+          "feature_sha256": "2ed4cc20b2b775310ef65df1e8ce5ac128794bdaf40a2f73c4dae9c0a9297871",
+          "source_reference": "manifest.json#sha256=ecb66eac8d213d65784526e492756fe5c0749e4c98d726c49a85452a1fc2a6d6",
+          "normal_review": true,
+          "review_reference": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\AB_detector_v2\\technical-review.json#sha256=d3c9ecf292952a159246b73934c5831c76b858c8c55af69c3338e23499eed58e"
+        },
+        {
+          "features": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\AB_detector_v2\\additional-01-features.jsonl",
+          "feature_sha256": "a6d4b2eff7990a391b5f82d1dc98f6a895d1f2a7bb49ce678c33a113c5248f78",
+          "source_reference": "manifest.json#sha256=0b728836ccba2537f207a9c0aa6f37825c83571e14680d388e9cbbd7ca65b43b",
+          "normal_review": true,
+          "review_reference": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\AB_detector_v2\\technical-review.json#sha256=d3c9ecf292952a159246b73934c5831c76b858c8c55af69c3338e23499eed58e"
+        },
+        {
+          "features": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\AB_detector_v2\\additional-02-features.jsonl",
+          "feature_sha256": "9a92e3932916d51ceecc2cfe2f9fac5dcdcacfc095b127b41ad8f114f626a67d",
+          "source_reference": "manifest.json#sha256=f36a82e749584811ee03e1bdbbe79bc8ff6626cba08b47c10fac1bf3d0e42407",
+          "normal_review": true,
+          "review_reference": "C:\\Users\\Lenovo\\Desktop\\\u7cfb\u7edf\u5206\u6790\u4e0e\u8bbe\u8ba1\\output\\Pre_Z\u4ea4\u4ed8_20261109\\AB_detector_v2\\technical-review.json#sha256=d3c9ecf292952a159246b73934c5831c76b858c8c55af69c3338e23499eed58e"
+        }
+      ]
+    },
+    "training": {
+      "epochs": 10,
+      "batch_size": 64,
+      "lr": 0.0001,
+      "seed": 17,
+      "predictor_l2_losses": [
+        10.263588905334473,
+        5.279488563537598,
+        3.240990161895752,
+        2.0725064277648926,
+        1.759020209312439,
+        1.656962513923645,
+        1.4771572351455688,
+        1.2975112199783325,
+        1.1988906860351562,
+        1.1301828622817993
+      ]
+    },
+    "failure_probability": null,
+    "statistical_guarantee": null,
+    "full_fiper": false,
+    "online_authorized": false,
+    "phase_thresholds": {
+      "LEFT_SLEEVE_HOLD": 1.2066080808639525,
+      "RIGHT_SLEEVE_HOLD": 1.311397171020508
+    },
+    "calibration_phase_trial_maxima": {
+      "LEFT_SLEEVE_HOLD": [
+        1.1585689544677735,
+        1.184651517868042,
+        1.1409876108169557,
+        1.1647855520248414
+      ],
+      "RIGHT_SLEEVE_HOLD": [
+        1.2066080808639525,
+        1.311397171020508,
+        1.194877314567566,
+        1.200505757331848
+      ]
+    },
+    "calibration_inference_batch_size": 1,
+    "phase_threshold_floor_reference": {
+      "parent_package_id": "929af1caccd43ad4b44a0a525369a59a4561219ce4ee4461e69212512d35a5ef",
+      "baseline_package_id": "31f9c052c5a26d63d45af66049b7bea6290d7edef1e19dad7812c235f1cd5a6a",
+      "baseline_manifest_sha256": "3381435b7f865c72be1b0c13e632bd747bab5b99da7d7b985d89a39147b53969",
+      "threshold": 1.2066080808639525,
+      "source": "previous independent normal calibration",
+      "model_parameters_unchanged": true
+    },
+    "package_id": "b9df07d40a29968947949a7a202e89b31d1fb37771fb4c2ff5094fc73ff3eb1b"
+  },
+  "encoder_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "checkpoint_sha256": "6decf0155074222b7fd69a720db103b9bbd87e3b7f3034b4b193db74745b4dd4"
+}

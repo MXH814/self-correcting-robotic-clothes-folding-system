@@ -1,0 +1,62 @@
+{
+  "trial_id": "f1054552-963e-4bde-85e8-34f0af80c8f6",
+  "garment": "TCLC_018",
+  "injection": null,
+  "dr02_label": null,
+  "candidate": null,
+  "product_legality": null,
+  "regrasp_lateral_offset_m": 0.0,
+  "resume_at": "upstream first-sleeve transfer, third left dense move",
+  "upstream_sha256": {
+    "Env_StandAlone/Fold_Tops_Env.py": "ccb545bf3af108cee112dd83600fa2b730bf2c0e8e6488d78044fbfaa948d66e",
+    "Env_Config/Robot/DexLeft_Ur10e.py": "5dbb3132c11bb89bcfcdabbdb0325d15171398f8a5822bfa7196426fc25b379b",
+    "Env_Config/Robot/BimanualDex_Ur10e.py": "dbfc20cb34fa2a9113aae239a93c99a082a0b4131e55e7e27ef2ee5adb407524",
+    "Env_Config/Utils_Project/Position_Judge.py": "94c61f0705a43736d94d71d01407bc834fe004303976d8fd60f137fb2ced3804"
+  },
+  "checkpoints": {
+    "help-requested": {
+      "sim_step": 359,
+      "sim_time_s": 5.983333645388484,
+      "read_begin_monotonic_ns": 475778718000000,
+      "read_end_monotonic_ns": 475778718000000,
+      "image": "help-requested.png",
+      "image_sha256": "cd66c54308d5de3027d5ba7faefa849d795cce3146428accff7478af52b27d30",
+      "rendering_time_s": 5.950000310316682
+    }
+  },
+  "candidate_steps": [],
+  "judgment": null,
+  "pre_scenario": "C_official_missing_package",
+  "detection_entry": "OfficialPreAdapter/DetectionRuntime",
+  "product_stop_verified": false,
+  "final_control_state": "HELP_REQUESTED_AUTOMATIC_DISPATCH_DISABLED",
+  "fiper_report": {
+    "schema": "observation-deviation-report/1",
+    "method": "fiper-rnd-oe-resnet18-adaptation/1",
+    "status": "UNKNOWN",
+    "reason": "MODEL_OR_CALIBRATION_UNAVAILABLE",
+    "generation": 0,
+    "trial_id": "f1054552-963e-4bde-85e8-34f0af80c8f6",
+    "observation_id": "f2f49bdc-bf5b-4c7e-acbb-145a62ec46d2",
+    "captured_wall_s": 475778.703,
+    "decision_wall_s": 475778.718,
+    "context_reference": "continuation-context.json#sha256=9422b31ede56b63146a449457b4384b067f5872a028cf9f38a209f9856f94749",
+    "failure_class": null,
+    "failure_probability": null,
+    "raw_score": null,
+    "score": null,
+    "threshold": null,
+    "motion_authorized": false,
+    "diagnostic_detail": "missing pretrained encoder weights"
+  },
+  "dispatch_count_at_help": 86,
+  "recovery_attempts": 0,
+  "fixed_continuation_started": false,
+  "wall_elapsed_s": 57.875,
+  "aborted": {
+    "error_type": "FiperInputsUnavailable",
+    "message": "MODEL_OR_CALIBRATION_UNAVAILABLE"
+  },
+  "training_ready": false,
+  "dispatch_count_at_exit": 86
+}

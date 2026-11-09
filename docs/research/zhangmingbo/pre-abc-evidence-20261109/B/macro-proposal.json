@@ -1,0 +1,38 @@
+{
+  "schema": "recovery-macro-proposal/1",
+  "kind": "release-retreat-regrasp-lift",
+  "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+  "candidate_id": "e9460be7-06ee-43f8-8da7-84c785a89ffb",
+  "source_reference": "macro-proposal.json; generated before recovery dispatch",
+  "available_at": {
+    "sim_time_s": 7.0500003676861525,
+    "sim_step": 423,
+    "wall_monotonic_ns": 517002828000000
+  },
+  "arm": "left",
+  "coordinate_frame": "world",
+  "position_unit": "m",
+  "retreat_world_m": [
+    -0.45532453060150146,
+    0.6106644868850708,
+    0.35
+  ],
+  "pick_world_m": [
+    -0.45532453060150146,
+    0.6106644868850708,
+    0.019999999552965164
+  ],
+  "lift_world_m": [
+    -0.45532453060150146,
+    0.6106644868850708,
+    0.3
+  ],
+  "orientation_wxyz": [
+    0.5789554221486758,
+    -0.5789554221486758,
+    -0.4059687416102977,
+    0.4059687416102977
+  ],
+  "open_wait_steps": 45,
+  "close_wait_steps": 12
+}

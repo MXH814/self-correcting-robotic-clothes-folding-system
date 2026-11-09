@@ -1,0 +1,116 @@
+{
+  "schema": "observation-detector-package/1",
+  "method": "fiper-rnd-oe-resnet18-adaptation/1",
+  "trained": true,
+  "encoder_reference": "resnet18-imagenet1k-v1-pil-resize256-centercrop224/1#sha256=f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "context_reference": "pre-observation-context/1#sha256=1d1647b37737a31c865659e5fab23eaa2ecde0739f950d07bd4b33c737f26a75",
+  "input_dim": 512,
+  "output_dim": 128,
+  "allowed_phases": [
+    "LEFT_SLEEVE_HOLD",
+    "RIGHT_SLEEVE_HOLD"
+  ],
+  "window": 5,
+  "max_gap_s": 0.25,
+  "threshold": 1.311397171020508,
+  "threshold_method": "empirical-phase-trial-maxima-with-pooled-normal-calibration-floor/1",
+  "quantile": 0.95,
+  "calibration_trial_maxima": [
+    1.2066080808639525,
+    1.311397171020508,
+    1.194877314567566,
+    1.200505757331848
+  ],
+  "normal_data": {
+    "fit": [
+      {
+        "features": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_v2\\original-normal-01-features.jsonl",
+        "feature_sha256": "1b4645c604de3b7abe84c65db20f467d58c502cb8c05a8514c96d7da9322bb26",
+        "source_reference": "manifest.json#sha256=739bb464b88a2c7d3406517bb13b60b71fea09d7e8d42ef569c41718db782263",
+        "normal_review": true,
+        "review_reference": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_v2\\technical-review.json#sha256=d3c9ecf292952a159246b73934c5831c76b858c8c55af69c3338e23499eed58e"
+      }
+    ],
+    "calibration": [
+      {
+        "features": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_v2\\original-normal-02-features.jsonl",
+        "feature_sha256": "776e44e79253fc4288dab5e262e3a074ad9e05d9eec3089effa84b43fbc79c79",
+        "source_reference": "manifest.json#sha256=90033b613dda257bca4264c49d0b2d5617219693dad9333cc86b1486e4d440ba",
+        "normal_review": true,
+        "review_reference": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_v2\\technical-review.json#sha256=d3c9ecf292952a159246b73934c5831c76b858c8c55af69c3338e23499eed58e"
+      },
+      {
+        "features": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_v2\\original-normal-03-features.jsonl",
+        "feature_sha256": "2ed4cc20b2b775310ef65df1e8ce5ac128794bdaf40a2f73c4dae9c0a9297871",
+        "source_reference": "manifest.json#sha256=ecb66eac8d213d65784526e492756fe5c0749e4c98d726c49a85452a1fc2a6d6",
+        "normal_review": true,
+        "review_reference": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_v2\\technical-review.json#sha256=d3c9ecf292952a159246b73934c5831c76b858c8c55af69c3338e23499eed58e"
+      },
+      {
+        "features": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_v2\\additional-01-features.jsonl",
+        "feature_sha256": "a6d4b2eff7990a391b5f82d1dc98f6a895d1f2a7bb49ce678c33a113c5248f78",
+        "source_reference": "manifest.json#sha256=0b728836ccba2537f207a9c0aa6f37825c83571e14680d388e9cbbd7ca65b43b",
+        "normal_review": true,
+        "review_reference": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_v2\\technical-review.json#sha256=d3c9ecf292952a159246b73934c5831c76b858c8c55af69c3338e23499eed58e"
+      },
+      {
+        "features": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_v2\\additional-02-features.jsonl",
+        "feature_sha256": "9a92e3932916d51ceecc2cfe2f9fac5dcdcacfc095b127b41ad8f114f626a67d",
+        "source_reference": "manifest.json#sha256=f36a82e749584811ee03e1bdbbe79bc8ff6626cba08b47c10fac1bf3d0e42407",
+        "normal_review": true,
+        "review_reference": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_v2\\technical-review.json#sha256=d3c9ecf292952a159246b73934c5831c76b858c8c55af69c3338e23499eed58e"
+      }
+    ]
+  },
+  "training": {
+    "epochs": 10,
+    "batch_size": 64,
+    "lr": 0.0001,
+    "seed": 17,
+    "predictor_l2_losses": [
+      10.263588905334473,
+      5.279488563537598,
+      3.240990161895752,
+      2.0725064277648926,
+      1.759020209312439,
+      1.656962513923645,
+      1.4771572351455688,
+      1.2975112199783325,
+      1.1988906860351562,
+      1.1301828622817993
+    ]
+  },
+  "failure_probability": null,
+  "statistical_guarantee": null,
+  "full_fiper": false,
+  "online_authorized": false,
+  "phase_thresholds": {
+    "LEFT_SLEEVE_HOLD": 1.2066080808639525,
+    "RIGHT_SLEEVE_HOLD": 1.311397171020508
+  },
+  "calibration_phase_trial_maxima": {
+    "LEFT_SLEEVE_HOLD": [
+      1.1585689544677735,
+      1.184651517868042,
+      1.1409876108169557,
+      1.1647855520248414
+    ],
+    "RIGHT_SLEEVE_HOLD": [
+      1.2066080808639525,
+      1.311397171020508,
+      1.194877314567566,
+      1.200505757331848
+    ]
+  },
+  "calibration_inference_batch_size": 1,
+  "phase_threshold_floor_reference": {
+    "parent_package_id": "929af1caccd43ad4b44a0a525369a59a4561219ce4ee4461e69212512d35a5ef",
+    "baseline_package_id": "31f9c052c5a26d63d45af66049b7bea6290d7edef1e19dad7812c235f1cd5a6a",
+    "baseline_manifest_sha256": "3381435b7f865c72be1b0c13e632bd747bab5b99da7d7b985d89a39147b53969",
+    "threshold": 1.2066080808639525,
+    "source": "previous independent normal calibration",
+    "model_parameters_unchanged": true
+  },
+  "package_id": "b9df07d40a29968947949a7a202e89b31d1fb37771fb4c2ff5094fc73ff3eb1b",
+  "checkpoint_sha256": "6decf0155074222b7fd69a720db103b9bbd87e3b7f3034b4b193db74745b4dd4"
+}

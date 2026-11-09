@@ -1,0 +1,92 @@
+{
+  "trial_id": "db18b274-f2e2-4cf2-9962-856a8364aad7",
+  "garment": "TCLC_018",
+  "injection": null,
+  "dr02_label": null,
+  "candidate": null,
+  "product_legality": null,
+  "regrasp_lateral_offset_m": 0.0,
+  "resume_at": "upstream first-sleeve transfer, third left dense move",
+  "upstream_sha256": {
+    "Env_StandAlone/Fold_Tops_Env.py": "ccb545bf3af108cee112dd83600fa2b730bf2c0e8e6488d78044fbfaa948d66e",
+    "Env_Config/Robot/DexLeft_Ur10e.py": "5dbb3132c11bb89bcfcdabbdb0325d15171398f8a5822bfa7196426fc25b379b",
+    "Env_Config/Robot/BimanualDex_Ur10e.py": "dbfc20cb34fa2a9113aae239a93c99a082a0b4131e55e7e27ef2ee5adb407524",
+    "Env_Config/Utils_Project/Position_Judge.py": "94c61f0705a43736d94d71d01407bc834fe004303976d8fd60f137fb2ced3804"
+  },
+  "checkpoints": {
+    "final": {
+      "sim_step": 1584,
+      "sim_time_s": 26.400001376867294,
+      "read_begin_monotonic_ns": 517514968000000,
+      "read_end_monotonic_ns": 517514968000000,
+      "image": "final.png",
+      "image_sha256": "96c4adc6f03b9e35ed94e42e929d61e0a381fa10d54e53f1c39b2666fc241053",
+      "rendering_time_s": 26.35000137425959
+    }
+  },
+  "candidate_steps": [],
+  "judgment": {
+    "upstream_success": true,
+    "inside_count": 2048,
+    "point_count": 2048,
+    "minimum_ratio": 0.88,
+    "boundary_world_xy_m": [
+      -0.3337066054344177,
+      0.3425312519073486,
+      0.6249854803085327,
+      1.1948859453201295
+    ]
+  },
+  "pre_scenario": "normal-a",
+  "detection_entry": "OfficialPreAdapter/DetectionRuntime",
+  "recovery_attempts": 0,
+  "fixed_continuation_started": false,
+  "final_control_state": "MONITORED_CONTROLLER_COMPLETED",
+  "product_stop_verified": false,
+  "independent_review_status": "pending",
+  "geometry_profile": {
+    "table_z_m": 0.0,
+    "min_cloth_height_m": 0.15,
+    "max_hand_distance_m": 0.12,
+    "window_s": 0.2,
+    "min_samples": 3,
+    "max_gap_s": 0.25,
+    "scope": "declared simulation hold heuristic; not product acceptance"
+  },
+  "intended_patch_vertex_ids": [
+    5196,
+    5116,
+    5198,
+    5195,
+    4864,
+    4981,
+    4808,
+    4809,
+    5158,
+    5197,
+    4988,
+    4956
+  ],
+  "wall_elapsed_s": 247.125,
+  "detection_status_counts": {
+    "UNKNOWN": 413,
+    "NORMAL": 52
+  },
+  "detection_phase_counts": {
+    "OTHER": 201,
+    "LEFT_SLEEVE_HOLD": 29,
+    "RELEASE": 204,
+    "RIGHT_SLEEVE_HOLD": 31
+  },
+  "chain": {
+    "decision_reference": "recovery-decision.json",
+    "trial_id": "db18b274-f2e2-4cf2-9962-856a8364aad7",
+    "candidate_id": null,
+    "trace_reference": "observation-trace.json",
+    "context_reference": "continuation-context.json#sha256=7d9f57837aca3a1582aa07cd8a327a9e22bc746642a8b50cda19dcbddebcb3de",
+    "local_recovery_label": null,
+    "srs_quality_label": null,
+    "autonomous_success": null,
+    "independent_review_status": "pending"
+  }
+}

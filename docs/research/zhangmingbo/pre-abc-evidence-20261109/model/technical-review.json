@@ -1,0 +1,15 @@
+{
+  "schema": "sleeve-normal-technical-review/1",
+  "reviewer_kind": "agent-technical-review",
+  "intake_sha256": "6932d77c21b702a31a9ec28dbdd38c850ab9274565c11f3fa9762f6e56dd239a",
+  "accepted_trial_ids": [
+    "eff5d921-804f-4aeb-b1cb-2fe6d462ee23",
+    "a4d9c33f-d5e9-40d2-985d-0b06f5f3a61e",
+    "c9eb5255-24f9-451e-88c1-837a1842b73a",
+    "94f7069b-ac87-4db6-8c6b-858e3dc3c795",
+    "045e146f-ce0e-4a74-8dae-9af37eeab272"
+  ],
+  "independent_human_review": "pending",
+  "basis": "Original three trials retain prior bound technical review. Both additional complete trials passed source/trace verification and representative start/end/lift/transfer/release images were inspected in this session.",
+  "findings": "Both additional runs visibly carry the sleeve through lift/transfer and release according to controller events. Final images and upstream proxy are recorded. Fine transient slip/contact truth remains for independent review."
+}

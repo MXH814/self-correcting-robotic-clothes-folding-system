@@ -1,0 +1,23 @@
+{
+  "package_id": "929af1caccd43ad4b44a0a525369a59a4561219ce4ee4461e69212512d35a5ef",
+  "phase_thresholds": {
+    "LEFT_SLEEVE_HOLD": 1.184651517868042,
+    "RIGHT_SLEEVE_HOLD": 1.311397171020508
+  },
+  "calibration_phase_trial_maxima": {
+    "LEFT_SLEEVE_HOLD": [
+      1.1585689544677735,
+      1.184651517868042,
+      1.1409876108169557,
+      1.1647855520248414
+    ],
+    "RIGHT_SLEEVE_HOLD": [
+      1.2066080808639525,
+      1.311397171020508,
+      1.194877314567566,
+      1.200505757331848
+    ]
+  },
+  "context_reference": "pre-observation-context/1#sha256=1d1647b37737a31c865659e5fab23eaa2ecde0739f950d07bd4b33c737f26a75",
+  "independent_human_review": "pending"
+}
