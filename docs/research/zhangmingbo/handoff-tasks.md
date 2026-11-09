@@ -1,5 +1,7 @@
 # 张茗博待办：仿真环境交接、研究接入与课程 Design
 
+**2026-11-09：PPT 后置，先完成实际接入。** PR #25 已审合并，胡的旧视角输出头/分数/回放已交；当前需要 #24 目标相机下独立正常拟合、校准和开发复验数据，再接正式包和新 A/B/C。此时不制作或修改 PPT，做完工作最后整理；整组幻灯片的最终责任仍归张。[复审与精确边界](../../reviews/pr25-review.md)
+
 **当前最高优先：先完成 Pre 检测与恢复接线、整组展示。** 保持 GAM＋脚本，不等待 SADP_G。马的 FIPER 观测分支/固定 RGB 编码/在线接口/恢复复检已交付，胡负责正常拟合与独立校准。张先交匹配相机的真实连续 RGB、时戳、试次/阶段和上下文，接 `DetectionRuntime`、已有宏及实际测量前检，跑 A/B/C 并保存证据；缺模型/阈值的 C 继续拒绝恢复，不能当 A/B 通过。详见[可调用接口和命令](../../design/pre-detection-integration.md)、[缺 SADP_G 处理](../../design/detection-input-handoff.md)。整组 PPT/完整讲稿、排练和课前上传仍归张。
 
 **展示后的科研采集保留：** #24已审阅合并；第一条链不重交。后续按[先导配置](../../../configs/research/pilot-macro-collection-v1.json)扩候选/结局并保留失败/未知，见[共享协议](../shared-context-and-proxy-protocol.md)。下方科研待办不作为本次 Pre 前置。

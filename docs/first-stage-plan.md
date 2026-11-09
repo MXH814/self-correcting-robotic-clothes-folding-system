@@ -1,5 +1,7 @@
 # 第一阶段：研究问题验证与系统设计
 
+**2026-11-09 顺序调整：** 先完成检测、校准与恢复接线，PPT 最后整理，当前不制作/修改幻灯片。PR #25 的轻量离线探针和九试次回放已复审合并；独立正常校准和观测驱动真实恢复仍待，见[复审](reviews/pr25-review.md)。原职责和课程截止保持，以下早期“整合 Slides”不是当前先行任务。
+
 **当前执行优先级：先 Pre，后论文实验。** 马负责 FIPER 观测分支核心适配、编码/推理和恢复检查；胡负责离线数据划分、正常拟合/独立校准/验证、案例和分数可视化；张提供实际观测并接 A/B/C、整合全组 PPT/讲稿。核心软件与真实 RGB 编码已交付，真实检测包及仿真接线仍待。后文研究数量/训练任务暂缓，不作为此次 Pre 前置。接口、验收和边界见[接入指南](design/pre-detection-integration.md)与[ADR-MA-006](design/decisions/ADR-MA-006-observation-detector.md)。完整真实用户走查及全面文献总结保留在最终 Design 工作中，当前排在检测适配和展示证据之后。
 
 **最新证据与决策：** PR #9/#10 已合并；五屏原型、正常取景、运行时关节与组件停止已有证据。马的[运行时接入](research/runtime-component-integration.md)和[ADR-MA-005](design/decisions/ADR-MA-005-measured-input-and-branch-validity.md)已补充动作/历史编码、未来信息隔离与分支有效性条件。当前分工以[马剩余项](research/ma-remaining-checklist.md)和[张交接清单](research/zhangmingbo/handoff-tasks.md)的最新表为准；不把整套恢复实验设为课程 Design 定稿前置。
