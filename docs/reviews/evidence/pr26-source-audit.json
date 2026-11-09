@@ -1,0 +1,134 @@
+{
+  "reviewed_head": "d777879c3b95934cfb6cfbee284a3f1e16e25248",
+  "archive_sha256": "a2e4c4e22641b37108b90b14b658730f0a085c5185b8bb822b1c604ff2e5b5ac",
+  "zip_crc_verified": true,
+  "trials": [
+    {
+      "trial_id": "eff5d921-804f-4aeb-b1cb-2fe6d462ee23",
+      "frames": 468,
+      "observations": 476,
+      "dispatches": 778,
+      "phases": [
+        "final-evidence",
+        "normal-first-sleeve",
+        "normal-left-approach-pick",
+        "normal-left-lift",
+        "normal-left-scripted-move",
+        "normal-left-transfer",
+        "normal-planned-release",
+        "normal-right-approach-pick",
+        "normal-right-lift",
+        "normal-right-scripted-move",
+        "normal-right-transfer",
+        "upstream-stage-1",
+        "upstream-stage-1-end",
+        "upstream-stage-2",
+        "upstream-stage-2-end",
+        "upstream-stage-3",
+        "upstream-stage-3-end"
+      ],
+      "source_manifest_sha256": "739bb464b88a2c7d3406517bb13b60b71fea09d7e8d42ef569c41718db782263",
+      "initial_point_cloud_sha256": "ce2b79a4139daae6a3fb3a8ffaf842d3dcff6848c408cf3e38b4717b149cf52d",
+      "normal_collection_flags": {
+        "injection": null,
+        "recovery_enabled": false
+      },
+      "reader_packets_match_raw": true,
+      "camera_equals_PR24": true,
+      "independent_final_region_proxy": {
+        "inside_count": 2048,
+        "point_count": 2048,
+        "minimum_ratio": 0.88
+      }
+    },
+    {
+      "trial_id": "a4d9c33f-d5e9-40d2-985d-0b06f5f3a61e",
+      "frames": 466,
+      "observations": 474,
+      "dispatches": 767,
+      "phases": [
+        "final-evidence",
+        "normal-first-sleeve",
+        "normal-left-approach-pick",
+        "normal-left-lift",
+        "normal-left-scripted-move",
+        "normal-left-transfer",
+        "normal-planned-release",
+        "normal-right-approach-pick",
+        "normal-right-lift",
+        "normal-right-scripted-move",
+        "normal-right-transfer",
+        "upstream-stage-1",
+        "upstream-stage-1-end",
+        "upstream-stage-2",
+        "upstream-stage-2-end",
+        "upstream-stage-3",
+        "upstream-stage-3-end"
+      ],
+      "source_manifest_sha256": "90033b613dda257bca4264c49d0b2d5617219693dad9333cc86b1486e4d440ba",
+      "initial_point_cloud_sha256": "0498a5801727bd1f7069d75e8289efea51030795946d30de97c0c9b9e6b8a882",
+      "normal_collection_flags": {
+        "injection": null,
+        "recovery_enabled": false
+      },
+      "reader_packets_match_raw": true,
+      "camera_equals_PR24": true,
+      "independent_final_region_proxy": {
+        "inside_count": 2048,
+        "point_count": 2048,
+        "minimum_ratio": 0.88
+      }
+    },
+    {
+      "trial_id": "c9eb5255-24f9-451e-88c1-837a1842b73a",
+      "frames": 467,
+      "observations": 478,
+      "dispatches": 773,
+      "phases": [
+        "final-evidence",
+        "normal-first-sleeve",
+        "normal-left-approach-pick",
+        "normal-left-lift",
+        "normal-left-scripted-move",
+        "normal-left-transfer",
+        "normal-planned-release",
+        "normal-right-approach-pick",
+        "normal-right-lift",
+        "normal-right-scripted-move",
+        "normal-right-transfer",
+        "upstream-stage-1",
+        "upstream-stage-1-end",
+        "upstream-stage-2",
+        "upstream-stage-2-end",
+        "upstream-stage-3",
+        "upstream-stage-3-end"
+      ],
+      "source_manifest_sha256": "ecb66eac8d213d65784526e492756fe5c0749e4c98d726c49a85452a1fc2a6d6",
+      "initial_point_cloud_sha256": "f44bc5f5207df0ebaadbc47e160a04e29f44b3c777f2e8a7bc356d39ded9488c",
+      "normal_collection_flags": {
+        "injection": null,
+        "recovery_enabled": false
+      },
+      "reader_packets_match_raw": true,
+      "camera_equals_PR24": true,
+      "independent_final_region_proxy": {
+        "inside_count": 2048,
+        "point_count": 2048,
+        "minimum_ratio": 0.88
+      }
+    }
+  ],
+  "source_files_verified": 26,
+  "normality_labels_assigned": false,
+  "splits_assigned": false,
+  "raw_observation_handoff_accepted": true,
+  "encoder_probe": {
+    "frames_per_trial": 3,
+    "dimension": 512,
+    "all_finite": true,
+    "encoder_reference": "resnet18-imagenet1k-v1-pil-resize256-centercrop224/1#sha256=f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "normality_or_detection_accuracy_claimed": false
+  },
+  "source_cache_relative_path": "tmp/pr26-packages/extracted",
+  "existing_software_tests_passed": 143
+}

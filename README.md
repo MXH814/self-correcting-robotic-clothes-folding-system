@@ -1,8 +1,8 @@
 # Self Correcting Robotic Clothes Folding System
 
-**三条匹配正常数据已交付：** 当前固定 640×480 相机的完整正常采集共 1,401 帧、1,428 次观测，可直接下载并逐文件校验。[数据下载与读取说明](docs/research/zhangmingbo/matched-normal-data-20261109/README.md)。原始包保留独立审核待办和未分配用途；接收后按完整试次划分，不代表 A/B 检测验收。
+**PR #26 已审核合并：** 三条固定 640×480 正常采集共 1,401 帧、1,428 次观测、2,318 条派发，原包/时序/读取器/相机与控制兼容性已独立核验。匹配原始数据交接缺口关闭；胡可直接开展阶段审核、完整试次划分、拟合和独立校准，不重复索要数据。[下载与读取](docs/research/zhangmingbo/matched-normal-data-20261109/README.md) · [复审证据与后续](docs/reviews/pr26-review.md)。原始正常标签及用途仍待接收方审核分配，不代表 A/B 或 SRS 质量通过。
 
-**最新复审：PR #25 已合并。** 胡的 5 条首袖离线分数（1,051帧）已独立复算一致，九试次回放可用；这是只拟合输出头的开发探针，没有正式阈值或在线检测包。当前优先补目标视角正常数据、完整拟合/独立校准和真实恢复接线，**PPT 暂不制作或修改，工作完成后最后整理**。[复审记录与待办](docs/reviews/pr25-review.md)
+**PR #25 已合并。** 胡的 5 条首袖离线分数（1,051帧）已独立复算一致，九试次回放可用；这是只拟合输出头的开发探针，没有正式阈值或在线检测包。#26 匹配数据已接收，当前优先完整拟合/独立校准和真实恢复接线，**PPT 暂不制作或修改，工作完成后最后整理**。[复审记录与待办](docs/reviews/pr25-review.md)
 
 **当前优先完成 Pre 核心演示，研究训练暂缓。** 马已交付 FIPER RND-OE 观测分支适配、固定 ResNet18 编码、在线窗口/缺测处理、恢复请求和新观测复检；143 项软件检查通过，真实 540 帧已编码。胡负责同配置独立正常数据的拟合/校准/验证及分数回放，张负责观测导出、真实 A/B/C 接线和整组 PPT。缺 SADP_G 不阻塞该观测分支；当前尚无真实检测效果或由检测触发的仿真恢复结论。[实际接口与命令](docs/design/pre-detection-integration.md) · [新核心图与讲稿](docs/design/ma-presentation-materials.md) · [选型 ADR](docs/design/decisions/ADR-MA-006-observation-detector.md)
 
