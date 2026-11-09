@@ -1,0 +1,451 @@
+{
+  "schema": "pre-abc-portable-evidence/1",
+  "files": [
+    {
+      "file": "A-audit.json",
+      "bytes": 1551,
+      "sha256": "c8a077fbb1c00ca2a4299d6a9646e3ce21870cd589c49408440a15110c6caa4b"
+    },
+    {
+      "file": "B-audit.json",
+      "bytes": 3596,
+      "sha256": "1307c8685de827f42498caf5854c442dcf67de56925107c0c06ea65e232da901"
+    },
+    {
+      "file": "C-audit.json",
+      "bytes": 589,
+      "sha256": "ab0d4296666b7f0f926d9bcde1db10f232612c147e135dd5ffb0633229d9936d"
+    },
+    {
+      "file": "large-source-index.json",
+      "bytes": 1398,
+      "sha256": "f805445ff58232865deb7b8daf428760b5f56818bebadb270aee9ec503e56980"
+    },
+    {
+      "file": "README.md",
+      "bytes": 2444,
+      "sha256": "f2038f7db7b79356345d42898b00207fc33b88166dabe383bf5141fbf417ab47"
+    },
+    {
+      "file": "A/continuation-context.json",
+      "bytes": 4633,
+      "sha256": "7d9f57837aca3a1582aa07cd8a327a9e22bc746642a8b50cda19dcbddebcb3de"
+    },
+    {
+      "file": "A/final-point-cloud.npz",
+      "bytes": 22158,
+      "sha256": "a92dc02c489c3b1bcc83b812ecfd0f98f7cc42fe6fef51955e5cc5ec744affb8"
+    },
+    {
+      "file": "A/final.png",
+      "bytes": 270169,
+      "sha256": "96c4adc6f03b9e35ed94e42e929d61e0a381fa10d54e53f1c39b2666fc241053"
+    },
+    {
+      "file": "A/full-fold-recovery.json",
+      "bytes": 2908,
+      "sha256": "b2cdccc6ef00289efcd0c8539187806688ffba6e12d1a81272f02ee099e640a5"
+    },
+    {
+      "file": "A/initial-point-cloud.npz",
+      "bytes": 21637,
+      "sha256": "ed4ee2729a1e4452c0e0a6455900c28f7885cddf474632ddf384bc67ade6bc58"
+    },
+    {
+      "file": "A/manifest.json",
+      "bytes": 1705,
+      "sha256": "56f0c5f195eb422711740b85dcd404d18b9e856fc5cc133a00f74c92ec64d418"
+    },
+    {
+      "file": "A/observation-trace.json",
+      "bytes": 2086994,
+      "sha256": "37572097de100bdb8ebf69c561576e3b9787a96b88499bf8ccfdb6443d21c730"
+    },
+    {
+      "file": "A/official-ab-config.json",
+      "bytes": 14078,
+      "sha256": "c883661efe54be783b6d7782871226528540a76a7ff3ffc0c6dbee82a2e01792"
+    },
+    {
+      "file": "A/official-workflow-events.jsonl",
+      "bytes": 117237,
+      "sha256": "0958dff2ec4f9d395eba0a090fa40325ed5ca5e3ade0b6d17cacfa2bc91bed20"
+    },
+    {
+      "file": "A/pre-demo-events.jsonl",
+      "bytes": 901308,
+      "sha256": "975da401a24e3ef1de0024143da99b2a4abbf097553fdcb49d1e51540bf23275"
+    },
+    {
+      "file": "A/source-snapshot.zip",
+      "bytes": 175471,
+      "sha256": "56b049e817cc29b7b93e26e201e98a05df829ede01e33b2a36a5c90cfc65d942"
+    },
+    {
+      "file": "B/before-injection.png",
+      "bytes": 284408,
+      "sha256": "66098aa839de182d0184c54ef5814a4070834677d2ff8f797cc4ee18e7e78faf"
+    },
+    {
+      "file": "B/continuation-context.json",
+      "bytes": 4633,
+      "sha256": "ce2f32a5e9acb72e5ba02a5626e2b10d8537548786915057d6fd55adfad264d1"
+    },
+    {
+      "file": "B/execution-measurements.jsonl",
+      "bytes": 198747,
+      "sha256": "894ed90005a849c57746c17a2af20463b3fc670d9f67e7724551f9cb6ad58578"
+    },
+    {
+      "file": "B/final-point-cloud.npz",
+      "bytes": 22125,
+      "sha256": "baf57ad8444628d18a8c51eaa6a969a8d68b7756dad4ff8f8cc4ec8083e0aaa3"
+    },
+    {
+      "file": "B/final.png",
+      "bytes": 269871,
+      "sha256": "67f0705c2bff636f604b57fc281b1eea1d138ae462305d86fb2153086a634f6e"
+    },
+    {
+      "file": "B/full-fold-recovery.json",
+      "bytes": 10240,
+      "sha256": "588725c8a81b18752f710ac3b9f162d9784462f2927f04e1953e37b74b7fba0b"
+    },
+    {
+      "file": "B/initial-point-cloud.npz",
+      "bytes": 21613,
+      "sha256": "fc8c2de51d5c76db4f25ca78523e19f8cf2dd7afabce197084057c049bb14d4e"
+    },
+    {
+      "file": "B/macro-proposal.json",
+      "bytes": 959,
+      "sha256": "adcf1e5d5af29f1424d577e8b2a0246cf277a6ee21d8772d0ff89c4aab35139c"
+    },
+    {
+      "file": "B/manifest.json",
+      "bytes": 2359,
+      "sha256": "a68d0789e9420f3248867f944ce2dd5197bfaadbaaee904144f9c9dd2e258fa0"
+    },
+    {
+      "file": "B/observation-trace.json",
+      "bytes": 2616482,
+      "sha256": "8bd3f243e24607e87b43dd7e5e45c9df8bf3e52fc104a5fc592c3910894e0427"
+    },
+    {
+      "file": "B/official-ab-config.json",
+      "bytes": 14077,
+      "sha256": "cc92d7e86d822f7495c7d03d8f41e1918b3c3ae1f502ff836a0e66eb173eeec1"
+    },
+    {
+      "file": "B/official-workflow-events.jsonl",
+      "bytes": 160893,
+      "sha256": "9e3ecb7fa23c2d3c5fefc1c5ecd7bc20cf79a04f83fac822a22c92445fda49e8"
+    },
+    {
+      "file": "B/pre-demo-events.jsonl",
+      "bytes": 1058512,
+      "sha256": "0da6c69c2b701c95ca3ee8b4dc91713f9305c01c10c54bae191e1041d0e56335"
+    },
+    {
+      "file": "B/recovery-decision.json",
+      "bytes": 1123,
+      "sha256": "39101255f326186afa55d8a5c02d282305de8236c6126caed4b63966f1faeb53"
+    },
+    {
+      "file": "B/source-snapshot.zip",
+      "bytes": 174775,
+      "sha256": "03b3f9d59d6cb20946d45d41113ec5e6bc8c6852531bd598848df702698897df"
+    },
+    {
+      "file": "C/continuation-context.json",
+      "bytes": 4633,
+      "sha256": "9422b31ede56b63146a449457b4384b067f5872a028cf9f38a209f9856f94749"
+    },
+    {
+      "file": "C/full-fold-recovery.json",
+      "bytes": 2510,
+      "sha256": "95a6448fb8054eedeb7fe344b8e7e06ffb63d8eba12c7f1a07e344ea57fba841"
+    },
+    {
+      "file": "C/help-requested.png",
+      "bytes": 284080,
+      "sha256": "cd66c54308d5de3027d5ba7faefa849d795cce3146428accff7478af52b27d30"
+    },
+    {
+      "file": "C/initial-point-cloud.npz",
+      "bytes": 21620,
+      "sha256": "12302830f1d790c78b4239d55d731e16aa534256d1fcc2b672617c02e065064c"
+    },
+    {
+      "file": "C/manifest.json",
+      "bytes": 1601,
+      "sha256": "cdcdbad4496c7404ca689ef28e6f8ab3e4a1562eeabe93fd69d4e5a23628451c"
+    },
+    {
+      "file": "C/observation-trace.json",
+      "bytes": 250106,
+      "sha256": "50f4778bdc570ad915e9f787aa31950c22df0e58c31971146bec9f4c31e89b60"
+    },
+    {
+      "file": "C/official-pre-config.json",
+      "bytes": 6205,
+      "sha256": "a75cda4978f41493c2a8cbe471c9d06230228e440178beee76fbf638d71b984c"
+    },
+    {
+      "file": "C/official-workflow-events.jsonl",
+      "bytes": 280,
+      "sha256": "b8e93f747af7cc917d9299f8cfd6e7c9bfe495b8a8cb5fb2c599c5a389105f68"
+    },
+    {
+      "file": "C/pre-demo-events.jsonl",
+      "bytes": 2080,
+      "sha256": "d4e02816d8161ae033ca713fe211b8e69e2dc70afa9c4b2e36fa3d069f625511"
+    },
+    {
+      "file": "C/source-snapshot.zip",
+      "bytes": 130875,
+      "sha256": "d7c36ee9fc203b5a621e4c4805b2dacf4562a71f7cb7a53cbb27c91c28c9561f"
+    },
+    {
+      "file": "history/first-A-audit.json",
+      "bytes": 1116,
+      "sha256": "ea19ac5487d41d73ee809a0e00e10ce990a3813b149d9269649075dfcdbfb6e2"
+    },
+    {
+      "file": "history/first-B-audit.json",
+      "bytes": 4767,
+      "sha256": "aebf2b9711e3da5cef80a16fbc2e7a787daa48607a1446f55701286f278116e1"
+    },
+    {
+      "file": "history/floor-first-pair-results.json",
+      "bytes": 7018,
+      "sha256": "7f61056374bcbbaac735a0c49925dba695dbfbd7db40af8113f64786a07d5955"
+    },
+    {
+      "file": "model/calibration-plan.json",
+      "bytes": 904,
+      "sha256": "22a964650abc0e34458dc14e246e68ab82db7593828e51239b31419ee84e5d4a"
+    },
+    {
+      "file": "model/intake.json",
+      "bytes": 8592,
+      "sha256": "6932d77c21b702a31a9ec28dbdd38c850ab9274565c11f3fa9762f6e56dd239a"
+    },
+    {
+      "file": "model/known-normal-regression-replay.json",
+      "bytes": 27037,
+      "sha256": "400d90d8d443b0d8fce376367252c768d80bda05813d07aea2691c45c8632ca6"
+    },
+    {
+      "file": "model/manifest.json",
+      "bytes": 5774,
+      "sha256": "b0ff35cca0d55d31ce4c7312d60012c4a055bf996b7b60d47521971fd6236b23"
+    },
+    {
+      "file": "model/normal-floor-result.json",
+      "bytes": 813,
+      "sha256": "1a958fd3aac8734cee3900d77ecbcc5a173b4486099d820995f5b8600327caa4"
+    },
+    {
+      "file": "model/partitions.json",
+      "bytes": 3170,
+      "sha256": "3821aecc6ac5f42e5fcb772c8a01ab6501d18a5860c3902322b7155aeeb94017"
+    },
+    {
+      "file": "model/plan.json",
+      "bytes": 681,
+      "sha256": "13952ae0e6de48f1b83486239d492e8b31efdd902cc2e094471814fecefb3f04"
+    },
+    {
+      "file": "model/result.json",
+      "bytes": 699,
+      "sha256": "109c9990dbdd9f131e9599c1d8692da03b4f21035114ec84fe14065a4e3331a4"
+    },
+    {
+      "file": "model/technical-review.json",
+      "bytes": 956,
+      "sha256": "d3c9ecf292952a159246b73934c5831c76b858c8c55af69c3338e23499eed58e"
+    },
+    {
+      "file": "validation/full-suite-201.txt",
+      "bytes": 20418,
+      "sha256": "fc6c24d1d2c1bf9ef777a9f22af4a48b033904178108ce4eede36506f74a66e3"
+    },
+    {
+      "file": "validation/targeted-84.txt",
+      "bytes": 9112,
+      "sha256": "b72a824dcef9b5adf9cdc907b2a21b144218cd6be957dc6980f9d012556e7e5d"
+    },
+    {
+      "file": "Z3/build_pre_abc_evidence.py",
+      "bytes": 17396,
+      "sha256": "b87b46d3a33726dd7247e49662bd860cf3b3d1d78d4dc360d36d06903eaebb7b"
+    },
+    {
+      "file": "Z3/build_pre_z3_evidence.py",
+      "bytes": 12154,
+      "sha256": "d405cb3cf61aa115069c57f87a30189c8e7ac829a54fbb2e60bd8b4eb1fdb18c"
+    },
+    {
+      "file": "Z3/encode.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "Z3/index.html",
+      "bytes": 2881,
+      "sha256": "7934a703c25423d2728128dacdcee0a17d88545bcb42c8909d1ed03cbfa3e764"
+    },
+    {
+      "file": "Z3/manifest.json",
+      "bytes": 7071,
+      "sha256": "425a5b66174c880e2fedd83b701f135bfcf53f10c29fd111bcc7fd6b1f752b08"
+    },
+    {
+      "file": "Z3/replay-events.json",
+      "bytes": 2586663,
+      "sha256": "53c612fd1ec81d7a43d66580749b8d38bf948b71d7edf624e7ab9088d601dd46"
+    },
+    {
+      "file": "Z3/verify_pre_abc_evidence.py",
+      "bytes": 5508,
+      "sha256": "9ed9ee5c2bc9279934038e041481cabe168f7a06e80bd0bd205217490a21ba4c"
+    },
+    {
+      "file": "Z3/video-frame-map.csv",
+      "bytes": 186481,
+      "sha256": "428a3d611991bea7ad179a7134bc26e02cb9ebf5ca37e2a64b9caef7f61af051"
+    },
+    {
+      "file": "Z3/visual-qa.json",
+      "bytes": 729,
+      "sha256": "50bdc7262daefda810776c5ba884846ea5823421f42cbb9b3fafe22dfdedf5a4"
+    },
+    {
+      "file": "Z3/Z3_ABC真实检测与恢复.mp4",
+      "bytes": 5787593,
+      "sha256": "97fb982ca6d4bc86495653e1cf3166aa858cbb1c1f4c68ff8dfd9a33c7525145"
+    },
+    {
+      "file": "Z3/截图索引.json",
+      "bytes": 4419,
+      "sha256": "6b13a4ecdf9f7081b37f2344b526c5febc4d0e78a37e333c3cb7ccd58d12c978"
+    },
+    {
+      "file": "Z3/视频画面核验.jpg",
+      "bytes": 596583,
+      "sha256": "163062653ba8069b0b96d018cde6d47450fa6872b77e65322802a0c4f7088152"
+    },
+    {
+      "file": "Z3/关键截图/01_A正常提起.png",
+      "bytes": 713305,
+      "sha256": "d1b875c6a560ea190052bd9f115640bba602f35ba6088bd6a32afbaaaf96f816"
+    },
+    {
+      "file": "Z3/关键截图/02_A计划释放.png",
+      "bytes": 709414,
+      "sha256": "49033655afe386005049df242afb3b3f2b332183af2b0deaab90c5505c98ddb2"
+    },
+    {
+      "file": "Z3/关键截图/03_A完整折叠.png",
+      "bytes": 680281,
+      "sha256": "cee3960bc4c42e4d7dedb0f11045ba91ba16cc586945b34adae55174a51ffb68"
+    },
+    {
+      "file": "Z3/关键截图/04_B观测告警.png",
+      "bytes": 718349,
+      "sha256": "5dbb5c837ddf601a3015fbf89ddfd8b8da0f6dd47dd7e4444bf6516d7bc96bca"
+    },
+    {
+      "file": "Z3/关键截图/05_B重抓执行.png",
+      "bytes": 723580,
+      "sha256": "a86b8a7d7b15aa56a82e0528e561bc9be1db780150f541b501d8f324beb1ca39"
+    },
+    {
+      "file": "Z3/关键截图/06_B持续持有复检.png",
+      "bytes": 719575,
+      "sha256": "0e084307b1e8ce3ac225b4e52fe963938d93ef797696da365335cbb732cb5701"
+    },
+    {
+      "file": "Z3/关键截图/07_B完整折叠.png",
+      "bytes": 684551,
+      "sha256": "20c8fed3b21e4b11c484e87afeec0bd44b334f0bdbc446fc41b14fc3e430cf1d"
+    },
+    {
+      "file": "Z3/关键截图/08_C缺条件求助.png",
+      "bytes": 709021,
+      "sha256": "aa27dfe942432b08930f35073280394d39cdf92e9e9c958d67a7ead718b94dee"
+    },
+    {
+      "file": "Z3/画面核验/decoded-01.png",
+      "bytes": 743087,
+      "sha256": "88143e8c462dfd0813583f7524f34325b00523e4fc82fb63d848bee1bf7605df"
+    },
+    {
+      "file": "Z3/画面核验/decoded-02.png",
+      "bytes": 685883,
+      "sha256": "7b100c8c54307332eb9bcb466436dcac32ee005e0dd7e8bae608e705c946eeb2"
+    },
+    {
+      "file": "Z3/画面核验/decoded-03.png",
+      "bytes": 736272,
+      "sha256": "7e936d15ad1f4f5a9499f98c71c28ebbcf698d8fa8bf14bc631653640b9714ed"
+    },
+    {
+      "file": "Z3/画面核验/decoded-04.png",
+      "bytes": 727182,
+      "sha256": "eb10e073dfe72403ba437f1c187272d57a80a02abd3c1966566d0eb27083dd74"
+    },
+    {
+      "file": "Z3/画面核验/decoded-05.png",
+      "bytes": 712618,
+      "sha256": "1253f3d96dc17ea3057abf6d6d229ba0080ab0f4ac4e38f3523d814ec8e9433c"
+    },
+    {
+      "file": "Z3/画面核验/decoded-06.png",
+      "bytes": 709672,
+      "sha256": "d94e61df5d08662878f2772abdbef63d16ee7309687f9f48a5c4b6c9e29721f7"
+    },
+    {
+      "file": "Z3/关键截图/原始对应帧/01_A正常提起.png",
+      "bytes": 299053,
+      "sha256": "443e688f8f5fa3a9ffbc37806ee4b1f9434c8b0c2a3e61eddeeaef0f739b2cd3"
+    },
+    {
+      "file": "Z3/关键截图/原始对应帧/02_A计划释放.png",
+      "bytes": 300592,
+      "sha256": "bf34fd79463a2e2e81eed0973da72098e390571084721c19451b233b6e3be23a"
+    },
+    {
+      "file": "Z3/关键截图/原始对应帧/03_A完整折叠.png",
+      "bytes": 284584,
+      "sha256": "9cd37d6996a22a2f4b9a8ee1a005a49b9c2f7b9d7fc63c75cd3bca6769071b59"
+    },
+    {
+      "file": "Z3/关键截图/原始对应帧/04_B观测告警.png",
+      "bytes": 301232,
+      "sha256": "f2ec895397b127dbbbda9ce2638969709d794c18f46bd278b000b65f3f46c5a2"
+    },
+    {
+      "file": "Z3/关键截图/原始对应帧/05_B重抓执行.png",
+      "bytes": 303846,
+      "sha256": "ff3e2c86eb25d2fa31673b0805df532c4f67c68b67542151a5b448ece636014e"
+    },
+    {
+      "file": "Z3/关键截图/原始对应帧/06_B持续持有复检.png",
+      "bytes": 301843,
+      "sha256": "53fd2c3273b8086d3b5235d1d5947a34d97ea6a49deae54f162a9dd37acb8748"
+    },
+    {
+      "file": "Z3/关键截图/原始对应帧/07_B完整折叠.png",
+      "bytes": 284561,
+      "sha256": "6d06ff70e8310c9d1ba2fc1a5ca45e62d0f7b550c71bbf37950e9ac545e75012"
+    },
+    {
+      "file": "Z3/关键截图/原始对应帧/08_C缺条件求助.png",
+      "bytes": 298983,
+      "sha256": "8ee47f7a4b51baf7cb603f9e7bd19369fed08d4ef2afece39ed59584052da701"
+    }
+  ],
+  "experimental_independent_review": "pending"
+}

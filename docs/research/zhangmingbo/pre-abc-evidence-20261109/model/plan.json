@@ -1,0 +1,31 @@
+{
+  "schema": "sleeve-calibration-plan/1",
+  "seed": 17,
+  "epochs": 10,
+  "batch_size": 64,
+  "learning_rate": 0.0001,
+  "window": 5,
+  "max_gap_s": 0.25,
+  "quantile": 0.95,
+  "calibration_inference_batch_size": 1,
+  "phases": [
+    "LEFT_SLEEVE_HOLD",
+    "RIGHT_SLEEVE_HOLD"
+  ],
+  "fit": [
+    "original-normal-01"
+  ],
+  "calibration": [
+    "original-normal-02",
+    "original-normal-03",
+    "additional-01",
+    "additional-02"
+  ],
+  "prior_development_records": [
+    "original-normal-03",
+    "official-A-04",
+    "official-B-01"
+  ],
+  "new_acceptance": "New A/B trials after package frozen",
+  "normal_review": "agent technical review"
+}

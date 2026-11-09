@@ -1,0 +1,154 @@
+{
+  "schema": "official-ab-audit/1",
+  "trial_id": "63bf3432-358d-4670-89cc-352bd522db97",
+  "scenario": "fault-b",
+  "source_hashes_verified": true,
+  "observations": 391,
+  "rgb_frames": 332,
+  "dispatches": 427,
+  "continuous_unique_rgb_reports": 269,
+  "detection_status_counts": {
+    "UNKNOWN": 196,
+    "NORMAL": 60,
+    "ANOMALY": 13
+  },
+  "detection_phase_counts": {
+    "OTHER": 112,
+    "HOLD": 85,
+    "RELEASE": 72
+  },
+  "anomaly_reports": [
+    {
+      "render_sim_s": 7.433333721011877,
+      "observation_id": "36dd9d01-ff33-4f77-8c6e-66664c82cc2f",
+      "phase": "HOLD",
+      "score": 1.2472447872161865,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.48333372361958,
+      "observation_id": "2bb48d2e-23a2-4c93-b071-48957de9bc1e",
+      "phase": "HOLD",
+      "score": 1.2850306272506713,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.5333337262272835,
+      "observation_id": "f9acda74-3638-4915-a86b-2870252bbc39",
+      "phase": "HOLD",
+      "score": 1.3076329946517944,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.583333728834987,
+      "observation_id": "45eaec11-1d7e-455e-9164-acf678ad3cf1",
+      "phase": "HOLD",
+      "score": 1.332954430580139,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.63333373144269,
+      "observation_id": "052536d0-bf2a-449e-9d5b-ad48c4e7c6fd",
+      "phase": "HOLD",
+      "score": 1.3454015016555787,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.683333734050393,
+      "observation_id": "1f89fb07-0e33-43b6-aa03-1f255ae53326",
+      "phase": "HOLD",
+      "score": 1.3092177391052247,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.733333736658096,
+      "observation_id": "d2b53fcb-bb51-4849-9f6f-ef9ead7bee71",
+      "phase": "HOLD",
+      "score": 1.3169767618179322,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.7833337392657995,
+      "observation_id": "779fd5a9-f370-465b-b32b-2d963c1ab46f",
+      "phase": "HOLD",
+      "score": 1.3290571689605712,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.833333741873503,
+      "observation_id": "c449c75a-1f66-412b-89d5-6da348643926",
+      "phase": "HOLD",
+      "score": 1.3125681161880494,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.883333744481206,
+      "observation_id": "70992c6d-20c7-4619-a2d9-d6a778c30058",
+      "phase": "HOLD",
+      "score": 1.300569200515747,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.933333747088909,
+      "observation_id": "ca4d3ba3-2a1a-44d8-9baa-3d091b065085",
+      "phase": "HOLD",
+      "score": 1.2892031908035277,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.983333749696612,
+      "observation_id": "60e7cd17-b2e8-4af2-9f35-6de8e81398cc",
+      "phase": "HOLD",
+      "score": 1.2850818634033203,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 19.683334359899163,
+      "observation_id": "6eda8ae2-d385-406d-966a-18bf17f4084b",
+      "phase": "HOLD",
+      "score": 1.2199944734573365,
+      "threshold": 1.2066080808639525
+    }
+  ],
+  "first_injection_sim_s": 5.983333645388484,
+  "dispatches_after_help": 0,
+  "recovery_attempts": 1,
+  "macro_operations": [
+    "release",
+    "retreat",
+    "regrasp",
+    "close",
+    "lift"
+  ],
+  "macro_dispatches": 75,
+  "continuous_geometry_checks": 13,
+  "hold_check_passed": true,
+  "hold_check_method": "privileged_sim_material_patch",
+  "hold_check_report": {
+    "schema": "geometry-hold-report/1",
+    "method": "task-conditioned-hold-geometry/1",
+    "trial_id": "63bf3432-358d-4670-89cc-352bd522db97",
+    "generation": 0,
+    "observation_id": "beab2e2f-818b-4fee-bff8-4e65ccad940e",
+    "frame_id": "physics-step-667",
+    "observed_sim_s": 11.116667246446013,
+    "status": "HELD",
+    "reason": "SUSTAINED_HOLD_GEOMETRY",
+    "provenance": "privileged_sim_material_patch",
+    "captured_wall_s": 513482.781,
+    "decision_wall_s": 513482.781,
+    "srs_quality": null,
+    "dr02_label": null,
+    "motion_authorized": false,
+    "distance_m": 0.07895378801787882,
+    "cloth_height_m": 0.32008719162853794,
+    "window_start_sim_s": 10.9166672360152,
+    "sample_count": 13
+  },
+  "fixed_continuation_started": true,
+  "final_state": "HELP_REQUESTED_AUTOMATIC_DISPATCH_DISABLED",
+  "help_reason": "RECOVERY_BUDGET_EXHAUSTED / OBSERVATION_OOD",
+  "upstream_region_proxy": null,
+  "independent_human_review": "pending",
+  "product_stop_acceptance": null
+}

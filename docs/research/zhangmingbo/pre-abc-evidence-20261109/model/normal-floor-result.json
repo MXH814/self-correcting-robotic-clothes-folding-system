@@ -1,0 +1,16 @@
+{
+  "package_directory": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_v2\\package-preserved-floor",
+  "package_id": "b9df07d40a29968947949a7a202e89b31d1fb37771fb4c2ff5094fc73ff3eb1b",
+  "phase_thresholds": {
+    "LEFT_SLEEVE_HOLD": 1.2066080808639525,
+    "RIGHT_SLEEVE_HOLD": 1.311397171020508
+  },
+  "floor_reference": {
+    "parent_package_id": "929af1caccd43ad4b44a0a525369a59a4561219ce4ee4461e69212512d35a5ef",
+    "baseline_package_id": "31f9c052c5a26d63d45af66049b7bea6290d7edef1e19dad7812c235f1cd5a6a",
+    "baseline_manifest_sha256": "3381435b7f865c72be1b0c13e632bd747bab5b99da7d7b985d89a39147b53969",
+    "threshold": 1.2066080808639525,
+    "source": "previous independent normal calibration",
+    "model_parameters_unchanged": true
+  }
+}

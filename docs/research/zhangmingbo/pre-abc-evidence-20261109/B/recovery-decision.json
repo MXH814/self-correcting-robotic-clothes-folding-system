@@ -1,0 +1,26 @@
+{
+  "schema": "full-fold-recovery-decision/1",
+  "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+  "lineage_group": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+  "decision_id": "c1d9b398-4cd4-4777-9f43-483c4abac402",
+  "candidate_id": "e9460be7-06ee-43f8-8da7-84c785a89ffb",
+  "decision_at": {
+    "sim_time_s": 7.0500003676861525,
+    "sim_step": 423,
+    "wall_monotonic_ns": 517002828000000
+  },
+  "observation_id": "1aef27a9-0140-4718-8a14-77fab5d000ad",
+  "proposal_persisted_at": {
+    "sim_time_s": 7.0500003676861525,
+    "sim_step": 423,
+    "wall_monotonic_ns": 517002828000000
+  },
+  "candidate_spec_reference": "macro-proposal.json#sha256=adcf1e5d5af29f1424d577e8b2a0246cf277a6ee21d8772d0ff89c4aab35139c",
+  "continuation_context_reference": "continuation-context.json#sha256=ce2f32a5e9acb72e5ba02a5626e2b10d8537548786915057d6fd55adfad264d1",
+  "target_definition": "fixed-controller-continuation/v1",
+  "candidate_available_before_decision": true,
+  "diagnostic_budget_remaining_before": 1,
+  "product_legality": null,
+  "label_review_reference": null,
+  "continuation_success": null
+}

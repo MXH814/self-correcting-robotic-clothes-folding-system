@@ -1,0 +1,90 @@
+[
+  {
+    "file": "关键截图/01_A正常提起.png",
+    "raw_file": "关键截图/原始对应帧/01_A正常提起.png",
+    "trial_id": "db18b274-f2e2-4cf2-9962-856a8364aad7",
+    "source_frame_index": 60,
+    "observation_id": "5ea48276-6dbe-43fe-993d-c031417bdcb2",
+    "rendering_time_s": 6.08333365060389,
+    "replay_log_sim_s": 6.100000292062759,
+    "raw_sha256": "443e688f8f5fa3a9ffbc37806ee4b1f9434c8b0c2a3e61eddeeaef0f739b2cd3",
+    "annotated_sha256": "d1b875c6a560ea190052bd9f115640bba602f35ba6088bd6a32afbaaaf96f816"
+  },
+  {
+    "file": "关键截图/02_A计划释放.png",
+    "raw_file": "关键截图/原始对应帧/02_A计划释放.png",
+    "trial_id": "db18b274-f2e2-4cf2-9962-856a8364aad7",
+    "source_frame_index": 81,
+    "observation_id": "321875d7-ea60-482d-a4ad-18ce108c768a",
+    "rendering_time_s": 7.133333705365658,
+    "replay_log_sim_s": 7.166667037829757,
+    "raw_sha256": "bf34fd79463a2e2e81eed0973da72098e390571084721c19451b233b6e3be23a",
+    "annotated_sha256": "49033655afe386005049df242afb3b3f2b332183af2b0deaab90c5505c98ddb2"
+  },
+  {
+    "file": "关键截图/03_A完整折叠.png",
+    "raw_file": "关键截图/原始对应帧/03_A完整折叠.png",
+    "trial_id": "db18b274-f2e2-4cf2-9962-856a8364aad7",
+    "source_frame_index": 465,
+    "observation_id": "d70d7f47-c829-413c-ab21-1b60432d240d",
+    "rendering_time_s": 26.35000137425959,
+    "replay_log_sim_s": 26.400001376867294,
+    "raw_sha256": "9cd37d6996a22a2f4b9a8ee1a005a49b9c2f7b9d7fc63c75cd3bca6769071b59",
+    "annotated_sha256": "cee3960bc4c42e4d7dedb0f11045ba91ba16cc586945b34adae55174a51ffb68"
+  },
+  {
+    "file": "关键截图/04_B观测告警.png",
+    "raw_file": "关键截图/原始对应帧/04_B观测告警.png",
+    "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+    "source_frame_index": 79,
+    "observation_id": "306946eb-3787-4931-af68-eef9608e4593",
+    "rendering_time_s": 7.033333700150251,
+    "replay_log_sim_s": 7.0500003676861525,
+    "raw_sha256": "f2ec895397b127dbbbda9ce2638969709d794c18f46bd278b000b65f3f46c5a2",
+    "annotated_sha256": "5dbb5c837ddf601a3015fbf89ddfd8b8da0f6dd47dd7e4444bf6516d7bc96bca"
+  },
+  {
+    "file": "关键截图/05_B重抓执行.png",
+    "raw_file": "关键截图/原始对应帧/05_B重抓执行.png",
+    "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+    "source_frame_index": 112,
+    "observation_id": "224b2a2b-b013-4b69-a710-ecf19cc36fcc",
+    "rendering_time_s": 8.683333786204457,
+    "replay_log_sim_s": 8.708333787508309,
+    "raw_sha256": "ff3e2c86eb25d2fa31673b0805df532c4f67c68b67542151a5b448ece636014e",
+    "annotated_sha256": "a86b8a7d7b15aa56a82e0528e561bc9be1db780150f541b501d8f324beb1ca39"
+  },
+  {
+    "file": "关键截图/06_B持续持有复检.png",
+    "raw_file": "关键截图/原始对应帧/06_B持续持有复检.png",
+    "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+    "source_frame_index": 140,
+    "observation_id": "2f94c429-81a6-4ef6-81e6-ffb8056371d5",
+    "rendering_time_s": 10.13333386182785,
+    "replay_log_sim_s": 10.13333386182785,
+    "raw_sha256": "53fd2c3273b8086d3b5235d1d5947a34d97ea6a49deae54f162a9dd37acb8748",
+    "annotated_sha256": "0e084307b1e8ce3ac225b4e52fe963938d93ef797696da365335cbb732cb5701"
+  },
+  {
+    "file": "关键截图/07_B完整折叠.png",
+    "raw_file": "关键截图/原始对应帧/07_B完整折叠.png",
+    "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+    "source_frame_index": 553,
+    "observation_id": "16f34b46-2fbb-4c53-b894-244d346e1177",
+    "rendering_time_s": 30.800001606345177,
+    "replay_log_sim_s": 30.85000160895288,
+    "raw_sha256": "6d06ff70e8310c9d1ba2fc1a5ca45e62d0f7b550c71bbf37950e9ac545e75012",
+    "annotated_sha256": "20c8fed3b21e4b11c484e87afeec0bd44b334f0bdbc446fc41b14fc3e430cf1d"
+  },
+  {
+    "file": "关键截图/08_C缺条件求助.png",
+    "raw_file": "关键截图/原始对应帧/08_C缺条件求助.png",
+    "trial_id": "f1054552-963e-4bde-85e8-34f0af80c8f6",
+    "source_frame_index": 58,
+    "observation_id": "f2f49bdc-bf5b-4c7e-acbb-145a62ec46d2",
+    "rendering_time_s": 5.950000310316682,
+    "replay_log_sim_s": 5.983333645388484,
+    "raw_sha256": "8ee47f7a4b51baf7cb603f9e7bd19369fed08d4ef2afece39ed59584052da701",
+    "annotated_sha256": "aa27dfe942432b08930f35073280394d39cdf92e9e9c958d67a7ead718b94dee"
+  }
+]

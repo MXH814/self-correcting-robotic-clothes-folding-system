@@ -1,0 +1,763 @@
+{
+  "schema": "normal-threshold-regression-replay/1",
+  "package_id": "b9df07d40a29968947949a7a202e89b31d1fb37771fb4c2ff5094fc73ff3eb1b",
+  "model_identity_evidence": {
+    "parent_package_id": "929af1caccd43ad4b44a0a525369a59a4561219ce4ee4461e69212512d35a5ef",
+    "baseline_package_id": "31f9c052c5a26d63d45af66049b7bea6290d7edef1e19dad7812c235f1cd5a6a",
+    "baseline_manifest_sha256": "3381435b7f865c72be1b0c13e632bd747bab5b99da7d7b985d89a39147b53969",
+    "threshold": 1.2066080808639525,
+    "source": "previous independent normal calibration",
+    "model_parameters_unchanged": true
+  },
+  "new_live_trial": false,
+  "results": [
+    {
+      "source_folder": "official-A-04",
+      "trial_id": "eecd652e-0f34-4d9b-a02d-ac8a276ac45b",
+      "source_events_sha256": "801e34c17f2d6776d154f9073833335070af52c8a8e8d4bb620f0503df5962ea",
+      "complete_windows": 51,
+      "projected_alarm_count": 0,
+      "scope": "Replay of previously viewed development images with identical learned score model",
+      "reports": [
+        {
+          "observation_id": "cf2a531f-0878-4f1f-988e-77c15db546fa",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.0235583186149597,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "00cb2905-9395-4e2f-ba00-8dd79d96d6b5",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9810059428215027,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "7eaa815b-0153-4a82-a5f1-b06db8b3164b",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9544108390808106,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "1947286d-2f3b-4931-9e49-db46b646db82",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9286860942840576,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "fda42c23-850a-48e7-ae78-b226c1cc6837",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9214593887329101,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "549a940a-1290-44b3-bde2-797c3944ac3a",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.923697543144226,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "61e6e8c8-02f6-4f44-8192-050aaa3368a6",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9201754570007324,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "672137af-a224-49b0-9ec2-b40db06b0046",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9202760934829712,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "0fdfc896-b447-46b1-a32d-1c613dfb20ab",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9445533514022827,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "043dd383-273f-43ca-96f5-9bc3dc311a68",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9514549255371094,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "1d1ea067-cd97-4bc4-bf4c-aaaa16631d7a",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9645160436630249,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "9e504d3f-54d5-493d-881a-cbb51bc66b18",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9872890710830688,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "be510742-6171-4792-9c38-9ae0e8b2335a",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.0167872548103332,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "90cc0ce8-3112-4842-9fb3-56ed21c8e0ac",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.0350563645362854,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "0637cd42-24e7-4e29-b412-60e80887de21",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.0609177827835083,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "d8e4c313-f090-42fa-948c-5807b4fc3f4d",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.0975890398025512,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "b9ad77a3-c342-461c-8d6f-091bb082c856",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.1176579236984252,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "e3a71b1c-d48a-40f8-9b02-b35b1b3600f2",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.1565207958221435,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "c0ae0321-e120-4129-8131-a72bf05c3e4e",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.183825421333313,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "268d7afb-b01a-4cba-b2f8-424d71fb199a",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.2020432710647584,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "12d66a77-d119-4a79-ba73-610384899d85",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.1610435247421265,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "58e2eb4f-d626-4d03-ad6e-5d9e18249c75",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.1349023103713989,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "1bbe6ab1-0519-4ed7-b38e-157ee2881983",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.071904993057251,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "67f63015-f868-4f81-8e80-547e3eb16d20",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.016715407371521,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "4cd6d36b-ce71-4bb7-af63-226b4e07959b",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.0138403654098511,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "d2477c61-a044-45ec-ac71-d876eff9a819",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.0281474590301514,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "aaa5ded2-c903-4e90-8536-d092ad58b289",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.0106419324874878,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "3e76827f-4b6b-4135-a36e-f88268fa489d",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 0.998391044139862,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "9f6fe1cb-c694-408c-b5b5-25d74c1aafac",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.0051792502403258,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "16a00dab-d06b-40d2-b3a3-14885695c3e2",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 0.9978604078292846,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "902acce9-874b-42e0-8de1-db11c54eee4b",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 0.9935652136802673,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "c8a8579e-9b4c-45a9-a651-07841f1269be",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.0130645155906677,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "e7ce8905-379d-45ea-8282-bf3e2558c57f",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.007431733608246,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "b1f0a48d-e667-4fe5-840b-d503e2afc8ac",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 0.987863552570343,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "7960adb0-893e-486a-8c30-9b9d20c3ed73",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.0174859523773194,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "7d2d2629-04d1-41bc-81ab-094f5f3c7fdc",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.0579047322273254,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "12642106-028c-481e-81b7-ca04ef3d30f5",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.08074232339859,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "c86a9c51-e2f2-4e54-b3fd-f23bd6486110",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1074431657791137,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "23d1dcb1-c1ed-4f0b-982d-241875492535",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1616409301757813,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "2426c981-59bf-4bf2-84e6-ca6bddc18407",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1626710653305055,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "e5c90eeb-80ff-4e1b-8bad-48e3790839af",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.172982406616211,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "15382a26-8dd3-4a8e-b82d-34ace9059ece",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1656818389892578,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "6143caff-a717-4d18-b1c8-93469c5904ae",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.175239658355713,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "3172a58a-634f-4540-af68-c8f240f3677c",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1772356986999513,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "ce058c7c-e8f0-421e-bddc-fad0669aee51",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1883420944213867,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "18920979-e926-48d0-9204-ba8160c70a9f",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1894836664199828,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "2750fa44-bddd-4af6-b940-9d1ce8a2a3d0",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.187819766998291,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "f012bdb6-2d97-4ae4-a2e4-75757df1d891",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.195690894126892,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "b3f1b2f5-bef2-4295-9c92-bf1b86539e6d",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1925827980041503,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "d61de257-80d5-4d00-9536-ef2df6caef23",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.198954463005066,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "bbe1e34f-5f71-4dc7-9698-bd6d7b0868cf",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.2100985288619994,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        }
+      ]
+    },
+    {
+      "source_folder": "official-A-v2-01",
+      "trial_id": "83eb5b9b-98b8-4233-b5b2-59d78993242f",
+      "source_events_sha256": "aa33d89b58632e824db3152e60dbbcfebb19eeddfb6b3170bc9ecab804f209b0",
+      "complete_windows": 53,
+      "projected_alarm_count": 0,
+      "scope": "Replay of previously viewed development images with identical learned score model",
+      "reports": [
+        {
+          "observation_id": "cc629144-b361-4336-90b2-fd987d9b3898",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.1594885110855102,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "a2834ef2-61d6-4a82-926a-c4dbfcd1f626",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.1234815001487732,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "c2ad9efe-7e00-43fb-9c36-83bdaa20c073",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.0856940627098084,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "4cbec0de-8d8d-4ed7-adf3-b7a04b6a3e69",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.019687533378601,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "9e0f8b39-f041-4779-a67e-687153bd3e9a",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9422060489654541,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "58dc591a-1a42-4ccb-bdc0-7590cd96a84b",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.8847838640213013,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "0d9de4c6-8462-4471-ba88-15b33316abf1",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.8664872169494628,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "bc635239-3e36-4b5e-8018-d798eb8dc3c5",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.869462513923645,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "d31b653a-9aaa-4534-9e6d-ec8beb29d479",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.8857928156852722,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "29267826-a33b-4563-8753-73bb49bc092e",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.903945016860962,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "4f6fb17b-b473-41fd-ab1f-0f1d022ae885",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9482835531234741,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "6e902ffe-03b3-4946-86f1-17e210676870",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.979123318195343,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "89d3114b-d865-425d-bc90-4c30c65f4a23",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.0323219418525695,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "e6598940-6aac-4817-8f5b-0688201929ab",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.0537269234657287,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "d7cdba0b-b3b0-4236-8a45-6a4c00ff1717",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.0877915382385255,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "de485b5b-309d-47ae-97b4-a359a53a1637",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.1032058954238892,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "21604c08-176c-423d-85b0-0d7a33ca1629",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.1151060342788697,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "b3501c4f-51d4-4025-ad42-59a3178460ab",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.1004185199737548,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "63cdf043-7525-4550-a588-b9ff73830c6f",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.134770894050598,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "fd20547d-bc41-4f79-ad74-e841067846b0",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.0956365466117859,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "0927dbe4-7c47-4b8d-a929-f8d6b4d1469e",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.0628396630287171,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "a0aa087c-3f47-4791-ba8b-b813f6eb7dc7",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.023540997505188,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "d487267c-c46e-4201-b1b5-1371008cddaf",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 1.0050770044326782,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "3abb9f12-95e5-4c33-9cdd-79fa28ca9116",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9526618599891663,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "83c7f148-4eb0-42c1-a139-173e1c2e248e",
+          "phase": "LEFT_SLEEVE_HOLD",
+          "score": 0.9810226917266845,
+          "threshold": 1.2066080808639525,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "19922c91-c786-41a9-97c8-947ea1fc0f50",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.130836510658264,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "fb023130-7205-4672-83fe-12fac4887c7a",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1160163640975953,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "1007c3d4-9e46-4a6a-96e3-33ee45dee71f",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1069038391113282,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "051febfa-d970-406b-b9f1-11146f4b0c0d",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1242229223251343,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "35fefe60-f490-4ab5-a55a-f51dd4443310",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1079328536987305,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "934aff7c-3ac8-44b1-aa6b-46fc0798621e",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.095922875404358,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "8c3cbad8-a7a7-4cbd-a27e-4985b3820bc0",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.0990445852279662,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "62380da2-d8cf-42bc-bc0b-eda67aeadf23",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.101120662689209,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "c3589988-91d8-4ea9-a944-62ba18a911f1",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.0718273878097535,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "60ae37dc-a667-4856-bbc5-a902f5d9332b",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.0516413927078248,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "516e0111-a3c0-4daa-b1f2-d93489257fcd",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.0614846229553223,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "787a592c-ba9e-423a-a172-e70b73a8d2c1",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.0514558553695679,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "05c8a9ba-2ed7-4075-b66e-d4d282b55482",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.0765629053115844,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "51010b78-7f35-4ed1-bacc-f751bfd7724a",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1086380004882812,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "a4e003ed-7947-4b1b-8e28-ae6ccfe1541d",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1640175580978394,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "62a0c61e-88c6-405e-bd7c-0f35f5476f50",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1835410833358764,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "e27995fd-eff9-4954-baa4-aaadecd919a6",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1965657472610474,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "c2ade88d-6efe-4623-bee4-132fe1b6289a",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1827194929122924,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "614d6594-1de8-436b-89ab-63aed4f92824",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1822184562683105,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "cb21a2c3-04be-4037-b0ca-d9725fd20293",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1721499919891358,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "294db8fa-d527-4443-9f61-eccb6818a4b7",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1881089210510254,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "8b6bcc04-458a-4e4e-8c34-433bce312483",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1973769903182983,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "f7e95533-7ab1-45ea-8f60-924616ff187e",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1954742431640626,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "bba35f0c-e214-4c6c-bc0d-a32ede7acba7",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1666646718978881,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "af6edcd5-7964-4a2f-94ac-26a395c00532",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1487375259399415,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "d6846f7e-308f-42b0-91b6-5a4e4b36b1de",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1306179523468018,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "5e71b5bb-55ab-41ec-a98f-6f10f7d0ae3e",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1465394020080566,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        },
+        {
+          "observation_id": "c64da308-f197-4ff6-aa39-4005c88ccd0a",
+          "phase": "RIGHT_SLEEVE_HOLD",
+          "score": 1.1728660345077515,
+          "threshold": 1.311397171020508,
+          "status": "NORMAL"
+        }
+      ]
+    }
+  ]
+}

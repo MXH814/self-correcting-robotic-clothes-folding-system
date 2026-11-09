@@ -1,0 +1,21 @@
+{
+  "schema": "z3-abc-render-qa/1",
+  "full_decode_passed": true,
+  "decoded_frames": 1014,
+  "duration_s": 50.7,
+  "video_sha256": "97fb982ca6d4bc86495653e1cf3166aa858cbb1c1f4c68ff8dfd9a33c7525145",
+  "frame_mapping_verified": 1014,
+  "past_only_detection_alignment_verified": true,
+  "raw_screenshots_pixel_identical_to_sources": 8,
+  "strict_post_macro_frame_verified": true,
+  "agent_visual_review": "passed final decoded contact sheet and recovery screenshot",
+  "browser_player_tested": true,
+  "experimental_independent_review": "pending",
+  "browser_playback": {
+    "current_time_s": 0.2533,
+    "duration_s": 50.7,
+    "paused": false,
+    "error": null
+  },
+  "html_local_references_verified": 22
+}

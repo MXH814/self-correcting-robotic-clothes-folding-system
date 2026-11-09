@@ -217,6 +217,15 @@ class FoldRecoveryEvidence:
 
         left.dense_step_action = move
 
+    def abort(self, error):
+        """Preserve available evidence without assigning an outcome or completion marker."""
+        self.record["aborted"] = {"error_type": type(error).__name__, "message": str(error)}
+        self.record["training_ready"] = False
+        self.save()
+        if self.chain is not None and self.chain.trace.frames:
+            if not (self.output / "rgb-frames.npz").exists():
+                self.chain.trace.save(self.record["injection"], scope="incomplete_fold_tops_diagnostic_recovery")
+
     def finish(self, env):
         if env is None or self.record["judgment"] is None:
             self.save()

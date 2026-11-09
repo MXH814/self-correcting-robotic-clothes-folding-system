@@ -1,0 +1,55 @@
+{
+  "trial_id": "db18b274-f2e2-4cf2-9962-856a8364aad7",
+  "files": [
+    {
+      "file": "continuation-context.json",
+      "bytes": 4633,
+      "sha256": "7d9f57837aca3a1582aa07cd8a327a9e22bc746642a8b50cda19dcbddebcb3de"
+    },
+    {
+      "file": "final-point-cloud.npz",
+      "bytes": 22158,
+      "sha256": "a92dc02c489c3b1bcc83b812ecfd0f98f7cc42fe6fef51955e5cc5ec744affb8"
+    },
+    {
+      "file": "final.png",
+      "bytes": 270169,
+      "sha256": "96c4adc6f03b9e35ed94e42e929d61e0a381fa10d54e53f1c39b2666fc241053"
+    },
+    {
+      "file": "full-fold-recovery.json",
+      "bytes": 2908,
+      "sha256": "b2cdccc6ef00289efcd0c8539187806688ffba6e12d1a81272f02ee099e640a5"
+    },
+    {
+      "file": "initial-point-cloud.npz",
+      "bytes": 21637,
+      "sha256": "ed4ee2729a1e4452c0e0a6455900c28f7885cddf474632ddf384bc67ade6bc58"
+    },
+    {
+      "file": "observation-trace.json",
+      "bytes": 2086994,
+      "sha256": "37572097de100bdb8ebf69c561576e3b9787a96b88499bf8ccfdb6443d21c730"
+    },
+    {
+      "file": "official-ab-config.json",
+      "bytes": 14078,
+      "sha256": "c883661efe54be783b6d7782871226528540a76a7ff3ffc0c6dbee82a2e01792"
+    },
+    {
+      "file": "official-workflow-events.jsonl",
+      "bytes": 117237,
+      "sha256": "0958dff2ec4f9d395eba0a090fa40325ed5ca5e3ade0b6d17cacfa2bc91bed20"
+    },
+    {
+      "file": "pre-demo-events.jsonl",
+      "bytes": 901308,
+      "sha256": "975da401a24e3ef1de0024143da99b2a4abbf097553fdcb49d1e51540bf23275"
+    },
+    {
+      "file": "rgb-frames.npz",
+      "bytes": 155057780,
+      "sha256": "bcc85b09749e5296dff3f0099ab830ddb084744d5597f3dc48b82e02d624b9ca"
+    }
+  ]
+}

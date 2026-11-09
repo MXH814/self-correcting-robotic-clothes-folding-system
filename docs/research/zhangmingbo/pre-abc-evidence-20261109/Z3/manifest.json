@@ -1,0 +1,181 @@
+{
+  "schema": "z3-actual-abc/1",
+  "video": {
+    "file": "Z3_ABC真实检测与恢复.mp4",
+    "frames": 1014,
+    "fps": 20,
+    "duration_s": 50.7,
+    "dimensions": [
+      1600,
+      900
+    ],
+    "audio": false,
+    "bytes": 5787593,
+    "sha256": "97fb982ca6d4bc86495653e1cf3166aa858cbb1c1f4c68ff8dfd9a33c7525145"
+  },
+  "clips": [
+    {
+      "segment": "A",
+      "trial_id": "db18b274-f2e2-4cf2-9962-856a8364aad7",
+      "source_directory": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\official-A-v3-final\\fold-recovery-28d2fed5-5c0e-42e8-8ddc-6e74783417d3",
+      "video_start_s": 0.0,
+      "video_end_s": 15.25,
+      "first_video_frame": 0,
+      "end_video_frame_exclusive": 305,
+      "speed": 2.0,
+      "intro_s": 1.0,
+      "hold_s": 2.5,
+      "sim_start_s": 3.0333334915339947,
+      "sim_end_s": 26.400001376867294,
+      "source_files": {
+        "continuation-context.json": {
+          "bytes": 4633,
+          "sha256": "7d9f57837aca3a1582aa07cd8a327a9e22bc746642a8b50cda19dcbddebcb3de"
+        },
+        "full-fold-recovery.json": {
+          "bytes": 2908,
+          "sha256": "b2cdccc6ef00289efcd0c8539187806688ffba6e12d1a81272f02ee099e640a5"
+        },
+        "manifest.json": {
+          "bytes": 1705,
+          "sha256": "56f0c5f195eb422711740b85dcd404d18b9e856fc5cc133a00f74c92ec64d418"
+        },
+        "observation-trace.json": {
+          "bytes": 2086994,
+          "sha256": "37572097de100bdb8ebf69c561576e3b9787a96b88499bf8ccfdb6443d21c730"
+        },
+        "official-ab-config.json": {
+          "bytes": 14078,
+          "sha256": "c883661efe54be783b6d7782871226528540a76a7ff3ffc0c6dbee82a2e01792"
+        },
+        "official-workflow-events.jsonl": {
+          "bytes": 117237,
+          "sha256": "0958dff2ec4f9d395eba0a090fa40325ed5ca5e3ade0b6d17cacfa2bc91bed20"
+        },
+        "pre-demo-events.jsonl": {
+          "bytes": 901308,
+          "sha256": "975da401a24e3ef1de0024143da99b2a4abbf097553fdcb49d1e51540bf23275"
+        },
+        "rgb-frames.npz": {
+          "bytes": 155057780,
+          "sha256": "bcc85b09749e5296dff3f0099ab830ddb084744d5597f3dc48b82e02d624b9ca"
+        }
+      }
+    },
+    {
+      "segment": "B",
+      "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+      "source_directory": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\official-B-v3-continuation\\fold-recovery-312d4b8a-d0b7-43bb-8ff1-936c7a7672aa",
+      "video_start_s": 15.25,
+      "video_end_s": 44.2,
+      "first_video_frame": 305,
+      "end_video_frame_exclusive": 884,
+      "speed": 1.0,
+      "intro_s": 1.0,
+      "hold_s": 3.0,
+      "sim_start_s": 5.983333645388484,
+      "sim_end_s": 30.85000160895288,
+      "source_files": {
+        "continuation-context.json": {
+          "bytes": 4633,
+          "sha256": "ce2f32a5e9acb72e5ba02a5626e2b10d8537548786915057d6fd55adfad264d1"
+        },
+        "execution-measurements.jsonl": {
+          "bytes": 198747,
+          "sha256": "894ed90005a849c57746c17a2af20463b3fc670d9f67e7724551f9cb6ad58578"
+        },
+        "full-fold-recovery.json": {
+          "bytes": 10240,
+          "sha256": "588725c8a81b18752f710ac3b9f162d9784462f2927f04e1953e37b74b7fba0b"
+        },
+        "macro-proposal.json": {
+          "bytes": 959,
+          "sha256": "adcf1e5d5af29f1424d577e8b2a0246cf277a6ee21d8772d0ff89c4aab35139c"
+        },
+        "manifest.json": {
+          "bytes": 2359,
+          "sha256": "a68d0789e9420f3248867f944ce2dd5197bfaadbaaee904144f9c9dd2e258fa0"
+        },
+        "observation-trace.json": {
+          "bytes": 2616482,
+          "sha256": "8bd3f243e24607e87b43dd7e5e45c9df8bf3e52fc104a5fc592c3910894e0427"
+        },
+        "official-ab-config.json": {
+          "bytes": 14077,
+          "sha256": "cc92d7e86d822f7495c7d03d8f41e1918b3c3ae1f502ff836a0e66eb173eeec1"
+        },
+        "official-workflow-events.jsonl": {
+          "bytes": 160893,
+          "sha256": "9e3ecb7fa23c2d3c5fefc1c5ecd7bc20cf79a04f83fac822a22c92445fda49e8"
+        },
+        "pre-demo-events.jsonl": {
+          "bytes": 1058512,
+          "sha256": "0da6c69c2b701c95ca3ee8b4dc91713f9305c01c10c54bae191e1041d0e56335"
+        },
+        "recovery-decision.json": {
+          "bytes": 1123,
+          "sha256": "39101255f326186afa55d8a5c02d282305de8236c6126caed4b63966f1faeb53"
+        },
+        "rgb-frames.npz": {
+          "bytes": 184529397,
+          "sha256": "99f75fd4c971b7329f7177fc18e0a1a11ef292f1e24362ea2252c03ea88d42d4"
+        }
+      }
+    },
+    {
+      "segment": "C",
+      "trial_id": "f1054552-963e-4bde-85e8-34f0af80c8f6",
+      "source_directory": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\official-C-01\\fold-recovery-221bcf7f-113f-4a91-b7cd-647be33eeda9",
+      "video_start_s": 44.2,
+      "video_end_s": 50.7,
+      "first_video_frame": 884,
+      "end_video_frame_exclusive": 1014,
+      "speed": 1.0,
+      "intro_s": 1.0,
+      "hold_s": 2.5,
+      "sim_start_s": 3.0500001590698957,
+      "sim_end_s": 5.983333645388484,
+      "source_files": {
+        "continuation-context.json": {
+          "bytes": 4633,
+          "sha256": "9422b31ede56b63146a449457b4384b067f5872a028cf9f38a209f9856f94749"
+        },
+        "full-fold-recovery.json": {
+          "bytes": 2510,
+          "sha256": "95a6448fb8054eedeb7fe344b8e7e06ffb63d8eba12c7f1a07e344ea57fba841"
+        },
+        "manifest.json": {
+          "bytes": 1601,
+          "sha256": "cdcdbad4496c7404ca689ef28e6f8ab3e4a1562eeabe93fd69d4e5a23628451c"
+        },
+        "observation-trace.json": {
+          "bytes": 250106,
+          "sha256": "50f4778bdc570ad915e9f787aa31950c22df0e58c31971146bec9f4c31e89b60"
+        },
+        "official-pre-config.json": {
+          "bytes": 6205,
+          "sha256": "a75cda4978f41493c2a8cbe471c9d06230228e440178beee76fbf638d71b984c"
+        },
+        "official-workflow-events.jsonl": {
+          "bytes": 280,
+          "sha256": "b8e93f747af7cc917d9299f8cfd6e7c9bfe495b8a8cb5fb2c599c5a389105f68"
+        },
+        "pre-demo-events.jsonl": {
+          "bytes": 2080,
+          "sha256": "d4e02816d8161ae033ca713fe211b8e69e2dc70afa9c4b2e36fa3d069f625511"
+        },
+        "rgb-frames.npz": {
+          "bytes": 19795176,
+          "sha256": "7a3b4d98a3c6b802343c630bdad606e8b1603c57ac7b5312f562cde65f251e9f"
+        }
+      }
+    }
+  ],
+  "generator_sha256": "b87b46d3a33726dd7247e49662bd860cf3b3d1d78d4dc360d36d06903eaebb7b",
+  "shared_renderer_sha256": "d405cb3cf61aa115069c57f87a30189c8e7ac829a54fbb2e60bd8b4eb1fdb18c",
+  "score_alignment": "Only reports whose logged simulation time is no later than replay time",
+  "source_frame_alignment": "Latest original RGB no later than replay time",
+  "source_arrays_modified": false,
+  "image_transform": "Full 640x480 RGB scaled to 960x720",
+  "experimental_independent_review": "pending"
+}

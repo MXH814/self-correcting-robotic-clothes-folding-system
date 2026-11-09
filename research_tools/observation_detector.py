@@ -109,13 +109,15 @@ def empirical_threshold(trial_maxima, quantile):
 
 
 def fit(partitions, output, *, phases, epochs=10, batch_size=64, learning_rate=1e-4,
-        seed=17, window=5, max_gap_s=.25, quantile=.95, output_dim=128, device="cpu"):
+        seed=17, window=5, max_gap_s=.25, quantile=.95, output_dim=128, device="cpu",
+        calibrate_by_phase=False, calibration_batch_size=64):
     """Train predictor only; calibration uses disjoint normal trial maxima."""
     import torch
     from third_party.fiper.rnd_observation import ObservationRND
     require(type(epochs) is int and epochs > 0 and type(batch_size) is int and batch_size > 0, "invalid training budget")
     require(finite(learning_rate) and learning_rate > 0, "invalid learning rate")
     require(type(window) is int and window >= 1 and finite(max_gap_s) and max_gap_s > 0, "invalid window")
+    require(type(calibration_batch_size) is int and calibration_batch_size > 0, "invalid calibration batch size")
     output = Path(output)
     require(not output.exists(), "detector output already exists")
     groups, (encoder_reference, context_reference) = validate_partitions(partitions, phases)
@@ -141,11 +143,18 @@ def fit(partitions, output, *, phases, epochs=10, batch_size=64, learning_rate=1
             losses.append(total / len(data))
     model.eval()
     maxima = []
+    phase_maxima = {phase: [] for phase in phases}
     for trial in groups["calibration"]:
-        values = windowed(trial, model_scores(model, trial, device), window, max_gap_s, phases)
-        values = [v for v in values if v is not None]
-        require(bool(values), "calibration trial has no complete causal window")
-        maxima.append(max(values))
+        values = windowed(trial, model_scores(model, trial, device, batch_size=calibration_batch_size), window, max_gap_s, phases)
+        complete = [v for v in values if v is not None]
+        require(bool(complete), "calibration trial has no complete causal window")
+        maxima.append(max(complete))
+        if calibrate_by_phase:
+            for phase in phases:
+                phase_values = [value for row, value in zip(trial, values)
+                                if row["phase"] == phase and value is not None]
+                require(bool(phase_values), "calibration trial missing phase window: " + phase)
+                phase_maxima[phase].append(max(phase_values))
     threshold = empirical_threshold(maxima, quantile)
     metadata = {"schema": "observation-detector-package/1", "method": METHOD, "trained": True,
                 "encoder_reference": encoder_reference, "context_reference": context_reference,
@@ -157,6 +166,11 @@ def fit(partitions, output, *, phases, epochs=10, batch_size=64, learning_rate=1
                              "seed": seed, "predictor_l2_losses": losses},
                 "failure_probability": None, "statistical_guarantee": None,
                 "full_fiper": False, "online_authorized": False}
+    if calibrate_by_phase:
+        metadata.update(phase_thresholds={phase: empirical_threshold(values, quantile)
+                                         for phase, values in phase_maxima.items()},
+                        calibration_phase_trial_maxima=phase_maxima,
+                        calibration_inference_batch_size=calibration_batch_size)
     metadata["package_id"] = content_hash(metadata)
     output.mkdir(parents=True)
     path = output / "detector.pt"
@@ -186,6 +200,11 @@ def load_package(directory, *, encoder_reference, context_reference, device="cpu
     require(finite(meta["threshold"]) and meta["threshold"] >= 0
             and type(meta["window"]) is int and meta["window"] >= 1
             and finite(meta["max_gap_s"]) and meta["max_gap_s"] > 0, "invalid detection settings")
+    if "phase_thresholds" in meta:
+        thresholds = meta["phase_thresholds"]
+        require(isinstance(thresholds, dict) and set(thresholds) == set(meta["allowed_phases"])
+                and all(finite(value) and value >= 0 for value in thresholds.values()),
+                "invalid phase thresholds")
     model = ObservationRND(512, meta["output_dim"], initialize=False)
     model.load_state_dict(package["state_dict"], strict=True)
     model.requires_grad_(False).eval().to(device)
@@ -215,6 +234,8 @@ class OnlineObservationDetector:
                   "context_reference": self.meta["context_reference"], "observed_sim_s": None,
                   "captured_wall_s": captured_wall_s, "decision_wall_s": now_wall_s,
                   "failure_class": None, "failure_probability": None, "motion_authorized": False}
+        if isinstance(row, dict) and "phase_thresholds" in self.meta:
+            report["threshold"] = self.meta["phase_thresholds"].get(row.get("phase"))
         try:
             require(type(generation) is int and generation >= 0, "INVALID_GENERATION")
             require(isinstance(row, dict) and set(row) == FIELDS, "INVALID_SCHEMA")
@@ -248,8 +269,8 @@ class OnlineObservationDetector:
                 report["reason"] = "WINDOW_WARMUP"
             else:
                 score = sum(self.history) / len(self.history)
-                report.update(score=score, status="ANOMALY" if score > self.meta["threshold"] else "NORMAL",
-                              reason="OBSERVATION_OOD" if score > self.meta["threshold"] else "WITHIN_NORMAL_REFERENCE")
+                report.update(score=score, status="ANOMALY" if score > report["threshold"] else "NORMAL",
+                              reason="OBSERVATION_OOD" if score > report["threshold"] else "WITHIN_NORMAL_REFERENCE")
         except (ValueError, KeyError, TypeError) as error:
             self.reset()
             report["reason"] = str(error)

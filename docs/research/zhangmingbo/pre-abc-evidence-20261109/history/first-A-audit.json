@@ -1,0 +1,40 @@
+{
+  "schema": "official-ab-audit/1",
+  "trial_id": "eecd652e-0f34-4d9b-a02d-ac8a276ac45b",
+  "scenario": "normal-a",
+  "source_hashes_verified": true,
+  "observations": 253,
+  "rgb_frames": 245,
+  "dispatches": 387,
+  "continuous_unique_rgb_reports": 244,
+  "detection_status_counts": {
+    "UNKNOWN": 193,
+    "NORMAL": 50,
+    "ANOMALY": 1
+  },
+  "detection_phase_counts": {
+    "OTHER": 111,
+    "HOLD": 59,
+    "RELEASE": 74
+  },
+  "anomaly_reports": [
+    {
+      "render_sim_s": 15.28333413042128,
+      "observation_id": "bbe1e34f-5f71-4dc7-9698-bd6d7b0868cf",
+      "phase": "HOLD",
+      "score": 1.2100985288619994,
+      "threshold": 1.2066080808639525
+    }
+  ],
+  "first_injection_sim_s": null,
+  "dispatches_after_help": 0,
+  "recovery_attempts": 0,
+  "macro_operations": [],
+  "macro_dispatches": 0,
+  "fixed_continuation_started": false,
+  "final_state": "HELP_REQUESTED_AUTOMATIC_DISPATCH_DISABLED",
+  "help_reason": "A_NORMAL_RUN_OBSERVATION_ALERT",
+  "upstream_region_proxy": null,
+  "independent_human_review": "pending",
+  "product_stop_acceptance": null
+}

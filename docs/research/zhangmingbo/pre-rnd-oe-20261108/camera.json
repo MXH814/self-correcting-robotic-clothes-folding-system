@@ -1,0 +1,72 @@
+{
+  "mode": "fixed explicitly aimed environment camera; no hand tracking",
+  "prim_path": "/World/env_camera",
+  "resolution_wh": [
+    640,
+    480
+  ],
+  "dome_light_intensity": 1000.0,
+  "warmup_physics_steps": 12,
+  "orientation_axes": "world (Camera.get_world_pose default)",
+  "look_at_target_world_m": [
+    0.0,
+    0.5,
+    0.6
+  ],
+  "focal_length": 2.4,
+  "horizontal_aperture": 2.4,
+  "position_world_m": [
+    0.0,
+    3.5999999046325684,
+    3.200000047683716
+  ],
+  "orientation_wxyz": [
+    -0.6644906977956072,
+    -0.2417687170481473,
+    -0.24176871704814726,
+    0.6644906977956072
+  ],
+  "intrinsics_px": [
+    [
+      640.0,
+      0.0,
+      320.0
+    ],
+    [
+      0.0,
+      640.0,
+      240.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "world_to_ros_camera": [
+    [
+      -1.0,
+      1.1098476831504045e-16,
+      -5.176850637531265e-17,
+      -2.338859402391892e-16
+    ],
+    [
+      1.1098476831504045e-16,
+      0.6426122784614563,
+      -0.7661915421485901,
+      0.138408824801445
+    ],
+    [
+      -5.176850637531265e-17,
+      -0.7661915421485901,
+      -0.6426122784614563,
+      4.814648628234863
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ]
+}

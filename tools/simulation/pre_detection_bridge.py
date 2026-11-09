@@ -21,7 +21,8 @@ def create_runtime(*, package_dir, encoder_weights, context_reference, device="c
 
 def make_input(trace, observation, *, controller_phase, runtime, lineage_group=None):
     """Map actual trace clocks/IDs to the whitelist, never copy injection phase."""
-    require(controller_phase in ("HOLD", "LIFT", "RELEASE", "OTHER", "VERIFY_RECOVERY"),
+    require(controller_phase in ("HOLD", "LIFT", "LEFT_SLEEVE_HOLD", "RIGHT_SLEEVE_HOLD",
+                                 "RELEASE", "OTHER", "VERIFY_RECOVERY"),
             "use a planned controller phase, not a fault/injection label")
     require(observation is not None and trace.observations and observation is trace.observations[-1],
             "bridge requires the actual newest observation")

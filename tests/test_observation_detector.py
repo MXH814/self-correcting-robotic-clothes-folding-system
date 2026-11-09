@@ -55,6 +55,22 @@ class DetectionTests(unittest.TestCase):
         self.assertIsNone(result["failure_probability"])
         self.assertFalse(result["motion_authorized"])
 
+    def test_controller_phase_selects_its_own_calibrated_threshold(self):
+        meta=metadata()
+        meta.update(allowed_phases=['LEFT_SLEEVE_HOLD','RIGHT_SLEEVE_HOLD'],threshold=3.,
+                    phase_thresholds={'LEFT_SLEEVE_HOLD':1.,'RIGHT_SLEEVE_HOLD':3.})
+        detector=OnlineObservationDetector(ScoreModel(),meta)
+        results=[]
+        for i in range(6):
+            phase='LEFT_SLEEVE_HOLD' if i<3 else 'RIGHT_SLEEVE_HOLD'
+            results.append(detector.detect(row(i,2.,phase=phase),generation=0,
+                                           captured_wall_s=.5,now_wall_s=.5))
+        self.assertEqual(results[2]['status'],'ANOMALY')
+        self.assertEqual(results[2]['threshold'],1.)
+        self.assertEqual(results[3]['reason'],'WINDOW_WARMUP')
+        self.assertEqual(results[5]['status'],'NORMAL')
+        self.assertEqual(results[5]['threshold'],3.)
+
     def test_bad_or_stale_input_resets_window(self):
         self.detect(row(0))
         result = self.detect(row(1), now=2., captured=0.)

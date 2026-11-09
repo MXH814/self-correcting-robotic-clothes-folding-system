@@ -1,0 +1,191 @@
+{
+  "trials": [
+    {
+      "name": "original-normal-01",
+      "source": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261108\\正常观测三试次\\normal-01\\fold-recovery-bb3c5263-669f-4dcb-a997-00e8f60bbdb0",
+      "prior_features": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_dev\\normal-01-features.jsonl",
+      "trial_id": "eff5d921-804f-4aeb-b1cb-2fe6d462ee23",
+      "manifest_sha256": "739bb464b88a2c7d3406517bb13b60b71fea09d7e8d42ef569c41718db782263",
+      "rgb_sha256": "2a10b90aaf1872d58cd648ed735b492b042c4563243f90c3981288d92e1def1e",
+      "events_sha256": "9b0ecc71350677d117ff8678f2c18b03c77151361a869326cf6c7810f1a4a5f2",
+      "trace_sha256": "0bb1aa7a828c0d22c1d64bd0b115a19fa4e9489d361802308137c14de674a7df",
+      "prior_features_sha256": "bae9c40cb71225d71c683fc80dbbfc98c0adf0bbdf4f450c53d869b4a7f63395",
+      "phase_counts": {
+        "OTHER": 202,
+        "LEFT_SLEEVE_HOLD": 31,
+        "RELEASE": 203,
+        "RIGHT_SLEEVE_HOLD": 32
+      },
+      "review_image": "original-normal-01-review.jpg"
+    },
+    {
+      "name": "original-normal-02",
+      "source": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261108\\正常观测三试次\\normal-02\\fold-recovery-12dec905-e6d8-4fba-8528-6cadf7c6bceb",
+      "prior_features": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_dev\\normal-02-features.jsonl",
+      "trial_id": "a4d9c33f-d5e9-40d2-985d-0b06f5f3a61e",
+      "manifest_sha256": "90033b613dda257bca4264c49d0b2d5617219693dad9333cc86b1486e4d440ba",
+      "rgb_sha256": "0d66c7e598a321ae771943779607f28f0c3aae11b6b96b2b4c2f4f4d9830a8bd",
+      "events_sha256": "2449f3258414ec9c6ba76a6b0d0626e95cdcbcdb4c5027e1048e5e934a34e196",
+      "trace_sha256": "c5ac132d7d88f17f1dc9d0c5bd51eb8d7dde59a068ee14d622f232061eaa9be0",
+      "prior_features_sha256": "c709aeb35865d85c98d6df2cbecc52d9959fab14f2f66a50762e160aa3fea874",
+      "phase_counts": {
+        "OTHER": 202,
+        "LEFT_SLEEVE_HOLD": 30,
+        "RELEASE": 203,
+        "RIGHT_SLEEVE_HOLD": 31
+      },
+      "review_image": "original-normal-02-review.jpg"
+    },
+    {
+      "name": "original-normal-03",
+      "source": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261108\\正常观测三试次\\normal-03\\fold-recovery-41f7bcb7-bf26-4829-9eac-36cfdedd3797",
+      "prior_features": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\AB_detector_dev\\normal-03-features.jsonl",
+      "trial_id": "c9eb5255-24f9-451e-88c1-837a1842b73a",
+      "manifest_sha256": "ecb66eac8d213d65784526e492756fe5c0749e4c98d726c49a85452a1fc2a6d6",
+      "rgb_sha256": "ffa2e9343d2258a89e9c443f93b0aff4cba9663489b5789315ad18be340f25dc",
+      "events_sha256": "e71135463049dad21d361647de6b0271af1e06f2d3a4e80639cf13df15942084",
+      "trace_sha256": "be913ba86af4018285dada7b3c21ab00eb8f9db3dbda8de89afd88e262704e36",
+      "prior_features_sha256": "ce8eb4d6b7f4a1702c6aa574c726f063d74399d1b8ac7e5c0818fa54cc30f1ec",
+      "phase_counts": {
+        "OTHER": 202,
+        "LEFT_SLEEVE_HOLD": 30,
+        "RELEASE": 203,
+        "RIGHT_SLEEVE_HOLD": 32
+      },
+      "review_image": "original-normal-03-review.jpg"
+    },
+    {
+      "name": "additional-01",
+      "source": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\normal-calibration-v2\\normal-01\\fold-recovery-28ca26b1-3fa4-4dd6-8333-3f4e44cbd950",
+      "prior_features": null,
+      "trial_id": "94f7069b-ac87-4db6-8c6b-858e3dc3c795",
+      "manifest_sha256": "0b728836ccba2537f207a9c0aa6f37825c83571e14680d388e9cbbd7ca65b43b",
+      "rgb_sha256": "dbf0d7c7b421a010d9d9591e347df07c6a1ed4d2f941b19a8297da87cd4d486b",
+      "events_sha256": "feb3daa9e9c72e382d9ba3b7fbe2dbfcc53364f9f8d0f079458cae4c5ed613aa",
+      "trace_sha256": "1fae1645e364bbfae38b4d1a898a36f6159726f55f7a973060dbb0191e72ade6",
+      "prior_features_sha256": null,
+      "phase_counts": {
+        "OTHER": 202,
+        "LEFT_SLEEVE_HOLD": 30,
+        "RELEASE": 202,
+        "RIGHT_SLEEVE_HOLD": 32
+      },
+      "review_image": "additional-01-review.jpg"
+    },
+    {
+      "name": "additional-02",
+      "source": "C:\\Users\\Lenovo\\Desktop\\系统分析与设计\\output\\Pre_Z交付_20261109\\normal-calibration-v2\\normal-02\\fold-recovery-9790af1e-a247-4c6b-b1ca-d5a2b539bdae",
+      "prior_features": null,
+      "trial_id": "045e146f-ce0e-4a74-8dae-9af37eeab272",
+      "manifest_sha256": "f36a82e749584811ee03e1bdbbe79bc8ff6626cba08b47c10fac1bf3d0e42407",
+      "rgb_sha256": "44e95c211bcf2618505906fdadc7a806e52e991f46a264e6dbf558abb890565e",
+      "events_sha256": "d3c6bcdc652a362dcfc6098a156e53a8e8a0c90e280c1464c9009ad2f87ad4ed",
+      "trace_sha256": "d0522560a3b76055c032d298b3527581b9cb07fb53a5e03ee17d914265def890",
+      "prior_features_sha256": null,
+      "phase_counts": {
+        "OTHER": 202,
+        "LEFT_SLEEVE_HOLD": 30,
+        "RELEASE": 203,
+        "RIGHT_SLEEVE_HOLD": 32
+      },
+      "review_image": "additional-02-review.jpg"
+    }
+  ],
+  "context_reference": "pre-observation-context/1#sha256=1d1647b37737a31c865659e5fab23eaa2ecde0739f950d07bd4b33c737f26a75",
+  "shared_context": {
+    "schema": "pre-observation-context/1",
+    "garment_id": "TCLC_018",
+    "camera": {
+      "mode": "fixed explicitly aimed environment camera; no hand tracking",
+      "prim_path": "/World/env_camera",
+      "resolution_wh": [
+        640,
+        480
+      ],
+      "dome_light_intensity": 1000.0,
+      "warmup_physics_steps": 12,
+      "orientation_axes": "world (Camera.get_world_pose default)",
+      "look_at_target_world_m": [
+        0.0,
+        0.5,
+        0.6
+      ],
+      "focal_length": 2.4,
+      "horizontal_aperture": 2.4,
+      "position_world_m": [
+        0.0,
+        3.5999999046325684,
+        3.200000047683716
+      ],
+      "orientation_wxyz": [
+        -0.6644906977956072,
+        -0.2417687170481473,
+        -0.24176871704814726,
+        0.6644906977956072
+      ],
+      "intrinsics_px": [
+        [
+          640.0,
+          0.0,
+          320.0
+        ],
+        [
+          0.0,
+          640.0,
+          240.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_to_ros_camera": [
+        [
+          -1.0,
+          1.1098476831504045e-16,
+          -5.176850637531265e-17,
+          -2.338859402391892e-16
+        ],
+        [
+          1.1098476831504045e-16,
+          0.6426122784614563,
+          -0.7661915421485901,
+          0.138408824801445
+        ],
+        [
+          -5.176850637531265e-17,
+          -0.7661915421485901,
+          -0.6426122784614563,
+          4.814648628234863
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "controller_upstream_sha256": {
+      "Env_StandAlone/Fold_Tops_Env.py": "ccb545bf3af108cee112dd83600fa2b730bf2c0e8e6488d78044fbfaa948d66e",
+      "Env_Config/Robot/DexLeft_Ur10e.py": "5dbb3132c11bb89bcfcdabbdb0325d15171398f8a5822bfa7196426fc25b379b",
+      "Env_Config/Robot/BimanualDex_Ur10e.py": "dbfc20cb34fa2a9113aae239a93c99a082a0b4131e55e7e27ef2ee5adb407524",
+      "Env_Config/Utils_Project/Position_Judge.py": "94c61f0705a43736d94d71d01407bc834fe004303976d8fd60f137fb2ced3804",
+      "Env_Config/Robot/DexRight_Ur10e.py": "fc6ff335b90905da8d5cb41a69de2e260fe154090db3b857bd30da560841e2ed",
+      "Env_StandAlone/BaseEnv.py": "04fc374d5a179d85f8c5e5559927f514d8fd503d484218e3ac460e2a9112e9d2",
+      "Env_Config/Camera/Recording_Camera.py": "1d5546e721bfc351f15bb3cdb468a5c193a475a503c26606c8a80d78ab342704"
+    },
+    "capture_sources_sha256": {
+      "fold_recovery_chain.py": "86c08c0ed242660d14bfd7390227ac5ea3b9edafafa9119f4e81037924c1e5fe",
+      "garment_observation_trace.py": "88bed809f06fbd2e7e562839159e27d08b72374f61b9bc388996c84dd1159475"
+    },
+    "physics_dt_s": 0.016666666666666666,
+    "observation_interval_physics_steps": 3,
+    "phase_mapping": "fold-tops-command-intent-render-time/sleeve-2",
+    "encoder_preprocessing": "resnet18-imagenet1k-v1-pil-resize256-centercrop224/1",
+    "raw_rgb": "uint8 RGB HWC 640x480; full image; unique rendering timestamps",
+    "scope": "small-development-only; not statistical guarantee or product authorization"
+  },
+  "independent_human_review": "pending"
+}

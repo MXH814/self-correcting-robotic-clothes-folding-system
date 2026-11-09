@@ -1,0 +1,79 @@
+{
+  "schema": "pre-rnd-oe-handoff/1",
+  "trials": [
+    {
+      "trial_id": "eff5d921-804f-4aeb-b1cb-2fe6d462ee23",
+      "folder": "normal-01",
+      "frames": 468,
+      "observations": 476,
+      "dispatches": 778,
+      "max_gap_sim_s": 0.06666667014360428,
+      "upstream_proxy": {
+        "upstream_success": true,
+        "inside_count": 2048,
+        "point_count": 2048,
+        "minimum_ratio": 0.88,
+        "boundary_world_xy_m": [
+          -0.3426267981529236,
+          0.33824469447135924,
+          0.6295597791671753,
+          1.2036951541900636
+        ]
+      },
+      "dataset_use": "unassigned",
+      "independent_review": "pending",
+      "visual_encoder": null
+    },
+    {
+      "trial_id": "a4d9c33f-d5e9-40d2-985d-0b06f5f3a61e",
+      "folder": "normal-02",
+      "frames": 466,
+      "observations": 474,
+      "dispatches": 767,
+      "max_gap_sim_s": 0.05000000260770321,
+      "upstream_proxy": {
+        "upstream_success": true,
+        "inside_count": 2048,
+        "point_count": 2048,
+        "minimum_ratio": 0.88,
+        "boundary_world_xy_m": [
+          -0.3381833016872406,
+          0.3469085872173309,
+          0.6249363660812378,
+          1.1992709398269654
+        ]
+      },
+      "dataset_use": "unassigned",
+      "independent_review": "pending",
+      "visual_encoder": null
+    },
+    {
+      "trial_id": "c9eb5255-24f9-451e-88c1-837a1842b73a",
+      "folder": "normal-03",
+      "frames": 467,
+      "observations": 478,
+      "dispatches": 773,
+      "max_gap_sim_s": 0.06666667014360428,
+      "upstream_proxy": {
+        "upstream_success": true,
+        "inside_count": 2048,
+        "point_count": 2048,
+        "minimum_ratio": 0.88,
+        "boundary_world_xy_m": [
+          -0.3426121652126312,
+          0.33384283185005187,
+          0.6205499410629273,
+          1.2036521196365357
+        ]
+      },
+      "dataset_use": "unassigned",
+      "independent_review": "pending",
+      "visual_encoder": null
+    }
+  ],
+  "method_target": "FIPER RND-OE observation branch adaptation",
+  "policy": "unchanged GAM + scripted demonstration",
+  "action_sampling_required": false,
+  "normal_collection_is_detector_validation": false,
+  "split_rule": "Allocate complete trial IDs; no adjacent-frame split"
+}

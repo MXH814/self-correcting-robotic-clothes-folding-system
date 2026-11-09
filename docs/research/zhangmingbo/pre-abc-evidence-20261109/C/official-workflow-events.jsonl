@@ -1,0 +1,1 @@
+{"schema": "diagnostic-recovery-event/1", "trial_id": "f1054552-963e-4bde-85e8-34f0af80c8f6", "generation": 0, "state": "HELP_REQUIRED", "kind": "REQUEST_HALT_AND_HELP", "reason": "DETECTION_UNAVAILABLE_OR_UNKNOWN", "attempts": 0, "request_id": null, "motion_authorized": false}

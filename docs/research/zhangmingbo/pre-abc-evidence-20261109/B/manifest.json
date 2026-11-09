@@ -1,0 +1,75 @@
+{
+  "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+  "files": [
+    {
+      "file": "before-injection.png",
+      "bytes": 284408,
+      "sha256": "66098aa839de182d0184c54ef5814a4070834677d2ff8f797cc4ee18e7e78faf"
+    },
+    {
+      "file": "continuation-context.json",
+      "bytes": 4633,
+      "sha256": "ce2f32a5e9acb72e5ba02a5626e2b10d8537548786915057d6fd55adfad264d1"
+    },
+    {
+      "file": "execution-measurements.jsonl",
+      "bytes": 198747,
+      "sha256": "894ed90005a849c57746c17a2af20463b3fc670d9f67e7724551f9cb6ad58578"
+    },
+    {
+      "file": "final-point-cloud.npz",
+      "bytes": 22125,
+      "sha256": "baf57ad8444628d18a8c51eaa6a969a8d68b7756dad4ff8f8cc4ec8083e0aaa3"
+    },
+    {
+      "file": "final.png",
+      "bytes": 269871,
+      "sha256": "67f0705c2bff636f604b57fc281b1eea1d138ae462305d86fb2153086a634f6e"
+    },
+    {
+      "file": "full-fold-recovery.json",
+      "bytes": 10240,
+      "sha256": "588725c8a81b18752f710ac3b9f162d9784462f2927f04e1953e37b74b7fba0b"
+    },
+    {
+      "file": "initial-point-cloud.npz",
+      "bytes": 21613,
+      "sha256": "fc8c2de51d5c76db4f25ca78523e19f8cf2dd7afabce197084057c049bb14d4e"
+    },
+    {
+      "file": "macro-proposal.json",
+      "bytes": 959,
+      "sha256": "adcf1e5d5af29f1424d577e8b2a0246cf277a6ee21d8772d0ff89c4aab35139c"
+    },
+    {
+      "file": "observation-trace.json",
+      "bytes": 2616482,
+      "sha256": "8bd3f243e24607e87b43dd7e5e45c9df8bf3e52fc104a5fc592c3910894e0427"
+    },
+    {
+      "file": "official-ab-config.json",
+      "bytes": 14077,
+      "sha256": "cc92d7e86d822f7495c7d03d8f41e1918b3c3ae1f502ff836a0e66eb173eeec1"
+    },
+    {
+      "file": "official-workflow-events.jsonl",
+      "bytes": 160893,
+      "sha256": "9e3ecb7fa23c2d3c5fefc1c5ecd7bc20cf79a04f83fac822a22c92445fda49e8"
+    },
+    {
+      "file": "pre-demo-events.jsonl",
+      "bytes": 1058512,
+      "sha256": "0da6c69c2b701c95ca3ee8b4dc91713f9305c01c10c54bae191e1041d0e56335"
+    },
+    {
+      "file": "recovery-decision.json",
+      "bytes": 1123,
+      "sha256": "39101255f326186afa55d8a5c02d282305de8236c6126caed4b63966f1faeb53"
+    },
+    {
+      "file": "rgb-frames.npz",
+      "bytes": 184529397,
+      "sha256": "99f75fd4c971b7329f7177fc18e0a1a11ef292f1e24362ea2252c03ea88d42d4"
+    }
+  ]
+}
