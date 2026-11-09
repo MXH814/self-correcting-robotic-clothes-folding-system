@@ -1,0 +1,116 @@
+{
+  "schema": "official-ab-audit/1",
+  "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+  "scenario": "fault-b",
+  "source_hashes_verified": true,
+  "observations": 633,
+  "rgb_frames": 554,
+  "dispatches": 842,
+  "continuous_unique_rgb_reports": 492,
+  "detection_status_counts": {
+    "UNKNOWN": 417,
+    "NORMAL": 70,
+    "ANOMALY": 5
+  },
+  "detection_phase_counts": {
+    "OTHER": 202,
+    "LEFT_SLEEVE_HOLD": 55,
+    "RELEASE": 203,
+    "RIGHT_SLEEVE_HOLD": 32
+  },
+  "anomaly_reports": [
+    {
+      "render_sim_s": 7.033333700150251,
+      "observation_id": "306946eb-3787-4931-af68-eef9608e4593",
+      "phase": "LEFT_SLEEVE_HOLD",
+      "score": 1.2310325622558593,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.083333702757955,
+      "observation_id": "26a0d194-c80a-462a-b79d-8b206c1d8c85",
+      "phase": "LEFT_SLEEVE_HOLD",
+      "score": 1.2773354053497314,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.133333705365658,
+      "observation_id": "80d86b49-7635-42bd-8dad-e5f995037152",
+      "phase": "LEFT_SLEEVE_HOLD",
+      "score": 1.3160489082336426,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.183333707973361,
+      "observation_id": "04957324-72a9-4776-a2ce-3dc8ee89184b",
+      "phase": "LEFT_SLEEVE_HOLD",
+      "score": 1.3337098121643067,
+      "threshold": 1.2066080808639525
+    },
+    {
+      "render_sim_s": 7.233333710581064,
+      "observation_id": "5279199a-ba7a-454a-8b30-b0f85d479f0d",
+      "phase": "LEFT_SLEEVE_HOLD",
+      "score": 1.3335606098175048,
+      "threshold": 1.2066080808639525
+    }
+  ],
+  "first_injection_sim_s": 5.983333645388484,
+  "dispatches_after_help": null,
+  "recovery_attempts": 1,
+  "macro_operations": [
+    "release",
+    "retreat",
+    "regrasp",
+    "close",
+    "lift"
+  ],
+  "macro_dispatches": 61,
+  "continuous_geometry_checks": 13,
+  "hold_check_passed": true,
+  "hold_check_method": "privileged_sim_material_patch",
+  "hold_check_report": {
+    "schema": "geometry-hold-report/1",
+    "method": "task-conditioned-hold-geometry/1",
+    "trial_id": "b5e90454-5cda-4cc0-8ec2-5606971bdf38",
+    "generation": 0,
+    "observation_id": "2f3b1cb0-0210-474e-9f09-a07b0bdb2807",
+    "frame_id": "physics-step-608",
+    "observed_sim_s": 10.13333386182785,
+    "status": "HELD",
+    "reason": "SUSTAINED_HOLD_GEOMETRY",
+    "provenance": "privileged_sim_material_patch",
+    "captured_wall_s": 517038.25,
+    "decision_wall_s": 517038.25,
+    "srs_quality": null,
+    "dr02_label": null,
+    "motion_authorized": false,
+    "distance_m": 0.07549197300274905,
+    "cloth_height_m": 0.3175696823491651,
+    "window_start_sim_s": 9.933333851397038,
+    "sample_count": 13
+  },
+  "continuation_geometry_checks": 23,
+  "continuation_geometry_recomputed": true,
+  "continuation_raw_ood_reports": 0,
+  "continuation_policy": "continuous-simulation-hold-with-rgb-ood-journal/1",
+  "fixed_continuation_started": true,
+  "final_state": "MONITORED_CONTROLLER_COMPLETED",
+  "help_reason": null,
+  "complete_fold_recorded": true,
+  "expected_case_automatic_checks_passed": true,
+  "upstream_region_proxy": {
+    "upstream_success": true,
+    "inside_count": 2002,
+    "point_count": 2048,
+    "minimum_ratio": 0.88,
+    "boundary_world_xy_m": [
+      -0.33356340527534484,
+      0.34700729250907897,
+      0.6249854803085327,
+      1.1992618799209596
+    ]
+  },
+  "independent_human_review": "pending",
+  "product_stop_acceptance": null
+}

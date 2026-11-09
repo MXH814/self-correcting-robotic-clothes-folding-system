@@ -3,6 +3,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import math
 from pathlib import Path
 
 import numpy as np
@@ -15,6 +16,16 @@ from research_tools.observation_detector import FIELDS, METHOD
 
 def read(path):
     return json.loads(path.read_text(encoding='utf-8'))
+
+
+def verify_geometry_report(actual, recorded):
+    """Allow platform rounding only in derived geometry, preserving all decisions."""
+    assert actual.keys()==recorded.keys()
+    for key,value in actual.items():
+        if key in ('distance_m','cloth_height_m'):
+            assert math.isclose(value,recorded[key],rel_tol=0.,abs_tol=1e-12),key
+        else:
+            assert value==recorded[key],key
 
 
 def audit(root):
@@ -106,7 +117,7 @@ def audit(root):
             assert sample['sim_time_s']>previous_time
             previous_time=sample['sim_time_s']
             assert sample['observation_id'] in observations
-            assert monitor.update(**sample)==report
+            verify_geometry_report(monitor.update(**sample),report)
             if event['kind']=='CONTINUATION_HOLD_CHECK':
                 assert enabled['sequence']<event['sequence']<planned_release['sequence']
                 decision=event['request']
