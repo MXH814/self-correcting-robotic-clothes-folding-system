@@ -1,0 +1,212 @@
+[
+  {
+    "trial": "94f7069b-ac87-4db6-8c6b-858e3dc3c795",
+    "source_manifest_sha256": "0b728836ccba2537f207a9c0aa6f37825c83571e14680d388e9cbbd7ca65b43b",
+    "frames": 466,
+    "observations": 474,
+    "dispatches": 767,
+    "sleeves": [
+      {
+        "arm": "left",
+        "hand_event": {
+          "schema": "pre-demo-event/1",
+          "sequence": 8,
+          "trial_id": "94f7069b-ac87-4db6-8c6b-858e3dc3c795",
+          "kind": "NORMAL_HAND_COMMAND",
+          "source": "actual_simulation",
+          "clock": {
+            "sim_time_s": 7.116667037829757,
+            "sim_step": 427,
+            "wall_monotonic_ns": 514772609000000
+          },
+          "left": "open",
+          "right": "None",
+          "planned_release": true
+        },
+        "open_sim_s": 7.116667037829757,
+        "frames": [
+          {
+            "frame": 50,
+            "rendering_time_s": 5.550000289455056,
+            "observation_id": "554dbf9b-81e6-4369-9280-307fe75d4615"
+          },
+          {
+            "frame": 58,
+            "rendering_time_s": 5.950000310316682,
+            "observation_id": "e1df21b3-075c-49a0-b6e5-bc6dfea225a8"
+          },
+          {
+            "frame": 70,
+            "rendering_time_s": 6.55000034160912,
+            "observation_id": "b1e61f75-9f76-45fd-bdac-8d521f8b81f3"
+          },
+          {
+            "frame": 80,
+            "rendering_time_s": 7.0500003676861525,
+            "observation_id": "5f1b6df5-0a48-482e-ae7e-6b024a679820"
+          },
+          {
+            "frame": 89,
+            "rendering_time_s": 7.500000391155481,
+            "observation_id": "a945cbfa-8057-4a1c-966c-3093ef03d928"
+          }
+        ]
+      },
+      {
+        "arm": "right",
+        "hand_event": {
+          "schema": "pre-demo-event/1",
+          "sequence": 18,
+          "trial_id": "94f7069b-ac87-4db6-8c6b-858e3dc3c795",
+          "kind": "NORMAL_HAND_COMMAND",
+          "source": "actual_simulation",
+          "clock": {
+            "sim_time_s": 15.41666747070849,
+            "sim_step": 925,
+            "wall_monotonic_ns": 514813562000000
+          },
+          "left": "None",
+          "right": "open",
+          "planned_release": true
+        },
+        "open_sim_s": 15.41666747070849,
+        "frames": [
+          {
+            "frame": 215,
+            "rendering_time_s": 13.800000719726086,
+            "observation_id": "1fcc020c-8e01-4cfe-a86a-c9ca05cbe844"
+          },
+          {
+            "frame": 223,
+            "rendering_time_s": 14.200000740587711,
+            "observation_id": "2ec56938-5752-4661-9d98-cee87e66a966"
+          },
+          {
+            "frame": 235,
+            "rendering_time_s": 14.80000077188015,
+            "observation_id": "ec92ebca-622d-40b0-951d-27d0dc5b3777"
+          },
+          {
+            "frame": 246,
+            "rendering_time_s": 15.350000800564885,
+            "observation_id": "fe673eb6-a04c-464c-a49c-d66ea9ec9228"
+          },
+          {
+            "frame": 255,
+            "rendering_time_s": 15.800000824034214,
+            "observation_id": "bb258e9f-fb7b-43ab-862f-ff8917c0f9a8"
+          }
+        ]
+      }
+    ],
+    "region": [
+      2048,
+      2048
+    ]
+  },
+  {
+    "trial": "045e146f-ce0e-4a74-8dae-9af37eeab272",
+    "source_manifest_sha256": "f36a82e749584811ee03e1bdbbe79bc8ff6626cba08b47c10fac1bf3d0e42407",
+    "frames": 467,
+    "observations": 475,
+    "dispatches": 775,
+    "sleeves": [
+      {
+        "arm": "left",
+        "hand_event": {
+          "schema": "pre-demo-event/1",
+          "sequence": 8,
+          "trial_id": "045e146f-ce0e-4a74-8dae-9af37eeab272",
+          "kind": "NORMAL_HAND_COMMAND",
+          "source": "actual_simulation",
+          "clock": {
+            "sim_time_s": 7.133333705365658,
+            "sim_step": 428,
+            "wall_monotonic_ns": 515033359000000
+          },
+          "left": "open",
+          "right": "None",
+          "planned_release": true
+        },
+        "open_sim_s": 7.133333705365658,
+        "frames": [
+          {
+            "frame": 50,
+            "rendering_time_s": 5.550000289455056,
+            "observation_id": "5ba9c92c-2708-4c16-a881-48fa3f1d82ed"
+          },
+          {
+            "frame": 58,
+            "rendering_time_s": 5.950000310316682,
+            "observation_id": "d2058e32-015f-4349-91c5-80625413079a"
+          },
+          {
+            "frame": 70,
+            "rendering_time_s": 6.55000034160912,
+            "observation_id": "d138f0fb-1534-4491-b86d-e8387d35b058"
+          },
+          {
+            "frame": 81,
+            "rendering_time_s": 7.100000370293856,
+            "observation_id": "3dbdbc6c-ac25-483e-b270-f41f103765db"
+          },
+          {
+            "frame": 90,
+            "rendering_time_s": 7.5500003937631845,
+            "observation_id": "cba6d13d-e663-4985-9110-aa15797eec68"
+          }
+        ]
+      },
+      {
+        "arm": "right",
+        "hand_event": {
+          "schema": "pre-demo-event/1",
+          "sequence": 18,
+          "trial_id": "045e146f-ce0e-4a74-8dae-9af37eeab272",
+          "kind": "NORMAL_HAND_COMMAND",
+          "source": "actual_simulation",
+          "clock": {
+            "sim_time_s": 15.41666747070849,
+            "sim_step": 925,
+            "wall_monotonic_ns": 515074406000000
+          },
+          "left": "None",
+          "right": "open",
+          "planned_release": true
+        },
+        "open_sim_s": 15.41666747070849,
+        "frames": [
+          {
+            "frame": 215,
+            "rendering_time_s": 13.800000719726086,
+            "observation_id": "97fc9c4e-6846-48c1-8d26-40446eac656b"
+          },
+          {
+            "frame": 223,
+            "rendering_time_s": 14.200000740587711,
+            "observation_id": "799cb522-92a3-4c8a-bff2-a79665182882"
+          },
+          {
+            "frame": 235,
+            "rendering_time_s": 14.80000077188015,
+            "observation_id": "5110f454-7166-47cb-8a05-b53b5f67ce66"
+          },
+          {
+            "frame": 246,
+            "rendering_time_s": 15.350000800564885,
+            "observation_id": "d00a275d-0344-4a1d-98dd-2ac6edea6786"
+          },
+          {
+            "frame": 255,
+            "rendering_time_s": 15.800000824034214,
+            "observation_id": "d6e04b44-9b5a-4c60-b355-18e68ef7e95b"
+          }
+        ]
+      }
+    ],
+    "region": [
+      2048,
+      2048
+    ]
+  }
+]
