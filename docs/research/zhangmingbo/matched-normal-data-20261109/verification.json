@@ -1,0 +1,533 @@
+{
+  "schema": "matched-normal-delivery-verification/1",
+  "verified_on": "2026-11-09",
+  "package_sha256": "a2e4c4e22641b37108b90b14b658730f0a085c5185b8bb822b1c604ff2e5b5ac",
+  "zip_crc_passed": true,
+  "camera_identical_across_trials": true,
+  "controller_identical_across_trials": true,
+  "execution_profile_identical_across_trials": true,
+  "normality_review": "independent_review_pending",
+  "split_assignment": "unassigned_in_original_delivery",
+  "detector_validation": false,
+  "trials": [
+    {
+      "trial_id": "eff5d921-804f-4aeb-b1cb-2fe6d462ee23",
+      "source": "normal-01/raw",
+      "rgb_shape": [
+        468,
+        480,
+        640,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "observations": 476,
+      "dispatches": 778,
+      "max_rgb_gap_sim_s": 0.06666667014360428,
+      "camera": {
+        "mode": "fixed explicitly aimed environment camera; no hand tracking",
+        "prim_path": "/World/env_camera",
+        "resolution_wh": [
+          640,
+          480
+        ],
+        "dome_light_intensity": 1000.0,
+        "warmup_physics_steps": 12,
+        "orientation_axes": "world (Camera.get_world_pose default)",
+        "look_at_target_world_m": [
+          0.0,
+          0.5,
+          0.6
+        ],
+        "focal_length": 2.4,
+        "horizontal_aperture": 2.4,
+        "position_world_m": [
+          0.0,
+          3.5999999046325684,
+          3.200000047683716
+        ],
+        "orientation_wxyz": [
+          -0.6644906977956072,
+          -0.2417687170481473,
+          -0.24176871704814726,
+          0.6644906977956072
+        ],
+        "intrinsics_px": [
+          [
+            640.0,
+            0.0,
+            320.0
+          ],
+          [
+            0.0,
+            640.0,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "world_to_ros_camera": [
+          [
+            -1.0,
+            1.1098476831504045e-16,
+            -5.176850637531265e-17,
+            -2.338859402391892e-16
+          ],
+          [
+            1.1098476831504045e-16,
+            0.6426122784614563,
+            -0.7661915421485901,
+            0.138408824801445
+          ],
+          [
+            -5.176850637531265e-17,
+            -0.7661915421485901,
+            -0.6426122784614563,
+            4.814648628234863
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "joint_names": {
+        "left": [
+          "shoulder_pan_joint",
+          "shoulder_lift_joint",
+          "elbow_joint",
+          "wrist_1_joint",
+          "wrist_2_joint",
+          "wrist_3_joint",
+          "WRJ2",
+          "WRJ1",
+          "FFJ4",
+          "LFJ5",
+          "MFJ4",
+          "RFJ4",
+          "THJ5",
+          "FFJ3",
+          "LFJ4",
+          "MFJ3",
+          "RFJ3",
+          "THJ4",
+          "FFJ2",
+          "LFJ3",
+          "MFJ2",
+          "RFJ2",
+          "THJ3",
+          "FFJ1",
+          "LFJ2",
+          "MFJ1",
+          "RFJ1",
+          "THJ2",
+          "LFJ1",
+          "THJ1"
+        ],
+        "right": [
+          "shoulder_pan_joint",
+          "shoulder_lift_joint",
+          "elbow_joint",
+          "wrist_1_joint",
+          "wrist_2_joint",
+          "wrist_3_joint",
+          "WRJ2",
+          "WRJ1",
+          "FFJ4",
+          "LFJ5",
+          "MFJ4",
+          "RFJ4",
+          "THJ5",
+          "FFJ3",
+          "LFJ4",
+          "MFJ3",
+          "RFJ3",
+          "THJ4",
+          "FFJ2",
+          "LFJ3",
+          "MFJ2",
+          "RFJ2",
+          "THJ3",
+          "FFJ1",
+          "LFJ2",
+          "MFJ1",
+          "RFJ1",
+          "THJ2",
+          "LFJ1",
+          "THJ1"
+        ]
+      },
+      "visual_embedding": null,
+      "proprioception_dimensions": 120,
+      "recovery_enabled": false,
+      "upstream_proxy": {
+        "upstream_success": true,
+        "inside_count": 2048,
+        "point_count": 2048,
+        "minimum_ratio": 0.88,
+        "boundary_world_xy_m": [
+          -0.3426267981529236,
+          0.33824469447135924,
+          0.6295597791671753,
+          1.2036951541900636
+        ]
+      },
+      "detector_status": "UNKNOWN",
+      "independent_review": "pending",
+      "dataset_use": "unassigned",
+      "raw_archive_manifest_matches": true,
+      "portable_export_matches_raw_observations": true,
+      "raw_manifest_sha256": "739bb464b88a2c7d3406517bb13b60b71fea09d7e8d42ef569c41718db782263"
+    },
+    {
+      "trial_id": "a4d9c33f-d5e9-40d2-985d-0b06f5f3a61e",
+      "source": "normal-02/raw",
+      "rgb_shape": [
+        466,
+        480,
+        640,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "observations": 474,
+      "dispatches": 767,
+      "max_rgb_gap_sim_s": 0.05000000260770321,
+      "camera": {
+        "mode": "fixed explicitly aimed environment camera; no hand tracking",
+        "prim_path": "/World/env_camera",
+        "resolution_wh": [
+          640,
+          480
+        ],
+        "dome_light_intensity": 1000.0,
+        "warmup_physics_steps": 12,
+        "orientation_axes": "world (Camera.get_world_pose default)",
+        "look_at_target_world_m": [
+          0.0,
+          0.5,
+          0.6
+        ],
+        "focal_length": 2.4,
+        "horizontal_aperture": 2.4,
+        "position_world_m": [
+          0.0,
+          3.5999999046325684,
+          3.200000047683716
+        ],
+        "orientation_wxyz": [
+          -0.6644906977956072,
+          -0.2417687170481473,
+          -0.24176871704814726,
+          0.6644906977956072
+        ],
+        "intrinsics_px": [
+          [
+            640.0,
+            0.0,
+            320.0
+          ],
+          [
+            0.0,
+            640.0,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "world_to_ros_camera": [
+          [
+            -1.0,
+            1.1098476831504045e-16,
+            -5.176850637531265e-17,
+            -2.338859402391892e-16
+          ],
+          [
+            1.1098476831504045e-16,
+            0.6426122784614563,
+            -0.7661915421485901,
+            0.138408824801445
+          ],
+          [
+            -5.176850637531265e-17,
+            -0.7661915421485901,
+            -0.6426122784614563,
+            4.814648628234863
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "joint_names": {
+        "left": [
+          "shoulder_pan_joint",
+          "shoulder_lift_joint",
+          "elbow_joint",
+          "wrist_1_joint",
+          "wrist_2_joint",
+          "wrist_3_joint",
+          "WRJ2",
+          "WRJ1",
+          "FFJ4",
+          "LFJ5",
+          "MFJ4",
+          "RFJ4",
+          "THJ5",
+          "FFJ3",
+          "LFJ4",
+          "MFJ3",
+          "RFJ3",
+          "THJ4",
+          "FFJ2",
+          "LFJ3",
+          "MFJ2",
+          "RFJ2",
+          "THJ3",
+          "FFJ1",
+          "LFJ2",
+          "MFJ1",
+          "RFJ1",
+          "THJ2",
+          "LFJ1",
+          "THJ1"
+        ],
+        "right": [
+          "shoulder_pan_joint",
+          "shoulder_lift_joint",
+          "elbow_joint",
+          "wrist_1_joint",
+          "wrist_2_joint",
+          "wrist_3_joint",
+          "WRJ2",
+          "WRJ1",
+          "FFJ4",
+          "LFJ5",
+          "MFJ4",
+          "RFJ4",
+          "THJ5",
+          "FFJ3",
+          "LFJ4",
+          "MFJ3",
+          "RFJ3",
+          "THJ4",
+          "FFJ2",
+          "LFJ3",
+          "MFJ2",
+          "RFJ2",
+          "THJ3",
+          "FFJ1",
+          "LFJ2",
+          "MFJ1",
+          "RFJ1",
+          "THJ2",
+          "LFJ1",
+          "THJ1"
+        ]
+      },
+      "visual_embedding": null,
+      "proprioception_dimensions": 120,
+      "recovery_enabled": false,
+      "upstream_proxy": {
+        "upstream_success": true,
+        "inside_count": 2048,
+        "point_count": 2048,
+        "minimum_ratio": 0.88,
+        "boundary_world_xy_m": [
+          -0.3381833016872406,
+          0.3469085872173309,
+          0.6249363660812378,
+          1.1992709398269654
+        ]
+      },
+      "detector_status": "UNKNOWN",
+      "independent_review": "pending",
+      "dataset_use": "unassigned",
+      "raw_archive_manifest_matches": true,
+      "portable_export_matches_raw_observations": true,
+      "raw_manifest_sha256": "90033b613dda257bca4264c49d0b2d5617219693dad9333cc86b1486e4d440ba"
+    },
+    {
+      "trial_id": "c9eb5255-24f9-451e-88c1-837a1842b73a",
+      "source": "normal-03/raw",
+      "rgb_shape": [
+        467,
+        480,
+        640,
+        3
+      ],
+      "rgb_dtype": "uint8",
+      "observations": 478,
+      "dispatches": 773,
+      "max_rgb_gap_sim_s": 0.06666667014360428,
+      "camera": {
+        "mode": "fixed explicitly aimed environment camera; no hand tracking",
+        "prim_path": "/World/env_camera",
+        "resolution_wh": [
+          640,
+          480
+        ],
+        "dome_light_intensity": 1000.0,
+        "warmup_physics_steps": 12,
+        "orientation_axes": "world (Camera.get_world_pose default)",
+        "look_at_target_world_m": [
+          0.0,
+          0.5,
+          0.6
+        ],
+        "focal_length": 2.4,
+        "horizontal_aperture": 2.4,
+        "position_world_m": [
+          0.0,
+          3.5999999046325684,
+          3.200000047683716
+        ],
+        "orientation_wxyz": [
+          -0.6644906977956072,
+          -0.2417687170481473,
+          -0.24176871704814726,
+          0.6644906977956072
+        ],
+        "intrinsics_px": [
+          [
+            640.0,
+            0.0,
+            320.0
+          ],
+          [
+            0.0,
+            640.0,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "world_to_ros_camera": [
+          [
+            -1.0,
+            1.1098476831504045e-16,
+            -5.176850637531265e-17,
+            -2.338859402391892e-16
+          ],
+          [
+            1.1098476831504045e-16,
+            0.6426122784614563,
+            -0.7661915421485901,
+            0.138408824801445
+          ],
+          [
+            -5.176850637531265e-17,
+            -0.7661915421485901,
+            -0.6426122784614563,
+            4.814648628234863
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "joint_names": {
+        "left": [
+          "shoulder_pan_joint",
+          "shoulder_lift_joint",
+          "elbow_joint",
+          "wrist_1_joint",
+          "wrist_2_joint",
+          "wrist_3_joint",
+          "WRJ2",
+          "WRJ1",
+          "FFJ4",
+          "LFJ5",
+          "MFJ4",
+          "RFJ4",
+          "THJ5",
+          "FFJ3",
+          "LFJ4",
+          "MFJ3",
+          "RFJ3",
+          "THJ4",
+          "FFJ2",
+          "LFJ3",
+          "MFJ2",
+          "RFJ2",
+          "THJ3",
+          "FFJ1",
+          "LFJ2",
+          "MFJ1",
+          "RFJ1",
+          "THJ2",
+          "LFJ1",
+          "THJ1"
+        ],
+        "right": [
+          "shoulder_pan_joint",
+          "shoulder_lift_joint",
+          "elbow_joint",
+          "wrist_1_joint",
+          "wrist_2_joint",
+          "wrist_3_joint",
+          "WRJ2",
+          "WRJ1",
+          "FFJ4",
+          "LFJ5",
+          "MFJ4",
+          "RFJ4",
+          "THJ5",
+          "FFJ3",
+          "LFJ4",
+          "MFJ3",
+          "RFJ3",
+          "THJ4",
+          "FFJ2",
+          "LFJ3",
+          "MFJ2",
+          "RFJ2",
+          "THJ3",
+          "FFJ1",
+          "LFJ2",
+          "MFJ1",
+          "RFJ1",
+          "THJ2",
+          "LFJ1",
+          "THJ1"
+        ]
+      },
+      "visual_embedding": null,
+      "proprioception_dimensions": 120,
+      "recovery_enabled": false,
+      "upstream_proxy": {
+        "upstream_success": true,
+        "inside_count": 2048,
+        "point_count": 2048,
+        "minimum_ratio": 0.88,
+        "boundary_world_xy_m": [
+          -0.3426121652126312,
+          0.33384283185005187,
+          0.6205499410629273,
+          1.2036521196365357
+        ]
+      },
+      "detector_status": "UNKNOWN",
+      "independent_review": "pending",
+      "dataset_use": "unassigned",
+      "raw_archive_manifest_matches": true,
+      "portable_export_matches_raw_observations": true,
+      "raw_manifest_sha256": "ecb66eac8d213d65784526e492756fe5c0749e4c98d726c49a85452a1fc2a6d6"
+    }
+  ]
+}
