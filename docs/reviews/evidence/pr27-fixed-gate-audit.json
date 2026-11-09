@@ -1,0 +1,30 @@
+{
+  "reviewed_commit": "78b12b813652d399b825422f0360886ba1bd5224",
+  "original_sources": [
+    {
+      "folder": "normal-01",
+      "role": "fit",
+      "accepted_reviewed_source": true,
+      "reference": "manifest#sha256=739bb464b88a2c7d3406517bb13b60b71fea09d7e8d42ef569c41718db782263"
+    },
+    {
+      "folder": "normal-02",
+      "role": "calibration",
+      "accepted_reviewed_source": true,
+      "reference": "manifest#sha256=90033b613dda257bca4264c49d0b2d5617219693dad9333cc86b1486e4d440ba"
+    },
+    {
+      "folder": "normal-03",
+      "role": "development",
+      "accepted_reviewed_source": true,
+      "reference": "manifest#sha256=ecb66eac8d213d65784526e492756fe5c0749e4c98d726c49a85452a1fc2a6d6"
+    }
+  ],
+  "modified_self_consistent_fixture_rejected": true,
+  "modified_manifest_sha256": "ebc8b4e3af3d0fb4ea9b133cb174cd1a6c4e0e00baa0bc06135ba3f292096fa2",
+  "rejection": "normal-01 no longer matches its reviewed source or role; independent review required",
+  "array_loading_called": false,
+  "encoder_called": false,
+  "tests_passed": 145,
+  "numerical_pipeline_changes": "none: only source approval gate and regression tests changed"
+}

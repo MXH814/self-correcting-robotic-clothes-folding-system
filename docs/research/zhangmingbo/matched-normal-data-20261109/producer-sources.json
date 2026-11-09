@@ -1,0 +1,106 @@
+[
+  {
+    "file": "producer-sources/audit_dr02_geometry.py",
+    "sha256": "3853e53c3f4437d3630f026b6eb514503f46b34a186f5510d1ddf15b56c4c373"
+  },
+  {
+    "file": "producer-sources/capture_runtime_io.py",
+    "sha256": "809a178e04b4759dff6060442426a2b718c9d49b219f56facbc69b67f9e29e2e"
+  },
+  {
+    "file": "producer-sources/download_demo_assets.py",
+    "sha256": "7b8096ee5d858d15a72f57c1c273f80b165ecdd3efd4bbb12cc22103828162be"
+  },
+  {
+    "file": "producer-sources/export_numeric_trajectory.py",
+    "sha256": "d8b362930edceb21ba83053d9887e7982840bd68a49aaf39215a09e58ee83a03"
+  },
+  {
+    "file": "producer-sources/export_observation.py",
+    "sha256": "b8335131e4aa4398fe292f54ae532659ede7ed97eadb4376748895e60d0d790d"
+  },
+  {
+    "file": "producer-sources/fiper_input_gate.py",
+    "sha256": "a94a1702795c94d4f4e7cf48a089d490dc8fb719ff855f11a3cc0c20f6c51619"
+  },
+  {
+    "file": "producer-sources/fiper_pre_evidence.py",
+    "sha256": "254bc220460e76bd0d6fc239644bf592d89cfc9eb6a5c769afcb585c87caae8b"
+  },
+  {
+    "file": "producer-sources/fold_camera_evidence.py",
+    "sha256": "0ee6c9bc6b32a1fab8a04e73eb6a1e1c1b672fb606701e70512cf86f4969b19e"
+  },
+  {
+    "file": "producer-sources/fold_recovery_chain.py",
+    "sha256": "86c08c0ed242660d14bfd7390227ac5ea3b9edafafa9119f4e81037924c1e5fe"
+  },
+  {
+    "file": "producer-sources/fold_recovery_evidence.py",
+    "sha256": "a671699371f74a2424462fc974437f03815912e3b5c9e54bbb33e2fe79a8591c"
+  },
+  {
+    "file": "producer-sources/garment_dr02_capture.py",
+    "sha256": "343dd1b3ad02a62b9eae9111e99e2dbef3a5c1b31ab9d341afebcf825f34771f"
+  },
+  {
+    "file": "producer-sources/garment_fault_probe.py",
+    "sha256": "a616313fadbe39e0e732d9c8782c06025c19ada65fc9d7f3dd3a8f590f500923"
+  },
+  {
+    "file": "producer-sources/garment_observation_trace.py",
+    "sha256": "88bed809f06fbd2e7e562839159e27d08b72374f61b9bc388996c84dd1159475"
+  },
+  {
+    "file": "producer-sources/pre_observation_evidence.py",
+    "sha256": "327e628a8ae0f5bd0d84a5082825568b278b4dd66e7a7d7110bb01350c394e3c"
+  },
+  {
+    "file": "producer-sources/runtime_control_probe.py",
+    "sha256": "15a51dee42ce3b9ed2c0d04ad8528bb5141c5b573292d109a3d133534a010c85"
+  },
+  {
+    "file": "producer-sources/run_fiper_pre.ps1",
+    "sha256": "58b6806f2fb42890a8bdc0f31609cf2cabf27c95a8b49f2b76fa56ee9c45012f"
+  },
+  {
+    "file": "producer-sources/run_fold_local.py",
+    "sha256": "8be5b9ed45f11ff4e407a97f0d1e76e8cbe47e8d65cad9a933ab7676f4c989e1"
+  },
+  {
+    "file": "producer-sources/run_local.ps1",
+    "sha256": "3afb18e3fe36a45d8a4847c555673d275d6c2dcf3a7fbee5ee2bf06e764a4f19"
+  },
+  {
+    "file": "producer-sources/run_pre_normal_batch.py",
+    "sha256": "3ec01d02f98d07b7ee10869b14f1174c0d4a6190c9986ba54d65077b1eb32fe1"
+  },
+  {
+    "file": "producer-sources/run_recovery_coverage.py",
+    "sha256": "9ee20306b2922a92d8086911e3fa7c789b8289e890ed421c121d0c033fee1b44"
+  },
+  {
+    "file": "producer-sources/smoke_test.py",
+    "sha256": "ed959330aafe0a1f7230da3a10cf2b84c7e8c81e24e145b061f5f3e84bd25bea"
+  },
+  {
+    "file": "producer-sources/verify_demo_assets.py",
+    "sha256": "58e599e5886dc8dbfd3f060a1ec5107b74ea4df48ab99bdaa7e9704d63141cb2"
+  },
+  {
+    "file": "producer-sources/verify_fold_recovery_chain.py",
+    "sha256": "5f856fe493021d579f4e0fc880e12b3a245e367cf29fda07f0a38347fac64d3b"
+  },
+  {
+    "file": "producer-sources/verify_garment_observation_trace.py",
+    "sha256": "c3c342a730c7dcfc735c87a97fef87d9de206a8de237287123a2005172316dc5"
+  },
+  {
+    "file": "producer-sources/verify_midstate_snapshots.py",
+    "sha256": "1e3d4b82f3ce6c56cf57d6481e33c2f2987ed59443f842a231e4e39a6b7a7305"
+  },
+  {
+    "file": "producer-sources/verify_pre_observations.py",
+    "sha256": "7d4a04b3771ef6dab0ac074860735f920e56276f894edbf1be2b25bdc4d3da5d"
+  }
+]

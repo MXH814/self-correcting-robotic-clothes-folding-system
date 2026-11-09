@@ -1,0 +1,58 @@
+{
+  "eff5d921-804f-4aeb-b1cb-2fe6d462ee23": {
+    "folder": "normal-01",
+    "role": "fit",
+    "frames": 468,
+    "feature_sha256": "e81eb98020753b46f52eaa3f7e967ff54fb4dbb3a80599f54c8241686ff5ec3e",
+    "source_reference": "manifest#sha256=739bb464b88a2c7d3406517bb13b60b71fea09d7e8d42ef569c41718db782263",
+    "phases": {
+      "OTHER": 204,
+      "LIFT": 15,
+      "HOLD": 48,
+      "RELEASE": 201
+    },
+    "reports": {
+      "UNKNOWN/UNSUPPORTED_PHASE": 405,
+      "UNKNOWN/WINDOW_WARMUP": 16,
+      "NORMAL/WITHIN_NORMAL_REFERENCE": 46,
+      "ANOMALY/OBSERVATION_OOD": 1
+    }
+  },
+  "a4d9c33f-d5e9-40d2-985d-0b06f5f3a61e": {
+    "folder": "normal-02",
+    "role": "calibration",
+    "frames": 466,
+    "feature_sha256": "703207bdb400df95bbd2953c4a016802065e05a9edcfbfe9b1702c80b434aa88",
+    "source_reference": "manifest#sha256=90033b613dda257bca4264c49d0b2d5617219693dad9333cc86b1486e4d440ba",
+    "phases": {
+      "OTHER": 202,
+      "LIFT": 14,
+      "HOLD": 47,
+      "RELEASE": 203
+    },
+    "reports": {
+      "UNKNOWN/UNSUPPORTED_PHASE": 405,
+      "UNKNOWN/WINDOW_WARMUP": 16,
+      "NORMAL/WITHIN_NORMAL_REFERENCE": 45
+    }
+  },
+  "c9eb5255-24f9-451e-88c1-837a1842b73a": {
+    "folder": "normal-03",
+    "role": "development",
+    "frames": 467,
+    "feature_sha256": "d65dd5fd8a73463b0e2cdaf9f8043dd59be09248d8d01d27dc86657412610b98",
+    "source_reference": "manifest#sha256=ecb66eac8d213d65784526e492756fe5c0749e4c98d726c49a85452a1fc2a6d6",
+    "phases": {
+      "OTHER": 201,
+      "LIFT": 15,
+      "HOLD": 47,
+      "RELEASE": 204
+    },
+    "reports": {
+      "UNKNOWN/UNSUPPORTED_PHASE": 405,
+      "UNKNOWN/WINDOW_WARMUP": 16,
+      "NORMAL/WITHIN_NORMAL_REFERENCE": 36,
+      "ANOMALY/OBSERVATION_OOD": 10
+    }
+  }
+}
