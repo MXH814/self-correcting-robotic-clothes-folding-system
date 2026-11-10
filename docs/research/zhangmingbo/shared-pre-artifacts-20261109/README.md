@@ -17,7 +17,7 @@
 
 - `detector-b9df07d4/` 含冻结的 detector.pt 和 manifest.json，左右袖阈值分别为 1.2066080808639525、1.311397171020508。完整预测器的模型和包哈希由现有 `load_package` 校验。
 - `official-A-db18b274/` 与 `official-B-b5e90454/` 含最终 A/B 完整 RGB、观测／动作、实跑源码快照、事件、配置和结局。B 还含实际材料片测量与前检记录。
-- `normal-calibration-v2/normal-01/`、`normal-02/` 含两条新增正常原始试次和原始核验记录。其用途为第二轮正常校准，独立正常性审核 pending。
+- `normal-calibration-v2/normal-01/`、`normal-02/` 含两条新增正常原始试次和原始核验记录。其用途为第二轮正常校准，胡的独立技术判读已通过 PR32 验收。
 - 每条试次的 `rgb-frames.npz` 内 `rgb` 为 uint8、N×480×640×3，使用 `np.load(..., allow_pickle=False)` 读取。`observation-trace.json` 的 frame_index 对应 RGB 下标。同一渲染帧可有多个观测，编码前按渲染帧去重。
 - 相机、控制器、时钟和源码在 `continuation-context.json`、`manifest.json` 及 source-snapshot 中。历史绝对路径作为来源记录保留，读取时使用实际解压目录。
 
@@ -37,6 +37,10 @@ python tools/simulation/verify_pre_observations.py --help
 
 ## 交接后的审核
 
-马可据完整 checkpoint 和 RGB 独立复算新包分数。胡可审核两条新增正常试次、最新 A/B/C 可见现象及 B 的人工异常时间区间。机器核验及材料共享完成记录与成员独立签核分别保存。最终区域代理、仿真几何持有、正式叠衣质量和物理停车仍保留各自适用范围。
+组长已批准并合并 PR31。四个 ZIP 的 228 个内部文件已在接收端完整核验，A 465 次、B 493 次记录调用（含 1 次前检刷新）已由完整 RGB 和冻结 checkpoint 独立复算，离散判定及阈值一致，分数差在预设 1e-5 绝对容差内，接收端 205 项测试通过。[组长审阅](../../../reviews/pr30-31-review.md)
 
-用户本轮要求先处理归档和核验器，中文 PPT／讲稿整合后续继续。实际计时排练、上传、出席和课堂反馈目前未见新增完成记录。
+胡已完成两条新增正常记录和最新 B 原始 RGB 的独立技术判读，通过 PR32 验收。两条记录可用于当前开发校准，B 可见分离区间为 6.683–6.883 渲染秒。[案例与范围](../../../design/hu-abc-case-review.md)
+
+独立数值复算、可见现象判读、正式叠衣质量和物理停车各自登记验收范围。
+
+2026-11-10 已同步主分支精简课堂版和配套讲稿，12 页含正文 9 页与备份 3 页。当前展示与剩余事实登记见[展示记录](../../../design/presentation-feedback.md)。

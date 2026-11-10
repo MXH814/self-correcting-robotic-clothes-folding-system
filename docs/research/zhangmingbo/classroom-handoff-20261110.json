@@ -1,0 +1,52 @@
+{
+  "schema": "zhang-classroom-handoff/1",
+  "source_commit": "afc71c14821bb6a713f55a7324232873ae727a99",
+  "slides": 12,
+  "main_slides": 9,
+  "backup_slides": 3,
+  "embedded_video_slide": 8,
+  "embedded_video_decode_passed": true,
+  "decoded_video_frames": 579,
+  "planned_seconds": 318,
+  "handoff_seconds": 42,
+  "files": [
+    {
+      "file": "Group3_Assignment2_Design_Pre.pdf",
+      "bytes": 424476,
+      "sha256": "c182deab0ea5e2cc9012dfcc7546e813ab9496f1821354e7e3047aeda207f3c9"
+    },
+    {
+      "file": "Group3_Assignment2_Design_Pre.pptx",
+      "bytes": 5118975,
+      "sha256": "33c8011e0bd6d74b80dde24cd4001749e77c1a7e3257ad38ee796f4704292b9e"
+    },
+    {
+      "file": "Group3_Assignment2_Design_Pre_Provenance.json",
+      "bytes": 3910,
+      "sha256": "02a420a8f7316cbb677c3966954ea86fb83f056e87e4bb095491e2a6c2ec70a8"
+    },
+    {
+      "file": "Group3_Assignment2_Design_Pre_QA.md",
+      "bytes": 1214,
+      "sha256": "b235f91632b51cfc38db971fc070fb34f6f43dbffb7f3c987a24f7371fe57ede"
+    },
+    {
+      "file": "Group3_Assignment2_Design_Pre_Script.docx",
+      "bytes": 41572,
+      "sha256": "367f335ba1275f607462f34ebe15193a703d1a612932af066543f276c05870dd"
+    },
+    {
+      "file": "Group3_Assignment2_Design_Pre_Script.md",
+      "bytes": 7118,
+      "sha256": "f8fc449024ccae99e02e81eedce32487dce922455c6bccb156cacd3b1ef90e4d"
+    },
+    {
+      "file": "Group3_Assignment2_Design_Pre_Script.pdf",
+      "bytes": 177234,
+      "sha256": "13a7b6a0d802278c07c99c126dd297a575bc07b00ae90a96c49299a403e408f2"
+    }
+  ],
+  "classroom_device_test": "pending",
+  "three_person_timed_rehearsal": "pending",
+  "canvas_receipt": "pending"
+}
