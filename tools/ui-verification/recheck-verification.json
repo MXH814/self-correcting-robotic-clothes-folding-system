@@ -1,0 +1,17 @@
+{
+  "snapshot": "UI-20261120-R2",
+  "kind": "automated prototype recheck; simulated events",
+  "passed": true,
+  "paths": [
+    "ready",
+    "stale-start-disabled",
+    "anomaly",
+    "pause-before-rest",
+    "takeover",
+    "return-check",
+    "return-rejected",
+    "retake",
+    "result"
+  ],
+  "errors": []
+}

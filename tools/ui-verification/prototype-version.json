@@ -1,0 +1,11 @@
+{
+  "snapshot_id": "UI-20261120-R2",
+  "kind": "workspace snapshot with uncommitted UI changes",
+  "repository_head": "afc71c14821bb6a713f55a7324232873ae727a99",
+  "sha256": {
+    "index.html": "f3b9acc1d0d6738dd5e823ff10930b4175898c94ca8575605c7a5f98ccb244c8",
+    "app.js": "e2c803dca1b2f1ddf87760f817c558df7614169374068304592ea8ec725bea58",
+    "style.css": "547b4ff73665c025ec8b2363ce65495bf54c09bc9cca0e08565b97096638ef0a"
+  },
+  "historical_capture_version": "Original ui-verification.json did not record commit or source hash; no retrospective binding claimed."
+}
