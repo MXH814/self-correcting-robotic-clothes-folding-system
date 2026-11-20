@@ -144,6 +144,34 @@ class OfficialAdapterTests(unittest.TestCase):
         self.assertEqual(binding_event["proposal_binding"]["proposal_sha256"],
                          chain.decision["candidate_spec_reference"].split("=")[1])
 
+    def test_first_operation_sees_committed_acceptance_and_replay_does_not_dispatch(self):
+        request = self.request()
+        chain, proposal = self.proposal()
+        robot, move = Mock(), Mock(return_value=True)
+        journal = Path(self.directory.name) / "journal.jsonl"
+
+        def accepted_records():
+            events = map(json.loads, journal.read_text().splitlines())
+            return [event for event in events if event.get("kind") == "MACRO_ACCEPTED"]
+
+        def dispatch(name, function, **kwargs):
+            if name == "release":
+                self.assertEqual([event["request_id"] for event in accepted_records()],
+                                 [request["request_id"]])
+            return function()
+
+        chain.operation.side_effect = dispatch
+        args = dict(chain=chain, proposal=proposal, robot=robot, original_move=move,
+                    preflight_evidence=self.evidence())
+        first = self.adapter.execute_macro(request, **args)
+        self.assertEqual(first["kind"], "REQUEST_NEW_HOLD_OBSERVATIONS")
+        before = (list(chain.operation.mock_calls), list(robot.mock_calls), list(move.mock_calls))
+        replay = self.adapter.execute_macro(request, **args)
+        self.assertEqual(replay["kind"], "REJECT")
+        self.assertEqual(before, (chain.operation.mock_calls, robot.mock_calls, move.mock_calls))
+        self.assertEqual(len(accepted_records()), 1)
+        self.assertEqual(self.adapter.flow.attempts, 1)
+
     def test_fsync_delay_does_not_extend_preflight_evidence(self):
         request = self.request()
         chain, proposal = self.proposal()
