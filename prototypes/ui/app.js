@@ -156,7 +156,7 @@ function offline(){
   stop='静止未确认';say('设备失联。重连后仍需新的静止证据。');
 }
 function stopPlay(){clearInterval(playing);playing=null}
-function go(n){page=n;stopPlay();notice='';render()}
+function go(n){page=n;stopPlay();notice='';render();if(!$('demo-dialog').open)$('title').focus({preventScroll:true})}
 function button(key,label,enabled,act,cls=''){
   commands.set(key,{enabled:!!enabled,act});
   return '<button type="button" id="'+key+'" class="'+cls+'" '+(enabled?'':'disabled')+'>'+label+'</button>';
@@ -180,29 +180,22 @@ function terminate(){
  return button('terminate','终止任务',home()&&active(),()=>{if(confirm('终止本次任务并请求停车？已终止的任务无法继续。'))finish('已终止','用户终止任务。')},'danger')
 }
 function prep(){
- const checkboxes=['已放好一件展开、无结的上衣','桌面没有杂物，已了解人工协助步骤'].map((s,i)=>'<label><input type="checkbox" id="prep-'+i+'" data-prep="'+i+'" '+(prepared[i]?'checked ':'')+(home()&&!pending&&!active()?'':'disabled')+'> '+s+'</label>').join('');
- const hint=!home()?'请使用已连接的家庭用户会话。':active()?'已有任务，请到运行监控查看。':pending?'等待测试桩返回校验结果，可取消本次启动。':!rest()?'启动已锁定。请等待设备给出新的静止证据。':scene!=='有效'?'修正场景：'+scene+'，然后重新检查。':!prepared.every(Boolean)?'请先确认两项准备条件。':checked?'就绪检查通过，可以启动。':'请检查就绪条件。';
- return grid(card('桌面与衣物',rows([['固定衣物',cfg.scene],['折叠目标','TOPS-FOLD-01'],['已批准模型',model],['当前停车状态',stop]])),card('启动前确认','<div class="checks">'+checkboxes+'</div>'+note(hint)+acts(
- button('check','检查就绪',home()&&!active()&&!pending,()=>{checked=ready();say(checked?'就绪检查通过。':hint)}),
- button('start','开始折叠',home()&&ready()&&checked&&!pending,()=>{requestId='R-'+String(++requestSerial).padStart(3,'0');pending='启动校验';say(requestId+' 已受理。等待 DR01 校验，尚未分配任务。')},'primary'),
- button('cancel','取消启动',home()&&pending==='启动校验',()=>{pending='';checked=false;say('请求已取消。')})
- )));
+ const confirm=['已放好一件展开、无结的上衣','已清空桌面，并了解需要协助时应先接管'].map((v,i)=>'<label><input type="checkbox" id="prep-'+i+'" data-prep="'+i+'" '+(prepared[i]?'checked ':'')+(home()&&!pending&&!active()?'':'disabled')+'><span>'+v+'</span></label>').join('');
+ const hint=active()?'已有任务进行中，请进入运行监控。':pending?'正在检查衣物与设备，请稍等。取消后不会创建任务。':!rest()?'设备还未确认静止，暂时不能启动。':scene!=='有效'?'暂时无法启动：'+scene+'。请修正后重新检查。':!prepared.every(Boolean)?'完成这两项确认后，就可以检查设备是否就绪。':checked?'准备就绪，可以开始折叠。':'请点击“检查就绪”，确认可以安全启动。';
+ return grid(card('开始前的准备','<p class="lead">将一件展开的上衣放在桌面上，袖子自然摊开。</p><div class="checks">'+confirm+'</div>'+note(hint)+acts(button('check','检查就绪',home()&&!active()&&!pending,()=>{checked=ready();say(checked?'准备就绪，可以开始折叠。':hint)}),button('start','开始折叠',home()&&ready()&&checked&&!pending,()=>{requestId='R-'+String(++requestSerial).padStart(3,'0');pending='启动校验';say('正在检查衣物和设备，尚未创建任务。')},'primary'),button('cancel','取消启动',home()&&pending==='启动校验',()=>{pending='';checked=false;say('已取消，没有创建任务。')}))),card('本次折叠','<p class="garment-name">一件上衣</p><p>当前支持固定桌面上的单件上衣。请勿放入其他物品，也不要同时叠放多件衣物。</p>'+rows([['设备状态',stop],['目标','完成预设上衣折叠']])+'<p class="quiet">遇到异常时会先尝试恢复，需要你帮忙时会明确提示。</p>'));
 }
 function monitor(){
- if(!task)return card('尚无运行记录',note('请先在准备页启动任务。'));
- const pauseHint = task.state!=='已暂停'?'确认停车后才能继续或求助。':rest()?'设备已确认静止，可继续或请求协助。调整衣物前请先接管。':'任务已暂停，设备尚未确认静止，请勿移动衣物。';
- return grid(card('本次模拟任务',rows([['任务编号',task.id],['模型 / 配置',task.model+' / v'+task.cfg.version]])+note(task.frames.at(-1)?.event||'等待观测')),card('运行控制 · 交互模拟',status()+acts(
- button('pause','暂停',home()&&active()&&['折叠中','恢复中'].includes(task.state)&&!pending,pause),
- button('resume','继续',home()&&task.state==='已暂停'&&rest()&&!pending,()=>{pending='继续校验';log('正在校验原折叠阶段及剩余预算。')}),
- button('ask','请求协助',home()&&task.state==='已暂停'&&rest()&&!pending,()=>help('用户请求检查衣物')),terminate())+note(pauseHint+(task.wall/3600>=.8*task.cfg.cap?'费用已使用至少 80%，请留意剩余额度。':'')+'已分配的 GPU 在等待期间仍计费。')));
+ if(!task)return card('还没有进行中的任务','<p>准备好衣物后，就可以开始第一次折叠。</p>'+acts(button('to-prepare','准备一件衣物',home(),()=>{page=1},'primary')));
+ const hint=task.state==='已暂停'?(rest()?'设备已确认静止。你可以继续折叠，也可以请求协助；接管之前不要调整衣物。':'设备还在停车。请勿触碰衣物，确认静止后才能继续或请求协助。'):'设备工作时，请让双手和其他物品远离桌面。';
+ return grid(card('当前任务',rows([['折叠状态',pending||task.state],['设备状态',stop],['自动恢复次数',task.attempts+' / '+task.cfg.attempts]])+note(hint)+acts(button('pause','暂停折叠',home()&&active()&&['折叠中','恢复中'].includes(task.state)&&!pending,pause,'primary'),button('resume','继续折叠',home()&&task.state==='已暂停'&&rest()&&!pending,()=>{pending='继续校验';log('正在检查是否可以继续折叠。')},'primary'),button('ask','我需要调整衣物',home()&&task.state==='已暂停'&&rest()&&!pending,()=>help('用户请求检查衣物')),terminate())),card('本次使用情况',rows([['任务编号',task.id],['活动时间（模拟）',task.time+' 秒 / '+task.cfg.time+' 秒'],['费用（模拟）',money(task.wall/3600)+' / '+money(task.cfg.cap)]])+'<p class="quiet">恢复次数和预算在本次任务内累计。暂停后，已分配的计算资源仍可能计费。</p>'));
 }
 function assistance(){
- if(!active()||!['人工控制','等待协助'].includes(task.state))return card('当前没有人工协助请求',note('出现持续异常时系统会求助，也可在运行监控确认暂停后主动求助。'));
- return grid(card('协助请求',rows([['原因',task.reason],['当前控制权',task.state==='人工控制'&&!pending?'用户已接管':'自动和手动均已锁定'],['当前状态',pending||task.state],['设备状态',stop],['可用恢复次数',task.cfg.attempts-task.attempts],['模拟 GPU 费用',money(task.wall/3600)]])),card('手动调整',note(pending?'手动权限已撤回。等待新的停车证据与归还校验。':task.state==='人工控制'?'可调整衣物位置或夹持接触，完成后归还控制。':rest()?'已确认静止，请显式接管后调整。':'停止请求已发出。设备确认静止前，手动操作锁定。')+acts(
- button('take',task.state==='等待协助' && !pending && task.reason==='衣物超出工作区'?'再次接管':'接管',home()&&task.state==='等待协助'&&rest()&&!pending,()=>{task.state='人工控制';task.manual=true;log('已授权本次手动接管。')},'primary'),
- button('adjust','调整衣物位置',home()&&task.state==='人工控制'&&!pending,()=>{task.adjustments++;stop='执行中';advanceGeneration();log('完成一次示例人工调整。')}),
- button('return','归还控制',home()&&task.state==='人工控制'&&!pending,()=>{pending='归还停车';task.state='等待协助';halt();log('已撤回手动权限，等待本次归还的停车证据。','AUTHORITY_REVOKED')}),
- terminate())));
+ if(!active()||!['人工控制','等待协助'].includes(task.state))return card('暂时不需要人工协助','<p>系统需要你帮忙时，会在这里说明原因和操作步骤。</p>'+acts(button('to-monitor','查看当前任务',home(),()=>{page=task?2:1},'primary')));
+ const owned=task.state==='人工控制'&&!pending;
+ const step=pending?3:owned?2:rest()?2:1;
+ const steps=['等待设备确认静止','接管后调整衣物','归还控制，等待检查'].map((v,i)=>'<li class="'+(i+1===step?'current':i+1<step?'done':'')+'" '+(i+1===step?'aria-current="step"':'')+'>'+v+'</li>').join('');
+ const hint=pending?'已收回手动权限，请停止调整。正在重新确认设备静止和衣物状态。':owned?'现在由你控制，可以调整衣物位置。调整完毕后，请点击“归还控制”。':rest()?'设备已确认静止。请先点击“接管”，获得权限后再调整衣物。':'请等待设备完全静止。在确认前，不要触碰衣物。';
+ return grid(card('请按提示处理','<ol class="assist-steps" aria-label="人工协助步骤">'+steps+'</ol>'+note(hint)+acts(button('take',task.reason==='衣物超出工作区'&&!pending?'再次接管':'接管',home()&&task.state==='等待协助'&&rest()&&!pending,()=>{task.state='人工控制';task.manual=true;log('已取得手动权限，可以调整衣物。')},'primary'),button('adjust','确认已调整衣物',home()&&owned,()=>{task.adjustments++;stop='执行中';advanceGeneration();log('已记录一次人工调整（交互模拟）。')}),button('return','归还控制',home()&&owned,()=>{pending='归还停车';task.state='等待协助';halt();log('已收回手动权限，正在重新确认静止。','AUTHORITY_REVOKED')},'primary'),terminate())),card('为什么需要你帮忙',(task.reason==='衣物超出工作区'?'<div class="reason-alert"><strong>归还检查未通过</strong>请再次接管，将衣物移回桌面范围内，然后重新归还。</div>':'')+rows([['原因',task.reason],['控制权限',owned?'你已接管':'暂未开放手动操作'],['设备状态',stop]])+'<p class="quiet">归还检查失败时，系统会保持等待。请重新接管、修正问题，再归还控制。</p>'));
 }
 function verdict(r){
  if(r.state!=='完成'||r.manual||r.help||r.end.time>=r.cfg.time||r.end.wall/3600>=r.cfg.cap||r.quality==='未通过')return '否';
@@ -212,9 +205,9 @@ function result(){
  if(!home())return card('记录访问受限',note('请切回本地家庭用户并连接会话以访问自己的任务记录。'));
  if(!records.length)return card('尚无已保存结果',note('任务完成、失败或终止后，可在此查看其过程。'));
  const r=selected||records[0];const f=r.frames[frame]||r.frames[0];
- return grid(card('任务结果','<label>本会话记录 <select id="record">'+records.map(x=>'<option '+(x===r?'selected ':'')+'value="'+x.id+'">'+x.id+' · '+x.state+'</option>').join('')+'</select></label>'+rows([['运行结果',r.state],['结束原因',r.reason],['求助 / 已接管',(r.help?'有':'无')+' / '+(r.manual?'有':'无')],['人工调整次数',r.adjustments],['终态恢复次数',r.end.attempts],['终态活动时间',r.end.time+' 秒'],['累计活动 / 计费',r.time+' 秒 / '+money(r.wall/3600)],['设备最后记录',r.frames.at(-1).stop],['冻结版本',r.model+' / v'+r.cfg.version],['离线质量',r.quality],['依据',r.qualityReason],['示例自主成功',verdict(r)]])+acts(
+ return grid(card('任务结果','<label>本会话记录 <select id="record">'+records.map(x=>'<option '+(x===r?'selected ':'')+'value="'+x.id+'">'+x.id+' · '+x.state+'</option>').join('')+'</select></label>'+rows([['任务结果',r.state],['人工协助',r.manual?'你曾接管并协助':r.help?'曾请求协助':'未请求协助'],['质量审核（模拟）',r.quality],['独立完成并合格（模拟）',verdict(r)]])+'<details><summary>查看结束原因和使用详情</summary>'+rows([['结束原因',r.reason],['人工调整次数',r.adjustments],['自动恢复次数',r.end.attempts],['活动时间（模拟）',r.time+' 秒'],['费用（模拟）',money(r.wall/3600)],['设备最后状态',r.frames.at(-1).stop],['质量依据',r.qualityReason]])+'</details>'+acts(
  button('export','导出记录',true,()=>{const a=document.createElement('a');const url=URL.createObjectURL(new Blob([JSON.stringify(exportRecord(r),null,2)],{type:'application/json'}));a.href=url;a.download=r.id+'-示例记录.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);say('已生成示例记录。')}),
- button('delete','删除记录',!r.linked&&(r!==task||rest()),()=>{if(!confirm('删除当前示例记录？'))return;records=records.filter(x=>x!==r);if(task===r)task=null;selected=records[0]||null;frame=0;stopPlay();say('已删除选定记录。')},'danger'))+(r.linked?note('存在数据引用，删除已锁定。'):'')+(r.quality==='通过'&&(r.manual||r.help)?note('末态质量通过；本次有求助或人工接管，因此自主成功为“否”。'):'')),card('模拟事件回放 · 只读',eventPicker(r)+rows([['事件',(frame+1)+' / '+r.frames.length],['当时状态',f.state],['当时设备',f.stop]])+note(f.event)+'<label>定位事件<input id="scrub" type="range" min="0" max="'+(r.frames.length-1)+'" value="'+frame+'"></label>'+acts(button('play',playing?'暂停回放':'播放事件',r.frames.length>1,()=>{if(playing)stopPlay();else{if(frame===r.frames.length-1)frame=0;playing=setInterval(()=>{if(frame<r.frames.length-1)frame++;else stopPlay();render()},700)}}),button('next','下一事件',frame<r.frames.length-1,()=>{stopPlay();frame++}))));
+ button('delete','删除记录',!r.linked&&(r!==task||rest()),()=>{if(!confirm('删除当前示例记录？'))return;records=records.filter(x=>x!==r);if(task===r)task=null;selected=records[0]||null;frame=0;stopPlay();say('已删除选定记录。')},'danger'))+(r.linked?note('存在数据引用，删除已锁定。'):'')+(r.quality==='通过'&&(r.manual||r.help)?note('末态质量通过；本次有求助或人工接管，因此自主成功为“否”。'):'')),card('回看操作过程',note('这是本次交互模拟的历史记录。播放和暂停回放都不会控制设备。')+eventPicker(r)+rows([['事件',(frame+1)+' / '+r.frames.length],['当时状态',f.state],['当时设备',f.stop]])+note(f.event)+'<label>定位事件<input id="scrub" type="range" min="0" max="'+(r.frames.length-1)+'" value="'+frame+'"></label>'+acts(button('play',playing?'暂停回放':'播放事件',r.frames.length>1,()=>{if(playing)stopPlay();else{if(frame===r.frames.length-1)frame=0;playing=setInterval(()=>{if(frame<r.frames.length-1)frame++;else stopPlay();render()},700)}}),button('next','下一事件',frame<r.frames.length-1,()=>{stopPlay();frame++}))));
 }
 const stages=['等待数据','示范已登记','已批准作业预算','已训练','验证通过并冻结','终测通过','终测失败','已激活'];
 let compatible=true,draft=null;
@@ -285,6 +278,23 @@ function harness(){
  add('session',connected?'控制会话失联':'重新认证并绑定',true,()=>{if(connected)disconnectUI();else{connected=true;say('已重新绑定本地演示会话，请显式操作。')}});
  return bs.join('');
 }
+function familyGuidance(){
+ let heading='准备一件衣物，开始轻松折叠',detail='先确认桌面和衣物准备好，再检查就绪。',tone='normal';
+ if(page===2){heading=task?'正在为你折叠':'从准备衣物开始';detail='你可以随时暂停。需要调整衣物时，请先等待设备静止并接管。';}
+ if(task&&task.state==='恢复中'&&page===2){heading='正在尝试自动恢复';detail='暂时不需要你操作。恢复后会检查抓持状态，再决定是否继续。';}
+ if(task&&task.state==='已暂停'&&page===2){heading=rest()?'折叠已暂停，设备已静止':'折叠已暂停，正在等待设备静止';detail=rest()?'选择继续折叠，或申请接管来调整衣物。':'请勿触碰衣物。任务暂停不代表设备已经停稳。';tone=rest()?'normal':'wait';}
+ if(page===3){heading=task?.state==='人工控制'?'已接管，请按提示调整衣物':'需要你帮忙检查衣物';detail=rest()?'先取得手动权限，再调整衣物。':'请等待设备确认静止，暂时不要触碰衣物。';tone='wait';if(!active()){heading='需要协助时，我们会在这里提示';detail='现在无需进行人工操作。';}}
+ if(page===3&&task?.state==='人工控制'&&!pending){detail='你已取得手动权限。调整完成后确认，再归还控制。';tone='normal';}
+ if(page===3&&task?.reason==='衣物超出工作区'&&!pending&&task.state==='等待协助'){heading='归还检查未通过，请重新接管';detail='自动操作保持暂停。请先再次接管，再把衣物移回桌面范围内。';tone='wait';}
+ if(page===4){heading=selected?'查看这次折叠的结果':'你的折叠记录会保存在这里';detail='运行结果、人工协助和质量审核分别记录。回放只查看历史，不控制设备。';}
+ if(page===5){heading='维护工作区';detail='配置更改仅用于下一次任务。家庭用户无维护权限。';}
+ if(pending){heading=pending==='启动校验'?'正在检查，尚未开始折叠':pending==='继续校验'?'正在检查是否可以继续':'已归还控制，正在重新检查';detail=pending==='启动校验'?'请等待检查结果，也可以取消本次启动。':'请停止手动调整，等待设备静止和校验结果。';tone='wait';}
+ if(!adapter||!connected){heading=!adapter?'设备连接中断':'操作会话已断开';detail='当前操作已锁定。请恢复连接并等待设备重新确认安全状态。';tone='wait';}
+ $('guidance').className='guidance '+tone;$('guidance').innerHTML='<span class="status-mark" aria-hidden="true">'+(tone==='wait'?'!':String(Math.min(page,4)))+'</span><div><h2>'+heading+'</h2><p>'+detail+'</p></div>';
+ $('identity').textContent=role==='maint'?'维护者视图':'家庭用户视图';
+ $('demo-next').textContent=pending.endsWith('校验')?'下一步演示：返回“校验通过”或“校验失败”。':!rest()&&stop!=='执行中'?'下一步演示：提交本代静止证据，或演示停车超时。':'这里可注入异常、推进模拟时间或切换角色。';
+ $('user-message').textContent=notice.replace(/\s*\[[A-Z_]+\]/g,'').replace(/测试桩已返回本代静止证据：速度达标、队列为空。/g,'设备已确认静止。').replace(/DR\d+/g,'');
+}
 function render(){
  const focused=document.activeElement?.id; commands.clear();
  for(const control of document.querySelectorAll('[data-role]')){
@@ -293,10 +303,11 @@ function render(){
  }
  $('restore-session').hidden=connected;
  document.querySelector('nav').innerHTML=views.map((s,i)=>'<button id="nav'+(i+1)+'" data-page="'+(i+1)+'" aria-current="'+(page===i+1)+'" '+(i===4&&!maintain()?'disabled':'')+'>'+s+'</button>').join('');
- $('sid').textContent='交互模拟';$('title').textContent=views[page-1];$('identity').textContent=(connected?'会话在线':'会话失联')+' · '+(adapter?'设备在线':'设备离线');
- $('no-maint').hidden=maintain();
- $('workspace').innerHTML=[prep,monitor,assistance,result,maintenance][page-1]() + ([2,3].includes(page) ? reasonGuide() : '');
- $('events').innerHTML=harness();$('msg').textContent=notice;
+ document.body.dataset.role=role; $('sid').textContent=role==='home'?'家庭用户':'维护人员';$('title').textContent=views[page-1];$('identity').textContent=(connected?'会话在线':'会话失联')+' · '+(adapter?'设备在线':'设备离线');
+ $('no-maint').hidden=true;
+ $('workspace').innerHTML=[prep,monitor,assistance,result,maintenance][page-1]();
+ $('technical').innerHTML=reasonGuide()+(task?rows([['任务编号',task.id],['模型版本',task.model],['控制代次',task.gen]]):'');
+ $('events').innerHTML=harness();$('msg').textContent=notice; familyGuidance();
  if($('source').dataset.page!==String(page)){$('source').replaceChildren($('ref'+page).content.cloneNode(true));$('source').dataset.page=page}
  if(focused&&document.getElementById(focused))$(focused).focus({preventScroll:true});
 }
@@ -311,6 +322,8 @@ document.addEventListener('click',e=>{
    go(role==='maint' ? 5 : nextPage);
    return;
  }
+ if(b.id==='open-demo'){$('demo-dialog').showModal();return}
+ if(b.id==='close-demo'){$('demo-dialog').close();$('open-demo').focus();return}
  if(b.id==='restore-session'){commands.get('session').act();render();return}
  if(b.dataset.page){go(Number(b.dataset.page));return}
  const op=commands.get(b.id);if(op?.enabled){op.act();render()}
