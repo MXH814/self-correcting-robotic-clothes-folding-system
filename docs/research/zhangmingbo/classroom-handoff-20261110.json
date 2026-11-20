@@ -1,6 +1,9 @@
 {
   "schema": "zhang-classroom-handoff/1",
   "source_commit": "afc71c14821bb6a713f55a7324232873ae727a99",
+  "snapshot_date": "2026-11-10",
+  "source_directory": "docs/design/slides",
+  "fingerprint_basis": "Raw Git blob bytes at source_commit:source_directory/file (git cat-file blob).",
   "slides": 12,
   "main_slides": 9,
   "backup_slides": 3,
@@ -22,8 +25,8 @@
     },
     {
       "file": "Group3_Assignment2_Design_Pre_Provenance.json",
-      "bytes": 3910,
-      "sha256": "02a420a8f7316cbb677c3966954ea86fb83f056e87e4bb095491e2a6c2ec70a8"
+      "bytes": 3778,
+      "sha256": "32826dcab24686f48b53775372b8726568220e17f8098354971b3b623b77fce3"
     },
     {
       "file": "Group3_Assignment2_Design_Pre_QA.md",
